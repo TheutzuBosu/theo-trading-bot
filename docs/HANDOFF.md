@@ -31,7 +31,7 @@
 
 ## Ce urmează
 - **Etapa 3 — Strategii + Poarta 1 (Claude Code), branch `etapa-3-strategii`:**
-  - 3a: `src/strategies/` (S1, S2, S3) ca funcții pure `prices -> {simbol: DataFrame}` după contractul din
+  - 3a: `src/strategies/` (S1, S2, S3, S4; S4 = MACD + EMA200, plus indicatorul MACD nou) ca funcții pure `prices -> {simbol: DataFrame}` după contractul din
     `src/backtest/panel.py` (`entry`, `exit`, `stop_distance`, opțional `target_distance`, `score`, `entry_reason`);
     parametrii în `config/strategies.yaml`. S3 folosește `max_hold_bars=10`.
   - 3b: date 2006–azi, walk-forward + Monte Carlo + test aleator, `reports/gate1.md`.

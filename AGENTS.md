@@ -37,7 +37,7 @@ fără jargon; când trebuie să facă ceva, îi dai pași click cu click.
 | `src/config.py` | setările din `.env` / variabile de mediu |
 | `src/data/` | date de piață, cache, validare, `drop_incomplete_bar` |
 | `src/indicators.py` | indicatori în pandas pur (fără TA-Lib) |
-| `src/strategies/` | S1 Trend Breakout, S2 Momentum Rotation, S3 RSI-2 Pullback (funcții pure) |
+| `src/strategies/` | S1 Trend Breakout, S2 Momentum Rotation, S3 RSI-2 Pullback, S4 MACD + EMA200 (funcții pure) |
 | `src/backtest/` | backtester bar-cu-bar, walk-forward, Monte Carlo, test cu intrări aleatoare |
 | `src/risk/guard.py` | regulile de risc hard-codate (NU se modifică fără aprobare) |
 | `src/broker/` | adaptorul Alpaca (paper/live), idempotență, reconciliere, liquidate_all |

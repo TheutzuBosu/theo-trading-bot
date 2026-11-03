@@ -29,3 +29,6 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   intrări pe simbol, în zile și ordine aleatoare; aceleași ieșiri, stopuri și sizing.
 - **D12 (3.11.2026)** Convenții: ATR, RSI, ADX (Wilder) și EMA pornesc de la media simplă a primelor n valori;
   Sharpe cu rata fără risc 0, anualizat cu √252; CAGR pe zile calendaristice.
+- **D13 (3.11.2026)** Strategie candidată nouă S4 MACD + EMA200 (după canalul TradingLab), adaptată la daily și
+  acțiuni, testată la Poarta 1 cu aceleași praguri. Plafon: maximum 4 strategii candidate, ca să nu crească șansa
+  ca una să treacă din noroc (data snooping). Cerută de proprietar.
