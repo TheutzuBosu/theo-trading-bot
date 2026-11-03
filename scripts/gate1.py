@@ -231,7 +231,7 @@ def plot_equity(variant: str, run: Run = BASE) -> str:
     if run != BASE and base_file.exists():
         base = pd.read_csv(base_file, index_col=0, parse_dates=True)
         for s in run.strategies:
-            ax.plot(base.index, base[s], label=f"{s} de bază (Poarta 1)", color="grey", ls="--")
+            ax.plot(base.index, base[s], label=f"{s} fără filtru (Poarta 1)", color="grey", ls="--")
     for col in curves.columns:
         style = {"color": "black", "linewidth": 2.2} if col == "SPY" else {"linewidth": 1.3}
         label = "SPY (cumpărat și ținut)" if col == "SPY" else f"{col} {run.change}".strip()
@@ -514,6 +514,20 @@ def base_results() -> dict:
         return json.load(fh)["results"]
 
 
+WEAK_YEARS = ("2015", "2016", "2018", "2022")  # D18, from the base S4 windows
+
+
+def hypothesis_check(old: dict, new: dict) -> str:
+    """Which of the weak years the filter improved, by yearly return."""
+    better = [y for y in WEAK_YEARS if new[y]["return"] > old[y]["return"]]
+    worse = [y for y in WEAK_YEARS if y not in better]
+    parts = [
+        f"a îmbunătățit {', '.join(better)}" if better else "",
+        f"a înrăutățit {', '.join(worse)}" if worse else "",
+    ]
+    return f"Rezultat: dintre aceștia, filtrul {' și '.join(p for p in parts if p)}."
+
+
 def write_iteration_report() -> None:
     """reports/gate1_iteratia1.md: S4 with the SPY filter (D18) next to the base S4."""
     run = ITERATION_1
@@ -590,8 +604,9 @@ def write_iteration_report() -> None:
             "",
             "## An cu an (acțiuni fracționare)",
             "",
-            "Ipoteza din D18: anii slabi ai S4 (2015, 2016, 2018, 2022) au avut piața mult timp "
-            "sub SMA200, deci filtrul ar trebui să-i îmbunătățească fără să strice anii buni.",
+            "Ipoteza din D18: anii slabi ai S4 (" + ", ".join(WEAK_YEARS) + ") au avut piața mult "
+            "timp sub SMA200, deci filtrul ar trebui să-i îmbunătățească fără să strice anii buni. "
+            + hypothesis_check(old_years, {w["test_start"][:4]: w for w in n["windows"]}),
             "",
             "| An | Fără filtru | Cu filtru | Tranzacții fără / cu |",
             "|---|---|---|---|",
@@ -648,8 +663,8 @@ def write_iteration_report() -> None:
         "",
         "- **Schimbare aleasă după rezultate.** Filtrul a fost ales după ce am văzut Poarta 1 "
         "de bază (D18). De aceea: o singură schimbare, la o singură strategie, cu valoarea "
-        f"SMA{sma} folosită deja la S1–S3 (nu căutată), și aceleași praguri. Chiar și așa, un "
-        "PASS e mai puțin sigur decât pare.",
+        f"SMA{sma} folosită deja la S1–S3 (nu căutată), și aceleași praguri. Un PASS ar fi "
+        "fost deci mai puțin sigur decât pare; un FAIL e sigur.",
         "- **Survivorship bias**, ca în `reports/gate1.md`: universul e lista S&P 100 de azi, "
         "aplicată pe tot istoricul, deci rezultatele sunt mai bune decât ar fi fost în "
         "realitate.",

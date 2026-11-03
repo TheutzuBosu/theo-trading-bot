@@ -66,3 +66,8 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   praguri, ambele variante (D15), testul ±20% include și noul parametru. Regula de oprire, fixată acum: dacă S4 cu
   filtru pică, nu mai facem iterații (nici la S1–S3) și proiectul se oprește (D7). Dacă trece, PASS-ul rămâne
   suspect (survivorship bias, alegere după rezultate) și se confirmă doar la Poarta 2 (12 săptămâni paper).
+- **D19 (3.11.2026)** Rezultatul iterației 1 (D18, `reports/gate1_iteratia1.md`): S4 cu filtrul SPY pică Poarta 1 în
+  ambele variante. Fracționare: criteriile 2 (Sharpe 0.74 vs 0.85 SPY) și 6 (bate 84% din intrările aleatoare, nu
+  95%); acțiuni întregi: criteriile 2, 3, 4, 5 și 6. Filtrul aproape nu schimbă rezultatul (Sharpe 0.75 → 0.74).
+  Conform regulii de oprire fixate în D18 înainte de rulare: nicio altă iterație, proiectul se oprește (D7). Etapele
+  4–10 nu se mai fac. `reports/gate1.md` rămâne rezultatul de bază; `scripts/gate1.py --iteratia1` reproduce iterația.

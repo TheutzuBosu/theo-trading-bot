@@ -96,7 +96,7 @@ Fișierele de reguli (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `PROGRESS.md`, `doc
   tabel strategie vs SPY, PASS/FAIL pe fiecare din cele 7 criterii, testul ±20%, nota despre survivorship bias,
   grafice equity vs SPY în `reports/`. NU optimiza parametrii ca să treacă. Raport de 5 rânduri pentru proprietar.
   Dacă nicio strategie nu trece: te oprești și scrii asta clar.
-- [ ] **3c.** Iterația 1 (D18, cerută de proprietar după FAIL): S4 cu filtrul SPY > SMA(200), nimic altceva.
+- [x] **3c.** Iterația 1 (D18, cerută de proprietar după FAIL): S4 cu filtrul SPY > SMA(200), nimic altceva.
   `scripts/gate1.py --iteratia1` → `reports/gate1_iteratia1.md`, comparat cu S4 de bază; `reports/gate1.md` rămâne.
   Dacă pică, proiectul se oprește.
 
