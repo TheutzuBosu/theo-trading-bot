@@ -1,0 +1,28 @@
+{
+  "mode": "PAPER",
+  "is_sample": true,
+  "initial_capital": 500.0,
+  "equity": 510.12,
+  "total_pnl": 10.12,
+  "total_pnl_pct": 2.02,
+  "today_pnl": 2.64,
+  "today_pnl_pct": 0.52,
+  "current_drawdown_pct": 0.0,
+  "max_drawdown_pct": -0.48,
+  "updated_at": "2026-11-03T16:00:00-05:00",
+  "positions": [
+    {
+      "symbol": "SPY",
+      "direction": "long",
+      "entry_time": "2026-11-03 10:01:00-05:00",
+      "qty": 0.86,
+      "entry_price": 585.015,
+      "current_price": 586.90,
+      "stop": 584.20,
+      "initial_stop": 582.10,
+      "unrealized_pnl": 1.62,
+      "unrealized_r": 0.65,
+      "entry_reason": "D1: prețul SPY a ieșit deasupra benzii de zgomot de 14 zile la 10:00 ET."
+    }
+  ]
+}
