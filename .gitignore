@@ -1,0 +1,24 @@
+# Secrete: nu se urcă niciodată
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Date și rezultate locale
+data/cache/
+.cache/
+
+# Frontend
+node_modules/
+dashboard/.next/
+.vercel/
+
+# Local
+.DS_Store
+.claude/settings.local.json
