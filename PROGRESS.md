@@ -9,7 +9,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | # | Faza B | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
-| B1 | Date 1 minut + costuri | De făcut | faza-b1-date | Antigravity | |
+| B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | De făcut | faza-b2-backtester | Claude Code | |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 
@@ -29,15 +29,21 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-B0 e gata (D23, D24; `scripts/probe_alpaca_b0.py`, doar citire). Dacă PR-ul `faza-b-daytrading` → `main` nu e
-unit, se unește după CI verde. Apoi sub-pasul **B1 (Antigravity)**, branch `faza-b1-date` din `main` actualizat,
-după `docs/PLAN_DAYTRADING.md` și D23:
-1. Descarcă barele de 1 minut SPY și QQQ, feed SIP, 2016-01-04 → azi (fără ultimele 15 minute), doar sesiunea
-   9:30–16:00 ET; cache în `data/` (nu în git), o singură rulare, scriptul în `scripts/`.
-2. Validare: zile lipsă față de calendarul NYSE, sesiuni scurte, bare duplicate; teste offline cu un fixture mic.
-3. Modelul de costuri din plan (acțiuni SPY/QQQ și CFD US500 0,8 / US100 2,5 puncte) ca funcție pură, cu teste.
-4. Diferența SIP vs IEX (VWAP, preț de închidere pe minut) pe 2020-07 → azi, notată în DECISIONS.
-Fără cod de strategie în B1. Apoi B2 (Claude Code).
+B1 e gata (`reports/b1_date.md`, D25, D26; cache-ul de 1 minut SPY/QQQ SIP 2016–2026 și IEX 2020–2026 e în
+`data/cache/minute/`, încărcat cu `load_minute_bars` din `src/data/intraday.py`; costurile sunt în
+`src/backtest/intraday_costs.py`). Dacă PR-ul `faza-b1-date` → `main` nu e unit, se unește după CI verde.
+Apoi sub-pasul **B2 (Claude Code)**, branch `faza-b2-backtester` creat din `main` actualizat, după
+`docs/PLAN_DAYTRADING.md` și D24–D26:
+1. Motorul de backtest intraday minut-cu-minut (fără look-ahead: semnal pe bara închisă `t`, execuție la Open-ul barei
+   `t+1`), maximum 1 poziție pe instrument, închidere obligatorie la ultima bară a sesiunii (ține cont și de închiderile
+   la 13:00 sau sesiunile scurte din D26), suport pentru `long` și `short` + mod `long_only` (pentru Poarta 1 B conform D24).
+2. Integrarea modelului de costuri din `src/backtest/intraday_costs.py` (`stock` și `cfd`, plus stres ×1,5), filtrul
+   `trade_allowed` (se sar tranzacțiile cu riscul inițial < 2× costul dus-întors), mărimea poziției după ținta de
+   volatilitate plafonată la expunere (2× equity sau 1× în varianta long-only fără marjă) și raportarea riscului în R.
+3. Veto FOMC determinist (fără intrări ±30 min față de anunțurile FOMC 2016–2026, hard-codate) + testul cu direcție
+   aleatoare la aceeași oră și același stop + metrici intraday (expectancy în R, t-stat cu corecție Bonferroni N = 9,
+   Deflated Sharpe, profit factor, drawdown, zile cu pierdere > 2%). Toate testate offline pe fixture-ul de 1 minut.
+Fără strategiile D1/D1b/D2 în B2 (urmează în B3, tot Claude Code).
 
 ## Pentru proprietar
 
@@ -51,8 +57,8 @@ Fără cod de strategie în B1. Apoi B2 (Claude Code).
 
 ## Bug-uri cunoscute
 
-Niciunul. 118 teste pytest trecute offline.
+Niciunul. 143 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Faza B, sub-pasul B0: date Alpaca de 1 minut și short pe paper verificate (D23, D24).
+3 noiembrie 2026 · Antigravity · Faza B, sub-pasul B1 gata: date 1 minut descărcate și validate, raport SIP vs IEX (`reports/b1_date.md`), D25–D26.
