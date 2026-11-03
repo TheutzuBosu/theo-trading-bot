@@ -155,3 +155,7 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
     din cele N încercări reale); randament pe ani, zile cu pierdere > 2%, PF, drawdown.
   - Limita de pierdere zilnică (−2%) și KILL la −15% nu sunt în motor: țin de risk guard-ul din B5; B3 le vede în
     raport prin zilele cu pierdere > 2% și drawdown. Viteză: 2016–2026, SPY+QQQ (1,06 mil. bare) ≈ 2 s pe rulare.
+- **D28 (4.11.2026)** Decizia proprietarului: cât timp Claude e la limită, Antigravity lucrează înainte de B3 la
+  pașii care nu ating banii sau riscul: B6a (dashboard pe date de exemplu, Vercel) și B6b (alerte Telegram). Regula
+  din `AGENTS.md` rămâne: B3 (strategii, Poarta 1 B), B5 (risk guard, broker) și live-ul le face doar Claude Code.
+  Dacă Poarta 1 B pică, dashboard-ul și alertele rămân nefolosite (cost acceptat de proprietar).

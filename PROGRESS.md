@@ -12,6 +12,8 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27); PR deschis |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
+| B6a | Dashboard pe date de exemplu (Vercel) | De făcut | faza-b6a-dashboard | Antigravity | Mutat înainte de B3 (D28) |
+| B6b | Alerte Telegram | De făcut | faza-b6b-telegram | Antigravity | Mutat înainte de B3 (D28) |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -29,12 +31,29 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
+**Ordinea s-a schimbat (D28, 4.11.2026): Claude e la limită, deci urmează pașii Antigravity.** Antigravity face, în
+ordine, câte un sub-pas pe conversație:
+1. **Unește PR-ul #6** (`faza-b2-backtester` → `main`) după CI verde.
+2. **B6a · Dashboard pe date de exemplu** (Antigravity), branch `faza-b6a-dashboard` din `main` actualizat, după
+   `docs/PLAN.md` etapa 8, adaptat la Faza B: Next.js în `dashboard/`, proiect Vercel **nou** `theo-trading-bot`
+   (nu atinge alte proiecte), login cu `DASHBOARD_PASSWORD`. Bara de sus: PAPER, capital 500 $, profit total și azi,
+   drawdown. Graficul capitalului vs SPY cumpărat și ținut. Poziții deschise (SPY/QQQ, de când, profit, stop).
+   Jurnalul: un card pe tranzacție, cel mai nou sus: direcția, de ce a intrat (`entry_reason`), de ce a ieșit
+   (`exit_reason`), rezultatul în $ și în R. Datele de exemplu în `tests/fixtures/state/` (aceleași coloane ca
+   `TRADE_COLUMNS` din `src/backtest/intraday_engine.py`), cu eticheta vizibilă „date de exemplu”. Butonul KILL
+   apare, dar rămâne dezactivat („se conectează în B6”) până există procesul live. `npm run build` fără erori,
+   deploy, variabilele cu `vercel env add` din `.env`, linkul către proprietar.
+3. **B6b · Alerte Telegram** (Antigravity), branch `faza-b6b-telegram`: `src/alerts/telegram.py`, mesaje în română
+   (intrare: simbol, direcție, cantitate, stop, risc %, de ce; ieșire: P&L, R, motiv; rezumat zilnic; pierdere −2% pe
+   zi; KILL; eroare). Teste offline cu HTTP simulat; un singur mesaj de probă real către proprietar (chat ID din
+   `getUpdates`). Fără ordine, fără reguli de risc.
+4. Apoi **Antigravity se oprește**: B3 (strategiile, Poarta 1 B) și B5 (risk guard, broker) rămân DOAR Claude Code.
+   Proprietarul deschide Claude Code și scrie „preia” când are din nou usage. Pentru B3, planul de mai jos rămâne valabil.
+
 B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySignals`, `IntradayConfig`,
 `run_intraday`), `src/backtest/fomc.py` (veto ±30 min), `src/backtest/intraday_metrics.py` (`summarize_intraday`,
 `r_stats`, `deflated_sharpe`, `direction_outcomes`, `random_direction_test`); detectorul de look-ahead primește
-`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. Dacă PR-ul `faza-b2-backtester` → `main` (#6) nu e unit, se unește
-după CI verde: asta o poate face și Antigravity (4.11.2026, Claude e la limită). B3 rămâne DOAR Claude Code:
-după unire, Antigravity se oprește și se așteaptă Claude (în Faza B nu există altă etapă Antigravity deblocată). Apoi sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din `main` actualizat, după
+`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. PR-ul #6 se unește la pasul 1 de mai sus. După B6a și B6b, sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din `main` actualizat, după
 `docs/PLAN_DAYTRADING.md` și D24–D27:
 1. Înainte de orice rulare, în `docs/DECISIONS.md` (D28): Poarta 1 B fixată pe varianta long-only (`long_only=True`,
    `max_exposure=1.0`, fără marjă, D24), testul aleator long-only (candidații din rularea long+short), N = 9,
