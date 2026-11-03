@@ -12,7 +12,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
-| B6a | Dashboard pe date de exemplu (Vercel) | În lucru | faza-b6a-dashboard | Antigravity | App Next.js + fixture `tests/fixtures/state/` + build verde; așteaptă login Vercel pentru deploy |
+| B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | De făcut | faza-b6b-telegram | Antigravity | Mutat înainte de B3 (D28) |
 
 | # | Etapă | Status | Branch | Agent | Note |
@@ -31,24 +31,15 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**Ordinea s-a schimbat (D28, 4.11.2026): Claude e la limită, deci urmează pașii Antigravity.** Antigravity face, în
-ordine, câte un sub-pas pe conversație:
-1. **Unește PR-ul #6** (`faza-b2-backtester` → `main`) după CI verde.
-2. **B6a · Dashboard pe date de exemplu** (Antigravity), branch `faza-b6a-dashboard` din `main` actualizat, după
-   `docs/PLAN.md` etapa 8, adaptat la Faza B: Next.js în `dashboard/`, proiect Vercel **nou** `theo-trading-bot`
-   (nu atinge alte proiecte), login cu `DASHBOARD_PASSWORD`. Bara de sus: PAPER, capital 500 $, profit total și azi,
-   drawdown. Graficul capitalului vs SPY cumpărat și ținut. Poziții deschise (SPY/QQQ, de când, profit, stop).
-   Jurnalul: un card pe tranzacție, cel mai nou sus: direcția, de ce a intrat (`entry_reason`), de ce a ieșit
-   (`exit_reason`), rezultatul în $ și în R. Datele de exemplu în `tests/fixtures/state/` (aceleași coloane ca
-   `TRADE_COLUMNS` din `src/backtest/intraday_engine.py`), cu eticheta vizibilă „date de exemplu”. Butonul KILL
-   apare, dar rămâne dezactivat („se conectează în B6”) până există procesul live. `npm run build` fără erori,
-   deploy, variabilele cu `vercel env add` din `.env`, linkul către proprietar.
-3. **B6b · Alerte Telegram** (Antigravity), branch `faza-b6b-telegram`: `src/alerts/telegram.py`, mesaje în română
-   (intrare: simbol, direcție, cantitate, stop, risc %, de ce; ieșire: P&L, R, motiv; rezumat zilnic; pierdere −2% pe
-   zi; KILL; eroare). Teste offline cu HTTP simulat; un singur mesaj de probă real către proprietar (chat ID din
-   `getUpdates`). Fără ordine, fără reguli de risc.
-4. Apoi **Antigravity se oprește**: B3 (strategiile, Poarta 1 B) și B5 (risk guard, broker) rămân DOAR Claude Code.
-   Proprietarul deschide Claude Code și scrie „preia” când are din nou usage. Pentru B3, planul de mai jos rămâne valabil.
+**Ordinea s-a schimbat (D28, 4.11.2026): Claude e la limită, deci urmează pașii Antigravity.**
+- **Gata:** PR #6 (B2) unit în `main`; **B6a · Dashboard pe date de exemplu** gata și publicat pe Vercel la
+  `https://theo-trading-bot.vercel.app` (PR #7).
+- **Urmează acum — B6b · Alerte Telegram (Antigravity)**, branch `faza-b6b-telegram` creat din `main` actualizat:
+  `src/alerts/telegram.py`, mesaje în română (intrare: simbol, direcție, cantitate, stop, risc %, de ce; ieșire: P&L, R,
+  motiv; rezumat zilnic; pierdere −2% pe zi; KILL; eroare). Teste offline cu HTTP simulat; un singur mesaj de probă real
+  către proprietar (chat ID din `getUpdates`). Fără ordine, fără reguli de risc.
+- Apoi **Antigravity se oprește**: B3 (strategiile, Poarta 1 B) și B5 (risk guard, broker) rămân DOAR Claude Code.
+  Proprietarul deschide Claude Code și scrie „preia” când are din nou usage. Pentru B3, planul de mai jos rămâne valabil.
 
 B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySignals`, `IntradayConfig`,
 `run_intraday`), `src/backtest/fomc.py` (veto ±30 min), `src/backtest/intraday_metrics.py` (`summarize_intraday`,
@@ -81,4 +72,4 @@ Niciunul. 178 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6a: PR #6 (B2) unit în `main`; dashboard Next.js în `dashboard/` + date de exemplu în `tests/fixtures/state/` gata (`npm run build` și 178 teste verzi); așteaptă autentificarea Vercel pentru deploy.
+4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6a gata: PR #6 (B2) unit în `main`; dashboard Next.js publicat pe Vercel la `https://theo-trading-bot.vercel.app` (PR #7).
