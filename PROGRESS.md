@@ -7,7 +7,7 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 | 0 | Fundația | Gata | main | Antigravity | uv, Python 3.12, pyproject.toml, ruff, pytest, CI verde |
 | 1 | Date | Gata | etapa-1-date | Antigravity | Univers S&P 100, cache parquet/csv, drop_incomplete_bar, validate, loader daily & recent |
 | 2 | Backtester | Gata | etapa-2-backtester | Claude Code | Indicatori, motor bar-cu-bar, metrici, walk-forward, Monte Carlo, test aleator, detector look-ahead |
-| 3 | Strategii + Poarta 1 | De făcut | etapa-3-strategii | Claude Code | Decide dacă proiectul continuă |
+| 3 | Strategii + Poarta 1 | În lucru | etapa-3-strategii | Claude Code | Decide dacă proiectul continuă; S1–S4 |
 | 4 | Risk guard | De făcut | etapa-4-risc | Claude Code | |
 | 5 | Broker Alpaca paper | De făcut | etapa-5-broker | Claude Code | |
 | 6 | Stare, veto, post-mortem | De făcut | etapa-6-stare-ai | Antigravity | |
@@ -18,10 +18,11 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 ## Pasul următor exact
 
-Etapa 2 e gata pe `etapa-2-backtester` (de verificat CI-ul și PR-ul spre `main`). Apoi etapa 3 (Claude Code),
-pe branch-ul `etapa-3-strategii` creat din `main` actualizat:
-- 3a: `src/strategies/` (S1, S2, S3) după contractul de semnale din `src/backtest/panel.py`; parametrii în
-  `config/strategies.yaml`; teste pe scenarii construite de mână. Detalii în `docs/HANDOFF.md`.
+Etapa 2 e unită în `main` (PR #2). Etapa 3 (Claude Code), pe branch-ul `etapa-3-strategii`:
+- 3a (în lucru): indicatorul MACD(12,26,9) în `src/indicators.py`; `src/strategies/` cu S1, S2, S3, S4 ca funcții pure,
+  după contractul de semnale din `src/backtest/panel.py`; parametrii în `config/strategies.yaml`; teste pe scenarii
+  construite de mână.
+- 3b: Poarta 1 pe 2006–azi (walk-forward, Monte Carlo, test aleator), `reports/gate1.md`.
 
 ## Pentru proprietar
 
