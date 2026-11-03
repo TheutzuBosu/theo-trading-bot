@@ -8,10 +8,10 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 | # | Faza B | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
-| B0 | Broker + cont demo | În lucru | faza-b-daytrading | Claude Code | Date de 1 minut disponibile, short pe paper |
-| B1 | Date 1 minut + costuri | De făcut | faza-b-daytrading | Antigravity | |
-| B2 | Backtester intraday | De făcut | faza-b-daytrading | Claude Code | |
-| B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b-daytrading | Claude Code | |
+| B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
+| B1 | Date 1 minut + costuri | De făcut | faza-b1-date | Antigravity | |
+| B2 | Backtester intraday | De făcut | faza-b2-backtester | Claude Code | |
+| B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -29,12 +29,15 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-Faza A (acțiuni daily, etapele 0–3) s-a încheiat cu Poarta 1 = FAIL (D19). Proprietarul a pornit **Faza B: day
-trading pe CFD, doar demo** (D20). Specificația completă: `docs/PLAN_DAYTRADING.md`.
-1. Comite pe `main` modificările necomise din 3.11 (`docs/PLAN_DAYTRADING.md`, `docs/DECISIONS.md` D20, acest fișier).
-2. Sub-pasul **B0 (Claude Code)**, branch `faza-b-daytrading`: după `docs/PLAN_DAYTRADING.md` (D20–D22), pe
-   **Alpaca Paper** (cheile sunt deja în `.env`): verifică de la ce an sunt date de 1 minut SPY/QQQ pe planul
-   gratuit și dacă paper-ul permite short; notează în DECISIONS. Fără cod de strategie în B0. Apoi B1 (Antigravity).
+B0 e gata (D23, D24; `scripts/probe_alpaca_b0.py`, doar citire). Dacă PR-ul `faza-b-daytrading` → `main` nu e
+unit, se unește după CI verde. Apoi sub-pasul **B1 (Antigravity)**, branch `faza-b1-date` din `main` actualizat,
+după `docs/PLAN_DAYTRADING.md` și D23:
+1. Descarcă barele de 1 minut SPY și QQQ, feed SIP, 2016-01-04 → azi (fără ultimele 15 minute), doar sesiunea
+   9:30–16:00 ET; cache în `data/` (nu în git), o singură rulare, scriptul în `scripts/`.
+2. Validare: zile lipsă față de calendarul NYSE, sesiuni scurte, bare duplicate; teste offline cu un fixture mic.
+3. Modelul de costuri din plan (acțiuni SPY/QQQ și CFD US500 0,8 / US100 2,5 puncte) ca funcție pură, cu teste.
+4. Diferența SIP vs IEX (VWAP, preț de închidere pe minut) pe 2020-07 → azi, notată în DECISIONS.
+Fără cod de strategie în B1. Apoi B2 (Claude Code).
 
 ## Pentru proprietar
 
@@ -42,8 +45,9 @@ trading pe CFD, doar demo** (D20). Specificația completă: `docs/PLAN_DAYTRADIN
 - Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`. Botul nu a plasat niciun ordin și nu va plasa.
 - Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
 - Decis (3.11.2026): după Poarta 1 = FAIL, o singură iterație, aleasă de agent: S4 + filtru SPY (D18). Dacă pică, ne oprim.
-- Rezultat (3.11.2026): iterația 1 a picat (D19), deci proiectul se oprește. Cheile din `.env` și din GitHub/Vercel
-  pot fi șterse sau dezactivate de proprietar când vrea; nimic nu le mai folosește.
+- Rezultat (3.11.2026): iterația 1 a picat (D19), deci Faza A s-a oprit. Proprietarul a pornit Faza B (D20–D22).
+- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci
+  demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (fixată în B3 înainte de rulare).
 
 ## Bug-uri cunoscute
 
@@ -51,4 +55,4 @@ Niciunul. 118 teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Etapa 3c (iterația 1): S4 cu filtru SPY = FAIL; proiect oprit (D19).
+3 noiembrie 2026 · Claude Code · Faza B, sub-pasul B0: date Alpaca de 1 minut și short pe paper verificate (D23, D24).
