@@ -222,3 +222,34 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
     sub jumătate din cel cu semnale SIP pe aceeași fereastră, demo-ul (B6) folosește VWAP ancorat din SIP (D26).
   - Găsite la 4.11.2026, necitite: „Out-of-Sample Evaluation of an Intraday Momentum Strategy” (SSRN 7290621) și o
     replicare independentă, „'Beat the Market' Revisited” (SSRN 7323419). Nu schimbă regulile de mai sus.
+- **D29b (4.11.2026, B3, înainte de orice rulare D1b)** Parametrii D1b, din Maróy 2025 (PDF SSRN 5095349 adus de
+  proprietar, `.cache/papers/maroy2025.pdf`, nu în git). Ce spune paper-ul: optimizare Optuna a tuturor parametrilor
+  (Sharpe + Alpha) **doar pe QQQ**, 1.10.2014 → 1.10.2024, bare de 1 secundă, fără test out-of-sample (secț. 5);
+  „VWAP & Ladder” = ieșire la atingerea VWAP + ladder pe 2 trepte cu ieșire parțială 50% + ieșire la oră (secț. 4.2,
+  4.5); pragurile sunt multipli ai lui r = 2% din AUM (secț. 5, Tabelul 8). Corectură la D29: nu există valori pentru
+  SPY; valorile QQQ se aplică pe SPY și QQQ.
+  - **Setul ales: „VWAP & Ladder #1”** (Tabelul 11), fixat pentru că are Sharpe-ul cel mai mare dintre cele două
+    (3,08 față de 2,64, Tabelul 7). Setul #2 nu se testează. Valori: L = 4 zile, m = 1,33, σ_target = 0,025, prima
+    verificare la 42 de minute după deschidere, apoi la fiecare 46 de minute (închiderile barelor 10:11, 10:57, 11:43,
+    12:29, 13:15, 14:01, 14:47), ieșire la oră cu 30 de minute înainte de închidere (Open-ul barei de 15:30; 12:30 la
+    închiderile de la 13:00), fără intrări după ea; ladder: stop_0 = −0,41·r, stop_1 = −0,28·r, take_profit_0 = +2,2·r,
+    take_profit_1 = +37,08·r (nerealizabil, nota din Tabelul 8; nu se implementează).
+  - **Intrare:** ca D1 (Close > UB și Close > VWAP la verificare), cu L, m și orele de mai sus; reintrare permisă
+    (Figura 4b).
+  - **Ladder în prețuri:** la Maróy, r = 2% din AUM împărțit la numărul de acțiuni; cu sizing-ul lui (marjă 4× AUM ×
+    min(1, σ_target/σ), ec. 3–5) asta înseamnă r = Close_semnal × 0,005 / min(1, 0,025/σ), σ = deviația standard
+    (ec. 4, cu 1/L) a ultimelor L = 4 randamente zilnice. Pragurile se fixează în preț față de Close-ul barei de
+    semnal, deci ieșirile cad la aceleași mișcări de preț ca în paper, indiferent de sizing-ul nostru. Exemplu cu
+    σ ≤ 2,5%: stop la −0,205%, stop_1 la −0,14%, țintă la +1,1%.
+  - **Ieșiri:** stop la broker = max(stop_0, VWAP-ul barei închise), actualizat la fiecare minut și doar în sus (VWAP-ul
+    scade doar cât prețul e sub el, deci după ieșire); declanșat în bară. La take_profit_0, jumătate din poziție
+    (`target_fraction=0.5`) iese la țintă și stop-ul trece la max(stop_1, VWAP). R = distanța de la intrare la stop-ul
+    inițial (riscul real). Sizing: `size` = 0,5 × min(1, 0,025/σ), plafon de risc 0,5%, ca în D29.
+  - **Abateri:** bare de 1 minut în loc de 1 secundă (intrarea pe Close-ul verificării, nu pe High), execuție la
+    Open-ul barei următoare, expunere ≤ 1× în loc de 4×, costurile D25.
+  - **Condiție în plus pentru D1b (înăsprire, scrisă înainte de rulare):** parametrii au fost optimizați pe QQQ
+    într-o perioadă care acoperă 2018-01 → 2024-09 din fereastra noastră OOS, deci acolo rezultatul D1b e parțial
+    in-sample. D1b trece doar dacă, pe lângă cele 7 criterii, are expectancy net > 0 și pe perioada nevăzută de autor,
+    1.10.2024 → 30.10.2026 (SPY + QQQ, varianta judecată).
+  - ±20% (criteriul 6): fiecare dintre L (rotunjit: 3 și 5), m, σ_target, minutele de start, frecvența, minutele
+    dinaintea închiderii, stop_0, stop_1 și take_profit_0, pe rând; constrângerile din ec. 6 rămân respectate.

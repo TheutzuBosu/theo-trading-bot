@@ -11,7 +11,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
-| B3 | D1, D1b, D2 + Poarta 1 B | În lucru | faza-b3-strategii | Claude Code | B3.1 gata: D29 (Poarta 1 B, reguli D1/D2) pre-înregistrat; parametrii D1b așteaptă PDF-ul Maróy |
+| B3 | D1, D1b, D2 + Poarta 1 B | În lucru | faza-b3-strategii | Claude Code | B3.1 gata: D29 + D29b (Poarta 1 B, reguli D1/D1b/D2) pre-înregistrate; urmează B3.2 (cod) |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 
@@ -31,26 +31,26 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**B3.1 e gata: D29 din `docs/DECISIONS.md` fixează, înainte de orice rulare, Poarta 1 B (long-only, 7 criterii,
-N = 9, OOS 2018-01 → 2026-10), regulile D1 și D2 (din paper-e și din codul publicat de autori), calibrarea lunară D1
-(L și m) și stop-ul la broker = LB.** Lipsesc doar parametrii D1b: PDF-ul Maróy 2025 (SSRN 5095349) e blocat pentru
-agent (verificare anti-bot SSRN, ResearchGate cu plată), deci îl descarcă proprietarul (vezi „Pentru proprietar”).
+**B3.1 e gata.** `docs/DECISIONS.md` fixează, înainte de orice rulare: D29 (Poarta 1 B long-only, 7 criterii, N = 9,
+OOS 2018-01 → 2026-10, regulile D1 și D2, calibrarea lunară D1 pe L și m, stop la broker = LB) și D29b (D1b = „VWAP &
+Ladder #1” din Maróy 2025, optimizat de autor doar pe QQQ 2014–2024, plus condiția în plus: expectancy > 0 pe
+1.10.2024 → 30.10.2026). PDF-ul Maróy e în `.cache/papers/maroy2025.pdf` (text: `maroy2025.txt`), nu în git.
 
-Sub-pasul următor, **B3.2 (DOAR Claude Code)**, pe branch-ul `faza-b3-strategii`:
-1. Dacă există `~/Downloads/maroy2025.pdf` (sau alt PDF Maróy în `~/Downloads`): îl copiezi în `.cache/papers/`
-   (nu în git), citești secțiunile cu ieșirile și rezultatele optimizării și scrii **D29b** cu parametrii D1b
-   (L, m, frecvența verificărilor, pragul „Ladder”, cum se definește revenirea la VWAP), cu secțiunile citate.
-   Dacă PDF-ul lipsește, faci punctele 2–3 doar pentru D1 și D2; D1b așteaptă (fără rulări D1b).
-2. `src/strategies/intraday_d1.py` și `intraday_d2.py` (funcții pure, cadre cu `SIGNAL_COLUMNS` + `entry_reason`),
-   exact după D29: banda de zgomot, VWAP din `vwap`·`volume`, verificări pe barele 9:59, 10:29 … 15:29, sizing,
-   stop = LB. Ieșirea D1 depinde de direcție: adaugi în motor coloanele opționale `exit_long` / `exit_short`
-   (`exit` rămâne pentru ambele) și verifici că un flip (ieșire + intrare inversă la același Open) merge.
-3. Teste offline în `tests/`: reguli pe date sintetice mici (banda, verificări, doji, țintă 10R, sizing) și testul
-   de look-ahead (`src/backtest/lookahead.py`, `columns=SIGNAL_COLUMNS`) pe fixture-ul de 1 minut.
+Sub-pasul următor, **B3.2 (DOAR Claude Code)**, pe branch-ul `faza-b3-strategii`, fără nicio rulare pe datele reale:
+1. Motor (`src/backtest/intraday_engine.py`), extensii opționale, cu teste: coloanele de semnal `exit_long` /
+   `exit_short` (ieșire doar pentru poziția din acea direcție; `exit` rămâne pentru ambele) și `stop_after_target`
+   (stop-ul nou după ieșirea parțială la țintă, doar în sus). Verifici că un flip (ieșire + intrare inversă la
+   același Open) merge.
+2. `src/strategies/intraday_d1.py`: banda de zgomot (σ pe minutul zilei, L sesiuni, UB/LB cu Close_ieri), VWAP de
+   sesiune din `vwap`·`volume`, σ zilnic, orele de verificare (D1: barele 9:59 … 15:29; D1b: 10:11, 10:57 … 14:47),
+   semnalele D1 (D29) și D1b (D29b: ladder în prețuri, stop = max(stop_0, VWAP) actualizat la minut, ieșire la 15:30).
+   `src/strategies/intraday_d2.py`: ORB 5 minute (D29). Funcții pure, cadre cu `SIGNAL_COLUMNS` + `entry_reason`.
+3. Teste offline în `tests/`: reguli pe date sintetice mici (banda, verificări, VWAP, doji, țintă 10R, ladder,
+   sizing) și testul de look-ahead (`src/backtest/lookahead.py`, `columns=SIGNAL_COLUMNS`) pe fixture-ul de 1 minut.
    Apoi `scripts/check_fast.sh`, `PROGRESS.md`, commit, push.
 
-După B3.2: **B3.3** walk-forward lunar + rulările OOS + testul aleator + ±20% + IEX, apoi `reports/gate1_daytrading.md`
-cu toate cele 7 criterii din D29. Dacă nu trec toate: Faza B se oprește.
+După B3.2: **B3.3** walk-forward lunar + rulările OOS + testul aleator + ±20% + IEX + condiția D1b, apoi
+`reports/gate1_daytrading.md` cu toate criteriile din D29/D29b. Dacă nu trec toate: Faza B se oprește.
 
 ## Pentru proprietar
 
@@ -61,13 +61,7 @@ cu toate cele 7 criterii din D29. Dacă nu trec toate: Faza B se oprește.
 - Rezultat (3.11.2026): iterația 1 a picat (D19), deci Faza A s-a oprit. Proprietarul a pornit Faza B (D20–D22).
 - Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci
   demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (fixată în B3 înainte de rulare).
-- **De făcut (4.11.2026): descarcă paper-ul Maróy pentru D1b.** Agentul nu-l poate lua singur (SSRN cere verificare
-  „nu sunt robot”). Pașii:
-  1. Deschide în Chrome: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5095349
-  2. Dacă apare „Verify you are human”, bifează căsuța.
-  3. Apasă butonul albastru „Download This Paper”. Dacă cere cont SSRN, fă-ți unul gratuit (sau intră cu Google).
-  4. Fișierul ajunge în folderul Downloads. Redenumește-l `maroy2025.pdf` (click dreapta → Rename).
-  Dacă nu reușești, spune-i agentului: D1b se abandonează (D29), iar D1 și D2 merg mai departe.
+- Rezolvat (4.11.2026): proprietarul a adus PDF-ul Maróy; parametrii D1b sunt fixați în D29b.
 
 ## Bug-uri cunoscute
 
@@ -75,4 +69,4 @@ Niciunul. 185 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Claude Code · Faza B, sub-pasul B3.1 gata: D29 (Poarta 1 B, reguli D1/D2, calibrare, stop la broker) pre-înregistrat în `docs/DECISIONS.md`. Urmează B3.2 (strategiile în cod); D1b așteaptă PDF-ul Maróy.
+4 noiembrie 2026 · Claude Code · Faza B, sub-pasul B3.1 gata: D29 și D29b (Poarta 1 B, reguli D1, D1b, D2, calibrare, stop la broker) pre-înregistrate în `docs/DECISIONS.md`. Urmează B3.2 (strategiile în cod).
