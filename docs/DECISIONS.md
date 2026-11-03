@@ -130,3 +130,28 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
     deviază la p95 cu 7–12 pb din cauza volumului mic de pe o singură bursă. În B3 se verifică pe 2020–2026 dacă D1/D1b
     își păstrează rezultatul când semnalele vin din IEX; în B6 (live pe demo), VWAP-ul de sesiune se poate ancora din
     SIP pentru partea de zi mai veche de 15 minute + IEX doar pe ultimele 15 minute (permis pe planul gratuit).
+- **D27 (3.11.2026, B2)** Backtesterul intraday (`src/backtest/intraday_engine.py`, `fomc.py`, `intraday_metrics.py`):
+  - Semnal pe bara de 1 minut închisă `t`, execuție la Open-ul barei următoare a simbolului, în aceeași sesiune.
+    Stop și țintă pe High/Low; ambele atinse în aceeași bară → stop (worst case); gap peste stop → ieșire la Open.
+    La ultima bară disponibilă a sesiunii (15:59, 12:59 la închiderile de la 13:00, mai devreme dacă lipsesc bare,
+    D26) totul se închide la Close (ordin market-on-close). Ordinele nu trec peste noapte; semnalele de pe ultima bară
+    se ignoră. O singură poziție pe simbol; stop-ul doar se strânge (trailing), nu se lărgește niciodată.
+  - Sizing: `size` din semnal (ținta de volatilitate, ca fracțiune din equity) sau risc 0,5%, plafonat la expunerea
+    totală `max_exposure` (2× equity; 1× pentru long-only fără marjă, D24); plafon opțional de risc pe tranzacție.
+    Riscul rezultat se raportează pe fiecare tranzacție (`risk_pct`), rezultatul în R față de Open-ul de intrare.
+    Ținta parțială pentru D1b: `target_fraction` (o parte la țintă, restul pe stop sau la final de zi).
+  - Veto FOMC: 88 de anunțuri în sesiune 2016–2026 (14:00 ET; plus anunțul neprogramat din 2020-03-03, 10:00),
+    2021–2026 verificate pe federalreserve.gov la 3.11.2026, 2016–2020 din calendarele istorice ale Fed. Fără intrări
+    cu Open-ul între 30 de minute înainte și 30 de minute după anunț. Veto-ul de spread (2× spread-ul tipic) rămâne
+    pentru live: backtestul nu are cotații bid/ask.
+  - Testul cu direcție aleatoare: fiecare tranzacție se reia long și short din aceeași bară și același Open, cu
+    stop fix la distanța inițială (oglindit) și ieșire la stop sau la închiderea sesiunii, pentru ambele direcții.
+    Prima variantă păstra ora reală de ieșire, aleasă de stop-ul direcției originale, și dezavantaja direcția opusă:
+    o strategie cu direcție la întâmplare „bătea” testul în 99% din rulări. După corecție, 8 strategii aleatoare pe
+    SPY+QQQ 2016–2026 dau între 20% și 89% (niciuna ≥ 95%). Pentru long-only (D24): moneda se aruncă pe candidații
+    rulării long+short și se păstrează doar long-urile.
+  - Metrici: expectancy în R cu t-stat unilateral (aproximare normală, ≥ 300 de tranzacții) și p ajustat Bonferroni
+    ×9; Deflated Sharpe pe randamentele zilnice cu N = 9 și varianța Sharpe-urilor 1/(T−1) implicit (B3 o poate da
+    din cele N încercări reale); randament pe ani, zile cu pierdere > 2%, PF, drawdown.
+  - Limita de pierdere zilnică (−2%) și KILL la −15% nu sunt în motor: țin de risk guard-ul din B5; B3 le vede în
+    raport prin zilele cu pierdere > 2% și drawdown. Viteză: 2016–2026, SPY+QQQ (1,06 mil. bare) ≈ 2 s pe rulare.
