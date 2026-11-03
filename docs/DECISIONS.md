@@ -40,3 +40,7 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   Când mai multe intrări vin în aceeași zi, ordinea e dată de `score` (S1 forța breakout-ului în ATR, S2 momentum,
   S3 RSI cel mai mic, S4 histograma MACD în ATR); nu e un parametru optimizat. Parametrii sunt validați strict
   (cheie necunoscută în YAML → eroare); citirea YAML-ului cu `pyyaml`.
+- **D15 (3.11.2026)** Poarta 1 se rulează în două variante, la `BOT_CAPITAL=500`: acțiuni fracționare și acțiuni
+  întregi (`whole_shares=True`); `reports/gate1.md` arată ambele. Motiv: dacă Alpaca nu acceptă bracket (stop la
+  broker) pe fracționare, live se pot cumpăra doar acțiuni întregi și multe titluri scumpe ar fi sărite. Decis de
+  proprietar.

@@ -25,13 +25,13 @@ Etapa 3 (Claude Code), pe branch-ul `etapa-3-strategii`:
   cache în `data/cache/`); pentru fiecare strategie: `walk_forward`, `monte_carlo`, `random_entry_test` (500) și
   testul ±20% (`load_strategy(name, overrides=...)`); `reports/gate1.md` cu PASS/FAIL pe cele 7 criterii, SPY,
   nota despre survivorship bias, grafice equity vs SPY în `reports/`. NU optimizezi parametrii. Rezultatele lungi
-  în `.cache/`. Întâi: decizia proprietarului despre acțiuni întregi vs fracționare (vezi „Pentru proprietar”).
+  în `.cache/`. Rulezi Poarta 1 în ambele variante, fracționare și acțiuni întregi (`whole_shares=True`), D15.
 
 ## Pentru proprietar
 
 - Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
 - Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
-- De decis înainte de Poarta 1: acțiuni întregi vs fracționare la 500 $ (vezi `docs/HANDOFF.md`, Blocaje).
+- Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
 
 ## Bug-uri cunoscute
 

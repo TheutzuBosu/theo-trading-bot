@@ -48,10 +48,9 @@
 
 ## Blocaje
 - Niciun blocaj tehnic.
-- **De decis înainte de Poarta 1 (proprietarul):** cu 500 $ și risc 0.5%, riscul pe tranzacție e 2,5 $. Dacă Alpaca
-  nu permite ordine bracket (cu stop la broker) pe acțiuni fracționare, botul poate cumpăra doar acțiuni întregi, iar
-  multe titluri mari (peste ~100 $) ar fi sărite. Backtesterul suportă ambele variante (`whole_shares`); etapa 5
-  verifică regula Alpaca.
+- **Decis de proprietar (3.11.2026, D15):** Poarta 1 se rulează în ambele variante, cu acțiuni fracționare și cu
+  acțiuni întregi (`BacktestConfig(whole_shares=True)`), la 500 $. Motiv: dacă Alpaca nu permite bracket (stop la
+  broker) pe fracționare, botul va putea cumpăra doar acțiuni întregi; etapa 5 verifică regula Alpaca.
 
 ## Status teste
 - `scripts/check.sh`: **PASS** local (uv sync locked, ruff check, ruff format check, pytest: 106 passed, offline).
