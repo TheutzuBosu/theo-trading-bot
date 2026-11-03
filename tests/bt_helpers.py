@@ -47,3 +47,26 @@ def random_walk(n: int, seed: int, start="2015-01-02", drift=0.0003, vol=0.015) 
     df.index = pd.bdate_range(start, periods=n)
     df["volume"] = 1_000_000.0
     return df
+
+
+def minute_bars(rows, start="2026-01-05 09:30") -> pd.DataFrame:
+    """rows of (open, high, low, close) -> 1-minute bars in New York time from `start`."""
+    df = pd.DataFrame(rows, columns=["open", "high", "low", "close"], dtype=float)
+    df.index = pd.date_range(
+        pd.Timestamp(start, tz="America/New_York"), periods=len(df), freq="min"
+    )
+    df["volume"] = 1000.0
+    return df
+
+
+def minute_signals(index, entries=None, **columns) -> pd.DataFrame:
+    """Intraday signals: entries {row: (direction, stop)}; other columns as {row: value}."""
+    frame = pd.DataFrame({"entry": 0, "stop": np.nan}, index=index)
+    for row, (direction, stop) in (entries or {}).items():
+        frame.iloc[row, 0] = direction
+        frame.iloc[row, 1] = stop
+    for name, values in columns.items():
+        frame[name] = False if name == "exit" else np.nan
+        for row, value in values.items():
+            frame.iloc[row, frame.columns.get_loc(name)] = value
+    return frame

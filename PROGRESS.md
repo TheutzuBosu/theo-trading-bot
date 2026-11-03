@@ -10,7 +10,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 |---|---|---|---|---|---|
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
-| B2 | Backtester intraday | De făcut | faza-b2-backtester | Claude Code | |
+| B2 | Backtester intraday | În lucru | faza-b2-backtester | Claude Code | Motor minut-cu-minut + costuri + sizing + veto FOMC gata (`src/backtest/intraday_engine.py`, `fomc.py`); urmează metricile și testul aleator |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 
 | # | Etapă | Status | Branch | Agent | Note |
