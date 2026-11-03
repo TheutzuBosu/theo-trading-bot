@@ -87,6 +87,11 @@ def _standardize_dataframe(df: pd.DataFrame, symbol: str | None = None) -> pd.Da
     return clean_df
 
 
+def yahoo_symbol(symbol: str) -> str:
+    """Symbol as yfinance knows it: class shares use '-' (BRK.B -> BRK-B), Alpaca uses '.'."""
+    return symbol.replace(".", "-")
+
+
 def _get_default_start_date(years: int = DEFAULT_HISTORY_YEARS) -> str:
     """Return default start date string N years ago."""
     now = dt.datetime.now(NY_TZ)
@@ -142,7 +147,7 @@ def load_daily(
                     df = df[df.index <= pd.to_datetime(end_str)]
 
         if df is None or df.empty:
-            ticker = yf.Ticker(sym)
+            ticker = yf.Ticker(yahoo_symbol(sym))
             raw = ticker.history(
                 start=start_str,
                 end=end_str,

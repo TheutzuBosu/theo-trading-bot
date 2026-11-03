@@ -12,6 +12,14 @@ class DataValidationError(ValueError):
 
 
 REQUIRED_COLUMNS = ["open", "high", "low", "close", "volume"]
+# OHLC differences below this relative size are float rounding from the yfinance dividend/split
+# adjustment (e.g. high=28.8222541809082 vs close=28.822254180908203), not bad data.
+PRICE_RTOL = 1e-9
+
+
+def _below(df: pd.DataFrame, a: str, b: str) -> pd.DataFrame:
+    """Rows where column `a` is below column `b` by more than the rounding tolerance."""
+    return df[df[a] < df[b] * (1.0 - PRICE_RTOL)]
 
 
 def validate(
@@ -97,35 +105,35 @@ def validate(
         raise DataValidationError(f"{prefix}Negative volume found: value {bad_val} on {bad_date}")
 
     # High / Low price consistency
-    bad_hl = df[df["high"] < df["low"]]
+    bad_hl = _below(df, "high", "low")
     if not bad_hl.empty:
         d = bad_hl.index[0].strftime("%Y-%m-%d")
         h_val = bad_hl["high"].iloc[0]
         l_val = bad_hl["low"].iloc[0]
         raise DataValidationError(f"{prefix}High < Low on {d}: high={h_val}, low={l_val}")
 
-    bad_ho = df[df["high"] < df["open"]]
+    bad_ho = _below(df, "high", "open")
     if not bad_ho.empty:
         d = bad_ho.index[0].strftime("%Y-%m-%d")
         h_val = bad_ho["high"].iloc[0]
         o_val = bad_ho["open"].iloc[0]
         raise DataValidationError(f"{prefix}High < Open on {d}: high={h_val}, open={o_val}")
 
-    bad_hc = df[df["high"] < df["close"]]
+    bad_hc = _below(df, "high", "close")
     if not bad_hc.empty:
         d = bad_hc.index[0].strftime("%Y-%m-%d")
         h_val = bad_hc["high"].iloc[0]
         c_val = bad_hc["close"].iloc[0]
         raise DataValidationError(f"{prefix}High < Close on {d}: high={h_val}, close={c_val}")
 
-    bad_lo = df[df["low"] > df["open"]]
+    bad_lo = _below(df, "open", "low")
     if not bad_lo.empty:
         d = bad_lo.index[0].strftime("%Y-%m-%d")
         l_val = bad_lo["low"].iloc[0]
         o_val = bad_lo["open"].iloc[0]
         raise DataValidationError(f"{prefix}Low > Open on {d}: low={l_val}, open={o_val}")
 
-    bad_lc = df[df["low"] > df["close"]]
+    bad_lc = _below(df, "close", "low")
     if not bad_lc.empty:
         d = bad_lc.index[0].strftime("%Y-%m-%d")
         l_val = bad_lc["low"].iloc[0]

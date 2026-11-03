@@ -62,6 +62,18 @@ def test_load_daily_with_mocked_yfinance(sample_df, tmp_path, mocker):
     assert len(cached_df) == 5
 
 
+def test_load_daily_asks_yfinance_for_dashed_class_shares(sample_df, tmp_path, mocker):
+    mock_ticker = MagicMock()
+    mock_ticker.history.return_value = sample_df
+    ticker = mocker.patch("yfinance.Ticker", return_value=mock_ticker)
+
+    df = load_daily("BRK.B", use_cache=True, cache_dir=tmp_path)
+    ticker.assert_called_once_with("BRK-B")
+    assert len(df) == 5
+    # cached under the Alpaca symbol
+    assert len(load_daily("BRK.B", use_cache=True, cache_dir=tmp_path)) == 5
+
+
 def test_load_daily_multi_symbol(sample_df, tmp_path):
     save_to_cache("AAPL", sample_df, format="parquet", custom_dir=tmp_path)
     save_to_cache("MSFT", sample_df, format="parquet", custom_dir=tmp_path)

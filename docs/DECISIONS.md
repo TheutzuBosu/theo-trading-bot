@@ -44,3 +44,7 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   întregi (`whole_shares=True`); `reports/gate1.md` arată ambele. Motiv: dacă Alpaca nu acceptă bracket (stop la
   broker) pe fracționare, live se pot cumpăra doar acțiuni întregi și multe titluri scumpe ar fi sărite. Decis de
   proprietar.
+- **D16 (3.11.2026)** Date (etapa 3b): validarea OHLC tolerează diferențe relative sub 1e-9 (rotunjiri float din
+  ajustarea yfinance, de ex. high=28.8222541809082 vs close=28.822254180908203), altfel 70 de simboluri erau
+  respinse. Universul: BK → BNY (BNY Mellon și-a schimbat simbolul, aceeași companie). Simbolurile cu punct se cer
+  la yfinance cu cratimă (BRK.B → BRK-B); în cache și la Alpaca rămân cu punct.
