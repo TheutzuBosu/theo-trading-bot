@@ -56,3 +56,13 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   Criteriul 6: 500 de rulări cu intrări aleatoare pe perioada OOS (backtest continuu), comparate după Sharpe
   (aceeași măsură ajustată la risc ca ținta D7); celelalte măsuri apar doar informativ. Criteriul 7 pe tranzacțiile
   OOS. Se rulează la 500 $, în ambele variante (D15). Graficele cer `matplotlib` (dependență doar de dezvoltare).
+- **D18 (3.11.2026)** Iterația 1 după Poarta 1 = FAIL. Cerută de proprietar, care a lăsat alegerea agentului. O
+  singură schimbare, la o singură strategie: S4 primește filtrul de piață SPY > SMA(200), același ca la S1, S2 și
+  S3 (parametru nou `spy_filter: 200`, aceeași valoare ca la celelalte, nu căutată). Restul parametrilor S4 rămân
+  la fel. Motiv: S4 are cel mai bun Sharpe OOS (0.75) și trece criteriile 1, 3, 4, 5 și 7. Ipoteza: o încrucișare
+  MACD sub zero e o corecție într-un trend sănătos când piața urcă, dar mai des un rally care eșuează când piața
+  scade (SPY sub SMA200); majoritatea anilor OOS negativi ai S4 (2015, 2016, 2018, 2022) au avut piața mult timp
+  sub SMA200. Alegerea e influențată de rezultatele văzute, deci: o singură schimbare, aceleași 7 criterii și
+  praguri, ambele variante (D15), testul ±20% include și noul parametru. Regula de oprire, fixată acum: dacă S4 cu
+  filtru pică, nu mai facem iterații (nici la S1–S3) și proiectul se oprește (D7). Dacă trece, PASS-ul rămâne
+  suspect (survivorship bias, alegere după rezultate) și se confirmă doar la Poarta 2 (12 săptămâni paper).

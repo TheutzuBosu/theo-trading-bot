@@ -7,8 +7,8 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 | 0 | Fundația | Gata | main | Antigravity | uv, Python 3.12, pyproject.toml, ruff, pytest, CI verde |
 | 1 | Date | Gata | etapa-1-date | Antigravity | Univers S&P 100, cache parquet/csv, drop_incomplete_bar, validate, loader daily & recent |
 | 2 | Backtester | Gata | etapa-2-backtester | Claude Code | Indicatori, motor bar-cu-bar, metrici, walk-forward, Monte Carlo, test aleator, detector look-ahead |
-| 3 | Strategii + Poarta 1 | Gata | etapa-3-strategii | Claude Code | Poarta 1: FAIL, nicio strategie nu trece (`reports/gate1.md`) |
-| 4 | Risk guard | Blocat | etapa-4-risc | Claude Code | Așteaptă decizia proprietarului după Poarta 1 |
+| 3 | Strategii + Poarta 1 | În lucru | etapa-3-strategii | Claude Code | Poarta 1: FAIL (`reports/gate1.md`); iterația 1 pe S4 (D18) |
+| 4 | Risk guard | Blocat | etapa-4-risc | Claude Code | Așteaptă rezultatul iterației 1 (D18) |
 | 5 | Broker Alpaca paper | De făcut | etapa-5-broker | Claude Code | |
 | 6 | Stare, veto, post-mortem | De făcut | etapa-6-stare-ai | Antigravity | |
 | 7 | Rulare zilnică + Telegram | De făcut | etapa-7-rulare | Antigravity + review Claude Code | |
@@ -18,21 +18,26 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 ## Pasul următor exact
 
-Etapa 3 e gata pe `etapa-3-strategii` (3a strategiile, 3b Poarta 1); PR spre `main`.
-**Poarta 1: nicio strategie nu trece**, în nicio variantă (`reports/gate1.md`). Toate pică criteriul 2: Sharpe OOS
-0.60–0.75 față de 0.85 la SPY (prag 1.05); 500 $ din 2009 → 1.195 $ cu S1, 5.563 $ cu SPY. S3 pierde bani.
-Conform planului (D7) ne oprim: **nu se începe etapa 4** până nu decide proprietarul:
-- fie oprim proiectul aici;
-- fie aprobă o iterație documentată (maximum 2 per strategie, interdicția 6): motivul se scrie în
-  `docs/DECISIONS.md` ÎNAINTE de rulare, apoi `scripts/gate1.py` din nou (datele sunt în `data/cache/`;
-  `PYTHONPATH=. uv run python scripts/download_history.py` le reface). NU se ajustează parametrii după rezultate.
+Etapa 3 (Claude Code), pe `etapa-3-strategii`; PR #3 spre `main` rămâne deschis până la finalul iterației.
+Poarta 1 de bază: FAIL pentru S1–S4 (`reports/gate1.md`, rămâne ca referință). Proprietarul a cerut o iterație și a
+lăsat alegerea agentului: **D18**, S4 + filtrul SPY > SMA(200). Sub-pasul **3c (următorul)**:
+1. `src/strategies/s4_macd_ema200.py`: parametru nou `spy_filter: int`; intrarea cere în plus
+   `benchmark_uptrend(spy, df.index, params.spy_filter)` (din `common.py`, ca la S1/S3); motivul intrării
+   pomenește filtrul; docstring-ul notează D18. `config/strategies.yaml`: S4 `spy_filter: 200`. Teste în
+   `tests/test_strategies.py`: S4 cere SPY, iar SPY sub SMA blochează intrările. Nimic altceva nu se schimbă.
+2. `scripts/gate1.py`: opțiune de a rula doar S4 și de a scrie `reports/gate1_iteratia1.md` (+ grafice și JSON cu
+   același sufix), fără să suprascrie `reports/gate1.md`. Aceleași 7 criterii, ambele variante, 500 aleatoare,
+   ±20% (include `spy_filter` 160/240). Datele sunt în `data/cache/`; rularea ~5 min, în fundal, log în `.cache/`.
+3. `scripts/check.sh`, PROGRESS, commit, push; corpul PR #3 actualizat cu rezultatul; unire după CI verde.
+4. Regula de oprire (D18): dacă S4 cu filtru pică, **proiectul se oprește** (nicio altă iterație). Dacă trece,
+   urmează etapa 4, iar PASS-ul se confirmă doar la Poarta 2.
 
 ## Pentru proprietar
 
 - Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
 - Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
 - Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
-- **De decis:** după Poarta 1 = FAIL, oprim proiectul sau încercăm o iterație documentată?
+- Decis (3.11.2026): după Poarta 1 = FAIL, o singură iterație, aleasă de agent: S4 + filtru SPY (D18). Dacă pică, ne oprim.
 
 ## Bug-uri cunoscute
 
@@ -40,4 +45,4 @@ Niciunul. 116 teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Etapa 3b (Poarta 1) finalizată: FAIL pentru S1–S4.
+3 noiembrie 2026 · Claude Code · Etapa 3b (Poarta 1) finalizată: FAIL pentru S1–S4; iterația 1 decisă (D18).
