@@ -9,7 +9,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | # | Faza B | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
-| B1 | Date 1 minut + costuri | De făcut | faza-b1-date | Antigravity | |
+| B1 | Date 1 minut + costuri | În lucru | faza-b1-date | Antigravity | Cod + teste gata (D25); lipsesc descărcarea completă și raportul SIP vs IEX |
 | B2 | Backtester intraday | De făcut | faza-b2-backtester | Claude Code | |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 
@@ -29,14 +29,21 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-B0 e gata (D23, D24; `scripts/probe_alpaca_b0.py`, doar citire). Dacă PR-ul `faza-b-daytrading` → `main` nu e
-unit, se unește după CI verde. Apoi sub-pasul **B1 (Antigravity)**, branch `faza-b1-date` din `main` actualizat,
-după `docs/PLAN_DAYTRADING.md` și D23:
-1. Descarcă barele de 1 minut SPY și QQQ, feed SIP, 2016-01-04 → azi (fără ultimele 15 minute), doar sesiunea
-   9:30–16:00 ET; cache în `data/` (nu în git), o singură rulare, scriptul în `scripts/`.
-2. Validare: zile lipsă față de calendarul NYSE, sesiuni scurte, bare duplicate; teste offline cu un fixture mic.
-3. Modelul de costuri din plan (acțiuni SPY/QQQ și CFD US500 0,8 / US100 2,5 puncte) ca funcție pură, cu teste.
-4. Diferența SIP vs IEX (VWAP, preț de închidere pe minut) pe 2020-07 → azi, notată în DECISIONS.
+B0 e unit în `main` (PR #4). **B1 (Antigravity)**, branch `faza-b1-date` (există pe GitHub), după
+`docs/PLAN_DAYTRADING.md`, D23 și D25. Gata și urcat: `src/data/intraday.py` (calendar NYSE, filtru sesiune,
+descărcare Alpaca, cache), `src/data/intraday_validation.py`, `src/data/feed_compare.py` (SIP vs IEX),
+`src/backtest/intraday_costs.py` (costuri acțiuni + CFD), scripturile `scripts/download_minute.py` și
+`scripts/b1_data_report.py`, testele `tests/test_intraday*.py` (143 trecute). Ce lipsește:
+1. Termină descărcarea: `PYTHONPATH=. uv run python scripts/download_minute.py > .cache/download_minute.log 2>&1`
+   (reia de unde a rămas: anii deja salvați în `data/cache/minute/` se sar; ~1 min pe an; SIP SPY 2016–2025 era gata
+   la predare, apoi QQQ și IEX 2020-07-27 → azi). Verifică la final `.cache/download_minute.json`.
+2. Rulează `PYTHONPATH=. uv run python scripts/b1_data_report.py` → `reports/b1_date.md` (validare + SIP vs IEX).
+   Dacă apar zile lipsă sau sesiuni incomplete, verifică dacă sunt închideri reale (ex. 9.01.2025, doliu național
+   Carter) sau goluri Alpaca, și notează-le.
+3. Scrie D26 în `docs/DECISIONS.md`: rezultatul validării și diferența SIP vs IEX (VWAP de sesiune, închidere pe
+   minut, acoperire, volum) și dacă VWAP-ul IEX e folosibil live pentru D1 (de ex. diferență mediană ≪ costul de
+   0,015 $/parte, adică ~0,25 pb la 600 $).
+4. `scripts/check.sh`, PROGRESS (B1 = Gata), commit, push, PR `faza-b1-date` → `main`, unit după CI verde.
 Fără cod de strategie în B1. Apoi B2 (Claude Code).
 
 ## Pentru proprietar
@@ -51,8 +58,8 @@ Fără cod de strategie în B1. Apoi B2 (Claude Code).
 
 ## Bug-uri cunoscute
 
-Niciunul. 118 teste pytest trecute offline.
+Niciunul. 143 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Faza B, sub-pasul B0: date Alpaca de 1 minut și short pe paper verificate (D23, D24).
+3 noiembrie 2026 · Antigravity · Faza B, sub-pasul B1: cod date 1 minut, validare, costuri (D25); descărcarea în curs.

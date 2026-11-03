@@ -101,3 +101,15 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   **Decis de proprietar (3.11.2026): contul paper rămâne la 500 $**, deci demo-ul (B6–B7) rulează D1/D1b/D2 doar
   long, fără levier, la fel ca live-ul cu 500 $ (D22). Consecință pentru B3: Poarta 1 B se fixează, înainte de rulare,
   pe varianta care chiar va tranzacționa (long-only), cu testul aleator adaptat; long+short rămâne doar informativ.
+- **D25 (3.11.2026, B1)** Datele de 1 minut și modelul de costuri pentru Faza B:
+  - Calendarul NYSE (sărbători, închideri la 13:00) vine din pachetul `exchange-calendars` (offline, testabil).
+    Se păstrează doar barele care încep în sesiune: 9:30 ≤ t < închidere (390 de bare pe zi, 210 la 13:00).
+  - Prețuri brute (`Adjustment.RAW`): SPY și QQQ n-au avut split-uri din 2016, iar pozițiile se închid în aceeași
+    zi, deci dividendele nu contează. Istoricul se oprește la ultima sesiune închisă complet (nu o zi parțială).
+  - Cache: `data/cache/minute/<FEED>/<SIMBOL>/<an>.parquet` (nu în git), scris de `scripts/download_minute.py`.
+  - Costuri pe fiecare intrare și ieșire, în dolari pe acțiune (`src/backtest/intraday_costs.py`):
+    acțiuni SPY/QQQ = jumătate de spread 0,005 $ + slippage 0,01 $ (comision 0; taxele FINRA, sub 0,0002 $/acțiune,
+    intră în slippage), deci 0,03 $ dus-întors; CFD = US500 0,8 puncte și US100 2,5 puncte, convertite în unități
+    SPY/QQQ cu raportul indice/ETF (S&P 500 ≈ 10,0 × SPY, Nasdaq-100 ≈ 40,8 × QQQ): 0,08 $ / SPY și 0,061 $ / QQQ
+    pe parte. Test de stres ×1,5. Tranzacțiile cu riscul inițial < 2× costul dus-întors se sar.
+    Slippage-ul pe acțiuni e ales prudent (de 2× jumătatea de spread), ca un stop executat la piață să nu pară gratis.
