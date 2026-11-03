@@ -88,7 +88,7 @@ Fișierele de reguli (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `PROGRESS.md`, `doc
 
 ## Etapa 3 — Strategii și Poarta 1 · Claude Code
 
-- **3a.** `src/strategies/`: S1, S2, S3, S4 exact ca în regulile comune, funcții pure (date → semnale), parametrii în
+- [x] **3a.** `src/strategies/`: S1, S2, S3, S4 exact ca în regulile comune, funcții pure (date → semnale), parametrii în
   `config/strategies.yaml`. Teste pe scenarii construite de mână. S4 are nevoie de indicatorul MACD(12,26,9)
   (linie, semnal, histogramă), care nu există încă: îl adaugi în `src/indicators.py`, cu test pe valori calculate
   de mână, folosind aceeași convenție EMA ca restul (D12).

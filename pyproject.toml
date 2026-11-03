@@ -12,6 +12,7 @@ dependencies = [
     "pydantic-settings>=2.16.2",
     "python-dotenv>=1.2.4",
     "pytz>=2026.6",
+    "pyyaml>=6.0.3",
     "requests>=2.34.2",
     "yfinance>=1.7.0",
 ]

@@ -1,0 +1,37 @@
+# Parametrii strategiilor (docs/PLAN.md, regulile comune).
+# Se schimbă doar cu backtest nou + Poarta 1 din nou + notă în docs/DECISIONS.md.
+
+S1:  # Trend Breakout
+  sma_filter: 200
+  entry_lookback: 55
+  exit_lookback: 20
+  atr_period: 20
+  stop_atr: 2.5
+
+S2:  # Momentum Rotation
+  momentum_lookback: 252  # 12 luni
+  momentum_skip: 21  # fără ultima lună
+  sma_filter: 200
+  top_n: 5
+  exit_rank: 10
+  atr_period: 20
+  stop_atr: 3.0
+
+S3:  # RSI-2 Pullback
+  sma_filter: 200
+  rsi_period: 2
+  rsi_entry: 10
+  exit_sma: 5
+  max_hold_bars: 10
+  atr_period: 20
+  stop_atr: 3.0
+
+S4:  # MACD + EMA200
+  ema_filter: 200
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  swing_lookback: 10
+  atr_period: 20
+  min_stop_atr: 1.5
+  target_r: 1.5

@@ -18,11 +18,14 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 ## Pasul următor exact
 
-Etapa 2 e unită în `main` (PR #2). Etapa 3 (Claude Code), pe branch-ul `etapa-3-strategii`:
-- 3a (în lucru): indicatorul MACD(12,26,9) în `src/indicators.py`; `src/strategies/` cu S1, S2, S3, S4 ca funcții pure,
-  după contractul de semnale din `src/backtest/panel.py`; parametrii în `config/strategies.yaml`; teste pe scenarii
-  construite de mână.
-- 3b: Poarta 1 pe 2006–azi (walk-forward, Monte Carlo, test aleator), `reports/gate1.md`.
+Etapa 3 (Claude Code), pe branch-ul `etapa-3-strategii`:
+- 3a gata: MACD în `src/indicators.py`; `src/strategies/` cu S1–S4 (`load_strategy("S1")` → `StrategySpec` cu
+  `signals`, `params`, `max_hold_bars`); parametrii în `config/strategies.yaml`; 106 teste verzi.
+- 3b (următorul): descarci o dată datele 2006–azi pentru universul din `config/universe.csv` + SPY (`load_daily`,
+  cache în `data/cache/`); pentru fiecare strategie: `walk_forward`, `monte_carlo`, `random_entry_test` (500) și
+  testul ±20% (`load_strategy(name, overrides=...)`); `reports/gate1.md` cu PASS/FAIL pe cele 7 criterii, SPY,
+  nota despre survivorship bias, grafice equity vs SPY în `reports/`. NU optimizezi parametrii. Rezultatele lungi
+  în `.cache/`. Întâi: decizia proprietarului despre acțiuni întregi vs fracționare (vezi „Pentru proprietar”).
 
 ## Pentru proprietar
 
@@ -32,8 +35,8 @@ Etapa 2 e unită în `main` (PR #2). Etapa 3 (Claude Code), pe branch-ul `etapa-
 
 ## Bug-uri cunoscute
 
-Niciunul. 83 de teste pytest trecute offline.
+Niciunul. 106 teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Etapa 2 (Backtester) finalizată.
+3 noiembrie 2026 · Claude Code · Etapa 3a (strategiile S1–S4) finalizată.

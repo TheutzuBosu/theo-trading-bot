@@ -118,3 +118,25 @@ def test_momentum_12_1():
     default = ind.momentum_12_1(long)
     assert np.isnan(default.iloc[251])
     assert default.iloc[252] == pytest.approx(long.iloc[231] / long.iloc[0] - 1)
+
+
+def test_macd_by_hand():
+    # close 1, 2, 4, 3, 5, 6 with fast 2 (alpha 2/3), slow 3 (alpha 1/2), signal 2
+    # EMA2: 3/2, 19/6, 55/18, 235/54, 883/162   EMA3: 7/3, 8/3, 23/6, 59/12
+    # MACD (from bar 2): 5/6, 7/18, 14/27, 173/324
+    # signal: seed (5/6 + 7/18)/2 = 11/18; then 89/162; then 131/243
+    out = ind.macd(_series([1.0, 2.0, 4.0, 3.0, 5.0, 6.0]), fast=2, slow=3, signal=2)
+    assert out["macd"].iloc[:2].isna().all()
+    assert out["macd"].iloc[2:].tolist() == pytest.approx([5 / 6, 7 / 18, 14 / 27, 173 / 324])
+    assert out["signal"].iloc[:3].isna().all()
+    assert out["signal"].iloc[3:].tolist() == pytest.approx([11 / 18, 89 / 162, 131 / 243])
+    assert out["hist"].iloc[3:].tolist() == pytest.approx(
+        [7 / 18 - 11 / 18, 14 / 27 - 89 / 162, 173 / 324 - 131 / 243]
+    )
+
+
+def test_macd_default_periods():
+    out = ind.macd(_series(np.arange(1.0, 61.0)))
+    # MACD needs EMA26 (bar 25); the signal needs 9 MACD values (bar 33)
+    assert out["macd"].first_valid_index() == out.index[25]
+    assert out["signal"].first_valid_index() == out.index[33]
