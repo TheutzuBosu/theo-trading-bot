@@ -13,7 +13,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
-| B6b | Alerte Telegram | De făcut | faza-b6b-telegram | Antigravity | Mutat înainte de B3 (D28) |
+| B6b | Alerte Telegram | În lucru | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py` + 185 teste verzi; așteaptă mesaj pe `@thetheotrading_bot` pentru proba live |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -68,8 +68,8 @@ B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySi
 
 ## Bug-uri cunoscute
 
-Niciunul. 178 de teste pytest trecute offline.
+Niciunul. 185 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6a gata: PR #6 (B2) unit în `main`; dashboard Next.js publicat pe Vercel la `https://theo-trading-bot.vercel.app` (PR #7).
+4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6b: modul alerte Telegram în `src/alerts/telegram.py` și teste (`tests/test_telegram.py`) gata; așteaptă un mesaj pe `@thetheotrading_bot` pentru trimiterea probei.
