@@ -46,9 +46,8 @@ Fără cod de strategie în B1. Apoi B2 (Claude Code).
 - Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
 - Decis (3.11.2026): după Poarta 1 = FAIL, o singură iterație, aleasă de agent: S4 + filtru SPY (D18). Dacă pică, ne oprim.
 - Rezultat (3.11.2026): iterația 1 a picat (D19), deci Faza A s-a oprit. Proprietarul a pornit Faza B (D20–D22).
-- **De decis de proprietar (D24):** contul paper de 500 $ nu permite short și nici levier (Alpaca cere minimum
-  2.000 $). Fie resetezi contul paper la 2.000 $ (pe demo se pot testa ambele direcții), fie rămâne 500 $ și demo-ul
-  rulează doar long. Nu blochează B1–B3.
+- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci
+  demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (fixată în B3 înainte de rulare).
 
 ## Bug-uri cunoscute
 

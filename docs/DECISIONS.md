@@ -98,3 +98,6 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   ≥ 2.000 $ equity pentru marjă și short, și pe paper). Deci, cu 500 $, pe paper merge doar long, fără levier.
   Backtestul (B2–B3) testează oricum ambele direcții. Pentru short și expunere 2× pe demo, proprietarul ar trebui
   să reseteze contul paper la ≥ 2.000 $ (decizia lui, cerută la finalul B0); altfel D1/D2 rulează pe demo long-only.
+  **Decis de proprietar (3.11.2026): contul paper rămâne la 500 $**, deci demo-ul (B6–B7) rulează D1/D1b/D2 doar
+  long, fără levier, la fel ca live-ul cu 500 $ (D22). Consecință pentru B3: Poarta 1 B se fixează, înainte de rulare,
+  pe varianta care chiar va tranzacționa (long-only), cu testul aleator adaptat; long+short rămâne doar informativ.
