@@ -10,8 +10,10 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 |---|---|---|---|---|---|
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
-| B2 | Backtester intraday | De făcut | faza-b2-backtester | Claude Code | |
+| B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27); PR deschis |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
+| B6a | Dashboard pe date de exemplu (Vercel) | De făcut | faza-b6a-dashboard | Antigravity | Mutat înainte de B3 (D28) |
+| B6b | Alerte Telegram | De făcut | faza-b6b-telegram | Antigravity | Mutat înainte de B3 (D28) |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -29,21 +31,39 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-B1 e gata (`reports/b1_date.md`, D25, D26; cache-ul de 1 minut SPY/QQQ SIP 2016–2026 și IEX 2020–2026 e în
-`data/cache/minute/`, încărcat cu `load_minute_bars` din `src/data/intraday.py`; costurile sunt în
-`src/backtest/intraday_costs.py`). Dacă PR-ul `faza-b1-date` → `main` nu e unit, se unește după CI verde.
-Apoi sub-pasul **B2 (Claude Code)**, branch `faza-b2-backtester` creat din `main` actualizat, după
-`docs/PLAN_DAYTRADING.md` și D24–D26:
-1. Motorul de backtest intraday minut-cu-minut (fără look-ahead: semnal pe bara închisă `t`, execuție la Open-ul barei
-   `t+1`), maximum 1 poziție pe instrument, închidere obligatorie la ultima bară a sesiunii (ține cont și de închiderile
-   la 13:00 sau sesiunile scurte din D26), suport pentru `long` și `short` + mod `long_only` (pentru Poarta 1 B conform D24).
-2. Integrarea modelului de costuri din `src/backtest/intraday_costs.py` (`stock` și `cfd`, plus stres ×1,5), filtrul
-   `trade_allowed` (se sar tranzacțiile cu riscul inițial < 2× costul dus-întors), mărimea poziției după ținta de
-   volatilitate plafonată la expunere (2× equity sau 1× în varianta long-only fără marjă) și raportarea riscului în R.
-3. Veto FOMC determinist (fără intrări ±30 min față de anunțurile FOMC 2016–2026, hard-codate) + testul cu direcție
-   aleatoare la aceeași oră și același stop + metrici intraday (expectancy în R, t-stat cu corecție Bonferroni N = 9,
-   Deflated Sharpe, profit factor, drawdown, zile cu pierdere > 2%). Toate testate offline pe fixture-ul de 1 minut.
-Fără strategiile D1/D1b/D2 în B2 (urmează în B3, tot Claude Code).
+**Ordinea s-a schimbat (D28, 4.11.2026): Claude e la limită, deci urmează pașii Antigravity.** Antigravity face, în
+ordine, câte un sub-pas pe conversație:
+1. **Unește PR-ul #6** (`faza-b2-backtester` → `main`) după CI verde.
+2. **B6a · Dashboard pe date de exemplu** (Antigravity), branch `faza-b6a-dashboard` din `main` actualizat, după
+   `docs/PLAN.md` etapa 8, adaptat la Faza B: Next.js în `dashboard/`, proiect Vercel **nou** `theo-trading-bot`
+   (nu atinge alte proiecte), login cu `DASHBOARD_PASSWORD`. Bara de sus: PAPER, capital 500 $, profit total și azi,
+   drawdown. Graficul capitalului vs SPY cumpărat și ținut. Poziții deschise (SPY/QQQ, de când, profit, stop).
+   Jurnalul: un card pe tranzacție, cel mai nou sus: direcția, de ce a intrat (`entry_reason`), de ce a ieșit
+   (`exit_reason`), rezultatul în $ și în R. Datele de exemplu în `tests/fixtures/state/` (aceleași coloane ca
+   `TRADE_COLUMNS` din `src/backtest/intraday_engine.py`), cu eticheta vizibilă „date de exemplu”. Butonul KILL
+   apare, dar rămâne dezactivat („se conectează în B6”) până există procesul live. `npm run build` fără erori,
+   deploy, variabilele cu `vercel env add` din `.env`, linkul către proprietar.
+3. **B6b · Alerte Telegram** (Antigravity), branch `faza-b6b-telegram`: `src/alerts/telegram.py`, mesaje în română
+   (intrare: simbol, direcție, cantitate, stop, risc %, de ce; ieșire: P&L, R, motiv; rezumat zilnic; pierdere −2% pe
+   zi; KILL; eroare). Teste offline cu HTTP simulat; un singur mesaj de probă real către proprietar (chat ID din
+   `getUpdates`). Fără ordine, fără reguli de risc.
+4. Apoi **Antigravity se oprește**: B3 (strategiile, Poarta 1 B) și B5 (risk guard, broker) rămân DOAR Claude Code.
+   Proprietarul deschide Claude Code și scrie „preia” când are din nou usage. Pentru B3, planul de mai jos rămâne valabil.
+
+B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySignals`, `IntradayConfig`,
+`run_intraday`), `src/backtest/fomc.py` (veto ±30 min), `src/backtest/intraday_metrics.py` (`summarize_intraday`,
+`r_stats`, `deflated_sharpe`, `direction_outcomes`, `random_direction_test`); detectorul de look-ahead primește
+`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. PR-ul #6 se unește la pasul 1 de mai sus. După B6a și B6b, sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din `main` actualizat, după
+`docs/PLAN_DAYTRADING.md` și D24–D27:
+1. Înainte de orice rulare, în `docs/DECISIONS.md` (D28): Poarta 1 B fixată pe varianta long-only (`long_only=True`,
+   `max_exposure=1.0`, fără marjă, D24), testul aleator long-only (candidații din rularea long+short), N = 9,
+   parametrii D1b din paper-ul Maróy 2025 și cei ≤ 2 parametri recalibrați lunar (fereastră de 2 ani) pentru fiecare.
+2. `src/strategies/` intraday: D1 (Zarattini, Aziz & Barbon 2024: banda de zgomot din 14 zile, verificări la :00/:30,
+   stop trailing bandă/VWAP, sizing după volatilitate), D1b (aceeași intrare, ieșire VWAP & Ladder) și D2 (ORB 5
+   minute, martor). Funcții pure care întorc cadre cu `SIGNAL_COLUMNS` + `entry_reason`; test de look-ahead pe
+   fixture-ul de 1 minut. Regulile se iau din PDF-urile paper-elor (citează secțiunile).
+3. Walk-forward lunar (doar OOS înlănțuit), costuri `stock` și `cfd` + stres ×1,5, verificarea pe IEX 2020–2026 (D26),
+   apoi raportul `reports/gate1_daytrading.md` cu toate cele 7 criterii. Dacă nu trec toate: Faza B se oprește.
 
 ## Pentru proprietar
 
@@ -57,8 +77,8 @@ Fără strategiile D1/D1b/D2 în B2 (urmează în B3, tot Claude Code).
 
 ## Bug-uri cunoscute
 
-Niciunul. 143 de teste pytest trecute offline.
+Niciunul. 176 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Antigravity · Faza B, sub-pasul B1 gata: date 1 minut descărcate și validate, raport SIP vs IEX (`reports/b1_date.md`), D25–D26.
+3 noiembrie 2026 · Claude Code · Faza B, sub-pasul B2 gata: backtester intraday minut-cu-minut, veto FOMC, test cu direcție aleatoare corectat, metrici Poarta 1 B (D27).

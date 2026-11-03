@@ -1,9 +1,10 @@
-"""Look-ahead detector: a strategy run on data cut at day t must give the same signals up to t
-as the run on the full history. Any difference means the strategy used bars after t."""
+"""Look-ahead detector: a strategy run on data cut at bar t must give the same signals up to t
+as the run on the full history. Any difference means the strategy used bars after t.
+Works on daily bars (SIGNAL_COLUMNS) and on minute bars (pass the intraday signal columns)."""
 
 from __future__ import annotations
 
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Mapping, Sequence
 
 import numpy as np
 import pandas as pd
@@ -24,11 +25,17 @@ def _same(a: pd.Series, b: pd.Series) -> np.ndarray:
     return np.isclose(x, y, rtol=1e-9, atol=1e-12, equal_nan=True)
 
 
+def _when(ts: pd.Timestamp):
+    """The date for daily bars, the full timestamp for minute bars."""
+    return ts.date() if ts == ts.normalize() else ts
+
+
 def find_lookahead(
     strategy: Strategy,
     prices: Mapping[str, pd.DataFrame],
     n_checks: int = 10,
     min_history: int = 30,
+    columns: Sequence[str] = SIGNAL_COLUMNS,
 ) -> list[str]:
     """Run the strategy on `n_checks` truncated histories; return the mismatches found."""
     full = strategy(prices)
@@ -44,19 +51,19 @@ def find_lookahead(
             expected = frame.loc[:cutoff]
             got = cut.get(sym)
             if got is None:
-                problems.append(f"{sym}: no signals when the history ends at {cutoff.date()}")
+                problems.append(f"{sym}: no signals when the history ends at {_when(cutoff)}")
                 continue
             got = got.reindex(expected.index)
-            for col in SIGNAL_COLUMNS:
+            for col in columns:
                 if col not in expected.columns:
                     continue
                 if col not in got.columns:
-                    problems.append(f"{sym}.{col}: missing when cut at {cutoff.date()}")
+                    problems.append(f"{sym}.{col}: missing when cut at {_when(cutoff)}")
                     continue
                 diff = ~_same(expected[col], got[col])
                 if diff.any():
-                    first = expected.index[np.argmax(diff)].date()
-                    problems.append(f"{sym}.{col}: differs on {first} (cut at {cutoff.date()})")
+                    first = _when(expected.index[np.argmax(diff)])
+                    problems.append(f"{sym}.{col}: differs on {first} (cut at {_when(cutoff)})")
     return problems
 
 
