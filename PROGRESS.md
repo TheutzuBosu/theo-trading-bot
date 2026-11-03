@@ -10,9 +10,9 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 |---|---|---|---|---|---|
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
-| B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27); PR deschis |
+| B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
-| B6a | Dashboard pe date de exemplu (Vercel) | De făcut | faza-b6a-dashboard | Antigravity | Mutat înainte de B3 (D28) |
+| B6a | Dashboard pe date de exemplu (Vercel) | În lucru | faza-b6a-dashboard | Antigravity | App Next.js + fixture `tests/fixtures/state/` + build verde; așteaptă login Vercel pentru deploy |
 | B6b | Alerte Telegram | De făcut | faza-b6b-telegram | Antigravity | Mutat înainte de B3 (D28) |
 
 | # | Etapă | Status | Branch | Agent | Note |
@@ -77,8 +77,8 @@ B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySi
 
 ## Bug-uri cunoscute
 
-Niciunul. 176 de teste pytest trecute offline.
+Niciunul. 178 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Faza B, sub-pasul B2 gata: backtester intraday minut-cu-minut, veto FOMC, test cu direcție aleatoare corectat, metrici Poarta 1 B (D27).
+4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6a: PR #6 (B2) unit în `main`; dashboard Next.js în `dashboard/` + date de exemplu în `tests/fixtures/state/` gata (`npm run build` și 178 teste verzi); așteaptă autentificarea Vercel pentru deploy.
