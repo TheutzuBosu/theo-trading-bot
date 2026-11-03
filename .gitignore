@@ -17,6 +17,8 @@ data/cache/
 # Frontend
 node_modules/
 dashboard/.next/
+dashboard/next-env.d.ts
+*.tsbuildinfo
 .vercel/
 
 # Local
