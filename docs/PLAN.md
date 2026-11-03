@@ -70,13 +70,13 @@ Fișierele de reguli (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `PROGRESS.md`, `doc
 
 ## Etapa 2 — Backtester · Claude Code
 
-- **2a.** `src/indicators.py`: SMA, EMA, ATR(20), RSI(2), RSI(14), Donchian high/low (shiftat cu 1 bară), ADX(14),
+- [x] **2a.** `src/indicators.py`: SMA, EMA, ATR(20), RSI(2), RSI(14), Donchian high/low (shiftat cu 1 bară), ADX(14),
   randament 12-1 luni. Teste cu valori calculate de mână.
-- **2b.** `src/backtest/engine.py`, bar-cu-bar: semnal la t, execuție la Open t+1 cu costurile din regulile comune;
+- [x] **2b.** `src/backtest/engine.py`, bar-cu-bar: semnal la t, execuție la Open t+1 cu costurile din regulile comune;
   stop și ieșiri pe High/Low; dacă în aceeași bară sunt atinse și stop-ul și ținta → stop (worst case); gap peste
   stop → ieșire la Open. Sizing prin aceeași funcție ca risk guard-ul (stub până la etapa 4: risc 0.5%, expunere max
   20%, max 5 poziții, max 2 pe sector). Pe tranzacție: intrare, ieșire, R, MAE, MFE, motivul ieșirii.
-- **2c.** Metrici (CAGR, Sharpe, max DD, PF, expectancy în R, win rate, nr. tranzacții, expunere), benchmark SPY
+- [x] **2c.** Metrici (CAGR, Sharpe, max DD, PF, expectancy în R, win rate, nr. tranzacții, expunere), benchmark SPY
   buy-and-hold, walk-forward pe ferestre rulante (3 ani calibrare / 1 an test, raportezi doar agregatul OOS),
   Monte Carlo (1.000), test cu intrări aleatoare (500). Teste obligatorii: o strategie care „trișează” cu date din
   viitor e prinsă de un test; regula worst-case; costurile pe un exemplu calculat de mână.
