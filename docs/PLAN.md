@@ -92,7 +92,7 @@ Fișierele de reguli (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `PROGRESS.md`, `doc
   `config/strategies.yaml`. Teste pe scenarii construite de mână. S4 are nevoie de indicatorul MACD(12,26,9)
   (linie, semnal, histogramă), care nu există încă: îl adaugi în `src/indicators.py`, cu test pe valori calculate
   de mână, folosind aceeași convenție EMA ca restul (D12).
-- **3b.** Rulezi walk-forward + Monte Carlo + testul aleatoriu pe 2006–azi pentru fiecare strategie. `reports/gate1.md`:
+- [x] **3b.** Rulezi walk-forward + Monte Carlo + testul aleatoriu pe 2006–azi pentru fiecare strategie. `reports/gate1.md`:
   tabel strategie vs SPY, PASS/FAIL pe fiecare din cele 7 criterii, testul ±20%, nota despre survivorship bias,
   grafice equity vs SPY în `reports/`. NU optimiza parametrii ca să treacă. Raport de 5 rânduri pentru proprietar.
   Dacă nicio strategie nu trece: te oprești și scrii asta clar.

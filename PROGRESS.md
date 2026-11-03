@@ -7,8 +7,8 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 | 0 | Fundația | Gata | main | Antigravity | uv, Python 3.12, pyproject.toml, ruff, pytest, CI verde |
 | 1 | Date | Gata | etapa-1-date | Antigravity | Univers S&P 100, cache parquet/csv, drop_incomplete_bar, validate, loader daily & recent |
 | 2 | Backtester | Gata | etapa-2-backtester | Claude Code | Indicatori, motor bar-cu-bar, metrici, walk-forward, Monte Carlo, test aleator, detector look-ahead |
-| 3 | Strategii + Poarta 1 | În lucru | etapa-3-strategii | Claude Code | Decide dacă proiectul continuă; S1–S4 |
-| 4 | Risk guard | De făcut | etapa-4-risc | Claude Code | |
+| 3 | Strategii + Poarta 1 | Gata | etapa-3-strategii | Claude Code | Poarta 1: FAIL, nicio strategie nu trece (`reports/gate1.md`) |
+| 4 | Risk guard | Blocat | etapa-4-risc | Claude Code | Așteaptă decizia proprietarului după Poarta 1 |
 | 5 | Broker Alpaca paper | De făcut | etapa-5-broker | Claude Code | |
 | 6 | Stare, veto, post-mortem | De făcut | etapa-6-stare-ai | Antigravity | |
 | 7 | Rulare zilnică + Telegram | De făcut | etapa-7-rulare | Antigravity + review Claude Code | |
@@ -18,25 +18,26 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 ## Pasul următor exact
 
-Etapa 3 (Claude Code), pe branch-ul `etapa-3-strategii`:
-- 3a gata: MACD în `src/indicators.py`; `src/strategies/` cu S1–S4 (`load_strategy("S1")` → `StrategySpec` cu
-  `signals`, `params`, `max_hold_bars`); parametrii în `config/strategies.yaml`; 106 teste verzi.
-- 3b (următorul): descarci o dată datele 2006–azi pentru universul din `config/universe.csv` + SPY (`load_daily`,
-  cache în `data/cache/`); pentru fiecare strategie: `walk_forward`, `monte_carlo`, `random_entry_test` (500) și
-  testul ±20% (`load_strategy(name, overrides=...)`); `reports/gate1.md` cu PASS/FAIL pe cele 7 criterii, SPY,
-  nota despre survivorship bias, grafice equity vs SPY în `reports/`. NU optimizezi parametrii. Rezultatele lungi
-  în `.cache/`. Rulezi Poarta 1 în ambele variante, fracționare și acțiuni întregi (`whole_shares=True`), D15.
+Etapa 3 e gata pe `etapa-3-strategii` (3a strategiile, 3b Poarta 1); PR spre `main`.
+**Poarta 1: nicio strategie nu trece**, în nicio variantă (`reports/gate1.md`). Toate pică criteriul 2: Sharpe OOS
+0.60–0.75 față de 0.85 la SPY (prag 1.05); 500 $ din 2009 → 1.195 $ cu S1, 5.563 $ cu SPY. S3 pierde bani.
+Conform planului (D7) ne oprim: **nu se începe etapa 4** până nu decide proprietarul:
+- fie oprim proiectul aici;
+- fie aprobă o iterație documentată (maximum 2 per strategie, interdicția 6): motivul se scrie în
+  `docs/DECISIONS.md` ÎNAINTE de rulare, apoi `scripts/gate1.py` din nou (datele sunt în `data/cache/`;
+  `PYTHONPATH=. uv run python scripts/download_history.py` le reface). NU se ajustează parametrii după rezultate.
 
 ## Pentru proprietar
 
 - Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
 - Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
 - Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
+- **De decis:** după Poarta 1 = FAIL, oprim proiectul sau încercăm o iterație documentată?
 
 ## Bug-uri cunoscute
 
-Niciunul. 106 teste pytest trecute offline.
+Niciunul. 116 teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude Code · Etapa 3a (strategiile S1–S4) finalizată.
+3 noiembrie 2026 · Claude Code · Etapa 3b (Poarta 1) finalizată: FAIL pentru S1–S4.

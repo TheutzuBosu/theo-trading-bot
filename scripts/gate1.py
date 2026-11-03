@@ -317,6 +317,36 @@ def write_report() -> None:
             bad = [str(c["number"]) for c in r["criteria"] if not c["passed"]]
             verdict = "PASS" if r["passed"] else f"FAIL (criteriile {', '.join(bad)})"
             out.append(f"- {VARIANT_TITLES[v]}, {r['title']}: **{verdict}**")
+    cap = meta["capital"]
+    frac = results["fractionare"]
+    best = max(STRATEGIES, key=lambda s: frac[s]["oos"]["total_return"])
+    end_value = {s: cap * (1 + frac[s]["oos"]["total_return"]) for s in STRATEGIES}
+    spy_value = cap * (1 + first["spy"]["total_return"])
+    # profitable strategies whose entries do not beat random ones (criterion 6)
+    weak_entries = [
+        s
+        for s in STRATEGIES
+        if frac[s]["oos"]["total_return"] > 0 and not frac[s]["criteria"][5]["passed"]
+    ]
+    out += [
+        "",
+        "## Pe înțeles",
+        "",
+        f"Cu {cap:.0f} $ puși la începutul lui {first['oos_start'][:4]} (acțiuni fracționare), "
+        "la final aveai: "
+        + ", ".join(f"{s} {end_value[s]:,.0f} $" for s in STRATEGIES)
+        + f"; SPY cumpărat și ținut: **{spy_value:,.0f} $**. Cea mai bună strategie ({best}) "
+        f"a câștigat {frac[best]['oos']['cagr']:.1%} pe an, SPY {first['spy']['cagr']:.1%} "
+        "pe an. Strategiile au pierderi mai mici (drawdown), dar și ajustat la risc (Sharpe) "
+        "rămân sub SPY."
+        + (
+            f" Testul cu intrări aleatoare arată că, la {', '.join(weak_entries)}, alegerea "
+            "momentului de intrare nu aduce mare lucru față de intrări la întâmplare cu "
+            "aceleași ieșiri și stopuri."
+            if weak_entries
+            else ""
+        ),
+    ]
     out += [
         "",
         "## Cum s-a testat",
@@ -364,7 +394,8 @@ def write_report() -> None:
         out += varied_table(results[v])
         out += ["", "</details>", ""]
     late = ", ".join(f"{s} ({d[:4]})" for s, d in meta["late_starts"].items())
-    cap, max_pos = meta["capital"], meta["max_notional"]
+    max_pos = meta["max_notional"]
+    failed_2 = all(not r["criteria"][1]["passed"] for res in results.values() for r in res.values())
     out += [
         "## Note și limite",
         "",
@@ -388,7 +419,13 @@ def write_report() -> None:
         "minimum 1).",
         f"- Criteriul 6 cere Sharpe-ul strategiei peste {MIN_RANDOM_BEAT:.0%} din rulările "
         f"aleatoare; criteriul 7 cere drawdown-ul p95 sub {MAX_MC_DRAWDOWN_P95:.0%}. Regulile "
-        "de evaluare au fost fixate înaintea rulării complete (D17).",
+        "de evaluare au fost fixate înaintea rulării complete (D17)."
+        + (
+            " Verdictul nu depinde de măsura aleasă la criteriul 6: toate strategiile pică "
+            "oricum criteriul 2."
+            if failed_2
+            else ""
+        ),
         "",
         "## Ce urmează",
         "",
