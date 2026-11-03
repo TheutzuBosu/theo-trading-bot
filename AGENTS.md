@@ -78,7 +78,7 @@ fără jargon; când trebuie să facă ceva, îi dai pași click cu click.
 
 | Etapă | Agent |
 |---|---|
-| 0 Fundația (repo, uv, CI) | Antigravity (fișierele de reguli sunt deja scrise) |
+| 0 Fundația (repo, uv, CI) | Oricare (Claude Code sau Antigravity); fișierele de reguli sunt deja scrise |
 | 1 Date | Antigravity |
 | 2 Backtester | **Claude Code** |
 | 3 Strategii + Poarta 1 | **Claude Code** |

@@ -4,7 +4,7 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
-| 0 | Fundația | În lucru | main | Claude (chat) → Antigravity | Fișierele de reguli gata (3 noiembrie 2026). Rămân 0a și 0b din `docs/PLAN.md` |
+| 0 | Fundația | În lucru | main | Claude (chat) → oricare agent | Fișierele de reguli gata (3 noiembrie 2026). Rămân 0a și 0b din `docs/PLAN.md` |
 | 1 | Date | De făcut | etapa-1-date | Antigravity | |
 | 2 | Backtester | De făcut | etapa-2-backtester | Claude Code | |
 | 3 | Strategii + Poarta 1 | De făcut | etapa-3-strategii | Claude Code | Decide dacă proiectul continuă |
@@ -18,13 +18,13 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 ## Pasul următor exact
 
-Etapa 0, sub-pasul 0a (Antigravity), pe `main`: creează `pyproject.toml` cu uv (Python 3.12) și dependențele din
+Etapa 0, sub-pasul 0a (oricare agent), pe `main`: creează `pyproject.toml` cu uv (Python 3.12) și dependențele din
 `docs/PLAN.md`, `scripts/check_fast.sh`, `scripts/check.sh`, un test trivial în `tests/`, `.github/workflows/ci.yml`.
 Gata când `scripts/check.sh` trece local. Apoi 0b: repo privat pe GitHub cu `gh`, push, CI verde.
 
 ## Pentru proprietar
 
-- Rulează `bash scripts/set_keys.sh` din Terminal, în acest folder (pune cheile în `.env`). Minimum: cheile Alpaca.
+- Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
 - Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
 
 ## Bug-uri cunoscute
