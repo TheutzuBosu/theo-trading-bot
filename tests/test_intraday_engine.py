@@ -208,3 +208,40 @@ def test_window_and_daily_equity():
     panel = IntradayPanel.from_frames({"SPY": bars})
     one_day = run_intraday(panel, IntradaySignals.from_frames(sig, panel), start="2026-01-06")
     assert len(one_day.equity) == 1 and len(one_day.trades) == 1
+
+
+def test_exit_long_exit_short_and_flip_at_same_open():
+    # Enter long at row 1 (fills at row 2 Open=100.25); row 2 exit_short (ignored for long);
+    # row 3 exit_long + short entry -> at row 4 Open=100.50 long exits and short enters
+    res = run(
+        *one(
+            ROWS,
+            entries={1: (1, 99.0), 3: (-1, 102.0)},
+            exit_short={2: True},
+            exit_long={3: True},
+        )
+    )
+    assert len(res.trades) == 2
+    t0, t1 = res.trades.iloc[0], res.trades.iloc[1]
+    assert t0["direction"] == "long" and t0["exit_reason"] == "signal"
+    assert t0["exit_time"] == t1["entry_time"]
+    assert t0["exit_raw"] == 100.50 and t1["entry_open"] == 100.50
+    assert t1["direction"] == "short" and t1["exit_reason"] == "eod"
+
+
+def test_stop_after_target_tightens_after_partial_exit():
+    # Row 1 signals long, initial stop 99.0, target 100.45 (hit on row 2 High=100.50),
+    # stop_after_target=100.35 -> row 3 has Low=100.30 so remaining 50% exits at 100.35 stop
+    res = run(
+        *one(
+            ROWS,
+            entries={1: (1, 99.0)},
+            target={1: 100.45},
+            stop_after_target={1: 100.35},
+        ),
+        target_fraction=0.5,
+    )
+    t = res.trades.iloc[0]
+    assert t["partial_exit"] and t["exit_reason"] == "stop"
+    assert t["stop"] == pytest.approx(100.35)
+    assert t["exit_raw"] == pytest.approx((100.45 + 100.35) / 2)

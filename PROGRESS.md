@@ -11,7 +11,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
-| B3 | D1, D1b, D2 + Poarta 1 B | În lucru | faza-b3-strategii | Claude Code | B3.1 gata: D29 + D29b (Poarta 1 B, reguli D1/D1b/D2) pre-înregistrate; urmează B3.2 (cod) |
+| B3 | D1, D1b, D2 + Poarta 1 B | În lucru | faza-b3-strategii | Antigravity | B3.1 + B3.2 gata (`intraday_d1.py`, `intraday_d2.py`, extensii motor, 194 teste verzi); urmează B3.3 (`reports/gate1_daytrading.md`) |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 
@@ -31,42 +31,30 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**B3.1 e gata.** `docs/DECISIONS.md` fixează, înainte de orice rulare: D29 (Poarta 1 B long-only, 7 criterii, N = 9,
-OOS 2018-01 → 2026-10, regulile D1 și D2, calibrarea lunară D1 pe L și m, stop la broker = LB) și D29b (D1b = „VWAP &
-Ladder #1” din Maróy 2025, optimizat de autor doar pe QQQ 2014–2024, plus condiția în plus: expectancy > 0 pe
-1.10.2024 → 30.10.2026). PDF-ul Maróy e în `.cache/papers/maroy2025.pdf` (text: `maroy2025.txt`), nu în git.
+**B3.2 e gata.** Motorul intraday (`src/backtest/intraday_engine.py`) suportă acum `exit_long`, `exit_short` și
+`stop_after_target`; strategiile D1 și D1b sunt în `src/strategies/intraday_d1.py`, iar D2 (ORB 5m) e în
+`src/strategies/intraday_d2.py`. Toate testele unitare și de look-ahead din `tests/test_intraday_strategies.py` și
+`tests/test_intraday_engine.py` sunt verzi (`194 passed`).
 
-Sub-pasul următor, **B3.2 (DOAR Claude Code)**, pe branch-ul `faza-b3-strategii`, fără nicio rulare pe datele reale:
-1. Motor (`src/backtest/intraday_engine.py`), extensii opționale, cu teste: coloanele de semnal `exit_long` /
-   `exit_short` (ieșire doar pentru poziția din acea direcție; `exit` rămâne pentru ambele) și `stop_after_target`
-   (stop-ul nou după ieșirea parțială la țintă, doar în sus). Verifici că un flip (ieșire + intrare inversă la
-   același Open) merge.
-2. `src/strategies/intraday_d1.py`: banda de zgomot (σ pe minutul zilei, L sesiuni, UB/LB cu Close_ieri), VWAP de
-   sesiune din `vwap`·`volume`, σ zilnic, orele de verificare (D1: barele 9:59 … 15:29; D1b: 10:11, 10:57 … 14:47),
-   semnalele D1 (D29) și D1b (D29b: ladder în prețuri, stop = max(stop_0, VWAP) actualizat la minut, ieșire la 15:30).
-   `src/strategies/intraday_d2.py`: ORB 5 minute (D29). Funcții pure, cadre cu `SIGNAL_COLUMNS` + `entry_reason`.
-3. Teste offline în `tests/`: reguli pe date sintetice mici (banda, verificări, VWAP, doji, țintă 10R, ladder,
-   sizing) și testul de look-ahead (`src/backtest/lookahead.py`, `columns=SIGNAL_COLUMNS`) pe fixture-ul de 1 minut.
-   Apoi `scripts/check_fast.sh`, `PROGRESS.md`, commit, push.
-
-După B3.2: **B3.3** walk-forward lunar + rulările OOS + testul aleator + ±20% + IEX + condiția D1b, apoi
-`reports/gate1_daytrading.md` cu toate criteriile din D29/D29b. Dacă nu trec toate: Faza B se oprește.
+Sub-pasul următor, **B3.3**, pe branch-ul `faza-b3-strategii`:
+1. Scrie scriptul / modulul de evaluare pentru Poarta 1 B (ex. `src/backtest/gate1_daytrading.py` + `scripts/run_gate1_daytrading.py`):
+   - **D1 calibrat lunar (walk-forward)**: la începutul fiecărei luni OOS (`2018-01-02 .. 2026-10-30`), alege perechea `(L, m)` din grila `L ∈ {7, 10, 14, 20, 28}` × `m ∈ {0.75, 1.0, 1.25, 1.5}` cu Sharpe net maxim pe ultimele 24 luni anterioare (long-only, portofoliu 50/50 SPY+QQQ; tie-breaker mai aproape de `(14, 1.0)`).
+   - **Rulări OOS `2018-01-02 .. 2026-10-30`** (atât `long-only` 1x cât și `long+short` informativ, pe `SPY`, `QQQ` și `50/50 SPY+QQQ`): D1 default `(14, 1.0)`, D1 calibrat lunar, D1b (`VWAP & Ladder #1`), D2 (`ORB 5m`), și buy & hold SPY / 50-50.
+   - **Verificare cele 7 criterii din D29 + condiția D29b**: (1) Sharpe net >= max(1.0, Sharpe B&H + 0.20), (2) DSR >= 0.95 cu `N = 9`, (3) MaxDD <= 15%, (4) >= 500 tranzacții și >= 40/an în fiecare an complet 2018–2025, (5) `test_random_direction` (B = 1000, p < 0.05), (6) stabilitate ±20% pe `L`, `m` și `target_r`/`ladder_r` (toți vecinii profitabili și Sharpe >= 70% din centru), (7) verificare pe datele IEX `2020-08-03 .. 2026-10-30` (profitabil, Sharpe IEX >= 70% din SIP pe aceeași fereastră), și pentru D1b: expectancy netă > 0 pe `2024-10-01 .. 2026-10-30`.
+2. Generează `reports/gate1_daytrading.md` și înregistrează verdictul în `docs/DECISIONS.md` (`D30`).
+3. Deschide PR `faza-b3-strategii -> main`, fă merge, și setează pasul următor **B4** (păstrarea stării + `autopsy.py` + `daily_learner.py` + `meta_label.py`, conform deciziei proprietarului de a duce botul complet până la capăt pe Alpaca Paper).
 
 ## Pentru proprietar
 
 - Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
-- Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`. Botul nu a plasat niciun ordin și nu va plasa.
-- Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
-- Decis (3.11.2026): după Poarta 1 = FAIL, o singură iterație, aleasă de agent: S4 + filtru SPY (D18). Dacă pică, ne oprim.
-- Rezultat (3.11.2026): iterația 1 a picat (D19), deci Faza A s-a oprit. Proprietarul a pornit Faza B (D20–D22).
-- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci
-  demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (fixată în B3 înainte de rulare).
-- Rezolvat (4.11.2026): proprietarul a adus PDF-ul Maróy; parametrii D1b sunt fixați în D29b.
+- Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
+- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (D29).
+- Decis (4.11.2026): indiferent de scorul Porții 1 B pe backtest, construim botul complet pe **Alpaca Paper** până la capăt (`B3 -> B4 -> B5 -> B6c`), fără limită zilnică la numărul de trade-uri, cu învățare zilnică din greșeli și deploy automat în Git și Vercel după fiecare etapă. Doar banii reali rămân blocați de Poarta 2.
 
 ## Bug-uri cunoscute
 
-Niciunul. 185 de teste pytest trecute offline.
+Niciunul. 194 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Claude Code · Faza B, sub-pasul B3.1 gata: D29 și D29b (Poarta 1 B, reguli D1, D1b, D2, calibrare, stop la broker) pre-înregistrate în `docs/DECISIONS.md`. Urmează B3.2 (strategiile în cod).
+4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B3.2 gata: extensii `intraday_engine.py` (`exit_long`, `exit_short`, `stop_after_target`), strategii `intraday_d1.py` (D1 + D1b) și `intraday_d2.py` (D2 ORB 5m), 194 teste verzi + ghid complet `docs/GHID_EXECUTIE_AGENTI.md`. Urmează B3.3 (evaluarea OOS + `reports/gate1_daytrading.md`).

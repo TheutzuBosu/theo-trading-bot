@@ -90,12 +90,54 @@ fără jargon; când trebuie să facă ceva, îi dai pași click cu click.
 | 9 Review, Poarta 2, fiscal | Antigravity |
 | 10 Bani reali | **Claude Code** |
 
-O etapă marcată Claude Code nu o face alt agent: dacă Claude e la limită, se lucrează la o etapă Antigravity
-(de ex. 8 pe date de exemplu) sau se așteaptă.
+### Împărțirea pentru Faza B (Day Trading SPY/QQQ pe Alpaca Paper)
+
+**Decizie obligatorie a proprietarului (4.11.2026):**
+- Botul de pe **Alpaca Paper (contul demo)** se construiește **până la capăt (B3 → B4 → B5 → B6c)** și se pune în
+  funcțiune pe contul Paper, **indiferent dacă B3 trece sau nu Poarta 1 B** (rezultatul Poarta 1 B se notează onest în
+  `reports/gate1_daytrading.md`, dar NU oprește construcția botului Paper; doar banii reali rămân blocați până la Poarta 2).
+- **Fără limită de număr de tranzacții pe zi:** botul poate executa oricâte tranzacții valide apar într-o zi pe SPY/QQQ
+  (regula PDT e eliminată pe acțiuni SUA, iar pe Paper comisionul e 0; singura restricție e max 1 poziție deschisă
+  simultan pe același simbol).
+- **Învățare zilnică automată din greșeli:** în fiecare zi, după închiderea tranzacțiilor, botul:
+  1. Generează lecția din fiecare tranzacție pierzătoare sau câștigătoare (`src/ai/autopsy.py`).
+  2. Își re-antrenează / actualizează filtrul ML (`src/ai/meta_label.py` + `src/ai/daily_learner.py`) pe istoricul
+     cumulat + tranzacțiile noi, ajustând probabilitățile ca să evite tiparele care au produs pierderi.
+  3. Salvează totul în `state/` (pe branch-ul `state`) ca proprietarul să vadă în timp real în **Dashboard** ce a
+     tranzacționat și ce a învățat azi.
+- **Deploy obligatoriu în Git și în Vercel după fiecare etapă:** la finalul fiecărei etape se face commit + push +
+  PR unit în `main` ȘI deploy în Vercel (`cd dashboard && vercel --prod --yes`).
+
+Proprietarul folosește agenții în cascadă, în funcție de limita disponibilă:
+1. **Claude Code (Opus 5.5 + sub-agenți Haiku):** rulează pe **B3** (strategiile D1, D1b, D2 + raportul B3).
+2. **Antigravity pe Gemini 4 Argon (High) + sub-agenți `flash_lite`:** preia imediat după ce termină Claude Code (B4, B5, B6c), cât timp are usage.
+3. **Antigravity pe Gemini 3.8 Flash (High) sau Codex pe GPT Go (Luna 6 High):** continuă orice pas rămas (B4, B5, B6c, B7), urmând mecanic rețetele date „mură în gură” în **`docs/GHID_EXECUTIE_AGENTI.md`**.
+
+| Sub-pas Faza B | Agent permis | Rețeta pas cu pas |
+|---|---|---|
+| **B0** Verificare broker + date | Gata (Claude Code) | `docs/DECISIONS.md` (D23, D24) |
+| **B1** Date 1 minut + model costuri | Gata (Antigravity) | `reports/b1_date.md` (D25, D26) |
+| **B2** Motor backtester intraday | Gata (Claude Code) | `src/backtest/intraday_engine.py` (D27) |
+| **B3** Strategiile D1, D1b, D2 + raport Poarta 1 B | Claude Code / Argon 4 | `docs/PLAN_DAYTRADING.md` + `reports/gate1_daytrading.md` (NU oprește Faza B pe Paper!) |
+| **B4** Filtru ML + Învățare zilnică din greșeli | **Orice agent** (Argon 4, Gemini 3.8 Flash, Codex Luna 6) | `docs/GHID_EXECUTIE_AGENTI.md` · Secțiunea 4 |
+| **B5** Risk Guard intraday + Broker Alpaca Paper | **Orice agent** (Argon 4, Claude Code, Gemini 3.8 Flash, Codex) | `docs/GHID_EXECUTIE_AGENTI.md` · Secțiunea 5 |
+| **B6a** Dashboard Next.js pe Vercel | Gata (Antigravity) | `https://theo-trading-bot.vercel.app` |
+| **B6b** Alerte Telegram în română | Gata (Antigravity) | `src/alerts/telegram.py` |
+| **B6c** Botul live pe Alpaca Paper + Învățare zilnică + Dashboard live | **Orice agent** (Argon 4, Gemini 3.8 Flash, Codex Luna 6) | `docs/GHID_EXECUTIE_AGENTI.md` · Secțiunea 6 |
+| **B7** Monitorizare Paper + Poarta 2 | **Orice agent** (Argon 4, Gemini 3.8 Flash, Codex Luna 6) | `docs/PLAN_DAYTRADING.md` |
+
+## Regula „Mură în gură” pentru modele rapide (obligatorie)
+
+Când un agent (în special Claude Code) termină o etapă și predă ștafeta în `PROGRESS.md` către o etapă pe care o poate
+face Gemini Flash sau Codex / GPT Go, secțiunea **„Pasul următor exact”** din `PROGRESS.md` TREBUIE să conțină:
+1. **Fișierele exacte** care trebuie create sau modificate (ex. `src/ai/meta_label.py`, `tests/test_meta_label.py`).
+2. **Semnăturile exacte** ale funcțiilor (nume, parametri, ce returnează) și ce funcții existente trebuie importate.
+3. **Ce calculează exact** (formula matematică fără echivoc, fără ca agentul următor să fie nevoit să ghicească).
+4. **Comanda exactă de test** (`uv run pytest tests/test_... -q` și `bash scripts/check.sh`).
 
 ## Protocolul de lucru (pentru orice agent AI)
 
-a. **La start** citești `AGENTS.md` și `PROGRESS.md`, apoi din `docs/PLAN.md` doar regulile comune și secțiunea etapei tale.
+a. **La start** citești `AGENTS.md`, `PROGRESS.md` și secțiunea etapei curente din **`docs/GHID_EXECUTIE_AGENTI.md`** (plus `docs/PLAN_DAYTRADING.md`).
 b. **Lucrezi pe branch-ul etapei** (`etapa-<N>-<nume>`), creat din `main` actualizat.
 c. **După fiecare sub-pas** actualizezi `PROGRESS.md` (cu pasul următor exact), faci commit și push.
 d. **O etapă e gata** doar cu testele verzi local (`scripts/check.sh`) și pe CI. Apoi PR spre `main`, unit după CI verde.
@@ -116,5 +158,11 @@ h. **Cuvinte-cheie.** „limită” sau „predare” → execuți imediat `docs
 3. **Teste țintite** în timpul lucrului; `scripts/check.sh` complet o singură dată, înainte de PR.
 4. **Rezultate lungi** (backtest, build) se scriu în `.cache/`; citești doar ultimele rânduri.
 5. **Editări punctuale**, fără rescrieri de fișiere întregi pentru schimbări mici.
-6. **Fără sub-agenți** și fără explorări largi ale repo-ului.
+6. **Delegare inteligentă pe modele ieftine (economie de usage):**
+   - Pentru sarcini simple sau voluminoase (descărcat/extras text dintr-un PDF sau de pe web, căutat într-un fișier mare,
+     verificat formatări), agentul principal (Opus / Pro) **comandă un sub-agent ușor și ieftin**: **`haiku`** în Claude Code,
+     respectiv **`flash_lite` / `flash`** în Antigravity (`invoke_subagent(..., Model="flash_lite")`), care returnează doar
+     rezumatul scurt (10–20 de rânduri).
+   - Astfel, modelul mare își consumă limita DOAR pe codul matematic greu și pe decizii, fără să-și încarce contextul.
+   - Sunt interzise doar sub-agenții grei (Opus/Pro) lansați inutil pentru explorări largi ale repo-ului.
 7. **Scripturile grele cu internet** (descărcarea a 20 de ani de date, walk-forward) le rulezi o dată; rezultatul se salvează.
