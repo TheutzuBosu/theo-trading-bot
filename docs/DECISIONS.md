@@ -48,3 +48,11 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   ajustarea yfinance, de ex. high=28.8222541809082 vs close=28.822254180908203), altfel 70 de simboluri erau
   respinse. Universul: BK → BNY (BNY Mellon și-a schimbat simbolul, aceeași companie). Simbolurile cu punct se cer
   la yfinance cu cratimă (BRK.B → BRK-B); în cache și la Alpaca rămân cu punct.
+- **D17 (3.11.2026)** Regulile de evaluare ale Porții 1 (`src/backtest/gate1.py`), fixate înaintea rulării complete:
+  OOS = walk-forward 3 ani istoric / 1 an test pe 2006–azi; SPY cumpărat și ținut pe aceeași perioadă OOS, cu
+  aceleași costuri. Criteriul 1 la S2 numără poziții-lună (sfârșituri de lună peste care e ținută poziția, minimum 1).
+  Criteriul 5: fiecare parametru pe rând la ×0.8 și ×1.2, restul la bază; parametrii întregi se rotunjesc, iar dacă
+  rotunjirea dă tot valoarea de bază se mută cu 1 (RSI 2 → 1 și 3); PF-ul OOS trebuie să fie > 1.1 în toate.
+  Criteriul 6: 500 de rulări cu intrări aleatoare pe perioada OOS (backtest continuu), comparate după Sharpe
+  (aceeași măsură ajustată la risc ca ținta D7); celelalte măsuri apar doar informativ. Criteriul 7 pe tranzacțiile
+  OOS. Se rulează la 500 $, în ambele variante (D15). Graficele cer `matplotlib` (dependență doar de dezvoltare).
