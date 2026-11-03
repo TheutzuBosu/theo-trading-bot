@@ -53,7 +53,7 @@ Fed, hard-codat pe an) și fără intrări dacă spread-ul curent la broker dep�
 
 ## Poarta 1 pentru Faza B (toate obligatorii; D1, D1b și eventual filtrul ML duc proiectul la N = 9 teste)
 
-1. ≥ 300 de tranzacții out-of-sample, 2015–azi, net de costuri.
+1. ≥ 300 de tranzacții out-of-sample, 2016–azi (date Alpaca de la 2016, D23), net de costuri.
 2. Expectancy net ≥ +0,05R, cu t-stat ≥ 2,6 (corecție Bonferroni pentru N = 9), și pozitivă cu costurile ×1,5.
    Deflated Sharpe Ratio ≥ 0,95 calculat cu N = 9.
 3. Bate testul cu **direcție aleatoare** (aceleași intrări, stopuri și ore, direcție aleasă la întâmplare; 1.000 de
@@ -89,7 +89,7 @@ pierderilor, fără martingale; toate pozițiile închise automat înainte de fi
 
 ## Etape
 
-- **B0** broker + cont demo (Claude Code) · **B1** date de 1 minut SPY/QQQ 2015–azi + model de costuri (Antigravity)
+- **B0** broker + cont demo (Claude Code) · **B1** date de 1 minut SPY/QQQ 2016–azi (D23) + model de costuri (Antigravity)
 - **B2** backtester intraday + testul cu direcție aleatoare (Claude Code) · **B3** D1, D2, walk-forward, raportul
   `reports/gate1_daytrading.md` (Claude Code) · doar dacă trece: **B4** filtrul ML · **B5** risk guard CFD + adaptor
   broker demo (Claude Code) · **B6** procesul live pe demo + Telegram + dashboard (Antigravity) · **B7** minimum 12

@@ -85,3 +85,16 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
 - **D22 (3.11.2026)** Faza B se face pe Alpaca Paper (SPY/QQQ), nu pe CFD: proprietarul are deja contul, iar
   costurile pe acțiuni sunt mult sub cele CFD (replicarea ORB a murit tocmai din spread-ul CFD). CFD (Capital.com)
   rămâne alternativa pentru live. Cu 500 $ live pe Alpaca: doar long-only, fără levier (short/levier cer 2.000 $).
+- **D23 (3.11.2026, B0)** Date de 1 minut pe planul gratuit Alpaca (verificat cu `scripts/probe_alpaca_b0.py`,
+  doar citire): feed **SIP** pentru SPY și QQQ de la **ianuarie 2016** (2015 lipsește complet), sesiuni complete
+  (391 de bare 9:30–16:00 ET în 2016, 2020, 2025), dar fără ultimele 15 minute („subscription does not permit
+  querying recent SIP data”). Feed **IEX** doar de la 27.07.2020, cu bare lipsă (QQQ 384/390), dar permis în timp
+  real. Decizie: istoricul din B1 se ia din SIP, 2016-01-04 → azi; fereastra Porții 1 B devine **2016–azi** în loc
+  de 2015–azi (lipsă de date, nu alegere; ≥ 300 de tranzacții OOS rămân ușor de atins). În demo (B6) barele recente
+  vin din IEX: VWAP-ul și volumul IEX diferă de cele consolidate (SIP), deci B1 măsoară diferența SIP vs IEX pe
+  2020-07 → azi înainte ca D1 să folosească VWAP-ul live.
+- **D24 (3.11.2026, B0)** Short pe Alpaca Paper: SPY și QQQ sunt `shortable` și `easy_to_borrow`, marjă de
+  menținere 30%, dar contul paper de 500 $ are `shorting_enabled = False` și `multiplier = 1` (Alpaca cere
+  ≥ 2.000 $ equity pentru marjă și short, și pe paper). Deci, cu 500 $, pe paper merge doar long, fără levier.
+  Backtestul (B2–B3) testează oricum ambele direcții. Pentru short și expunere 2× pe demo, proprietarul ar trebui
+  să reseteze contul paper la ≥ 2.000 $ (decizia lui, cerută la finalul B0); altfel D1/D2 rulează pe demo long-only.
