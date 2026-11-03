@@ -159,3 +159,66 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   pașii care nu ating banii sau riscul: B6a (dashboard pe date de exemplu, Vercel) și B6b (alerte Telegram). Regula
   din `AGENTS.md` rămâne: B3 (strategii, Poarta 1 B), B5 (risk guard, broker) și live-ul le face doar Claude Code.
   Dacă Poarta 1 B pică, dashboard-ul și alertele rămân nefolosite (cost acceptat de proprietar).
+- **D29 (4.11.2026, B3, scris înainte de orice rulare)** Pre-înregistrarea Porții 1 B și a regulilor D1, D1b, D2.
+  Surse citite: Zarattini, Aziz & Barbon 2024 (PDF-ul de pe alexandria.unisg.ch: formulele Noise Area cu ajustarea
+  de gap, trailing stop = max(UB, VWAP) declanșat doar la :00/:30, VWAP doar din orele de piață, sizing
+  ⌊AUM·min(4, σ_target/σ_SPY)/Open⌋ cu σ_target = 2%, Tabelul 2) și codul Python publicat de autori pe
+  concretumgroup.com („Backtesting 2 Years of FREE Data Using Python”, declarat cu aceeași logică ca MATLAB-ul lor);
+  Zarattini & Aziz 2023 (SSRN 4416622, „Strategy Definition” și Tabelul 1). **Maróy 2025 (SSRN 5095349) nu a putut fi
+  citit**: SSRN cere verificare anti-bot, ResearchGate cere plată.
+  - **Varianta judecată (D24):** SPY + QQQ, `long_only=True`, `max_exposure=1.0`, acțiuni fracționare (cu 500 $ nu se
+    poate cumpăra o acțiune SPY întreagă; în B5 se verifică stop-ul la broker pe fracționare), `BOT_CAPITAL=500`,
+    costuri `stock` (D25), veto FOMC, riscul pe tranzacție plafonat la 0,5% (`max_risk_per_trade=0.005`), cel mult
+    jumătate din capital pe simbol. Long+short și costurile `cfd` se raportează doar informativ.
+  - **Ferestre:** walk-forward lunar, calibrare pe cele 24 de luni anterioare, OOS înlănțuit 2018-01-02 → 2026-10-30
+    (2016–2017 servesc doar la prima calibrare; octombrie 2026 e ultima lună completă din cache). Se raportează doar OOS.
+  - **D1:** σ pe minutul zilei = media |Close/Open_9:30 − 1| pe ultimele L sesiuni care au acel minut (minimum L − 1),
+    fără ziua curentă; UB = max(Open_9:30, Close_ieri) × (1 + m·σ), LB = min(Open_9:30, Close_ieri) × (1 − m·σ);
+    paper: L = 14, m = 1. Verificări la închiderea barelor 9:59, 10:29, …, 15:29 (ultima la 12:29 în zilele închise la
+    13:00; bara finală nu mai deschide nimic); bară lipsă → ultima bară închisă (D26). Long dacă Close > UB și
+    Close > VWAP-ul sesiunii (Σ vwap·volum / Σ volum din 9:30; condiția de VWAP vine din codul autorilor); short
+    invers (informativ). La o verificare unde condiția nu mai ține (Close ≤ max(UB, VWAP), trailing stop-ul din paper)
+    poziția iese; reintrarea e permisă la verificările următoare; totul se închide la ultima bară a sesiunii. Sizing:
+    `size` = 0,5 × min(1, 0,02/σ_zi), σ_zi = deviația standard a ultimelor 14 randamente zilnice close-to-close până
+    ieri (regula din paper pe jumătate de capital, cu levier maxim 1 în loc de 4).
+  - **Stop-ul la broker pentru D1 și D1b (abatere cerută de regula 4 din `AGENTS.md`):** codul autorilor nu are stop
+    între verificări. Stop-ul ținut la broker = LB la bara semnalului (banda opusă, stop-ul modelului de bază din paper),
+    fix. R se măsoară față de el, deci e riscul maxim real. Consecință acceptată: R e mare (≈ 2σ + gap), deci
+    expectancy-ul în R iese mai mic decât dacă R s-ar măsura până la max(UB, VWAP).
+  - **Alte abateri de la paper:** execuție la Open-ul barei următoare (paper: la Close-ul verificării); costurile din
+    D25 în loc de comisionul IBKR; Close_ieri brut, fără scăderea dividendului în ziua ex-dividend (≈ 4 zile/an pe
+    simbol); expunere ≤ 1× în loc de 4×.
+  - **Calibrarea lunară D1 (2 parametri):** L ∈ {7, 10, 14, 20, 28}, m ∈ {0,75; 1,0; 1,25; 1,5}. Pentru fiecare lună OOS
+    se alege perechea cu cel mai mare Sharpe al randamentelor zilnice nete (varianta judecată) pe cele 24 de luni
+    anterioare; la egalitate sau cu < 100 de tranzacții în fereastră rămâne (14; 1,0). Fiecare pereche se rulează o
+    dată pe toată perioada (semnalele folosesc doar trecutul), apoi rularea OOS ia, lună de lună, semnalele perechii
+    alese.
+  - **D2 (martor, parametrii din paper, fără calibrare):** prima lumânare de 5 minute (9:30–9:34); Close > Open → long la
+    Open-ul barei de 9:35, Close < Open → short (informativ), doji (|Close − Open| ≤ 0,01% din Open) → nimic; stop la
+    Low (long) / High (short) al primei lumânări; țintă 10R; altfel ieșire la final de zi. Același plafon ca D1 (risc
+    0,5% în loc de 1% din paper, `size` = 0,5). D2 nu merge în demo, chiar dacă ar trece.
+  - **D1b:** aceeași intrare ca D1; ieșire „VWAP & Ladder”: jumătate din poziție (`target_fraction=0.5`) la pragul de
+    profit din paper, restul la revenirea prețului la VWAP sau la final de zi; stop la broker ca la D1. Toți parametrii
+    (L, m, frecvența verificărilor, pragul) = cele mai bune valori raportate de Maróy pentru SPY, fără calibrare și
+    fără reoptimizare. **Valorile se trec în D29b din PDF înainte de orice rulare D1b** (D1 și D2 nu depind de ele).
+    Dacă PDF-ul nu poate fi obținut, D1b se abandonează (nu poate fi implementat „exact din paper”); N rămâne 9.
+  - **Criteriile, pentru fiecare candidat (D1, D1b), pe varianta judecată:**
+    1. ≥ 300 de tranzacții OOS.
+    2. Expectancy net ≥ +0,05R cu t ≥ 2,6 (`r_stats`, N = 9) și > 0 cu costurile ×1,5; Deflated Sharpe ≥ 0,95 pe
+       randamentele zilnice OOS, N = 9, cu varianța Sharpe-urilor = max(1/(T − 1), varianța Sharpe-urilor zilnice ale
+       rulărilor OOS D1, D1b, D2).
+    3. Testul aleator long-only (D27): candidații = tranzacțiile rulării long+short cu aceiași parametri lunari;
+       1.000 de rulări, seed 42; `pct_beaten` ≥ 0,95.
+    4. Profitabil în ≥ 60% din anii 2018–2026 (2026 parțial contează: 9 ani → minimum 6); niciun an sub −15%.
+    5. Sharpe anualizat (√252) al randamentelor zilnice OOS ≥ 1,0.
+    6. ±20%: rularea OOS refăcută cu fiecare parametru ×0,8 și ×1,2, pe rând (D1: L, rotunjit, și m aleși lunar;
+       D1b: fiecare parametru fix); expectancy > 0 în toate.
+    7. Sharpe-ul OOS al candidatului > Sharpe-ul OOS al D2 (aceeași variantă și fereastră; R-urile nu se compară,
+       au definiții diferite).
+    Dacă trec amândouă, demo-ul folosește doar pe cea cu Sharpe OOS mai mare. Dacă nu trece niciuna, Faza B se oprește,
+    fără a doua iterație.
+  - **Verificarea IEX (D26, nu e criteriu):** pentru candidatul care trece, OOS 2020-08-03 → 2026-10-30 cu semnalele
+    calculate din barele IEX și execuția pe prețurile SIP, cu aceiași parametri lunari. Dacă expectancy-ul iese ≤ 0 sau
+    sub jumătate din cel cu semnale SIP pe aceeași fereastră, demo-ul (B6) folosește VWAP ancorat din SIP (D26).
+  - Găsite la 4.11.2026, necitite: „Out-of-Sample Evaluation of an Intraday Momentum Strategy” (SSRN 7290621) și o
+    replicare independentă, „'Beat the Market' Revisited” (SSRN 7323419). Nu schimbă regulile de mai sus.
