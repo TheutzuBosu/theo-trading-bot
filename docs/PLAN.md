@@ -24,6 +24,11 @@ Agentul citește regulile comune și DOAR secțiunea etapei lui. Fiecare etapă 
   iese din top 10. Stop de catastrofă: intrare − 3×ATR(20).
 - **S3 RSI-2 Pullback.** Filtru: SPY > SMA200 și Close > SMA200. Intrare: RSI(2) < 10. Ieșire: Close > SMA(5) sau
   după 10 zile. Stop de catastrofă: intrare − 3×ATR(20). Fără R:R minim (se judecă după expectancy).
+- **S4 MACD + EMA200 (după TradingLab, adaptată la daily și acțiuni).** Filtru: Close > EMA(200). Intrare: linia
+  MACD(12,26,9) taie în sus linia de semnal, cu ambele sub zero. Stop: cel mai jos dintre minimul ultimelor 10 zile
+  și Close − 1.5×ATR(20) (deci cel puțin 1.5×ATR distanță). Target: 1.5 × distanța până la stop. Ieșire: stop sau target.
+  Fără filtru SPY (varianta originală). Maximum 4 strategii candidate în total: fiecare în plus crește șansa
+  ca una să treacă Poarta 1 din noroc.
 - **Veto (peste toate):** fără intrări dacă raportarea trimestrială e în următoarele 3 zile de tranzacționare;
   Gemini poate da veto la un șoc negativ sever în știrile din ultimele 48 de ore.
 
@@ -83,12 +88,17 @@ Fișierele de reguli (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `PROGRESS.md`, `doc
 
 ## Etapa 3 — Strategii și Poarta 1 · Claude Code
 
-- **3a.** `src/strategies/`: S1, S2, S3 exact ca în regulile comune, funcții pure (date → semnale), parametrii în
-  `config/strategies.yaml`. Teste pe scenarii construite de mână.
-- **3b.** Rulezi walk-forward + Monte Carlo + testul aleatoriu pe 2006–azi pentru fiecare strategie. `reports/gate1.md`:
+- [x] **3a.** `src/strategies/`: S1, S2, S3, S4 exact ca în regulile comune, funcții pure (date → semnale), parametrii în
+  `config/strategies.yaml`. Teste pe scenarii construite de mână. S4 are nevoie de indicatorul MACD(12,26,9)
+  (linie, semnal, histogramă), care nu există încă: îl adaugi în `src/indicators.py`, cu test pe valori calculate
+  de mână, folosind aceeași convenție EMA ca restul (D12).
+- [x] **3b.** Rulezi walk-forward + Monte Carlo + testul aleatoriu pe 2006–azi pentru fiecare strategie. `reports/gate1.md`:
   tabel strategie vs SPY, PASS/FAIL pe fiecare din cele 7 criterii, testul ±20%, nota despre survivorship bias,
   grafice equity vs SPY în `reports/`. NU optimiza parametrii ca să treacă. Raport de 5 rânduri pentru proprietar.
   Dacă nicio strategie nu trece: te oprești și scrii asta clar.
+- [x] **3c.** Iterația 1 (D18, cerută de proprietar după FAIL): S4 cu filtrul SPY > SMA(200), nimic altceva.
+  `scripts/gate1.py --iteratia1` → `reports/gate1_iteratia1.md`, comparat cu S4 de bază; `reports/gate1.md` rămâne.
+  Dacă pică, proiectul se oprește.
 
 ## Etapa 4 — Risk guard · Claude Code
 

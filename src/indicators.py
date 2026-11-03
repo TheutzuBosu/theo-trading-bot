@@ -96,6 +96,13 @@ def adx(df: pd.DataFrame, n: int = 14) -> pd.Series:
     return wilder(dx.where(plus_di.notna()), n)
 
 
+def macd(close: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9) -> pd.DataFrame:
+    """MACD line (EMA fast - EMA slow), signal line (EMA of the MACD line) and histogram."""
+    line = ema(close, fast) - ema(close, slow)
+    sig = ema(line, signal)
+    return pd.DataFrame({"macd": line, "signal": sig, "hist": line - sig})
+
+
 def momentum_12_1(close: pd.Series, lookback: int = 252, skip: int = 21) -> pd.Series:
     """12-1 month return: from `lookback` bars ago to `skip` bars ago (skips the last month)."""
     close = close.astype(float)

@@ -121,6 +121,28 @@ def test_validate_high_low_inconsistency(clean_df):
         validate(bad_df, symbol="TEST")
 
 
+def test_validate_ignores_float_rounding_in_adjusted_prices(clean_df):
+    # yfinance adjusted bars: high and close equal up to the last float digit
+    df = clean_df.copy()
+    first = df.index[0]
+    df.loc[first, ["open", "high", "low", "close"]] = [
+        28.5,
+        28.8222541809082,
+        28.4,
+        28.822254180908203,
+    ]
+    validate(df, symbol="TEST")
+
+    df.loc[first, ["low", "close"]] = [42.57182693481446, 42.57182693481445]
+    df.loc[first, ["open", "high"]] = [42.6, 42.9]
+    validate(df, symbol="TEST")
+
+    # a real gap of one cent is still an error
+    df.loc[first, ["high", "close"]] = [42.9, 42.91]
+    with pytest.raises(DataValidationError, match="High < Close"):
+        validate(df, symbol="TEST")
+
+
 def test_validate_abnormal_calendar_gap():
     # Gap of 14 days
     dates = [pd.Timestamp("2026-01-01"), pd.Timestamp("2026-01-15")]

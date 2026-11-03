@@ -2,11 +2,22 @@
 
 ## Ultima actualizare
 - **Data:** 3 noiembrie 2026
-- **Etapă finalizată:** Etapa 2 — Backtester (Faza P2: sub-pașii 2a, 2b, 2c)
-- **Branch:** `etapa-2-backtester`
+- **Etapă finalizată:** Etapa 3a — strategiile S1–S4 (etapa 2, backtesterul, e unită în `main` prin PR #2)
+- **Branch:** `etapa-3-strategii`
 - **Agent:** Claude Code
 
 ## Ce s-a realizat
+**Etapa 3a (strategiile):**
+- `src/indicators.py`: `macd(close, 12, 26, 9)` → linie, semnal, histogramă (convenția EMA din D12), test de mână.
+- `src/strategies/`: S1 Trend Breakout, S2 Momentum Rotation, S3 RSI-2 Pullback, S4 MACD + EMA200, funcții pure
+  `prices -> {simbol: semnale}` (SPY doar ca filtru, nu se tranzacționează). Motivul intrării e scris în română,
+  cu valorile indicatorilor. `load_strategy("S1")` → `StrategySpec` (`signals`, `params`, `max_hold_bars`,
+  `title`); `overrides=` pentru testul ±20%. Interpretările sunt în D14.
+- `config/strategies.yaml`: parametrii exact ca în plan, validați strict (pydantic, cheie necunoscută → eroare).
+- Teste noi (23): scenarii construite de mână pentru fiecare strategie (intrare, ieșire, stop, țintă, filtrul SPY,
+  rotația lunară S2), parametrii din YAML = plan, toate cele 4 trec detectorul de look-ahead și rulează în backtester.
+
+**Etapa 2 (backtesterul):**
 1. **Indicatori (`src/indicators.py`, pandas pur):** SMA, EMA, ATR (implicit 20), RSI (2 și 14), Donchian high/low
    (fără bara curentă, shiftat cu 1), ADX (14), randament 12-1 luni. Toți cauzali; convențiile în D12.
 2. **Motorul (`src/backtest/engine.py`, `panel.py`):** bar-cu-bar, semnal la închiderea t, execuție la Open t+1;
@@ -30,18 +41,16 @@
    ≈ 0,2 s, deci 500 de rulări aleatoare ≈ 1 minut.
 
 ## Ce urmează
-- **Etapa 3 — Strategii + Poarta 1 (Claude Code), branch `etapa-3-strategii`:**
-  - 3a: `src/strategies/` (S1, S2, S3) ca funcții pure `prices -> {simbol: DataFrame}` după contractul din
-    `src/backtest/panel.py` (`entry`, `exit`, `stop_distance`, opțional `target_distance`, `score`, `entry_reason`);
-    parametrii în `config/strategies.yaml`. S3 folosește `max_hold_bars=10`.
-  - 3b: date 2006–azi, walk-forward + Monte Carlo + test aleator, `reports/gate1.md`.
+- **3b — Poarta 1 (Claude Code), pe `etapa-3-strategii`:** date 2006–azi (universul + SPY, o singură descărcare,
+  cache); pentru S1–S4: `walk_forward` (3 ani / 1 an), `monte_carlo`, `random_entry_test` (500), testul ±20% pe
+  parametri; `reports/gate1.md` cu tabel strategie vs SPY, PASS/FAIL pe cele 7 criterii, nota despre survivorship
+  bias, grafice equity vs SPY în `reports/`. NU se optimizează parametrii.
 
 ## Blocaje
-- Niciun blocaj pentru etapa 2.
-- **De decis înainte de Poarta 1 (proprietarul):** cu 500 $ și risc 0.5%, riscul pe tranzacție e 2,5 $. Dacă Alpaca
-  nu permite ordine bracket (cu stop la broker) pe acțiuni fracționare, botul poate cumpăra doar acțiuni întregi, iar
-  multe titluri mari (peste ~100 $) ar fi sărite. Backtesterul suportă ambele variante (`whole_shares`); etapa 5
-  verifică regula Alpaca.
+- Niciun blocaj tehnic.
+- **Decis de proprietar (3.11.2026, D15):** Poarta 1 se rulează în ambele variante, cu acțiuni fracționare și cu
+  acțiuni întregi (`BacktestConfig(whole_shares=True)`), la 500 $. Motiv: dacă Alpaca nu permite bracket (stop la
+  broker) pe fracționare, botul va putea cumpăra doar acțiuni întregi; etapa 5 verifică regula Alpaca.
 
 ## Status teste
-- `scripts/check.sh`: **PASS** local (uv sync locked, ruff check, ruff format check, pytest: 83 passed, offline).
+- `scripts/check.sh`: **PASS** local (uv sync locked, ruff check, ruff format check, pytest: 106 passed, offline).

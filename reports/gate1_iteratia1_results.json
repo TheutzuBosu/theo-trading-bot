@@ -1,0 +1,194 @@
+{
+ "meta": {
+  "run_date": "2026-11-03",
+  "capital": 500.0,
+  "data_start": "2006-01-03",
+  "data_end": "2026-11-02",
+  "n_stocks": 101,
+  "late_starts": {
+   "ABBV": "2013-01-02",
+   "AVGO": "2009-08-06",
+   "CHTR": "2010-01-05",
+   "DOW": "2019-03-20",
+   "GM": "2010-11-18",
+   "KHC": "2015-07-06",
+   "MA": "2006-05-25",
+   "META": "2012-05-18",
+   "PM": "2008-03-17",
+   "PYPL": "2015-07-06",
+   "TMUS": "2007-04-19",
+   "TSLA": "2010-06-29",
+   "V": "2008-03-19"
+  },
+  "affordable_today": 25,
+  "max_notional": 100.0
+ },
+ "results": {
+  "fractionare": {
+   "S4": {
+    "title": "S4 MACD + EMA200",
+    "oos_start": "2009-01-05",
+    "oos_end": "2026-11-02",
+    "oos": {
+     "total_return": 0.9778356610548511,
+     "cagr": 0.03900597439890818,
+     "sharpe": 0.7389396737023914,
+     "max_drawdown": 0.1067958422273324,
+     "n_trades": 809,
+     "win_rate": 0.4932014833127318,
+     "profit_factor": 1.3423851552924313,
+     "expectancy_r": 0.17757172632039162,
+     "avg_exposure": 0.3263345476350531,
+     "n_windows": 18,
+     "windows_profitable_pct": 0.8333333333333334
+    },
+    "spy": {
+     "total_return": 10.125575519116966,
+     "cagr": 0.14473499547799928,
+     "sharpe": 0.8540961716906175,
+     "max_drawdown": 0.33717280281106543,
+     "n_trades": 1,
+     "win_rate": null,
+     "profit_factor": null,
+     "expectancy_r": null,
+     "avg_exposure": 1.0
+    },
+    "criteria": [
+     {
+      "number": 1,
+      "name": "Tranzacții OOS",
+      "passed": true,
+      "value": "809",
+      "threshold": ">= 150"
+     },
+     {
+      "number": 2,
+      "name": "Mai bună decât SPY ajustat la risc",
+      "passed": false,
+      "value": "Sharpe 0.74 vs 0.85; CAGR 3.9% vs 14.5%; DD 10.7% vs 33.7%",
+      "threshold": "Sharpe >= 1.05, sau CAGR >= 14.5% și DD <= 23.6%"
+     },
+     {
+      "number": 3,
+      "name": "Profit factor și expectancy",
+      "passed": true,
+      "value": "PF 1.34; expectancy +0.18R",
+      "threshold": "PF >= 1.3, expectancy >= +0.1R"
+     },
+     {
+      "number": 4,
+      "name": "Ferestre walk-forward profitabile",
+      "passed": true,
+      "value": "83.3%",
+      "threshold": ">= 60%"
+     },
+     {
+      "number": 5,
+      "name": "Parametri la ±20%",
+      "passed": true,
+      "value": "PF minim 1.21 din 18 variante",
+      "threshold": "PF > 1.1 în toate"
+     },
+     {
+      "number": 6,
+      "name": "Bate intrările aleatoare",
+      "passed": false,
+      "value": "84.2% din rulări (după Sharpe)",
+      "threshold": ">= 95%"
+     },
+     {
+      "number": 7,
+      "name": "Monte Carlo: drawdown p95",
+      "passed": true,
+      "value": "11.9%",
+      "threshold": "< 20%"
+     }
+    ],
+    "passed": false
+   }
+  },
+  "actiuni_intregi": {
+   "S4": {
+    "title": "S4 MACD + EMA200",
+    "oos_start": "2009-01-05",
+    "oos_end": "2026-11-02",
+    "oos": {
+     "total_return": 0.08517986784604603,
+     "cagr": 0.004596960051024501,
+     "sharpe": 0.13525101767279807,
+     "max_drawdown": 0.17313458770388424,
+     "n_trades": 679,
+     "win_rate": 0.4521354933726068,
+     "profit_factor": 1.061566880629712,
+     "expectancy_r": 0.03935040962856402,
+     "avg_exposure": 0.21372039628322048,
+     "n_windows": 18,
+     "windows_profitable_pct": 0.5
+    },
+    "spy": {
+     "total_return": 10.125575519116966,
+     "cagr": 0.14473499547799928,
+     "sharpe": 0.8540961716906175,
+     "max_drawdown": 0.33717280281106543,
+     "n_trades": 1,
+     "win_rate": null,
+     "profit_factor": null,
+     "expectancy_r": null,
+     "avg_exposure": 1.0
+    },
+    "criteria": [
+     {
+      "number": 1,
+      "name": "Tranzacții OOS",
+      "passed": true,
+      "value": "679",
+      "threshold": ">= 150"
+     },
+     {
+      "number": 2,
+      "name": "Mai bună decât SPY ajustat la risc",
+      "passed": false,
+      "value": "Sharpe 0.14 vs 0.85; CAGR 0.5% vs 14.5%; DD 17.3% vs 33.7%",
+      "threshold": "Sharpe >= 1.05, sau CAGR >= 14.5% și DD <= 23.6%"
+     },
+     {
+      "number": 3,
+      "name": "Profit factor și expectancy",
+      "passed": false,
+      "value": "PF 1.06; expectancy +0.04R",
+      "threshold": "PF >= 1.3, expectancy >= +0.1R"
+     },
+     {
+      "number": 4,
+      "name": "Ferestre walk-forward profitabile",
+      "passed": false,
+      "value": "50.0%",
+      "threshold": ">= 60%"
+     },
+     {
+      "number": 5,
+      "name": "Parametri la ±20%",
+      "passed": false,
+      "value": "PF minim 1.05 din 18 variante",
+      "threshold": "PF > 1.1 în toate"
+     },
+     {
+      "number": 6,
+      "name": "Bate intrările aleatoare",
+      "passed": false,
+      "value": "13.6% din rulări (după Sharpe)",
+      "threshold": ">= 95%"
+     },
+     {
+      "number": 7,
+      "name": "Monte Carlo: drawdown p95",
+      "passed": true,
+      "value": "16.3%",
+      "threshold": "< 20%"
+     }
+    ],
+    "passed": false
+   }
+  }
+ }
+}
