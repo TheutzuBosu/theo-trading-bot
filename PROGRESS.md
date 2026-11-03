@@ -32,8 +32,9 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySignals`, `IntradayConfig`,
 `run_intraday`), `src/backtest/fomc.py` (veto ±30 min), `src/backtest/intraday_metrics.py` (`summarize_intraday`,
 `r_stats`, `deflated_sharpe`, `direction_outcomes`, `random_direction_test`); detectorul de look-ahead primește
-`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. Dacă PR-ul `faza-b2-backtester` → `main` nu e unit, se unește
-după CI verde. Apoi sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din `main` actualizat, după
+`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. Dacă PR-ul `faza-b2-backtester` → `main` (#6) nu e unit, se unește
+după CI verde: asta o poate face și Antigravity (4.11.2026, Claude e la limită). B3 rămâne DOAR Claude Code:
+după unire, Antigravity se oprește și se așteaptă Claude (în Faza B nu există altă etapă Antigravity deblocată). Apoi sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din `main` actualizat, după
 `docs/PLAN_DAYTRADING.md` și D24–D27:
 1. Înainte de orice rulare, în `docs/DECISIONS.md` (D28): Poarta 1 B fixată pe varianta long-only (`long_only=True`,
    `max_exposure=1.0`, fără marjă, D24), testul aleator long-only (candidații din rularea long+short), N = 9,
