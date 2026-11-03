@@ -4,8 +4,8 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
-| 0 | Fundația | În lucru | main | Claude (chat) → oricare agent | Fișierele de reguli gata (3 noiembrie 2026). Rămân 0a și 0b din `docs/PLAN.md` |
-| 1 | Date | De făcut | etapa-1-date | Antigravity | |
+| 0 | Fundația | Gata | main | Antigravity | uv, Python 3.12, pyproject.toml, ruff, pytest, CI verde |
+| 1 | Date | Gata | etapa-1-date | Antigravity | Univers S&P 100, cache parquet/csv, drop_incomplete_bar, validate, loader daily & recent |
 | 2 | Backtester | De făcut | etapa-2-backtester | Claude Code | |
 | 3 | Strategii + Poarta 1 | De făcut | etapa-3-strategii | Claude Code | Decide dacă proiectul continuă |
 | 4 | Risk guard | De făcut | etapa-4-risc | Claude Code | |
@@ -18,9 +18,10 @@ Statusuri: De făcut · În lucru · Gata · Blocat
 
 ## Pasul următor exact
 
-Etapa 0, sub-pasul 0a (oricare agent), pe `main`: creează `pyproject.toml` cu uv (Python 3.12) și dependențele din
-`docs/PLAN.md`, `scripts/check_fast.sh`, `scripts/check.sh`, un test trivial în `tests/`, `.github/workflows/ci.yml`.
-Gata când `scripts/check.sh` trece local. Apoi 0b: repo privat pe GitHub cu `gh`, push, CI verde.
+Etapa 2 (Claude Code), pe branch-ul `etapa-2-backtester`:
+- 2a: `src/indicators.py` (SMA, EMA, ATR(20), RSI(2), RSI(14), Donchian high/low, ADX(14), randament 12-1 luni) cu teste pe valori calculate de mână.
+- 2b: `src/backtest/engine.py` bar-cu-bar conform regulilor comune din `docs/PLAN.md`.
+- 2c: Metrici de performanță, walk-forward, Monte Carlo, intrări aleatoare.
 
 ## Pentru proprietar
 
@@ -29,8 +30,8 @@ Gata când `scripts/check.sh` trece local. Apoi 0b: repo privat pe GitHub cu `gh
 
 ## Bug-uri cunoscute
 
-Niciunul.
+Niciunul. 28 de teste pytest trecute cu succes offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Claude (chat) · Etapa 0: fișierele de reguli.
+3 noiembrie 2026 · Antigravity · Etapa 1 (Date de piață) finalizată.
