@@ -5,6 +5,11 @@ Run once (~20 min, data from scripts/download_history.py):
     PYTHONPATH=. uv run python scripts/gate1.py
 Full results go to .cache/gate1/; reports/gate1.md, reports/gate1_results.json and the equity
 charts are generated from them. `--report-only` rewrites the report from .cache/gate1/.
+
+Iteration 1 (D18, etapa 3c), only S4 with the SPY filter, next to the base result:
+    PYTHONPATH=. uv run python scripts/gate1.py --iteratia1
+writes .cache/gate1_iteratia1/ and reports/gate1_iteratia1*; reports/gate1.md stays the result
+before D18 (a new full run would test S4 with the filter).
 """
 
 from __future__ import annotations
@@ -13,7 +18,8 @@ import datetime as dt
 import json
 import sys
 import time
-from dataclasses import asdict, replace
+from dataclasses import asdict, dataclass, replace
+from pathlib import Path
 
 import matplotlib
 import numpy as np
@@ -45,14 +51,30 @@ from src.data import BENCHMARK_SYMBOL, load_daily, load_universe
 from src.strategies import load_strategy
 
 START = "2006-01-01"
-STRATEGIES = ("S1", "S2", "S3", "S4")
 VARIANTS = {"fractionare": False, "actiuni_intregi": True}  # name -> whole_shares
 VARIANT_TITLES = {"fractionare": "Acțiuni fracționare", "actiuni_intregi": "Acțiuni întregi"}
 N_RANDOM = 500
 N_MONTE_CARLO = 1000
 SEED = 42
-CACHE = BASE_DIR / ".cache" / "gate1"
 REPORTS = BASE_DIR / "reports"
+
+
+@dataclass(frozen=True)
+class Run:
+    """What is tested and where it goes: .cache/<prefix>/ (full results), reports/<prefix>.md,
+    reports/<prefix>_results.json and reports/<prefix>_equity_<variant>.png."""
+
+    prefix: str
+    strategies: tuple[str, ...]
+    change: str = ""  # what differs from the base run, used in labels
+
+    @property
+    def cache(self) -> Path:
+        return BASE_DIR / ".cache" / self.prefix
+
+
+BASE = Run("gate1", ("S1", "S2", "S3", "S4"))
+ITERATION_1 = Run("gate1_iteratia1", ("S4",), "cu filtru SPY")  # D18
 
 
 def _clean(obj):
@@ -147,8 +169,8 @@ def evaluate_strategy(name, prices, sectors, whole_shares, capital) -> tuple[dic
     return result, wf.equity
 
 
-def run_all() -> None:
-    CACHE.mkdir(parents=True, exist_ok=True)
+def run_all(run: Run) -> None:
+    run.cache.mkdir(parents=True, exist_ok=True)
     prices, sectors = load_market()
     capital = settings.BOT_CAPITAL
     stocks = {s: df for s, df in prices.items() if s != BENCHMARK_SYMBOL}
@@ -170,17 +192,17 @@ def run_all() -> None:
     for variant, whole in VARIANTS.items():
         results[variant] = {}
         curves = {}
-        for name in STRATEGIES:
+        for name in run.strategies:
             t0 = time.time()
             res, equity = evaluate_strategy(name, prices, sectors, whole, capital)
             results[variant][name] = res
             curves[name] = equity
             verdict = "PASS" if res["passed"] else "FAIL"
             print(f"{variant} {name}: {verdict} ({time.time() - t0:.0f}s)", flush=True)
-        start, end = curves[STRATEGIES[0]].index[[0, -1]]
+        start, end = curves[run.strategies[0]].index[[0, -1]]
         curves["SPY"] = buy_and_hold(spy_df, capital, start=start, end=end)
-        pd.DataFrame(curves).to_csv(CACHE / f"equity_{variant}.csv")
-    with open(CACHE / "results.json", "w", encoding="utf-8") as fh:
+        pd.DataFrame(curves).to_csv(run.cache / f"equity_{variant}.csv")
+    with open(run.cache / "results.json", "w", encoding="utf-8") as fh:
         json.dump(_clean({"meta": meta, "results": results}), fh, indent=1, ensure_ascii=False)
 
 
@@ -197,23 +219,31 @@ def num(x, fmt=".2f") -> str:
     return "n/a" if x is None else format(x, fmt)
 
 
-def plot_equity(variant: str) -> str:
+def plot_equity(variant: str, run: Run = BASE) -> str:
+    """Equity OOS vs SPY. For an iteration, also the base curve of the same strategy (dashed),
+    when .cache/gate1/ still has it."""
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    curves = pd.read_csv(CACHE / f"equity_{variant}.csv", index_col=0, parse_dates=True)
+    curves = pd.read_csv(run.cache / f"equity_{variant}.csv", index_col=0, parse_dates=True)
     fig, ax = plt.subplots(figsize=(10, 5.5))
+    base_file = BASE.cache / f"equity_{variant}.csv"
+    if run != BASE and base_file.exists():
+        base = pd.read_csv(base_file, index_col=0, parse_dates=True)
+        for s in run.strategies:
+            ax.plot(base.index, base[s], label=f"{s} de bază (Poarta 1)", color="grey", ls="--")
     for col in curves.columns:
         style = {"color": "black", "linewidth": 2.2} if col == "SPY" else {"linewidth": 1.3}
-        label = "SPY (cumpărat și ținut)" if col == "SPY" else col
+        label = "SPY (cumpărat și ținut)" if col == "SPY" else f"{col} {run.change}".strip()
         ax.plot(curves.index, curves[col], label=label, **style)
     ax.set_yscale("log")
-    ax.set_title(f"Poarta 1, out-of-sample: 500 $ investiți ({VARIANT_TITLES[variant].lower()})")
+    title = "Poarta 1" if run == BASE else "Poarta 1, iterația 1"
+    ax.set_title(f"{title}, out-of-sample: 500 $ investiți ({VARIANT_TITLES[variant].lower()})")
     ax.set_ylabel("Valoarea contului ($, scară logaritmică)")
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(loc="upper left")
     fig.tight_layout()
-    name = f"gate1_equity_{variant}.png"
+    name = f"{run.prefix}_equity_{variant}.png"
     fig.savefig(REPORTS / name, dpi=110)
     plt.close(fig)
     return name
@@ -225,8 +255,11 @@ def worst_varied_pf(r: dict):
     return None if not pfs or None in pfs else min(pfs)
 
 
-def summary_table(res: dict) -> list[str]:
-    spy = res[STRATEGIES[0]]["spy"]
+def summary_table(res: dict, robustness: bool = True) -> list[str]:
+    """One column per key of `res`. Without `robustness`, only what reports/gate1_results.json
+    keeps (the Monte Carlo, random and +/-20% values are in the criteria table)."""
+    cols = list(res)
+    spy = res[cols[0]]["spy"]
     rows = [
         ("Tranzacții OOS", lambda r: f"{r['oos']['n_trades']}", "1"),
         (
@@ -242,27 +275,29 @@ def summary_table(res: dict) -> list[str]:
         ("Tranzacții câștigătoare", lambda r: pct(r["oos"]["win_rate"]), "-"),
         ("Expunere medie", lambda r: pct(r["oos"]["avg_exposure"]), "100%"),
         ("Ferestre profitabile", lambda r: pct(r["oos"]["windows_profitable_pct"]), "-"),
-        ("MC drawdown p95", lambda r: pct(r["monte_carlo"].get("drawdown_p95")), "-"),
-        ("Bate intrările aleatoare", lambda r: pct(r["random"]["beats"][RANDOM_METRIC]), "-"),
-        (f"PF minim la ±{PARAM_STEP:.0%}", lambda r: num(worst_varied_pf(r)), "-"),
-        ("**Verdict**", lambda r: "**PASS**" if r["passed"] else "**FAIL**", "-"),
     ]
-    lines = ["| | " + " | ".join(STRATEGIES) + " | SPY |", "|---" * (len(STRATEGIES) + 2) + "|"]
+    if robustness:
+        rows += [
+            ("MC drawdown p95", lambda r: pct(r["monte_carlo"].get("drawdown_p95")), "-"),
+            ("Bate intrările aleatoare", lambda r: pct(r["random"]["beats"][RANDOM_METRIC]), "-"),
+            (f"PF minim la ±{PARAM_STEP:.0%}", lambda r: num(worst_varied_pf(r)), "-"),
+        ]
+    rows += [("**Verdict**", lambda r: "**PASS**" if r["passed"] else "**FAIL**", "-")]
+    lines = ["| | " + " | ".join(cols) + " | SPY |", "|---" * (len(cols) + 2) + "|"]
     for label, cell, spy_cell in rows:
-        lines.append(
-            f"| {label} | " + " | ".join(cell(res[s]) for s in STRATEGIES) + f" | {spy_cell} |"
-        )
+        lines.append(f"| {label} | " + " | ".join(cell(res[s]) for s in cols) + f" | {spy_cell} |")
     return lines
 
 
 def criteria_table(res: dict) -> list[str]:
+    cols = list(res)
     lines = [
-        "| # | Criteriu | " + " | ".join(STRATEGIES) + " |",
-        "|---" * (len(STRATEGIES) + 2) + "|",
+        "| # | Criteriu | " + " | ".join(cols) + " |",
+        "|---" * (len(cols) + 2) + "|",
     ]
-    for i, crit in enumerate(res[STRATEGIES[0]]["criteria"]):
+    for i, crit in enumerate(res[cols[0]]["criteria"]):
         cells = []
-        for s in STRATEGIES:
+        for s in cols:
             c = res[s]["criteria"][i]
             cells.append(("✅ " if c["passed"] else "❌ ") + c["value"])
         lines.append(
@@ -278,7 +313,7 @@ def varied_table(res: dict) -> list[str]:
         "| Strategie | Parametru | Bază | Variantă | PF | Tranzacții | Sharpe |",
         "|---|---|---|---|---|---|---|",
     ]
-    for s in STRATEGIES:
+    for s in res:
         for v in res[s]["varied"]:
             pf = v["profit_factor"]
             mark = "" if pf is not None and pf > MIN_VARIED_PROFIT_FACTOR else " ❌"
@@ -289,13 +324,19 @@ def varied_table(res: dict) -> list[str]:
     return lines
 
 
+def verdict(r: dict) -> str:
+    bad = [str(c["number"]) for c in r["criteria"] if not c["passed"]]
+    return "PASS" if r["passed"] else f"FAIL (criteriile {', '.join(bad)})"
+
+
 def write_report() -> None:
-    with open(CACHE / "results.json", encoding="utf-8") as fh:
+    strategies = BASE.strategies
+    with open(BASE.cache / "results.json", encoding="utf-8") as fh:
         data = json.load(fh)
     meta, results = data["meta"], data["results"]
-    first = results["fractionare"][STRATEGIES[0]]
+    first = results["fractionare"][strategies[0]]
     n_windows = first["oos"]["n_windows"]
-    passed = {v: [s for s in STRATEGIES if results[v][s]["passed"]] for v in VARIANTS}
+    passed = {v: [s for s in strategies if results[v][s]["passed"]] for v in VARIANTS}
 
     out = [
         "# Poarta 1: rezultatul backtestului",
@@ -312,20 +353,18 @@ def write_report() -> None:
             "",
         ]
     for v in VARIANTS:
-        for s in STRATEGIES:
+        for s in strategies:
             r = results[v][s]
-            bad = [str(c["number"]) for c in r["criteria"] if not c["passed"]]
-            verdict = "PASS" if r["passed"] else f"FAIL (criteriile {', '.join(bad)})"
-            out.append(f"- {VARIANT_TITLES[v]}, {r['title']}: **{verdict}**")
+            out.append(f"- {VARIANT_TITLES[v]}, {r['title']}: **{verdict(r)}**")
     cap = meta["capital"]
     frac = results["fractionare"]
-    best = max(STRATEGIES, key=lambda s: frac[s]["oos"]["total_return"])
-    end_value = {s: cap * (1 + frac[s]["oos"]["total_return"]) for s in STRATEGIES}
+    best = max(strategies, key=lambda s: frac[s]["oos"]["total_return"])
+    end_value = {s: cap * (1 + frac[s]["oos"]["total_return"]) for s in strategies}
     spy_value = cap * (1 + first["spy"]["total_return"])
     # profitable strategies whose entries do not beat random ones (criterion 6)
     weak_entries = [
         s
-        for s in STRATEGIES
+        for s in strategies
         if frac[s]["oos"]["total_return"] > 0 and not frac[s]["criteria"][5]["passed"]
     ]
     out += [
@@ -334,7 +373,7 @@ def write_report() -> None:
         "",
         f"Cu {cap:.0f} $ puși la începutul lui {first['oos_start'][:4]} (acțiuni fracționare), "
         "la final aveai: "
-        + ", ".join(f"{s} {end_value[s]:,.0f} $" for s in STRATEGIES)
+        + ", ".join(f"{s} {end_value[s]:,.0f} $" for s in strategies)
         + f"; SPY cumpărat și ținut: **{spy_value:,.0f} $**. Cea mai bună strategie ({best}) "
         f"a câștigat {frac[best]['oos']['cagr']:.1%} pe an, SPY {first['spy']['cagr']:.1%} "
         "pe an. Strategiile au pierderi mai mici (drawdown), dar și ajustat la risc (Sharpe) "
@@ -380,7 +419,7 @@ def write_report() -> None:
         out += criteria_table(res)
         out += [""]
         if v == "actiuni_intregi":
-            rej = {s: res[s]["rejections"].get("qty_too_small", 0) for s in STRATEGIES}
+            rej = {s: res[s]["rejections"].get("qty_too_small", 0) for s in strategies}
             out += [
                 "Intrări respinse pentru că nici o acțiune întreagă nu încăpea în risc sau în "
                 "plafonul de poziție (backtest continuu pe perioada OOS): "
@@ -444,7 +483,10 @@ def write_report() -> None:
             "trading (Poarta 2). Cele care nu trec se abandonează.",
         ]
     (REPORTS / "gate1.md").write_text("\n".join(out) + "\n", encoding="utf-8")
+    write_compact(BASE, meta, results)
 
+
+def write_compact(run: Run, meta: dict, results: dict) -> None:
     compact = {
         "meta": meta,
         "results": {
@@ -458,16 +500,193 @@ def write_report() -> None:
             for v in VARIANTS
         },
     }
-    with open(REPORTS / "gate1_results.json", "w", encoding="utf-8") as fh:
+    with open(REPORTS / f"{run.prefix}_results.json", "w", encoding="utf-8") as fh:
         json.dump(compact, fh, indent=1, ensure_ascii=False)
+
+
+def base_results() -> dict:
+    """Base Gate 1 results: in full from .cache/gate1/ when still there (with the yearly
+    windows), else the compact reports/gate1_results.json."""
+    path = BASE.cache / "results.json"
+    if not path.exists():
+        path = REPORTS / f"{BASE.prefix}_results.json"
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)["results"]
+
+
+def write_iteration_report() -> None:
+    """reports/gate1_iteratia1.md: S4 with the SPY filter (D18) next to the base S4."""
+    run = ITERATION_1
+    (s,) = run.strategies  # D18: one change, to one strategy
+    with open(run.cache / "results.json", encoding="utf-8") as fh:
+        data = json.load(fh)
+    meta, results = data["meta"], data["results"]
+    base = base_results()
+    old, new = f"{s} fără filtru", f"{s} {run.change}"
+    both = {v: {old: base[v][s], new: results[v][s]} for v in VARIANTS}
+    passed = {v: results[v][s]["passed"] for v in VARIANTS}
+    n, b = results["fractionare"][s], base["fractionare"][s]
+    spy, cap, sma = n["spy"], meta["capital"], n["params"]["spy_filter"]
+
+    out = [
+        "# Poarta 1, iterația 1: S4 cu filtrul SPY",
+        "",
+        f"{meta['run_date']} · Claude Code · etapa 3c · generat de `scripts/gate1.py --iteratia1`",
+        "",
+        "## Pe scurt",
+        "",
+        f"O singură schimbare (D18): {n['title']} intră doar când și piața urcă, adică SPY e "
+        f"peste media lui pe {sma} de zile (SMA{sma}), ca la S1, S2 și S3. Restul regulilor, "
+        "datele, cele 7 criterii și pragurile sunt aceleași ca la Poarta 1 de bază "
+        "(`reports/gate1.md`).",
+        "",
+    ]
+    for v in VARIANTS:
+        r = results[v][s]
+        out.append(f"- {VARIANT_TITLES[v]}: **{verdict(r)}** (fără filtru: {verdict(base[v][s])})")
+    out.append("")
+    if all(passed.values()):
+        out.append(
+            "**S4 cu filtru trece Poarta 1, în ambele variante.** Conform D18 urmează etapa 4 "
+            "(risk guard). PASS-ul rămâne suspect (survivorship bias și o schimbare aleasă "
+            "după ce am văzut rezultatele), deci se confirmă doar la Poarta 2, după 12 "
+            "săptămâni de paper trading."
+        )
+    elif any(passed.values()):
+        ok = next(v for v in VARIANTS if passed[v])
+        out.append(
+            f"**S4 cu filtru trece doar cu {VARIANT_TITLES[ok].lower()}.** Merge mai departe "
+            "doar dacă live putem tranzacționa în varianta care trece, cu stop la broker "
+            "(D15); decizia e a proprietarului. PASS-ul rămâne suspect și se confirmă doar la "
+            "Poarta 2."
+        )
+    else:
+        out.append(
+            "**S4 cu filtru nu trece Poarta 1.** Regula de oprire, fixată în D18 înainte de "
+            "rulare: nu mai facem alte iterații (nici la S1–S3), iar proiectul se oprește aici "
+            "(D7)."
+        )
+
+    def value(r: dict) -> str:
+        return f"{cap * (1 + r['total_return']):,.0f} $"
+
+    out += [
+        "",
+        "## Pe înțeles",
+        "",
+        f"Cu {cap:.0f} $ puși la începutul lui {n['oos_start'][:4]} (acțiuni fracționare), la "
+        f"final aveai {value(n['oos'])} cu filtru, {value(b['oos'])} fără filtru și "
+        f"**{value(spy)}** cu SPY cumpărat și ținut. Pe an: {n['oos']['cagr']:.1%} cu filtru, "
+        f"{b['oos']['cagr']:.1%} fără, SPY {spy['cagr']:.1%}. Ajustat la risc (Sharpe): "
+        f"{n['oos']['sharpe']:.2f} cu filtru, {b['oos']['sharpe']:.2f} fără, SPY "
+        f"{spy['sharpe']:.2f}. Cea mai mare scădere (drawdown): "
+        f"{n['oos']['max_drawdown']:.1%} cu filtru, {b['oos']['max_drawdown']:.1%} fără, SPY "
+        f"{spy['max_drawdown']:.1%}. Tranzacții: {n['oos']['n_trades']} cu filtru, "
+        f"{b['oos']['n_trades']} fără.",
+    ]
+    if "windows" in b:
+        old_years = {w["test_start"][:4]: w for w in b["windows"]}
+        out += [
+            "",
+            "## An cu an (acțiuni fracționare)",
+            "",
+            "Ipoteza din D18: anii slabi ai S4 (2015, 2016, 2018, 2022) au avut piața mult timp "
+            "sub SMA200, deci filtrul ar trebui să-i îmbunătățească fără să strice anii buni.",
+            "",
+            "| An | Fără filtru | Cu filtru | Tranzacții fără / cu |",
+            "|---|---|---|---|",
+        ]
+        for w in n["windows"]:
+            year = w["test_start"][:4]
+            o = old_years.get(year, {"return": None, "n_trades": "-"})
+            out.append(
+                f"| {year} | {pct(o['return'], True)} | {pct(w['return'], True)} "
+                f"| {o['n_trades']} / {w['n_trades']} |"
+            )
+    out += [
+        "",
+        "## Cum s-a testat",
+        "",
+        f"- La fel ca în `reports/gate1.md`: aceleași date ({meta['n_stocks']} acțiuni și SPY, "
+        f"{meta['data_start']} – {meta['data_end']}), walk-forward cu 3 ani de istoric și "
+        f"ferestre de test de 1 an (OOS {n['oos_start']} – {n['oos_end']}), aceleași costuri, "
+        f"capital {cap:.0f} $ și sizing, ambele variante (D15).",
+        f"- Monte Carlo: {N_MONTE_CARLO} de reamestecări. Intrări aleatoare: {N_RANDOM} de "
+        "rulări, în orice zi (deci fără filtrul de piață), cu aceleași ieșiri, stopuri și "
+        f"sizing. Testul ±{PARAM_STEP:.0%} include noul parametru: SPY peste "
+        + " și ".join(f"SMA{v['value']}" for v in n["varied"] if v["param"] == "spy_filter")
+        + ".",
+        "- Coloana „fără filtru” vine din Poarta 1 de bază, fără să fie rulată din nou.",
+        "",
+    ]
+    for v in VARIANTS:
+        out += [f"## Rezultate: {VARIANT_TITLES[v].lower()}", ""]
+        out += summary_table(both[v], robustness=False)
+        out += [
+            "",
+            f"![Equity OOS vs SPY, {VARIANT_TITLES[v].lower()}]({plot_equity(v, run)})",
+            "",
+            "Criteriile, pe rând:",
+            "",
+        ]
+        out += criteria_table(both[v])
+        out += [""]
+        if v == "actiuni_intregi":
+            rej = results[v][s]["rejections"].get("qty_too_small", 0)
+            out += [
+                f"Intrări respinse pentru că nici o acțiune întreagă nu încăpea în risc sau în "
+                f"plafonul de poziție (backtest continuu pe perioada OOS): {rej}.",
+                "",
+            ]
+    out += [f"## Testul ±{PARAM_STEP:.0%} în detaliu", ""]
+    for v in VARIANTS:
+        out += [f"<details><summary>{VARIANT_TITLES[v]}</summary>", ""]
+        out += varied_table({new: results[v][s]})
+        out += ["", "</details>", ""]
+    out += [
+        "## Note și limite",
+        "",
+        "- **Schimbare aleasă după rezultate.** Filtrul a fost ales după ce am văzut Poarta 1 "
+        "de bază (D18). De aceea: o singură schimbare, la o singură strategie, cu valoarea "
+        f"SMA{sma} folosită deja la S1–S3 (nu căutată), și aceleași praguri. Chiar și așa, un "
+        "PASS e mai puțin sigur decât pare.",
+        "- **Survivorship bias**, ca în `reports/gate1.md`: universul e lista S&P 100 de azi, "
+        "aplicată pe tot istoricul, deci rezultatele sunt mai bune decât ar fi fost în "
+        "realitate.",
+        "- **Acțiuni întregi:** prețurile ajustate pentru split-uri fac varianta optimistă. "
+        f"Azi, la {cap:.0f} $, doar {meta['affordable_today']} din {meta['n_stocks']} acțiuni "
+        f"costă cel mult {meta['max_notional']:.0f} $.",
+        "- Testul cu intrări aleatoare compară acum și efectul filtrului de piață: intrările "
+        "aleatoare pot cădea și când SPY e sub SMA200.",
+        "",
+        "## Ce urmează",
+        "",
+    ]
+    if any(passed.values()):
+        out.append(
+            "Etapa 4 (risk guard), apoi brokerul Alpaca pe paper (etapa 5) și rularea zilnică. "
+            "Doar S4 cu filtru merge mai departe; S1–S3 se abandonează. Poarta 2 (12 săptămâni "
+            "de paper) decide dacă se trece la bani reali."
+        )
+    else:
+        out.append(
+            "Proiectul se oprește aici (D7, D18): nu trecem la etapele 4–10 și nu mai facem "
+            "iterații. Codul și rapoartele rămân pe GitHub ca referință."
+        )
+    (REPORTS / f"{run.prefix}.md").write_text("\n".join(out) + "\n", encoding="utf-8")
+    write_compact(run, meta, results)
 
 
 def main() -> int:
     REPORTS.mkdir(exist_ok=True)
+    run = ITERATION_1 if "--iteratia1" in sys.argv else BASE
     if "--report-only" not in sys.argv:
-        run_all()
-    write_report()
-    print(f"Report: {REPORTS / 'gate1.md'}")
+        run_all(run)
+    if run == BASE:
+        write_report()
+    else:
+        write_iteration_report()
+    print(f"Report: {REPORTS / run.prefix}.md")
     return 0
 
 

@@ -35,3 +35,4 @@ S4:  # MACD + EMA200
   atr_period: 20
   min_stop_atr: 1.5
   target_r: 1.5
+  spy_filter: 200  # iterația 1 după Poarta 1 (D18)

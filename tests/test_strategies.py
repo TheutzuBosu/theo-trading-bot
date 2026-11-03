@@ -167,27 +167,33 @@ S4_SMALL = s4.Params(
     atr_period=2,
     min_stop_atr=1.5,
     target_r=1.5,
+    spy_filter=3,
 )
 # steady fall of 1 per bar, then a jump to 15.5 on bar 7
 S4_CLOSES = [20, 19, 18, 17, 16, 15, 14, 15.5, 15]
 
 
+def s4_prices(closes, spy_step=1.0):
+    return {"AAA": from_closes(closes), "SPY": spy_trend(len(closes), spy_step)}
+
+
 def test_s4_macd_cross_below_zero():
-    out = s4.signals({"AAA": from_closes(S4_CLOSES)}, S4_SMALL)["AAA"]
+    out = s4.signals(s4_prices(S4_CLOSES), S4_SMALL)["AAA"]
     # steady fall: EMA2 = P + 0.5, EMA3 = P + 1 -> MACD = signal = -0.5
     # bar 7: EMA2 15.1667, EMA3 15.25 -> MACD -1/12; signal = 2/3*(-1/12) + 1/3*(-1/2) = -2/9
-    # MACD crosses above the signal, both < 0, Close 15.5 > EMA3 15.25
+    # MACD crosses above the signal, both < 0, Close 15.5 > EMA3 15.25, SPY rising
     assert out.index[out["entry"]].tolist() == [out.index[7]]
     # 3-day low = 13.5 -> Close - low = 2.0; ATR2 = 1.74609375 -> 1.5*ATR = 2.619 (wider, wins)
     assert out["stop_distance"].iloc[7] == pytest.approx(1.5 * 1.74609375)
     assert out["target_distance"].iloc[7] == pytest.approx(1.5 * 1.5 * 1.74609375)
     assert not out["exit"].any()  # exits only at the stop or the target
     assert "ambele sub zero" in out["entry_reason"].iloc[7]
+    assert "SPY > SMA3" in out["entry_reason"].iloc[7]
 
 
 def test_s4_swing_low_stop_when_wider_than_atr_minimum():
     params = S4_SMALL.model_copy(update={"min_stop_atr": 0.5})
-    out = s4.signals({"AAA": from_closes(S4_CLOSES)}, params)["AAA"]
+    out = s4.signals(s4_prices(S4_CLOSES), params)["AAA"]
     assert out["stop_distance"].iloc[7] == pytest.approx(2.0)  # 15.5 - 13.5
     assert out["target_distance"].iloc[7] == pytest.approx(3.0)
 
@@ -195,8 +201,19 @@ def test_s4_swing_low_stop_when_wider_than_atr_minimum():
 def test_s4_no_entry_below_ema():
     # same pattern but the jump only reaches 14.5: Close below EMA3, no entry
     closes = S4_CLOSES[:7] + [14.5, 14.0]
-    out = s4.signals({"AAA": from_closes(closes)}, S4_SMALL)["AAA"]
+    out = s4.signals(s4_prices(closes), S4_SMALL)["AAA"]
     assert not out["entry"].any()
+
+
+def test_s4_no_entry_when_spy_below_its_sma():
+    # D18: the same cross as above is blocked when SPY is under its SMA
+    out = s4.signals(s4_prices(S4_CLOSES, spy_step=-1.0), S4_SMALL)["AAA"]
+    assert not out["entry"].any()
+
+
+def test_s4_requires_spy():
+    with pytest.raises(ValueError, match="SPY"):
+        s4.signals({"AAA": from_closes(S4_CLOSES)}, S4_SMALL)
 
 
 # --- Registry, parameters, look-ahead -------------------------------------------------
@@ -218,6 +235,7 @@ def test_yaml_params_match_the_plan():
     assert (p["S4"]["macd_fast"], p["S4"]["macd_slow"], p["S4"]["macd_signal"]) == (12, 26, 9)
     assert (p["S4"]["ema_filter"], p["S4"]["swing_lookback"]) == (200, 10)
     assert (p["S4"]["min_stop_atr"], p["S4"]["target_r"]) == (1.5, 1.5)
+    assert p["S4"]["spy_filter"] == 200  # D18
     assert set(p) == set(MODULES)
 
 
