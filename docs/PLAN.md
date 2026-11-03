@@ -53,19 +53,19 @@ Agentul citește regulile comune și DOAR secțiunea etapei lui. Fiecare etapă 
 Fișierele de reguli (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `PROGRESS.md`, `docs/`, `.claude/`, `.agents/`,
 `scripts/set_keys.sh`, `.gitignore`, `.env.example`) sunt deja scrise. Rămâne:
 
-- **0a.** `git init` pe `main`; `pyproject.toml` cu uv (Python 3.12): pandas, numpy, yfinance, alpaca-py, requests,
+- [x] **0a.** `git init` pe `main`; `pyproject.toml` cu uv (Python 3.12): pandas, numpy, yfinance, alpaca-py, requests,
   pydantic, python-dotenv, google-genai; dev: pytest, pytest-socket, ruff. Fără ML greu, fără TA-Lib.
   `scripts/check_fast.sh` (ruff + pytest) și `scripts/check.sh` (uv sync --locked, ruff check, ruff format --check, pytest).
   Un test trivial. `.github/workflows/ci.yml` care rulează `scripts/check.sh` la push și PR (nu pe branch-ul `state`).
-- **0b.** Verifici că `.env` nu e urmărit de git. `gh repo create theo-trading-bot --private --source . --push`.
+- [x] **0b.** Verifici că `.env` nu e urmărit de git. `gh repo create theo-trading-bot --private --source . --push`.
   CI verde pe GitHub. Îi spui proprietarului să ruleze `bash scripts/set_keys.sh` (cel puțin cheile Alpaca).
 
 ## Etapa 1 — Date de piață · Antigravity
 
-- **1a.** `src/config.py` (Pydantic, citește `.env`). `config/universe.csv` cu S&P 100 + sector. `src/data/`:
+- [x] **1a.** `src/config.py` (Pydantic, citește `.env`). `config/universe.csv` cu S&P 100 + sector. `src/data/`:
   `load_daily(symbols, start)` cu yfinance (`auto_adjust=True`) pentru 20 de ani; `load_recent(symbols)` cu Alpaca
   Market Data (feed IEX). Cache local în `data/cache/` (ignorat de git).
-- **1b.** `drop_incomplete_bar()` (elimină bara zilei curente dacă piața din New York nu s-a închis) și `validate()`
+- [x] **1b.** `drop_incomplete_bar()` (elimină bara zilei curente dacă piața din New York nu s-a închis) și `validate()`
   (fără NaN, prețuri ≤ 0, zile duplicate, goluri anormale; raportează, nu ascunde). Teste pe fixtures.
 
 ## Etapa 2 — Backtester · Claude Code

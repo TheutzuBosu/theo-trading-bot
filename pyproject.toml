@@ -1,0 +1,37 @@
+[project]
+name = "theo-trading-bot"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "alpaca-py>=0.44.0",
+    "google-genai>=2.34.0",
+    "numpy>=2.5.4",
+    "pandas>=3.1.0",
+    "pyarrow>=26.0.1",
+    "pydantic>=2.14.2",
+    "pydantic-settings>=2.16.2",
+    "python-dotenv>=1.2.4",
+    "pytz>=2026.6",
+    "requests>=2.34.2",
+    "yfinance>=1.7.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-mock>=3.17.0",
+    "pytest-socket>=0.8.1",
+    "ruff>=0.17.3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "--disable-socket --allow-unix-socket -v"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
