@@ -71,3 +71,17 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   95%); acțiuni întregi: criteriile 2, 3, 4, 5 și 6. Filtrul aproape nu schimbă rezultatul (Sharpe 0.75 → 0.74).
   Conform regulii de oprire fixate în D18 înainte de rulare: nicio altă iterație, proiectul se oprește (D7). Etapele
   4–10 nu se mai fac. `reports/gate1.md` rămâne rezultatul de bază; `scripts/gate1.py --iteratia1` reproduce iterația.
+- **D20 (3.11.2026)** Proprietarul a ales să continue cu o **Fază B: day trading pe CFD, doar pe demo** (opțiunea 1
+  după cercetarea din 3.11; raportul: „Strategii sistematice cu edge real”). Excepții de la D1 doar pentru Faza B:
+  CFD pe US500/US100 și expunere noțională de maximum 2× equity, intraday, închis la final de zi. Bani reali doar după
+  Poarta 2. Proprietarul a fost informat că 77–81% din conturile retail CFD pierd bani și că ținta de „100 $/săptămână
+  din 500 $” (+20%/săptămână) nu e realistă. Specificația: `docs/PLAN_DAYTRADING.md`.
+- **D21 (3.11.2026)** După cercetările Gemini și ChatGPT Deep Research aduse de proprietar: se adaugă D1b (ieșire
+  VWAP & Ladder, Maróy 2025, cu parametri fixați înainte), filtrul ML devine meta-labeling cu Triple Barrier și
+  purged CV, veto FOMC + veto de spread, Capital.com devine brokerul candidat (Open API cu demo, verificat în
+  documentația oficială). Respinse din acele rapoarte: regulile „VWAP ± 1,2×ATR” (nu sunt din paper), strategia
+  Gao et al. (edge dispărut după 2013), front-running pe ETF-uri cu levier (doar rezultate brute până în 2011),
+  XTB API (închis). N total = 9.
+- **D22 (3.11.2026)** Faza B se face pe Alpaca Paper (SPY/QQQ), nu pe CFD: proprietarul are deja contul, iar
+  costurile pe acțiuni sunt mult sub cele CFD (replicarea ORB a murit tocmai din spread-ul CFD). CFD (Capital.com)
+  rămâne alternativa pentru live. Cu 500 $ live pe Alpaca: doar long-only, fără levier (short/levier cer 2.000 $).

@@ -4,6 +4,14 @@ Statusuri: De făcut · În lucru · Gata · Blocat · Oprit
 
 **Proiectul e oprit (D19).** Nicio strategie nu bate SPY ajustat la risc după costuri (Poarta 1), nici după
 iterația permisă (D18). Conform D7, nu se trece la paper trading și nici la bani reali.
+Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper** (D20–D22, `docs/PLAN_DAYTRADING.md`).
+
+| # | Faza B | Status | Branch | Agent | Note |
+|---|---|---|---|---|---|
+| B0 | Broker + cont demo | În lucru | faza-b-daytrading | Claude Code | Date de 1 minut disponibile, short pe paper |
+| B1 | Date 1 minut + costuri | De făcut | faza-b-daytrading | Antigravity | |
+| B2 | Backtester intraday | De făcut | faza-b-daytrading | Claude Code | |
+| B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b-daytrading | Claude Code | |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -21,11 +29,12 @@ iterația permisă (D18). Conform D7, nu se trece la paper trading și nici la b
 
 ## Pasul următor exact
 
-Etapa 3 e încheiată: PR #3 (`etapa-3-strategii` → `main`) se unește după CI verde, dacă nu s-a unit deja.
-După unire **nu mai urmează nicio etapă** (D7, D18, D19): nu se creează `etapa-4-risc`, nu se fac iterații noi
-la S1–S4 și nu se pornește paper trading. Un agent care preia verifică doar că PR #3 e unit și că `main` e verde,
-apoi se oprește. Orice reluare ar fi o decizie nouă a proprietarului (o idee nouă de strategie, testată de la
-zero la Poarta 1, cu motivul scris în `docs/DECISIONS.md` înainte de rulare), nu o continuare a planului de acum.
+Faza A (acțiuni daily, etapele 0–3) s-a încheiat cu Poarta 1 = FAIL (D19). Proprietarul a pornit **Faza B: day
+trading pe CFD, doar demo** (D20). Specificația completă: `docs/PLAN_DAYTRADING.md`.
+1. Comite pe `main` modificările necomise din 3.11 (`docs/PLAN_DAYTRADING.md`, `docs/DECISIONS.md` D20, acest fișier).
+2. Sub-pasul **B0 (Claude Code)**, branch `faza-b-daytrading`: după `docs/PLAN_DAYTRADING.md` (D20–D22), pe
+   **Alpaca Paper** (cheile sunt deja în `.env`): verifică de la ce an sunt date de 1 minut SPY/QQQ pe planul
+   gratuit și dacă paper-ul permite short; notează în DECISIONS. Fără cod de strategie în B0. Apoi B1 (Antigravity).
 
 ## Pentru proprietar
 
