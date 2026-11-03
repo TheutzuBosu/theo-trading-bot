@@ -113,3 +113,20 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
     SPY/QQQ cu raportul indice/ETF (S&P 500 ≈ 10,0 × SPY, Nasdaq-100 ≈ 40,8 × QQQ): 0,08 $ / SPY și 0,061 $ / QQQ
     pe parte. Test de stres ×1,5. Tranzacțiile cu riscul inițial < 2× costul dus-întors se sar.
     Slippage-ul pe acțiuni e ales prudent (de 2× jumătatea de spread), ca un stop executat la piață să nu pară gratis.
+- **D26 (3.11.2026, B1)** Validarea datelor de 1 minut și comparația SIP vs IEX (`scripts/b1_data_report.py`,
+  `reports/b1_date.md`):
+  - **SIP (2016-01-04 → 2026-11-02, 2.724 sesiuni NYSE):** 0 zile lipsă, 0 dubluri, 0 bare în afara sesiunii, 0 bare
+    cu OHLC incoerent, 21 de închideri la 13:00 recunoscute. Câte o singură sesiune cu < 95% bare: SPY pe 2019-08-12
+    (360/390 bare, se oprește la 15:31 ET) și QQQ pe 2016-02-22 (340/390 bare). În B2, ieșirea la final de zi se face
+    la ultima bară disponibilă a sesiunii, iar verificările de la `:00`/`:30` folosesc ultima bară închisă disponibilă.
+  - **IEX (2020-07-27 → 2026-11-02, 1.576 sesiuni):** 1 zi lipsă complet (`2025-03-10`) și 161 (SPY) / 768 (QQQ)
+    sesiuni cu < 95% bare (acoperire 98,3% din minutele SIP pe SPY și 92,1% pe QQQ; cotă de volum 2,0% SPY și 1,4% QQQ).
+  - **Diferența IEX minus SIP (1.575 zile comune):**
+    - Închidere pe minut (`close_bps`): SPY mediană 0,365 pb (~0,02 $), p95 2,266 pb, bias -0,012 pb; QQQ mediană
+      0,692 pb (~0,035 $), p95 4,069 pb, bias -0,014 pb.
+    - VWAP cumulativ de sesiune (`vwap_bps`): SPY mediană 1,241 pb (~0,07 $), p95 6,888 pb (~0,41 $), max 79,4 pb;
+      QQQ mediană 2,311 pb (~0,12 $), p95 11,778 pb (~0,59 $), max 145,7 pb (aproape identic și după 10:00 ET).
+  - **Consecință pentru B3 și B6 (demo):** prețul pe minut IEX e foarte apropiat de SIP, dar VWAP-ul cumulativ IEX
+    deviază la p95 cu 7–12 pb din cauza volumului mic de pe o singură bursă. În B3 se verifică pe 2020–2026 dacă D1/D1b
+    își păstrează rezultatul când semnalele vin din IEX; în B6 (live pe demo), VWAP-ul de sesiune se poate ancora din
+    SIP pentru partea de zi mai veche de 15 minute + IEX doar pe ultimele 15 minute (permis pe planul gratuit).

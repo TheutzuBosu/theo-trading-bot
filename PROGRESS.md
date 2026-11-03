@@ -9,7 +9,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | # | Faza B | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
-| B1 | Date 1 minut + costuri | În lucru | faza-b1-date | Antigravity | Cod + teste gata (D25); date descărcate; lipsesc raportul SIP vs IEX și D26 |
+| B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | De făcut | faza-b2-backtester | Claude Code | |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 
@@ -29,21 +29,21 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-B0 e unit în `main` (PR #4). **B1 (Antigravity)**, branch `faza-b1-date` (există pe GitHub), după
-`docs/PLAN_DAYTRADING.md`, D23 și D25. Gata și urcat: `src/data/intraday.py` (calendar NYSE, filtru sesiune,
-descărcare Alpaca, cache), `src/data/intraday_validation.py`, `src/data/feed_compare.py` (SIP vs IEX),
-`src/backtest/intraday_costs.py` (costuri acțiuni + CFD), scripturile `scripts/download_minute.py` și
-`scripts/b1_data_report.py`, testele `tests/test_intraday*.py` (143 trecute). Ce lipsește:
-1. Descărcarea e **gata** (3.11.2026, până la 2026-11-02, SIP + IEX, SPY + QQQ, în `data/cache/minute/`;
-   rezumat în `.cache/download_minute.json`). Nu se mai rulează.
-2. Rulează `PYTHONPATH=. uv run python scripts/b1_data_report.py` → `reports/b1_date.md` (validare + SIP vs IEX).
-   Dacă apar zile lipsă sau sesiuni incomplete, verifică dacă sunt închideri reale (ex. 9.01.2025, doliu național
-   Carter) sau goluri Alpaca, și notează-le.
-3. Scrie D26 în `docs/DECISIONS.md`: rezultatul validării și diferența SIP vs IEX (VWAP de sesiune, închidere pe
-   minut, acoperire, volum) și dacă VWAP-ul IEX e folosibil live pentru D1 (de ex. diferență mediană ≪ costul de
-   0,015 $/parte, adică ~0,25 pb la 600 $).
-4. `scripts/check.sh`, PROGRESS (B1 = Gata), commit, push, PR `faza-b1-date` → `main`, unit după CI verde.
-Fără cod de strategie în B1. Apoi B2 (Claude Code).
+B1 e gata (`reports/b1_date.md`, D25, D26; cache-ul de 1 minut SPY/QQQ SIP 2016–2026 și IEX 2020–2026 e în
+`data/cache/minute/`, încărcat cu `load_minute_bars` din `src/data/intraday.py`; costurile sunt în
+`src/backtest/intraday_costs.py`). Dacă PR-ul `faza-b1-date` → `main` nu e unit, se unește după CI verde.
+Apoi sub-pasul **B2 (Claude Code)**, branch `faza-b2-backtester` creat din `main` actualizat, după
+`docs/PLAN_DAYTRADING.md` și D24–D26:
+1. Motorul de backtest intraday minut-cu-minut (fără look-ahead: semnal pe bara închisă `t`, execuție la Open-ul barei
+   `t+1`), maximum 1 poziție pe instrument, închidere obligatorie la ultima bară a sesiunii (ține cont și de închiderile
+   la 13:00 sau sesiunile scurte din D26), suport pentru `long` și `short` + mod `long_only` (pentru Poarta 1 B conform D24).
+2. Integrarea modelului de costuri din `src/backtest/intraday_costs.py` (`stock` și `cfd`, plus stres ×1,5), filtrul
+   `trade_allowed` (se sar tranzacțiile cu riscul inițial < 2× costul dus-întors), mărimea poziției după ținta de
+   volatilitate plafonată la expunere (2× equity sau 1× în varianta long-only fără marjă) și raportarea riscului în R.
+3. Veto FOMC determinist (fără intrări ±30 min față de anunțurile FOMC 2016–2026, hard-codate) + testul cu direcție
+   aleatoare la aceeași oră și același stop + metrici intraday (expectancy în R, t-stat cu corecție Bonferroni N = 9,
+   Deflated Sharpe, profit factor, drawdown, zile cu pierdere > 2%). Toate testate offline pe fixture-ul de 1 minut.
+Fără strategiile D1/D1b/D2 în B2 (urmează în B3, tot Claude Code).
 
 ## Pentru proprietar
 
@@ -61,4 +61,4 @@ Niciunul. 143 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-3 noiembrie 2026 · Antigravity · Faza B, sub-pasul B1: cod date 1 minut, validare, costuri (D25); descărcarea în curs.
+3 noiembrie 2026 · Antigravity · Faza B, sub-pasul B1 gata: date 1 minut descărcate și validate, raport SIP vs IEX (`reports/b1_date.md`), D25–D26.
