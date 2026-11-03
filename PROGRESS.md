@@ -13,7 +13,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
 | B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
-| B6b | Alerte Telegram | De făcut | faza-b6b-telegram | Antigravity | Mutat înainte de B3 (D28) |
+| B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -31,22 +31,19 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**Ordinea s-a schimbat (D28, 4.11.2026): Claude e la limită, deci urmează pașii Antigravity.**
-- **Gata:** PR #6 (B2) unit în `main`; **B6a · Dashboard pe date de exemplu** gata și publicat pe Vercel la
-  `https://theo-trading-bot.vercel.app` (PR #7).
-- **Urmează acum — B6b · Alerte Telegram (Antigravity)**, branch `faza-b6b-telegram` creat din `main` actualizat:
-  `src/alerts/telegram.py`, mesaje în română (intrare: simbol, direcție, cantitate, stop, risc %, de ce; ieșire: P&L, R,
-  motiv; rezumat zilnic; pierdere −2% pe zi; KILL; eroare). Teste offline cu HTTP simulat; un singur mesaj de probă real
-  către proprietar (chat ID din `getUpdates`). Fără ordine, fără reguli de risc.
-- Apoi **Antigravity se oprește**: B3 (strategiile, Poarta 1 B) și B5 (risk guard, broker) rămân DOAR Claude Code.
-  Proprietarul deschide Claude Code și scrie „preia” când are din nou usage. Pentru B3, planul de mai jos rămâne valabil.
+**Pașii Antigravity din D28 (B6a dashboard și B6b alerte Telegram) sunt gata și uniți în `main`.**
+- **B6a · Dashboard pe date de exemplu:** live la `https://theo-trading-bot.vercel.app` (PR #7).
+- **B6b · Alerte Telegram:** `src/alerts/telegram.py` + `tests/test_telegram.py` + mesaj de probă livrat pe
+  `@thetheotrading_bot`, `TELEGRAM_CHAT_ID` salvat în `.env` (PR #8).
+- **Acum urmează B3 (DOAR Claude Code):** Antigravity se oprește aici. Proprietarul deschide Claude Code și scrie
+  „preia” când are din nou usage.
 
 B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySignals`, `IntradayConfig`,
 `run_intraday`), `src/backtest/fomc.py` (veto ±30 min), `src/backtest/intraday_metrics.py` (`summarize_intraday`,
 `r_stats`, `deflated_sharpe`, `direction_outcomes`, `random_direction_test`); detectorul de look-ahead primește
-`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. PR-ul #6 se unește la pasul 1 de mai sus. După B6a și B6b, sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din `main` actualizat, după
-`docs/PLAN_DAYTRADING.md` și D24–D27:
-1. Înainte de orice rulare, în `docs/DECISIONS.md` (D28): Poarta 1 B fixată pe varianta long-only (`long_only=True`,
+`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. Sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din
+`main` actualizat, după `docs/PLAN_DAYTRADING.md` și D24–D28:
+1. Înainte de orice rulare, în `docs/DECISIONS.md` (D29): Poarta 1 B fixată pe varianta long-only (`long_only=True`,
    `max_exposure=1.0`, fără marjă, D24), testul aleator long-only (candidații din rularea long+short), N = 9,
    parametrii D1b din paper-ul Maróy 2025 și cei ≤ 2 parametri recalibrați lunar (fereastră de 2 ani) pentru fiecare.
 2. `src/strategies/` intraday: D1 (Zarattini, Aziz & Barbon 2024: banda de zgomot din 14 zile, verificări la :00/:30,
@@ -68,8 +65,8 @@ B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySi
 
 ## Bug-uri cunoscute
 
-Niciunul. 178 de teste pytest trecute offline.
+Niciunul. 185 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6a gata: PR #6 (B2) unit în `main`; dashboard Next.js publicat pe Vercel la `https://theo-trading-bot.vercel.app` (PR #7).
+4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6b gata: alerte Telegram în `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` (PR #8). Urmează B3 în Claude Code.
