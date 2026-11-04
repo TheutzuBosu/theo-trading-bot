@@ -52,8 +52,8 @@ Sub-pasul următor, **B4**, pe branch-ul nou `faza-b4-ai-stare` (creat din `main
 
 - Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
 - Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
-- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (D29).
-- Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75, PF 1,60, 9/9 ani pe plus, MaxDD 1,90%).
+- Decis (4.11.2026, D31): contul paper rămâne la 500 $ (suma reală de după cele 3 luni de probă), dar **activăm ambele direcții (`Long + Short`) și levierul**: pe contul de 500 $ (`< 2.000 $`), semnalele `Short (-1)` pe `SPY`/`QQQ` cumpără automat ETF-urile inverse (`SH`/`SDS` pentru SPY, `PSQ`/`QID` pentru QQQ), iar semnalele `Long (+1)` cumpără `SPY`/`QQQ` (sau `SSO`/`QLD` `2×`). Fără limită la numărul de trade-uri pe zi cât timp trece analiza (`D1b` + `meta_label` + `daily_learner` + `news_veto` + `intraday_guard`).
+- Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75 pe Long-Only și 1,70 cu CAGR 7,06% și 2.982 trade-uri pe Long+Short 2×).
 - Decis (4.11.2026): construim botul complet pe **Alpaca Paper** până la capăt (`B3 -> B4 -> B5 -> B6c`), fără limită zilnică la numărul de trade-uri, cu învățare zilnică din greșeli și deploy automat în Git și Vercel după fiecare etapă. Doar banii reali rămân blocați de Poarta 2.
 
 ## Bug-uri cunoscute

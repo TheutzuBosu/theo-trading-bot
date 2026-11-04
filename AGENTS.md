@@ -9,10 +9,12 @@ Un bot de trading automat, **personal**: tranzacționează doar contul propriu a
 Nu se dă, nu se vinde și nu se conectează la conturile altor persoane (asta ar cere autorizare ASF).
 Proiectul e complet separat de Market Lens: alt folder, alt repo, alte chei (excepție: cheia Finnhub, D6).
 
-- Acțiuni SUA large cap, **daily, long-only**. Fără crypto, fără CFD, fără levier, fără short.
-- Matematica decide, risk guard-ul blochează, AI-ul poate doar să spună „nu” (veto pe știri) și să explice.
-- Ordinea: backtest (Poarta 1) → 12 săptămâni paper (Poarta 2) → bani reali, crescuți treptat.
-- Ținta nu e „face profit”, ci „bate buy-and-hold S&P 500 ajustat la risc, după costuri”. Dacă nu, ne oprim.
+- **Faza B (activă, D20–D31): Day trading intraday pe `SPY` și `QQQ` (bare de 1 minut)** pe **Alpaca Paper cu 500 $** (suma reală pe care proprietarul o va depune după perioada de probă de 3 luni).
+- **Ambele direcții (`Long + Short`) și levierul sunt permise și active (D31):**
+  - Semnalele se calculează pe `SPY` și `QQQ` (`D1b` principal + `D1` referință) și sunt filtrate de analiza AI + statistică (`meta_label.py`, `daily_learner.py`, `news_veto.py`).
+  - Pe contul de **500 $** (unde Alpaca blochează short-ul direct pe fracțiuni sub 2.000 $), semnalele **Short (`-1`)** se execută automat cumpărând ETF-uri inverse lichide (`SH` `-1×` sau `SDS` `-2×` pentru `SPY`; `PSQ` `-1×` sau `QID` `-2×` pentru `QQQ`), iar semnalele **Long (`+1`)** cumpără `SPY`/`QQQ` (sau `SSO`/`QLD` `2×` când levierul este activat). Dacă balanța contului e `>= 2.000 $`, adaptorul poate folosi și short/marjă directă.
+- **Fără limită la numărul de trade-uri pe zi:** botul poate face oricâte trade-uri pe zi, atâta timp cât este momentul potrivit și semnalul trece de analiza strategiei, de filtrul de învățare (`daily_learner` + `meta_label`) și de `risk/intraday_guard.py`.
+- **Învățare continuă în fiecare zi:** în primele 3 luni (12 săptămâni) rulează pe Alpaca Paper și învață zilnic din fiecare trade (`autopsy.py` + `daily_learner.py` + `meta_label.py`) până devine cât mai profitabil; abia după Poarta 2 se trece pe bani reali.
 
 Proprietarul nu știe programare: agentul face tot, proprietarul aprobă. Cu el vorbești în română simplă,
 fără jargon; când trebuie să facă ceva, îi dai pași click cu click.

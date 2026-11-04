@@ -139,48 +139,55 @@ Creează `src/ai/__init__.py` și `src/ai/meta_label.py` cu următoarele funcți
 
 ### Pasul B5.1 — `src/risk/guard.py` + `tests/test_risk_guard.py`
 Creează `src/risk/__init__.py` și `src/risk/guard.py`.
-1. **Constante hard-codate în `src/risk/guard.py` (NU se citesc din `.env`, sunt bătute în cuie conform `docs/PLAN_DAYTRADING.md` și D24):**
+1. **Constante hard-codate în `src/risk/guard.py` (NU se citesc din `.env`, sunt bătute în cuie conform `docs/PLAN_DAYTRADING.md` și D31):**
    - `MAX_RISK_PER_TRADE_PCT = 0.005` (`0.5%` din capital pe o tranzacție)
    - `MAX_DAILY_LOSS_PCT = -0.02` (`-2.0%` pierdere zilnică → oprește intrările noi în acea zi)
    - `MAX_DRAWDOWN_KILL_PCT = -0.15` (`-15.0%` față de vârful istoric al contului → declanșează `KILL` și blochează botul)
-   - `MAX_POSITIONS_PER_SYMBOL = 1` (cel mult 1 poziție deschisă pe `SPY` și 1 pe `QQQ`)
-   - `MAX_TOTAL_EXPOSURE = 1.0` (`1.0x` equity pe contul de 500 $ fără marjă / long-only, D24)
+   - `MAX_POSITIONS_PER_SYMBOL = 1` (cel mult 1 poziție activă pe familia S&P 500 `SPY`/`SH`/`SDS`/`SSO` și 1 pe familia Nasdaq-100 `QQQ`/`PSQ`/`QID`/`QLD`)
+   - `MAX_TOTAL_EXPOSURE = 2.0` (`2.0x` expunere echivalentă; pe contul de 500 $ fără marjă cash-ul folosit e `<= 1.0x` equity, iar levierul `2x` sau direcția `short` se obțin prin ETF-urile inverse/cu levier `SH`/`SDS`/`PSQ`/`QID`/`SSO`/`QLD`, conform D31)
    - `NO_ENTRY_LAST_MINUTES = 15` (fără intrări noi după `15:45` ET la sesiune normală sau `12:45` ET la închidere timpurie)
    - `MAX_SPREAD_MULTIPLIER = 2.0` (fără intrare dacă `current_spread > 2.0 * typical_spread`)
-   - `ALLOWED_SYMBOLS = frozenset({"SPY", "QQQ"})`
+   - `ALLOWED_SYMBOLS = frozenset({"SPY", "QQQ", "SH", "SDS", "SSO", "PSQ", "QID", "QLD"})`
 2. **Funcția pură `evaluate_order_risk(...) -> tuple[bool, str]`:**
    - Verifică în ordine:
      a. `kill_switch_active` → `(False, "KILL switch activ")`
      b. `drawdown_pct <= MAX_DRAWDOWN_KILL_PCT` → `(False, "Drawdown maxim atins (-15%): KILL")`
      c. `daily_pnl_pct <= MAX_DAILY_LOSS_PCT` → `(False, "Limita zilnică de pierdere (-2%) a fost atinsă")`
      d. `symbol not in ALLOWED_SYMBOLS` → `(False, f"Simbol nepermis: {symbol}")`
-     e. `direction != "long"` (când `long_only=True`, D24) → `(False, "Contul de 500 $ permite doar poziții LONG")`
-     f. `stop is None or stop <= 0 or stop >= entry_price` → `(False, "Ordin fără stop-loss valid sub prețul de intrare")`
+     e. `direction not in ("long", "short")` → `(False, f"Direcție invalidă: {direction}")`
+     f. `stop is None or stop <= 0` (sau `stop >= entry_price` pe ordine buy / `stop <= entry_price` pe short direct) → `(False, "Ordin fără stop-loss valid pe partea pierzătoare")`
      g. `is_fomc_blackout(timestamp)` (din `src/backtest/fomc.py`) → `(False, "Veto FOMC: ±30 min de anunțul Fed")`
      h. `minutes_to_close <= NO_ENTRY_LAST_MINUTES` → `(False, "Ultimele 15 minute ale sesiunii: fără intrări noi")`
      i. `current_spread > MAX_SPREAD_MULTIPLIER * typical_spread` → `(False, "Spread curent > 2x spread-ul tipic")`
-     j. `symbol in open_positions` → `(False, f"Există deja o poziție deschisă pe {symbol}")`
-     k. `(current_exposure + order_notional) / equity > MAX_TOTAL_EXPOSURE` → `(False, "Expunerea depășește plafonul 1x equity")`
+     j. `symbol in open_positions` (sau un ETF din aceeași familie `SPY`/`QQQ` e deja deschis) → `(False, f"Există deja o poziție deschisă pe familia {symbol}")`
+     k. `(current_exposure + order_notional) / equity > MAX_TOTAL_EXPOSURE` → `(False, "Expunerea depășește plafonul permis")`
      l. `risk_dollars / equity > MAX_RISK_PER_TRADE_PCT + 1e-6` → `(False, "Riscul pe tranzacție depășește 0,5% din capital")`
-     m. `not trade_allowed(entry_price - stop, round_trip_cost(symbol, "stock"))` → `(False, "Risc inițial < 2x costul dus-întors")`
+     m. `not trade_allowed(abs(entry_price - stop), round_trip_cost(symbol, "stock"))` → `(False, "Risc inițial < 2x costul dus-întors")`
    - Dacă trece toate cele 13 verificări: `(True, "OK")`.
 3. **Funcția `can_move_stop(current_stop: float, new_stop: float, direction: str = "long") -> bool`:**
-   - Pentru `long`: returnează `new_stop > current_stop` (stop-ul poate doar să urce / să se strângă, NICIODATĂ să coboare!).
+   - Pentru `long`: returnează `new_stop > current_stop`; pentru `short`: `new_stop < current_stop` (stop-ul poate doar să se strângă, NICIODATĂ să se lărgească!).
 4. Scrie `tests/test_risk_guard.py` cu câte un test unitar offline pentru fiecare dintre cele 13 reguli + `can_move_stop`.
 
 ### Pasul B5.2 — `src/broker/alpaca_paper.py` + `tests/test_broker.py`
 Creează `src/broker/__init__.py` și `src/broker/alpaca_paper.py`.
 1. **Verificare de siguranță la inițializare:**
    - Dacă `settings.TRADING_MODE == "LIVE"`, verifică existența fișierului `LIVE_APPROVED.md` în rădăcină și că `reports/gate2.md` conține `PASS`. Altfel ridică `RuntimeError("TRADING_MODE=LIVE este interzis fără LIVE_APPROVED.md și Poarta 2 = PASS")`.
-2. **Idempotență prin `make_client_order_id(symbol: str, timestamp_str: str, direction: str) -> str`:**
+2. **Mapare inteligentă `Long + Short + Levier` pentru contul de 500 $ (`resolve_execution_instrument`, D31):**
+   - Dacă semnalul este pe `SPY` sau `QQQ` cu `direction == "short"` și contul are `< 2.000 $` (sau `shorting_enabled=False`):
+     - `SPY short` → cumpără (`buy`) `SH` (`-1×`) sau `SDS` (`-2×` dacă levierul 2× e activat);
+     - `QQQ short` → cumpără (`buy`) `PSQ` (`-1×`) sau `QID` (`-2×` dacă levierul 2× e activat);
+     - Convertește distanța procentuală de stop și țintă de pe `SPY`/`QQQ` pe prețul curent al ETF-ului invers, astfel încât ordinul pe Alpaca este un `BUY` fracționar legal cu stop-loss sub prețul de intrare!
+   - Dacă semnalul este `direction == "long"` cu levier `2×`: poate folosi `SSO` (`2× SPY`) / `QLD` (`2× QQQ`) sau `SPY`/`QQQ` (`1×`).
+   - Dacă balanța contului e `>= 2.000 $` și `shorting_enabled=True`: poate executa și `sell short` direct pe `SPY`/`QQQ`.
+3. **Idempotență prin `make_client_order_id(symbol: str, timestamp_str: str, direction: str) -> str`:**
    - Generează un ID determinist (ex. `f"theo-{symbol}-{direction}-{timestamp_str}"`), astfel încât dacă procesul se repornește în același minut, Alpaca refuză dublura și nu plasează două ordine.
-3. **Metode în clasa `AlpacaPaperAdapter(trading_client)`:**
-   - `get_account_state() -> dict`: returnează `equity`, `cash`, `buying_power`.
+4. **Metode în clasa `AlpacaPaperAdapter(trading_client)`:**
+   - `get_account_state() -> dict`: returnează `equity`, `cash`, `buying_power`, `shorting_enabled`, `multiplier`.
    - `get_open_positions() -> dict[str, dict]`: pozițiile deschise la broker, indexate după simbol.
    - `reconcile(local_symbols: set[str]) -> dict`: compară pozițiile din `state/` cu cele de la Alpaca și raportează orice diferență (`missing_at_broker`, `unexpected_at_broker`).
-   - `submit_long_with_stop(symbol: str, qty: float, stop_price: float, client_order_id: str) -> dict`: verifică că `stop_price > 0`, apoi trimite ordinul cu `client_order_id`.
+   - `submit_order_with_stop(symbol: str, direction: str, qty: float, stop_price: float, client_order_id: str, leverage: int = 1) -> dict`: aplică `resolve_execution_instrument`, verifică stop-ul și trimite ordinul cu `client_order_id`.
    - `liquidate_all() -> int`: anulează toate ordinele deschise (`cancel_orders`) și închide toate pozițiile (`close_all_positions`).
-4. Scrie `tests/test_broker.py` cu `FakeTradingClient` (fără internet) care testează: blocarea `LIVE` fără `LIVE_APPROVED.md`, idempotența `client_order_id`, refuzul ordinului fără stop, reconcilierea și `liquidate_all()`.
+5. Scrie `tests/test_broker.py` cu `FakeTradingClient` (fără internet) care testează: blocarea `LIVE` fără `LIVE_APPROVED.md`, maparea automată `Short SPY -> Buy SH/SDS` și `Short QQQ -> Buy PSQ/QID` pe contul de 500 $, idempotența `client_order_id`, refuzul ordinului fără stop, reconcilierea și `liquidate_all()`.
 
 ---
 
