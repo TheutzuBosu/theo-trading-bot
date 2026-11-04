@@ -8,8 +8,12 @@ name: Intraday Paper Session (Alpaca Paper)
 # fallbacks that flatten and run the daily learning if the 15:30 run was delayed or dropped.
 on:
   schedule:
-    # Pre-Market briefing (09:00 ET / 16:00 RO)
-    - cron: "0 13,14 * * 1-5"
+    # Pre-Market scanner & briefing (07:00 - 09:20 ET / 14:00 - 16:20 RO)
+    - cron: "*/20 12,13 * * 1-5"
+    # Market Open entry (starts at 09:28 ET / 16:28 RO, executes at 09:35:08 ET / 16:35:08 RO)
+    - cron: "28 13,14 * * 1-5"
+    # Continuous market-wide stock scanner & D1b check bars
+    - cron: "*/20 14-19 * * 1-5"
     - cron: "5 14,15 * * 1-5"
     - cron: "51 14,15 * * 1-5"
     - cron: "37 15,16 * * 1-5"

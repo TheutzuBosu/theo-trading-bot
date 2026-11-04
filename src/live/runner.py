@@ -140,7 +140,8 @@ def plan_auto_run(now_et: datetime, max_wait_min: float = DEFAULT_MAX_WAIT_MIN) 
         return {"action": "closed", "reason": "Înainte de deschiderea pieței.", "sleep_s": 0.0}
     if now_et >= events["time_exit"]:
         return {"action": "run", "reason": "După ora de ieșire D1b: închidere + EOD."}
-    upcoming = [e for e in [*events["checks"], events["time_exit"]] if e > now_et]
+    open_ready = open_et + timedelta(minutes=5)
+    upcoming = [e for e in [open_ready, *events["checks"], events["time_exit"]] if e > now_et]
     if upcoming:
         wait_s = (upcoming[0] - now_et).total_seconds()
         if wait_s <= max_wait_min * 60.0:
@@ -590,6 +591,165 @@ def evaluate_symbol_candidate(
     }
 
 
+def evaluate_mover_candidate(
+    opp: dict[str, Any],
+    *,
+    equity: float,
+    open_positions: set[str],
+    current_exposure: float,
+    daily_pnl_pct: float,
+    drawdown_pct: float,
+    kill_switch_active: bool = False,
+    shorting_enabled: bool = False,
+    prices: dict[str, float] | None = None,
+    now_et: datetime | None = None,
+    processed_signals: set[str] | None = None,
+    session_close_et: datetime | None = None,
+    max_notional: float | None = None,
+) -> dict[str, Any]:
+    """Evaluate a discovered individual stock opportunity (D33) through sizing and Risk Guard."""
+    sym = str(opp.get("symbol", "")).upper().strip()
+    direction = str(opp.get("direction", "long")).lower().strip()
+    if not sym or opp.get("action") != "enter" or direction not in ("long", "short"):
+        return {"action": "none", "reason": "Oportunitate inactivă sau direcție invalidă."}
+
+    now = _now_et(now_et)
+    key = f"MOVER|{sym}|{now.strftime('%Y-%m-%d')}|{direction}"
+    if processed_signals and key in processed_signals:
+        return {
+            "action": "none",
+            "reason": "Oportunitatea pe această acțiune a fost deja executată azi.",
+            "key": key,
+        }
+
+    px_map = prices or {}
+    opp_price = float(opp.get("price") or 0.0)
+    signal_price = float(px_map.get(sym) or opp_price)
+    if not _finite(signal_price) or signal_price <= 0:
+        return {"action": "skip", "reason": f"Preț curent indisponibil pentru {sym}.", "key": key}
+
+    opp_stop = float(opp.get("stop_price") or 0.0)
+    raw_dist_pct = (
+        abs(opp_price - opp_stop) / opp_price if opp_price > 0 and opp_stop > 0 else 0.015
+    )
+    raw_dist_pct = min(0.04, max(0.006, raw_dist_pct))
+    rr_ratio = min(12.0, max(3.0, float(opp.get("rr_ratio") or 4.0)))
+    stake_dollars = min(35.0, max(5.0, float(opp.get("stake_dollars") or 12.0)))
+
+    if direction == "long":
+        signal_stop = round_price(signal_price * (1.0 - raw_dist_pct))
+        signal_target = round_price(signal_price * (1.0 + raw_dist_pct * rr_ratio))
+        stop_after_target = round_price(signal_price * (1.0 + raw_dist_pct * 0.5))
+    else:
+        signal_stop = round_price(signal_price * (1.0 + raw_dist_pct))
+        signal_target = round_price(signal_price * (1.0 - raw_dist_pct * rr_ratio))
+        stop_after_target = round_price(signal_price * (1.0 - raw_dist_pct * 0.5))
+
+    exec_sym = exec_symbol_for(
+        sym, direction, leverage=1, account_equity=equity, shorting_enabled=shorting_enabled
+    )
+    exec_px = signal_price if exec_sym == sym else px_map.get(exec_sym)
+    if exec_px is None or not _finite(exec_px) or float(exec_px) <= 0:
+        return {
+            "action": "skip",
+            "reason": f"Preț curent indisponibil pentru instrumentul de execuție {exec_sym}.",
+            "key": key,
+        }
+
+    risk_budget = equity * MAX_RISK_PER_TRADE_PCT
+    raw_dist = max(abs(signal_price - signal_stop), 1e-4)
+    raw_qty = max(0.001, min(stake_dollars / signal_price, risk_budget / raw_dist))
+    exec_spec = resolve_execution_instrument(
+        symbol=sym,
+        direction=direction,
+        qty=raw_qty,
+        entry_price=signal_price,
+        stop_price=signal_stop,
+        target_price=signal_target,
+        leverage=1,
+        account_equity=equity,
+        shorting_enabled=shorting_enabled,
+        instrument_price=float(exec_px),
+    )
+    exec_dir = "long" if exec_spec["side"] == "buy" else "short"
+    exec_price = float(exec_spec["entry_price"])
+    exec_stop = float(exec_spec["stop_price"])
+    stop_dist = abs(exec_price - exec_stop)
+    if stop_dist <= 0:
+        return {"action": "skip", "reason": "Distanță stop-loss invalidă (0).", "key": key}
+
+    qty_by_stake = stake_dollars / exec_price if exec_price > 0 else 0.0
+    qty_by_risk = risk_budget / stop_dist
+    remaining_notional = max(0.0, equity * MAX_TOTAL_EXPOSURE - current_exposure)
+    qty_by_notional = (remaining_notional * 0.98) / exec_price if exec_price > 0 else 0.0
+    if max_notional is not None:
+        qty_by_notional = min(qty_by_notional, max(0.0, max_notional) / exec_price)
+    qty = round(min(float(exec_spec["qty"]), qty_by_stake, qty_by_risk, qty_by_notional), 4)
+    if qty <= 0.0 or qty * exec_price < 1.0:
+        return {"action": "skip", "reason": "Cantitate sub minimul de 1$ Alpaca.", "key": key}
+
+    risk_dollars = qty * stop_dist
+    typ_spread = STOCK_HALF_SPREAD * 2.0
+    allowed, risk_reason = evaluate_order_risk(
+        symbol=exec_sym,
+        direction=exec_dir,
+        entry_price=exec_price,
+        stop=exec_stop,
+        qty=qty,
+        equity=equity,
+        current_exposure=current_exposure,
+        open_positions=open_positions,
+        daily_pnl_pct=daily_pnl_pct,
+        drawdown_pct=drawdown_pct,
+        timestamp=pd.Timestamp(now),
+        minutes_to_close=_minutes_to_close(now, session_close_et),
+        current_spread=typ_spread,
+        typical_spread=typ_spread,
+        kill_switch_active=kill_switch_active,
+    )
+    if not allowed:
+        return {"action": "skip", "reason": risk_reason, "key": key}
+
+    notional_dollars = round(qty * exec_price, 2)
+    base_reason = str(
+        opp.get("reason_ro") or f"Acțiune în mișcare {sym} ({opp.get('change_pct', 0):+.2f}%)"
+    )
+    exec_note = (
+        f"D33 Scanner: {sym} {direction.upper()} -> BUY {exec_sym} "
+        f"(miză ~{notional_dollars:.2f}$, R:R 1:{rr_ratio:.1f})"
+        if exec_dir == "long"
+        else (
+            f"D33 Scanner: SELL SHORT {exec_sym} "
+            f"(miză ~{notional_dollars:.2f}$, R:R 1:{rr_ratio:.1f})"
+        )
+    )
+    return {
+        "action": "enter",
+        "key": key,
+        "signal_symbol": sym,
+        "exec_symbol": exec_sym,
+        "signal_direction": direction,
+        "exec_direction": exec_dir,
+        "side": exec_spec["side"],
+        "qty": qty,
+        "entry_price": exec_price,
+        "stop_price": exec_stop,
+        "target_price": exec_spec["target_price"],
+        "risk_dollars": risk_dollars,
+        "risk_pct": risk_dollars / equity if equity > 0 else 0.0,
+        "leverage": int(exec_spec["leverage"]),
+        "timestamp": now.strftime("%Y%m%dT%H%M"),
+        "signal_time": now.isoformat(),
+        "signal_price": signal_price,
+        "signal_stop": signal_stop,
+        "signal_target": signal_target,
+        "signal_stop_after_target": stop_after_target,
+        "features": {},
+        "meta_prob": float(opp.get("confidence") or 0.7),
+        "reason": f"{base_reason} · {exec_note}",
+    }
+
+
 # --------------------------------------------------------------- closed trade recording
 def _finalize_trade(
     store: StateStore,
@@ -789,7 +949,8 @@ def manage_open_positions(
         sd = tr["signal_direction"]
         bars = bars_by_symbol.get(sig_sym, pd.DataFrame())
         last_close, vwap = _today_signal_view(bars, now_et)
-        p_sig = float(prices.get(sig_sym) or last_close)
+        fallback_sig = float(pos.get("current_price") or 0.0) if exec_sym == sig_sym else math.nan
+        p_sig = float(prices.get(sig_sym) or (last_close if _finite(last_close) else fallback_sig))
         q_exec = float(prices.get(exec_sym) or pos.get("current_price") or 0.0)
         if not (_finite(p_sig) and p_sig > 0 and q_exec > 0):
             continue
@@ -927,6 +1088,7 @@ def run_trading_step(
     prices: dict[str, float] | None = None,
     now_et: datetime | None = None,
     max_signal_age_min: float = SIGNAL_MAX_AGE_MIN,
+    stock_opportunities: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Run one intraday cycle: record closed trades, manage open ones, then take new entries."""
     now = _now_et(now_et)
@@ -1070,43 +1232,19 @@ def run_trading_step(
     remote_kill_checked = False
     bp_left = float(acct.get("buying_power", equity) or 0.0) * 0.97
 
-    for sym in SIGNAL_SYMBOLS:
-        bars = bars_by_symbol.get(sym, pd.DataFrame())
-        cand = evaluate_symbol_candidate(
-            sym,
-            bars,
-            equity=equity,
-            open_positions=open_syms,
-            current_exposure=current_exposure,
-            daily_pnl_pct=daily_pnl_pct,
-            drawdown_pct=drawdown_pct,
-            kill_switch_active=False,
-            leverage=leverage,
-            shorting_enabled=bool(acct.get("shorting_enabled", False)),
-            etf_prices=prices,
-            hourly_multipliers=hourly_multipliers,
-            meta_model=meta_model,
-            meta_threshold=meta_threshold,
-            finnhub_key=finnhub_key,
-            gemini_client=gemini_client,
-            http_session=http_session,
-            now_et=now,
-            max_signal_age_min=max_signal_age_min,
-            processed_signals=processed,
-            session_close_et=close_et,
-            max_notional=bp_left,
-        )
-        decisions[sym] = cand
+    def _execute_candidate(sym_label: str, cand: dict[str, Any]) -> bool:
+        nonlocal remote_kill_checked, current_exposure, bp_left
+        decisions[sym_label] = cand
         if cand.get("action") != "enter":
-            continue
+            return True
 
         # A KILL pressed in the dashboard while this run was waiting must win (race guard)
         if sync_github and not remote_kill_checked:
             remote_kill_checked = True
             if fetch_remote_kill_switch(token=github_token, session=http_session) is True:
                 store.set_kill_switch(True, "KILL activat din dashboard", now.isoformat())
-                decisions[sym] = {"action": "skip", "reason": "KILL activat între timp."}
-                break
+                decisions[sym_label] = {"action": "skip", "reason": "KILL activat între timp."}
+                return False
 
         processed.add(cand["key"])
         journal["processed_signals"] = sorted(processed)
@@ -1132,7 +1270,7 @@ def run_trading_step(
                     mode="PAPER",
                     session=http_session,
                 )
-            continue
+            return True
 
         fill_px = float(order_res["filled_avg_price"])
         fill_qty = float(order_res["qty"])
@@ -1184,6 +1322,64 @@ def run_trading_step(
                 mode="PAPER",
                 session=http_session,
             )
+        return True
+
+    for sym in SIGNAL_SYMBOLS:
+        bars = bars_by_symbol.get(sym, pd.DataFrame())
+        cand = evaluate_symbol_candidate(
+            sym,
+            bars,
+            equity=equity,
+            open_positions=open_syms,
+            current_exposure=current_exposure,
+            daily_pnl_pct=daily_pnl_pct,
+            drawdown_pct=drawdown_pct,
+            kill_switch_active=False,
+            leverage=leverage,
+            shorting_enabled=bool(acct.get("shorting_enabled", False)),
+            etf_prices=prices,
+            hourly_multipliers=hourly_multipliers,
+            meta_model=meta_model,
+            meta_threshold=meta_threshold,
+            finnhub_key=finnhub_key,
+            gemini_client=gemini_client,
+            http_session=http_session,
+            now_et=now,
+            max_signal_age_min=max_signal_age_min,
+            processed_signals=processed,
+            session_close_et=close_et,
+            max_notional=bp_left,
+        )
+        if not _execute_candidate(sym, cand):
+            break
+
+    # 3. Execute discovered individual stock opportunities (D33: Pre-Market & Intraday Scanner)
+    opps_list = (
+        stock_opportunities
+        if stock_opportunities is not None
+        else summary.get("premarket", {}).get("opportunities", [])
+    )
+    for opp in opps_list or []:
+        opp_sym = str(opp.get("symbol", "")).upper().strip()
+        if not opp_sym or opp_sym in SIGNAL_SYMBOLS:
+            continue
+        cand_opp = evaluate_mover_candidate(
+            opp,
+            equity=equity,
+            open_positions=open_syms,
+            current_exposure=current_exposure,
+            daily_pnl_pct=daily_pnl_pct,
+            drawdown_pct=drawdown_pct,
+            kill_switch_active=False,
+            shorting_enabled=bool(acct.get("shorting_enabled", False)),
+            prices=prices,
+            now_et=now,
+            processed_signals=processed,
+            session_close_et=close_et,
+            max_notional=bp_left,
+        )
+        if not _execute_candidate(opp_sym, cand_opp):
+            break
 
     journal["processed_signals"] = sorted(processed)
     return _finish("ok", {"orders": orders_submitted, "decisions": decisions, "management": mgmt})
@@ -1411,6 +1607,7 @@ def run_scheduled_cycle(
     adapter: AlpacaPaperAdapter,
     load_bars: Callable[[], dict[str, pd.DataFrame]],
     load_prices: Callable[[], dict[str, float]],
+    load_opportunities: Callable[[], list[dict[str, Any]]] | None = None,
     leverage: int = 2,
     now_fn: Callable[[], datetime] | None = None,
     sleep_fn: Callable[[float], None] = time.sleep,
@@ -1434,6 +1631,7 @@ def run_scheduled_cycle(
         before_step()  # e.g. pull the freshest state from the `state` branch after waiting
 
     now = clock()
+    opps = load_opportunities() if load_opportunities is not None else None
     step = run_trading_step(
         state_dir=state_dir,
         adapter=adapter,
@@ -1447,6 +1645,7 @@ def run_scheduled_cycle(
         send_alerts=send_alerts,
         prices=load_prices(),
         now_et=now,
+        stock_opportunities=opps,
     )
     result: dict[str, Any] = {"status": step["status"], "plan": plan, "step": step}
 

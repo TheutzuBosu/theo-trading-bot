@@ -34,6 +34,10 @@ from alpaca.data.historical import StockHistoricalDataClient  # noqa: E402
 from alpaca.data.requests import StockLatestTradeRequest  # noqa: E402
 from alpaca.trading.client import TradingClient  # noqa: E402
 
+from src.ai.market_scanner import (  # noqa: E402
+    SINGLE_STOCK_INVERSE_MAP,
+    scan_market_opportunities,
+)
 from src.ai.premarket import (  # noqa: E402
     build_premarket_briefing,
     format_premarket_telegram_message,
@@ -126,9 +130,26 @@ def _load_all_bars(data_client: StockHistoricalDataClient) -> dict[str, pd.DataF
     return out
 
 
-def _load_prices(data_client: StockHistoricalDataClient) -> dict[str, float]:
-    """Latest IEX trade price for every allowed ETF (needed to price SH/SDS/SSO/... orders)."""
-    syms = sorted(ALLOWED_SYMBOLS)
+def _load_prices(
+    data_client: StockHistoricalDataClient, state_dir: Path | None = None
+) -> dict[str, float]:
+    """Latest IEX trade price for allowed ETFs, inverse ETFs, open positions & scanned movers."""
+    extra_syms: set[str] = set(SINGLE_STOCK_INVERSE_MAP.values())
+    if state_dir is not None:
+        try:
+            store = StateStore(state_dir)
+            journal = store.read_journal()
+            for exec_sym, tr in (journal.get("open_trades") or {}).items():
+                extra_syms.add(str(exec_sym).upper())
+                if tr.get("signal_symbol"):
+                    extra_syms.add(str(tr["signal_symbol"]).upper())
+            summary = store.read_summary()
+            for opp in summary.get("premarket", {}).get("opportunities", []) or []:
+                if opp.get("symbol"):
+                    extra_syms.add(str(opp["symbol"]).upper())
+        except Exception:  # noqa: BLE001
+            pass
+    syms = sorted({s for s in (set(ALLOWED_SYMBOLS) | extra_syms) if s and s.isalpha()})
     try:
         latest = data_client.get_stock_latest_trade(
             StockLatestTradeRequest(symbol_or_symbols=syms, feed="iex")
@@ -201,12 +222,21 @@ def _run_premarket_intelligence(
     sync_github: bool = True,
     notify_telegram: bool = True,
 ) -> dict[str, Any]:
-    """Scan pre-market prices, news & financial reports, update summary.json and Telegram."""
+    """Scan pre-market prices, individual stock movers, news & financial reports."""
     quotes = _compute_premarket_quotes(data_client)
+    scan = scan_market_opportunities(
+        api_key=settings.ALPACA_API_KEY,
+        secret_key=settings.ALPACA_SECRET_KEY,
+        finnhub_key=settings.FINNHUB_API_KEY,
+        gemini_client=gemini_client,
+        max_opportunities=6,
+    )
     briefing = build_premarket_briefing(
         quotes=quotes,
         finnhub_key=settings.FINNHUB_API_KEY,
         gemini_client=gemini_client,
+        opportunities=scan.get("opportunities", []),
+        top_movers=scan.get("top_movers", []),
     )
     store = StateStore(state_dir)
     summary = store.read_summary()
@@ -218,6 +248,36 @@ def _run_premarket_intelligence(
     if notify_telegram:
         send_telegram_message(format_premarket_telegram_message(briefing))
     return briefing
+
+
+def _load_opportunities(state_dir: Path, gemini_client: Any) -> list[dict[str, Any]]:
+    """Scan market-wide stock movers during regular hours and merge with pre-market setups."""
+    store = StateStore(state_dir)
+    summary = store.read_summary()
+    existing = list(summary.get("premarket", {}).get("opportunities", []) or [])
+    try:
+        scan = scan_market_opportunities(
+            api_key=settings.ALPACA_API_KEY,
+            secret_key=settings.ALPACA_SECRET_KEY,
+            finnhub_key=settings.FINNHUB_API_KEY,
+            gemini_client=gemini_client,
+            max_opportunities=5,
+        )
+        fresh = list(scan.get("opportunities", []) or [])
+        if fresh and isinstance(summary.get("premarket"), dict):
+            summary["premarket"]["opportunities"] = fresh
+            if scan.get("top_movers"):
+                summary["premarket"]["top_movers"] = scan["top_movers"]
+            store.write_summary(summary)
+        by_sym: dict[str, dict[str, Any]] = {}
+        for item in [*fresh, *existing]:
+            sym = str(item.get("symbol", "")).upper()
+            if sym and sym not in by_sym:
+                by_sym[sym] = item
+        return list(by_sym.values())
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Scanarea oportunităților pe acțiuni a eșuat: %s", exc)
+        return existing
 
 
 def main() -> int:
@@ -331,7 +391,8 @@ def main() -> int:
                     state_dir=state_dir,
                     adapter=adapter,
                     load_bars=lambda: _load_all_bars(data_client),
-                    load_prices=lambda: _load_prices(data_client),
+                    load_prices=lambda: _load_prices(data_client, state_dir),
+                    load_opportunities=lambda: _load_opportunities(state_dir, gemini),
                     leverage=args.leverage,
                     before_step=pull_state,
                     gemini_client=gemini,
@@ -343,11 +404,31 @@ def main() -> int:
             time.sleep(60)
 
     if args.auto:
+        now_et = datetime.now(UTC).astimezone(NY_TZ)
+        if (4, 0) <= (now_et.hour, now_et.minute) < (9, 25):
+            pull_state()
+            brief = _run_premarket_intelligence(
+                state_dir=state_dir,
+                data_client=data_client,
+                gemini_client=gemini,
+                sync_github=sync_gh,
+                notify_telegram=(now_et.hour == 8 and now_et.minute < 30),
+            )
+            print(
+                json.dumps(
+                    {"status": "premarket_updated", "premarket": brief},
+                    indent=2,
+                    ensure_ascii=False,
+                )
+            )
+            return 0
+
         res = run_scheduled_cycle(
             state_dir=state_dir,
             adapter=adapter,
             load_bars=lambda: _load_all_bars(data_client),
-            load_prices=lambda: _load_prices(data_client),
+            load_prices=lambda: _load_prices(data_client, state_dir),
+            load_opportunities=lambda: _load_opportunities(state_dir, gemini),
             leverage=args.leverage,
             before_step=pull_state,
             gemini_client=gemini,
@@ -363,7 +444,7 @@ def main() -> int:
             adapter=adapter,
             initial_capital=settings.BOT_CAPITAL,
             sync_github=sync_gh,
-            spy_price=_load_prices(data_client).get("SPY"),
+            spy_price=_load_prices(data_client, state_dir).get("SPY"),
         )
         print(json.dumps(summary, indent=2, ensure_ascii=False))
         if not (args.once or args.eod):
@@ -375,11 +456,12 @@ def main() -> int:
             adapter=adapter,
             gemini_client=gemini,
             sync_github=sync_gh,
-            prices=_load_prices(data_client),
+            prices=_load_prices(data_client, state_dir),
         )
         print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
         return 0
 
+    opps = _load_opportunities(state_dir, gemini)
     res = run_trading_step(
         state_dir=state_dir,
         adapter=adapter,
@@ -387,7 +469,8 @@ def main() -> int:
         leverage=args.leverage,
         gemini_client=gemini,
         sync_github=sync_gh,
-        prices=_load_prices(data_client),
+        prices=_load_prices(data_client, state_dir),
+        stock_opportunities=opps,
     )
     print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
     return 0

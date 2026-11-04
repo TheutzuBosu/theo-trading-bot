@@ -21,6 +21,22 @@ export interface PremarketQuote {
   gap_pct: number;
 }
 
+export interface StockOpportunity {
+  symbol: string;
+  action: string;
+  direction: string;
+  price: number;
+  change_pct?: number;
+  gap_pct?: number;
+  stop_price: number;
+  target_price: number;
+  rr_ratio: number;
+  stake_dollars: number;
+  confidence: number;
+  catalyst?: string;
+  reason_ro: string;
+}
+
 export interface PremarketBriefing {
   updated_at: string;
   risk_regime: string;
@@ -28,6 +44,8 @@ export interface PremarketBriefing {
   explanation_ro: string;
   headlines: string[];
   earnings_today: Array<{ symbol: string; hour?: string }>;
+  opportunities?: StockOpportunity[];
+  top_movers?: Array<{ symbol: string; price: number; change_pct: number }>;
 }
 
 export interface StateSummary {

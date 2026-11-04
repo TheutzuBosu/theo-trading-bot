@@ -103,11 +103,15 @@ def exec_symbol_for(
     account_equity: float = 500.0,
     shorting_enabled: bool = False,
 ) -> str:
-    """Return the instrument actually traded for a signal on `symbol` (D31 mapping)."""
+    """Return the instrument actually traded for a signal on `symbol` (D31/D33 mapping)."""
     sym = symbol.upper()
     lev = 2 if int(leverage) >= 2 else 1
     if uses_inverse_etf(direction, account_equity, shorting_enabled):
-        return INVERSE_ETF_MAP.get((sym, lev), sym)
+        if (sym, lev) in INVERSE_ETF_MAP:
+            return INVERSE_ETF_MAP[(sym, lev)]
+        from src.ai.market_scanner import resolve_short_proxy_symbol
+
+        return resolve_short_proxy_symbol(sym)
     if str(direction).lower() == "long":
         return LEVERAGED_LONG_ETF_MAP.get((sym, lev), sym)
     return sym
@@ -154,11 +158,14 @@ def resolve_execution_instrument(
         raise ValueError(f"Lipsește prețul curent pentru {exec_sym}; ordinul nu poate fi calculat")
 
     def _translated(via_inverse: bool) -> dict[str, Any]:
+        eff_lev = lev if exec_sym != sym else 1
         exec_price = float(instrument_price if instrument_price is not None else entry_price)
-        eff_dist_pct = min(0.20, raw_risk_pct * lev)
+        eff_dist_pct = min(0.20, raw_risk_pct * eff_lev)
         exec_stop = round_price(exec_price * (1.0 - eff_dist_pct))
         exec_target = (
-            round_price(exec_price * (1.0 + raw_tp_pct * lev)) if raw_tp_pct is not None else None
+            round_price(exec_price * (1.0 + raw_tp_pct * eff_lev))
+            if raw_tp_pct is not None
+            else None
         )
         per_share_risk = max(exec_price - exec_stop, 1e-4)
         exec_qty = planned_risk_dollars / per_share_risk
@@ -175,7 +182,7 @@ def resolve_execution_instrument(
             "entry_price": exec_price,
             "stop_price": exec_stop,
             "target_price": exec_target,
-            "leverage": lev,
+            "leverage": eff_lev,
             "via_inverse_etf": via_inverse,
         }
 
@@ -335,7 +342,23 @@ class AlpacaPaperAdapter:
             stop_price=round_price(stop_price),
             client_order_id=client_order_id,
         )
-        return self.client.submit_order(req)
+        try:
+            return self.client.submit_order(req)
+        except Exception as exc:  # noqa: BLE001
+            if "fractional" in str(exc).lower():
+                whole_qty = int(math.floor(float(qty)))
+                if whole_qty >= 1:
+                    req_whole = StopOrderRequest(
+                        symbol=symbol,
+                        qty=float(whole_qty),
+                        side=side,
+                        time_in_force=TimeInForce.DAY,
+                        stop_price=round_price(stop_price),
+                        client_order_id=client_order_id,
+                    )
+                    return self.client.submit_order(req_whole)
+                return {"id": f"soft-stop-{client_order_id}", "status": "soft_stop"}
+            raise
 
     def submit_entry_with_stop(
         self,

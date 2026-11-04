@@ -18,6 +18,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 | B6c | Sesiune live paper + resetare dashboard la 500 $ | Gata | faza-b6c-live-demo | Antigravity | `src/live/runner.py`, `src/live/state_writer.py`, `scripts/run_intraday_session.py`, GitHub Actions + branch `state` sincronizat (218 teste verzi) |
 | B6d | Audit + reparații execuție live (D32) | Gata | faza-b6d-audit-live | Claude Code | Ordine Alpaca reale (market + stop), preț ETF corect, rulări la orele D1b, stare restaurată din branch-ul `state`, ieșiri D1b live, învățare din tranzacțiile închise (234 teste verzi) |
+| B6e | Scanner toată piața SUA (Pre-Market & Intraday, D33) | Gata | main | Antigravity | `src/ai/market_scanner.py` + `src/ai/premarket.py` + `evaluate_mover_candidate` în `runner.py`: scanează și tranzacționează orice acțiune SUA în mișcare (mize 5 $ – 35 $, Risc:Reward 1:3 – 1:10, Long + Short + Levier) + afișare în Dashboard și Telegram |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|

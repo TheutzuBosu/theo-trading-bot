@@ -11,6 +11,7 @@ import pandas as pd
 
 from src.broker.alpaca_paper import AlpacaPaperAdapter
 from src.live.runner import (
+    evaluate_mover_candidate,
     evaluate_symbol_candidate,
     initialize_live_paper_state,
     run_end_of_day_learning,
@@ -270,3 +271,80 @@ def test_end_of_day_learning_and_kill_switch(tmp_path: Path) -> None:
     )
     assert kill_res["active"] is True
     assert store.read_kill_switch()["active"] is True
+
+
+def test_evaluate_mover_candidate_and_stock_opportunities_execution(tmp_path: Path) -> None:
+    prices = {**PRICES, "NVDA": 140.0, "INTC": 22.0, "SOXS": 25.0}
+    opp_long = {
+        "symbol": "NVDA",
+        "action": "enter",
+        "direction": "long",
+        "price": 140.0,
+        "change_pct": 6.4,
+        "stop_price": 137.90,
+        "target_price": 150.50,
+        "rr_ratio": 5.0,
+        "stake_dollars": 15.0,
+        "confidence": 0.82,
+        "reason_ro": "NVDA crește puternic (+6.4%) pe investiții AI masive (R:R 1:5.0).",
+    }
+    opp_short = {
+        "symbol": "INTC",
+        "action": "enter",
+        "direction": "short",
+        "price": 22.0,
+        "change_pct": -14.8,
+        "stop_price": 22.33,
+        "target_price": 20.02,
+        "rr_ratio": 6.0,
+        "stake_dollars": 10.0,
+        "confidence": 0.78,
+        "reason_ro": "INTC scade -14.8% în pre-market după raport financiar slab (R:R 1:6.0).",
+    }
+
+    cand_long = evaluate_mover_candidate(
+        opp_long,
+        equity=500.0,
+        open_positions=set(),
+        current_exposure=0.0,
+        daily_pnl_pct=0.0,
+        drawdown_pct=0.0,
+        prices=prices,
+        now_et=NOW_CHECK,
+    )
+    assert cand_long["action"] == "enter"
+    assert cand_long["exec_symbol"] == "NVDA"
+    assert cand_long["exec_direction"] == "long"
+    assert round(cand_long["qty"] * cand_long["entry_price"], 2) <= 15.05
+
+    cand_short = evaluate_mover_candidate(
+        opp_short,
+        equity=500.0,
+        open_positions=set(),
+        current_exposure=0.0,
+        daily_pnl_pct=0.0,
+        drawdown_pct=0.0,
+        prices=prices,
+        now_et=NOW_CHECK,
+    )
+    assert cand_short["action"] == "enter"
+    assert cand_short["signal_symbol"] == "INTC"
+    assert cand_short["exec_symbol"] == "SOXS"  # inverse semiconductor ETF on 500$ account
+
+    client = FakeAlpaca(prices=prices)
+    adapter = _adapter(client, tmp_path)
+    session = FakeGitHubSession(branch_exists=True)
+
+    step = run_trading_step(
+        state_dir=tmp_path,
+        adapter=adapter,
+        bars_by_symbol={"SPY": pd.DataFrame(), "QQQ": pd.DataFrame()},
+        http_session=session,
+        sync_github=False,
+        send_alerts=False,
+        prices=prices,
+        now_et=NOW_CHECK,
+        stock_opportunities=[opp_long, opp_short],
+    )
+    assert step["status"] == "ok"
+    assert {o["exec_symbol"] for o in step["orders"]} == {"NVDA", "SOXS"}

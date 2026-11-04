@@ -156,6 +156,8 @@ def build_premarket_briefing(
     gemini_client: Any = None,
     session: Any = None,
     now_utc: datetime | None = None,
+    opportunities: list[dict[str, Any]] | None = None,
+    top_movers: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Build a complete Pre-Market & Financial News intelligence object in Romanian."""
     now = now_utc or datetime.now(UTC)
@@ -275,6 +277,8 @@ def build_premarket_briefing(
         "explanation_ro": explanation_ro,
         "headlines": headlines[:6],
         "earnings_today": earnings[:5],
+        "opportunities": opportunities or [],
+        "top_movers": top_movers or [],
     }
 
 
@@ -300,17 +304,33 @@ def format_premarket_telegram_message(briefing: dict[str, Any]) -> str:
         else "• Raportări financiare azi: Nicio raportare mega-cap blocantă"
     )
 
+    opps = (briefing.get("opportunities") or [])[:4]
+    opp_block = ""
+    if opps:
+        opp_lines = []
+        for op in opps:
+            sym = op.get("symbol")
+            d = str(op.get("direction", "long")).upper()
+            gap = float(op.get("gap_pct", 0.0))
+            stake = float(op.get("stake_dollars", 15.0))
+            rr = float(op.get("rr_ratio", 3.5))
+            opp_lines.append(
+                f"  – {sym} ({gap:+.2f}%): {d} · miză {stake:.0f} $ · Risc:Reward 1:{rr:.1f}"
+            )
+        opp_block = "\n\n🎯 Oportunități detectate pe acțiuni individuale:\n" + "\n".join(opp_lines)
+
     headlines = (briefing.get("headlines") or [])[:3]
     news_block = ""
     if headlines:
-        news_block = "\n📰 Știri principale:\n" + "\n".join(f"  – {h}" for h in headlines)
+        news_block = "\n\n📰 Știri principale:\n" + "\n".join(f"  – {h}" for h in headlines)
 
     return (
-        f"🔎 ANALIZĂ PRE-MARKET & ȘTIRI [PAPER]\n"
+        f"🔎 ANALIZĂ PRE-MARKET, ACȚIUNI & ȘTIRI [PAPER]\n"
         f"{spy_line}\n"
         f"{qqq_line}\n"
         f"• Regim risc: {briefing.get('risk_regime', 'NORMAL')}\n"
         f"{earn_line}\n\n"
         f"💡 De ce se mișcă piața:\n{briefing.get('explanation_ro', '')}"
+        f"{opp_block}"
         f"{news_block}"
     )

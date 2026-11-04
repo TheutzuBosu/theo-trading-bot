@@ -23,6 +23,7 @@ analysis and the 13 risk rules above (D31).
 from __future__ import annotations
 
 import math
+import re
 from collections.abc import Iterable
 
 import pandas as pd
@@ -38,7 +39,31 @@ MAX_TOTAL_EXPOSURE: float = 2.0
 NO_ENTRY_LAST_MINUTES: int = 15
 MAX_SPREAD_MULTIPLIER: float = 2.0
 
-ALLOWED_SYMBOLS: frozenset[str] = frozenset({"SPY", "QQQ", "SH", "SDS", "SSO", "PSQ", "QID", "QLD"})
+ALLOWED_SYMBOLS: frozenset[str] = frozenset(
+    {
+        "SPY",
+        "QQQ",
+        "SH",
+        "SDS",
+        "SSO",
+        "PSQ",
+        "QID",
+        "QLD",
+        "SOXS",
+        "NVD",
+        "TSLS",
+        "AAPD",
+        "MSFD",
+        "AMZD",
+        "METD",
+        "GGLS",
+        "CONI",
+    }
+)
+BLOCKED_CRYPTO_SYMBOLS: frozenset[str] = frozenset(
+    {"BTC", "ETH", "SOL", "DOGE", "XRP", "USDT", "USDC", "BTCUSD", "ETHUSD", "SOLUSD"}
+)
+_US_EQUITY_RE = re.compile(r"^[A-Z]{1,5}$")
 
 SYMBOL_FAMILY: dict[str, str] = {
     "SPY": "SPY",
@@ -49,11 +74,27 @@ SYMBOL_FAMILY: dict[str, str] = {
     "PSQ": "QQQ",
     "QID": "QQQ",
     "QLD": "QQQ",
+    "NVD": "NVDA",
+    "TSLS": "TSLA",
+    "AAPD": "AAPL",
+    "MSFD": "MSFT",
+    "AMZD": "AMZN",
+    "METD": "META",
+    "GGLS": "GOOGL",
+    "CONI": "COIN",
 }
 
 
+def is_allowed_symbol(symbol: str) -> bool:
+    """Return True for allowed ETFs and standard 1-5 letter US equities (excluding crypto)."""
+    sym = str(symbol or "").upper().strip()
+    if not sym or sym in BLOCKED_CRYPTO_SYMBOLS:
+        return False
+    return sym in ALLOWED_SYMBOLS or bool(_US_EQUITY_RE.match(sym))
+
+
 def symbol_family(symbol: str) -> str:
-    """Return the underlying index family ('SPY' or 'QQQ') for any allowed ETF."""
+    """Return the underlying family for any allowed ETF or individual stock."""
     sym = str(symbol).upper()
     return SYMBOL_FAMILY.get(sym, sym)
 
@@ -102,7 +143,7 @@ def evaluate_order_risk(
 
     # d. Allowed symbol
     sym = str(symbol).upper()
-    if sym not in ALLOWED_SYMBOLS:
+    if not is_allowed_symbol(sym):
         return False, f"Simbol nepermis: {sym}"
 
     # e. Direction

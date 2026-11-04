@@ -280,6 +280,66 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
                 </div>
               )}
             </div>
+
+            {summary.premarket.opportunities && summary.premarket.opportunities.length > 0 && (
+              <div className="space-y-2.5 pt-1">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wide">
+                    🎯 Oportunități Acțiuni Individuale (Scanner Piață — Risc:Reward)
+                  </h3>
+                  <span className="text-xs text-slate-400">
+                    Mize 5 $ – 35 $ per acțiune · R:R dinamic 1:3 – 1:10
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {summary.premarket.opportunities.map((opp, idx) => {
+                    const isLong = opp.direction.toLowerCase() === "long";
+                    return (
+                      <div
+                        key={`${opp.symbol}-${idx}`}
+                        className="bg-slate-950/80 border border-slate-800 rounded-xl p-3.5 space-y-2"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-bold text-white">{opp.symbol}</span>
+                            <span
+                              className={`text-[11px] font-bold px-2 py-0.5 rounded border ${
+                                isLong
+                                  ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                                  : "bg-rose-500/15 text-rose-300 border-rose-500/30"
+                              }`}
+                            >
+                              {opp.direction.toUpperCase()}
+                            </span>
+                            <span className="text-xs text-slate-400">
+                              ({fmtPct(opp.change_pct ?? opp.gap_pct ?? 0, true)})
+                            </span>
+                          </div>
+                          <span className="text-xs font-bold text-amber-300 bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 rounded">
+                            R:R 1:{Number(opp.rr_ratio || 3).toFixed(1)} · Miză ~{fmtUsd(opp.stake_dollars)}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2 text-xs text-slate-300 pt-1.5 border-t border-slate-800/80">
+                          <div>
+                            <span className="text-slate-500 block">Preț curent</span>
+                            {fmtUsd(opp.price)}
+                          </div>
+                          <div>
+                            <span className="text-slate-500 block">Stop-loss</span>
+                            <span className="text-rose-300">{fmtUsd(opp.stop_price)}</span>
+                          </div>
+                          <div>
+                            <span className="text-slate-500 block">Țintă profit</span>
+                            <span className="text-emerald-300">{fmtUsd(opp.target_price)}</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-slate-300 leading-relaxed">{opp.reason_ro}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </section>
         )}
 
@@ -443,7 +503,7 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
                 Contul real Alpaca Paper (500,00 $) este conectat și pregătit de tranzacționare.
               </p>
               <p className="text-xs text-slate-400">
-                Nicio tranzacție închisă încă pe contul activ. Botul monitorizează SPY și QQQ (Long + Short + Levier, strategia D1b VWAP &amp; Ladder #1 + filtru AI) și va înregistra automat aici fiecare tranzacție și lecția învățată din momentul deschiderii pieței SUA (09:30 ET / 16:30 ora României).
+                Nicio tranzacție închisă încă pe contul activ. Botul scanează toată piața SUA (acțiuni individuale în mișcare + SPY/QQQ, Long + Short + Levier, Risc:Reward dinamic 1:3 – 1:10 + filtru AI) și va înregistra automat aici fiecare tranzacție și lecția învățată din momentul deschiderii pieței SUA (09:30 ET / 16:30 ora României).
               </p>
             </div>
           ) : (
