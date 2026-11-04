@@ -12,7 +12,7 @@
   "updated_at": "2026-11-04T02:48:35.319303-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-04T12:46:21.706631+00:00",
+    "updated_at": "2026-11-04T12:49:48.815116+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
@@ -26,7 +26,7 @@
         "gap_pct": 0.41
       }
     },
-    "explanation_ro": "În Pre-Market, piața SUA este în creștere ușoară: SPY la 754.29 $ (-0.01%) și QQQ la 688.14 $ (+0.41%). Raportări financiare urmărite azi: AATC (azi), AAUAF (azi), ABAT (azi), ABCP (azi), ABTC (după închidere). La 16:30 (09:30 ET) botul măsoară banda de zgomot și VWAP-ul, iar de la 17:12 (10:12 ET) execută automat pe direcția spargerii (Long sau Short cu levier 2x).",
+    "explanation_ro": "Piața deschide mixt, cu SPY aproape stabil (-0,01%) și QQQ în ușoară creștere (+0,41%), susținută de optimismul investitorilor după victoria democraților în Congres, în timp ce riscurile geopolitice din Orientul Mijlociu și declarațiile Iranului mențin prudența. Ziua aduce raportări financiare importante de la companii precum ADNT și AFL, dar lipsa unor catalizatori majori pe sectorul tehnologic favorizează o direcție neutră spre ușor Long pe QQQ și o atitudine defensivă pe SPY în prima parte a ședinței.",
     "headlines": [
       "Netanyahu rivals seize on Democrats' sweep of US Congress, seeking his ouster - Reuters",
       "Iran's Khamenei says US hostility will persist regardless of party in power - Reuters",
@@ -37,43 +37,43 @@
     ],
     "earnings_today": [
       {
-        "symbol": "AATC",
-        "hour": "",
-        "eps_estimate": null,
-        "eps_actual": null,
-        "revenue_estimate": null,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "AAUAF",
-        "hour": "",
-        "eps_estimate": null,
-        "eps_actual": null,
-        "revenue_estimate": null,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "ABAT",
-        "hour": "",
-        "eps_estimate": -0.0663,
-        "eps_actual": null,
-        "revenue_estimate": 6913050,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "ABCP",
-        "hour": "",
-        "eps_estimate": null,
-        "eps_actual": null,
-        "revenue_estimate": null,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "ABTC",
+        "symbol": "ACHC",
         "hour": "amc",
-        "eps_estimate": -0.0612,
+        "eps_estimate": 0.4725,
         "eps_actual": null,
-        "revenue_estimate": 75837000,
+        "revenue_estimate": 895349961,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ADNT",
+        "hour": "bmo",
+        "eps_estimate": 0.5894,
+        "eps_actual": 0.52,
+        "revenue_estimate": 3676250850,
+        "revenue_actual": 3730000000
+      },
+      {
+        "symbol": "ADV",
+        "hour": "bmo",
+        "eps_estimate": 1.9392,
+        "eps_actual": null,
+        "revenue_estimate": 908495000,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "AFL",
+        "hour": "amc",
+        "eps_estimate": 1.8098,
+        "eps_actual": null,
+        "revenue_estimate": 4162761793,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "AGL",
+        "hour": "amc",
+        "eps_estimate": -1.2053,
+        "eps_actual": null,
+        "revenue_estimate": 1475383325,
         "revenue_actual": null
       }
     ]
