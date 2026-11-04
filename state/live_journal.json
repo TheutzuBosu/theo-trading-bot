@@ -9,35 +9,6 @@
     "SPY|2026-11-04T12:29:00-05:00|long"
   ],
   "open_trades": {
-    "CRCT": {
-      "trade_id": "theo-CRCT-L-202611041214",
-      "signal_symbol": "CRCT",
-      "signal_direction": "long",
-      "exec_symbol": "CRCT",
-      "exec_direction": "long",
-      "leverage": 1,
-      "signal_time": "2026-11-04T12:14:38.087957-05:00",
-      "entry_time": "2026-11-04T12:14:38.087957-05:00",
-      "entry_price": 8.89,
-      "qty": 2.809,
-      "qty0": 2.809,
-      "signal_entry_price": 8.9,
-      "signal_stop": 8.77,
-      "signal_initial_stop": 8.77,
-      "signal_target": 9.49,
-      "signal_stop_after_target": 8.97,
-      "exec_stop": 8.77,
-      "exec_initial_stop": 8.77,
-      "exec_target": 9.49,
-      "stop_order_id": "9471a60e-002b-4449-bded-c80be6736b0d",
-      "stop_seq": 0,
-      "initial_risk_dollars": 0.3371,
-      "equity_at_entry": 499.73,
-      "partial_done": false,
-      "last_price": 8.96,
-      "entry_reason": "Cricut Inc. (CRCT) a înregistrat o creștere de aproape 49% susținută de rezultatele financiare peste estimări pentru Q3 2026, raportând o creștere solidă a veniturilor și un interes ridicat în pre-market. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: CRCT LONG -> BUY CRCT (miză ~25.00$, R:R 1:4.5)",
-      "features": {}
-    },
     "QID": {
       "trade_id": "theo-QID-S-202611041214",
       "signal_symbol": "NRIX",
@@ -65,47 +36,8 @@
       "partial_done": false,
       "last_price": 14.84,
       "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)",
-      "features": {}
-    },
-    "SSO": {
-      "trade_id": "theo-SSO-L-202611041229",
-      "signal_symbol": "SPY",
-      "signal_direction": "long",
-      "exec_symbol": "SSO",
-      "exec_direction": "long",
-      "leverage": 2,
-      "signal_time": "2026-11-04T12:29:00-05:00",
-      "entry_time": "2026-11-04T12:30:10.428984-05:00",
-      "entry_price": 69.86,
-      "qty": 3.5764,
-      "qty0": 3.5764,
-      "signal_entry_price": 768.185,
-      "signal_stop": 766.844739,
-      "signal_initial_stop": 766.844739,
-      "signal_target": 776.87262,
-      "signal_stop_after_target": 767.344212,
-      "exec_stop": 69.61,
-      "exec_initial_stop": 69.61,
-      "exec_target": 71.43,
-      "stop_order_id": "8d5e2219-1f44-48c2-abec-a66fcfa5afa5",
-      "stop_seq": 0,
-      "initial_risk_dollars": 0.8941,
-      "equity_at_entry": 499.62,
-      "partial_done": false,
-      "last_price": 69.86,
-      "entry_reason": "D1b long: Close=768.42, band=765.62, VWAP=766.44, tp0=776.87 · D31: SPY LONG -> BUY SSO (2x) · AI p=0.60 · mult_oră=1.00",
-      "features": {
-        "minute_of_day": 179.0,
-        "dist_from_band_bps": 41.99783454893247,
-        "dist_from_vwap_bps": 25.84664937495873,
-        "rv_30m": 0.0003146962846201187,
-        "sigma_14d": 0.007781826801947557,
-        "overnight_gap_bps": 114.39857896550888,
-        "ret_since_open_bps": 70.90339576152348,
-        "vol_ratio_14d": 2.1120011537031727,
-        "day_of_week": 2.0,
-        "cost_to_risk": 0.0018505429841527156
-      }
+      "features": {},
+      "exit_reason_pending": "time"
     },
     "NRIX": {
       "trade_id": "theo-NRIX-L-202611041230",
@@ -134,7 +66,8 @@
       "partial_done": false,
       "last_price": 15.33,
       "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -40.67% în premarket pe fondul unor posibile rezultate financiare sau evoluții negative în sectorul de sănătate. O astfel de supracorecție extremă creează oportunitatea tehnică perfectă pentru un raliu de revenire a supravânzării (dead cat bounce / relief rally). Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX LONG -> BUY NRIX (miză ~20.00$, R:R 1:4.5)",
-      "features": {}
+      "features": {},
+      "exit_reason_pending": "time"
     }
   },
   "last_eod_date": null
