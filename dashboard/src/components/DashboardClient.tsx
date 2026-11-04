@@ -53,10 +53,33 @@ function tradeTitle(t: TradeRecord): string {
 export default function DashboardClient({ data }: { data: DashboardData }) {
   const router = useRouter();
   const { summary, equity, trades } = data;
+  const [killStatus, setKillStatus] = React.useState<string | null>(null);
+  const [killLoading, setKillLoading] = React.useState(false);
 
   async function handleLogout() {
     await fetch("/api/logout", { method: "POST" });
     router.refresh();
+  }
+
+  async function handleKill() {
+    if (
+      !window.confirm(
+        "Ești sigur că vrei să activezi oprirea de urgență (KILL)? Toate pozițiile deschise pe Alpaca Paper vor fi închise la piață."
+      )
+    ) {
+      return;
+    }
+    setKillLoading(true);
+    setKillStatus(null);
+    try {
+      const res = await fetch("/api/kill", { method: "POST" });
+      const payload = await res.json();
+      setKillStatus(payload.message || "Comanda KILL a fost procesată.");
+    } catch {
+      setKillStatus("Eroare la trimiterea comenzii KILL.");
+    } finally {
+      setKillLoading(false);
+    }
   }
 
   const totalPositive = summary.total_pnl >= 0;
@@ -90,9 +113,14 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
               <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/40">
                 {summary.mode} · CONT DEMO
               </span>
-              {summary.is_sample && (
+              {summary.is_sample ? (
                 <span className="text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
                   Date de exemplu
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Conectat Live · Alpaca Paper · Long + Short + Levier
                 </span>
               )}
             </div>
@@ -100,11 +128,12 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
             <div className="flex items-center gap-2.5">
               <button
                 type="button"
-                disabled
-                title="Butonul de oprire de urgență se conectează în etapa B6, când pornește procesul live pe demo."
-                className="px-3.5 py-2 rounded-xl bg-rose-600/30 border border-rose-500/40 text-rose-200 text-xs font-bold uppercase tracking-wide cursor-not-allowed opacity-75"
+                onClick={handleKill}
+                disabled={killLoading}
+                title="Oprire de urgență: anulează toate ordinele și închide pozițiile deschise la piață."
+                className="px-3.5 py-2 rounded-xl bg-rose-600/25 hover:bg-rose-600/40 border border-rose-500/50 text-rose-200 text-xs font-bold uppercase tracking-wide transition disabled:opacity-50"
               >
-                KILL (se conectează în B6)
+                {killLoading ? "Se oprește..." : "KILL — Oprire de urgență"}
               </button>
               <button
                 type="button"
@@ -115,6 +144,12 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
               </button>
             </div>
           </div>
+
+          {killStatus && (
+            <div className="mt-3 rounded-xl bg-rose-500/15 border border-rose-500/40 px-3.5 py-2 text-xs text-rose-200">
+              {killStatus}
+            </div>
+          )}
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
             <div className="bg-slate-950/70 border border-slate-800/80 rounded-xl p-3.5">
@@ -329,69 +364,80 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
             </div>
           </div>
 
-          <div className="space-y-3.5">
-            {trades.map((t, idx) => {
-              const win = t.pnl >= 0;
-              return (
-                <article
-                  key={`${t.symbol}-${t.entry_time}-${idx}`}
-                  className="bg-slate-950/70 border border-slate-800 rounded-xl p-4 space-y-2.5"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`inline-block w-2.5 h-2.5 rounded-full ${
-                          win ? "bg-emerald-400" : "bg-rose-400"
+          {trades.length === 0 ? (
+            <div className="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 text-sm text-slate-300 space-y-1.5">
+              <p className="font-medium text-white">
+                Contul real Alpaca Paper (500,00 $) este conectat și pregătit de tranzacționare.
+              </p>
+              <p className="text-xs text-slate-400">
+                Nicio tranzacție închisă încă pe contul activ. Botul monitorizează SPY și QQQ (Long + Short + Levier, strategia D1b VWAP &amp; Ladder #1 + filtru AI) și va înregistra automat aici fiecare tranzacție și lecția învățată din momentul deschiderii pieței SUA (09:30 ET / 16:30 ora României).
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-3.5">
+              {trades.map((t, idx) => {
+                const win = t.pnl >= 0;
+                return (
+                  <article
+                    key={`${t.symbol}-${t.entry_time}-${idx}`}
+                    className="bg-slate-950/70 border border-slate-800 rounded-xl p-4 space-y-2.5"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`inline-block w-2.5 h-2.5 rounded-full ${
+                            win ? "bg-emerald-400" : "bg-rose-400"
+                          }`}
+                        />
+                        <h3 className="text-sm sm:text-base font-bold text-white">
+                          {tradeTitle(t)}
+                        </h3>
+                      </div>
+
+                      <div
+                        className={`text-sm sm:text-base font-bold px-2.5 py-1 rounded-lg border ${
+                          win
+                            ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                            : "bg-rose-500/15 text-rose-300 border-rose-500/30"
                         }`}
-                      />
-                      <h3 className="text-sm sm:text-base font-bold text-white">
-                        {tradeTitle(t)}
-                      </h3>
+                      >
+                        {fmtUsd(t.pnl, true)} ({fmtR(t.r_multiple)})
+                      </div>
                     </div>
 
-                    <div
-                      className={`text-sm sm:text-base font-bold px-2.5 py-1 rounded-lg border ${
-                        win
-                          ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
-                          : "bg-rose-500/15 text-rose-300 border-rose-500/30"
-                      }`}
-                    >
-                      {fmtUsd(t.pnl, true)} ({fmtR(t.r_multiple)})
+                    <div className="text-xs text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+                      <span>
+                        Intrare: <strong className="text-slate-200">{t.entry_time}</strong> la{" "}
+                        {fmtUsd(t.entry_price)}
+                      </span>
+                      <span>
+                        Ieșire: <strong className="text-slate-200">{t.exit_time}</strong> la{" "}
+                        {fmtUsd(t.exit_price)}
+                      </span>
+                      <span>
+                        Cantitate: <strong className="text-slate-200">{t.qty}</strong> acțiuni
+                      </span>
+                      <span>
+                        Stop inițial: <strong className="text-slate-200">{fmtUsd(t.initial_stop)}</strong>{" "}
+                        (risc {fmtPct(t.risk_pct * 100)})
+                      </span>
                     </div>
-                  </div>
 
-                  <div className="text-xs text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
-                    <span>
-                      Intrare: <strong className="text-slate-200">{t.entry_time}</strong> la{" "}
-                      {fmtUsd(t.entry_price)}
-                    </span>
-                    <span>
-                      Ieșire: <strong className="text-slate-200">{t.exit_time}</strong> la{" "}
-                      {fmtUsd(t.exit_price)}
-                    </span>
-                    <span>
-                      Cantitate: <strong className="text-slate-200">{t.qty}</strong> acțiuni
-                    </span>
-                    <span>
-                      Stop inițial: <strong className="text-slate-200">{fmtUsd(t.initial_stop)}</strong>{" "}
-                      (risc {fmtPct(t.risk_pct * 100)})
-                    </span>
-                  </div>
-
-                  <div className="text-xs sm:text-sm space-y-1.5 pt-2 border-t border-slate-800/80">
-                    <p className="text-slate-200">
-                      <strong className="text-sky-300">De ce a intrat:</strong>{" "}
-                      {t.entry_reason}
-                    </p>
-                    <p className="text-slate-300">
-                      <strong className="text-amber-300">De ce a ieșit:</strong>{" "}
-                      {translateExitReason(t.exit_reason, t.partial_exit)}
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+                    <div className="text-xs sm:text-sm space-y-1.5 pt-2 border-t border-slate-800/80">
+                      <p className="text-slate-200">
+                        <strong className="text-sky-300">De ce a intrat:</strong>{" "}
+                        {t.entry_reason}
+                      </p>
+                      <p className="text-slate-300">
+                        <strong className="text-amber-300">De ce a ieșit:</strong>{" "}
+                        {translateExitReason(t.exit_reason, t.partial_exit)}
+                      </p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </section>
       </div>
     </div>
