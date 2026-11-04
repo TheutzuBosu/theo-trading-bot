@@ -263,3 +263,34 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   - **Ambele direcții (`Long + Short`) și levierul sunt active**: în backtestul OOS 2018–2026 (`reports/gate1_daytrading.md`, secțiunea 4.1), varianta `Long + Short (2×)` pe D1b crește randamentul la **CAGR 7,06%** (capital final **913,18 $** din 500 $, față de 737,60 $ pe long-only), cu **Sharpe 1,70**, **PF 1,37** și **2.982 tranzacții** (`1.399 Long` + `1.583 Short`).
   - **Execuția Short și Levier pe contul Alpaca de 500 $ (în B5 `src/broker/alpaca_intraday.py`):** deoarece Alpaca blochează `sell short` direct și marja sub 2.000 $ (și nu permite short pe fracțiuni de acțiune), atunci când contul are `< 2.000 $` (sau `shorting_enabled=False`), semnalele **Short (`-1`)** pe `SPY` / `QQQ` se execută cumpărând acțiuni fracționare Long pe ETF-urile inverse lichide (`SH` `-1×` sau `SDS` `-2×` pentru `SPY`; `PSQ` `-1×` sau `QID` `-2×` pentru `QQQ`), iar semnalele **Long (`+1`)** cumpără `SPY` / `QQQ` (sau `SSO` / `QLD` `2×` când levierul este activat). Dacă balanța contului e `>= 2.000 $` și `shorting_enabled=True`, adaptorul poate executa direct `sell short` cu marjă `2×`.
   - **Fără limită la numărul de tranzacții pe zi:** botul nu are plafon de trade-uri pe zi; execută ori de câte ori semnalul e valid și trece de filtrele de analiză și învățare (`meta_label.py`, `daily_learner.py`, `news_veto.py`) și de `risk/intraday_guard.py`.
+- **D32 (4.11.2026, B6d — audit Claude Code înainte de prima sesiune live)** Execuția live pe Alpaca Paper,
+  reparată și aliniată cu backtestul D1b. Problemele găsite în B5/B6c și soluțiile:
+  - **Ordinele nu puteau fi trimise:** adaptorul dădea un `dict` lui `TradingClient.submit_order`, care cere un
+    `OrderRequest` (crash la primul semnal; testele treceau doar pentru că stub-ul accepta orice). Acum: ordin
+    `MarketOrderRequest` fracționar (TIF=DAY) → așteptare fill → `StopOrderRequest` separat (TIF=DAY) pe cantitatea
+    executată, prețuri rotunjite la cent. Alpaca documentează pentru fracțiuni doar market/limit/stop/stop-limit
+    cu DAY, nu bracket/OTO, deci fluxul în doi pași. Dacă stop-ul nu se poate pune, poziția se închide imediat.
+  - **Prețul ETF-ului executat:** stop-ul și cantitatea pentru SH/SDS/SSO/PSQ/QID/QLD se calculau pe prețul SPY/QQQ
+    (și apoi încă o dată în adaptor, cu levierul aplicat de două ori). Acum se folosește prețul curent al ETF-ului
+    respectiv (ultima tranzacție IEX); fără preț → semnalul se sare.
+  - **Semnalele D1b nu ar fi fost prinse:** D1b verifică doar barele 10:11, 10:57, …, 14:47 ET, iar rularea la 15
+    minute evalua doar ultima bară. Acum workflow-ul pornește cu ~7 minute înaintea fiecărui eveniment D1b
+    (închiderea barei de verificare și ieșirea de la 15:30), așteaptă exact momentul (max. 12 min) și acceptă un
+    semnal întârziat cu cel mult 10 minute; cheia semnalului e salvată în `state/live_journal.json` (fără dubluri),
+    iar `client_order_id` determinist e a doua protecție.
+  - **Starea se pierdea la fiecare rulare:** `state/` e în `.gitignore`, deci GitHub Actions pornea mereu de la zero
+    (KILL-ul se reseta, istoricul de tranzacții și învățarea se ștergeau la fiecare push). Acum starea se citește din
+    branch-ul `state` la fiecare rulare; pașii obișnuiți nu mai urcă niciodată `kill_switch.json` (doar KILL și
+    resetarea), iar înainte de orice intrare se verifică din nou KILL-ul de pe GitHub.
+  - **Ieșirile D1b lipseau:** live se aplică acum la fiecare rulare: stop urcat la VWAP (doar strânge), 50% din
+    poziție la ținta D1b cu regula `stop_after_target`, ieșire la 15:30 ET (12:30 în zilele scurte), cu rulări de
+    rezervă la 15:38 și 15:50 ET. Între rulări rămâne stop-ul de la broker (diferență față de backtest, unde stop-ul
+    se mută la fiecare minut; se măsoară în cele 3 luni de Paper).
+  - **Limita zilnică −2%** se calcula față de ultima rulare (deci nu se declanșa niciodată); acum față de
+    `last_equity` (închiderea de ieri) de la Alpaca.
+  - **Învățarea zilnică nu primea date:** tranzacțiile închise nu se înregistrau. Acum fiecare tranzacție închisă
+    (stop, țintă, 15:30, EOD, KILL) intră în `trades.csv` + lecție (`autopsies.jsonl`) + `meta_dataset.csv`; filtrul
+    `meta_label` se activează automat de la 40 de tranzacții cu ambele rezultate; `hourly_multipliers` scrise ca
+    „09:00” nu mai blochează pasul următor (crash `int("09:00")`), iar orele cu fus mixt EST/EDT nu mai crapă.
+  - **Știrile Finnhub** erau dezactivate (cheie goală trimisă explicit); acum se folosește cheia din setări.
+  - `src/risk/guard.py` și parametrii strategiei nu s-au schimbat.

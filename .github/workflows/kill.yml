@@ -3,6 +3,15 @@ name: Emergency Kill Switch (Alpaca Paper)
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+# Own group: a KILL never waits behind a trading run (the trading run re-checks the remote
+# kill switch before every entry and never uploads kill_switch.json itself).
+concurrency:
+  group: kill-switch
+  cancel-in-progress: false
+
 jobs:
   kill:
     name: Oprire de urgență (KILL) și lichidare poziții

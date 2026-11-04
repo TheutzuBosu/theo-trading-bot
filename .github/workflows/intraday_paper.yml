@@ -1,23 +1,39 @@
 name: Intraday Paper Session (Alpaca Paper)
 
+# D1b evaluates fixed check bars; their closes are 10:12, 10:58, 11:44, 12:30, 13:16, 14:02 and
+# 14:48 ET, and the time exit is 15:30 ET (12:30 on 13:00 early closes). Each cron starts ~7
+# minutes before one of these events; `--auto` waits for it (max 12 min) and catches up to 10
+# minutes late. Both UTC hours are listed so the schedule works in EST (UTC-5) and EDT (UTC-4);
+# the run with the wrong offset only manages stops and exits quickly. 15:38 / 15:50 ET are
+# fallbacks that flatten and run the daily learning if the 15:30 run was delayed or dropped.
 on:
   schedule:
-    # Rulează luni-vineri în timpul sesiunii SUA (13:30-21:00 UTC acoperă atât EST cât și EDT)
-    - cron: "*/15 13-20 * * 1-5"
-    # Închidere garantată EOD + învățare zilnică la 15:59 ET (19:59 EDT / 20:59 EST)
-    - cron: "59 19,20 * * 1-5"
+    - cron: "5 14,15 * * 1-5"
+    - cron: "51 14,15 * * 1-5"
+    - cron: "37 15,16 * * 1-5"
+    - cron: "23 16,17 * * 1-5"
+    - cron: "9 17,18 * * 1-5"
+    - cron: "55 17,18 * * 1-5"
+    - cron: "41 18,19 * * 1-5"
+    - cron: "23 19,20 * * 1-5"
+    - cron: "38 19,20 * * 1-5"
+    - cron: "50 19,20 * * 1-5"
   workflow_dispatch:
     inputs:
       mode:
-        description: "Mod de execuție (once / eod / init-state / loop)"
+        description: "Mod de execuție (auto / once / eod / init-state / reset-kill)"
         required: false
-        default: "once"
+        default: "auto"
         type: choice
         options:
+          - auto
           - once
           - eod
           - init-state
-          - loop
+          - reset-kill
+
+permissions:
+  contents: write
 
 concurrency:
   group: intraday-paper-session
@@ -27,7 +43,7 @@ jobs:
   trade:
     name: Sesiune Intraday SPY/QQQ (Alpaca Paper)
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repository
@@ -57,16 +73,12 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || secrets.GITHUB_TOKEN }}
+          MODE: ${{ github.event.inputs.mode || 'auto' }}
         run: |
-          MODE="${{ github.event.inputs.mode || 'once' }}"
-          HOUR_ET=$(TZ="America/New_York" date +%H)
-          MIN_ET=$(TZ="America/New_York" date +%M)
-          if [ "$MODE" = "init-state" ]; then
-            uv run python scripts/run_intraday_session.py --init-state
-          elif [ "$MODE" = "eod" ] || { [ "$HOUR_ET" = "15" ] && [ "$MIN_ET" -ge "58" ]; }; then
-            uv run python scripts/run_intraday_session.py --eod
-          elif [ "$MODE" = "loop" ]; then
-            uv run python scripts/run_intraday_session.py --loop
-          else
-            uv run python scripts/run_intraday_session.py --once
-          fi
+          case "$MODE" in
+            init-state) uv run python scripts/run_intraday_session.py --init-state ;;
+            once)       uv run python scripts/run_intraday_session.py --once ;;
+            eod)        uv run python scripts/run_intraday_session.py --eod ;;
+            reset-kill) uv run python scripts/run_intraday_session.py --reset-kill ;;
+            *)          uv run python scripts/run_intraday_session.py --auto ;;
+          esac

@@ -17,6 +17,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 | B6c | Sesiune live paper + resetare dashboard la 500 $ | Gata | faza-b6c-live-demo | Antigravity | `src/live/runner.py`, `src/live/state_writer.py`, `scripts/run_intraday_session.py`, GitHub Actions + branch `state` sincronizat (218 teste verzi) |
+| B6d | Audit + reparații execuție live (D32) | Gata | faza-b6d-audit-live | Claude Code | Ordine Alpaca reale (market + stop), preț ETF corect, rulări la orele D1b, stare restaurată din branch-ul `state`, ieșiri D1b live, învățare din tranzacțiile închise (234 teste verzi) |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -34,10 +35,15 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**Toate etapele de construcție din Faza B (B0 → B6c) sunt GATA.**
-- `src/live/state_writer.py` + `src/live/runner.py`: bucla intraday completă (`run_trading_step`), închiderea și învățarea zilnică la 15:59 ET (`run_end_of_day_learning`), butonul de oprire de urgență (`run_kill_switch`) și sincronizarea în timp real cu branch-ul `state` pe GitHub (`is_sample: False`).
-- `scripts/run_intraday_session.py` + `.github/workflows/intraday_paper.yml` + `.github/workflows/kill.yml`: execuție automată în timpul sesiunii SUA (09:30–16:00 ET / 16:30–23:00 ora României), plus butonul `KILL` activ în dashboard-ul Vercel (`218 passed` în pytest).
-- Urmează perioada de 3 luni de rulare și învățare pe **Alpaca Paper** (înainte de Poarta 2 B pentru bani reali).
+**B7: monitorizarea pe Alpaca Paper (12 săptămâni) + Poarta 2.** Construcția e gata (B0 → B6d, D32).
+- Workflow-ul `intraday_paper.yml` rulează singur în zilele de bursă: ~7 minute înaintea fiecărui eveniment D1b
+  (10:12, 10:58, 11:44, 12:30, 13:16, 14:02, 14:48 și ieșirea 15:30 ET), plus rezervele 15:38 și 15:50 ET.
+- Ce verifică agentul următor în prima săptămână (fără cod nou): `gh run list --workflow intraday_paper.yml`
+  (rulări verzi), branch-ul `state` (`git show origin/state:state/live_journal.json`, `trades.csv`), alertele
+  Telegram și dashboard-ul. Orice eroare se repară cu test în `tests/test_live_audit.py`.
+- **Înainte de 1 ianuarie 2027:** adaugă datele FOMC 2027 în `src/backtest/fomc.py` (`SCHEDULED[2027]`, de pe
+  federalreserve.gov/monetarypolicy/fomccalendars.htm) + test; fără ele, veto-ul FOMC nu mai blochează nimic în 2027.
+- Raportul Poarta 2 B (`reports/gate2_daytrading.md`) se scrie după 12 săptămâni, din `state/trades.csv`.
 
 ## Pentru proprietar
 
@@ -46,11 +52,15 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 - Decis (4.11.2026, D31): contul paper rămâne la 500 $ (suma reală de după cele 3 luni de probă), dar **activăm ambele direcții (`Long + Short`) și levierul**: pe contul de 500 $ (`< 2.000 $`), semnalele `Short (-1)` pe `SPY`/`QQQ` cumpără automat ETF-urile inverse (`SH`/`SDS` pentru SPY, `PSQ`/`QID` pentru QQQ), iar semnalele `Long (+1)` cumpără `SPY`/`QQQ` (sau `SSO`/`QLD` `2×`). Fără limită la numărul de trade-uri pe zi cât timp trece analiza (`D1b` + `meta_label` + `daily_learner` + `news_veto` + `intraday_guard`).
 - Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75 pe Long-Only și 1,70 cu CAGR 7,06% și 2.982 trade-uri pe Long+Short 2×).
 - Dashboard-ul live (`https://theo-trading-bot.vercel.app`) este acum conectat la branch-ul `state` al contului real Alpaca Paper (`500,00 $`, `is_sample: false`), fără bannerul `DATE DE EXEMPLU`.
+- După un KILL, botul rămâne oprit până îl repornești tu: GitHub → Actions → „Intraday Paper Session” → Run
+  workflow → mode `reset-kill`.
 
 ## Bug-uri cunoscute
 
-Niciunul. 218 de teste pytest trecute offline.
+Niciunul cunoscut după auditul B6d (234 teste offline). Limite asumate: stop-ul se mută doar la rulări (nu la
+fiecare minut ca în backtest); minutele GitHub Actions estimate ~1.700–1.900/lună (repo privat: 2.000 incluse în
+planul Free).
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B completă (B0 → B6c): `src/live/runner.py`, `src/live/state_writer.py`, `scripts/run_intraday_session.py`, GitHub Actions (`intraday_paper.yml`, `kill.yml`), branch-ul `state` inițializat pe contul real Alpaca Paper de 500 $ și dashboard-ul actualizat pe Vercel. 218 teste verzi.
+4 noiembrie 2026 · Claude Code · Audit B6d (D32): execuția live reparată (ordine Alpaca reale, preț ETF corect, rulări la orele D1b, stare din branch-ul `state`, ieșiri D1b, învățare din tranzacții). 234 teste verzi.

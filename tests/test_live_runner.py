@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+from datetime import datetime
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
-import numpy as np
 import pandas as pd
 
 from src.broker.alpaca_paper import AlpacaPaperAdapter
@@ -22,6 +23,9 @@ from src.live.state_writer import (
     write_state_files,
 )
 from src.state.store import StateStore
+from tests.live_fakes import FakeAlpaca, make_intraday_bars
+
+NY = ZoneInfo("America/New_York")
 
 
 class FakeResponse:
@@ -74,103 +78,12 @@ class FakeGitHubSession:
         return FakeResponse(200, {"content": {"name": url.split("/")[-1]}})
 
 
-class FakeAccount:
-    equity = "500.00"
-    cash = "500.00"
-    buying_power = "500.00"
-    shorting_enabled = False
-    multiplier = "1"
+NOW_CHECK = datetime(2026, 10, 22, 10, 12, 8, tzinfo=NY)  # 8 s after the 10:11 bar closed
+PRICES = {"SSO": 80.0, "QID": 30.0, "SDS": 56.0, "SH": 33.0, "PSQ": 27.0, "QLD": 81.0}
 
 
-class FakeTradingClient:
-    def __init__(self) -> None:
-        self.account = FakeAccount()
-        self.positions: list[Any] = []
-        self.submitted_orders: list[Any] = []
-        self.closed_all = False
-
-    def get_account(self) -> FakeAccount:
-        return self.account
-
-    def get_all_positions(self) -> list[Any]:
-        return list(self.positions)
-
-    def submit_order(self, order_data: Any) -> dict[str, Any]:
-        self.submitted_orders.append(order_data)
-        return {"id": f"ord-{len(self.submitted_orders)}"}
-
-    def cancel_orders(self) -> list[Any]:
-        return []
-
-    def close_all_positions(self, cancel_orders: bool = True) -> list[Any]:
-        n = len(self.positions)
-        self.positions.clear()
-        self.closed_all = True
-        return [object() for _ in range(n)]
-
-
-def _make_intraday_bars(days: int = 16, breakout_last_day: str = "long") -> pd.DataFrame:
-    """Build synthetic 1-minute NYSE session bars across `days` sessions."""
-    sessions = pd.bdate_range("2026-10-01", periods=days)
-    rows: list[dict[str, float]] = []
-    idx: list[pd.Timestamp] = []
-    rng = np.random.default_rng(123)
-
-    for d_i, day in enumerate(sessions):
-        day_str = day.strftime("%Y-%m-%d")
-        minutes = pd.date_range(
-            f"{day_str} 09:30",
-            f"{day_str} 15:59",
-            freq="1min",
-            tz="America/New_York",
-        )
-        base = 580.0
-        for m_i, ts in enumerate(minutes):
-            if d_i < days - 1:
-                # Tight noise around 580.0
-                noise = 0.05 * np.sin(m_i / 10.0) + float(rng.normal(0, 0.02))
-                c = base + noise
-                o = c - 0.01
-                h = c + 0.04
-                low = c - 0.04
-                vwap = base
-            else:
-                # Last day: at 10:11 ET (m_i == 41), strong breakout
-                if m_i <= 41:
-                    if breakout_last_day == "long":
-                        c = base + (m_i / 41.0) * 4.5
-                        vwap = base + (m_i / 41.0) * 1.5
-                    elif breakout_last_day == "short":
-                        c = base - (m_i / 41.0) * 4.5
-                        vwap = base - (m_i / 41.0) * 1.5
-                    else:
-                        c = base
-                        vwap = base
-                    o = c - 0.05
-                    h = c + 0.10
-                    low = c - 0.10
-                else:
-                    c = base
-                    o = base
-                    h = base + 0.05
-                    low = base - 0.05
-                    vwap = base
-            rows.append(
-                {
-                    "open": o,
-                    "high": h,
-                    "low": low,
-                    "close": c,
-                    "volume": 50_000.0,
-                    "trade_count": 400.0,
-                    "vwap": vwap,
-                }
-            )
-            idx.append(ts)
-
-    df = pd.DataFrame(rows, index=pd.DatetimeIndex(idx, name="timestamp"))
-    # Slice on the last day at 10:11 ET (m_i == 41, index -348) so the last bar is the D1b check bar
-    return df.iloc[:-348]
+def _adapter(client: FakeAlpaca, tmp_path: Path) -> AlpacaPaperAdapter:
+    return AlpacaPaperAdapter(client, root_dir=tmp_path, sleep=lambda _s: None)
 
 
 def test_github_state_branch_and_write_state_files(tmp_path: Path) -> None:
@@ -216,8 +129,8 @@ def test_github_state_branch_and_write_state_files(tmp_path: Path) -> None:
 
 
 def test_initialize_live_paper_state_resets_sample_flag(tmp_path: Path) -> None:
-    client = FakeTradingClient()
-    adapter = AlpacaPaperAdapter(client, root_dir=tmp_path)
+    client = FakeAlpaca(prices=PRICES)
+    adapter = _adapter(client, tmp_path)
     session = FakeGitHubSession(branch_exists=True)
 
     summary = initialize_live_paper_state(
@@ -236,8 +149,8 @@ def test_initialize_live_paper_state_resets_sample_flag(tmp_path: Path) -> None:
 
 
 def test_evaluate_candidate_and_run_trading_step_long_and_short(tmp_path: Path) -> None:
-    bars_long = _make_intraday_bars(days=16, breakout_last_day="long")
-    bars_short = _make_intraday_bars(days=16, breakout_last_day="short")
+    bars_long = make_intraday_bars(days=16, breakout_last_day="long")
+    bars_short = make_intraday_bars(days=16, breakout_last_day="short")
 
     cand_short = evaluate_symbol_candidate(
         "QQQ",
@@ -249,13 +162,19 @@ def test_evaluate_candidate_and_run_trading_step_long_and_short(tmp_path: Path) 
         drawdown_pct=0.0,
         leverage=2,
         shorting_enabled=False,
+        etf_prices=PRICES,
+        now_et=NOW_CHECK,
+        http_session=FakeGitHubSession(branch_exists=True),
     )
     assert cand_short["action"] == "enter"
     assert cand_short["signal_direction"] == "short"
     assert cand_short["exec_symbol"] == "QID"  # -2x inverse ETF for QQQ on 500$ account
+    # The stop is computed on QID's own price (~30 $), never on the QQQ level (~575 $)
+    assert 25.0 < cand_short["stop_price"] < 30.0
+    assert cand_short["entry_price"] == 30.0
 
-    client = FakeTradingClient()
-    adapter = AlpacaPaperAdapter(client, root_dir=tmp_path)
+    client = FakeAlpaca(prices=PRICES)
+    adapter = _adapter(client, tmp_path)
     session = FakeGitHubSession(branch_exists=True)
 
     step = run_trading_step(
@@ -267,16 +186,26 @@ def test_evaluate_candidate_and_run_trading_step_long_and_short(tmp_path: Path) 
         sync_github=True,
         github_token="gh-token",
         send_alerts=False,
+        prices=PRICES,
+        now_et=NOW_CHECK,
     )
     assert step["status"] == "ok"
     assert len(step["orders"]) == 2
     exec_syms = {o["exec_symbol"] for o in step["orders"]}
     assert exec_syms == {"SSO", "QID"}
+    assert all(o["status"] == "filled" for o in step["orders"])
+    # Each entry is a real market order followed by a real stop order on the filled quantity
+    kinds = [type(r).__name__ for r in client.submitted]
+    assert kinds == ["MarketOrderRequest", "StopOrderRequest"] * 2
+    assert set(client.positions) == {"SSO", "QID"}
+    journal = StateStore(tmp_path).read_journal()
+    assert set(journal["open_trades"]) == {"SSO", "QID"}
+    assert len(journal["processed_signals"]) == 2
 
 
 def test_end_of_day_learning_and_kill_switch(tmp_path: Path) -> None:
-    client = FakeTradingClient()
-    adapter = AlpacaPaperAdapter(client, root_dir=tmp_path)
+    client = FakeAlpaca(prices=PRICES)
+    adapter = _adapter(client, tmp_path)
     session = FakeGitHubSession(branch_exists=True)
 
     initialize_live_paper_state(tmp_path, adapter=adapter, as_of_date="2026-11-04")
