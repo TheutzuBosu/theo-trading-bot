@@ -1,0 +1,72 @@
+name: Intraday Paper Session (Alpaca Paper)
+
+on:
+  schedule:
+    # Rulează luni-vineri în timpul sesiunii SUA (13:30-21:00 UTC acoperă atât EST cât și EDT)
+    - cron: "*/15 13-20 * * 1-5"
+    # Închidere garantată EOD + învățare zilnică la 15:59 ET (19:59 EDT / 20:59 EST)
+    - cron: "59 19,20 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mod de execuție (once / eod / init-state / loop)"
+        required: false
+        default: "once"
+        type: choice
+        options:
+          - once
+          - eod
+          - init-state
+          - loop
+
+concurrency:
+  group: intraday-paper-session
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    name: Sesiune Intraday SPY/QQQ (Alpaca Paper)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Run Intraday Session
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_BASE_URL: "https://paper-api.alpaca.markets"
+          TRADING_MODE: "PAPER"
+          BOT_CAPITAL: "500"
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'once' }}"
+          HOUR_ET=$(TZ="America/New_York" date +%H)
+          MIN_ET=$(TZ="America/New_York" date +%M)
+          if [ "$MODE" = "init-state" ]; then
+            uv run python scripts/run_intraday_session.py --init-state
+          elif [ "$MODE" = "eod" ] || { [ "$HOUR_ET" = "15" ] && [ "$MIN_ET" -ge "58" ]; }; then
+            uv run python scripts/run_intraday_session.py --eod
+          elif [ "$MODE" = "loop" ]; then
+            uv run python scripts/run_intraday_session.py --loop
+          else
+            uv run python scripts/run_intraday_session.py --once
+          fi
