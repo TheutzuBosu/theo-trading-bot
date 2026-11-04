@@ -8,6 +8,8 @@ name: Intraday Paper Session (Alpaca Paper)
 # fallbacks that flatten and run the daily learning if the 15:30 run was delayed or dropped.
 on:
   schedule:
+    # Pre-Market briefing (09:00 ET / 16:00 RO)
+    - cron: "0 13,14 * * 1-5"
     - cron: "5 14,15 * * 1-5"
     - cron: "51 14,15 * * 1-5"
     - cron: "37 15,16 * * 1-5"
@@ -21,12 +23,13 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Mod de execuție (auto / once / eod / init-state / reset-kill)"
+        description: "Mod de execuție (auto / premarket / once / eod / init-state / reset-kill)"
         required: false
         default: "auto"
         type: choice
         options:
           - auto
+          - premarket
           - once
           - eod
           - init-state
@@ -75,10 +78,19 @@ jobs:
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || secrets.GITHUB_TOKEN }}
           MODE: ${{ github.event.inputs.mode || 'auto' }}
         run: |
+          HOUR_ET=$(TZ="America/New_York" date +%H)
+          MIN_ET=$(TZ="America/New_York" date +%M)
           case "$MODE" in
+            premarket)  uv run python scripts/run_intraday_session.py --premarket ;;
             init-state) uv run python scripts/run_intraday_session.py --init-state ;;
             once)       uv run python scripts/run_intraday_session.py --once ;;
             eod)        uv run python scripts/run_intraday_session.py --eod ;;
             reset-kill) uv run python scripts/run_intraday_session.py --reset-kill ;;
-            *)          uv run python scripts/run_intraday_session.py --auto ;;
+            *)
+              if [ "$HOUR_ET" = "08" ] || { [ "$HOUR_ET" = "09" ] && [ "$MIN_ET" -lt "25" ]; }; then
+                uv run python scripts/run_intraday_session.py --premarket
+              else
+                uv run python scripts/run_intraday_session.py --auto
+              fi
+              ;;
           esac
