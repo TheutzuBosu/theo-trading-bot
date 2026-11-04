@@ -1,5 +1,5 @@
 ---
 name: predare
-description: Handoff. Use immediately when the user writes only "limită" or "predare", or asks to hand off / stop and save the work. Saves everything to GitHub and updates PROGRESS.md so another agent can continue.
+description: Handoff. Use when the user writes "predare", "/predare", "limită", or asks to save current progress so another agent (including fast models like Gemini Flash or Codex / GPT Go) can continue without guessing.
 ---
-Citește fișierul `docs/handoff/PREDARE.md` din rădăcina proiectului și execută-i pașii în ordine, imediat. Nu începe nimic nou.
+Citește imediat fișierul `docs/handoff/PREDARE.md` din rădăcina proiectului și execută toți pașii în ordine. În `PROGRESS.md`, scrie secțiunea „Pasul următor exact” în stil „mură în gură” (fișierele exacte, semnăturile funcțiilor, formulele și comenzile de test), conform regulii din `AGENTS.md` și `docs/GHID_EXECUTIE_AGENTI.md`.

@@ -66,7 +66,7 @@ def minute_signals(index, entries=None, **columns) -> pd.DataFrame:
         frame.iloc[row, 0] = direction
         frame.iloc[row, 1] = stop
     for name, values in columns.items():
-        frame[name] = False if name == "exit" else np.nan
+        frame[name] = False if name in ("exit", "exit_long", "exit_short") else np.nan
         for row, value in values.items():
             frame.iloc[row, frame.columns.get_loc(name)] = value
     return frame

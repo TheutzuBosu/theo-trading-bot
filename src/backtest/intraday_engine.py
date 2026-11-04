@@ -28,7 +28,18 @@ import pandas as pd
 from src.backtest.fomc import fomc_blocked
 from src.backtest.intraday_costs import Variant, cost_per_side, r_multiple, trade_allowed
 
-SIGNAL_COLUMNS = ("entry", "stop", "target", "size", "exit", "stop_long", "stop_short")
+SIGNAL_COLUMNS = (
+    "entry",
+    "stop",
+    "target",
+    "size",
+    "exit",
+    "exit_long",
+    "exit_short",
+    "stop_long",
+    "stop_short",
+    "stop_after_target",
+)
 PRICE_COLUMNS = ("open", "high", "low", "close")
 
 
@@ -94,7 +105,9 @@ class IntradaySignals:
     - target (float): target price for the entry, NaN = none.
     - size (float): wanted notional / equity (volatility target); NaN = size by risk_per_trade.
     - exit (bool): close the open position at the next bar's Open.
+    - exit_long, exit_short (bool): close only an open long / short at the next bar's Open.
     - stop_long, stop_short (float): new stop for an open long / short (trailing); NaN = keep.
+    - stop_after_target (float): new stop applied after a partial exit at target (only tightens).
     - entry_reason (str): why the entry fired, copied to the trade log.
     """
 
@@ -103,8 +116,11 @@ class IntradaySignals:
     target: np.ndarray
     size: np.ndarray
     exit: np.ndarray
+    exit_long: np.ndarray
+    exit_short: np.ndarray
     stop_long: np.ndarray
     stop_short: np.ndarray
+    stop_after_target: np.ndarray
     entry_reason: np.ndarray | None = None
 
     @classmethod
@@ -141,8 +157,11 @@ class IntradaySignals:
             target=column("target", np.nan, float),
             size=column("size", np.nan, float),
             exit=column("exit", False, bool),
+            exit_long=column("exit_long", False, bool),
+            exit_short=column("exit_short", False, bool),
             stop_long=column("stop_long", np.nan, float),
             stop_short=column("stop_short", np.nan, float),
+            stop_after_target=column("stop_after_target", np.nan, float),
             entry_reason=column("entry_reason", "", object) if has_reason else None,
         )
 
@@ -192,6 +211,7 @@ class _Position:
     exit_qty_value: float = 0.0  # sum of exit qty * fill
     exit_raw_value: float = 0.0  # sum of exit qty * price before costs
     partial: bool = False
+    stop_after_target: float = math.nan
 
 
 TRADE_COLUMNS = [
@@ -243,6 +263,10 @@ class _Simulator:
         self.c = [panel.close[:, j].tolist() for j in range(k)]
         self.ent = [signals.entry[:, j].tolist() for j in range(k)]
         self.ext = [signals.exit[:, j].tolist() for j in range(k)]
+        self.ext_dir = {
+            1: [signals.exit_long[:, j].tolist() for j in range(k)],
+            -1: [signals.exit_short[:, j].tolist() for j in range(k)],
+        }
         self.trail = {
             1: [signals.stop_long[:, j].tolist() for j in range(k)],
             -1: [signals.stop_short[:, j].tolist() for j in range(k)],
@@ -334,6 +358,12 @@ class _Simulator:
         self._exit(j, i, price, self._target_qty(pos), reason)
         if j in self.positions:
             pos.target = math.nan  # one target only; the rest rides the stop
+            if pos.stop_after_target == pos.stop_after_target:
+                pos.stop = (
+                    max(pos.stop, pos.stop_after_target)
+                    if pos.direction == 1
+                    else min(pos.stop, pos.stop_after_target)
+                )
 
     # --- the bar steps -------------------------------------------------------------------------
     def _at_open(self, j: int, i: int, new_stop: float, exit_now: bool) -> None:
@@ -398,6 +428,7 @@ class _Simulator:
             mark=o,
             worst=o,
             best=o,
+            stop_after_target=float(s.stop_after_target[sig, j]),
         )
 
     def _intrabar(self, j: int, i: int) -> None:
@@ -448,7 +479,7 @@ class _Simulator:
                             self._exit(j, i, c, pos.qty, "eod")
                         continue
                     if pos is not None:
-                        pending_exit[j] = self.ext[j][i]
+                        pending_exit[j] = self.ext[j][i] or self.ext_dir[pos.direction][j][i]
                         pending_stop[j] = self.trail[pos.direction][j][i]
                     if self.ent[j][i] != 0:
                         pending_entry[j] = i

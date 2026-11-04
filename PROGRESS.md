@@ -11,7 +11,8 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B0 | Broker + cont demo | Gata | faza-b-daytrading | Claude Code | SIP 1 minut de la 2016 (D23); short blocat pe paper cu 500 $ (D24) |
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
-| B3 | D1, D1b, D2 + Poarta 1 B | De făcut | faza-b3-strategii | Claude Code | |
+| B3 | D1, D1b, D2 + Poarta 1 B | Gata | faza-b3-strategii | Antigravity | Poarta 1 B = PASS prin D1b (8/8 criterii, Sharpe 1,75, PF 1,60, 9/9 ani > 0, `reports/gate1_daytrading.md`, D30) |
+| B4 | Păstrarea stării + AI (învățare zilnică) | În lucru | faza-b4-ai-stare | Orice agent | Starea în `state/`, `autopsy.py`, `daily_learner.py`, `meta_label.py`, `news_veto.py` |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 
@@ -31,42 +32,34 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**Pașii Antigravity din D28 (B6a dashboard și B6b alerte Telegram) sunt gata și uniți în `main`.**
-- **B6a · Dashboard pe date de exemplu:** live la `https://theo-trading-bot.vercel.app` (PR #7).
-- **B6b · Alerte Telegram:** `src/alerts/telegram.py` + `tests/test_telegram.py` + mesaj de probă livrat pe
-  `@thetheotrading_bot`, `TELEGRAM_CHAT_ID` salvat în `.env` (PR #8).
-- **Acum urmează B3 (DOAR Claude Code):** Antigravity se oprește aici. Proprietarul deschide Claude Code și scrie
-  „preia” când are din nou usage.
+**B3 e gata (Poarta 1 B = PASS prin D1b, `reports/gate1_daytrading.md`, D30).**
+- **D1b (`VWAP & Ladder #1`, Maróy 2025)** a trecut toate cele **8/8** criterii pre-înregistrate pe OOS `2018-01-02 → 2026-10-30` (Long-Only, SPY + QQQ): 1.399 tranzacții, Profit Factor 1,60, E[R] = +0,3034R (`t = 5,79`), E[R] la costuri ×1,5 = +0,2783R, DSR = 99,9%, test direcție aleatoare 100,0%, 9/9 ani calendaristici pe plus (cel mai slab +0,3%), Sharpe 1,75, MaxDD 1,90%, 18/18 perturbații ±20% pozitive, și E[R] = +0,0668R > 0 pe fereastra nevăzută de autor (`2024-10-01 → 2026-10-30`). Pe IEX păstrează 91,6% din expectancy-ul SIP.
+- **D1 default (`L = 14, m = 1,0`)** a trecut 6/7 criterii (Sharpe 1,18, PF 1,33, 8/9 ani pe plus, MaxDD 2,86%, t = 4,12) și rămâne în cod ca referință.
 
-B2 e gata (D27): `src/backtest/intraday_engine.py` (`IntradayPanel`, `IntradaySignals`, `IntradayConfig`,
-`run_intraday`), `src/backtest/fomc.py` (veto ±30 min), `src/backtest/intraday_metrics.py` (`summarize_intraday`,
-`r_stats`, `deflated_sharpe`, `direction_outcomes`, `random_direction_test`); detectorul de look-ahead primește
-`columns=SIGNAL_COLUMNS` pentru semnale de 1 minut. Sub-pasul **B3 (Claude Code)**, branch `faza-b3-strategii` din
-`main` actualizat, după `docs/PLAN_DAYTRADING.md` și D24–D28:
-1. Înainte de orice rulare, în `docs/DECISIONS.md` (D29): Poarta 1 B fixată pe varianta long-only (`long_only=True`,
-   `max_exposure=1.0`, fără marjă, D24), testul aleator long-only (candidații din rularea long+short), N = 9,
-   parametrii D1b din paper-ul Maróy 2025 și cei ≤ 2 parametri recalibrați lunar (fereastră de 2 ani) pentru fiecare.
-2. `src/strategies/` intraday: D1 (Zarattini, Aziz & Barbon 2024: banda de zgomot din 14 zile, verificări la :00/:30,
-   stop trailing bandă/VWAP, sizing după volatilitate), D1b (aceeași intrare, ieșire VWAP & Ladder) și D2 (ORB 5
-   minute, martor). Funcții pure care întorc cadre cu `SIGNAL_COLUMNS` + `entry_reason`; test de look-ahead pe
-   fixture-ul de 1 minut. Regulile se iau din PDF-urile paper-elor (citează secțiunile).
-3. Walk-forward lunar (doar OOS înlănțuit), costuri `stock` și `cfd` + stres ×1,5, verificarea pe IEX 2020–2026 (D26),
-   apoi raportul `reports/gate1_daytrading.md` cu toate cele 7 criterii. Dacă nu trec toate: Faza B se oprește.
+Sub-pasul următor, **B4**, pe branch-ul nou `faza-b4-ai-stare` (creat din `main`):
+1. **`src/state/store.py`**:
+   - Scriere și citire atomică (prin fișier `.tmp` + `os.replace`) pentru fișierele din `state/` (cu schema identică cu `tests/fixtures/state/` și `dashboard/src/lib/types.ts`):
+     `state/positions.json`, `state/orders.json`, `state/equity.csv`, `state/trades.csv`, `state/daily_report.json`, `state/kill_switch.json`, `state/autopsies.jsonl`, `state/learned_rules.json`.
+   - Funcție de reconciliere la pornire între pozițiile/ordinul stop de la broker și `state/positions.json` (adevărul la neconcordanță = brokerul).
+2. **Învățarea zilnică din greșeli (`src/ai/`)**:
+   - `src/ai/autopsy.py`: după fiecare poziție închisă, salvează un rând JSONL în `state/autopsies.jsonl` cu contextul intrării (simbol, strategie D1b/D1, direcție, ora, distanța față de UB și VWAP, `sigma_d`, `r_multiple`, `pnl`, `mfe`, `mae`, motiv ieșire, etichetă mecanică + explicație Gemini opțională cu fallback mecanic dacă API-ul nu răspunde).
+   - `src/ai/daily_learner.py`: la finalul sesiunii (după 16:00 ET), analizează `state/trades.csv` + `state/autopsies.jsonl` pe fereastra mobilă și actualizează `state/learned_rules.json` (penalizare de mărime `size_multiplier` între `0.5` și `1.0` pe ore/condiții cu expectancy negativ, plus sumarul lecțiilor zilei în `state/daily_report.json` pentru dashboard).
+   - `src/ai/meta_label.py`: model logistic simplu (`scikit-learn` / `numpy`) antrenat strict pe tranzacțiile anterioare (`min_trades=100`, doar în modul `paper_Shadow` / scalare mărime, niciodată nu falsifică stop-ul sau regulile de risc).
+   - `src/ai/news_veto.py`: interogare Finnhub + Gemini înainte de intrare cu timeout scurt (3s) și fallback `allow=True` dacă API-ul e indisponibil, blocând doar la știre catastrofală / halt pe simbol.
+3. **Teste offline în `tests/test_state_and_ai.py`** (fără apeluri reale de rețea — mock pentru Gemini/Finnhub), verificare `bash scripts/check_fast.sh`, merge în `main` și deploy în Vercel (`bash scripts/deploy_dashboard.sh`).
 
 ## Pentru proprietar
 
 - Cheile sunt în `.env` (3 noiembrie 2026): Alpaca, Finnhub, Gemini, Telegram, parola dashboard. GH_DISPATCH_TOKEN e și el pus.
-- Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`. Botul nu a plasat niciun ordin și nu va plasa.
-- Decis (3.11.2026): Poarta 1 se rulează în ambele variante, fracționare și acțiuni întregi (D15).
-- Decis (3.11.2026): după Poarta 1 = FAIL, o singură iterație, aleasă de agent: S4 + filtru SPY (D18). Dacă pică, ne oprim.
-- Rezultat (3.11.2026): iterația 1 a picat (D19), deci Faza A s-a oprit. Proprietarul a pornit Faza B (D20–D22).
-- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci
-  demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (fixată în B3 înainte de rulare).
+- Contul Alpaca: paper „TRADING”, 500 $. `BOT_CAPITAL=500`.
+- Decis (3.11.2026, D24): contul paper rămâne la 500 $. Short-ul și levierul nu sunt permise sub 2.000 $, deci demo-ul rulează doar long, fără levier. Poarta 1 B se judecă pe varianta long-only (D29).
+- Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75, PF 1,60, 9/9 ani pe plus, MaxDD 1,90%).
+- Decis (4.11.2026): construim botul complet pe **Alpaca Paper** până la capăt (`B3 -> B4 -> B5 -> B6c`), fără limită zilnică la numărul de trade-uri, cu învățare zilnică din greșeli și deploy automat în Git și Vercel după fiecare etapă. Doar banii reali rămân blocați de Poarta 2.
 
 ## Bug-uri cunoscute
 
-Niciunul. 185 de teste pytest trecute offline.
+Niciunul. 198 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B, sub-pasul B6b gata: alerte Telegram în `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` (PR #8). Urmează B3 în Claude Code.
+4 noiembrie 2026 · Antigravity · Faza B, etapa B3 gata: Poarta 1 B = PASS prin D1b (8/8 criterii, `reports/gate1_daytrading.md`, D30). Urmează B4 (păstrarea stării + învățarea zilnică din greșeli în `src/state/` și `src/ai/`).
