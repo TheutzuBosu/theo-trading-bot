@@ -13,9 +13,10 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
 | B3 | D1, D1b, D2 + Poarta 1 B | Gata | faza-b3-strategii | Antigravity | Poarta 1 B = PASS prin D1b (8/8 criterii, Sharpe 1,75, PF 1,60, 9/9 ani > 0, `reports/gate1_daytrading.md`, D30) |
 | B4 | Păstrarea stării + AI (învățare zilnică) | Gata | faza-b4-ai-stare | Antigravity | `src/state/store.py`, `meta_label.py`, `daily_learner.py`, `autopsy.py`, `veto.py` (208 teste verzi) |
-| B5 | Risk guard intraday + Broker Alpaca Paper | În lucru | faza-b5-risc-broker | Orice agent | `src/risk/guard.py` + `src/broker/alpaca_paper.py` (cu Long+Short+Levier pe 500 $ conform D31) |
+| B5 | Risk guard intraday + Broker Alpaca Paper | Gata | faza-b5-risc-broker | Antigravity | `src/risk/guard.py` + `src/broker/alpaca_paper.py` (Long+Short+Levier pe 500 $ prin ETF-uri inverse D31, 214 teste verzi) |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
+| B6c | Sesiune live paper + resetare dashboard la 500 $ | În lucru | faza-b6c-live-demo | Orice agent | `src/live/runner.py`, `src/live/state_writer.py`, `scripts/run_intraday_session.py`, GitHub Actions + sincronizare branch `state` |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -33,21 +34,16 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**B4 e gata.**
-- `src/state/store.py`: scriere/citire atomică în `state/` (`summary.json` cu `is_sample=False`, `equity.csv`, `trades.csv`, `positions.json`, `kill_switch.json`, `autopsies.jsonl`, `learning_stats.json`), inițializare curată la 500 $ (`init_clean_paper_state`) și reconciliere cu brokerul (`reconcile_positions`).
-- `src/ai/meta_label.py`: cele 10 trăsături cauzale (verificate fără look-ahead), `build_meta_dataset`, `purged_walk_forward_probs` (cu Purging + Embargo) și `apply_meta_filter`.
-- `src/ai/daily_learner.py`: `retrain_on_daily_trades` (pondere `3.0x` pe tranzacțiile recente ca să penalizeze rapid tiparele pierzătoare) și `compute_hourly_multipliers`.
-- `src/ai/autopsy.py` și `src/ai/veto.py` (`news_veto.py`): analiză post-mortem în română și veto pe știri Finnhub + Gemini cu fallback mecanic sigur (`208 passed` în pytest).
+**B5 e gata.**
+- `src/risk/guard.py`: toate cele 13 verificări hard-codate (`evaluate_order_risk`), `symbol_family` (grupând `SPY`/`SH`/`SDS`/`SSO` și `QQQ`/`PSQ`/`QID`/`QLD` ca aceeași familie de simbol pentru limita `MAX_POSITIONS_PER_SYMBOL = 1`) și `can_move_stop`.
+- `src/broker/alpaca_paper.py`: blocare mod live fără `LIVE_APPROVED.md` + `reports/gate2.md = PASS`, `resolve_execution_instrument` (mapare D31 pentru Long+Short+Levier pe contul de 500 $), idempotență `make_client_order_id`, reconciliere cu brokerul și `liquidate_all()` (`214 passed` în pytest).
 
-Sub-pasul următor, **B5**, pe branch-ul nou `faza-b5-risc-broker` (creat din `main`):
-1. **`src/risk/guard.py` + `tests/test_risk_guard.py`** (urmează pas cu pas Secțiunea 5.1 din `docs/GHID_EXECUTIE_AGENTI.md`):
-   - Constantele hard-codate de risc (`MAX_RISK_PER_TRADE_PCT = 0.005`, `MAX_DAILY_LOSS_PCT = -0.02`, `MAX_DRAWDOWN_KILL_PCT = -0.15`, `MAX_POSITIONS_PER_SYMBOL = 1`, `MAX_TOTAL_EXPOSURE = 2.0`, `NO_ENTRY_LAST_MINUTES = 15`, `MAX_SPREAD_MULTIPLIER = 2.0`, `ALLOWED_SYMBOLS` incluzând `SPY`, `QQQ` și ETF-urile inverse/cu levier `SH`, `SDS`, `SSO`, `PSQ`, `QID`, `QLD` conform D31).
-   - `evaluate_order_risk(...) -> tuple[bool, str]` (cele 13 verificări în ordine, fără limită la numărul de trade-uri pe zi) și `can_move_stop(...)`.
-2. **`src/broker/alpaca_paper.py` + `tests/test_broker.py`** (urmează pas cu pas Secțiunea 5.2 din `docs/GHID_EXECUTIE_AGENTI.md`):
-   - Blocare `TRADING_MODE == "LIVE"` fără `LIVE_APPROVED.md` și `reports/gate2.md` = `PASS`.
-   - `resolve_execution_instrument(...)` (D31: pe contul de 500 $ unde `shorting_enabled=False`, mapează automat `Short SPY -> Buy SH/SDS` și `Short QQQ -> Buy PSQ/QID`, iar pe `Long` folosește `SPY`/`QQQ` sau `SSO`/`QLD` 2×, convertind distanța de stop și țintă pe prețul ETF-ului tranzacționat).
-   - Idempotență `make_client_order_id`, reconciliere, `submit_order_with_stop` și `liquidate_all()`.
-3. După ce toate testele trec (`bash scripts/check_fast.sh`), fă commit, push, PR, merge în `main` și deploy în Vercel (`bash scripts/deploy_dashboard.sh`).
+Sub-pasul următor, **B6c**, pe branch-ul nou `faza-b6c-live-demo` (creat din `main`):
+1. **`src/live/state_writer.py` + `src/live/runner.py`**:
+   - Sincronizarea stării reale a contului Alpaca Paper (500 $, `is_sample: False`) în `state/` și pe branch-ul `state` din GitHub (pentru ca dashboard-ul Vercel să afișeze imediat contul real, fără bannerul `DATE DE EXEMPLU`).
+   - Bucla de execuție intraday (`run_trading_step`) și învățarea de final de zi (`run_end_of_day_learning`: lichidare la `15:59 ET`, post-mortem în română și re-antrenare zilnică `daily_learner.py`).
+2. **`scripts/run_intraday_session.py` + `.github/workflows/intraday_paper.yml` + `.github/workflows/kill.yml` + `tests/test_live_runner.py`**.
+3. Inițializare stare live pe branch-ul `state`, merge în `main` și deploy în Vercel (`bash scripts/deploy_dashboard.sh`).
 
 ## Pentru proprietar
 
@@ -59,8 +55,8 @@ Sub-pasul următor, **B5**, pe branch-ul nou `faza-b5-risc-broker` (creat din `m
 
 ## Bug-uri cunoscute
 
-Niciunul. 208 de teste pytest trecute offline.
+Niciunul. 214 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B, etapa B4 gata: `src/state/store.py` + `src/ai/` (`meta_label.py`, `daily_learner.py`, `autopsy.py`, `veto.py`), 208 teste verzi. Urmează B5 (`src/risk/guard.py` + `src/broker/alpaca_paper.py`).
+4 noiembrie 2026 · Antigravity · Faza B, etapa B5 gata: `src/risk/guard.py` + `src/broker/alpaca_paper.py` (Long+Short+Levier pe 500 $ conform D31), 214 teste verzi. Urmează B6c (`src/live/runner.py` + `scripts/run_intraday_session.py` + resetare dashboard la 500 $).
