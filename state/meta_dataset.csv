@@ -1,0 +1,2 @@
+signal_time,symbol,minute_of_day,dist_from_band_bps,dist_from_vwap_bps,rv_30m,sigma_14d,overnight_gap_bps,ret_since_open_bps,vol_ratio_14d,day_of_week,cost_to_risk,r_multiple,target
+2026-11-04T12:29:00-05:00,SPY,179.0,41.99783454893247,25.84664937495873,0.0003146962846201187,0.007781826801947557,114.39857896550888,70.90339576152348,2.1120011537031727,2.0,0.0018505429841527156,-1.04,0
