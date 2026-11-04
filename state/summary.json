@@ -12,28 +12,28 @@
   "updated_at": "2026-11-04T02:48:35.319303-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-04T12:50:55.385209+00:00",
+    "updated_at": "2026-11-04T13:06:12.469824+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
-        "price": 754.29,
+        "price": 759.9,
         "prev_close": 754.38,
-        "gap_pct": -0.01
+        "gap_pct": 0.73
       },
       "QQQ": {
-        "price": 688.14,
+        "price": 684.98,
         "prev_close": 685.32,
-        "gap_pct": 0.41
+        "gap_pct": -0.05
       }
     },
-    "explanation_ro": "Piața pre-market este mixtă, cu SPY aproape stabil și QQQ în ușoară creștere, susținută de optimismul investitorilor după victoria democraților în Congresul SUA. Deși tensiunile geopolitice din Orientul Mijlociu și declarațiile liderului iranian aduc prudență, atenția este îndreptată spre rezultatele financiare și evoluțiile politice interne. Astfel, la deschidere este favorizată o direcție moderat Long pe sectorul tehnologic (QQQ), în timp ce SPY rămâne sub observație pentru o deschidere laterală.",
+    "explanation_ro": "Piața deschide mixt, cu SPY pe un gap pozitiv de +0,73% și QQQ stabil la -0,05%, susținute de optimismul investitorilor după victoria Democraților în Congres, în timp ce tensiunile geopolitice din Orientul Mijlociu și declarațiile Iranului mențin prudența pe sectorul tech. Raportările companiilor precum ADNT și ADV de dimineață aduc volatilitate punctuale, dar contextul macro favorizează o atitudine echilibrată spre Long moderat pe SPY la deschidere.",
     "headlines": [
+      "Democratic sweep adds new twist to markets' Iran, AI, and debt worries - Reuters",
+      "Iranian officials gloat as US voters deal blow to Trump - Reuters",
       "Netanyahu rivals seize on Democrats' sweep of US Congress, seeking his ouster - Reuters",
       "Iran's Khamenei says US hostility will persist regardless of party in power - Reuters",
       "PODCAST: Pricing the Democratic sweep - Reuters",
-      "US stock futures rise as investors assess Democrats' midterm sweep - Reuters",
-      "Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters",
-      "Abdul El-Sayed becomes first Muslim elected to US Senate - Reuters"
+      "US stock futures rise as investors assess Democrats' midterm sweep - Reuters"
     ],
     "earnings_today": [
       {
@@ -56,9 +56,9 @@
         "symbol": "ADV",
         "hour": "bmo",
         "eps_estimate": 1.9392,
-        "eps_actual": null,
+        "eps_actual": -0.08,
         "revenue_estimate": 908495000,
-        "revenue_actual": null
+        "revenue_actual": 913740000
       },
       {
         "symbol": "AFL",
