@@ -242,14 +242,15 @@ function parseTradesCsv(raw: string): TradeRecord[] {
 
 async function fetchGithubFile(filePath: string, token: string): Promise<string | null> {
   const repo = process.env.GITHUB_REPO || "TheutzuBosu/theo-trading-bot";
-  const url = `https://api.github.com/repos/${repo}/contents/${filePath}?ref=state`;
+  const url = `https://api.github.com/repos/${repo}/contents/${filePath}?ref=state&_t=${Date.now()}`;
   try {
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${token}`,
         Accept: "application/vnd.github.v3.raw",
+        "Cache-Control": "no-cache",
       },
-      next: { revalidate: 30 },
+      cache: "no-store",
     });
     if (!res.ok) return null;
     return await res.text();

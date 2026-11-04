@@ -55,6 +55,20 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
   const { summary, equity, trades } = data;
   const [killStatus, setKillStatus] = React.useState<string | null>(null);
   const [killLoading, setKillLoading] = React.useState(false);
+  const [isRefreshing, setIsRefreshing] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      router.refresh();
+    }, 10000);
+    return () => clearInterval(timer);
+  }, [router]);
+
+  function handleManualRefresh() {
+    setIsRefreshing(true);
+    router.refresh();
+    setTimeout(() => setIsRefreshing(false), 1000);
+  }
 
   async function handleLogout() {
     await fetch("/api/logout", { method: "POST" });
@@ -126,6 +140,16 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
             </div>
 
             <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={handleManualRefresh}
+                disabled={isRefreshing}
+                title="Actualizează datele din piață acum"
+                className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sky-300 text-xs font-semibold flex items-center gap-1.5 transition disabled:opacity-50"
+              >
+                <span className={isRefreshing ? "animate-spin" : ""}>🔄</span>
+                <span className="hidden sm:inline">{isRefreshing ? "Actualizare..." : "Actualizează"}</span>
+              </button>
               <button
                 type="button"
                 onClick={handleKill}
