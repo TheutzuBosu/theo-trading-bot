@@ -1,0 +1,14 @@
+{
+  "mode": "PAPER",
+  "is_sample": false,
+  "initial_capital": 500.0,
+  "equity": 500.0,
+  "total_pnl": 0.0,
+  "total_pnl_pct": 0.0,
+  "today_pnl": 0.0,
+  "today_pnl_pct": 0.0,
+  "current_drawdown_pct": 0.0,
+  "max_drawdown_pct": 0.0,
+  "updated_at": "2026-11-04T02:48:19.642100-05:00",
+  "positions": []
+}
