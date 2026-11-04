@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 499.6,
-  "total_pnl": -0.4,
-  "total_pnl_pct": -0.08,
-  "today_pnl": -0.4,
-  "today_pnl_pct": -0.08,
-  "current_drawdown_pct": -0.08,
+  "equity": 499.81,
+  "total_pnl": -0.19,
+  "total_pnl_pct": -0.04,
+  "today_pnl": -0.19,
+  "today_pnl_pct": -0.04,
+  "current_drawdown_pct": -0.04,
   "max_drawdown_pct": -0.08,
-  "updated_at": "2026-11-04T12:14:38.087957-05:00",
+  "updated_at": "2026-11-04T12:30:10.428984-05:00",
   "positions": [
     {
       "symbol": "CRCT",
@@ -17,38 +17,12 @@
       "entry_time": "2026-11-04T12:14:38.087957-05:00",
       "qty": 2.809,
       "entry_price": 8.89,
-      "current_price": 8.92,
+      "current_price": 8.9789,
       "stop": 8.77,
       "initial_stop": 8.77,
-      "unrealized_pnl": 0.08,
-      "unrealized_r": 0.25,
+      "unrealized_pnl": 0.25,
+      "unrealized_r": 0.74,
       "entry_reason": "Cricut Inc. (CRCT) a înregistrat o creștere de aproape 49% susținută de rezultatele financiare peste estimări pentru Q3 2026, raportând o creștere solidă a veniturilor și un interes ridicat în pre-market. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: CRCT LONG -> BUY CRCT (miză ~25.00$, R:R 1:4.5)"
-    },
-    {
-      "symbol": "DUOG",
-      "direction": "long",
-      "entry_time": "2026-11-04T12:14:38.087957-05:00",
-      "qty": 0.3254,
-      "entry_price": 65.978,
-      "current_price": 65.8532,
-      "stop": 59.92,
-      "initial_stop": 59.92,
-      "unrealized_pnl": -0.04,
-      "unrealized_r": -0.02,
-      "entry_reason": "DUOG a crescut cu +54.59% (preț 61.46 $ vs 39.76 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $). · D33 Scanner: DUOG LONG -> BUY DUOG (miză ~20.00$, R:R 1:6.0)"
-    },
-    {
-      "symbol": "KD",
-      "direction": "long",
-      "entry_time": "2026-11-04T12:14:38.087957-05:00",
-      "qty": 1.4132,
-      "entry_price": 17.71,
-      "current_price": 17.685,
-      "stop": 17.42,
-      "initial_stop": 17.42,
-      "unrealized_pnl": -0.04,
-      "unrealized_r": -0.09,
-      "entry_reason": "Acțiunea Kyndryl (KD) înregistrează un salt spectaculos de peste 36%, susținut de rezultatele financiare pozitive pentru Q2 și depășirea estimărilor privind EPS-ul. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: KD LONG -> BUY KD (miză ~25.00$, R:R 1:4.5)"
     },
     {
       "symbol": "LYEL",
@@ -56,12 +30,25 @@
       "entry_time": "",
       "qty": 1.7934,
       "entry_price": 14.53,
-      "current_price": 14.89,
+      "current_price": 15.2,
       "stop": 0.0,
       "initial_stop": 0.0,
-      "unrealized_pnl": 0.65,
+      "unrealized_pnl": 1.2,
       "unrealized_r": 0.0,
       "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
+    },
+    {
+      "symbol": "NRIX",
+      "direction": "long",
+      "entry_time": "2026-11-04T12:30:10.428984-05:00",
+      "qty": 1.3063,
+      "entry_price": 15.33,
+      "current_price": 15.32,
+      "stop": 15.08,
+      "initial_stop": 15.08,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.04,
+      "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -40.67% în premarket pe fondul unor posibile rezultate financiare sau evoluții negative în sectorul de sănătate. O astfel de supracorecție extremă creează oportunitatea tehnică perfectă pentru un raliu de revenire a supravânzării (dead cat bounce / relief rally). Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX LONG -> BUY NRIX (miză ~20.00$, R:R 1:4.5)"
     },
     {
       "symbol": "QID",
@@ -69,12 +56,25 @@
       "entry_time": "2026-11-04T12:14:38.087957-05:00",
       "qty": 1.3405,
       "entry_price": 14.92,
-      "current_price": 14.907,
+      "current_price": 14.86,
       "stop": 14.7,
       "initial_stop": 14.7,
-      "unrealized_pnl": -0.02,
-      "unrealized_r": -0.06,
+      "unrealized_pnl": -0.08,
+      "unrealized_r": -0.27,
       "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
+    },
+    {
+      "symbol": "SSO",
+      "direction": "long",
+      "entry_time": "2026-11-04T12:30:10.428984-05:00",
+      "qty": 3.5764,
+      "entry_price": 69.86,
+      "current_price": 69.8501,
+      "stop": 69.61,
+      "initial_stop": 69.61,
+      "unrealized_pnl": -0.04,
+      "unrealized_r": -0.04,
+      "entry_reason": "D1b long: Close=768.42, band=765.62, VWAP=766.44, tp0=776.87 · D31: SPY LONG -> BUY SSO (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
   "premarket": {
@@ -146,18 +146,41 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "DKI",
+        "direction": "long",
+        "price": 2.34,
+        "prev_close": 1.5,
+        "gap_pct": 55.99,
+        "change_pct": 55.99,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 2.3,
+        "target_price": 2.5,
+        "expected_profit_dollars": 1.35,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Premarket Movers Nov. 4, 2026: Gainers and Losers",
+          "Why Limbach Holdings Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
+        ],
+        "reason_ro": "Acțiunea înregistrează o creștere puternică de peste 55% în premarket, susținută de un impuls tehnic ridicat și includerea în topul mișcărilor semnificative din piață. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "evaluated_at": "2026-11-04T17:30:37.652435+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "CRCT",
         "direction": "long",
-        "price": 8.89,
+        "price": 8.88,
         "prev_close": 5.97,
-        "gap_pct": 48.94,
-        "change_pct": 48.94,
+        "gap_pct": 48.76,
+        "change_pct": 48.76,
         "stake_dollars": 25.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 8.76,
-        "target_price": 9.49,
+        "stop_price": 8.75,
+        "target_price": 9.48,
         "expected_profit_dollars": 1.69,
         "max_loss_dollars": 0.38,
         "headlines": [
@@ -165,46 +188,23 @@
           "Cricut Inc (CRCT) (Q3 2026) Earnings Call Highlights: Double-Digit Revenue Growth and New ...",
           "Cricut, Inc. (CRCT) Q3 2026 Earnings Call Transcript"
         ],
-        "reason_ro": "Cricut Inc. (CRCT) a înregistrat o creștere de aproape 49% susținută de rezultatele financiare peste estimări pentru Q3 2026, raportând o creștere solidă a veniturilor și un interes ridicat în pre-market. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
-        "evaluated_at": "2026-11-04T17:11:22.399132+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "LYEL",
-        "direction": "long",
-        "price": 15.58,
-        "prev_close": 10.77,
-        "gap_pct": 44.66,
-        "change_pct": 44.66,
-        "stake_dollars": 25.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.09,
-        "stop_price": 15.27,
-        "target_price": 16.98,
-        "expected_profit_dollars": 2.25,
-        "max_loss_dollars": 0.5,
-        "headlines": [
-          "Lyell Immunopharma Announces ~$80M Private Placement Of 7.4M Shares At $10.77/Share",
-          "Lyell Immunopharma Announces That Two Abstracts Featuring Updated Clinical Data For Rondecabtagene Autoleucel Have Been Accepted To The American Society Of Hematology Meeting, December 12–15; Ronde-Cel Achieved 91% Overall Response Rate And 77% Complete Response Rate"
-        ],
-        "reason_ro": "Lyell Immunopharma a anunțat o plasare privată de succes de 80 milioane dolari și date clinice remarcabile pentru Ronde-cel (91% rata de răspuns), generând un impuls masiv de creștere de peste 44%. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.50 $ / țintă profit +2.25 $).",
-        "evaluated_at": "2026-11-04T17:12:20.806420+00:00"
+        "reason_ro": "Creștere spectaculoasă de aproape 49% susținută de rezultatele financiare solide pentru Q3 2026, cu venituri în creștere de două cifre și depășirea estimărilor analiștilor. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "evaluated_at": "2026-11-04T17:31:16.039559+00:00"
       },
       {
         "action": "enter",
         "symbol": "NRIX",
-        "direction": "short",
-        "price": 15.14,
+        "direction": "long",
+        "price": 15.32,
         "prev_close": 25.82,
-        "gap_pct": -41.36,
-        "change_pct": -41.36,
+        "gap_pct": -40.67,
+        "change_pct": -40.67,
         "stake_dollars": 20.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 15.37,
-        "target_price": 14.12,
+        "stop_price": 15.09,
+        "target_price": 16.35,
         "expected_profit_dollars": 1.35,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -212,46 +212,23 @@
           "Amdocs Posts Downbeat Q4 Earnings, Joins Skyworks Solutions, Tesla And Other Big Stocks Moving Lower In Wednesday’s Pre-Market Session",
           "12 Health Care Stocks Moving In Wednesday's Pre-Market Session"
         ],
-        "reason_ro": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
-        "evaluated_at": "2026-11-04T17:13:08.177481+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "DKI",
-        "direction": "long",
-        "price": 2.11,
-        "prev_close": 1.5,
-        "gap_pct": 40.67,
-        "change_pct": 40.67,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 2.08,
-        "target_price": 2.25,
-        "expected_profit_dollars": 1.35,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Premarket Movers Nov. 4, 2026: Gainers and Losers",
-          "Why Limbach Holdings Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
-        ],
-        "reason_ro": "Acțiunea înregistrează o creștere puternică de peste 40% în premarket, fiind inclusă pe listele celor mai importante active în ascensiune ale sesiunii, ceea ce indică un impuls intraday ridicat și interes masiv din partea cumpărătorilor. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
-        "evaluated_at": "2026-11-04T17:13:18.110781+00:00"
+        "reason_ro": "Acțiunea NRIX înregistrează o prăbușire masivă de -40.67% în premarket pe fondul unor posibile rezultate financiare sau evoluții negative în sectorul de sănătate. O astfel de supracorecție extremă creează oportunitatea tehnică perfectă pentru un raliu de revenire a supravânzării (dead cat bounce / relief rally). Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "evaluated_at": "2026-11-04T17:32:01.999188+00:00"
       },
       {
         "action": "enter",
         "symbol": "KD",
         "direction": "long",
-        "price": 17.7,
+        "price": 17.73,
         "prev_close": 12.94,
-        "gap_pct": 36.79,
-        "change_pct": 36.79,
+        "gap_pct": 36.98,
+        "change_pct": 36.98,
         "stake_dollars": 25.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 17.43,
-        "target_price": 18.89,
+        "stop_price": 17.46,
+        "target_price": 18.93,
         "expected_profit_dollars": 1.69,
         "max_loss_dollars": 0.38,
         "headlines": [
@@ -259,8 +236,31 @@
           "Here's What Key Metrics Tell Us About Kyndryl Holdings, Inc. (KD) Q2 Earnings",
           "Kyndryl (NYSE:KD) reports Q3 CY2026 in line with expectations, stock jumps 11.2%"
         ],
-        "reason_ro": "Acțiunea Kyndryl (KD) înregistrează un salt spectaculos de peste 36%, susținut de rezultatele financiare pozitive pentru Q2 și depășirea estimărilor privind EPS-ul. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
-        "evaluated_at": "2026-11-04T17:13:28.862925+00:00"
+        "reason_ro": "Acțiunea Kyndryl (KD) înregistrează un salt spectaculos de aproape 37%, susținut de rezultatele financiare pozitive pentru al doilea trimestru fiscal (depășirea estimărilor privind EPS) și de un interes ridicat din partea pieței. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "evaluated_at": "2026-11-04T17:32:23.258954+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "LYEL",
+        "direction": "long",
+        "price": 14.73,
+        "prev_close": 10.77,
+        "gap_pct": 36.82,
+        "change_pct": 36.82,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.09,
+        "stop_price": 14.44,
+        "target_price": 16.06,
+        "expected_profit_dollars": 2.25,
+        "max_loss_dollars": 0.5,
+        "headlines": [
+          "Lyell Immunopharma Announces ~$80M Private Placement Of 7.4M Shares At $10.77/Share",
+          "Lyell Immunopharma Announces That Two Abstracts Featuring Updated Clinical Data For Rondecabtagene Autoleucel Have Been Accepted To The American Society Of Hematology Meeting, December 12–15; Ronde-Cel Achieved 91% Overall Response Rate And 77% Complete Response Rate"
+        ],
+        "reason_ro": "Acțiunea are un impuls puternic de +36.82%, susținut de un plasament privat de 80 milioane $ și date clinice remarcabile (91% rata de răspuns) acceptate la conferința ASH. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.50 $ / țintă profit +2.25 $).",
+        "evaluated_at": "2026-11-04T17:32:43.807985+00:00"
       }
     ],
     "top_movers": [
@@ -272,66 +272,66 @@
         "source": "alpaca_movers"
       },
       {
+        "symbol": "DKI",
+        "price": 2.34,
+        "prev_close": 1.5,
+        "gap_pct": 55.99,
+        "source": "alpaca_movers"
+      },
+      {
         "symbol": "CRCT",
-        "price": 8.89,
+        "price": 8.88,
         "prev_close": 5.97,
-        "gap_pct": 48.94,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "GENVR",
-        "price": 4.18,
-        "prev_close": 2.83,
-        "gap_pct": 47.7,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "LYEL",
-        "price": 15.58,
-        "prev_close": 10.77,
-        "gap_pct": 44.66,
+        "gap_pct": 48.76,
         "source": "alpaca_movers"
       },
       {
         "symbol": "HUTG",
-        "price": 3.29,
+        "price": 3.37,
         "prev_close": 5.87,
-        "gap_pct": -43.87,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "STLL",
-        "price": 3.48,
-        "prev_close": 6.05,
-        "gap_pct": -42.54,
+        "gap_pct": -42.6,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NRIX",
-        "price": 15.14,
+        "price": 15.32,
         "prev_close": 25.82,
-        "gap_pct": -41.36,
+        "gap_pct": -40.67,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "DKI",
-        "price": 2.11,
-        "prev_close": 1.5,
-        "gap_pct": 40.67,
+        "symbol": "STLL",
+        "price": 3.71,
+        "prev_close": 6.05,
+        "gap_pct": -38.68,
         "source": "alpaca_movers"
       },
       {
         "symbol": "KD",
-        "price": 17.7,
+        "price": 17.73,
         "prev_close": 12.94,
-        "gap_pct": 36.79,
+        "gap_pct": 36.98,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "YOU",
-        "price": 65.17,
-        "prev_close": 47.76,
-        "gap_pct": 36.45,
+        "symbol": "LYEL",
+        "price": 14.73,
+        "prev_close": 10.77,
+        "gap_pct": 36.82,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "RZAI",
+        "price": 2.47,
+        "prev_close": 3.87,
+        "gap_pct": -36.2,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "GENVR",
+        "price": 3.81,
+        "prev_close": 2.83,
+        "gap_pct": 34.45,
         "source": "alpaca_movers"
       }
     ]
