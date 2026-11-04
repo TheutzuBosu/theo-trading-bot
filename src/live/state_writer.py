@@ -148,10 +148,19 @@ def push_file_to_github_branch(
 
 
 def _resolve_token(token: str | None) -> str:
+    if token:
+        return token.strip()
+    try:
+        from src.config import settings
+
+        if getattr(settings, "GH_DISPATCH_TOKEN", None):
+            return str(settings.GH_DISPATCH_TOKEN).strip()
+    except Exception:  # noqa: BLE001
+        pass
     return (
-        token
-        if token is not None
-        else (os.environ.get("GH_DISPATCH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "")
+        os.environ.get("GH_DISPATCH_TOKEN")
+        or os.environ.get("GITHUB_TOKEN")
+        or ""
     ).strip()
 
 

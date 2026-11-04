@@ -244,7 +244,7 @@ def _run_premarket_intelligence(
         summary["premarket"] = briefing
         store.write_summary(summary)
         if sync_github:
-            sync_state_dir_to_github(state_dir)
+            sync_state_dir_to_github(state_dir, token=settings.GH_DISPATCH_TOKEN)
     if notify_telegram:
         send_telegram_message(format_premarket_telegram_message(briefing))
     return briefing
@@ -433,6 +433,7 @@ def main() -> int:
             before_step=pull_state,
             gemini_client=gemini,
             sync_github=sync_gh,
+            github_token=settings.GH_DISPATCH_TOKEN,
         )
         print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
         return 0
@@ -444,6 +445,7 @@ def main() -> int:
             adapter=adapter,
             initial_capital=settings.BOT_CAPITAL,
             sync_github=sync_gh,
+            github_token=settings.GH_DISPATCH_TOKEN,
             spy_price=_load_prices(data_client, state_dir).get("SPY"),
         )
         print(json.dumps(summary, indent=2, ensure_ascii=False))
@@ -456,6 +458,7 @@ def main() -> int:
             adapter=adapter,
             gemini_client=gemini,
             sync_github=sync_gh,
+            github_token=settings.GH_DISPATCH_TOKEN,
             prices=_load_prices(data_client, state_dir),
         )
         print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
@@ -469,6 +472,7 @@ def main() -> int:
         leverage=args.leverage,
         gemini_client=gemini,
         sync_github=sync_gh,
+        github_token=settings.GH_DISPATCH_TOKEN,
         prices=_load_prices(data_client, state_dir),
         stock_opportunities=opps,
     )
