@@ -71,7 +71,7 @@ fără jargon; când trebuie să facă ceva, îi dai pași click cu click.
 1. Date din viitor (look-ahead): indicatorii doar pe bare închise; execuția la Open-ul barei următoare.
 2. Modificarea `src/risk/guard.py` sau a constantelor lui.
 3. `TRADING_MODE=LIVE` fără `LIVE_APPROVED.md` scris de proprietar și `reports/gate2.md` = PASS.
-4. Ordin fără stop-loss la broker; lărgirea unui stop; averaging down; martingale; levier; short; crypto.
+4. Ordin fără stop-loss la broker; lărgirea unui stop; averaging down; martingale; crypto (în Faza B sunt permise Long + Short + levier 1×/2× conform D31).
 5. Secrete în cod, în commit-uri, în loguri sau în chat. `.env` nu se urcă niciodată pe GitHub.
 6. Optimizarea parametrilor până „trece” Poarta 1. Maximum 2 iterații documentate, apoi strategia se abandonează.
 7. AI-ul (Gemini) nu generează semnale, nu mărește poziții și nu schimbă reguli.

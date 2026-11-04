@@ -152,6 +152,11 @@ def main() -> int:
     parser.add_argument("--eod", action="store_true", help="Închidere + învățarea zilnică, acum")
     parser.add_argument("--kill", action="store_true", help="Activează KILL și închide tot")
     parser.add_argument("--reset-kill", action="store_true", help="Dezactivează butonul KILL")
+    parser.add_argument(
+        "--loop",
+        action="store_true",
+        help="Rulează continuu în fundal (daemon local), verificând sesiunea SUA la fiecare 60s",
+    )
     parser.add_argument("--no-sync", action="store_true", help="Nu sincroniza state/ pe GitHub")
     parser.add_argument(
         "--leverage",
@@ -198,6 +203,25 @@ def main() -> int:
         secret_key=settings.ALPACA_SECRET_KEY,
     )
     gemini = _gemini_client()
+
+    if args.loop:
+        logger.info("Daemon intraday pornit (--loop, levier %dx)...", args.leverage)
+        while True:
+            try:
+                res = run_scheduled_cycle(
+                    state_dir=state_dir,
+                    adapter=adapter,
+                    load_bars=lambda: _load_all_bars(data_client),
+                    load_prices=lambda: _load_prices(data_client),
+                    leverage=args.leverage,
+                    before_step=pull_state,
+                    gemini_client=gemini,
+                    sync_github=sync_gh,
+                )
+                logger.info("Ciclu intraday: status=%s", res.get("status"))
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("Eroare în ciclul --loop (continuă peste 60s): %s", exc)
+            time.sleep(60)
 
     if args.auto:
         res = run_scheduled_cycle(
