@@ -1,0 +1,1 @@
+symbol,direction,signal_time,entry_time,entry_open,entry_price,exit_time,exit_raw,exit_price,qty,initial_stop,stop,target,initial_risk,risk_pct,notional_pct,pnl,r_multiple,mae_r,mfe_r,bars_held,equity_at_entry,exit_reason,exit_at_open,partial_exit,entry_reason,entry_bar,exit_bar
