@@ -12,7 +12,8 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B1 | Date 1 minut + costuri | Gata | faza-b1-date | Antigravity | SIP 2016–2026 + IEX 2020–2026 în cache, validare, costuri (D25), raport SIP vs IEX (`reports/b1_date.md`, D26) |
 | B2 | Backtester intraday | Gata | faza-b2-backtester | Claude Code | Motor minut-cu-minut, costuri, sizing, veto FOMC, test aleator, metrici (D27) |
 | B3 | D1, D1b, D2 + Poarta 1 B | Gata | faza-b3-strategii | Antigravity | Poarta 1 B = PASS prin D1b (8/8 criterii, Sharpe 1,75, PF 1,60, 9/9 ani > 0, `reports/gate1_daytrading.md`, D30) |
-| B4 | Păstrarea stării + AI (învățare zilnică) | În lucru | faza-b4-ai-stare | Orice agent | Starea în `state/`, `autopsy.py`, `daily_learner.py`, `meta_label.py`, `news_veto.py` |
+| B4 | Păstrarea stării + AI (învățare zilnică) | Gata | faza-b4-ai-stare | Antigravity | `src/state/store.py`, `meta_label.py`, `daily_learner.py`, `autopsy.py`, `veto.py` (208 teste verzi) |
+| B5 | Risk guard intraday + Broker Alpaca Paper | În lucru | faza-b5-risc-broker | Orice agent | `src/risk/guard.py` + `src/broker/alpaca_paper.py` (cu Long+Short+Levier pe 500 $ conform D31) |
 | B6a | Dashboard pe date de exemplu (Vercel) | Gata | faza-b6a-dashboard | Antigravity | Next.js în `dashboard/`, date exemplu `tests/fixtures/state/`, live la `https://theo-trading-bot.vercel.app` |
 | B6b | Alerte Telegram | Gata | faza-b6b-telegram | Antigravity | `src/alerts/telegram.py`, 185 teste verzi, mesaj de probă livrat pe `@thetheotrading_bot` |
 
@@ -32,21 +33,21 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**B3 e gata (Poarta 1 B = PASS prin D1b, `reports/gate1_daytrading.md`, D30).**
-- **D1b (`VWAP & Ladder #1`, Maróy 2025)** a trecut toate cele **8/8** criterii pre-înregistrate pe OOS `2018-01-02 → 2026-10-30` (Long-Only, SPY + QQQ): 1.399 tranzacții, Profit Factor 1,60, E[R] = +0,3034R (`t = 5,79`), E[R] la costuri ×1,5 = +0,2783R, DSR = 99,9%, test direcție aleatoare 100,0%, 9/9 ani calendaristici pe plus (cel mai slab +0,3%), Sharpe 1,75, MaxDD 1,90%, 18/18 perturbații ±20% pozitive, și E[R] = +0,0668R > 0 pe fereastra nevăzută de autor (`2024-10-01 → 2026-10-30`). Pe IEX păstrează 91,6% din expectancy-ul SIP.
-- **D1 default (`L = 14, m = 1,0`)** a trecut 6/7 criterii (Sharpe 1,18, PF 1,33, 8/9 ani pe plus, MaxDD 2,86%, t = 4,12) și rămâne în cod ca referință.
+**B4 e gata.**
+- `src/state/store.py`: scriere/citire atomică în `state/` (`summary.json` cu `is_sample=False`, `equity.csv`, `trades.csv`, `positions.json`, `kill_switch.json`, `autopsies.jsonl`, `learning_stats.json`), inițializare curată la 500 $ (`init_clean_paper_state`) și reconciliere cu brokerul (`reconcile_positions`).
+- `src/ai/meta_label.py`: cele 10 trăsături cauzale (verificate fără look-ahead), `build_meta_dataset`, `purged_walk_forward_probs` (cu Purging + Embargo) și `apply_meta_filter`.
+- `src/ai/daily_learner.py`: `retrain_on_daily_trades` (pondere `3.0x` pe tranzacțiile recente ca să penalizeze rapid tiparele pierzătoare) și `compute_hourly_multipliers`.
+- `src/ai/autopsy.py` și `src/ai/veto.py` (`news_veto.py`): analiză post-mortem în română și veto pe știri Finnhub + Gemini cu fallback mecanic sigur (`208 passed` în pytest).
 
-Sub-pasul următor, **B4**, pe branch-ul nou `faza-b4-ai-stare` (creat din `main`):
-1. **`src/state/store.py`**:
-   - Scriere și citire atomică (prin fișier `.tmp` + `os.replace`) pentru fișierele din `state/` (cu schema identică cu `tests/fixtures/state/` și `dashboard/src/lib/types.ts`):
-     `state/positions.json`, `state/orders.json`, `state/equity.csv`, `state/trades.csv`, `state/daily_report.json`, `state/kill_switch.json`, `state/autopsies.jsonl`, `state/learned_rules.json`.
-   - Funcție de reconciliere la pornire între pozițiile/ordinul stop de la broker și `state/positions.json` (adevărul la neconcordanță = brokerul).
-2. **Învățarea zilnică din greșeli (`src/ai/`)**:
-   - `src/ai/autopsy.py`: după fiecare poziție închisă, salvează un rând JSONL în `state/autopsies.jsonl` cu contextul intrării (simbol, strategie D1b/D1, direcție, ora, distanța față de UB și VWAP, `sigma_d`, `r_multiple`, `pnl`, `mfe`, `mae`, motiv ieșire, etichetă mecanică + explicație Gemini opțională cu fallback mecanic dacă API-ul nu răspunde).
-   - `src/ai/daily_learner.py`: la finalul sesiunii (după 16:00 ET), analizează `state/trades.csv` + `state/autopsies.jsonl` pe fereastra mobilă și actualizează `state/learned_rules.json` (penalizare de mărime `size_multiplier` între `0.5` și `1.0` pe ore/condiții cu expectancy negativ, plus sumarul lecțiilor zilei în `state/daily_report.json` pentru dashboard).
-   - `src/ai/meta_label.py`: model logistic simplu (`scikit-learn` / `numpy`) antrenat strict pe tranzacțiile anterioare (`min_trades=100`, doar în modul `paper_Shadow` / scalare mărime, niciodată nu falsifică stop-ul sau regulile de risc).
-   - `src/ai/news_veto.py`: interogare Finnhub + Gemini înainte de intrare cu timeout scurt (3s) și fallback `allow=True` dacă API-ul e indisponibil, blocând doar la știre catastrofală / halt pe simbol.
-3. **Teste offline în `tests/test_state_and_ai.py`** (fără apeluri reale de rețea — mock pentru Gemini/Finnhub), verificare `bash scripts/check_fast.sh`, merge în `main` și deploy în Vercel (`bash scripts/deploy_dashboard.sh`).
+Sub-pasul următor, **B5**, pe branch-ul nou `faza-b5-risc-broker` (creat din `main`):
+1. **`src/risk/guard.py` + `tests/test_risk_guard.py`** (urmează pas cu pas Secțiunea 5.1 din `docs/GHID_EXECUTIE_AGENTI.md`):
+   - Constantele hard-codate de risc (`MAX_RISK_PER_TRADE_PCT = 0.005`, `MAX_DAILY_LOSS_PCT = -0.02`, `MAX_DRAWDOWN_KILL_PCT = -0.15`, `MAX_POSITIONS_PER_SYMBOL = 1`, `MAX_TOTAL_EXPOSURE = 2.0`, `NO_ENTRY_LAST_MINUTES = 15`, `MAX_SPREAD_MULTIPLIER = 2.0`, `ALLOWED_SYMBOLS` incluzând `SPY`, `QQQ` și ETF-urile inverse/cu levier `SH`, `SDS`, `SSO`, `PSQ`, `QID`, `QLD` conform D31).
+   - `evaluate_order_risk(...) -> tuple[bool, str]` (cele 13 verificări în ordine, fără limită la numărul de trade-uri pe zi) și `can_move_stop(...)`.
+2. **`src/broker/alpaca_paper.py` + `tests/test_broker.py`** (urmează pas cu pas Secțiunea 5.2 din `docs/GHID_EXECUTIE_AGENTI.md`):
+   - Blocare `TRADING_MODE == "LIVE"` fără `LIVE_APPROVED.md` și `reports/gate2.md` = `PASS`.
+   - `resolve_execution_instrument(...)` (D31: pe contul de 500 $ unde `shorting_enabled=False`, mapează automat `Short SPY -> Buy SH/SDS` și `Short QQQ -> Buy PSQ/QID`, iar pe `Long` folosește `SPY`/`QQQ` sau `SSO`/`QLD` 2×, convertind distanța de stop și țintă pe prețul ETF-ului tranzacționat).
+   - Idempotență `make_client_order_id`, reconciliere, `submit_order_with_stop` și `liquidate_all()`.
+3. După ce toate testele trec (`bash scripts/check_fast.sh`), fă commit, push, PR, merge în `main` și deploy în Vercel (`bash scripts/deploy_dashboard.sh`).
 
 ## Pentru proprietar
 
@@ -58,8 +59,8 @@ Sub-pasul următor, **B4**, pe branch-ul nou `faza-b4-ai-stare` (creat din `main
 
 ## Bug-uri cunoscute
 
-Niciunul. 198 de teste pytest trecute offline.
+Niciunul. 208 de teste pytest trecute offline.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Antigravity · Faza B, etapa B3 gata: Poarta 1 B = PASS prin D1b (8/8 criterii, `reports/gate1_daytrading.md`, D30). Urmează B4 (păstrarea stării + învățarea zilnică din greșeli în `src/state/` și `src/ai/`).
+4 noiembrie 2026 · Antigravity · Faza B, etapa B4 gata: `src/state/store.py` + `src/ai/` (`meta_label.py`, `daily_learner.py`, `autopsy.py`, `veto.py`), 208 teste verzi. Urmează B5 (`src/risk/guard.py` + `src/broker/alpaca_paper.py`).
