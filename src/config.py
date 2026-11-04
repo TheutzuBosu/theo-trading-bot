@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     # Data & AI
     FINNHUB_API_KEY: str = Field(default="")
     GEMINI_API_KEY: str = Field(default="")
-    GEMINI_MODEL: str = Field(default="gemini-2.5-flash-lite")
+    GEMINI_MODEL: str = Field(default="gemini-flash-lite-latest")
 
     # Alerts
     TELEGRAM_BOT_TOKEN: str = Field(default="")

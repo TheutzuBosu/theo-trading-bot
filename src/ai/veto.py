@@ -92,7 +92,10 @@ def check_news_veto(
         "Titluri recente:\n- " + "\n- ".join(clean[:8])
     )
     try:
-        resp = client.models.generate_content(model=settings.GEMINI_MODEL, contents=prompt)
+        model_name = settings.GEMINI_MODEL
+        if model_name == "gemini-2.5-flash-lite":
+            model_name = "gemini-flash-lite-latest"
+        resp = client.models.generate_content(model=model_name, contents=prompt)
         raw = (getattr(resp, "text", None) or "").strip()
         if raw.startswith("```"):
             raw = raw.strip("`").removeprefix("json").strip()

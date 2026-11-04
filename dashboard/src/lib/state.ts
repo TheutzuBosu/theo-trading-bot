@@ -15,6 +15,21 @@ export interface OpenPosition {
   entry_reason: string;
 }
 
+export interface PremarketQuote {
+  price: number;
+  prev_close: number;
+  gap_pct: number;
+}
+
+export interface PremarketBriefing {
+  updated_at: string;
+  risk_regime: string;
+  quotes: Record<string, PremarketQuote>;
+  explanation_ro: string;
+  headlines: string[];
+  earnings_today: Array<{ symbol: string; hour?: string }>;
+}
+
 export interface StateSummary {
   mode: "PAPER" | "LIVE";
   is_sample: boolean;
@@ -28,6 +43,7 @@ export interface StateSummary {
   max_drawdown_pct: number;
   updated_at: string;
   positions: OpenPosition[];
+  premarket?: PremarketBriefing;
 }
 
 export interface EquityPoint {

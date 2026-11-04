@@ -85,7 +85,10 @@ def generate_trade_lesson(trade: Mapping[str, Any], client: Any = None) -> str:
         f"MFE: {trade.get('mfe_r')}R, MAE: {trade.get('mae_r')}R."
     )
     try:
-        resp = client.models.generate_content(model=settings.GEMINI_MODEL, contents=prompt)
+        model_name = settings.GEMINI_MODEL
+        if model_name == "gemini-2.5-flash-lite":
+            model_name = "gemini-flash-lite-latest"
+        resp = client.models.generate_content(model=model_name, contents=prompt)
         text = (getattr(resp, "text", None) or "").strip()
         return text if text else fallback
     except Exception:

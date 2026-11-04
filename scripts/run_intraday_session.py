@@ -22,6 +22,7 @@ import sys
 import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from typing import Any
 
 import pandas as pd
 
@@ -33,6 +34,11 @@ from alpaca.data.historical import StockHistoricalDataClient  # noqa: E402
 from alpaca.data.requests import StockLatestTradeRequest  # noqa: E402
 from alpaca.trading.client import TradingClient  # noqa: E402
 
+from src.ai.premarket import (  # noqa: E402
+    build_premarket_briefing,
+    format_premarket_telegram_message,
+)
+from src.alerts.telegram import send_telegram_message  # noqa: E402
 from src.broker.alpaca_paper import AlpacaPaperAdapter  # noqa: E402
 from src.config import settings  # noqa: E402
 from src.data.intraday import (  # noqa: E402
@@ -41,6 +47,7 @@ from src.data.intraday import (  # noqa: E402
     load_minute_bars,
     nyse_sessions,
 )
+from src.data.market_time import NY_TZ  # noqa: E402
 from src.live.runner import (  # noqa: E402
     initialize_live_paper_state,
     reset_kill_switch,
@@ -49,8 +56,12 @@ from src.live.runner import (  # noqa: E402
     run_scheduled_cycle,
     run_trading_step,
 )
-from src.live.state_writer import pull_state_dir_from_github  # noqa: E402
+from src.live.state_writer import (  # noqa: E402
+    pull_state_dir_from_github,
+    sync_state_dir_to_github,
+)
 from src.risk.guard import ALLOWED_SYMBOLS  # noqa: E402
+from src.state.store import StateStore  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -140,6 +151,75 @@ def _gemini_client():
         return None
 
 
+def _compute_premarket_quotes(
+    data_client: StockHistoricalDataClient,
+) -> dict[str, dict[str, float]]:
+    """Compute pre-market / current price vs previous regular-session close for SPY and QQQ."""
+    now_utc = datetime.now(UTC)
+    start_utc = now_utc - timedelta(days=7)
+    prices = _load_prices(data_client)
+    out: dict[str, dict[str, float]] = {}
+
+    for sym in SIGNAL_SYMBOLS:
+        prev_close = 0.0
+        curr_price = float(prices.get(sym, 0.0))
+        try:
+            reg_bars = _load_recent_bars(data_client, sym, lookback_days=7)
+            if not reg_bars.empty:
+                prev_close = float(reg_bars["close"].iloc[-1])
+        except Exception:  # noqa: BLE001
+            pass
+
+        try:
+            ext_bars = fetch_minute_bars(
+                data_client, symbol=sym, start=start_utc, end=now_utc, feed="iex"
+            )
+            if not ext_bars.empty:
+                curr_price = float(ext_bars["close"].iloc[-1])
+        except Exception:  # noqa: BLE001
+            pass
+
+        if prev_close <= 0 and curr_price > 0:
+            prev_close = curr_price
+        if curr_price <= 0 and prev_close > 0:
+            curr_price = prev_close
+
+        gap_pct = ((curr_price - prev_close) / prev_close * 100.0) if prev_close > 0 else 0.0
+        out[sym] = {
+            "price": round(curr_price, 2),
+            "prev_close": round(prev_close, 2),
+            "gap_pct": round(gap_pct, 2),
+        }
+    return out
+
+
+def _run_premarket_intelligence(
+    *,
+    state_dir: Path,
+    data_client: StockHistoricalDataClient,
+    gemini_client: Any,
+    sync_github: bool = True,
+    notify_telegram: bool = True,
+) -> dict[str, Any]:
+    """Scan pre-market prices, news & financial reports, update summary.json and Telegram."""
+    quotes = _compute_premarket_quotes(data_client)
+    briefing = build_premarket_briefing(
+        quotes=quotes,
+        finnhub_key=settings.FINNHUB_API_KEY,
+        gemini_client=gemini_client,
+    )
+    store = StateStore(state_dir)
+    summary = store.read_summary()
+    if summary:
+        summary["premarket"] = briefing
+        store.write_summary(summary)
+        if sync_github:
+            sync_state_dir_to_github(state_dir)
+    if notify_telegram:
+        send_telegram_message(format_premarket_telegram_message(briefing))
+    return briefing
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Theo Trading Bot — Sesiune Intraday Alpaca Paper")
     parser.add_argument("--auto", action="store_true", help="Rulare programată (GitHub Actions)")
@@ -149,6 +229,11 @@ def main() -> int:
         help="Inițializează/actualizează state/ din contul real și urcă pe branch-ul state",
     )
     parser.add_argument("--once", action="store_true", help="Un singur pas intraday, acum")
+    parser.add_argument(
+        "--premarket",
+        action="store_true",
+        help="Scanează acum pre-market-ul, știrile și raportările financiare (Finnhub + Gemini)",
+    )
     parser.add_argument("--eod", action="store_true", help="Închidere + învățarea zilnică, acum")
     parser.add_argument("--kill", action="store_true", help="Activează KILL și închide tot")
     parser.add_argument("--reset-kill", action="store_true", help="Dezactivează butonul KILL")
@@ -204,10 +289,44 @@ def main() -> int:
     )
     gemini = _gemini_client()
 
+    if args.premarket:
+        pull_state()
+        brief = _run_premarket_intelligence(
+            state_dir=state_dir,
+            data_client=data_client,
+            gemini_client=gemini,
+            sync_github=sync_gh,
+            notify_telegram=True,
+        )
+        print(json.dumps(brief, indent=2, ensure_ascii=False))
+        return 0
+
     if args.loop:
         logger.info("Daemon intraday pornit (--loop, levier %dx)...", args.leverage)
+        premarket_tg_date: str | None = None
+        last_premarket_ts: float = 0.0
         while True:
             try:
+                now_et = datetime.now(UTC).astimezone(NY_TZ)
+                today_str = now_et.strftime("%Y-%m-%d")
+                hhmm = (now_et.hour, now_et.minute)
+                if (4, 0) <= hhmm < (9, 30) and (time.time() - last_premarket_ts) >= 900:
+                    pull_state()
+                    send_tg = premarket_tg_date != today_str
+                    _run_premarket_intelligence(
+                        state_dir=state_dir,
+                        data_client=data_client,
+                        gemini_client=gemini,
+                        sync_github=sync_gh,
+                        notify_telegram=send_tg,
+                    )
+                    last_premarket_ts = time.time()
+                    if send_tg:
+                        premarket_tg_date = today_str
+                    logger.info(
+                        "Analiză Pre-Market & Știri actualizată (%s ET)", now_et.strftime("%H:%M")
+                    )
+
                 res = run_scheduled_cycle(
                     state_dir=state_dir,
                     adapter=adapter,

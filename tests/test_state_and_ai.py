@@ -153,3 +153,54 @@ def test_fetch_recent_news_with_mock_session():
     assert len(items) == 1
     assert items[0]["headline"] == "SPY steady ahead of session"
     assert fetch_recent_news("SPY", finnhub_key="") == []
+
+
+def test_build_premarket_briefing_and_telegram_format():
+    from src.ai.premarket import build_premarket_briefing, format_premarket_telegram_message
+
+    now = datetime(2026, 11, 4, 13, 0, tzinfo=timezone.utc)
+
+    class FakeSession:
+        def get(self, url, params=None, timeout=None):
+            if "calendar/earnings" in url:
+                return SimpleNamespace(
+                    status_code=200,
+                    json=lambda: {
+                        "earningsCalendar": [{"symbol": "NVDA", "hour": "amc", "epsEstimate": 0.85}]
+                    },
+                )
+            return SimpleNamespace(
+                status_code=200,
+                json=lambda: [
+                    {
+                        "headline": "US futures edge higher ahead of tech earnings",
+                        "source": "Reuters",
+                        "datetime": now.timestamp() - 600,
+                    }
+                ],
+            )
+
+    fake_gemini = SimpleNamespace(
+        models=SimpleNamespace(
+            generate_content=lambda model, contents: SimpleNamespace(
+                text='{"explanation_ro": "Piața urcă ușor în pre-market datorită sectorului tech."}'
+            )
+        )
+    )
+    quotes = {
+        "SPY": {"price": 586.50, "prev_close": 584.20, "gap_pct": 0.39},
+        "QQQ": {"price": 503.10, "prev_close": 500.00, "gap_pct": 0.62},
+    }
+    brief = build_premarket_briefing(
+        quotes=quotes,
+        finnhub_key="fake-key",
+        gemini_client=fake_gemini,
+        session=FakeSession(),
+        now_utc=now,
+    )
+    assert brief["quotes"]["SPY"]["gap_pct"] == 0.39
+    assert "sectorului tech" in brief["explanation_ro"]
+    assert brief["earnings_today"][0]["symbol"] == "NVDA"
+    msg = format_premarket_telegram_message(brief)
+    assert "ANALIZĂ PRE-MARKET" in msg
+    assert "NVDA" in msg

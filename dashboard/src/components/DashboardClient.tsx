@@ -210,6 +210,79 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
           </div>
         </header>
 
+        {/* 1b. Analiză Pre-Market, Știri & Raportări Financiare */}
+        {summary.premarket && (
+          <section className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse" />
+                <h2 className="text-base font-bold text-white">
+                  Analiză Pre-Market, Știri &amp; Raportări Financiare (Finnhub + Gemini AI)
+                </h2>
+              </div>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                Regim: {summary.premarket.risk_regime}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {["SPY", "QQQ"].map((sym) => {
+                const q = summary.premarket?.quotes?.[sym];
+                if (!q) return null;
+                const up = q.gap_pct >= 0;
+                return (
+                  <div
+                    key={sym}
+                    className="bg-slate-950/70 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between"
+                  >
+                    <div>
+                      <div className="text-xs text-slate-400">
+                        Pre-Market {sym} ({sym === "SPY" ? "S&P 500" : "Nasdaq 100"})
+                      </div>
+                      <div className="text-base font-bold text-white mt-0.5">
+                        {fmtUsd(q.price)}{" "}
+                        <span className="text-xs font-normal text-slate-500">
+                          (ieri: {fmtUsd(q.prev_close)})
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className={`text-sm font-bold px-2.5 py-1 rounded-lg border ${
+                        up
+                          ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                          : "bg-rose-500/15 text-rose-300 border-rose-500/30"
+                      }`}
+                    >
+                      {fmtPct(q.gap_pct, true)}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="bg-slate-950/70 border border-slate-800/80 rounded-xl p-3.5 text-xs sm:text-sm text-slate-200 space-y-2">
+              <p>
+                <strong className="text-sky-300">De ce se mișcă piața azi:</strong>{" "}
+                {summary.premarket.explanation_ro}
+              </p>
+              {summary.premarket.headlines && summary.premarket.headlines.length > 0 && (
+                <div className="pt-2 border-t border-slate-800/80 text-xs text-slate-400 space-y-1">
+                  <div className="font-semibold text-slate-300">
+                    Știri financiare &amp; macro monitorizate:
+                  </div>
+                  <ul className="list-disc list-inside space-y-0.5">
+                    {summary.premarket.headlines.slice(0, 4).map((h, i) => (
+                      <li key={i} className="truncate">
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
         {/* 2. Graficul capitalului vs SPY cumpărat și ținut */}
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg">
           <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">
