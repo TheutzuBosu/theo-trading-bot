@@ -9,6 +9,7 @@ account (`500,00 $` start, live equity, open positions, and trade lessons) in re
 from __future__ import annotations
 
 import base64
+import json
 import logging
 import os
 from pathlib import Path
@@ -31,7 +32,14 @@ SYNCED_STATE_FILES = (
     "positions.json",
     "kill_switch.json",
     "learning_stats.json",
+    "live_journal.json",
+    "autopsies.jsonl",
+    "meta_dataset.csv",
 )
+KILL_SWITCH_FILE = "kill_switch.json"
+# Regular trading steps never upload kill_switch.json, so a KILL pressed meanwhile in the dashboard
+# (kill.yml) cannot be overwritten by a step that started before it (D32).
+ROUTINE_SYNC_FILES = tuple(f for f in SYNCED_STATE_FILES if f != KILL_SWITCH_FILE)
 
 
 def _github_headers(token: str) -> dict[str, str]:
@@ -139,19 +147,105 @@ def push_file_to_github_branch(
         return False
 
 
+def _resolve_token(token: str | None) -> str:
+    return (
+        token
+        if token is not None
+        else (os.environ.get("GH_DISPATCH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "")
+    ).strip()
+
+
+def fetch_github_state_file(
+    file_name: str,
+    token: str | None = None,
+    repo: str = DEFAULT_GITHUB_REPO,
+    branch: str = DEFAULT_STATE_BRANCH,
+    session: Any | None = None,
+    timeout: int = 10,
+) -> str | None:
+    """Return the text of `state/<file_name>` on the `state` branch, or None if unavailable."""
+    gh_token = _resolve_token(token)
+    if not gh_token:
+        return None
+    http = session or requests
+    headers = {**_github_headers(gh_token), "Accept": "application/vnd.github.raw"}
+    url = f"{GITHUB_API_BASE}/repos/{repo}/contents/state/{file_name}"
+    try:
+        resp = http.get(url, headers=headers, params={"ref": branch}, timeout=timeout)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("GitHub GET state/%s error: %s", file_name, type(exc).__name__)
+        return None
+    if getattr(resp, "status_code", 500) != 200:
+        return None
+    text = getattr(resp, "text", None)
+    if isinstance(text, str):
+        return text
+    try:  # JSON envelope (base64 content) when the raw media type is not honoured
+        payload = resp.json()
+    except Exception:  # noqa: BLE001
+        return None
+    if isinstance(payload, dict) and payload.get("content"):
+        return base64.b64decode(payload["content"]).decode("utf-8")
+    return None
+
+
+def pull_state_dir_from_github(
+    state_dir: Path,
+    token: str | None = None,
+    repo: str = DEFAULT_GITHUB_REPO,
+    branch: str = DEFAULT_STATE_BRANCH,
+    session: Any | None = None,
+    files: tuple[str, ...] = SYNCED_STATE_FILES,
+) -> dict[str, bool]:
+    """Restore `state/` from the `state` branch before a run (GitHub Actions starts empty)."""
+    results: dict[str, bool] = {}
+    if not _resolve_token(token):
+        return results
+    target_dir = Path(state_dir)
+    target_dir.mkdir(parents=True, exist_ok=True)
+    for fname in files:
+        text = fetch_github_state_file(
+            fname, token=token, repo=repo, branch=branch, session=session
+        )
+        if text is None:
+            results[fname] = False
+            continue
+        target = target_dir / fname
+        tmp = target.with_suffix(target.suffix + ".tmp")
+        tmp.write_text(text, encoding="utf-8")
+        os.replace(tmp, target)
+        results[fname] = True
+    return results
+
+
+def fetch_remote_kill_switch(
+    token: str | None = None,
+    repo: str = DEFAULT_GITHUB_REPO,
+    branch: str = DEFAULT_STATE_BRANCH,
+    session: Any | None = None,
+) -> bool | None:
+    """True/False from `state/kill_switch.json` on GitHub, None when it cannot be read."""
+    text = fetch_github_state_file(
+        KILL_SWITCH_FILE, token=token, repo=repo, branch=branch, session=session
+    )
+    if text is None:
+        return None
+    try:
+        return bool(json.loads(text).get("active", False))
+    except Exception:  # noqa: BLE001
+        return None
+
+
 def sync_state_dir_to_github(
     state_dir: Path,
     token: str | None = None,
     repo: str = DEFAULT_GITHUB_REPO,
     branch: str = DEFAULT_STATE_BRANCH,
     session: Any | None = None,
+    files: tuple[str, ...] = ROUTINE_SYNC_FILES,
 ) -> dict[str, bool]:
-    """Push all existing state files in `state_dir` to the `state` branch on GitHub."""
-    gh_token = (
-        token
-        if token is not None
-        else (os.environ.get("GH_DISPATCH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "")
-    ).strip()
+    """Push the existing state files in `state_dir` to the `state` branch on GitHub."""
+    gh_token = _resolve_token(token)
     results: dict[str, bool] = {}
     if not gh_token:
         return results
@@ -159,7 +253,7 @@ def sync_state_dir_to_github(
     if not ensure_github_state_branch(gh_token, repo=repo, branch=branch, session=session):
         return results
 
-    for fname in SYNCED_STATE_FILES:
+    for fname in files:
         local_file = Path(state_dir) / fname
         if not local_file.exists():
             continue

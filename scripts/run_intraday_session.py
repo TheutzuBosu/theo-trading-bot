@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""CLI entrypoint for Faza B intraday paper trading on Alpaca Paper (B6c).
+"""CLI entrypoint for Faza B intraday paper trading on Alpaca Paper (B6c, B6d).
 
 Modes:
-  --init-state  Initialize/reset `state/` to the real 500$ Alpaca Paper account (`is_sample: False`)
-                and push to the `state` branch on GitHub.
-  --once        Run a single intraday evaluation cycle on SPY & QQQ and sync `state/`.
-  --eod         Run end-of-day liquidation (15:59 ET), post-mortem, and daily learning.
+  --auto        Scheduled GitHub Actions run: restore `state/` from the `state` branch, wait for
+                the next D1b event (check bar close or 15:30 time exit, at most 12 minutes),
+                manage open positions, take fresh signals, and run EOD learning after 15:30 ET.
+  --init-state  Initialize/refresh `state/` from the real 500$ Alpaca Paper account
+                (`is_sample: False`) and push to the `state` branch on GitHub.
+  --once        Run a single intraday evaluation cycle now (no waiting).
+  --eod         Run end-of-day liquidation, post-mortem, and daily learning now.
   --kill        Trigger emergency KILL switch, liquidate all open positions, and sync `state/`.
-  --loop        Run continuously during the US market session (09:30–15:59 ET), polling every 60s.
+  --reset-kill  Deactivate the KILL switch (owner decision).
 """
 
 from __future__ import annotations
@@ -27,6 +30,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from alpaca.data.historical import StockHistoricalDataClient  # noqa: E402
+from alpaca.data.requests import StockLatestTradeRequest  # noqa: E402
 from alpaca.trading.client import TradingClient  # noqa: E402
 
 from src.broker.alpaca_paper import AlpacaPaperAdapter  # noqa: E402
@@ -37,19 +41,24 @@ from src.data.intraday import (  # noqa: E402
     load_minute_bars,
     nyse_sessions,
 )
-from src.data.market_time import NY_TZ  # noqa: E402
 from src.live.runner import (  # noqa: E402
     initialize_live_paper_state,
+    reset_kill_switch,
     run_end_of_day_learning,
     run_kill_switch,
+    run_scheduled_cycle,
     run_trading_step,
 )
+from src.live.state_writer import pull_state_dir_from_github  # noqa: E402
+from src.risk.guard import ALLOWED_SYMBOLS  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
 logger = logging.getLogger("intraday_session")
+
+SIGNAL_SYMBOLS = ("SPY", "QQQ")
 
 
 def _load_recent_bars(
@@ -89,25 +98,60 @@ def _load_recent_bars(
     return combined
 
 
+def _load_all_bars(data_client: StockHistoricalDataClient) -> dict[str, pd.DataFrame]:
+    """Bars for SPY and QQQ; retries briefly if the just-closed minute is not published yet."""
+    out: dict[str, pd.DataFrame] = {}
+    for sym in SIGNAL_SYMBOLS:
+        bars = pd.DataFrame()
+        for attempt in range(3):
+            bars = _load_recent_bars(data_client, sym)
+            # Start of the last fully closed minute bar (e.g. 10:11 when it is 10:12:08)
+            expected = (datetime.now(UTC) - timedelta(minutes=1)).replace(second=0, microsecond=0)
+            if not bars.empty and bars.index[-1] >= pd.Timestamp(expected):
+                break
+            if attempt < 2:
+                time.sleep(5)
+        out[sym] = bars
+    return out
+
+
+def _load_prices(data_client: StockHistoricalDataClient) -> dict[str, float]:
+    """Latest IEX trade price for every allowed ETF (needed to price SH/SDS/SSO/... orders)."""
+    syms = sorted(ALLOWED_SYMBOLS)
+    try:
+        latest = data_client.get_stock_latest_trade(
+            StockLatestTradeRequest(symbol_or_symbols=syms, feed="iex")
+        )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Nu s-au putut citi prețurile curente: %s", exc)
+        return {}
+    return {s: float(latest[s].price) for s in syms if s in latest and latest[s].price}
+
+
+def _gemini_client():
+    if not settings.GEMINI_API_KEY:
+        return None
+    try:
+        from google import genai
+
+        return genai.Client(api_key=settings.GEMINI_API_KEY)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Clientul Gemini nu a putut fi creat: %s", type(exc).__name__)
+        return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Theo Trading Bot — Sesiune Intraday Alpaca Paper")
+    parser.add_argument("--auto", action="store_true", help="Rulare programată (GitHub Actions)")
     parser.add_argument(
         "--init-state",
         action="store_true",
-        help="Inițializează state/ la 500$ real și urcă pe branch-ul state",
+        help="Inițializează/actualizează state/ din contul real și urcă pe branch-ul state",
     )
-    parser.add_argument(
-        "--once", action="store_true", help="Rulează un singur pas de evaluare intraday"
-    )
-    parser.add_argument(
-        "--eod", action="store_true", help="Rulează închiderea de la 15:59 ET + învățarea zilnică"
-    )
-    parser.add_argument(
-        "--kill", action="store_true", help="Activează butonul KILL și închide toate pozițiile"
-    )
-    parser.add_argument(
-        "--loop", action="store_true", help="Rulează în buclă la fiecare 60s în timpul sesiunii SUA"
-    )
+    parser.add_argument("--once", action="store_true", help="Un singur pas intraday, acum")
+    parser.add_argument("--eod", action="store_true", help="Închidere + învățarea zilnică, acum")
+    parser.add_argument("--kill", action="store_true", help="Activează KILL și închide tot")
+    parser.add_argument("--reset-kill", action="store_true", help="Dezactivează butonul KILL")
     parser.add_argument("--no-sync", action="store_true", help="Nu sincroniza state/ pe GitHub")
     parser.add_argument(
         "--leverage",
@@ -121,6 +165,11 @@ def main() -> int:
     state_dir = ROOT / "state"
     sync_gh = not args.no_sync
 
+    def pull_state() -> None:
+        if sync_gh:
+            res = pull_state_dir_from_github(state_dir)
+            logger.info("Stare restaurată din branch-ul state: %s", res)
+
     trading_client = TradingClient(
         api_key=settings.ALPACA_API_KEY,
         secret_key=settings.ALPACA_SECRET_KEY,
@@ -128,102 +177,96 @@ def main() -> int:
     )
     adapter = AlpacaPaperAdapter(trading_client, root_dir=ROOT)
 
+    if args.reset_kill:
+        pull_state()
+        print(json.dumps(reset_kill_switch(state_dir=state_dir, sync_github=sync_gh), indent=2))
+        return 0
+
     if args.kill:
+        pull_state()
         res = run_kill_switch(
             state_dir=state_dir,
             adapter=adapter,
-            reason="Declanșat din CLI / GitHub Actions (workflow kill.yml)",
+            reason="Declanșat din Dashboard / GitHub Actions (workflow kill.yml)",
             sync_github=sync_gh,
         )
         print(json.dumps(res, indent=2, ensure_ascii=False))
-        return 0
-
-    if args.init_state:
-        summary = initialize_live_paper_state(
-            state_dir=state_dir,
-            adapter=adapter,
-            initial_capital=settings.BOT_CAPITAL,
-            sync_github=sync_gh,
-        )
-        print(json.dumps(summary, indent=2, ensure_ascii=False))
-        if not (args.once or args.eod or args.loop):
-            return 0
-
-    if args.eod:
-        res = run_end_of_day_learning(
-            state_dir=state_dir,
-            adapter=adapter,
-            sync_github=sync_gh,
-        )
-        print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
         return 0
 
     data_client = StockHistoricalDataClient(
         api_key=settings.ALPACA_API_KEY,
         secret_key=settings.ALPACA_SECRET_KEY,
     )
+    gemini = _gemini_client()
 
-    if args.once or not args.loop:
-        bars_by_sym = {sym: _load_recent_bars(data_client, sym) for sym in ("SPY", "QQQ")}
-        res = run_trading_step(
+    if args.auto:
+        res = run_scheduled_cycle(
             state_dir=state_dir,
             adapter=adapter,
-            bars_by_symbol=bars_by_sym,
+            load_bars=lambda: _load_all_bars(data_client),
+            load_prices=lambda: _load_prices(data_client),
             leverage=args.leverage,
+            before_step=pull_state,
+            gemini_client=gemini,
             sync_github=sync_gh,
         )
         print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
         return 0
 
-    logger.info("Pornire buclă intraday (SPY/QQQ, Long+Short, levier %dx)...", args.leverage)
-    eod_done_date: str | None = None
-    while True:
-        now_et = datetime.now(UTC).astimezone(NY_TZ)
-        today_str = now_et.strftime("%Y-%m-%d")
-        hhmm = (now_et.hour, now_et.minute)
+    pull_state()
+    if args.init_state:
+        summary = initialize_live_paper_state(
+            state_dir=state_dir,
+            adapter=adapter,
+            initial_capital=settings.BOT_CAPITAL,
+            sync_github=sync_gh,
+            spy_price=_load_prices(data_client).get("SPY"),
+        )
+        print(json.dumps(summary, indent=2, ensure_ascii=False))
+        if not (args.once or args.eod):
+            return 0
 
-        if hhmm >= (15, 59) and eod_done_date != today_str:
-            logger.info("15:59 ET atins — rulare lichidare EOD + învățare zilnică...")
-            run_end_of_day_learning(
-                state_dir=state_dir,
-                adapter=adapter,
-                sync_github=sync_gh,
-            )
-            eod_done_date = today_str
-            break
+    if args.eod:
+        res = run_end_of_day_learning(
+            state_dir=state_dir,
+            adapter=adapter,
+            gemini_client=gemini,
+            sync_github=sync_gh,
+            prices=_load_prices(data_client),
+        )
+        print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
+        return 0
 
-        if (9, 30) <= hhmm < (15, 59):
-            bars_by_sym = {sym: _load_recent_bars(data_client, sym) for sym in ("SPY", "QQQ")}
-            step_res = run_trading_step(
-                state_dir=state_dir,
-                adapter=adapter,
-                bars_by_symbol=bars_by_sym,
-                leverage=args.leverage,
-                sync_github=sync_gh,
-            )
-            logger.info(
-                "Pas intraday executat: status=%s, ordine=%d",
-                step_res["status"],
-                len(step_res["orders"]),
-            )
-            if step_res["status"] in ("halted", "killed"):
-                break
-        else:
-            logger.info(
-                "În afara orelor de tranzacționare (%s ET) — sincronizare stare cont...",
-                now_et.strftime("%H:%M"),
-            )
-            initialize_live_paper_state(
-                state_dir=state_dir,
-                adapter=adapter,
-                initial_capital=settings.BOT_CAPITAL,
-                sync_github=sync_gh,
-            )
-
-        time.sleep(60)
-
+    res = run_trading_step(
+        state_dir=state_dir,
+        adapter=adapter,
+        bars_by_symbol=_load_all_bars(data_client),
+        leverage=args.leverage,
+        gemini_client=gemini,
+        sync_github=sync_gh,
+        prices=_load_prices(data_client),
+    )
+    print(json.dumps(res, indent=2, ensure_ascii=False, default=str))
     return 0
 
 
+def _main_with_alert() -> int:
+    try:
+        return main()
+    except Exception as exc:  # noqa: BLE001
+        logger.exception("Rularea sesiunii intraday a eșuat")
+        try:
+            from src.alerts.telegram import send_error_alert
+
+            send_error_alert(
+                component="Sesiune intraday (GitHub Actions)",
+                error=f"{type(exc).__name__}: {str(exc)[:300]}",
+                mode="PAPER",
+            )
+        except Exception:  # noqa: BLE001
+            pass
+        return 1
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(_main_with_alert())

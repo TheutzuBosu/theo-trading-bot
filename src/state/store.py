@@ -9,6 +9,8 @@ and the live runner:
 - `kill_switch.json`
 - `autopsies.jsonl`
 - `learning_stats.json`
+- `live_journal.json` (processed signals, open bot trades, last EOD date; B6d)
+- `meta_dataset.csv` (meta-label features + outcome of every closed live trade; B6d)
 """
 
 from __future__ import annotations
@@ -24,6 +26,11 @@ import pandas as pd
 from src.backtest.intraday_engine import TRADE_COLUMNS
 
 EQUITY_COLUMNS = ("date", "bot_equity", "spy_buy_hold", "daily_pnl", "drawdown_pct")
+EMPTY_JOURNAL: dict[str, Any] = {
+    "processed_signals": [],
+    "open_trades": {},
+    "last_eod_date": None,
+}
 
 
 def atomic_write_json(path: Path | str, payload: Any) -> None:
@@ -131,6 +138,35 @@ class StateStore:
     def learning_stats_path(self) -> Path:
         return self.state_dir / "learning_stats.json"
 
+    @property
+    def journal_path(self) -> Path:
+        return self.state_dir / "live_journal.json"
+
+    @property
+    def meta_dataset_path(self) -> Path:
+        return self.state_dir / "meta_dataset.csv"
+
+    def read_journal(self) -> dict[str, Any]:
+        journal = json.loads(json.dumps(EMPTY_JOURNAL))
+        if self.journal_path.exists():
+            stored = json.loads(self.journal_path.read_text(encoding="utf-8"))
+            if isinstance(stored, dict):
+                journal.update(stored)
+        return journal
+
+    def write_journal(self, journal: Mapping[str, Any]) -> None:
+        atomic_write_json(self.journal_path, dict(journal))
+
+    def read_meta_dataset(self) -> pd.DataFrame:
+        if not self.meta_dataset_path.exists():
+            return pd.DataFrame()
+        return pd.read_csv(self.meta_dataset_path)
+
+    def append_meta_row(self, row: Mapping[str, Any]) -> None:
+        df = self.read_meta_dataset()
+        df = pd.concat([df, pd.DataFrame([dict(row)])], ignore_index=True)
+        atomic_write_csv(self.meta_dataset_path, df)
+
     def write_summary(self, summary: Mapping[str, Any]) -> None:
         payload = dict(summary)
         payload.setdefault("is_sample", False)
@@ -218,38 +254,48 @@ def init_clean_paper_state(
     initial_capital: float = 500.0,
     date_str: str = "2026-11-04",
     updated_at: str = "2026-11-04T09:30:00-05:00",
+    *,
+    overwrite: bool = True,
 ) -> StateStore:
-    """Initialize a fresh 500.00 $ Paper state (0 trades, 0 open positions, is_sample=False)."""
+    """Initialize a fresh 500.00 $ Paper state (0 trades, 0 open positions, is_sample=False).
+
+    With `overwrite=False` only missing files are created, so an existing `kill_switch.json`
+    (e.g. an active KILL restored from the `state` branch) or trade history is never reset.
+    """
     store = StateStore(state_dir)
-    store.write_summary(
-        {
-            "mode": "PAPER",
-            "is_sample": False,
-            "initial_capital": float(initial_capital),
-            "equity": float(initial_capital),
-            "total_pnl": 0.0,
-            "total_pnl_pct": 0.0,
-            "today_pnl": 0.0,
-            "today_pnl_pct": 0.0,
-            "current_drawdown_pct": 0.0,
-            "max_drawdown_pct": 0.0,
-            "updated_at": updated_at,
-            "positions": [],
-        }
-    )
-    store.write_equity(
-        pd.DataFrame(
-            [
-                {
-                    "date": date_str,
-                    "bot_equity": float(initial_capital),
-                    "spy_buy_hold": float(initial_capital),
-                    "daily_pnl": 0.0,
-                    "drawdown_pct": 0.0,
-                }
-            ]
+    if overwrite or not store.summary_path.exists():
+        store.write_summary(
+            {
+                "mode": "PAPER",
+                "is_sample": False,
+                "initial_capital": float(initial_capital),
+                "equity": float(initial_capital),
+                "total_pnl": 0.0,
+                "total_pnl_pct": 0.0,
+                "today_pnl": 0.0,
+                "today_pnl_pct": 0.0,
+                "current_drawdown_pct": 0.0,
+                "max_drawdown_pct": 0.0,
+                "updated_at": updated_at,
+                "positions": [],
+            }
         )
-    )
-    store.write_trades(pd.DataFrame(columns=TRADE_COLUMNS))
-    store.set_kill_switch(active=False, reason="", triggered_at=None)
+    if overwrite or not store.equity_path.exists():
+        store.write_equity(
+            pd.DataFrame(
+                [
+                    {
+                        "date": date_str,
+                        "bot_equity": float(initial_capital),
+                        "spy_buy_hold": float(initial_capital),
+                        "daily_pnl": 0.0,
+                        "drawdown_pct": 0.0,
+                    }
+                ]
+            )
+        )
+    if overwrite or not store.trades_path.exists():
+        store.write_trades(pd.DataFrame(columns=TRADE_COLUMNS))
+    if overwrite or not store.kill_switch_path.exists():
+        store.set_kill_switch(active=False, reason="", triggered_at=None)
     return store

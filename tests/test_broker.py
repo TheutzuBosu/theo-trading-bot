@@ -12,6 +12,7 @@ from src.broker.alpaca_paper import (
     make_client_order_id,
     resolve_execution_instrument,
 )
+from tests.live_fakes import FakeAlpaca
 
 
 class FakeTradingClient:
@@ -126,25 +127,33 @@ def test_d31_short_and_leverage_mapping_on_500_dollar_account():
 
 
 def test_idempotency_stop_requirement_reconcile_and_liquidate_all():
-    client = FakeTradingClient(equity=500.0, shorting_enabled=False)
-    adapter = AlpacaPaperAdapter(client, trading_mode="PAPER")
+    client = FakeAlpaca(prices={"SPY": 580.0, "PSQ": 40.0})
+    adapter = AlpacaPaperAdapter(client, trading_mode="PAPER", sleep=lambda _s: None)
 
     # Stop required
     cid = make_client_order_id("SPY", "2026-11-04T10:12:00-05:00", "long")
     with pytest.raises(ValueError, match="stop_price"):
         adapter.submit_long_with_stop("SPY", 0.5, 0.0, cid, entry_price=580.0)
 
-    # First submission succeeds
-    ord1 = adapter.submit_long_with_stop("SPY", 0.5, 578.0, cid, entry_price=580.0)
-    assert ord1["status"] == "submitted"
-    assert len(client.submitted_orders) == 1
+    # First submission: market entry + stop on the filled quantity
+    ord1 = adapter.submit_long_with_stop("SPY", 0.2, 578.0, cid, entry_price=580.0)
+    assert ord1["status"] == "filled"
+    assert [type(r).__name__ for r in client.submitted] == [
+        "MarketOrderRequest",
+        "StopOrderRequest",
+    ]
 
     # Duplicate submission with same client_order_id is skipped idempotently
-    ord2 = adapter.submit_long_with_stop("SPY", 0.5, 578.0, cid, entry_price=580.0)
+    ord2 = adapter.submit_long_with_stop("SPY", 0.2, 578.0, cid, entry_price=580.0)
     assert ord2["status"] == "duplicate_skipped"
-    assert len(client.submitted_orders) == 1
+    assert len(client.submitted) == 2
 
-    # Short submission on 500 $ account routes to PSQ
+    # A fresh adapter (new GitHub Actions run) is protected by Alpaca's unique client_order_id
+    adapter2 = AlpacaPaperAdapter(client, trading_mode="PAPER", sleep=lambda _s: None)
+    ord3 = adapter2.submit_long_with_stop("SPY", 0.2, 578.0, cid, entry_price=580.0)
+    assert ord3["status"] == "duplicate_skipped"
+
+    # Short submission on 500 $ account routes to PSQ and uses PSQ's own price for the stop
     cid_short = make_client_order_id("QQQ", "2026-11-04T10:58:00-05:00", "short")
     ord_short = adapter.submit_order_with_stop(
         symbol="QQQ",
@@ -158,6 +167,7 @@ def test_idempotency_stop_requirement_reconcile_and_liquidate_all():
     assert ord_short["symbol"] == "PSQ"
     assert ord_short["side"] == "buy"
     assert ord_short["via_inverse_etf"] is True
+    assert ord_short["stop_price"] == round(40.0 * (1 - 2.0 / 500.0), 2)
 
     # Reconcile
     rec = adapter.reconcile({"SPY", "QQQ"})
@@ -166,6 +176,51 @@ def test_idempotency_stop_requirement_reconcile_and_liquidate_all():
 
     # Liquidate all
     closed_count = adapter.liquidate_all()
-    assert closed_count == 1
-    assert client.canceled is True
-    assert client.closed_all is True
+    assert closed_count == 2
+    assert client.positions == {}
+    assert all(o.status != "new" for o in client.orders.values())
+
+
+def test_plain_dict_order_payload_is_rejected_like_the_real_sdk():
+    """Regression: the B5 adapter sent a dict, which alpaca-py's submit_order cannot handle."""
+    client = FakeAlpaca(prices={"SPY": 580.0})
+    with pytest.raises(AttributeError):
+        client.submit_order({"symbol": "SPY", "qty": 1})
+
+
+def test_stop_failure_closes_position_immediately():
+    client = FakeAlpaca(prices={"SSO": 80.0}, fail_stop=True)
+    adapter = AlpacaPaperAdapter(client, trading_mode="PAPER", sleep=lambda _s: None)
+    res = adapter.submit_entry_with_stop(
+        symbol="SSO", qty=1.5, stop_price=79.5, client_order_id="theo-SSO-L-1"
+    )
+    assert res["status"] == "closed_stop_failed"
+    assert client.positions == {}  # never left without a stop (Interdicția 4)
+
+
+def test_stop_prices_are_rounded_to_cents_and_require_instrument_price():
+    res = resolve_execution_instrument(
+        symbol="SPY",
+        direction="short",
+        qty=0.4,
+        entry_price=754.29,
+        stop_price=755.87,
+        leverage=2,
+        account_equity=500.0,
+        shorting_enabled=False,
+        instrument_price=56.13,
+    )
+    assert res["exec_symbol"] == "SDS"
+    assert res["stop_price"] == round(res["stop_price"], 2)
+    assert res["stop_price"] < 56.13
+    with pytest.raises(ValueError, match="SDS"):
+        resolve_execution_instrument(
+            symbol="SPY",
+            direction="short",
+            qty=0.4,
+            entry_price=754.29,
+            stop_price=755.87,
+            leverage=2,
+            account_equity=500.0,
+            shorting_enabled=False,
+        )

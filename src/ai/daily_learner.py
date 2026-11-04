@@ -32,10 +32,10 @@ def compute_hourly_multipliers(
     if trades.empty or "entry_time" not in trades.columns or "r_multiple" not in trades.columns:
         return multipliers
 
-    entry_ts = pd.to_datetime(trades["entry_time"])
-    ny_ts = entry_ts.dt.tz_convert("America/New_York") if entry_ts.dt.tz is not None else entry_ts
-    hours = ny_ts.dt.hour
-    r_vals = trades["r_multiple"].astype(float)
+    # utc=True: trade times mix -05:00 (EST) and -04:00 (EDT) offsets across DST changes
+    entry_ts = pd.to_datetime(trades["entry_time"], utc=True, errors="coerce")
+    hours = entry_ts.dt.tz_convert("America/New_York").dt.hour
+    r_vals = pd.to_numeric(trades["r_multiple"], errors="coerce")
 
     for h in range(9, 16):
         bucket = r_vals.loc[hours == h]
