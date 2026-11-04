@@ -12,7 +12,7 @@
   "updated_at": "2026-11-04T02:48:35.319303-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-04T12:49:48.815116+00:00",
+    "updated_at": "2026-11-04T12:50:55.385209+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
@@ -26,7 +26,7 @@
         "gap_pct": 0.41
       }
     },
-    "explanation_ro": "Piața deschide mixt, cu SPY aproape stabil (-0,01%) și QQQ în ușoară creștere (+0,41%), susținută de optimismul investitorilor după victoria democraților în Congres, în timp ce riscurile geopolitice din Orientul Mijlociu și declarațiile Iranului mențin prudența. Ziua aduce raportări financiare importante de la companii precum ADNT și AFL, dar lipsa unor catalizatori majori pe sectorul tehnologic favorizează o direcție neutră spre ușor Long pe QQQ și o atitudine defensivă pe SPY în prima parte a ședinței.",
+    "explanation_ro": "Piața pre-market este mixtă, cu SPY aproape stabil și QQQ în ușoară creștere, susținută de optimismul investitorilor după victoria democraților în Congresul SUA. Deși tensiunile geopolitice din Orientul Mijlociu și declarațiile liderului iranian aduc prudență, atenția este îndreptată spre rezultatele financiare și evoluțiile politice interne. Astfel, la deschidere este favorizată o direcție moderat Long pe sectorul tehnologic (QQQ), în timp ce SPY rămâne sub observație pentru o deschidere laterală.",
     "headlines": [
       "Netanyahu rivals seize on Democrats' sweep of US Congress, seeking his ouster - Reuters",
       "Iran's Khamenei says US hostility will persist regardless of party in power - Reuters",
