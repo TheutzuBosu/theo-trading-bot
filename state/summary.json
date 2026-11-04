@@ -2,15 +2,68 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 500.0,
-  "total_pnl": 0.0,
-  "total_pnl_pct": 0.0,
-  "today_pnl": 0.0,
-  "today_pnl_pct": 0.0,
-  "current_drawdown_pct": 0.0,
-  "max_drawdown_pct": 0.0,
-  "updated_at": "2026-11-04T02:48:35.319303-05:00",
-  "positions": [],
+  "equity": 499.63,
+  "total_pnl": -0.37,
+  "total_pnl_pct": -0.07,
+  "today_pnl": -0.37,
+  "today_pnl_pct": -0.07,
+  "current_drawdown_pct": -0.07,
+  "max_drawdown_pct": -0.07,
+  "updated_at": "2026-11-04T09:35:10.917771-05:00",
+  "positions": [
+    {
+      "symbol": "ALIT",
+      "direction": "long",
+      "entry_time": "2026-11-04T09:35:10.917771-05:00",
+      "qty": 1.5179,
+      "entry_price": 16.4,
+      "current_price": 16.365,
+      "stop": 16.22,
+      "initial_stop": 16.22,
+      "unrealized_pnl": -0.05,
+      "unrealized_r": -0.19,
+      "entry_reason": "Acțiunea ALIT înregistrează o creștere masivă de peste 56%, susținută de rezultatele financiare impresionante pentru Q3 2026 și de interesul ridicat din sesiunea pre-market. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: ALIT LONG -> BUY ALIT (miză ~25.00$, R:R 1:4.5)"
+    },
+    {
+      "symbol": "DOX",
+      "direction": "long",
+      "entry_time": "2026-11-04T09:35:10.917771-05:00",
+      "qty": 0.466,
+      "entry_price": 42.836,
+      "current_price": 42.74,
+      "stop": 42.27,
+      "initial_stop": 42.27,
+      "unrealized_pnl": -0.04,
+      "unrealized_r": -0.17,
+      "entry_reason": "Amdocs (DOX) a înregistrat o scădere masivă de aproape 30% în pre-market pe fondul unor rezultate Q4 slabe și a unor retrogradări din partea analiștilor, însă menținerea ratingului de cumpărare de la Stifel oferă o oportunitate de tip 'dead cat bounce' sau oversold reversal pentru o intrare intraday pe partea de long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: DOX LONG -> BUY DOX (miză ~20.00$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "LYEL",
+      "direction": "long",
+      "entry_time": "2026-11-04T09:35:10.917771-05:00",
+      "qty": 1.7934,
+      "entry_price": 14.53,
+      "current_price": 14.4,
+      "stop": 13.66,
+      "initial_stop": 13.66,
+      "unrealized_pnl": -0.23,
+      "unrealized_r": -0.15,
+      "entry_reason": "Lyell Immunopharma a anunțat o plasare privată de succes de 80 milioane de dolari și date clinice extrem de favorabile pentru tratamentul ronde-cel (rată de răspuns de 91%), generând un impuls puternic de creștere de peste 31%. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.50 $ / țintă profit +2.25 $). · D33 Scanner: LYEL LONG -> BUY LYEL (miză ~25.00$, R:R 1:4.5)"
+    },
+    {
+      "symbol": "NRIX",
+      "direction": "long",
+      "entry_time": "2026-11-04T09:35:10.917771-05:00",
+      "qty": 0.9302,
+      "entry_price": 16.176,
+      "current_price": 16.135,
+      "stop": 15.8,
+      "initial_stop": 15.8,
+      "unrealized_pnl": -0.04,
+      "unrealized_r": -0.11,
+      "entry_reason": "Acțiunea NRIX înregistrează o prăbușire de peste 35% în sesiunea pre-market, creând premisele unei oportunități clasice de tip 'oversold bounce' (rebound tehnic din supravânzare) pentru o intrare intraday pe partea de cumpărare. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX LONG -> BUY NRIX (miză ~15.00$, R:R 1:4.5)"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-04T13:06:12.469824+00:00",
     "risk_regime": "NORMAL",
@@ -76,6 +129,200 @@
         "revenue_estimate": 1475383325,
         "revenue_actual": null
       }
+    ],
+    "opportunities": [
+      {
+        "action": "enter",
+        "symbol": "ALIT",
+        "direction": "long",
+        "price": 15.85,
+        "prev_close": 10.12,
+        "gap_pct": 56.57,
+        "change_pct": 56.57,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 15.61,
+        "target_price": 16.92,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "Premarket Movers Nov. 4, 2026: Gainers and Losers",
+          "12 Industrials Stocks Moving In Wednesday's Pre-Market Session",
+          "Why Limbach Holdings Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
+        ],
+        "reason_ro": "Acțiunea ALIT înregistrează o creștere masivă de peste 56%, susținută de rezultatele financiare impresionante pentru Q3 2026 și de interesul ridicat din sesiunea pre-market. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "evaluated_at": "2026-11-04T14:35:31.739417+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "DKI",
+        "direction": "long",
+        "price": 2.18,
+        "prev_close": 1.5,
+        "gap_pct": 45.33,
+        "change_pct": 45.33,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 2.15,
+        "target_price": 2.33,
+        "expected_profit_dollars": 1.35,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Premarket Movers Nov. 4, 2026: Gainers and Losers",
+          "Why Limbach Holdings Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket",
+          "After-Hours Stock Movers: Nov. 3 Gainers and Losers"
+        ],
+        "reason_ro": "Acțiunea DKI înregistrează o creștere intraday puternică de peste 45%, fiind inclusă în listele de top premarket gainers, ceea ce indică un impuls ridicat și un interes speculativ intens din partea investitorilor. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "evaluated_at": "2026-11-04T14:36:05.912143+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "NRIX",
+        "direction": "long",
+        "price": 16.5,
+        "prev_close": 25.82,
+        "gap_pct": -36.1,
+        "change_pct": -36.1,
+        "stake_dollars": 15.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.09,
+        "stop_price": 16.17,
+        "target_price": 17.99,
+        "expected_profit_dollars": 1.35,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Premarket Movers Nov. 4, 2026: Gainers and Losers",
+          "Amdocs Posts Downbeat Q4 Earnings, Joins Skyworks Solutions, Tesla And Other Big Stocks Moving Lower In Wednesday’s Pre-Market Session",
+          "12 Health Care Stocks Moving In Wednesday's Pre-Market Session"
+        ],
+        "reason_ro": "Acțiunea NRIX înregistrează o prăbușire de peste 35% în sesiunea pre-market, creând premisele unei oportunități clasice de tip 'oversold bounce' (rebound tehnic din supravânzare) pentru o intrare intraday pe partea de cumpărare. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "evaluated_at": "2026-11-04T14:36:22.557544+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "LYEL",
+        "direction": "long",
+        "price": 14.12,
+        "prev_close": 10.77,
+        "gap_pct": 31.1,
+        "change_pct": 31.1,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.09,
+        "stop_price": 13.84,
+        "target_price": 15.39,
+        "expected_profit_dollars": 2.25,
+        "max_loss_dollars": 0.5,
+        "headlines": [
+          "Lyell Immunopharma Announces ~$80M Private Placement Of 7.4M Shares At $10.77/Share",
+          "Lyell Immunopharma Announces That Two Abstracts Featuring Updated Clinical Data For Rondecabtagene Autoleucel Have Been Accepted To The American Society Of Hematology Meeting, December 12–15; Ronde-Cel Achieved 91% Overall Response Rate And 77% Complete Response Rate"
+        ],
+        "reason_ro": "Lyell Immunopharma a anunțat o plasare privată de succes de 80 milioane de dolari și date clinice extrem de favorabile pentru tratamentul ronde-cel (rată de răspuns de 91%), generând un impuls puternic de creștere de peste 31%. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.50 $ / țintă profit +2.25 $).",
+        "evaluated_at": "2026-11-04T14:38:37.732213+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "DOX",
+        "direction": "long",
+        "price": 43.73,
+        "prev_close": 62.43,
+        "gap_pct": -29.95,
+        "change_pct": -29.95,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 43.07,
+        "target_price": 46.03,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Premarket Movers Nov. 4, 2026: Gainers and Losers",
+          "Amdocs Posts Downbeat Q4 Earnings, Joins Skyworks Solutions, Tesla And Other Big Stocks Moving Lower In Wednesday’s Pre-Market Session",
+          "This Gartner Analyst Is No Longer Bullish; Here Are Top 5 Downgrades For Wednesday"
+        ],
+        "reason_ro": "Amdocs (DOX) a înregistrat o scădere masivă de aproape 30% în pre-market pe fondul unor rezultate Q4 slabe și a unor retrogradări din partea analiștilor, însă menținerea ratingului de cumpărare de la Stifel oferă o oportunitate de tip 'dead cat bounce' sau oversold reversal pentru o intrare intraday pe partea de long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "evaluated_at": "2026-11-04T14:38:51.007773+00:00"
+      }
+    ],
+    "top_movers": [
+      {
+        "symbol": "ALIT",
+        "price": 15.85,
+        "prev_close": 10.12,
+        "gap_pct": 56.57,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "DUOG",
+        "price": 60.0,
+        "prev_close": 39.76,
+        "gap_pct": 50.91,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "DKI",
+        "price": 2.18,
+        "prev_close": 1.5,
+        "gap_pct": 45.33,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "NRIX",
+        "price": 16.5,
+        "prev_close": 25.82,
+        "gap_pct": -36.1,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "FIXX",
+        "price": 4.92,
+        "prev_close": 7.28,
+        "gap_pct": -32.43,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "STLL",
+        "price": 4.09,
+        "prev_close": 6.05,
+        "gap_pct": -32.4,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "HUTG",
+        "price": 4.03,
+        "prev_close": 5.87,
+        "gap_pct": -31.36,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "LYEL",
+        "price": 14.12,
+        "prev_close": 10.77,
+        "gap_pct": 31.1,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "DOX",
+        "price": 43.73,
+        "prev_close": 62.43,
+        "gap_pct": -29.95,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "XYZG",
+        "price": 19.14,
+        "prev_close": 14.84,
+        "gap_pct": 28.92,
+        "source": "alpaca_movers"
+      }
     ]
-  }
+  },
+  "spy_start_price": 766.23
 }
