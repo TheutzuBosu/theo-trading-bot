@@ -1,27 +1,14 @@
 [
   {
-    "symbol": "CRCT",
-    "direction": "long",
-    "entry_time": "2026-11-04T12:14:38.087957-05:00",
-    "qty": 2.809,
-    "entry_price": 8.89,
-    "current_price": 8.9789,
-    "stop": 8.77,
-    "initial_stop": 8.77,
-    "unrealized_pnl": 0.25,
-    "unrealized_r": 0.74,
-    "entry_reason": "Cricut Inc. (CRCT) a înregistrat o creștere de aproape 49% susținută de rezultatele financiare peste estimări pentru Q3 2026, raportând o creștere solidă a veniturilor și un interes ridicat în pre-market. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: CRCT LONG -> BUY CRCT (miză ~25.00$, R:R 1:4.5)"
-  },
-  {
     "symbol": "LYEL",
     "direction": "long",
     "entry_time": "",
     "qty": 1.7934,
     "entry_price": 14.53,
-    "current_price": 15.2,
+    "current_price": 15.25,
     "stop": 0.0,
     "initial_stop": 0.0,
-    "unrealized_pnl": 1.2,
+    "unrealized_pnl": 1.29,
     "unrealized_r": 0.0,
     "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
   },
@@ -31,11 +18,11 @@
     "entry_time": "2026-11-04T12:30:10.428984-05:00",
     "qty": 1.3063,
     "entry_price": 15.33,
-    "current_price": 15.32,
+    "current_price": 15.88,
     "stop": 15.08,
     "initial_stop": 15.08,
-    "unrealized_pnl": -0.01,
-    "unrealized_r": -0.04,
+    "unrealized_pnl": 0.72,
+    "unrealized_r": 2.2,
     "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -40.67% în premarket pe fondul unor posibile rezultate financiare sau evoluții negative în sectorul de sănătate. O astfel de supracorecție extremă creează oportunitatea tehnică perfectă pentru un raliu de revenire a supravânzării (dead cat bounce / relief rally). Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX LONG -> BUY NRIX (miză ~20.00$, R:R 1:4.5)"
   },
   {
@@ -44,24 +31,11 @@
     "entry_time": "2026-11-04T12:14:38.087957-05:00",
     "qty": 1.3405,
     "entry_price": 14.92,
-    "current_price": 14.86,
+    "current_price": 14.94,
     "stop": 14.7,
     "initial_stop": 14.7,
-    "unrealized_pnl": -0.08,
-    "unrealized_r": -0.27,
+    "unrealized_pnl": 0.03,
+    "unrealized_r": 0.09,
     "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
-  },
-  {
-    "symbol": "SSO",
-    "direction": "long",
-    "entry_time": "2026-11-04T12:30:10.428984-05:00",
-    "qty": 3.5764,
-    "entry_price": 69.86,
-    "current_price": 69.8501,
-    "stop": 69.61,
-    "initial_stop": 69.61,
-    "unrealized_pnl": -0.04,
-    "unrealized_r": -0.04,
-    "entry_reason": "D1b long: Close=768.42, band=765.62, VWAP=766.44, tp0=776.87 · D31: SPY LONG -> BUY SSO (2x) · AI p=0.60 · mult_oră=1.00"
   }
 ]
