@@ -1,11 +1,5 @@
 {
   "processed_signals": [
-    "MOVER|ALIT|2026-11-04|long",
-    "MOVER|CRCT|2026-11-04|long",
-    "MOVER|DUOG|2026-11-04|long",
-    "MOVER|KD|2026-11-04|long",
-    "MOVER|NRIX|2026-11-04|long",
-    "MOVER|NRIX|2026-11-04|short",
     "SPY|2026-11-04T12:29:00-05:00|long"
   ],
   "open_trades": {
@@ -70,5 +64,5 @@
       "exit_reason_pending": "time"
     }
   },
-  "last_eod_date": null
+  "last_eod_date": "2026-11-04"
 }
