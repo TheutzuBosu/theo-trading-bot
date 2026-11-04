@@ -10,5 +10,72 @@
   "current_drawdown_pct": 0.0,
   "max_drawdown_pct": 0.0,
   "updated_at": "2026-11-04T02:48:35.319303-05:00",
-  "positions": []
+  "positions": [],
+  "premarket": {
+    "updated_at": "2026-11-04T12:46:21.706631+00:00",
+    "risk_regime": "NORMAL",
+    "quotes": {
+      "SPY": {
+        "price": 754.29,
+        "prev_close": 754.38,
+        "gap_pct": -0.01
+      },
+      "QQQ": {
+        "price": 688.14,
+        "prev_close": 685.32,
+        "gap_pct": 0.41
+      }
+    },
+    "explanation_ro": "În Pre-Market, piața SUA este în creștere ușoară: SPY la 754.29 $ (-0.01%) și QQQ la 688.14 $ (+0.41%). Raportări financiare urmărite azi: AATC (azi), AAUAF (azi), ABAT (azi), ABCP (azi), ABTC (după închidere). La 16:30 (09:30 ET) botul măsoară banda de zgomot și VWAP-ul, iar de la 17:12 (10:12 ET) execută automat pe direcția spargerii (Long sau Short cu levier 2x).",
+    "headlines": [
+      "Netanyahu rivals seize on Democrats' sweep of US Congress, seeking his ouster - Reuters",
+      "Iran's Khamenei says US hostility will persist regardless of party in power - Reuters",
+      "PODCAST: Pricing the Democratic sweep - Reuters",
+      "US stock futures rise as investors assess Democrats' midterm sweep - Reuters",
+      "Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters",
+      "Abdul El-Sayed becomes first Muslim elected to US Senate - Reuters"
+    ],
+    "earnings_today": [
+      {
+        "symbol": "AATC",
+        "hour": "",
+        "eps_estimate": null,
+        "eps_actual": null,
+        "revenue_estimate": null,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "AAUAF",
+        "hour": "",
+        "eps_estimate": null,
+        "eps_actual": null,
+        "revenue_estimate": null,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ABAT",
+        "hour": "",
+        "eps_estimate": -0.0663,
+        "eps_actual": null,
+        "revenue_estimate": 6913050,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ABCP",
+        "hour": "",
+        "eps_estimate": null,
+        "eps_actual": null,
+        "revenue_estimate": null,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ABTC",
+        "hour": "amc",
+        "eps_estimate": -0.0612,
+        "eps_actual": null,
+        "revenue_estimate": 75837000,
+        "revenue_actual": null
+      }
+    ]
+  }
 }
