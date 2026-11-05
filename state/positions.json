@@ -31,11 +31,11 @@
     "entry_time": "2026-11-04T12:14:38.087957-05:00",
     "qty": 1.3405,
     "entry_price": 14.92,
-    "current_price": 15.33,
+    "current_price": 15.34,
     "stop": 14.7,
     "initial_stop": 14.7,
-    "unrealized_pnl": 0.55,
-    "unrealized_r": 1.86,
+    "unrealized_pnl": 0.56,
+    "unrealized_r": 1.91,
     "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
   }
 ]
