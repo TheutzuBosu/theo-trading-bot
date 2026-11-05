@@ -1,41 +1,28 @@
 [
   {
-    "symbol": "LYEL",
-    "direction": "long",
-    "entry_time": "2026-11-04T09:35:10.917771-05:00",
-    "qty": 1.7934,
-    "entry_price": 14.53,
-    "current_price": 15.74,
-    "stop": 13.66,
-    "initial_stop": 13.66,
-    "unrealized_pnl": 2.17,
-    "unrealized_r": 4.34,
-    "entry_reason": "Lyell Immunopharma a anunțat o plasare privată de 80M$ și date clinice favorabile (91% rată răspuns). Intrare LONG cu miză 25$, Risc:Reward 1:4.5 (risc -0.50$ / țintă +2.25$). · D33 Scanner: LYEL LONG -> BUY LYEL"
-  },
-  {
-    "symbol": "NRIX",
-    "direction": "long",
-    "entry_time": "2026-11-04T12:30:10.428984-05:00",
-    "qty": 1.3063,
-    "entry_price": 15.33,
-    "current_price": 16.0,
-    "stop": 15.08,
-    "initial_stop": 15.08,
-    "unrealized_pnl": 0.88,
-    "unrealized_r": 2.68,
-    "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -40.67% în premarket pe fondul unor posibile rezultate financiare sau evoluții negative în sectorul de sănătate. O astfel de supracorecție extremă creează oportunitatea tehnică perfectă pentru un raliu de revenire a supravânzării (dead cat bounce / relief rally). Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX LONG -> BUY NRIX (miză ~20.00$, R:R 1:4.5)"
-  },
-  {
     "symbol": "QID",
     "direction": "long",
-    "entry_time": "2026-11-04T12:14:38.087957-05:00",
-    "qty": 1.3405,
-    "entry_price": 14.92,
-    "current_price": 15.34,
-    "stop": 14.7,
-    "initial_stop": 14.7,
-    "unrealized_pnl": 0.56,
-    "unrealized_r": 1.91,
-    "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
+    "entry_time": "2026-11-05T12:32:40.478240-05:00",
+    "qty": 14.0795,
+    "entry_price": 16.6629,
+    "current_price": 16.6601,
+    "stop": 16.58,
+    "initial_stop": 16.58,
+    "unrealized_pnl": -0.04,
+    "unrealized_r": -0.03,
+    "entry_reason": "D1b short: Close=654.78, band=677.29, VWAP=660.99, tp0=647.58 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
+  },
+  {
+    "symbol": "SDS",
+    "direction": "long",
+    "entry_time": "2026-11-05T12:32:40.478240-05:00",
+    "qty": 4.2883,
+    "entry_price": 58.29,
+    "current_price": 58.27,
+    "stop": 57.9,
+    "initial_stop": 57.9,
+    "unrealized_pnl": -0.09,
+    "unrealized_r": -0.05,
+    "entry_reason": "D1b short: Close=739.41, band=761.28, VWAP=747.27, tp0=731.28 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
   }
 ]
