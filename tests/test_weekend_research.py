@@ -1,14 +1,11 @@
 from __future__ import annotations
 
 from pathlib import Path
-from unittest.mock import MagicMock
 
 import pandas as pd
-import pytest
 
 from src.ai.weekend_research import (
     build_weekend_briefing,
-    fetch_upcoming_earnings,
     format_weekend_telegram_message,
     summarize_weekly_performance,
 )

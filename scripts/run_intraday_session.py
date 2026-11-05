@@ -298,7 +298,7 @@ def main() -> int:
     parser.add_argument(
         "--weekend",
         action="store_true",
-        help="Rulează cercetarea strategică de weekend (retrospectivă, macro, earnings & plan de acțiune cu Gemini)",
+        help="Cercetare strategică weekend (retrospectivă, macro, earnings & plan Gemini)",
     )
     parser.add_argument("--eod", action="store_true", help="Închidere + învățarea zilnică, acum")
     parser.add_argument("--kill", action="store_true", help="Activează KILL și închide tot")

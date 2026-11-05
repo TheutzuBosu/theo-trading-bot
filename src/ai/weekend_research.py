@@ -1,14 +1,14 @@
 """Weekend deep research & weekly strategic prep with Gemini AI (Faza B & Weekend Module).
 
 Runs every Sunday evening (e.g. 20:00 RO / 18:00 UTC / 13:00 ET):
-1. Analyzes the past week's trading performance & autopsy lessons from `state/trades.csv` and `autopsies.jsonl`.
-2. Scans weekend financial headlines and upcoming mega-cap earnings calendar for the coming week.
+1. Analyzes the past week's trading performance & autopsy lessons from state.
+2. Scans weekend financial headlines and upcoming mega-cap earnings calendar.
 3. Uses Gemini AI to synthesize:
    - Weekly trade retrospective & tactical lessons learned.
    - Macroeconomic outlook (FED, CPI/inflation, geopolitical, market regime).
    - Key high-impact events calendar for the upcoming week.
    - Strategic tactical game plan & watchlist for Monday market open.
-4. Updates `state/summary.json` (`weekend_briefing`) for the Vercel dashboard and sends a Telegram alert.
+4. Updates `state/summary.json` (`weekend_briefing`) for the Vercel dashboard and Telegram.
 """
 
 from __future__ import annotations
@@ -122,7 +122,6 @@ def summarize_weekly_performance(state_dir: Path) -> dict[str, Any]:
         else "N/A"
     )
 
-    # Collect lessons from trade entry/exit reasons and autopsies
     lessons: list[str] = []
     if "entry_reason" in trades_df.columns:
         for r in trades_df["entry_reason"].dropna().tolist():
@@ -170,15 +169,14 @@ def build_weekend_briefing(
     headlines = [str(n.get("headline", "")) for n in news if n.get("headline")][:8]
     earn_symbols = [f"{e['symbol']} ({e['date']})" for e in earnings]
 
-    # Default fallback briefing in Romanian
     period_str = f"{now.strftime('%d %b')} – {(now + timedelta(days=5)).strftime('%d %b %Y')}"
     fallback: dict[str, Any] = {
         "updated_at": now.isoformat(),
         "period": period_str,
         "executive_summary_ro": (
-            f"Analiză strategică de weekend pentru {period_str}. În ultima sesiune botul a înregistrat "
-            f"{perf['total_trades']} tranzacții închise cu un PnL de {perf['total_pnl']:+.2f} $. "
-            "Piața rămâne activă, iar atenția se concentrează pe raportările financiare majore ale săptămânii."
+            f"Analiză strategică de weekend pentru {period_str}. În ultima sesiune "
+            f"botul a înregistrat {perf['total_trades']} tranzacții cu un PnL de "
+            f"{perf['total_pnl']:+.2f} $. Piața rămâne activă pe raportări financiare."
         ),
         "weekly_performance": {
             "total_trades": perf["total_trades"],
@@ -187,13 +185,14 @@ def build_weekend_briefing(
             "best_trade": perf["best_trade"],
             "worst_trade": perf["worst_trade"],
         },
-        "lessons_learned": perf["lessons"] or [
-            "Stop-loss-urile automate au protejat capitalul de pierderi mari în fazele de zgomot intraday.",
+        "lessons_learned": perf["lessons"]
+        or [
+            "Stop-loss-urile automate au protejat capitalul de pierderi mari în fazele intraday.",
             "Evitarea cumpărărilor de impuls pe vârfuri fără volum susținut la deschidere.",
         ],
         "macro_outlook_ro": (
-            "Contextul macroeconomic reflectă stabilitate cu tendință de impuls pe indicii principali "
-            "(SPY / QQQ). Atenție la reacțiile de după raportările financiare din sectorul tech și sănătate."
+            "Contextul macroeconomic reflectă stabilitate cu tendință de impuls pe SPY și QQQ. "
+            "Atenție la reacțiile de după raportările financiare din sectorul tech și sănătate."
         ),
         "key_events": [
             {
@@ -213,25 +212,25 @@ def build_weekend_briefing(
             },
         ],
         "tactical_plan_ro": (
-            "Plan tactic: Menținerea mizelor moderate (20 $ - 35 $ per acțiune, risc 0.5% pe SPY/QQQ). "
-            "Prioritate acordată configurațiilor de rebound tehnic (oversold bounce) cu raport R:R minim 1:3. "
-            "Filtrare strictă a tranzacțiilor la deschiderea de luni pentru a evita capcanele de pre-market."
+            "Plan tactic: Menținerea mizelor moderate (20 $ - 35 $ per acțiune, risc 0.5%). "
+            "Prioritate acordată configurațiilor de rebound tehnic cu raport R:R minim 1:3. "
+            "Filtrare strictă la deschiderea de luni pentru a evita capcanele de pre-market."
         ),
         "watchlist": [
             {
                 "symbol": "SPY",
                 "direction": "long",
-                "thesis_ro": "Continuarea trendului ascendent pe fondul optimismului economic general.",
+                "thesis_ro": "Continuarea trendului ascendent pe fondul optimismului economic.",
             },
             {
                 "symbol": "QQQ",
                 "direction": "long",
-                "thesis_ro": "Sectorul tehnologic susține raliul, oportunități pe spargeri de nivel.",
+                "thesis_ro": "Sectorul tehnologic susține raliul, oportunități pe spargeri.",
             },
             {
                 "symbol": "LYEL",
                 "direction": "long",
-                "thesis_ro": "Impuls solid din date clinice și plasament privat, monitorizare trailing stop.",
+                "thesis_ro": "Impuls solid din date clinice și plasament privat.",
             },
         ],
     }
@@ -240,38 +239,30 @@ def build_weekend_briefing(
         return fallback
 
     prompt = (
-        "Ești Chief Quantitative Strategist și AI Trading Mentor pentru Theo Trading Bot (bot intraday pe acțiuni US și SPY/QQQ).\n"
-        "Este weekend și pregătim BRIEFING-UL STRATEGIC AL SĂPTĂMÂNII pentru săptămâna care urmează.\n\n"
-        f"PERFORMANȚA RECENTĂ A BOTULUI:\n"
-        f"- Tranzacții totale închise: {perf['total_trades']}\n"
-        f"- Rată de câștig (Win Rate): {perf['win_rate_pct']}%\n"
-        f"- PnL total realizat: {perf['total_pnl']:+.2f} $\n"
+        "Ești Chief Quantitative Strategist pentru Theo Trading Bot (acțiuni US și SPY/QQQ).\n"
+        "Pregătim BRIEFING-UL STRATEGIC AL SĂPTĂMÂNII pentru săptămâna care urmează.\n\n"
+        f"PERFORMANȚA RECENTĂ:\n"
+        f"- Tranzacții închise: {perf['total_trades']}\n"
+        f"- Win Rate: {perf['win_rate_pct']}%\n"
+        f"- PnL total: {perf['total_pnl']:+.2f} $\n"
         f"- Cel mai bun trade: {perf['best_trade']}\n"
         f"- Cel mai slab trade: {perf['worst_trade']}\n"
-        f"- Lecții extrase din autopsiile recente: {json.dumps(perf['lessons'], ensure_ascii=False)}\n\n"
-        f"ȘTIRI FINANCIARE RECENTE DIN WEEKEND:\n- "
-        + "\n- ".join(headlines)
-        + "\n\n"
-        f"RAPORTĂRI FINANCIARE (EARNINGS) URMĂTOAREA SĂPTĂMÂNĂ:\n"
-        f"- {', '.join(earn_symbols) if earn_symbols else 'Nicio companie mega-cap cu raportare critică'}\n\n"
-        "Generează un răspuns STRICT în JSON valid (fără markdown exterior) cu următoarea structură exactă:\n"
+        f"- Lecții autopsii: {json.dumps(perf['lessons'], ensure_ascii=False)}\n\n"
+        f"ȘTIRI FINANCIARE WEEKEND:\n- " + "\n- ".join(headlines) + "\n\n"
+        f"RAPORTĂRI FINANCIARE (EARNINGS):\n"
+        f"- {', '.join(earn_symbols) if earn_symbols else 'Fără raportări mega-cap critice'}\n\n"
+        "Generează un răspuns STRICT în JSON valid (fără markdown exterior) cu structura:\n"
         "{\n"
         '  "period": "ex: 4 - 8 Noiembrie 2026",\n'
-        '  "executive_summary_ro": "3 fraze în română clară și analitică: sinteza săptămânii trecute și viziunea pentru săptămâna viitoare",\n'
-        '  "lessons_learned": [\n'
-        '    "Lecția 1 concretă despre greșeli, stop-loss sau psihologia pieței",\n'
-        '    "Lecția 2...",\n'
-        '    "Lecția 3..."\n'
-        "  ],\n"
-        '  "macro_outlook_ro": "2-3 fraze despre contextul macro: inflație, FED, dobânzi, sentimentul general pe SPY și QQQ",\n'
+        '  "executive_summary_ro": "3 fraze în română: sinteza săptămânii și viziunea viitoare",\n'
+        '  "lessons_learned": ["Lecția 1 despre greșeli", "Lecția 2...", "Lecția 3..."],\n'
+        '  "macro_outlook_ro": "2-3 fraze despre contextul macro: inflație, FED, SPY și QQQ",\n'
         '  "key_events": [\n'
-        '    {"day": "Luni", "event": "Descriere eveniment / raportare cheie", "impact": "HIGH" sau "MEDIUM" sau "LOW"},\n'
-        '    {"day": "Miercuri", "event": "...", "impact": "HIGH"}\n'
+        '    {"day": "Luni", "event": "Descriere eveniment cheie", "impact": "HIGH"}\n'
         "  ],\n"
-        '  "tactical_plan_ro": "Planul de acțiune pentru bot: reguli de risc, ore recomandate, ce greșeli din săptămâna trecută NU mai repetăm",\n'
+        '  "tactical_plan_ro": "Planul de acțiune: reguli de risc, ore recomandate",\n'
         '  "watchlist": [\n'
-        '    {"symbol": "SPY", "direction": "long", "thesis_ro": "De ce urmărim această acțiune/ETF"},\n'
-        '    {"symbol": "...", "direction": "long sau short", "thesis_ro": "..."}\n'
+        '    {"symbol": "SPY", "direction": "long", "thesis_ro": "De ce urmărim simbolul"}\n'
         "  ]\n"
         "}"
     )
@@ -327,11 +318,11 @@ def format_weekend_telegram_message(briefing: dict[str, Any]) -> str:
     watchlist = briefing.get("watchlist", [])
 
     lines = [
-        f"🔬 *Theo Trading Bot — Raport Strategic de Weekend*",
+        "🔬 *Theo Trading Bot — Raport Strategic de Weekend*",
         f"📅 *Perioada:* {period}\n",
-        f"📋 *Sinteză Executivă:*",
+        "📋 *Sinteză Executivă:*",
         f"{exec_sum}\n",
-        f"📊 *Performanță Cumulată:*",
+        "📊 *Performanță Cumulată:*",
         f"• Tranzacții: {perf.get('total_trades', 0)} (Win Rate: {perf.get('win_rate_pct', 0)}%)",
         f"• PnL realizat: {perf.get('total_pnl', 0.0):+.2f} $",
         f"• Cel mai bun trade: {perf.get('best_trade', 'N/A')}",
@@ -345,7 +336,7 @@ def format_weekend_telegram_message(briefing: dict[str, Any]) -> str:
         lines.append("")
 
     if macro:
-        lines.append(f"🌍 *Perspectivă Macro & Sentiment:*")
+        lines.append("🌍 *Perspectivă Macro & Sentiment:*")
         lines.append(f"{macro}\n")
 
     if events:
@@ -355,15 +346,16 @@ def format_weekend_telegram_message(briefing: dict[str, Any]) -> str:
         lines.append("")
 
     if plan:
-        lines.append(f"🎯 *Plan Tactic pentru Luni:*")
+        lines.append("🎯 *Plan Tactic pentru Luni:*")
         lines.append(f"{plan}\n")
 
     if watchlist:
         lines.append("👀 *Watchlist Săptămâna Viitoare:*")
         for w in watchlist[:4]:
-            lines.append(
-                f"• *{w.get('symbol')}* ({str(w.get('direction', '')).upper()}): {w.get('thesis_ro')}"
-            )
+            sym = w.get("symbol", "")
+            d = str(w.get("direction", "")).upper()
+            th = w.get("thesis_ro", "")
+            lines.append(f"• *{sym}* ({d}): {th}")
 
     return "\n".join(lines)
 

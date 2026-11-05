@@ -157,11 +157,7 @@ def _resolve_token(token: str | None) -> str:
             return str(settings.GH_DISPATCH_TOKEN).strip()
     except Exception:  # noqa: BLE001
         pass
-    return (
-        os.environ.get("GH_DISPATCH_TOKEN")
-        or os.environ.get("GITHUB_TOKEN")
-        or ""
-    ).strip()
+    return (os.environ.get("GH_DISPATCH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "").strip()
 
 
 def fetch_github_state_file(
