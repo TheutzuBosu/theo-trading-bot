@@ -2,15 +2,15 @@
   {
     "symbol": "LYEL",
     "direction": "long",
-    "entry_time": "",
+    "entry_time": "2026-11-04T09:35:10.917771-05:00",
     "qty": 1.7934,
     "entry_price": 14.53,
     "current_price": 15.74,
-    "stop": 0.0,
-    "initial_stop": 0.0,
+    "stop": 13.66,
+    "initial_stop": 13.66,
     "unrealized_pnl": 2.17,
-    "unrealized_r": 0.0,
-    "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
+    "unrealized_r": 4.34,
+    "entry_reason": "Lyell Immunopharma a anunțat o plasare privată de 80M$ și date clinice favorabile (91% rată răspuns). Intrare LONG cu miză 25$, Risc:Reward 1:4.5 (risc -0.50$ / țintă +2.25$). · D33 Scanner: LYEL LONG -> BUY LYEL"
   },
   {
     "symbol": "NRIX",
