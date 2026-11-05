@@ -303,7 +303,69 @@ function readFixtureFile(filename: string): string | null {
   return null;
 }
 
+interface AlpacaAccountPayload {
+  equity: string;
+  last_equity: string;
+  cash: string;
+  buying_power: string;
+}
+
+interface AlpacaPositionPayload {
+  symbol: string;
+  qty: string;
+  side: string;
+  avg_entry_price: string;
+  current_price: string;
+  unrealized_pl: string;
+}
+
+async function fetchLiveAlpacaData(): Promise<{
+  account: AlpacaAccountPayload;
+  positions: AlpacaPositionPayload[];
+} | null> {
+  const apiKey = (process.env.ALPACA_API_KEY || "").trim();
+  const secretKey = (process.env.ALPACA_SECRET_KEY || "").trim();
+  const baseUrl = (process.env.ALPACA_BASE_URL || "https://paper-api.alpaca.markets").replace(
+    /\/$/,
+    ""
+  );
+
+  if (!apiKey || !secretKey) {
+    return null;
+  }
+
+  try {
+    const [accRes, posRes] = await Promise.all([
+      fetch(`${baseUrl}/v2/account`, {
+        headers: {
+          "APCA-API-KEY-ID": apiKey,
+          "APCA-API-SECRET-KEY": secretKey,
+        },
+        cache: "no-store",
+      }),
+      fetch(`${baseUrl}/v2/positions`, {
+        headers: {
+          "APCA-API-KEY-ID": apiKey,
+          "APCA-API-SECRET-KEY": secretKey,
+        },
+        cache: "no-store",
+      }),
+    ]);
+
+    if (!accRes.ok) return null;
+    const account: AlpacaAccountPayload = await accRes.json();
+    const positions: AlpacaPositionPayload[] = posRes.ok ? await posRes.json() : [];
+    return { account, positions };
+  } catch {
+    return null;
+  }
+}
+
 export async function loadDashboardData(): Promise<DashboardData> {
+  let summary: StateSummary = FALLBACK_SUMMARY;
+  let equity: EquityPoint[] = parseEquityCsv(FALLBACK_EQUITY_CSV);
+  let trades: TradeRecord[] = parseTradesCsv(FALLBACK_TRADES_CSV);
+
   const ghToken = process.env.GH_DISPATCH_TOKEN || "";
   if (ghToken) {
     const [summaryRaw, equityRaw, tradesRaw] = await Promise.all([
@@ -312,21 +374,84 @@ export async function loadDashboardData(): Promise<DashboardData> {
       fetchGithubFile("state/trades.csv", ghToken),
     ]);
     if (summaryRaw && equityRaw && tradesRaw) {
-      return {
-        summary: { ...JSON.parse(summaryRaw), is_sample: false },
-        equity: parseEquityCsv(equityRaw),
-        trades: parseTradesCsv(tradesRaw),
-      };
+      summary = { ...JSON.parse(summaryRaw), is_sample: false };
+      equity = parseEquityCsv(equityRaw);
+      trades = parseTradesCsv(tradesRaw);
+    }
+  } else {
+    const summaryRaw = readFixtureFile("summary.json");
+    const equityRaw = readFixtureFile("equity.csv");
+    const tradesRaw = readFixtureFile("trades.csv");
+    if (summaryRaw) summary = JSON.parse(summaryRaw);
+    if (equityRaw) equity = parseEquityCsv(equityRaw);
+    if (tradesRaw) trades = parseTradesCsv(tradesRaw);
+  }
+
+  // Live direct Alpaca overlay: if Alpaca API credentials are configured on Vercel,
+  // fetch live account balance and positions in real-time on every page refresh!
+  const liveAlpaca = await fetchLiveAlpacaData();
+  if (liveAlpaca && liveAlpaca.account) {
+    const liveEq = parseFloat(liveAlpaca.account.equity);
+    const lastEq = parseFloat(liveAlpaca.account.last_equity) || summary.initial_capital;
+    if (!isNaN(liveEq) && liveEq > 0) {
+      const initCap = summary.initial_capital || 500.0;
+      const totalPnl = Math.round((liveEq - initCap) * 100) / 100;
+      const totalPnlPct = Math.round((totalPnl / initCap) * 10000) / 100;
+      const todayPnl = Math.round((liveEq - lastEq) * 100) / 100;
+      const todayPnlPct = lastEq > 0 ? Math.round((todayPnl / lastEq) * 10000) / 100 : 0;
+
+      summary.equity = Math.round(liveEq * 100) / 100;
+      summary.total_pnl = totalPnl;
+      summary.total_pnl_pct = totalPnlPct;
+      summary.today_pnl = todayPnl;
+      summary.today_pnl_pct = todayPnlPct;
+      summary.updated_at = new Date().toISOString();
+
+      // Synchronize positions live prices & unrealized PnL from Alpaca
+      if (Array.isArray(liveAlpaca.positions)) {
+        const livePosMap = new Map(liveAlpaca.positions.map((p) => [p.symbol.toUpperCase(), p]));
+        const updatedPositions: OpenPosition[] = [];
+
+        // 1. Update existing known positions (preserve entry_reason and stop-loss)
+        for (const pos of summary.positions || []) {
+          const liveP = livePosMap.get(pos.symbol.toUpperCase());
+          if (liveP) {
+            pos.current_price = Math.round(parseFloat(liveP.current_price) * 10000) / 10000;
+            pos.unrealized_pnl = Math.round(parseFloat(liveP.unrealized_pl) * 100) / 100;
+            pos.qty = Math.round(parseFloat(liveP.qty) * 10000) / 10000;
+            updatedPositions.push(pos);
+            livePosMap.delete(pos.symbol.toUpperCase());
+          }
+        }
+
+        // 2. Add any live open positions from broker not yet in summary
+        for (const [sym, lp] of livePosMap.entries()) {
+          const entryPrice = parseFloat(lp.avg_entry_price) || 0;
+          const currPrice = parseFloat(lp.current_price) || entryPrice;
+          const unrPnl = parseFloat(lp.unrealized_pl) || 0;
+          updatedPositions.push({
+            symbol: sym,
+            direction: lp.side === "short" ? "short" : "long",
+            entry_time: new Date().toISOString(),
+            qty: Math.round(parseFloat(lp.qty) * 10000) / 10000,
+            entry_price: Math.round(entryPrice * 10000) / 10000,
+            current_price: Math.round(currPrice * 10000) / 10000,
+            stop: 0,
+            initial_stop: 0,
+            unrealized_pnl: Math.round(unrPnl * 100) / 100,
+            unrealized_r: 0,
+            entry_reason: "Poziție live preluată direct din contul Alpaca Paper.",
+          });
+        }
+
+        summary.positions = updatedPositions;
+      }
     }
   }
 
-  const summaryRaw = readFixtureFile("summary.json");
-  const equityRaw = readFixtureFile("equity.csv");
-  const tradesRaw = readFixtureFile("trades.csv");
-
   return {
-    summary: summaryRaw ? JSON.parse(summaryRaw) : FALLBACK_SUMMARY,
-    equity: parseEquityCsv(equityRaw || FALLBACK_EQUITY_CSV),
-    trades: parseTradesCsv(tradesRaw || FALLBACK_TRADES_CSV),
+    summary,
+    equity,
+    trades,
   };
 }
