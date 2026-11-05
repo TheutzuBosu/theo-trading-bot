@@ -5,10 +5,10 @@
     "entry_time": "",
     "qty": 1.7934,
     "entry_price": 14.53,
-    "current_price": 15.25,
+    "current_price": 15.74,
     "stop": 0.0,
     "initial_stop": 0.0,
-    "unrealized_pnl": 1.29,
+    "unrealized_pnl": 2.17,
     "unrealized_r": 0.0,
     "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
   },
@@ -18,11 +18,11 @@
     "entry_time": "2026-11-04T12:30:10.428984-05:00",
     "qty": 1.3063,
     "entry_price": 15.33,
-    "current_price": 15.88,
+    "current_price": 16.0,
     "stop": 15.08,
     "initial_stop": 15.08,
-    "unrealized_pnl": 0.72,
-    "unrealized_r": 2.2,
+    "unrealized_pnl": 0.88,
+    "unrealized_r": 2.68,
     "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -40.67% în premarket pe fondul unor posibile rezultate financiare sau evoluții negative în sectorul de sănătate. O astfel de supracorecție extremă creează oportunitatea tehnică perfectă pentru un raliu de revenire a supravânzării (dead cat bounce / relief rally). Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX LONG -> BUY NRIX (miză ~20.00$, R:R 1:4.5)"
   },
   {
@@ -31,11 +31,11 @@
     "entry_time": "2026-11-04T12:14:38.087957-05:00",
     "qty": 1.3405,
     "entry_price": 14.92,
-    "current_price": 14.94,
+    "current_price": 15.33,
     "stop": 14.7,
     "initial_stop": 14.7,
-    "unrealized_pnl": 0.03,
-    "unrealized_r": 0.09,
+    "unrealized_pnl": 0.55,
+    "unrealized_r": 1.86,
     "entry_reason": "Acțiunea NRIX înregistrează o prăbușire masivă de -41.36% în premarket pe fondul unor știri negative din sectorul de sănătate, prezentând un impuls tehnic puternic de continuare a tendinței descendentă. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: NRIX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
   }
 ]
