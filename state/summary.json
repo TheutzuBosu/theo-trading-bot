@@ -309,5 +309,60 @@
       }
     ]
   },
-  "spy_start_price": 767.64
+  "spy_start_price": 767.64,
+  "weekend_briefing": {
+    "updated_at": "2026-11-05T07:57:26.424654+00:00",
+    "period": "05 Nov – 10 Nov 2026",
+    "executive_summary_ro": "Analiză strategică de weekend pentru 05 Nov – 10 Nov 2026. În ultima sesiune botul a înregistrat 4 tranzacții închise cu un PnL de -1.77 $. Piața rămâne activă, iar atenția se concentrează pe raportările financiare majore ale săptămânii.",
+    "weekly_performance": {
+      "total_trades": 4,
+      "win_rate_pct": 0.0,
+      "total_pnl": -1.77,
+      "best_trade": "DUOG (LONG) -0.05 $",
+      "worst_trade": "SSO (LONG) -0.93 $"
+    },
+    "lessons_learned": [
+      "Botul a cumpărat pe creștearea uriașă generată de știri bune, dar prețul a scăzut direct în stop-loss, pierzând 0,42 $; reținem că entuziasmul pe știri poate atrage capcane de preț",
+      "Am pierdut 0,05 $ pentru că acțiunea a lovit stop-loss-ul imediat după intrare, așa că reținem să fim mai atenți la falsul impuls din pre-market",
+      "Botul a cumpărat acțiuni pe valul de entuziasm post-câștiguri, dar prețul a scăzut direct în stop-loss fără nicio mișcare favorabilă, așa că reținem să fim mai precauți la intrările bazate doar pe optimismul din pre-market",
+      "Poziția long pe SSO a mers inițial în direcția bună (+0.75R), dar s-a întors sub stop (-0.93 $, -1.04R); pierderea a rămas sub control",
+      "Botul a cumpărat pe creștearea uriașă generată de știri bune, dar prețul a scăzut direct în stop-loss, pierzând 0,42 $; reținem că entuziasmul pe știri poate atrage capcane de preț."
+    ],
+    "macro_outlook_ro": "Contextul macroeconomic reflectă stabilitate cu tendință de impuls pe indicii principali (SPY / QQQ). Atenție la reacțiile de după raportările financiare din sectorul tech și sănătate.",
+    "key_events": [
+      {
+        "day": "Luni",
+        "event": "Deschiderea săptămânii & scanarea gap-urilor de weekend",
+        "impact": "MEDIUM"
+      },
+      {
+        "day": "Miercuri",
+        "event": "Date macroeconomice & raportări majore în desfășurare",
+        "impact": "HIGH"
+      },
+      {
+        "day": "Vineri",
+        "event": "Închiderea pozițiilor săptămânale & reechilibrare",
+        "impact": "MEDIUM"
+      }
+    ],
+    "tactical_plan_ro": "Plan tactic: Menținerea mizelor moderate (20 $ - 35 $ per acțiune, risc 0.5% pe SPY/QQQ). Prioritate acordată configurațiilor de rebound tehnic (oversold bounce) cu raport R:R minim 1:3. Filtrare strictă a tranzacțiilor la deschiderea de luni pentru a evita capcanele de pre-market.",
+    "watchlist": [
+      {
+        "symbol": "SPY",
+        "direction": "long",
+        "thesis_ro": "Continuarea trendului ascendent pe fondul optimismului economic general."
+      },
+      {
+        "symbol": "QQQ",
+        "direction": "long",
+        "thesis_ro": "Sectorul tehnologic susține raliul, oportunități pe spargeri de nivel."
+      },
+      {
+        "symbol": "LYEL",
+        "direction": "long",
+        "thesis_ro": "Impuls solid din date clinice și plasament privat, monitorizare trailing stop."
+      }
+    ]
+  }
 }
