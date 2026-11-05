@@ -1,9 +1,8 @@
 {
   "processed_signals": [
     "QQQ|2026-11-05T12:29:00-05:00|short",
-    "SPY|2026-11-04T12:29:00-05:00|long",
     "SPY|2026-11-05T12:29:00-05:00|short"
   ],
   "open_trades": {},
-  "last_eod_date": "2026-11-04"
+  "last_eod_date": "2026-11-05"
 }
