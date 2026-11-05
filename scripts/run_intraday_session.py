@@ -42,6 +42,7 @@ from src.ai.premarket import (  # noqa: E402
     build_premarket_briefing,
     format_premarket_telegram_message,
 )
+from src.ai.weekend_research import run_weekend_session  # noqa: E402
 from src.alerts.telegram import send_telegram_message  # noqa: E402
 from src.broker.alpaca_paper import AlpacaPaperAdapter  # noqa: E402
 from src.config import settings  # noqa: E402
@@ -294,6 +295,11 @@ def main() -> int:
         action="store_true",
         help="Scanează acum pre-market-ul, știrile și raportările financiare (Finnhub + Gemini)",
     )
+    parser.add_argument(
+        "--weekend",
+        action="store_true",
+        help="Rulează cercetarea strategică de weekend (retrospectivă, macro, earnings & plan de acțiune cu Gemini)",
+    )
     parser.add_argument("--eod", action="store_true", help="Închidere + învățarea zilnică, acum")
     parser.add_argument("--kill", action="store_true", help="Activează KILL și închide tot")
     parser.add_argument("--reset-kill", action="store_true", help="Dezactivează butonul KILL")
@@ -354,6 +360,18 @@ def main() -> int:
         brief = _run_premarket_intelligence(
             state_dir=state_dir,
             data_client=data_client,
+            gemini_client=gemini,
+            sync_github=sync_gh,
+            notify_telegram=True,
+        )
+        print(json.dumps(brief, indent=2, ensure_ascii=False))
+        return 0
+
+    if args.weekend:
+        pull_state()
+        brief = run_weekend_session(
+            state_dir=state_dir,
+            finnhub_key=settings.FINNHUB_API_KEY,
             gemini_client=gemini,
             sync_github=sync_gh,
             notify_telegram=True,

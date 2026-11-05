@@ -367,6 +367,191 @@ export default function DashboardClient({ data }: { data: DashboardData }) {
           </section>
         )}
 
+        {/* 1c. Plan Strategic de Weekend & Deep Research (Gemini AI) */}
+        {summary.weekend_briefing && (
+          <section className="bg-slate-900 border border-indigo-900/60 rounded-2xl p-4 sm:p-5 shadow-lg space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-indigo-400 animate-pulse" />
+                <h2 className="text-base font-bold text-white flex items-center gap-1.5">
+                  <span>🔬</span> Planul Strategic al Săptămânii (Weekend Deep Research &amp; Gemini AI)
+                </h2>
+              </div>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                {summary.weekend_briefing.period}
+              </span>
+            </div>
+
+            {/* Sinteza Executivă */}
+            <div className="bg-indigo-950/40 border border-indigo-900/50 rounded-xl p-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+              <p>
+                <strong className="text-indigo-300">Sinteză Executivă:</strong>{" "}
+                {summary.weekend_briefing.executive_summary_ro}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              {/* Performanță & Lecții Învățate */}
+              <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-3.5 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wide flex items-center gap-1.5">
+                    <span>📊</span> Bilanț &amp; Lecții din Autopsii
+                  </h3>
+                  {summary.weekend_briefing.weekly_performance && (
+                    <span className="text-xs font-medium text-slate-400">
+                      Win Rate:{" "}
+                      <strong className="text-emerald-400">
+                        {summary.weekend_briefing.weekly_performance.win_rate_pct}%
+                      </strong>{" "}
+                      ({summary.weekend_briefing.weekly_performance.total_trades} trade-uri)
+                    </span>
+                  )}
+                </div>
+
+                {summary.weekend_briefing.weekly_performance && (
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+                      <span className="text-slate-400 block text-[11px]">Cel mai bun trade</span>
+                      <span className="text-emerald-400 font-semibold truncate block">
+                        {summary.weekend_briefing.weekly_performance.best_trade}
+                      </span>
+                    </div>
+                    <div className="bg-slate-900/90 rounded-lg p-2 border border-slate-800">
+                      <span className="text-slate-400 block text-[11px]">Cel mai slab trade</span>
+                      <span className="text-rose-400 font-semibold truncate block">
+                        {summary.weekend_briefing.weekly_performance.worst_trade}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {summary.weekend_briefing.lessons_learned &&
+                  summary.weekend_briefing.lessons_learned.length > 0 && (
+                    <div className="space-y-1.5 pt-1">
+                      <span className="text-[11px] font-semibold text-indigo-300 uppercase tracking-wider block">
+                        Lecții cheie reținute de AI:
+                      </span>
+                      <ul className="space-y-1.5 text-xs text-slate-300">
+                        {summary.weekend_briefing.lessons_learned.map((les, i) => (
+                          <li
+                            key={i}
+                            className="bg-slate-900/70 border border-slate-800/80 rounded-lg p-2 flex items-start gap-2"
+                          >
+                            <span className="text-indigo-400 font-bold">•</span>
+                            <span className="leading-snug">{les}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+              </div>
+
+              {/* Macro & Evenimente Cheie ale Săptămânii */}
+              <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-3.5 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wide flex items-center gap-1.5">
+                    <span>🌍</span> Context Macro &amp; Evenimente
+                  </h3>
+                </div>
+
+                {summary.weekend_briefing.macro_outlook_ro && (
+                  <p className="text-xs text-slate-300 leading-relaxed bg-slate-900/70 p-2.5 rounded-lg border border-slate-800/80">
+                    {summary.weekend_briefing.macro_outlook_ro}
+                  </p>
+                )}
+
+                {summary.weekend_briefing.key_events &&
+                  summary.weekend_briefing.key_events.length > 0 && (
+                    <div className="space-y-1.5 pt-1">
+                      <span className="text-[11px] font-semibold text-sky-300 uppercase tracking-wider block">
+                        Calendarul săptămânii (Earnings &amp; Macro):
+                      </span>
+                      <div className="space-y-1.5">
+                        {summary.weekend_briefing.key_events.map((ev, i) => {
+                          const isHigh = ev.impact?.toUpperCase() === "HIGH";
+                          return (
+                            <div
+                              key={i}
+                              className="bg-slate-900/70 border border-slate-800/80 rounded-lg p-2 flex items-center justify-between gap-2 text-xs"
+                            >
+                              <div className="flex items-center gap-2 truncate">
+                                <span className="font-semibold text-slate-200 min-w-[50px]">
+                                  {ev.day}
+                                </span>
+                                <span className="text-slate-300 truncate">{ev.event}</span>
+                              </div>
+                              <span
+                                className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider shrink-0 ${
+                                  isHigh
+                                    ? "bg-rose-500/20 text-rose-300 border border-rose-500/30"
+                                    : "bg-slate-800 text-slate-400"
+                                }`}
+                              >
+                                {ev.impact}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+              </div>
+            </div>
+
+            {/* Tactică Luni & Watchlist */}
+            <div className="bg-slate-950/90 border border-slate-800 rounded-xl p-3.5 space-y-3">
+              {summary.weekend_briefing.tactical_plan_ro && (
+                <div>
+                  <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wide mb-1 flex items-center gap-1.5">
+                    <span>🎯</span> Directivă Tactică pentru Sesiunea de Luni:
+                  </h4>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {summary.weekend_briefing.tactical_plan_ro}
+                  </p>
+                </div>
+              )}
+
+              {summary.weekend_briefing.watchlist &&
+                summary.weekend_briefing.watchlist.length > 0 && (
+                  <div className="pt-2 border-t border-slate-800/80">
+                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2">
+                      👀 Watchlist &amp; Idei Tematice:
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      {summary.weekend_briefing.watchlist.map((w, idx) => {
+                        const isLong = w.direction?.toLowerCase() === "long";
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-900/80 border border-slate-800 rounded-lg p-2.5 text-xs space-y-1"
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="font-bold text-white tracking-wide">
+                                {w.symbol}
+                              </span>
+                              <span
+                                className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+                                  isLong
+                                    ? "bg-emerald-500/20 text-emerald-300"
+                                    : "bg-rose-500/20 text-rose-300"
+                                }`}
+                              >
+                                {w.direction?.toUpperCase()}
+                              </span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 leading-tight">
+                              {w.thesis_ro}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+            </div>
+          </section>
+        )}
+
         {/* 2. Graficul capitalului vs SPY cumpărat și ținut */}
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg">
           <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">

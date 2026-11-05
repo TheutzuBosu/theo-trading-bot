@@ -48,6 +48,36 @@ export interface PremarketBriefing {
   top_movers?: Array<{ symbol: string; price: number; change_pct: number }>;
 }
 
+export interface WeekendKeyEvent {
+  day: string;
+  event: string;
+  impact: "HIGH" | "MEDIUM" | "LOW" | string;
+}
+
+export interface WeekendWatchlistItem {
+  symbol: string;
+  direction: string;
+  thesis_ro: string;
+}
+
+export interface WeekendBriefing {
+  updated_at: string;
+  period: string;
+  executive_summary_ro: string;
+  weekly_performance?: {
+    total_trades: number;
+    win_rate_pct: number;
+    total_pnl: number;
+    best_trade: string;
+    worst_trade: string;
+  };
+  lessons_learned?: string[];
+  macro_outlook_ro?: string;
+  key_events?: WeekendKeyEvent[];
+  tactical_plan_ro?: string;
+  watchlist?: WeekendWatchlistItem[];
+}
+
 export interface StateSummary {
   mode: "PAPER" | "LIVE";
   is_sample: boolean;
@@ -62,6 +92,7 @@ export interface StateSummary {
   updated_at: string;
   positions: OpenPosition[];
   premarket?: PremarketBriefing;
+  weekend_briefing?: WeekendBriefing;
 }
 
 export interface EquityPoint {

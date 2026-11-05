@@ -13,13 +13,14 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Mod de execuție (auto / premarket / once / eod / init-state / reset-kill)"
+        description: "Mod de execuție (auto / premarket / weekend / once / eod / init-state / reset-kill)"
         required: false
         default: "auto"
         type: choice
         options:
           - auto
           - premarket
+          - weekend
           - once
           - eod
           - init-state
@@ -72,6 +73,7 @@ jobs:
           MIN_ET=$(TZ="America/New_York" date +%M)
           case "$MODE" in
             premarket)  uv run python scripts/run_intraday_session.py --premarket ;;
+            weekend)    uv run python scripts/run_intraday_session.py --weekend ;;
             init-state) uv run python scripts/run_intraday_session.py --init-state ;;
             once)       uv run python scripts/run_intraday_session.py --once ;;
             eod)        uv run python scripts/run_intraday_session.py --eod ;;
