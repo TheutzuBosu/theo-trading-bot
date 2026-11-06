@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 499.57,
-  "total_pnl": -0.43,
-  "total_pnl_pct": -0.09,
-  "today_pnl": -0.15,
-  "today_pnl_pct": -0.03,
-  "current_drawdown_pct": -0.09,
+  "equity": 499.71,
+  "total_pnl": -0.29,
+  "total_pnl_pct": -0.06,
+  "today_pnl": -0.01,
+  "today_pnl_pct": -0.0,
+  "current_drawdown_pct": -0.06,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-06T11:20:04.917381-05:00",
+  "updated_at": "2026-11-06T11:21:39.556313-05:00",
   "positions": [
     {
       "symbol": "ABNB",
@@ -17,10 +17,10 @@
       "entry_time": "",
       "qty": 0.1335,
       "entry_price": 187.198,
-      "current_price": 187.62,
+      "current_price": 187.58,
       "stop": 0.0,
       "initial_stop": 0.0,
-      "unrealized_pnl": 0.06,
+      "unrealized_pnl": 0.05,
       "unrealized_r": 0.0,
       "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
     },
@@ -30,10 +30,10 @@
       "entry_time": "",
       "qty": 0.0563,
       "entry_price": 444.222,
-      "current_price": 439.36,
+      "current_price": 441.8923,
       "stop": 0.0,
       "initial_stop": 0.0,
-      "unrealized_pnl": -0.27,
+      "unrealized_pnl": -0.13,
       "unrealized_r": 0.0,
       "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
     },
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 0.6832,
       "entry_price": 29.246,
-      "current_price": 29.34,
+      "current_price": 29.48,
       "stop": 28.84,
       "initial_stop": 28.84,
-      "unrealized_pnl": 0.06,
-      "unrealized_r": 0.23,
+      "unrealized_pnl": 0.16,
+      "unrealized_r": 0.58,
       "entry_reason": "Acțiunea înregistrează o creștere puternică de peste 10% susținută de rezultatele financiare record din Q3 2026 și atingerea unor etape importante DARPA, în ciuda ajustărilor prudente ale prețului țintă din partea analiștilor. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 0.2285,
       "entry_price": 87.756,
-      "current_price": 87.285,
+      "current_price": 87.63,
       "stop": 86.22,
       "initial_stop": 86.22,
-      "unrealized_pnl": -0.11,
-      "unrealized_r": -0.31,
+      "unrealized_pnl": -0.03,
+      "unrealized_r": -0.08,
       "entry_reason": "Acțiunea IRTC a înregistrat o prăbușire masivă de -32.54% pe fondul unor reduceri ale prețului țintă de către analiști, creând o oportunitate clasică de tip 'oversold bounce' intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: IRTC LONG -> BUY IRTC (miză ~20.00$, R:R 1:4.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 1.5958,
       "entry_price": 5.08,
-      "current_price": 5.035,
+      "current_price": 5.04,
       "stop": 4.75,
       "initial_stop": 4.61,
-      "unrealized_pnl": -0.07,
-      "unrealized_r": -0.05,
+      "unrealized_pnl": -0.06,
+      "unrealized_r": -0.04,
       "entry_reason": "Acțiunea MNTN înregistrează o prăbușire masivă de -54.68% în premarket pe fondul rezultatelor financiare Q3 2026, creând o oportunitate clasică de tip 'oversold bounce' pentru un impuls intraday. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: MNTN LONG -> BUY MNTN (miză ~15.00$, R:R 1:4.5)"
     },
     {
@@ -82,11 +82,11 @@
       "entry_time": "2026-11-06T11:10:16.694522-05:00",
       "qty": 1.4276,
       "entry_price": 14.02,
-      "current_price": 13.94,
+      "current_price": 13.74,
       "stop": 13.73,
       "initial_stop": 13.73,
-      "unrealized_pnl": -0.11,
-      "unrealized_r": -0.28,
+      "unrealized_pnl": -0.4,
+      "unrealized_r": -0.97,
       "entry_reason": "Acțiunea PRAA înregistrează un declin masiv de peste 31%, provocat de rezultatele financiare Q3 sub așteptări și o scădere anterioară în after-hours. Nivelul actual creează o oportunitate atractivă de tip 'oversold bounce' pentru un impuls intraday de revenire. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $). · D33 Scanner: PRAA LONG -> BUY PRAA (miză ~20.00$, R:R 1:4.5)"
     },
     {
@@ -95,12 +95,25 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 1.2232,
       "entry_price": 16.35,
-      "current_price": 16.455,
+      "current_price": 16.4,
       "stop": 16.03,
       "initial_stop": 16.03,
-      "unrealized_pnl": 0.13,
-      "unrealized_r": 0.33,
+      "unrealized_pnl": 0.06,
+      "unrealized_r": 0.16,
       "entry_reason": "Biodesix (BDSX) a suferit o prăbușire masivă de peste 46% în urma unui raport financiar Q3 slab și a revizuirii în scădere a perspectivei pentru 2026. Acest impuls negativ puternic oferă o oportunitate excelentă de intrare peort pe continuarea trendului descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $). · D33 Scanner: BDSX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
+    },
+    {
+      "symbol": "SKIN",
+      "direction": "long",
+      "entry_time": "2026-11-06T11:21:39.556313-05:00",
+      "qty": 1.4959,
+      "entry_price": 14.68,
+      "current_price": 14.75,
+      "stop": 13.17,
+      "initial_stop": 13.17,
+      "unrealized_pnl": 0.1,
+      "unrealized_r": 0.05,
+      "entry_reason": "Acțiunea SKIN înregistrează o creștere intraday puternică de peste 41%, susținută de rezultatele financiare pentru Q3 care au depășit estimările privind veniturile. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: SKIN LONG -> BUY SKIN (miză ~20.00$, R:R 1:4.5)"
     },
     {
       "symbol": "STLN",
@@ -108,11 +121,11 @@
       "entry_time": "2026-11-06T11:18:32.373089-05:00",
       "qty": 4.4843,
       "entry_price": 4.48,
-      "current_price": 4.525,
+      "current_price": 4.54,
       "stop": 4.37,
       "initial_stop": 4.37,
-      "unrealized_pnl": 0.2,
-      "unrealized_r": 0.41,
+      "unrealized_pnl": 0.27,
+      "unrealized_r": 0.55,
       "entry_reason": "Menținerea ratingului de cumpărare și creșterea prețului țintă la 10$ de către BTIG oferă o oportunitate atractivă de tip oversold după scăderea masivă din pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $). · D33 Scanner: STLN LONG -> BUY STLN (miză ~20.00$, R:R 1:4.5)"
     }
   ],
@@ -185,42 +198,18 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "BDSX",
-        "direction": "short",
-        "price": 10.62,
-        "prev_close": 19.84,
-        "gap_pct": -46.47,
-        "change_pct": -46.47,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.09,
-        "stop_price": 10.83,
-        "target_price": 9.66,
-        "expected_profit_dollars": 1.8,
-        "max_loss_dollars": 0.4,
-        "headlines": [
-          "DraftKings Posts Downbeat Q3 Results, Joins Atlassian, Natera And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
-          "12 Health Care Stocks Moving In Friday's Pre-Market Session",
-          "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
-        ],
-        "reason_ro": "Biodesix (BDSX) a suferit o prăbușire majoră de peste 46% în urma unor rezultate financiare Q3 slabe și a revizuirii în scădere a perspectivei pentru 2026. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $).",
-        "evaluated_at": "2026-11-06T16:20:07.369321+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "CIIT",
         "direction": "long",
-        "price": 2.21,
+        "price": 2.28,
         "prev_close": 1.55,
-        "gap_pct": 42.26,
-        "change_pct": 42.26,
+        "gap_pct": 46.99,
+        "change_pct": 46.99,
         "stake_dollars": 20.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.02,
         "target_pct": 0.09,
-        "stop_price": 2.17,
-        "target_price": 2.41,
+        "stop_price": 2.23,
+        "target_price": 2.49,
         "expected_profit_dollars": 1.8,
         "max_loss_dollars": 0.4,
         "headlines": [
@@ -228,87 +217,118 @@
           "12 Industrials Stocks Moving In Friday's Pre-Market Session",
           "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
         ],
-        "reason_ro": "Acțiunea CIIT înregistrează o creștere spectaculoasă de peste 42% în pre-market, susținută de un impuls puternic și volume ridicate în urma unei raliuri de peste 59% after-hours. Minutul intraday prezintă oportunități bune de continuare pe partea de cumpărare. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $).",
-        "evaluated_at": "2026-11-06T16:20:13.130054+00:00"
+        "reason_ro": "Acțiunea CIIT înregistrează o creștere spectaculoasă de peste 46% în pre-market, susținută de un impuls puternic de volum și menționarea în rapoartele de top movers. Există premise pentru continuarea trendului ascendent în prima parte a sesiunii de tranzacționare. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $).",
+        "evaluated_at": "2026-11-06T16:21:41.168585+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "BDSX",
+        "direction": "short",
+        "price": 10.52,
+        "prev_close": 19.84,
+        "gap_pct": -46.98,
+        "change_pct": -46.98,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.09,
+        "stop_price": 10.73,
+        "target_price": 9.57,
+        "expected_profit_dollars": 1.8,
+        "max_loss_dollars": 0.4,
+        "headlines": [
+          "DraftKings Posts Downbeat Q3 Results, Joins Atlassian, Natera And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
+          "12 Health Care Stocks Moving In Friday's Pre-Market Session",
+          "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
+        ],
+        "reason_ro": "Biodesix (BDSX) s-a prăbușit cu peste 46% în urma unor rezultate financiare Q3 slabe și a revizuirii în scădere a perspectivei pentru 2026, creând un impuls puternic de continuare a vânzărilor pe parcursul sesiunii intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $).",
+        "evaluated_at": "2026-11-06T16:21:42.196406+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "SKIN",
+        "direction": "long",
+        "price": 14.69,
+        "prev_close": 10.35,
+        "gap_pct": 41.93,
+        "change_pct": 41.93,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 14.47,
+        "target_price": 15.68,
+        "expected_profit_dollars": 1.35,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "SkinHealth Systems Inc. (SKIN) Reports Q3 Loss, Tops Revenue Estimates",
+          "SkinHealth Systems Inc. (SKIN) Q3 Earnings: Taking a Look at Key Metrics Versus Estimates"
+        ],
+        "reason_ro": "Acțiunea SKIN înregistrează o creștere intraday puternică de peste 41%, susținută de rezultatele financiare pentru Q3 care au depășit estimările privind veniturile. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "evaluated_at": "2026-11-06T16:21:45.716556+00:00"
       },
       {
         "action": "enter",
         "symbol": "IRTC",
         "direction": "long",
-        "price": 87.28,
-        "prev_close": 130.18,
-        "gap_pct": -32.96,
-        "change_pct": -32.96,
+        "price": 87.25,
+        "prev_close": 130.19,
+        "gap_pct": -32.98,
+        "change_pct": -32.98,
         "stake_dollars": 25.0,
         "rr_ratio": 4.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.09,
-        "stop_price": 85.53,
-        "target_price": 95.14,
-        "expected_profit_dollars": 2.25,
-        "max_loss_dollars": 0.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 85.94,
+        "target_price": 93.14,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
         "headlines": [
           "Wells Fargo Maintains Overweight on iRhythm Holdings, Lowers Price Target to $135",
           "Evercore ISI Group Maintains Outperform on iRhythm Holdings, Lowers Price Target to $140",
           "Piper Sandler Maintains Overweight on iRhythm Holdings, Lowers Price Target to $150"
         ],
-        "reason_ro": "Acțiunea IRTC înregistrează o prăbușire masivă de -32.96% în intraday, deși mai multe bănci majore (Wells Fargo, Evercore, Piper Sandler, Needham, BTIG) mențin recomandările de cumpărare/supraponderare, oferind oportunitatea unui rebound tehnic puternic. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.50 $ / țintă profit +2.25 $).",
-        "evaluated_at": "2026-11-06T16:20:15.145697+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "STLN",
-        "direction": "long",
-        "price": 4.51,
-        "prev_close": 6.7,
-        "gap_pct": -32.69,
-        "change_pct": -32.69,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.09,
-        "stop_price": 4.42,
-        "target_price": 4.92,
-        "expected_profit_dollars": 1.8,
-        "max_loss_dollars": 0.4,
-        "headlines": [
-          "12 Health Care Stocks Moving In Friday's Pre-Market Session",
-          "BTIG Maintains Buy on Starling Oncology, Raises Price Target to $10"
-        ],
-        "reason_ro": "Menținerea ratingului de Cumpărare și creșterea prețului țintă la 10$ de către BTIG, în ciuda scăderii pre-market, oferă o oportunitate excelentă de revenire (oversold bounce) pentru un trade intraday pe Starling Oncology. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $).",
-        "evaluated_at": "2026-11-06T16:20:16.299103+00:00"
+        "reason_ro": "Acțiunea IRTC a suferit o prăbușire masivă de -32.98%, în timp ce marile bănci de investiții (Wells Fargo, Evercore ISI, Piper Sandler, Needham, BTIG) mențin recomandările de cumpărare/suprapondere, deși au redus țintele de preț. Această discrepanță majoră între reacția panicardă a pieței și evaluările fundamentale pozitive ale analiștilor creează o oportunitate excelentă de tip 'oversold bounce' pentru un trade intraday. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "evaluated_at": "2026-11-06T16:21:47.700888+00:00"
       },
       {
         "action": "enter",
         "symbol": "IONQ",
         "direction": "long",
-        "price": 29.37,
+        "price": 29.5,
         "prev_close": 26.53,
-        "gap_pct": 10.7,
-        "change_pct": 10.7,
+        "gap_pct": 11.18,
+        "change_pct": 11.18,
         "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
+        "rr_ratio": 3.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 28.93,
-        "target_price": 31.35,
-        "expected_profit_dollars": 1.35,
+        "target_pct": 0.0525,
+        "stop_price": 29.06,
+        "target_price": 31.05,
+        "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
           "Cantor Fitzgerald Maintains Overweight on IonQ, Lowers Price Target to $60",
           "Needham Maintains Buy on IonQ, Lowers Price Target to $48",
           "IonQ Inc (IONQ) (Q3 2026) Earnings Call Highlights: Record Revenue, DARPA Milestone and ..."
         ],
-        "reason_ro": "Acțiunea IONQ înregistrează o creștere puternică de peste 10% susținută de rezultatele financiare record din Q3 2026, atingerea unor etape importante DARPA și menținerea recomandărilor pozitive (Overweight/Buy) din partea analiștilor, în ciuda ajustării prețurilor țintă. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
-        "evaluated_at": "2026-11-06T16:20:17.510083+00:00"
+        "reason_ro": "Creștere puternică de peste 11% susținută de rezultatele financiare record din Q3 2026 și menținerea ratingurilor de cumpărare de către analiști, în ciuda unor ajustări de preț țintă. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "evaluated_at": "2026-11-06T16:21:48.713196+00:00"
       }
     ],
     "top_movers": [
       {
+        "symbol": "CIIT",
+        "price": 2.28,
+        "prev_close": 1.55,
+        "gap_pct": 46.99,
+        "source": "alpaca_movers"
+      },
+      {
         "symbol": "BDSX",
-        "price": 10.62,
+        "price": 10.52,
         "prev_close": 19.84,
-        "gap_pct": -46.47,
+        "gap_pct": -46.98,
         "source": "alpaca_movers"
       },
       {
@@ -319,13 +339,6 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "GOGO",
-        "price": 3.29,
-        "prev_close": 2.27,
-        "gap_pct": 45.03,
-        "source": "alpaca_movers"
-      },
-      {
         "symbol": "LASC",
         "price": 4.93,
         "prev_close": 3.41,
@@ -333,45 +346,45 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CIIT",
-        "price": 2.21,
-        "prev_close": 1.55,
-        "gap_pct": 42.26,
+        "symbol": "GOGO",
+        "price": 3.27,
+        "prev_close": 2.27,
+        "gap_pct": 44.37,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "SKIN",
+        "price": 14.69,
+        "prev_close": 10.35,
+        "gap_pct": 41.93,
         "source": "alpaca_movers"
       },
       {
         "symbol": "IREZ",
-        "price": 21.9,
+        "price": 22.31,
         "prev_close": 33.81,
-        "gap_pct": -35.23,
+        "gap_pct": -34.03,
         "source": "alpaca_movers"
       },
       {
         "symbol": "IRTC",
-        "price": 87.28,
-        "prev_close": 130.18,
-        "gap_pct": -32.96,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "STLN",
-        "price": 4.51,
-        "prev_close": 6.7,
-        "gap_pct": -32.69,
+        "price": 87.25,
+        "prev_close": 130.19,
+        "gap_pct": -32.98,
         "source": "alpaca_movers"
       },
       {
         "symbol": "IONQ",
-        "price": 29.37,
+        "price": 29.5,
         "prev_close": 26.53,
-        "gap_pct": 10.7,
+        "gap_pct": 11.18,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ABNB",
-        "price": 187.46,
+        "price": 187.66,
         "prev_close": 169.66,
-        "gap_pct": 10.49,
+        "gap_pct": 10.61,
         "source": "watchlist_snapshot"
       }
     ]
