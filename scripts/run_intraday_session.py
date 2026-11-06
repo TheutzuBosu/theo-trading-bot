@@ -308,6 +308,12 @@ def main() -> int:
         action="store_true",
         help="Rulează continuu în fundal (daemon local), verificând sesiunea SUA la fiecare 60s",
     )
+    parser.add_argument(
+        "--duration-minutes",
+        type=int,
+        default=0,
+        help="Rulează cicluri intraday repetate timp de N minute (ex: 15 min), la fiecare 60s",
+    )
     parser.add_argument("--no-sync", action="store_true", help="Nu sincroniza state/ pe GitHub")
     parser.add_argument(
         "--leverage",
@@ -379,11 +385,17 @@ def main() -> int:
         print(json.dumps(brief, indent=2, ensure_ascii=False))
         return 0
 
-    if args.loop:
-        logger.info("Daemon intraday pornit (--loop, levier %dx)...", args.leverage)
+    if args.loop or args.duration_minutes > 0:
+        max_duration = args.duration_minutes * 60.0 if args.duration_minutes > 0 else float("inf")
+        start_time = time.time()
+        logger.info(
+            "Sesiune intraday activă pornită (durată: %s min, levier: %dx)...",
+            args.duration_minutes if args.duration_minutes > 0 else "infinit",
+            args.leverage,
+        )
         premarket_tg_date: str | None = None
         last_premarket_ts: float = 0.0
-        while True:
+        while time.time() - start_time < max_duration:
             try:
                 now_et = datetime.now(UTC).astimezone(NY_TZ)
                 today_str = now_et.strftime("%Y-%m-%d")
@@ -415,11 +427,19 @@ def main() -> int:
                     before_step=pull_state,
                     gemini_client=gemini,
                     sync_github=sync_gh,
+                    github_token=settings.GH_DISPATCH_TOKEN,
                 )
                 logger.info("Ciclu intraday: status=%s", res.get("status"))
+                if (now_et.hour, now_et.minute) >= (16, 0):
+                    logger.info("Piața s-a închis (>= 16:00 ET). Sesiunea de azi este completă.")
+                    break
             except Exception as exc:  # noqa: BLE001
-                logger.warning("Eroare în ciclul --loop (continuă peste 60s): %s", exc)
-            time.sleep(60)
+                logger.warning("Eroare în ciclul intraday (continuă peste 60s): %s", exc)
+            remaining = max_duration - (time.time() - start_time)
+            if remaining <= 10:
+                break
+            time.sleep(min(60, int(remaining)))
+        return 0
 
     if args.auto:
         now_et = datetime.now(UTC).astimezone(NY_TZ)

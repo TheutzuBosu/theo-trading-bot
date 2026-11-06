@@ -19,6 +19,7 @@ on:
         type: choice
         options:
           - auto
+          - session
           - premarket
           - weekend
           - once
@@ -28,6 +29,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: intraday-paper-session
@@ -78,11 +80,38 @@ jobs:
             once)       uv run python scripts/run_intraday_session.py --once ;;
             eod)        uv run python scripts/run_intraday_session.py --eod ;;
             reset-kill) uv run python scripts/run_intraday_session.py --reset-kill ;;
+            session)    uv run python scripts/run_intraday_session.py --duration-minutes 15 ;;
             *)
               if [ "$HOUR_ET" = "08" ] || { [ "$HOUR_ET" = "09" ] && [ "$MIN_ET" -lt "25" ]; }; then
                 uv run python scripts/run_intraday_session.py --premarket
               else
-                uv run python scripts/run_intraday_session.py --auto
+                uv run python scripts/run_intraday_session.py --duration-minutes 15
               fi
               ;;
           esac
+
+      - name: Relay chain next session (auto-handoff)
+        if: always()
+        env:
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          MODE: ${{ github.event.inputs.mode || 'auto' }}
+        run: |
+          HOUR_ET=$(TZ="America/New_York" date +%H)
+          MIN_ET=$(TZ="America/New_York" date +%M)
+          # Predă ștafeta doar în timpul sesiunii de piață activă (09:25 - 15:45 ET)
+          if [ "$MODE" = "auto" ] || [ "$MODE" = "session" ]; then
+            if [ "$HOUR_ET" -gt 9 ] || { [ "$HOUR_ET" -eq 9 ] && [ "$MIN_ET" -ge 25 ]; }; then
+              if [ "$HOUR_ET" -lt 15 ] || { [ "$HOUR_ET" -eq 15 ] && [ "$MIN_ET" -lt 45 ]; }; then
+                echo "Predare automată de ștafetă: pornire următorul bloc de 15 minute..."
+                curl -s -X POST \
+                  -H "Authorization: Bearer $GH_DISPATCH_TOKEN" \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  https://api.github.com/repos/TheutzuBosu/theo-trading-bot/actions/workflows/intraday_paper.yml/dispatches \
+                  -d '{"ref":"main","inputs":{"mode":"session"}}' || true
+              else
+                echo "Aproape de închiderea pieței (>= 15:45 ET) — sesiunea de azi este completă."
+              fi
+            else
+              echo "În afara orelor de piață activă ($HOUR_ET:$MIN_ET ET)."
+            fi
+          fi
