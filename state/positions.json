@@ -5,10 +5,10 @@
     "entry_time": "",
     "qty": 0.1335,
     "entry_price": 187.198,
-    "current_price": 191.52,
+    "current_price": 191.215,
     "stop": 0.0,
     "initial_stop": 0.0,
-    "unrealized_pnl": 0.58,
+    "unrealized_pnl": 0.54,
     "unrealized_r": 0.0,
     "entry_reason": "Poziție necunoscută botului, găsită în contul Alpaca Paper."
   },
@@ -31,11 +31,11 @@
     "entry_time": "2026-11-06T11:56:01.509370-05:00",
     "qty": 5.7061,
     "entry_price": 3.51,
-    "current_price": 3.845,
+    "current_price": 3.8101,
     "stop": 3.42,
     "initial_stop": 3.42,
-    "unrealized_pnl": 1.91,
-    "unrealized_r": 3.72,
+    "unrealized_pnl": 1.71,
+    "unrealized_r": 3.33,
     "entry_reason": "GOGO a crescut cu +55.01% (preț 3.51 $ vs 2.27 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $). · D33 Scanner: GOGO LONG -> BUY GOGO (miză ~20.00$, R:R 1:6.0)"
   },
   {
@@ -44,11 +44,11 @@
     "entry_time": "2026-11-06T10:47:11.320102-05:00",
     "qty": 0.3416,
     "entry_price": 29.246,
-    "current_price": 31.955,
+    "current_price": 31.985,
     "stop": 29.49,
     "initial_stop": 28.84,
-    "unrealized_pnl": 0.93,
-    "unrealized_r": 3.34,
+    "unrealized_pnl": 0.94,
+    "unrealized_r": 3.37,
     "entry_reason": "Acțiunea înregistrează o creștere puternică de peste 10% susținută de rezultatele financiare record din Q3 2026 și atingerea unor etape importante DARPA, în ciuda ajustărilor prudente ale prețului țintă din partea analiștilor. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)"
   },
   {
@@ -57,11 +57,11 @@
     "entry_time": "2026-11-06T10:47:11.320102-05:00",
     "qty": 0.2285,
     "entry_price": 87.756,
-    "current_price": 88.205,
+    "current_price": 88.44,
     "stop": 86.22,
     "initial_stop": 86.22,
-    "unrealized_pnl": 0.1,
-    "unrealized_r": 0.29,
+    "unrealized_pnl": 0.16,
+    "unrealized_r": 0.45,
     "entry_reason": "Acțiunea IRTC a înregistrat o prăbușire masivă de -32.54% pe fondul unor reduceri ale prețului țintă de către analiști, creând o oportunitate clasică de tip 'oversold bounce' intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: IRTC LONG -> BUY IRTC (miză ~20.00$, R:R 1:4.5)"
   },
   {
@@ -70,10 +70,10 @@
     "entry_time": "2026-11-06T10:47:11.320102-05:00",
     "qty": 1.5958,
     "entry_price": 5.08,
-    "current_price": 5.2712,
+    "current_price": 5.27,
     "stop": 4.75,
     "initial_stop": 4.61,
-    "unrealized_pnl": 0.31,
+    "unrealized_pnl": 0.3,
     "unrealized_r": 0.2,
     "entry_reason": "Acțiunea MNTN înregistrează o prăbușire masivă de -54.68% în premarket pe fondul rezultatelor financiare Q3 2026, creând o oportunitate clasică de tip 'oversold bounce' pentru un impuls intraday. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: MNTN LONG -> BUY MNTN (miză ~15.00$, R:R 1:4.5)"
   },
@@ -83,11 +83,11 @@
     "entry_time": "2026-11-06T10:47:11.320102-05:00",
     "qty": 0.6116,
     "entry_price": 16.35,
-    "current_price": 16.36,
+    "current_price": 16.38,
     "stop": 14.93,
     "initial_stop": 16.03,
-    "unrealized_pnl": 0.01,
-    "unrealized_r": 0.02,
+    "unrealized_pnl": 0.02,
+    "unrealized_r": 0.05,
     "entry_reason": "Biodesix (BDSX) a suferit o prăbușire masivă de peste 46% în urma unui raport financiar Q3 slab și a revizuirii în scădere a perspectivei pentru 2026. Acest impuls negativ puternic oferă o oportunitate excelentă de intrare peort pe continuarea trendului descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $). · D33 Scanner: BDSX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)"
   },
   {
@@ -109,11 +109,11 @@
     "entry_time": "2026-11-06T11:21:39.556313-05:00",
     "qty": 0.748,
     "entry_price": 14.68,
-    "current_price": 15.4323,
+    "current_price": 15.535,
     "stop": 13.47,
     "initial_stop": 13.17,
-    "unrealized_pnl": 0.56,
-    "unrealized_r": 0.25,
+    "unrealized_pnl": 0.64,
+    "unrealized_r": 0.28,
     "entry_reason": "Acțiunea SKIN înregistrează o creștere intraday puternică de peste 41%, susținută de rezultatele financiare pentru Q3 care au depășit estimările privind veniturile. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: SKIN LONG -> BUY SKIN (miză ~20.00$, R:R 1:4.5)"
   }
 ]
