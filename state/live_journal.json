@@ -1,27 +1,5 @@
 {
-  "processed_signals": [
-    "MOVER|AEHL|2026-11-06|long",
-    "MOVER|APPC|2026-11-06|long",
-    "MOVER|AXTQ|2026-11-06|long",
-    "MOVER|BDSX|2026-11-06|short",
-    "MOVER|CIIT|2026-11-06|long",
-    "MOVER|FLYT|2026-11-06|long",
-    "MOVER|GOGO|2026-11-06|long",
-    "MOVER|IONQ|2026-11-06|long",
-    "MOVER|IREX|2026-11-06|long",
-    "MOVER|IRTC|2026-11-06|long",
-    "MOVER|LASC|2026-11-06|long",
-    "MOVER|MNTN|2026-11-06|long",
-    "MOVER|OKLL|2026-11-06|long",
-    "MOVER|PRAA|2026-11-06|long",
-    "MOVER|QNTU|2026-11-06|long",
-    "MOVER|RGTIW|2026-11-06|long",
-    "MOVER|SKIN|2026-11-06|long",
-    "MOVER|STAK|2026-11-06|long",
-    "MOVER|STLN|2026-11-06|long",
-    "QQQ|2026-11-05T12:29:00-05:00|short",
-    "SPY|2026-11-05T12:29:00-05:00|short"
-  ],
+  "processed_signals": [],
   "open_trades": {},
-  "last_eod_date": "2026-11-05"
+  "last_eod_date": "2026-11-06"
 }
