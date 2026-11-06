@@ -9,7 +9,7 @@
   "today_pnl_pct": 1.43,
   "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-06T15:31:13.055332-05:00",
+  "updated_at": "2026-11-06T15:32:30.979045-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-04T13:41:46.547827+00:00",
@@ -82,16 +82,16 @@
         "action": "enter",
         "symbol": "GOGO",
         "direction": "long",
-        "price": 3.92,
-        "prev_close": 2.26,
-        "gap_pct": 73.29,
-        "change_pct": 73.29,
+        "price": 3.94,
+        "prev_close": 2.27,
+        "gap_pct": 73.73,
+        "change_pct": 73.73,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
         "target_pct": 0.15,
-        "stop_price": 3.82,
-        "target_price": 4.51,
+        "stop_price": 3.84,
+        "target_price": 4.53,
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
         "headlines": [
@@ -99,8 +99,28 @@
           "Gogo Q3 EPS $(0.02) Misses $(0.01) Estimate, Sales $213.234M Miss $216.525M Estimate",
           "Gogo Affirms FY2026 Sales Guidance of $870.000M-$895.000M vs $886.583M Est"
         ],
-        "reason_ro": "GOGO a crescut cu +73.29% (preț 3.92 $ vs 2.26 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:31:13.939452+00:00"
+        "reason_ro": "GOGO a crescut cu +73.73% (preț 3.94 $ vs 2.27 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T20:32:31.755292+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "FLYT",
+        "direction": "long",
+        "price": 3.67,
+        "prev_close": 2.14,
+        "gap_pct": 71.1,
+        "change_pct": 71.1,
+        "stake_dollars": 20.0,
+        "rr_ratio": 6.0,
+        "stop_pct": 0.025,
+        "target_pct": 0.15,
+        "stop_price": 3.58,
+        "target_price": 4.22,
+        "expected_profit_dollars": 3.0,
+        "max_loss_dollars": 0.5,
+        "headlines": [],
+        "reason_ro": "FLYT a crescut cu +71.10% (preț 3.67 $ vs 2.14 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T20:32:32.019782+00:00"
       },
       {
         "action": "enter",
@@ -108,8 +128,8 @@
         "direction": "long",
         "price": 3.06,
         "prev_close": 1.79,
-        "gap_pct": 70.79,
-        "change_pct": 70.79,
+        "gap_pct": 70.67,
+        "change_pct": 70.67,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
@@ -119,28 +139,8 @@
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
         "headlines": [],
-        "reason_ro": "STAK a crescut cu +70.79% (preț 3.06 $ vs 1.79 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:31:14.173390+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "FLYT",
-        "direction": "long",
-        "price": 3.65,
-        "prev_close": 2.15,
-        "gap_pct": 70.16,
-        "change_pct": 70.16,
-        "stake_dollars": 20.0,
-        "rr_ratio": 6.0,
-        "stop_pct": 0.025,
-        "target_pct": 0.15,
-        "stop_price": 3.56,
-        "target_price": 4.2,
-        "expected_profit_dollars": 3.0,
-        "max_loss_dollars": 0.5,
-        "headlines": [],
-        "reason_ro": "FLYT a crescut cu +70.16% (preț 3.65 $ vs 2.15 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:31:14.355178+00:00"
+        "reason_ro": "STAK a crescut cu +70.67% (preț 3.06 $ vs 1.79 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T20:32:32.287105+00:00"
       },
       {
         "action": "enter",
@@ -160,7 +160,7 @@
         "max_loss_dollars": 0.5,
         "headlines": [],
         "reason_ro": "RGTIW a crescut cu +64.10% (preț 2.56 $ vs 1.56 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:31:14.730557+00:00"
+        "evaluated_at": "2026-11-06T20:32:32.491606+00:00"
       },
       {
         "action": "enter",
@@ -180,29 +180,29 @@
         "max_loss_dollars": 0.5,
         "headlines": [],
         "reason_ro": "LASC a crescut cu +55.60% (preț 5.30 $ vs 3.41 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:31:14.986774+00:00"
+        "evaluated_at": "2026-11-06T20:32:32.688434+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "GOGO",
-        "price": 3.92,
-        "prev_close": 2.26,
-        "gap_pct": 73.29,
+        "price": 3.94,
+        "prev_close": 2.27,
+        "gap_pct": 73.73,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "FLYT",
+        "price": 3.67,
+        "prev_close": 2.14,
+        "gap_pct": 71.1,
         "source": "alpaca_movers"
       },
       {
         "symbol": "STAK",
         "price": 3.06,
         "prev_close": 1.79,
-        "gap_pct": 70.79,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "FLYT",
-        "price": 3.65,
-        "prev_close": 2.15,
-        "gap_pct": 70.16,
+        "gap_pct": 70.67,
         "source": "alpaca_movers"
       },
       {
@@ -221,16 +221,16 @@
       },
       {
         "symbol": "BDSX",
-        "price": 8.9,
+        "price": 9.04,
         "prev_close": 19.84,
-        "gap_pct": -55.12,
+        "gap_pct": -54.44,
         "source": "alpaca_movers"
       },
       {
         "symbol": "QNTU",
-        "price": 3.64,
+        "price": 3.63,
         "prev_close": 2.37,
-        "gap_pct": 53.59,
+        "gap_pct": 53.38,
         "source": "alpaca_movers"
       },
       {
@@ -249,9 +249,9 @@
       },
       {
         "symbol": "STLN",
-        "price": 3.48,
+        "price": 3.44,
         "prev_close": 6.7,
-        "gap_pct": -47.99,
+        "gap_pct": -48.73,
         "source": "alpaca_movers"
       }
     ]
