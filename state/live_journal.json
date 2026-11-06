@@ -48,7 +48,7 @@
       "initial_risk_dollars": 0.3914,
       "equity_at_entry": 499.72,
       "partial_done": true,
-      "last_price": 16.38,
+      "last_price": 16.39,
       "entry_reason": "Biodesix (BDSX) a suferit o prăbușire masivă de peste 46% în urma unui raport financiar Q3 slab și a revizuirii în scădere a perspectivei pentru 2026. Acest impuls negativ puternic oferă o oportunitate excelentă de intrare peort pe continuarea trendului descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $). · D33 Scanner: BDSX SHORT -> BUY QID (miză ~20.00$, R:R 1:4.5)",
       "features": {}
     },
@@ -106,7 +106,7 @@
       "initial_risk_dollars": 0.2774,
       "equity_at_entry": 499.72,
       "partial_done": true,
-      "last_price": 32.02,
+      "last_price": 31.96,
       "entry_reason": "Acțiunea înregistrează o creștere puternică de peste 10% susținută de rezultatele financiare record din Q3 2026 și atingerea unor etape importante DARPA, în ciuda ajustărilor prudente ale prețului țintă din partea analiștilor. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)",
       "features": {}
     },
@@ -135,7 +135,7 @@
       "initial_risk_dollars": 1.5,
       "equity_at_entry": 499.72,
       "partial_done": true,
-      "last_price": 5.27,
+      "last_price": 5.26,
       "entry_reason": "Acțiunea MNTN înregistrează o prăbușire masivă de -54.68% în premarket pe fondul rezultatelor financiare Q3 2026, creând o oportunitate clasică de tip 'oversold bounce' pentru un impuls intraday. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: MNTN LONG -> BUY MNTN (miză ~15.00$, R:R 1:4.5)",
       "features": {}
     },
