@@ -9,7 +9,7 @@
   "today_pnl_pct": 1.43,
   "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-06T15:45:14.772013-05:00",
+  "updated_at": "2026-11-06T15:46:11.991246-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-04T13:41:46.547827+00:00",
@@ -82,21 +82,21 @@
         "action": "enter",
         "symbol": "STAK",
         "direction": "long",
-        "price": 3.11,
+        "price": 3.1,
         "prev_close": 1.79,
-        "gap_pct": 73.74,
-        "change_pct": 73.74,
+        "gap_pct": 73.19,
+        "change_pct": 73.19,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
         "target_pct": 0.15,
-        "stop_price": 3.03,
-        "target_price": 3.58,
+        "stop_price": 3.02,
+        "target_price": 3.56,
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
         "headlines": [],
-        "reason_ro": "STAK a crescut cu +73.74% (preț 3.11 $ vs 1.79 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:45:15.528305+00:00"
+        "reason_ro": "STAK a crescut cu +73.19% (preț 3.10 $ vs 1.79 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T20:46:12.649782+00:00"
       },
       {
         "action": "enter",
@@ -116,7 +116,7 @@
         "max_loss_dollars": 0.5,
         "headlines": [],
         "reason_ro": "FLYT a crescut cu +72.03% (preț 3.69 $ vs 2.14 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:45:15.828666+00:00"
+        "evaluated_at": "2026-11-06T20:46:12.831690+00:00"
       },
       {
         "action": "enter",
@@ -140,7 +140,7 @@
           "Gogo Affirms FY2026 Sales Guidance of $870.000M-$895.000M vs $886.583M Est"
         ],
         "reason_ro": "GOGO a crescut cu +71.96% (preț 3.90 $ vs 2.27 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:45:16.052445+00:00"
+        "evaluated_at": "2026-11-06T20:46:12.991056+00:00"
       },
       {
         "action": "enter",
@@ -160,7 +160,7 @@
         "max_loss_dollars": 0.5,
         "headlines": [],
         "reason_ro": "RGTIW a crescut cu +68.58% (preț 2.63 $ vs 1.56 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:45:16.240452+00:00"
+        "evaluated_at": "2026-11-06T20:46:13.172122+00:00"
       },
       {
         "action": "enter",
@@ -180,15 +180,15 @@
         "max_loss_dollars": 0.5,
         "headlines": [],
         "reason_ro": "LASC a crescut cu +55.60% (preț 5.30 $ vs 3.41 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T20:45:16.406085+00:00"
+        "evaluated_at": "2026-11-06T20:46:13.349013+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "STAK",
-        "price": 3.11,
+        "price": 3.1,
         "prev_close": 1.79,
-        "gap_pct": 73.74,
+        "gap_pct": 73.19,
         "source": "alpaca_movers"
       },
       {
@@ -221,37 +221,37 @@
       },
       {
         "symbol": "BDSX",
-        "price": 8.94,
+        "price": 8.88,
         "prev_close": 19.84,
-        "gap_pct": -54.94,
+        "gap_pct": -55.24,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CIIT",
-        "price": 2.38,
+        "price": 2.39,
         "prev_close": 1.55,
-        "gap_pct": 53.87,
+        "gap_pct": 54.19,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SKIN",
-        "price": 15.73,
+        "price": 15.95,
         "prev_close": 10.35,
-        "gap_pct": 51.98,
+        "gap_pct": 54.11,
         "source": "alpaca_movers"
       },
       {
         "symbol": "QNTU",
         "price": 3.6,
         "prev_close": 2.37,
-        "gap_pct": 51.94,
+        "gap_pct": 52.11,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "OBX",
-        "price": 14.49,
-        "prev_close": 9.6,
-        "gap_pct": 50.99,
+        "symbol": "STLN",
+        "price": 3.55,
+        "prev_close": 6.7,
+        "gap_pct": -47.03,
         "source": "alpaca_movers"
       }
     ]
