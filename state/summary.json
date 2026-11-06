@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 505.5,
-  "total_pnl": 5.5,
-  "total_pnl_pct": 1.1,
-  "today_pnl": 5.78,
-  "today_pnl_pct": 1.16,
-  "current_drawdown_pct": -0.02,
+  "equity": 505.44,
+  "total_pnl": 5.44,
+  "total_pnl_pct": 1.09,
+  "today_pnl": 5.72,
+  "today_pnl_pct": 1.14,
+  "current_drawdown_pct": -0.01,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-06T14:51:31.884432-05:00",
+  "updated_at": "2026-11-06T14:52:48.866587-05:00",
   "positions": [
     {
       "symbol": "ABNB",
@@ -17,7 +17,7 @@
       "entry_time": "",
       "qty": 0.1335,
       "entry_price": 187.198,
-      "current_price": 191.63,
+      "current_price": 191.61,
       "stop": 0.0,
       "initial_stop": 0.0,
       "unrealized_pnl": 0.59,
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-06T11:56:01.509370-05:00",
       "qty": 5.7061,
       "entry_price": 3.51,
-      "current_price": 3.82,
+      "current_price": 3.8278,
       "stop": 3.42,
       "initial_stop": 3.42,
-      "unrealized_pnl": 1.77,
-      "unrealized_r": 3.44,
+      "unrealized_pnl": 1.81,
+      "unrealized_r": 3.53,
       "entry_reason": "GOGO a crescut cu +55.01% (preț 3.51 $ vs 2.27 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $). · D33 Scanner: GOGO LONG -> BUY GOGO (miză ~20.00$, R:R 1:6.0)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 0.3416,
       "entry_price": 29.246,
-      "current_price": 31.73,
+      "current_price": 31.74,
       "stop": 29.49,
       "initial_stop": 28.84,
       "unrealized_pnl": 0.85,
-      "unrealized_r": 3.06,
+      "unrealized_r": 3.07,
       "entry_reason": "Acțiunea înregistrează o creștere puternică de peste 10% susținută de rezultatele financiare record din Q3 2026 și atingerea unor etape importante DARPA, în ciuda ajustărilor prudente ale prețului țintă din partea analiștilor. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 0.2285,
       "entry_price": 87.756,
-      "current_price": 88.865,
+      "current_price": 88.56,
       "stop": 86.22,
       "initial_stop": 86.22,
-      "unrealized_pnl": 0.25,
-      "unrealized_r": 0.72,
+      "unrealized_pnl": 0.18,
+      "unrealized_r": 0.52,
       "entry_reason": "Acțiunea IRTC a înregistrat o prăbușire masivă de -32.54% pe fondul unor reduceri ale prețului țintă de către analiști, creând o oportunitate clasică de tip 'oversold bounce' intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: IRTC LONG -> BUY IRTC (miză ~20.00$, R:R 1:4.5)"
     },
     {
@@ -82,11 +82,11 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 1.5958,
       "entry_price": 5.08,
-      "current_price": 5.24,
+      "current_price": 5.225,
       "stop": 4.75,
       "initial_stop": 4.61,
-      "unrealized_pnl": 0.26,
-      "unrealized_r": 0.17,
+      "unrealized_pnl": 0.23,
+      "unrealized_r": 0.15,
       "entry_reason": "Acțiunea MNTN înregistrează o prăbușire masivă de -54.68% în premarket pe fondul rezultatelor financiare Q3 2026, creând o oportunitate clasică de tip 'oversold bounce' pentru un impuls intraday. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: MNTN LONG -> BUY MNTN (miză ~15.00$, R:R 1:4.5)"
     },
     {
@@ -95,7 +95,7 @@
       "entry_time": "2026-11-06T10:47:11.320102-05:00",
       "qty": 0.6116,
       "entry_price": 16.35,
-      "current_price": 16.3899,
+      "current_price": 16.3901,
       "stop": 14.93,
       "initial_stop": 16.03,
       "unrealized_pnl": 0.02,
@@ -121,11 +121,11 @@
       "entry_time": "2026-11-06T11:21:39.556313-05:00",
       "qty": 0.748,
       "entry_price": 14.68,
-      "current_price": 15.74,
+      "current_price": 15.72,
       "stop": 13.47,
       "initial_stop": 13.17,
-      "unrealized_pnl": 0.79,
-      "unrealized_r": 0.35,
+      "unrealized_pnl": 0.78,
+      "unrealized_r": 0.34,
       "entry_reason": "Acțiunea SKIN înregistrează o creștere intraday puternică de peste 41%, susținută de rezultatele financiare pentru Q3 care au depășit estimările privind veniturile. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: SKIN LONG -> BUY SKIN (miză ~20.00$, R:R 1:4.5)"
     }
   ],
@@ -200,36 +200,36 @@
         "action": "enter",
         "symbol": "FLYT",
         "direction": "long",
-        "price": 3.62,
-        "prev_close": 2.14,
-        "gap_pct": 69.0,
-        "change_pct": 69.0,
+        "price": 3.65,
+        "prev_close": 2.15,
+        "gap_pct": 70.16,
+        "change_pct": 70.16,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
         "target_pct": 0.15,
-        "stop_price": 3.53,
-        "target_price": 4.16,
+        "stop_price": 3.56,
+        "target_price": 4.2,
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
         "headlines": [],
-        "reason_ro": "FLYT a crescut cu +69.00% (preț 3.62 $ vs 2.14 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T19:51:32.774302+00:00"
+        "reason_ro": "FLYT a crescut cu +70.16% (preț 3.65 $ vs 2.15 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T19:52:49.832642+00:00"
       },
       {
         "action": "enter",
         "symbol": "GOGO",
         "direction": "long",
-        "price": 3.81,
+        "price": 3.83,
         "prev_close": 2.27,
-        "gap_pct": 68.43,
-        "change_pct": 68.43,
+        "gap_pct": 68.87,
+        "change_pct": 68.87,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
         "target_pct": 0.15,
-        "stop_price": 3.71,
-        "target_price": 4.38,
+        "stop_price": 3.73,
+        "target_price": 4.4,
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
         "headlines": [
@@ -237,28 +237,28 @@
           "Gogo Q3 EPS $(0.02) Misses $(0.01) Estimate, Sales $213.234M Miss $216.525M Estimate",
           "Gogo Affirms FY2026 Sales Guidance of $870.000M-$895.000M vs $886.583M Est"
         ],
-        "reason_ro": "GOGO a crescut cu +68.43% (preț 3.81 $ vs 2.27 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T19:51:33.029298+00:00"
+        "reason_ro": "GOGO a crescut cu +68.87% (preț 3.83 $ vs 2.27 $) pe fondul: Gogo Inc. (NASDAQ:GOGO) Posts Mixed Q3 2026 Results as Revenue Misses and Guidance Is Reiterated. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T19:52:50.055380+00:00"
       },
       {
         "action": "enter",
         "symbol": "STAK",
         "direction": "long",
-        "price": 2.97,
+        "price": 2.96,
         "prev_close": 1.79,
-        "gap_pct": 65.92,
-        "change_pct": 65.92,
+        "gap_pct": 65.64,
+        "change_pct": 65.64,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
         "target_pct": 0.15,
-        "stop_price": 2.9,
-        "target_price": 3.42,
+        "stop_price": 2.89,
+        "target_price": 3.4,
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
         "headlines": [],
-        "reason_ro": "STAK a crescut cu +65.92% (preț 2.97 $ vs 1.79 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T19:51:33.489412+00:00"
+        "reason_ro": "STAK a crescut cu +65.64% (preț 2.96 $ vs 1.79 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T19:52:50.279650+00:00"
       },
       {
         "action": "enter",
@@ -278,53 +278,49 @@
         "max_loss_dollars": 0.5,
         "headlines": [],
         "reason_ro": "RGTIW a crescut cu +62.82% (preț 2.54 $ vs 1.56 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T19:51:33.692268+00:00"
+        "evaluated_at": "2026-11-06T19:52:50.503122+00:00"
       },
       {
         "action": "enter",
-        "symbol": "BDSX",
-        "direction": "short",
-        "price": 9.07,
-        "prev_close": 19.84,
-        "gap_pct": -54.26,
-        "change_pct": -54.26,
+        "symbol": "LASC",
+        "direction": "long",
+        "price": 5.28,
+        "prev_close": 3.41,
+        "gap_pct": 55.02,
+        "change_pct": 55.02,
         "stake_dollars": 20.0,
         "rr_ratio": 6.0,
         "stop_pct": 0.025,
         "target_pct": 0.15,
-        "stop_price": 9.3,
-        "target_price": 7.71,
+        "stop_price": 5.15,
+        "target_price": 6.07,
         "expected_profit_dollars": 3.0,
         "max_loss_dollars": 0.5,
-        "headlines": [
-          "DraftKings Posts Downbeat Q3 Results, Joins Atlassian, Natera And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
-          "12 Health Care Stocks Moving In Friday's Pre-Market Session",
-          "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
-        ],
-        "reason_ro": "BDSX a scăzut cu -54.26% (preț 9.07 $ vs 19.84 $) pe fondul: DraftKings Posts Downbeat Q3 Results, Joins Atlassian, Natera And Other Big Stocks Moving Lower In Friday’s Pre-Market Session. Intrare SHORT cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-06T19:51:33.937987+00:00"
+        "headlines": [],
+        "reason_ro": "LASC a crescut cu +55.02% (preț 5.28 $ vs 3.41 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
+        "evaluated_at": "2026-11-06T19:52:50.742557+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "FLYT",
-        "price": 3.62,
-        "prev_close": 2.14,
-        "gap_pct": 69.0,
+        "price": 3.65,
+        "prev_close": 2.15,
+        "gap_pct": 70.16,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GOGO",
-        "price": 3.81,
+        "price": 3.83,
         "prev_close": 2.27,
-        "gap_pct": 68.43,
+        "gap_pct": 68.87,
         "source": "alpaca_movers"
       },
       {
         "symbol": "STAK",
-        "price": 2.97,
+        "price": 2.96,
         "prev_close": 1.79,
-        "gap_pct": 65.92,
+        "gap_pct": 65.64,
         "source": "alpaca_movers"
       },
       {
@@ -335,17 +331,17 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "BDSX",
-        "price": 9.07,
-        "prev_close": 19.84,
-        "gap_pct": -54.26,
+        "symbol": "LASC",
+        "price": 5.28,
+        "prev_close": 3.41,
+        "gap_pct": 55.02,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "LASC",
-        "price": 5.22,
-        "prev_close": 3.41,
-        "gap_pct": 53.25,
+        "symbol": "BDSX",
+        "price": 9.13,
+        "prev_close": 19.84,
+        "gap_pct": -53.96,
         "source": "alpaca_movers"
       },
       {
@@ -357,23 +353,23 @@
       },
       {
         "symbol": "QNTU",
-        "price": 3.56,
+        "price": 3.55,
         "prev_close": 2.37,
-        "gap_pct": 50.21,
+        "gap_pct": 49.83,
         "source": "alpaca_movers"
       },
       {
         "symbol": "STLN",
-        "price": 3.48,
+        "price": 3.47,
         "prev_close": 6.7,
-        "gap_pct": -48.06,
+        "gap_pct": -48.21,
         "source": "alpaca_movers"
       },
       {
         "symbol": "IONZ",
-        "price": 26.32,
+        "price": 26.46,
         "prev_close": 44.53,
-        "gap_pct": -40.89,
+        "gap_pct": -40.57,
         "source": "alpaca_movers"
       }
     ]
