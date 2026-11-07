@@ -266,50 +266,55 @@
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
-    "updated_at": "2026-11-05T07:58:18.218480+00:00",
-    "period": "4 - 8 Noiembrie 2026",
-    "executive_summary_ro": "Săptămâna trecută s-a soldat cu un bilanț negativ de -1,77 $ și un Win Rate de 0%, evidențiind vulnerabilitatea botului la capcanele de preț din pre-market și știrile de moment. Pentru săptămâna viitoare, ne vom concentra pe filtrarea riguroasă a falselor impulsuri și gestionarea strictă a riscului intraday pe SPY, QQQ și acțiuni individuale. Contextul geopolitic și deciziile băncilor centrale impun o prudență maximă și excluderea intrărilor bazate exclusiv pe entuziasmul știrilor.",
+    "updated_at": "2026-11-07T09:36:26.604869+00:00",
+    "period": "9 - 13 Noiembrie 2026",
+    "executive_summary_ro": "Săptămâna precedentă s-a încheiat cu succes moderat, atingând un win rate de 63.2% și un PnL total de +7.85 $ din 19 tranzacții închise. Tensiunile geopolitice din Orientul Mijlociu și schimbările politice de la Washington impun însă o prudență maximă în tranzacționare. Vom continua să optimizăm execuția pe acțiuni individuale și indici, evitând capcanele de preț generate de știrile din pre-market.",
     "weekly_performance": {
-      "total_trades": 4,
-      "win_rate_pct": 0.0,
-      "total_pnl": -1.77,
-      "best_trade": "DUOG (LONG) -0.05 $",
-      "worst_trade": "SSO (LONG) -0.93 $"
+      "total_trades": 19,
+      "win_rate_pct": 63.2,
+      "total_pnl": 7.85,
+      "best_trade": "GOGO (LONG) +2.40 $",
+      "worst_trade": "QID (LONG) -1.31 $"
     },
     "lessons_learned": [
-      "Evităm complet cumpărările bazate pe optimismul sau creșterile exagerate din pre-market, acestea dovedindu-se capcane de preț frecvente.",
-      "Implementăm filtre suplimentare pentru a detecta falsele impulsuri generate de știri bune, care se întorc imediat împotriva poziției.",
-      "Menținem disciplina privind stop-loss-ul; deși pierderile au fost ținute sub control (-1,04R max), trebuie să îmbunătățim momentul de intrare pentru a permite prețului să evolueze favorabil."
+      "Evitarea cumpărărilor bazate exclusiv pe entuziasmul generat de știri sau câștiguri în pre-market, pentru a preveni capcanele de preț și activarea rapidă a stop-loss-ului.",
+      "Atenție sporită la falsul impuls din pre-market, care poate induce în eroare algoritmii de intrare.",
+      "Menținerea unei gestionări stricte a riscului (risc-reward controlat), menținând pierderile sub control chiar și atunci când pozițiile se întorc împotriva direcției inițiale."
     ],
-    "macro_outlook_ro": "Piețele globale reacționează la scăderea prețului petrolului pe fondul diminuării riscurilor de escaladare în Orientul Mijlociu și la rezultatele politice recente din SUA. În același timp, perspectiva Băncii Angliei de a majora ratele dobânzilor menține vigilența investitorilor ridicată. Pe SPY și QQQ anticipăm o volatilitate moderat-ridicată, dictată de fluxul de știri macroeconomice și de raportările financiare.",
+    "macro_outlook_ro": "Contextul macro este dominat de escaladarea tensiunilor geopolitice dintre SUA și Iran (atacuri cu rachete în Insula Qeshm și sancțiuni financiare), ceea ce poate genera volatilitate ridicată pe piețele energetice și de capital. Indicii SPY și QQQ vor fi vulnerabili la știri de ultimă oră, impunând o monitorizare atentă a ordinelor de stop-loss și a expunerii pe active de risc.",
     "key_events": [
       {
         "day": "Luni",
-        "event": "Evaluarea impactului post-midterm asupra piețelor US și deschiderea sesiunii cu atenție pe sectorul energetic",
-        "impact": "HIGH"
+        "event": "Raportări financiare AAON, ABCL, ACHR și alte companii din calendarul săptămânii",
+        "impact": "MEDIUM"
       },
       {
         "day": "Miercuri",
-        "event": "Raportări financiare companii listate (inclusiv AMR și ANIK) și posibile efecte de sector",
+        "event": "Evoluția situației geopolitice SUA-Iran și impactul asupra prețului petrolului și piețelor de acțiuni",
+        "impact": "HIGH"
+      },
+      {
+        "day": "Vineri",
+        "event": "Închiderea săptămânii și evaluarea pozițiilor deschise pe fondul volatilității macroeconomice",
         "impact": "MEDIUM"
       }
     ],
-    "tactical_plan_ro": "Pentru Theo Trading Bot, stabilim regula de aur de a nu intra în primele 15 minute ale deschiderii pe acțiuni cu mișcări violente în pre-market. Reducem dimensiunea pozițiilor dacă spread-ul este prea mare și interzicem tranzacțiile bazate doar pe hype-ul generat de știri de ultimă oră. Ne concentrăm pe set-up-uri tehnice curate, cu confirmare pe volum și acțiune a prețului.",
+    "tactical_plan_ro": "Se recomandă reducerea dimensiunii pozițiilor pe fondul riscului geopolitic ridicat. Evitarea intrărilor agresive pe gap-uri de preț în pre-market și respectarea cu strictețe a ordinelor de stop-loss. Orele recomandate pentru tranzacționare rămân intervalele de lichiditate ridicată (10:00 - 11:30 EST), evitând primele 15 minute de la deschidere din cauza volatilității induse de știri.",
     "watchlist": [
       {
         "symbol": "SPY",
         "direction": "long",
-        "thesis_ro": "Urmărim evoluția generală a indicelui pentru oportunități de scalping pe suporturi tehnice majore, evitând capcanele de deschidere."
+        "thesis_ro": "Urmărim indicele principal pentru oportunități de scalping pe corecții intraday, atenți la reacția față de știrile geopolitice."
       },
       {
         "symbol": "QQQ",
         "direction": "long",
-        "thesis_ro": "Monitorizăm acțiunile de tip tech pentru reveniri controlate după corecțiile dictate de sentimentul macro."
+        "thesis_ro": "Monitorizăm sectorul tehnologic pentru reveniri pe volum, cu accent pe gestionarea strictă a riscului la nivelul suporturilor cheie."
       },
       {
-        "symbol": "AMR",
+        "symbol": "ACHR",
         "direction": "long",
-        "thesis_ro": "Urmărim acțiunea în contextul raportărilor financiare programate, doar dacă confirmă un impuls tehnic real și nu un simplu zgomot de pre-market."
+        "thesis_ro": "Urmărim acțiunea în contextul raportărilor financiare programate pentru această săptămână, căutând volatilitate controlată."
       }
     ]
   }
