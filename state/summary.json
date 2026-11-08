@@ -80,26 +80,6 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "RGTIW",
-        "direction": "long",
-        "price": 2.53,
-        "prev_close": 1.56,
-        "gap_pct": 62.18,
-        "change_pct": 62.18,
-        "stake_dollars": 20.0,
-        "rr_ratio": 6.0,
-        "stop_pct": 0.025,
-        "target_pct": 0.15,
-        "stop_price": 2.47,
-        "target_price": 2.91,
-        "expected_profit_dollars": 3.0,
-        "max_loss_dollars": 0.5,
-        "headlines": [],
-        "reason_ro": "RGTIW a crescut cu +62.18% (preț 2.53 $ vs 1.56 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-07T00:08:00.210317+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "LASC",
         "direction": "long",
         "price": 5.37,
@@ -211,13 +191,6 @@
         "price": 3.88,
         "prev_close": 2.27,
         "gap_pct": 71.52,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "RGTIW",
-        "price": 2.53,
-        "prev_close": 1.56,
-        "gap_pct": 62.18,
         "source": "alpaca_movers"
       },
       {
