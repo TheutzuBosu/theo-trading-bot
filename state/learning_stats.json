@@ -1,7 +1,7 @@
 {
-  "meta_samples": 3,
+  "meta_samples": 22,
   "meta_active": false,
-  "updated_at": "2026-11-06T15:30:09.609609-05:00",
+  "updated_at": "2026-11-08T07:05:17.144413-05:00",
   "total_trades_analyzed": 19,
   "hourly_multipliers": {
     "09:00": 1.0,
@@ -13,5 +13,11 @@
     "15:00": 1.0
   },
   "retrained_today": false,
-  "last_lessons": []
+  "last_lessons": [
+    "Tranzacție long pe IRTC câștigătoare (+0.50 $, +1.43R): spargerea benzii de zgomot s-a menținut până la ieșirea programată (time).",
+    "Tranzacție long pe MNTN închisă pe plus (+0.22 $, +0.15R): ținta de profit a fost atinsă și stop-ul urcat la VWAP a protejat câștigul.",
+    "Tranzacție long pe QID închisă pe plus (+0.03 $, +0.08R): ținta de profit a fost atinsă și stop-ul urcat la VWAP a protejat câștigul.",
+    "Tranzacție long pe QNTU câștigătoare (+1.72 $, +1.56R): spargerea benzii de zgomot s-a menținut până la ieșirea programată (time).",
+    "Tranzacție long pe SKIN închisă pe plus (+0.70 $, +0.31R): ținta de profit a fost atinsă și stop-ul urcat la VWAP a protejat câștigul."
+  ]
 }
