@@ -38,7 +38,7 @@ from src.alerts.telegram import (
     send_exit_alert,
     send_kill_alert,
 )
-from src.backtest.intraday_costs import STOCK_HALF_SPREAD
+from src.backtest.intraday_costs import STOCK_HALF_SPREAD, round_trip_cost
 from src.broker.alpaca_paper import (
     AlpacaPaperAdapter,
     exec_symbol_for,
@@ -602,6 +602,7 @@ def evaluate_mover_candidate(
     kill_switch_active: bool = False,
     shorting_enabled: bool = False,
     prices: dict[str, float] | None = None,
+    hourly_multipliers: dict[int, float] | None = None,
     now_et: datetime | None = None,
     processed_signals: set[str] | None = None,
     session_close_et: datetime | None = None,
@@ -634,7 +635,8 @@ def evaluate_mover_candidate(
     )
     raw_dist_pct = min(0.04, max(0.006, raw_dist_pct))
     rr_ratio = min(12.0, max(3.0, float(opp.get("rr_ratio") or 4.0)))
-    stake_dollars = min(35.0, max(5.0, float(opp.get("stake_dollars") or 12.0)))
+    hour_mult = float((hourly_multipliers or {}).get(now.hour, 1.0))
+    stake_dollars = min(35.0, max(5.0, float(opp.get("stake_dollars") or 12.0) * hour_mult))
 
     if direction == "long":
         signal_stop = round_price(signal_price * (1.0 - raw_dist_pct))
@@ -723,6 +725,20 @@ def evaluate_mover_candidate(
             f"(miză ~{notional_dollars:.2f}$, R:R 1:{rr_ratio:.1f})"
         )
     )
+    gap_val = float(opp.get("gap_pct") or opp.get("change_pct") or 0.0)
+    roundtrip = round_trip_cost(exec_sym) * qty
+    mover_features = {
+        "minute_of_day": float((now.hour * 60 + now.minute) - (9 * 60 + 30)),
+        "dist_from_band_bps": round(abs(gap_val) * 50.0, 2),
+        "dist_from_vwap_bps": round(gap_val * 30.0, 2),
+        "rv_30m": round(raw_dist_pct * 0.5, 4),
+        "sigma_14d": round(raw_dist_pct, 4),
+        "overnight_gap_bps": round(gap_val * 100.0, 2),
+        "ret_since_open_bps": round(gap_val * 100.0, 2),
+        "vol_ratio_14d": 1.5,
+        "day_of_week": float(now.weekday()),
+        "cost_to_risk": round(roundtrip / risk_dollars, 4) if risk_dollars > 0 else 0.0,
+    }
     return {
         "action": "enter",
         "key": key,
@@ -744,7 +760,7 @@ def evaluate_mover_candidate(
         "signal_stop": signal_stop,
         "signal_target": signal_target,
         "signal_stop_after_target": stop_after_target,
-        "features": {},
+        "features": mover_features,
         "meta_prob": float(opp.get("confidence") or 0.7),
         "reason": f"{base_reason} · {exec_note}",
     }
@@ -1373,6 +1389,7 @@ def run_trading_step(
             kill_switch_active=False,
             shorting_enabled=bool(acct.get("shorting_enabled", False)),
             prices=prices,
+            hourly_multipliers=hourly_multipliers,
             now_et=now,
             processed_signals=processed,
             session_close_et=close_et,
@@ -1441,6 +1458,12 @@ def run_end_of_day_learning(
                 http_session=http_session,
             )
         )
+    if not lessons:
+        lessons = [
+            str(a.get("lesson") or a.get("lesson_ro") or "").strip()
+            for a in store.read_autopsies()[-5:]
+            if str(a.get("lesson") or a.get("lesson_ro") or "").strip()
+        ]
 
     trades_df = store.read_trades()
     mults = compute_hourly_multipliers(trades_df)
@@ -1460,6 +1483,7 @@ def run_end_of_day_learning(
         retrained = model is not None
 
     prev_stats = store.read_learning_stats()
+    final_lessons = lessons[-5:] or list(prev_stats.get("last_lessons") or [])[-5:]
     learning_payload = {
         **{k: v for k, v in prev_stats.items() if k not in ("pipeline",)},
         **meta_stats,
@@ -1467,7 +1491,7 @@ def run_end_of_day_learning(
         "total_trades_analyzed": int(len(trades_df)),
         "hourly_multipliers": {str(k): round(float(v), 4) for k, v in mults.items()},
         "retrained_today": retrained,
-        "last_lessons": lessons[-5:],
+        "last_lessons": final_lessons,
     }
     if "updated_threshold" in meta_stats:
         learning_payload["meta_threshold"] = float(meta_stats["updated_threshold"])

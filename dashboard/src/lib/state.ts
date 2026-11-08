@@ -319,9 +319,17 @@ interface AlpacaPositionPayload {
   unrealized_pl: string;
 }
 
+interface AlpacaOrderPayload {
+  symbol: string;
+  side: string;
+  type: string;
+  stop_price?: string | null;
+}
+
 async function fetchLiveAlpacaData(): Promise<{
   account: AlpacaAccountPayload;
   positions: AlpacaPositionPayload[];
+  orders: AlpacaOrderPayload[];
 } | null> {
   const apiKey = (process.env.ALPACA_API_KEY || "").trim();
   const secretKey = (process.env.ALPACA_SECRET_KEY || "").trim();
@@ -334,28 +342,23 @@ async function fetchLiveAlpacaData(): Promise<{
     return null;
   }
 
+  const headers = {
+    "APCA-API-KEY-ID": apiKey,
+    "APCA-API-SECRET-KEY": secretKey,
+  };
+
   try {
-    const [accRes, posRes] = await Promise.all([
-      fetch(`${baseUrl}/v2/account`, {
-        headers: {
-          "APCA-API-KEY-ID": apiKey,
-          "APCA-API-SECRET-KEY": secretKey,
-        },
-        cache: "no-store",
-      }),
-      fetch(`${baseUrl}/v2/positions`, {
-        headers: {
-          "APCA-API-KEY-ID": apiKey,
-          "APCA-API-SECRET-KEY": secretKey,
-        },
-        cache: "no-store",
-      }),
+    const [accRes, posRes, ordRes] = await Promise.all([
+      fetch(`${baseUrl}/v2/account`, { headers, cache: "no-store" }),
+      fetch(`${baseUrl}/v2/positions`, { headers, cache: "no-store" }),
+      fetch(`${baseUrl}/v2/orders?status=open`, { headers, cache: "no-store" }),
     ]);
 
     if (!accRes.ok) return null;
     const account: AlpacaAccountPayload = await accRes.json();
     const positions: AlpacaPositionPayload[] = posRes.ok ? await posRes.json() : [];
-    return { account, positions };
+    const orders: AlpacaOrderPayload[] = ordRes.ok ? await ordRes.json() : [];
+    return { account, positions, orders };
   } catch {
     return null;
   }
@@ -388,7 +391,7 @@ export async function loadDashboardData(): Promise<DashboardData> {
   }
 
   // Live direct Alpaca overlay: if Alpaca API credentials are configured on Vercel,
-  // fetch live account balance and positions in real-time on every page refresh!
+  // fetch live account balance, positions, and stop orders in real-time on every refresh!
   const liveAlpaca = await fetchLiveAlpacaData();
   if (liveAlpaca && liveAlpaca.account) {
     const liveEq = parseFloat(liveAlpaca.account.equity);
@@ -403,24 +406,48 @@ export async function loadDashboardData(): Promise<DashboardData> {
       summary.equity = Math.round(liveEq * 100) / 100;
       summary.total_pnl = totalPnl;
       summary.total_pnl_pct = totalPnlPct;
-      summary.today_pnl = todayPnl;
-      summary.today_pnl_pct = todayPnlPct;
+      // Preserve last session's today_pnl when market is closed/weekend and liveEq == lastEq
+      if (todayPnl !== 0 || (liveAlpaca.positions && liveAlpaca.positions.length > 0)) {
+        summary.today_pnl = todayPnl;
+        summary.today_pnl_pct = todayPnlPct;
+      }
       summary.updated_at = new Date().toISOString();
 
-      // Synchronize positions live prices & unrealized PnL from Alpaca
+      const stopBySymbol = new Map<string, number>();
+      for (const ord of liveAlpaca.orders || []) {
+        const sp = parseFloat(ord.stop_price || "");
+        if (ord.symbol && !isNaN(sp) && sp > 0) {
+          stopBySymbol.set(ord.symbol.toUpperCase(), Math.round(sp * 100) / 100);
+        }
+      }
+
+      // Synchronize positions live prices, stop-losses & unrealized PnL/R from Alpaca
       if (Array.isArray(liveAlpaca.positions)) {
         const livePosMap = new Map(liveAlpaca.positions.map((p) => [p.symbol.toUpperCase(), p]));
         const updatedPositions: OpenPosition[] = [];
 
-        // 1. Update existing known positions (preserve entry_reason and stop-loss)
+        // 1. Update existing known positions (preserve entry_reason and recalculate R)
         for (const pos of summary.positions || []) {
-          const liveP = livePosMap.get(pos.symbol.toUpperCase());
+          const symKey = pos.symbol.toUpperCase();
+          const liveP = livePosMap.get(symKey);
           if (liveP) {
             pos.current_price = Math.round(parseFloat(liveP.current_price) * 10000) / 10000;
             pos.unrealized_pnl = Math.round(parseFloat(liveP.unrealized_pl) * 100) / 100;
             pos.qty = Math.round(parseFloat(liveP.qty) * 10000) / 10000;
+            const liveStop = stopBySymbol.get(symKey);
+            if (liveStop && liveStop > 0) {
+              pos.stop = liveStop;
+              if (!pos.initial_stop || pos.initial_stop <= 0) {
+                pos.initial_stop = liveStop;
+              }
+            }
+            const refStop = pos.initial_stop > 0 ? pos.initial_stop : pos.stop;
+            const initRisk = refStop > 0 ? Math.abs(pos.entry_price - refStop) * pos.qty : 0;
+            if (initRisk > 0) {
+              pos.unrealized_r = Math.round((pos.unrealized_pnl / initRisk) * 100) / 100;
+            }
             updatedPositions.push(pos);
-            livePosMap.delete(pos.symbol.toUpperCase());
+            livePosMap.delete(symKey);
           }
         }
 
@@ -429,17 +456,21 @@ export async function loadDashboardData(): Promise<DashboardData> {
           const entryPrice = parseFloat(lp.avg_entry_price) || 0;
           const currPrice = parseFloat(lp.current_price) || entryPrice;
           const unrPnl = parseFloat(lp.unrealized_pl) || 0;
+          const qty = Math.round(parseFloat(lp.qty) * 10000) / 10000;
+          const stopPrice = stopBySymbol.get(sym) || 0;
+          const initRisk = stopPrice > 0 ? Math.abs(entryPrice - stopPrice) * qty : 0;
+          const unrR = initRisk > 0 ? Math.round((unrPnl / initRisk) * 100) / 100 : 0;
           updatedPositions.push({
             symbol: sym,
             direction: lp.side === "short" ? "short" : "long",
             entry_time: new Date().toISOString(),
-            qty: Math.round(parseFloat(lp.qty) * 10000) / 10000,
+            qty,
             entry_price: Math.round(entryPrice * 10000) / 10000,
             current_price: Math.round(currPrice * 10000) / 10000,
-            stop: 0,
-            initial_stop: 0,
+            stop: stopPrice,
+            initial_stop: stopPrice,
             unrealized_pnl: Math.round(unrPnl * 100) / 100,
-            unrealized_r: 0,
+            unrealized_r: unrR,
             entry_reason: "Poziție live preluată direct din contul Alpaca Paper.",
           });
         }

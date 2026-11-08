@@ -13,12 +13,14 @@ import json
 import logging
 import re
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 
 import requests
 
 from src.ai.veto import CRISIS_KEYWORDS, fetch_recent_news
 from src.config import settings
+from src.state.store import StateStore
 
 logger = logging.getLogger(__name__)
 
@@ -118,8 +120,43 @@ SINGLE_STOCK_INVERSE_MAP: dict[str, str] = {
 
 
 def is_valid_stock_symbol(symbol: str) -> bool:
-    """Return True if `symbol` is a standard US equity/ETF ticker (1-5 uppercase letters)."""
-    return bool(TICKER_RE.match(str(symbol or "").strip().upper()))
+    """Return True if `symbol` is a standard US equity/ETF ticker (excludes 5-letter warrants)."""
+    sym = str(symbol or "").strip().upper()
+    if not TICKER_RE.match(sym):
+        return False
+    # Exclude 5-letter NASDAQ Warrants (W), Rights (R), Units (U), and Stubs (Z) like RGTIW
+    if len(sym) == 5 and sym[-1] in ("W", "R", "U", "Z"):
+        return False
+    return True
+
+
+def _load_learning_context(state_dir: Path | None) -> tuple[list[str], str]:
+    """Load recent autopsy lessons and weekend tactical plan from `state/` for AI evaluation."""
+    if state_dir is None:
+        return [], ""
+    try:
+        store = StateStore(state_dir)
+        lessons: list[str] = []
+        for a in store.read_autopsies()[-6:]:
+            les = str(a.get("lesson") or a.get("lesson_ro") or "").strip()
+            if les and les not in lessons:
+                lessons.append(les)
+        stats_lessons = store.read_learning_stats().get("last_lessons") or []
+        for les in stats_lessons:
+            s = str(les).strip()
+            if s and s not in lessons:
+                lessons.append(s)
+
+        summary = store.read_summary()
+        wb = summary.get("weekend_briefing") or {}
+        for les in wb.get("lessons_learned") or []:
+            s = str(les).strip()
+            if s and s not in lessons:
+                lessons.append(s)
+        tactical = str(wb.get("tactical_plan_ro") or "").strip()
+        return lessons[-5:], tactical
+    except Exception:  # noqa: BLE001
+        return [], ""
 
 
 def resolve_short_proxy_symbol(symbol: str) -> str:
@@ -283,6 +320,8 @@ def evaluate_mover_opportunity(
     session: Any = None,
     min_abs_gap_pct: float = 1.2,
     default_stake_dollars: float = 15.0,
+    lessons_context: list[str] | None = None,
+    tactical_context: str | None = None,
 ) -> dict[str, Any]:
     """Analyze a single stock mover (pre-market or intraday) and build a Risk:Reward trade plan.
 
@@ -297,7 +336,7 @@ def evaluate_mover_opportunity(
     prev_close = float(mover.get("prev_close") or price)
     gap_pct = float(mover.get("gap_pct") or 0.0)
 
-    if price <= 0 or abs(gap_pct) < min_abs_gap_pct:
+    if price <= 0 or abs(gap_pct) < min_abs_gap_pct or not is_valid_stock_symbol(sym):
         return {
             "action": "watch",
             "symbol": sym,
@@ -348,6 +387,16 @@ def evaluate_mover_opportunity(
     )
 
     if gemini_client is not None:
+        lessons_block = ""
+        if lessons_context:
+            lessons_block = (
+                "\nLecții învățate din tranzacțiile anterioare (NU repeta aceste greșeli!):\n- "
+                + "\n- ".join(lessons_context[:5])
+                + "\n"
+            )
+        tactical_block = (
+            f"\nPlan tactic săptămânal activ: {tactical_context}\n" if tactical_context else ""
+        )
         prompt = (
             f"Ești analistul de oportunități intraday al botului Theo Trading Bot (cont 500 $).\n"
             f"Acțiunea {sym} are prețul {price:.2f} $ "
@@ -358,12 +407,15 @@ def evaluate_mover_opportunity(
                 if clean_headlines
                 else "Fără știri directe; mișcare tehnică de volum în pre-market."
             )
+            + lessons_block
+            + tactical_block
             + "\n\nRăspunde DOAR în JSON valid:\n"
             '`{"enter": true/false, "direction": "long"|"short", "rr_ratio": 3.0..10.0, '
             '"stake_dollars": 5.0..35.0, "stop_pct": 0.008..0.03, '
             '"catalyst_ro": "1-2 fraze în română"}`\n'
             "Reguli: intră (`enter: true`) dacă mișcarea are impuls clar sau catalizator "
-            "(știre, raport financiar, investiție, downgrade/upgrade). "
+            "(știre, raport financiar, investiție, downgrade/upgrade) și NU încalcă lecțiile "
+            "învățate din zilele trecute. "
             "Alege raportul Risc:Reward (`rr_ratio` între 3 și 10) și miza (`stake_dollars` "
             "între 5$ și 35$) proporțional cu claritatea catalizatorului."
         )
@@ -448,6 +500,7 @@ def scan_market_opportunities(
     session: Any = None,
     min_abs_gap_pct: float = 1.2,
     max_opportunities: int = 6,
+    state_dir: Path | None = None,
 ) -> dict[str, Any]:
     """Scan the US market for top movers and return ranked trade opportunities + watchlist."""
     movers = discover_market_movers(
@@ -457,11 +510,23 @@ def scan_market_opportunities(
         session=session,
         max_candidates=14,
     )
+    lessons_ctx, tactical_ctx = _load_learning_context(state_dir)
     opportunities: list[dict[str, Any]] = []
     watched: list[dict[str, Any]] = []
 
     for m in movers:
         if m["symbol"] in ("SPY", "QQQ"):
+            continue
+        if len(opportunities) >= max_opportunities:
+            watched.append(
+                {
+                    "action": "watch",
+                    "symbol": m["symbol"],
+                    "price": m["price"],
+                    "gap_pct": m["gap_pct"],
+                    "reason_ro": f"Pe lista de urmărire ({m['gap_pct']:+.2f}%).",
+                }
+            )
             continue
         ev = evaluate_mover_opportunity(
             m,
@@ -469,8 +534,10 @@ def scan_market_opportunities(
             gemini_client=gemini_client,
             session=session,
             min_abs_gap_pct=min_abs_gap_pct,
+            lessons_context=lessons_ctx,
+            tactical_context=tactical_ctx,
         )
-        if ev.get("action") == "enter" and len(opportunities) < max_opportunities:
+        if ev.get("action") == "enter":
             opportunities.append(ev)
         else:
             watched.append(ev)

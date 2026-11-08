@@ -231,6 +231,7 @@ def _run_premarket_intelligence(
         finnhub_key=settings.FINNHUB_API_KEY,
         gemini_client=gemini_client,
         max_opportunities=6,
+        state_dir=state_dir,
     )
     briefing = build_premarket_briefing(
         quotes=quotes,
@@ -251,11 +252,21 @@ def _run_premarket_intelligence(
     return briefing
 
 
+_LAST_OPP_SCAN_TS: float = 0.0
+OPP_SCAN_COOLDOWN_S: float = 600.0  # 10m cooldown to avoid Gemini 429 rate limits in 60s loops
+
+
 def _load_opportunities(state_dir: Path, gemini_client: Any) -> list[dict[str, Any]]:
     """Scan market-wide stock movers during regular hours and merge with pre-market setups."""
+    global _LAST_OPP_SCAN_TS  # noqa: PLW0603
     store = StateStore(state_dir)
     summary = store.read_summary()
     existing = list(summary.get("premarket", {}).get("opportunities", []) or [])
+
+    now_ts = time.time()
+    if existing and (now_ts - _LAST_OPP_SCAN_TS) < OPP_SCAN_COOLDOWN_S:
+        return existing
+
     try:
         scan = scan_market_opportunities(
             api_key=settings.ALPACA_API_KEY,
@@ -263,7 +274,9 @@ def _load_opportunities(state_dir: Path, gemini_client: Any) -> list[dict[str, A
             finnhub_key=settings.FINNHUB_API_KEY,
             gemini_client=gemini_client,
             max_opportunities=5,
+            state_dir=state_dir,
         )
+        _LAST_OPP_SCAN_TS = now_ts
         fresh = list(scan.get("opportunities", []) or [])
         if fresh and isinstance(summary.get("premarket"), dict):
             summary["premarket"]["opportunities"] = fresh
@@ -425,6 +438,7 @@ def main() -> int:
                     load_opportunities=lambda: _load_opportunities(state_dir, gemini),
                     leverage=args.leverage,
                     before_step=pull_state,
+                    max_wait_min=0.0,
                     gemini_client=gemini,
                     sync_github=sync_gh,
                     github_token=settings.GH_DISPATCH_TOKEN,
