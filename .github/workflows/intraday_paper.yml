@@ -1,20 +1,20 @@
 name: Intraday Paper Session (Alpaca Paper)
 
-# D1b evaluates fixed check bars; their closes are 10:12, 10:58, 11:44, 12:30, 13:16, 14:02 and
-# 14:48 ET, and the time exit is 15:30 ET (12:30 on 13:00 early closes). Each cron starts ~7
-# minutes before one of these events; `--auto` waits for it (max 12 min) and catches up to 10
-# minutes late. Both UTC hours are listed so the schedule works in EST (UTC-5) and EDT (UTC-4);
-# the run with the wrong offset only manages stops and exits quickly. 15:38 / 15:50 ET are
-# fallbacks that flatten and run the daily learning if the 15:30 run was delayed or dropped.
+# B6f: a relay chain of 15-minute runs covers 09:00 ET -> close + 5 min on NYSE days. Each run
+# trades in 60 s cycles, then (step "Relay") starts the next run via workflow_dispatch, which
+# GitHub never drops (scheduled crons are dropped/delayed often). Runs between 08:00 and 09:00 ET
+# only refresh the pre-market briefing (~2 min) and do not relay. The crons below only (re)start
+# the chain: every 20 min from 07:00 to 09:40 ET (EST and EDT) and every 15 min during the day as
+# a fallback if a relay failed. Outside the live window (NYSE calendar, holidays, 13:00 early closes)
+# a run exits in seconds. Only one engine trades at a time: GitHub concurrency + the lease in
+# state/engine_lock.json (local loops of other agents included).
+
 on:
   schedule:
-    # Declanșatoare discrete de dimineață (prioritizate de GitHub Actions la deschiderea sesiunii SUA)
-    - cron: "0 13,14 * * 1-5"
-    - cron: "15 13,14 * * 1-5"
-    - cron: "25 13,14 * * 1-5"
-    - cron: "30 13,14 * * 1-5"
-    # Sesiune intraday continuă / fallback la fiecare 10 minute (14:00 - 21:00 UTC / 09:00 - 16:00 ET / 16:00 - 23:00 RO)
-    - cron: "*/10 14-21 * * 1-5"
+    # (Re)pornire lanț dimineața: 12:00-14:40 UTC = 07:00-09:40 ET (EST) / 08:00-10:40 ET (EDT)
+    - cron: "0,20,40 12,13,14 * * 1-5"
+    # Plasă de siguranță peste zi, dacă releul s-a rupt: 15:00-20:45 UTC
+    - cron: "*/15 15-20 * * 1-5"
   workflow_dispatch:
     inputs:
       mode:
@@ -47,6 +47,9 @@ jobs:
     timeout-minutes: 25
 
     steps:
+      - name: Mark start
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -63,6 +66,8 @@ jobs:
         run: uv sync --frozen
 
       - name: Run Intraday Session
+        id: run
+        timeout-minutes: 20
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
@@ -76,8 +81,6 @@ jobs:
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || secrets.GITHUB_TOKEN }}
           MODE: ${{ github.event.inputs.mode || 'auto' }}
         run: |
-          HOUR_ET=$(TZ="America/New_York" date +%-H)
-          MIN_ET=$(TZ="America/New_York" date +%-M)
           case "$MODE" in
             premarket)  uv run python scripts/run_intraday_session.py --premarket ;;
             weekend)    uv run python scripts/run_intraday_session.py --weekend ;;
@@ -85,38 +88,61 @@ jobs:
             once)       uv run python scripts/run_intraday_session.py --once ;;
             eod)        uv run python scripts/run_intraday_session.py --eod ;;
             reset-kill) uv run python scripts/run_intraday_session.py --reset-kill ;;
-            session)    uv run python scripts/run_intraday_session.py --duration-minutes 15 ;;
-            *)
-              if [ "$HOUR_ET" -lt 9 ]; then
-                uv run python scripts/run_intraday_session.py --premarket
-              else
-                uv run python scripts/run_intraday_session.py --duration-minutes 15
-              fi
-              ;;
+            # auto + session: 60 s cycles for 15 min (pre-market briefing included before 09:30 ET)
+            *)          uv run python scripts/run_intraday_session.py --duration-minutes 15 ;;
           esac
 
       - name: Relay chain next session (auto-handoff)
         if: always()
+        timeout-minutes: 3
         env:
-          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          FALLBACK_TOKEN: ${{ github.token }}
+          TRADING_MODE: "PAPER"
           MODE: ${{ github.event.inputs.mode || 'auto' }}
+          RUN_OUTCOME: ${{ steps.run.outcome }}
+          DISPATCH_URL: https://api.github.com/repos/${{ github.repository }}/actions/workflows/intraday_paper.yml/dispatches
         run: |
-          HOUR_ET=$(TZ="America/New_York" date +%-H)
-          MIN_ET=$(TZ="America/New_York" date +%-M)
-          # Predă ștafeta continuu de la 09:00 ET până la 15:45 ET (ultimul bloc de 15m acoperă 15:45-16:00 ET + EOD)
-          if [ "$MODE" = "auto" ] || [ "$MODE" = "session" ]; then
-            if [ "$HOUR_ET" -ge 9 ]; then
-              if [ "$HOUR_ET" -lt 15 ] || { [ "$HOUR_ET" -eq 15 ] && [ "$MIN_ET" -lt 45 ]; }; then
-                echo "Predare automată de ștafetă ($HOUR_ET:$MIN_ET ET): pornire următorul bloc de 15 minute..."
-                curl -s -X POST \
-                  -H "Authorization: Bearer $GH_DISPATCH_TOKEN" \
-                  -H "Accept: application/vnd.github.v3+json" \
-                  https://api.github.com/repos/TheutzuBosu/theo-trading-bot/actions/workflows/intraday_paper.yml/dispatches \
-                  -d '{"ref":"main","inputs":{"mode":"session"}}' || true
-              else
-                echo "Aproape de închiderea pieței (>= 15:45 ET) — sesiunea de azi este completă."
-              fi
-            else
-              echo "În afara orelor de piață activă ($HOUR_ET:$MIN_ET ET)."
-            fi
+          case "$MODE" in
+            auto|session|reset-kill) ;;
+            *) echo "Mod $MODE: fără releu."; exit 0 ;;
+          esac
+          # A run that crashed within 5 minutes is not relayed (no runaway chain of failing runs);
+          # the 15-minute cron safety net restarts the chain and Telegram already got the error.
+          ELAPSED=$(( $(date +%s) - ${JOB_START:-0} ))
+          if [ "$RUN_OUTCOME" != "success" ] && [ "$ELAPSED" -lt 300 ]; then
+            echo "::warning::Run-ul a eșuat după ${ELAPSED}s ($RUN_OUTCOME): fără releu, repornește cron-ul."
+            exit 0
           fi
+          # NYSE calendar + KILL + EOD already done (Python); plain clock if that check fails
+          DECISION=$(timeout 90 uv run python scripts/run_intraday_session.py --should-relay 2>relay.log | tail -n 1) || true
+          tail -n 3 relay.log || true
+          if [ "$DECISION" != "yes" ] && [ "$DECISION" != "no" ]; then
+            DOW=$(TZ="America/New_York" date +%u)
+            HM=$((10#$(TZ="America/New_York" date +%H%M)))
+            if [ "$DOW" -le 5 ] && [ "$HM" -ge 900 ] && [ "$HM" -lt 1545 ]; then DECISION=yes; else DECISION=no; fi
+            echo "Verificarea Python a eșuat; decizie după ceas: $DECISION"
+          fi
+          if [ "$DECISION" != "yes" ]; then
+            echo "Fără releu: lanțul de azi se oprește aici."
+            exit 0
+          fi
+          CODE=000
+          for TOKEN in "$PAT_TOKEN" "$FALLBACK_TOKEN" "$FALLBACK_TOKEN"; do
+            [ -z "$TOKEN" ] && continue
+            CODE=$(curl -s -o resp.txt -w "%{http_code}" --max-time 20 -X POST \
+              -H "Authorization: Bearer $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$DISPATCH_URL" \
+              -d '{"ref":"main","inputs":{"mode":"session"}}') || CODE=000
+            echo "Releu: HTTP $CODE"
+            if [ "$CODE" = "204" ]; then
+              echo "Următorul run de 15 minute a fost pornit."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Releul nu a putut porni următorul run (HTTP $CODE)."
+          head -c 300 resp.txt || true
+          exit 1

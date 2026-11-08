@@ -29,6 +29,7 @@ import pandas as pd
 
 from src.ai.autopsy import build_autopsy_record
 from src.ai.daily_learner import compute_hourly_multipliers, retrain_on_daily_trades
+from src.ai.market_scanner import MIN_MOVER_PRICE, PROXY_LEVERAGE
 from src.ai.meta_label import FEATURE_COLUMNS, compute_feature_frame
 from src.ai.veto import check_news_veto, fetch_recent_news
 from src.alerts.telegram import (
@@ -45,6 +46,7 @@ from src.broker.alpaca_paper import (
     make_client_order_id,
     resolve_execution_instrument,
     round_price,
+    uses_inverse_etf,
 )
 from src.data.intraday import nyse_sessions
 from src.live.state_writer import (
@@ -122,6 +124,40 @@ def d1b_event_times(
         checks.append(t + timedelta(minutes=1))
         t += timedelta(minutes=p.check_freq_min)
     return {"checks": checks, "time_exit": close_et - timedelta(minutes=p.exit_before_close_min)}
+
+
+LIVE_WINDOW_START = (8, 0)  # ET: pre-market scan + relay chain start (B6f)
+RELAY_START = (9, 0)  # before 09:00 ET a run only refreshes the pre-market briefing
+LIVE_WINDOW_END_AFTER_CLOSE_MIN = 5.0
+RELAY_STOP_BEFORE_CLOSE_MIN = 15.0
+
+
+def live_window(now_et: datetime) -> dict[str, Any]:
+    """Whether a session run should work now (`active`) and hand over to a next run (`relay`).
+
+    Uses the NYSE calendar: holidays and weekends are inactive; on early-close days the window
+    ends at the real close (13:00 ET), so no GitHub Actions minutes are burnt after it.
+    """
+    now = _now_et(now_et)
+    bounds = session_bounds(now)
+    if bounds is None:
+        return {"active": False, "relay": False, "reason": "Piața SUA este închisă azi."}
+    open_et, close_et = bounds
+    start = open_et.replace(hour=LIVE_WINDOW_START[0], minute=LIVE_WINDOW_START[1])
+    end = close_et + timedelta(minutes=LIVE_WINDOW_END_AFTER_CLOSE_MIN)
+    relay_start = open_et.replace(hour=RELAY_START[0], minute=RELAY_START[1])
+    relay_end = close_et - timedelta(minutes=RELAY_STOP_BEFORE_CLOSE_MIN)
+    if now < start:
+        return {"active": False, "relay": False, "reason": "Prea devreme (înainte de 08:00 ET)."}
+    if now >= end:
+        return {"active": False, "relay": False, "reason": "Sesiunea de azi s-a încheiat."}
+    return {
+        "active": True,
+        "relay": relay_start <= now < relay_end,
+        "reason": "Fereastra de lucru este activă.",
+        "open": open_et,
+        "close": close_et,
+    }
 
 
 def _minutes_to_close(ts_et: datetime, close_et: datetime | None = None) -> float:
@@ -243,8 +279,19 @@ def _today_signal_view(bars: pd.DataFrame, now_et: datetime) -> tuple[float, flo
 def fit_meta_model_from_dataset(
     store: StateStore, base_threshold: float = DEFAULT_META_THRESHOLD
 ) -> tuple[Any | None, dict[str, Any]]:
-    """Fit the meta-label filter on all closed live trades once there are enough of them."""
+    """Fit the D1b meta-label filter on closed live D1b trades once there are enough of them.
+
+    Only rows of the D1b signal symbols (SPY/QQQ) count (B6f): scanner (D33) rows carry
+    placeholder features (e.g. a constant vol_ratio_14d) and rows written under the inverse/2x
+    ETF name duplicate D1b trades, so mixing them would teach the D1b filter noise.
+    """
     df = store.read_meta_dataset()
+    if not df.empty and "symbol" in df.columns:
+        df = df[df["symbol"].astype(str).str.upper().isin(SIGNAL_SYMBOLS)]
+        dedupe_cols = [c for c in ("signal_time", "symbol") if c in df.columns]
+        if dedupe_cols:
+            df = df.drop_duplicates(subset=dedupe_cols, keep="last")
+        df = df.reset_index(drop=True)
     cols = list(FEATURE_COLUMNS)
     if df.empty or len(df) < MIN_META_SAMPLES or not set(cols).issubset(df.columns):
         return None, {"meta_samples": int(len(df)), "meta_active": False}
@@ -625,9 +672,19 @@ def evaluate_mover_candidate(
 
     px_map = prices or {}
     opp_price = float(opp.get("price") or 0.0)
-    signal_price = float(px_map.get(sym) or opp_price)
+    # Only a fresh live price (B6f): the scanner's pre-market price can be hours old, and a stop
+    # computed from it ended up 9% under the fill (DUOG, 4.11.2026).
+    signal_price = float(px_map.get(sym) or 0.0)
     if not _finite(signal_price) or signal_price <= 0:
         return {"action": "skip", "reason": f"Preț curent indisponibil pentru {sym}.", "key": key}
+    if signal_price < MIN_MOVER_PRICE:
+        return {
+            "action": "skip",
+            "reason": f"Preț {signal_price:.2f} $ sub minimul de {MIN_MOVER_PRICE:.0f} $.",
+            "key": key,
+        }
+    if opp_price <= 0:
+        opp_price = signal_price
 
     opp_stop = float(opp.get("stop_price") or 0.0)
     raw_dist_pct = (
@@ -650,6 +707,17 @@ def evaluate_mover_candidate(
     exec_sym = exec_symbol_for(
         sym, direction, leverage=1, account_equity=equity, shorting_enabled=shorting_enabled
     )
+    if (
+        direction == "short"
+        and exec_sym == sym
+        and uses_inverse_etf(direction, equity, shorting_enabled)
+    ):
+        return {
+            "action": "skip",
+            "reason": f"Short pe {sym}: nu există un ETF invers dedicat; nu se tranzacționează.",
+            "key": key,
+        }
+    proxy_lev = int(PROXY_LEVERAGE.get(exec_sym, 1)) if exec_sym != sym else 1
     exec_px = signal_price if exec_sym == sym else px_map.get(exec_sym)
     if exec_px is None or not _finite(exec_px) or float(exec_px) <= 0:
         return {
@@ -668,11 +736,17 @@ def evaluate_mover_candidate(
         entry_price=signal_price,
         stop_price=signal_stop,
         target_price=signal_target,
-        leverage=1,
+        leverage=proxy_lev,
         account_equity=equity,
         shorting_enabled=shorting_enabled,
         instrument_price=float(exec_px),
     )
+    if exec_spec["exec_symbol"] != exec_sym:
+        return {
+            "action": "skip",
+            "reason": f"Instrument de execuție neașteptat ({exec_spec['exec_symbol']}).",
+            "key": key,
+        }
     exec_dir = "long" if exec_spec["side"] == "buy" else "short"
     exec_price = float(exec_spec["entry_price"])
     exec_stop = float(exec_spec["stop_price"])
@@ -763,6 +837,9 @@ def evaluate_mover_candidate(
         "features": mover_features,
         "meta_prob": float(opp.get("confidence") or 0.7),
         "reason": f"{base_reason} · {exec_note}",
+        "strategy": "D33",
+        # The broker re-anchors the stop on the real fill with this same % distance (B6f)
+        "stop_from_fill_pct": round(stop_dist / exec_price, 6),
     }
 
 
@@ -1087,6 +1164,38 @@ def _wait_for_closed(
     return positions
 
 
+def protect_orphan_positions(
+    adapter: AlpacaPaperAdapter,
+    journal: dict[str, Any],
+    broker_positions: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Close broker positions that the journal does not know and that have no resting stop.
+
+    Such an "orphan" appears when a run is cut (GitHub 25 min timeout) between the market fill
+    and the stop order, or when a stale journal overwrote a newer one: it would otherwise stay
+    open without a stop-loss and without management (interdiction 4). Orphans that still have a
+    broker stop are left alone; the time exit flattens every position anyway.
+    """
+    known = set((journal.get("open_trades") or {}).keys())
+    orphans = sorted(s for s in broker_positions if s not in known)
+    if not orphans:
+        return []
+    try:
+        open_orders = adapter.get_open_orders(orphans)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Ordinele deschise nu pot fi citite pentru %s: %s", orphans, exc)
+        return []
+    protected = {o["symbol"] for o in open_orders if float(o.get("stop_price") or 0.0) > 0}
+    actions: list[dict[str, Any]] = []
+    for sym in orphans:
+        if sym in protected:
+            actions.append({"symbol": sym, "action": "orphan_has_stop"})
+            continue
+        ok = adapter.close_position(sym)
+        actions.append({"symbol": sym, "action": "close_orphan", "ok": bool(ok)})
+    return actions
+
+
 # --------------------------------------------------------------------------- main step
 def run_trading_step(
     *,
@@ -1167,6 +1276,21 @@ def run_trading_step(
                 http_session=http_session,
             )
         return _finish("halted", {"reason": "KILL switch este activ.", "orders": []})
+
+    orphan_actions = protect_orphan_positions(adapter, journal, broker_positions)
+    closed_orphans = {a["symbol"] for a in orphan_actions if a["action"] == "close_orphan"}
+    if closed_orphans:
+        broker_positions = _wait_for_closed(adapter, closed_orphans)
+        if send_alerts:
+            send_error_alert(
+                component="Protecție poziții fără stop",
+                error=(
+                    "Poziții deschise la broker fără stop-loss și fără jurnal au fost închise: "
+                    + ", ".join(sorted(closed_orphans))
+                ),
+                mode="PAPER",
+                session=http_session,
+            )
 
     recon = reconcile_positions(store.read_positions(), broker_positions)
     store.write_positions(recon["synced_positions"])
@@ -1272,6 +1396,7 @@ def run_trading_step(
             stop_price=cand["stop_price"],
             client_order_id=cid,
             side=cand["side"],
+            stop_from_fill_pct=cand.get("stop_from_fill_pct"),
         )
         orders_submitted.append({**order_res, "exec_symbol": cand["exec_symbol"]})
         status = order_res.get("status")
@@ -1291,6 +1416,12 @@ def run_trading_step(
         fill_px = float(order_res["filled_avg_price"])
         fill_qty = float(order_res["qty"])
         exec_stop = float(order_res["stop_price"])
+        if cand.get("stop_from_fill_pct") and cand["exec_symbol"] == cand["signal_symbol"]:
+            # Same instrument: move the managed signal levels with the re-anchored broker stop
+            ratio = fill_px / float(cand["signal_price"]) if cand["signal_price"] else 1.0
+            for k in ("signal_price", "signal_target", "signal_stop_after_target"):
+                cand[k] = round_price(float(cand[k]) * ratio)
+            cand["signal_stop"] = exec_stop
         journal.setdefault("open_trades", {})[cand["exec_symbol"]] = {
             "trade_id": cid,
             "signal_symbol": cand["signal_symbol"],

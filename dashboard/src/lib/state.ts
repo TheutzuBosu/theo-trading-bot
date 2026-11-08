@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { dispatchSession, findActiveSessionRun } from "./github";
 
 export interface OpenPosition {
   symbol: string;
@@ -391,38 +392,14 @@ async function maybeAutoWakeBot(githubUpdatedAt: string | undefined, ghToken: st
 
     const isWeekday = ["Mon", "Tue", "Wed", "Thu", "Fri"].includes(weekday);
     const minsOfDay = hour * 60 + minute;
-    // Active window: 09:05 ET (545) to 15:45 ET (945)
+    // Active window: 09:05 ET (545) to 15:45 ET (945), same as the bot relay chain (B6f)
     if (!isWeekday || minsOfDay < 545 || minsOfDay > 945) {
       return;
     }
 
     lastAutoWakeAttemptMs = nowMs;
-    const repo = process.env.GITHUB_REPO || "TheutzuBosu/theo-trading-bot";
-    const headers = {
-      Authorization: `Bearer ${ghToken}`,
-      Accept: "application/vnd.github+json",
-      "X-GitHub-Api-Version": "2022-11-28",
-      "Content-Type": "application/json",
-    };
-
-    const runsRes = await fetch(
-      `https://api.github.com/repos/${repo}/actions/workflows/intraday_paper.yml/runs?per_page=3`,
-      { headers, cache: "no-store" }
-    );
-    if (runsRes.ok) {
-      const runsData = await runsRes.json();
-      const active = (runsData.workflow_runs || []).some(
-        (r: { status?: string }) => r.status === "in_progress" || r.status === "queued"
-      );
-      if (active) return;
-    }
-
-    await fetch(`https://api.github.com/repos/${repo}/actions/workflows/intraday_paper.yml/dispatches`, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ ref: "main", inputs: { mode: "session" } }),
-      cache: "no-store",
-    });
+    if (await findActiveSessionRun(ghToken)) return;
+    await dispatchSession(ghToken);
   } catch {
     // Non-blocking auto-wake
   }
@@ -444,7 +421,8 @@ export async function loadDashboardData(): Promise<DashboardData> {
       summary = { ...JSON.parse(summaryRaw), is_sample: false };
       equity = parseEquityCsv(equityRaw);
       trades = parseTradesCsv(tradesRaw);
-      void maybeAutoWakeBot(summary.updated_at, ghToken);
+      // awaited: an un-awaited promise may never run in a Vercel serverless function
+      await maybeAutoWakeBot(summary.updated_at, ghToken);
     }
   } else {
     const summaryRaw = readFixtureFile("summary.json");

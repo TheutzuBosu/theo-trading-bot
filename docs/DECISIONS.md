@@ -301,3 +301,36 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
     - Semnalele **LONG** cumpără direct acțiunea (fracționar pe Alpaca Paper, cu stop-loss și țintă la `1:3 – 1:10` R:R). Deoarece Alpaca respinge ordine `StopOrderRequest` pe cantități fracționare (`< 1` acțiune), `_submit_stop` plasează stop la broker pe partea întreagă (`>= 1` acțiune) și activează `soft-stop` gestionat de `manage_open_positions` în `runner.py` pentru fracțiuni.
     - Semnalele **SHORT** pe contul de `500 $` (`< 2.000 $`) se execută prin ETF-urile inverse single-stock sau sectoriale (`NVD` pentru `NVDA`, `TSLS` pentru `TSLA`, `AAPD` pentru `AAPL`, `MSFD` pentru `MSFT`, `AMZD` pentru `AMZN`, `METD` pentru `META`, `GGLS` pentru `GOOGL`, `CONI` pentru `COIN`, `SOXS` pentru semiconductori precum `INTC`/`AMD`/`MU`/`SMCI`/`AVGO`/`ARM`, și `QID` pentru restul acțiunilor tech/growth).
   - **Vizibilitate completă în Dashboard și Telegram:** toate oportunitățile descoperite (cu simbol, `%`, `LONG`/`SHORT`, miză `$`, `R:R 1:X`, stop, țintă și motivul în română) apar în cardul Pre-Market & Scanner de pe `https://theo-trading-bot.vercel.app` și în alertele Telegram (`@thetheotrading_bot`), iar după deschiderea pieței (`16:30` RO) pozițiile deschise și închise apar automat în secțiunile „Poziții deschise acum” și „Jurnalul de tranzacții”. Rulează 100% autonom pe GitHub Actions (0 task-uri locale în Antigravity).
+- **D34 (8.11.2026, B6f — Reparații critice după auditul independent al commit-urilor `1a5264e`, `902aa84`, `1434561`)**
+  Auditul a găsit probleme care puteau pierde bani sau lăsa botul fără control; reparate fără a atinge `src/risk/guard.py`
+  sau parametrii D1b:
+  - **Un singur motor tranzacționează (lacăt):** două motoare (lanțul GitHub + bucle locale ale altor agenți) scriau
+    peste același jurnal și pierdeau tranzacții. Acum `state/engine_lock.json` e un lacăt cu expirare (240 s, reînnoit
+    la ~90 s) scris doar prin compare-and-swap (sha GitHub, 409 la conflict): `acquire_engine_lease` /
+    `release_engine_lease` în `src/live/state_writer.py`. Fără lacăt → nu se tranzacționează. Lacătul nu intră în
+    sincronizarea obișnuită. La preluare se reîncarcă toată starea; altfel, la fiecare minut se citește doar KILL-ul.
+  - **Fereastra de lucru după calendarul NYSE:** `live_window()` în `runner.py` (sărbători închise, zile scurte cu
+    închidere la 13:00, activ 08:00 ET → închidere + 5 min, releu 09:00 ET → închidere − 15 min). Înainte de 09:00 ET
+    un run face doar analiza Pre-Market (~2 min) și nu pornește lanțul (minute GitHub). `--should-relay` decide releul
+    (calendar + KILL + EOD deja făcut); releul are reîncercări, cod HTTP în log, token de rezervă `github.token` și
+    nu pornește după un run căzut în primele 5 minute (fără lanț infinit de rulări eșuate).
+  - **Poziții fără stop:** o poziție la broker necunoscută jurnalului și fără stop se închide imediat
+    (`protect_orphan_positions`) + alertă Telegram. Fallback-ul „soft-stop” (stop doar pe partea întreagă) a fost
+    scos: dacă stop-ul nu e acceptat, poziția se închide (interdicția 4).
+  - **Stop-ul se ancorează pe prețul real de umplere** (`stop_from_fill_pct`): un preț vechi din scanner a pus stop-ul
+    cu 9% sub fill (DUOG, 4.11). Prețurile IEX mai vechi de 10 minute în sesiune nu se folosesc.
+  - **Short fără ETF invers dedicat = refuzat:** `SOXS` (3× sector) nu e short pe `INTC`; rămân doar `NVD`, `TSLS`,
+    `AAPD`, `MSFD`, `AMZD`, `METD`, `GGLS`, `CONI` (levierul real al proxy-ului e trecut la dimensionare).
+  - **Scanner fail-closed:** fără confirmarea explicită Gemini (`enter: true`) oportunitatea rămâne „de urmărit”;
+    activul trebuie să fie activ, tranzacționabil, fracționabil, pe bursă (nu OTC) și nu ETF cu levier/invers; preț
+    minim 5 $; max. 6 apeluri Gemini/scanare, la 4,5 s distanță, timeout 20 s; pauza de 10 minute între scanări e
+    salvată în stare (merge și după scanări goale); oportunități mai vechi de 30 minute nu se execută; briefing-ul
+    Telegram Pre-Market pleacă o singură dată pe zi.
+  - **Filtrul ML (meta_label)** învață doar din tranzacțiile D1b pe `SPY`/`QQQ`, fără dubluri.
+  - **Dashboard:** KILL scrie întâi `kill_switch.json` direct pe branch-ul `state` (botul se oprește în ≤1 minut chiar
+    dacă `kill.yml` nu pornește), apoi închide pe Alpaca, apoi `kill.yml`; „ok” doar dacă botul a primit oprirea.
+    `/api/cron` cere `CRON_SECRET` (Vercel) sau login; statusurile „pending/waiting” contează ca run activ;
+    auto-wake e așteptat (`await`). Cron-urile Vercel: 13:00 și 14:00 UTC.
+  - **Rămân decizia proprietarului:** (1) modificările lui Antigravity în `src/risk/guard.py` (simboluri noi +
+    `is_allowed_symbol` care acceptă orice ticker) — interdicția 2; (2) Gemini alege direcția și miza la scanner —
+    interdicția 7; (3) bugetul de minute GitHub Actions (lanțul de 15 minute ≈ 9.000 min/lună, planul Free are 2.000).

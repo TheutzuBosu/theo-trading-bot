@@ -111,7 +111,9 @@ def exec_symbol_for(
             return INVERSE_ETF_MAP[(sym, lev)]
         from src.ai.market_scanner import resolve_short_proxy_symbol
 
-        return resolve_short_proxy_symbol(sym)
+        # No dedicated inverse ETF -> returns `sym`; resolve_execution_instrument then refuses
+        # the short instead of buying an unrelated index ETF (B6f).
+        return resolve_short_proxy_symbol(sym) or sym
     if str(direction).lower() == "long":
         return LEVERAGED_LONG_ETF_MAP.get((sym, lev), sym)
     return sym
@@ -188,6 +190,8 @@ def resolve_execution_instrument(
 
     # Case 1: Short signal on an account that cannot short directly (< 2000 $ or shorting disabled)
     if uses_inverse_etf(dir_norm, account_equity, shorting_enabled):
+        if exec_sym == sym:
+            raise ValueError(f"Nu există un ETF invers dedicat pentru short pe {sym}")
         return _translated(via_inverse=True)
 
     # Case 2: Long signal (1x SPY/QQQ or 2x SSO/QLD)
@@ -342,23 +346,10 @@ class AlpacaPaperAdapter:
             stop_price=round_price(stop_price),
             client_order_id=client_order_id,
         )
-        try:
-            return self.client.submit_order(req)
-        except Exception as exc:  # noqa: BLE001
-            if "fractional" in str(exc).lower():
-                whole_qty = int(math.floor(float(qty)))
-                if whole_qty >= 1:
-                    req_whole = StopOrderRequest(
-                        symbol=symbol,
-                        qty=float(whole_qty),
-                        side=side,
-                        time_in_force=TimeInForce.DAY,
-                        stop_price=round_price(stop_price),
-                        client_order_id=client_order_id,
-                    )
-                    return self.client.submit_order(req_whole)
-                return {"id": f"soft-stop-{client_order_id}", "status": "soft_stop"}
-            raise
+        # Alpaca accepts fractional DAY stop orders (verified on the paper account, 6.11.2026).
+        # Any rejection propagates so the caller closes the position: never a position without a
+        # broker stop (interdiction 4; the old whole-share / "soft-stop" fallback is removed).
+        return self.client.submit_order(req)
 
     def submit_entry_with_stop(
         self,
@@ -368,10 +359,17 @@ class AlpacaPaperAdapter:
         stop_price: float,
         client_order_id: str,
         side: str = "buy",
+        stop_from_fill_pct: float | None = None,
     ) -> dict[str, Any]:
-        """Market entry (fractional, DAY) + separate protective STOP for the filled quantity."""
+        """Market entry (fractional, DAY) + separate protective STOP for the filled quantity.
+
+        With `stop_from_fill_pct` the stop is re-anchored on the real fill price (same % distance),
+        so a stale quote can never turn into a stop far below the fill (B6f).
+        """
         if stop_price is None or not math.isfinite(stop_price) or stop_price <= 0:
             raise ValueError("Refuzat: orice ordin trebuie să aibă un stop_price > 0 valid")
+        if stop_from_fill_pct is not None and not (0.0 < float(stop_from_fill_pct) < 0.25):
+            raise ValueError("Refuzat: stop_from_fill_pct trebuie să fie între 0 și 25%")
         if qty <= 0:
             raise ValueError("Refuzat: qty trebuie să fie > 0")
         sym = symbol.upper()
@@ -409,6 +407,10 @@ class AlpacaPaperAdapter:
                 pass
         if filled_qty <= 0 or fill_price <= 0:
             return {**base, "id": order_id, "status": "not_filled", "qty": 0.0}
+
+        if stop_from_fill_pct is not None:
+            pct = float(stop_from_fill_pct)
+            stop_price = round_price(fill_price * (1.0 - pct if side == "buy" else 1.0 + pct))
 
         stop_ok = (side == "buy" and stop_price < fill_price) or (
             side != "buy" and stop_price > fill_price
