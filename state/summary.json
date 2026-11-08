@@ -239,9 +239,9 @@
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
-    "updated_at": "2026-11-07T09:36:26.604869+00:00",
+    "updated_at": "2026-11-08T20:36:50.537051+00:00",
     "period": "9 - 13 Noiembrie 2026",
-    "executive_summary_ro": "Săptămâna precedentă s-a încheiat cu succes moderat, atingând un win rate de 63.2% și un PnL total de +7.85 $ din 19 tranzacții închise. Tensiunile geopolitice din Orientul Mijlociu și schimbările politice de la Washington impun însă o prudență maximă în tranzacționare. Vom continua să optimizăm execuția pe acțiuni individuale și indici, evitând capcanele de preț generate de știrile din pre-market.",
+    "executive_summary_ro": "Săptămâna precedentă s-a încheiat cu un profit net de +7.85$ și un win rate satisfăcător de 63.2%, demonstrând eficiența managementului de risc pe acțiuni US și indecși. Intrăm în noulciclu de tranzacționare cu o atenție sporită asupra riscurilor geopolitice din Orientul Mijlociu și a capcanelor de preț generate de știrile din pre-market. Ne vom concentra pe executarea disciplinată a ordinelor, evitând entuziasmul speculativ neconfirmat de acțiunea prețului.",
     "weekly_performance": {
       "total_trades": 19,
       "win_rate_pct": 63.2,
@@ -250,44 +250,44 @@
       "worst_trade": "QID (LONG) -1.31 $"
     },
     "lessons_learned": [
-      "Evitarea cumpărărilor bazate exclusiv pe entuziasmul generat de știri sau câștiguri în pre-market, pentru a preveni capcanele de preț și activarea rapidă a stop-loss-ului.",
-      "Atenție sporită la falsul impuls din pre-market, care poate induce în eroare algoritmii de intrare.",
-      "Menținerea unei gestionări stricte a riscului (risc-reward controlat), menținând pierderile sub control chiar și atunci când pozițiile se întorc împotriva direcției inițiale."
+      "Evitarea cumpărărilor bazate exclusiv pe entuziasmul din pre-market generat de știri sau rezultate financiare, pentru a preveni capcanele de preț și activarea rapidă a stop-loss-ului.",
+      "Validarea impulsurilor inițiale de preț înainte de intrare; un fals impuls în pre-market poate duce la pierderi imediate.",
+      "Menținerea controlului strict al riscului (sub -1R per trade), asigurându-ne că pozițiile care se întorc împotriva noastră sunt tăiate rapid."
     ],
-    "macro_outlook_ro": "Contextul macro este dominat de escaladarea tensiunilor geopolitice dintre SUA și Iran (atacuri cu rachete în Insula Qeshm și sancțiuni financiare), ceea ce poate genera volatilitate ridicată pe piețele energetice și de capital. Indicii SPY și QQQ vor fi vulnerabili la știri de ultimă oră, impunând o monitorizare atentă a ordinelor de stop-loss și a expunerii pe active de risc.",
+    "macro_outlook_ro": "Contextul macro este dominat de tensiunile geopolitice legate de Iran și de evoluția negocierilor diplomatice, generând volatilitate pe piețele globale și ezitare în piețele din Golf. Pe plan intern, indicii SPY și QQQ rămân sub observație strictă pentru posibile reacții de risk-off, în timp ce investitorii cântăresc impactul politicilor administrației Trump și deciziile viitoare ale Rezervei Federale.",
     "key_events": [
       {
         "day": "Luni",
-        "event": "Raportări financiare AAON, ABCL, ACHR și alte companii din calendarul săptămânii",
+        "event": "Raportări financiare companii (AACB, AAON, ABCL, ACHR, etc.)",
         "impact": "MEDIUM"
       },
       {
-        "day": "Miercuri",
-        "event": "Evoluția situației geopolitice SUA-Iran și impactul asupra prețului petrolului și piețelor de acțiuni",
+        "day": "Marți",
+        "event": "Monitorizarea evoluției negocierilor SUA-Iran și impactul pe energie/piețe",
         "impact": "HIGH"
       },
       {
-        "day": "Vineri",
-        "event": "Închiderea săptămânii și evaluarea pozițiilor deschise pe fondul volatilității macroeconomice",
-        "impact": "MEDIUM"
+        "day": "Miercuri",
+        "event": "Analiza tehnică a deschiderii pe SPY și QQQ în funcție de fluxul de știri macro",
+        "impact": "HIGH"
       }
     ],
-    "tactical_plan_ro": "Se recomandă reducerea dimensiunii pozițiilor pe fondul riscului geopolitic ridicat. Evitarea intrărilor agresive pe gap-uri de preț în pre-market și respectarea cu strictețe a ordinelor de stop-loss. Orele recomandate pentru tranzacționare rămân intervalele de lichiditate ridicată (10:00 - 11:30 EST), evitând primele 15 minute de la deschidere din cauza volatilității induse de știri.",
+    "tactical_plan_ro": "Se interzic intrările bazate exclusiv pe FOMO sau știri de ultimă oră în pre-market. Toate ordinele vor necesita o confirmare a structurii de preț în primele 15-30 de minute de la deschiderea pieței (RTH). Stop-loss-ul va fi setat strict la nivelurile tehnice precalculate, menținând dimensiunea pozițiilor mică pentru a proteja capitalul (+7.85$).",
     "watchlist": [
       {
         "symbol": "SPY",
         "direction": "long",
-        "thesis_ro": "Urmărim indicele principal pentru oportunități de scalping pe corecții intraday, atenți la reacția față de știrile geopolitice."
+        "thesis_ro": "Urmărim indicele principal pentru oportunități de cumpărare pe retrageri controlate, dacă sentimentul macro rămâne stabil."
       },
       {
         "symbol": "QQQ",
         "direction": "long",
-        "thesis_ro": "Monitorizăm sectorul tehnologic pentru reveniri pe volum, cu accent pe gestionarea strictă a riscului la nivelul suporturilor cheie."
+        "thesis_ro": "Monitorizăm sectorul de tehnologie pentru potențiale impulsuri de revenire pe fondul volatilității ridicate."
       },
       {
-        "symbol": "ACHR",
+        "symbol": "AAON",
         "direction": "long",
-        "thesis_ro": "Urmărim acțiunea în contextul raportărilor financiare programate pentru această săptămână, căutând volatilitate controlată."
+        "thesis_ro": "Acțiune în focus pentru earnings pe 9 noiembrie, tranzacționată strict pe baza acțiunii prețului post-raportare, nu pe speculație."
       }
     ]
   }
