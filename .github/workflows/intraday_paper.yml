@@ -8,7 +8,12 @@ name: Intraday Paper Session (Alpaca Paper)
 # fallbacks that flatten and run the daily learning if the 15:30 run was delayed or dropped.
 on:
   schedule:
-    # Sesiune intraday continuă la fiecare 10 minute (14:00 - 21:00 UTC / 09:00 - 16:00 ET / 16:00 - 23:00 RO)
+    # Declanșatoare discrete de dimineață (prioritizate de GitHub Actions la deschiderea sesiunii SUA)
+    - cron: "0 13,14 * * 1-5"
+    - cron: "15 13,14 * * 1-5"
+    - cron: "25 13,14 * * 1-5"
+    - cron: "30 13,14 * * 1-5"
+    # Sesiune intraday continuă / fallback la fiecare 10 minute (14:00 - 21:00 UTC / 09:00 - 16:00 ET / 16:00 - 23:00 RO)
     - cron: "*/10 14-21 * * 1-5"
   workflow_dispatch:
     inputs:
@@ -71,8 +76,8 @@ jobs:
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || secrets.GITHUB_TOKEN }}
           MODE: ${{ github.event.inputs.mode || 'auto' }}
         run: |
-          HOUR_ET=$(TZ="America/New_York" date +%H)
-          MIN_ET=$(TZ="America/New_York" date +%M)
+          HOUR_ET=$(TZ="America/New_York" date +%-H)
+          MIN_ET=$(TZ="America/New_York" date +%-M)
           case "$MODE" in
             premarket)  uv run python scripts/run_intraday_session.py --premarket ;;
             weekend)    uv run python scripts/run_intraday_session.py --weekend ;;
@@ -82,7 +87,7 @@ jobs:
             reset-kill) uv run python scripts/run_intraday_session.py --reset-kill ;;
             session)    uv run python scripts/run_intraday_session.py --duration-minutes 15 ;;
             *)
-              if [ "$HOUR_ET" = "08" ] || { [ "$HOUR_ET" = "09" ] && [ "$MIN_ET" -lt "25" ]; }; then
+              if [ "$HOUR_ET" -lt 9 ]; then
                 uv run python scripts/run_intraday_session.py --premarket
               else
                 uv run python scripts/run_intraday_session.py --duration-minutes 15
@@ -96,13 +101,13 @@ jobs:
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
           MODE: ${{ github.event.inputs.mode || 'auto' }}
         run: |
-          HOUR_ET=$(TZ="America/New_York" date +%H)
-          MIN_ET=$(TZ="America/New_York" date +%M)
-          # Predă ștafeta doar în timpul sesiunii de piață activă (09:25 - 15:45 ET)
+          HOUR_ET=$(TZ="America/New_York" date +%-H)
+          MIN_ET=$(TZ="America/New_York" date +%-M)
+          # Predă ștafeta continuu de la 09:00 ET până la 15:45 ET (ultimul bloc de 15m acoperă 15:45-16:00 ET + EOD)
           if [ "$MODE" = "auto" ] || [ "$MODE" = "session" ]; then
-            if [ "$HOUR_ET" -gt 9 ] || { [ "$HOUR_ET" -eq 9 ] && [ "$MIN_ET" -ge 25 ]; }; then
+            if [ "$HOUR_ET" -ge 9 ]; then
               if [ "$HOUR_ET" -lt 15 ] || { [ "$HOUR_ET" -eq 15 ] && [ "$MIN_ET" -lt 45 ]; }; then
-                echo "Predare automată de ștafetă: pornire următorul bloc de 15 minute..."
+                echo "Predare automată de ștafetă ($HOUR_ET:$MIN_ET ET): pornire următorul bloc de 15 minute..."
                 curl -s -X POST \
                   -H "Authorization: Bearer $GH_DISPATCH_TOKEN" \
                   -H "Accept: application/vnd.github.v3+json" \

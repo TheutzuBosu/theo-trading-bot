@@ -364,6 +364,70 @@ async function fetchLiveAlpacaData(): Promise<{
   }
 }
 
+let lastAutoWakeAttemptMs = 0;
+
+async function maybeAutoWakeBot(githubUpdatedAt: string | undefined, ghToken: string): Promise<void> {
+  if (!ghToken || !githubUpdatedAt) return;
+  const nowMs = Date.now();
+  if (nowMs - lastAutoWakeAttemptMs < 5 * 60 * 1000) return;
+
+  const lastUpdateMs = Date.parse(githubUpdatedAt);
+  if (isNaN(lastUpdateMs) || nowMs - lastUpdateMs < 20 * 60 * 1000) {
+    return;
+  }
+
+  try {
+    const nyParts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      weekday: "short",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false,
+    }).formatToParts(new Date(nowMs));
+
+    const weekday = nyParts.find((p) => p.type === "weekday")?.value || "";
+    const hour = parseInt(nyParts.find((p) => p.type === "hour")?.value || "0", 10);
+    const minute = parseInt(nyParts.find((p) => p.type === "minute")?.value || "0", 10);
+
+    const isWeekday = ["Mon", "Tue", "Wed", "Thu", "Fri"].includes(weekday);
+    const minsOfDay = hour * 60 + minute;
+    // Active window: 09:05 ET (545) to 15:45 ET (945)
+    if (!isWeekday || minsOfDay < 545 || minsOfDay > 945) {
+      return;
+    }
+
+    lastAutoWakeAttemptMs = nowMs;
+    const repo = process.env.GITHUB_REPO || "TheutzuBosu/theo-trading-bot";
+    const headers = {
+      Authorization: `Bearer ${ghToken}`,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+      "Content-Type": "application/json",
+    };
+
+    const runsRes = await fetch(
+      `https://api.github.com/repos/${repo}/actions/workflows/intraday_paper.yml/runs?per_page=3`,
+      { headers, cache: "no-store" }
+    );
+    if (runsRes.ok) {
+      const runsData = await runsRes.json();
+      const active = (runsData.workflow_runs || []).some(
+        (r: { status?: string }) => r.status === "in_progress" || r.status === "queued"
+      );
+      if (active) return;
+    }
+
+    await fetch(`https://api.github.com/repos/${repo}/actions/workflows/intraday_paper.yml/dispatches`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ ref: "main", inputs: { mode: "session" } }),
+      cache: "no-store",
+    });
+  } catch {
+    // Non-blocking auto-wake
+  }
+}
+
 export async function loadDashboardData(): Promise<DashboardData> {
   let summary: StateSummary = FALLBACK_SUMMARY;
   let equity: EquityPoint[] = parseEquityCsv(FALLBACK_EQUITY_CSV);
@@ -380,6 +444,7 @@ export async function loadDashboardData(): Promise<DashboardData> {
       summary = { ...JSON.parse(summaryRaw), is_sample: false };
       equity = parseEquityCsv(equityRaw);
       trades = parseTradesCsv(tradesRaw);
+      void maybeAutoWakeBot(summary.updated_at, ghToken);
     }
   } else {
     const summaryRaw = readFixtureFile("summary.json");
