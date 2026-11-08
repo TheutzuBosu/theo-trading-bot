@@ -351,3 +351,11 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
      `.env` niciodată urcat în istoric.
   - **`CRON_SECRET`:** pus de proprietar în Vercel pe Production, Preview și Development (verificat 8.11), deci
     `/api/cron` acceptă doar cron-ul Vercel cu secretul sau proprietarul logat.
+- **D36 (8.11.2026 — Prag minim de preț la scanner: 2 $, decizia proprietarului)** Pragul de `5 $` din B6f (D34/D35)
+  ar fi blocat 4 din cele 10 tranzacții de vineri 6.11.2026: `GOGO` 3,51 $ (+2,40 $), `QNTU` 3,35 $ (+1,72 $),
+  `FLYT` 3,34 $ (+0,84 $) și `STLN` 4,48 $ (−0,49 $), adică +4,47 $ din ziua de +7,04 $. Proprietarul a ales `2 $`,
+  același prag ca înainte de B6f (`MIN_MOVER_PRICE = 2.0` în `src/ai/market_scanner.py`, folosit și de
+  `evaluate_mover_candidate`). Restul filtrelor B6f rămân (activ fracționabil pe bursă SUA, fără OTC / warante / ETF-uri
+  cu levier, stop ancorat pe fill, preț IEX proaspăt). Short-ul pe acțiuni fără ETF invers dedicat rămâne blocat
+  (ex. `BDSX` prin `QID`: QID urmărește Nasdaq-100, nu BDSX). Test: `test_low_priced_runner_above_2_dollars_is_traded`.
+

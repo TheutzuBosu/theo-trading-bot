@@ -64,6 +64,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 - Decis (8.11.2026, D35): universul deschis de acțiuni SUA (scanner D33) aprobat, cu filtrele B6f; rolul dual al lui
   Gemini (doar filtru pe D1b, propune intrări pe scanner, totul prin `guard.py`); repo public → minute GitHub
   nelimitate; `CRON_SECRET` pus în Vercel.
+- Decis (8.11.2026, D36): pragul minim de preț la scanner e `2 $` (nu 5 $), ca vineri 6.11 (GOGO, QNTU, FLYT).
 - După un KILL, botul rămâne oprit până îl repornești tu: GitHub → Actions → „Intraday Paper Session” → Run
   workflow → mode `reset-kill`.
 
@@ -76,4 +77,4 @@ Limită asumată: stop-ul se mută doar la cicluri (60 s), nu la fiecare tick.
 
 ## Ultima actualizare
 
-8 noiembrie 2026 · Claude Code · D35: aprobările proprietarului (univers deschis de acțiuni SUA, rolul dual Gemini, repo public = minute nelimitate, `CRON_SECRET` în Vercel). 268 teste verzi.
+8 noiembrie 2026 · Claude Code · D36: pragul minim de preț la scanner coborât la 2 $ (decizia proprietarului). D35: aprobările proprietarului (univers deschis, rolul dual Gemini, repo public, `CRON_SECRET`). 269 teste verzi.

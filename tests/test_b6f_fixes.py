@@ -296,7 +296,7 @@ def test_mover_without_gemini_or_cheap_stays_on_watch() -> None:
     mover = {"symbol": "AMD", "price": 150.0, "prev_close": 140.0, "gap_pct": 7.1}
     ev = ms.evaluate_mover_opportunity(mover, headlines=[], gemini_client=None, check_asset=False)
     assert ev["action"] == "watch"
-    cheap = {"symbol": "DUOG", "price": 3.2, "prev_close": 2.5, "gap_pct": 28.0}
+    cheap = {"symbol": "PENY", "price": 1.6, "prev_close": 1.25, "gap_pct": 28.0}
     assert ms.evaluate_mover_opportunity(cheap, headlines=[], check_asset=False)["action"] == (
         "watch"
     )
@@ -439,3 +439,35 @@ def test_premarket_telegram_sent_once_per_day(
             state_dir=tmp_path, data_client=None, gemini_client=None, sync_github=False
         )
     assert sent == ["msg"]
+
+
+def test_low_priced_runner_above_2_dollars_is_traded() -> None:
+    """D36: a 3.35 $ runner (QNTU, +1.72 $ on 6.11.2026) passes the floor; 1.60 $ does not."""
+    from src.live.runner import evaluate_mover_candidate
+
+    now = datetime(2026, 11, 6, 12, 0, 59, tzinfo=NY)
+    opp = {
+        "symbol": "QNTU",
+        "action": "enter",
+        "direction": "long",
+        "price": 3.34,
+        "stop_price": 3.17,
+        "rr_ratio": 6.0,
+        "stake_dollars": 20.0,
+        "confidence": 0.7,
+        "reason_ro": "QNTU +40.9% pe volum mare.",
+    }
+    kw = dict(
+        equity=500.0,
+        open_positions=set(),
+        current_exposure=0.0,
+        daily_pnl_pct=0.0,
+        drawdown_pct=0.0,
+        now_et=now,
+    )
+    cand = evaluate_mover_candidate(opp, prices={"QNTU": 3.35}, **kw)
+    assert cand["action"] == "enter"
+    assert cand["exec_symbol"] == "QNTU"
+    assert cand["stop_price"] < cand["entry_price"]
+    low = evaluate_mover_candidate({**opp, "symbol": "PENY"}, prices={"PENY": 1.6}, **kw)
+    assert low["action"] == "skip" and "sub minimul de 2" in low["reason"]

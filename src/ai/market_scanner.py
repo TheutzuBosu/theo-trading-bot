@@ -32,7 +32,7 @@ ALPACA_LIVE_ASSETS_URL = "https://api.alpaca.markets/v2/assets"
 TICKER_RE = re.compile(r"^[A-Z]{1,5}$")
 
 # Safety filters for scanner trades (B6f)
-MIN_MOVER_PRICE = 5.0  # no penny/low-priced runners (wide spreads, thin IEX quotes)
+MIN_MOVER_PRICE = 2.0  # D36 (owner): 2-5 $ runners (GOGO, QNTU, FLYT) won on 6.11.2026
 MAX_AI_EVALS_PER_SCAN = 6  # at most this many Gemini calls per scan (free-tier rate limit)
 AI_CALL_SPACING_S = 4.5  # >= 4.5 s between Gemini calls -> <= ~13 requests per minute
 # Leveraged / inverse products are never traded as "movers" (AGENTS.md: leverage 1x/2x only, and
