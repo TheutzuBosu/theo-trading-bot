@@ -5,11 +5,14 @@ import { dispatchSession, findActiveSessionRun } from "@/lib/github";
 export const dynamic = "force-dynamic";
 
 // Vercel Cron sends `Authorization: Bearer <CRON_SECRET>` when CRON_SECRET is set in the project.
-// Without the secret only the logged-in owner may call this route (B6f: it was open to anyone).
+// With the secret set, only that header or the logged-in owner may call this route (B6f: it was
+// open to anyone). Until the owner adds CRON_SECRET, the Vercel cron user agent is still accepted
+// so the morning start keeps working (the call only starts a deduplicated session).
 async function isAllowed(req: Request): Promise<boolean> {
   const secret = (process.env.CRON_SECRET || "").trim();
   const header = req.headers.get("authorization") || "";
   if (secret && header === `Bearer ${secret}`) return true;
+  if (!secret && (req.headers.get("user-agent") || "").startsWith("vercel-cron/")) return true;
   return isAuthenticated();
 }
 

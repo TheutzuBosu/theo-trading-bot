@@ -329,7 +329,8 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   - **Filtrul ML (meta_label)** învață doar din tranzacțiile D1b pe `SPY`/`QQQ`, fără dubluri.
   - **Dashboard:** KILL scrie întâi `kill_switch.json` direct pe branch-ul `state` (botul se oprește în ≤1 minut chiar
     dacă `kill.yml` nu pornește), apoi închide pe Alpaca, apoi `kill.yml`; „ok” doar dacă botul a primit oprirea.
-    `/api/cron` cere `CRON_SECRET` (Vercel) sau login; statusurile „pending/waiting” contează ca run activ;
+    `/api/cron` cere `CRON_SECRET` (Vercel) sau login (până pune proprietarul secretul, se acceptă user-agent-ul
+    `vercel-cron/`); statusurile „pending/waiting” contează ca run activ;
     auto-wake e așteptat (`await`). Cron-urile Vercel: 13:00 și 14:00 UTC.
   - **Rămân decizia proprietarului:** (1) modificările lui Antigravity în `src/risk/guard.py` (simboluri noi +
     `is_allowed_symbol` care acceptă orice ticker) — interdicția 2; (2) Gemini alege direcția și miza la scanner —

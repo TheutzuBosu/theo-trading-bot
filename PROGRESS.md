@@ -61,6 +61,9 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 - Decis (4.11.2026, D31): contul paper rămâne la 500 $ (suma reală de după cele 3 luni de probă), dar **activăm ambele direcții (`Long + Short`) și levierul**: pe contul de 500 $ (`< 2.000 $`), semnalele `Short (-1)` pe `SPY`/`QQQ` cumpără automat ETF-urile inverse (`SH`/`SDS` pentru SPY, `PSQ`/`QID` pentru QQQ), iar semnalele `Long (+1)` cumpără `SPY`/`QQQ` (sau `SSO`/`QLD` `2×`). Fără limită la numărul de trade-uri pe zi cât timp trece analiza (`D1b` + `meta_label` + `daily_learner` + `news_veto` + `intraday_guard`).
 - Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75 pe Long-Only și 1,70 cu CAGR 7,06% și 2.982 trade-uri pe Long+Short 2×).
 - Dashboard-ul live (`https://theo-trading-bot.vercel.app`) este acum conectat la branch-ul `state` al contului real Alpaca Paper (`500,00 $`, `is_sample: false`), fără bannerul `DATE DE EXEMPLU`.
+- **De făcut o singură dată (B6f):** pune parola cron-ului în Vercel (nu o vezi, nu o scrii nicăieri). În Terminal:
+  `cd ~/theo-trading-bot/dashboard && openssl rand -hex 32 | tr -d '\n' | vercel env add CRON_SECRET production`,
+  apoi `vercel --prod --yes`. Până atunci, pornirea automată din Vercel merge, dar `/api/cron` e mai puțin protejat.
 - După un KILL, botul rămâne oprit până îl repornești tu: GitHub → Actions → „Intraday Paper Session” → Run
   workflow → mode `reset-kill`.
 
