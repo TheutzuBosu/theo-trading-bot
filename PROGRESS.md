@@ -61,24 +61,19 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 - Decis (4.11.2026, D31): contul paper rămâne la 500 $ (suma reală de după cele 3 luni de probă), dar **activăm ambele direcții (`Long + Short`) și levierul**: pe contul de 500 $ (`< 2.000 $`), semnalele `Short (-1)` pe `SPY`/`QQQ` cumpără automat ETF-urile inverse (`SH`/`SDS` pentru SPY, `PSQ`/`QID` pentru QQQ), iar semnalele `Long (+1)` cumpără `SPY`/`QQQ` (sau `SSO`/`QLD` `2×`). Fără limită la numărul de trade-uri pe zi cât timp trece analiza (`D1b` + `meta_label` + `daily_learner` + `news_veto` + `intraday_guard`).
 - Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75 pe Long-Only și 1,70 cu CAGR 7,06% și 2.982 trade-uri pe Long+Short 2×).
 - Dashboard-ul live (`https://theo-trading-bot.vercel.app`) este acum conectat la branch-ul `state` al contului real Alpaca Paper (`500,00 $`, `is_sample: false`), fără bannerul `DATE DE EXEMPLU`.
-- **De făcut o singură dată (B6f):** pune parola cron-ului în Vercel (nu o vezi, nu o scrii nicăieri). În Terminal:
-  `cd ~/theo-trading-bot/dashboard && openssl rand -hex 32 | tr -d '\n' | vercel env add CRON_SECRET production`,
-  apoi `vercel --prod --yes`. Până atunci, pornirea automată din Vercel merge, dar `/api/cron` e mai puțin protejat.
+- Decis (8.11.2026, D35): universul deschis de acțiuni SUA (scanner D33) aprobat, cu filtrele B6f; rolul dual al lui
+  Gemini (doar filtru pe D1b, propune intrări pe scanner, totul prin `guard.py`); repo public → minute GitHub
+  nelimitate; `CRON_SECRET` pus în Vercel.
 - După un KILL, botul rămâne oprit până îl repornești tu: GitHub → Actions → „Intraday Paper Session” → Run
   workflow → mode `reset-kill`.
 
 ## Bug-uri cunoscute
 
-După B6f (268 teste offline), trei lucruri așteaptă decizia proprietarului (D34):
-1. `src/risk/guard.py` a fost modificat de Antigravity fără aprobare (simboluri noi + `is_allowed_symbol` acceptă orice
-   ticker de 1–5 litere). Limitele de risc (1%/trade, −2%/zi, −15%) sunt neschimbate. Trebuie aprobat sau revenit.
-2. La scanner (D33), Gemini alege direcția și miza (5–35 $) — contrazice interdicția 7. Acum e fail-closed, dar regula
-   cere ca AI-ul doar să blocheze, nu să genereze semnale.
-3. Minutele GitHub Actions: repo privat, plan Free = 2.000 min/lună; lanțul de 15 minute consumă ≈ 450 min/zi
-   (≈ 9.000–10.000/lună). Variante: repo public (gratuit, dar codul și `state/` devin publice), plată (~0,008 $/min) sau
-   revenire la rulări doar la orele D1b (B6d, ~1.800 min/lună).
+Niciunul deschis după B6f (268 teste offline); cele 3 decizii din D34 sunt rezolvate de proprietar în D35.
+Rămâne de actualizat `AGENTS.md` (Regula 7 + scopul D33) conform D35 — modificarea trebuie aprobată direct de
+proprietar (fișierul de reguli al agenților).
 Limită asumată: stop-ul se mută doar la cicluri (60 s), nu la fiecare tick.
 
 ## Ultima actualizare
 
-8 noiembrie 2026 · Claude Code · B6f (D34): reparații critice după auditul independent (lacăt un singur motor, fereastra NYSE, releu sigur, poziții fără stop, stop pe fill, scanner fail-closed, KILL direct, `/api/cron` protejat). 268 teste verzi.
+8 noiembrie 2026 · Claude Code · D35: aprobările proprietarului (univers deschis de acțiuni SUA, rolul dual Gemini, repo public = minute nelimitate, `CRON_SECRET` în Vercel). 268 teste verzi.

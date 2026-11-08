@@ -335,3 +335,19 @@ Numerotate D1, D2…: decizia, motivul, data. Orice schimbare de parametru de st
   - **Rămân decizia proprietarului:** (1) modificările lui Antigravity în `src/risk/guard.py` (simboluri noi +
     `is_allowed_symbol` care acceptă orice ticker) — interdicția 2; (2) Gemini alege direcția și miza la scanner —
     interdicția 7; (3) bugetul de minute GitHub Actions (lanțul de 15 minute ≈ 9.000 min/lună, planul Free are 2.000).
+- **D35 (8.11.2026 — Aprobările proprietarului după B6f)** Răspunsul proprietarului la cele 3 puncte rămase din D34:
+  1. **`src/risk/guard.py` — universul deschis de acțiuni SUA: APROBAT.** `is_allowed_symbol` (acțiuni SUA standard) +
+     ETF-urile inverse single-stock din D33/D34 rămân. Proprietarul a cerut explicit în D33 ca botul să nu se limiteze
+     la `SPY`/`QQQ`. Condiții: filtrele B6f (preț `>= 5 $`, activ fracționabil pe bursă SUA, fără OTC / warante /
+     ETF-uri cu levier ca mover) și limitele de risc din `guard.py` neschimbate (1%/trade, −2%/zi, −15% drawdown).
+  2. **Rolul Gemini: arhitectură duală, APROBAT** (Regula 7 din `AGENTS.md` de rescris): pe D1b (`SPY`/`QQQ`) AI-ul și
+     `meta_label` doar filtrează (veto) și ajustează mărimea pe ore; pe Market Scanner D33 Gemini poate propune
+     `enter`, direcția (short doar prin ETF invers dedicat), R:R `1:3`–`1:10` și miza `5 $ – 35 $`, cu
+     `evaluate_order_risk` și regulile fail-closed B6f obligatorii pentru orice ordin.
+  3. **Minute GitHub Actions: REZOLVAT.** Repo-ul `TheutzuBosu/theo-trading-bot` e acum **public** (verificat
+     8.11.2026: `visibility: PUBLIC`) → minute nelimitate pe runner-ele standard. Se păstrează lanțul de 15 minute cu
+     cicluri de 60 s pe toată sesiunea NYSE. Consecință: codul și branch-ul `state` (tranzacții, equity) sunt publice;
+     interdicția 5 (fără secrete în cod/commit-uri/loguri) devine critică — verificat 8.11: nicio cheie în fișiere și
+     `.env` niciodată urcat în istoric.
+  - **`CRON_SECRET`:** pus de proprietar în Vercel pe Production, Preview și Development (verificat 8.11), deci
+    `/api/cron` acceptă doar cron-ul Vercel cu secretul sau proprietarul logat.
