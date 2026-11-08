@@ -274,7 +274,7 @@ def test_end_of_day_learning_and_kill_switch(tmp_path: Path) -> None:
 
 
 def test_evaluate_mover_candidate_and_stock_opportunities_execution(tmp_path: Path) -> None:
-    prices = {**PRICES, "NVDA": 140.0, "INTC": 22.0, "SOXS": 25.0}
+    prices = {**PRICES, "NVDA": 140.0, "INTC": 22.0, "SOXS": 25.0, "TSLA": 250.0, "TSLS": 8.0}
     opp_long = {
         "symbol": "NVDA",
         "action": "enter",
@@ -327,9 +327,34 @@ def test_evaluate_mover_candidate_and_stock_opportunities_execution(tmp_path: Pa
         prices=prices,
         now_et=NOW_CHECK,
     )
-    assert cand_short["action"] == "enter"
-    assert cand_short["signal_symbol"] == "INTC"
-    assert cand_short["exec_symbol"] == "SOXS"  # inverse semiconductor ETF on 500$ account
+    # B6f: INTC has no dedicated inverse ETF; SOXS (3x sector ETF) is not a short on INTC
+    assert cand_short["action"] == "skip"
+    assert "ETF invers dedicat" in cand_short["reason"]
+
+    opp_tsla_short = {
+        **opp_short,
+        "symbol": "TSLA",
+        "price": 250.0,
+        "stop_price": 253.75,
+        "target_price": 227.5,
+        "reason_ro": "TSLA scade după livrări slabe.",
+    }
+    cand_tsla = evaluate_mover_candidate(
+        opp_tsla_short,
+        equity=500.0,
+        open_positions=set(),
+        current_exposure=0.0,
+        daily_pnl_pct=0.0,
+        drawdown_pct=0.0,
+        prices=prices,
+        now_et=NOW_CHECK,
+    )
+    assert cand_tsla["action"] == "enter"
+    assert cand_tsla["signal_symbol"] == "TSLA"
+    assert cand_tsla["exec_symbol"] == "TSLS"  # dedicated -1x single-stock inverse ETF
+    assert cand_tsla["exec_direction"] == "long"
+    assert cand_tsla["stop_price"] < cand_tsla["entry_price"]
+    assert 0 < cand_tsla["stop_from_fill_pct"] < 0.05
 
     client = FakeAlpaca(prices=prices)
     adapter = _adapter(client, tmp_path)
@@ -344,7 +369,7 @@ def test_evaluate_mover_candidate_and_stock_opportunities_execution(tmp_path: Pa
         send_alerts=False,
         prices=prices,
         now_et=NOW_CHECK,
-        stock_opportunities=[opp_long, opp_short],
+        stock_opportunities=[opp_long, opp_short, opp_tsla_short],
     )
     assert step["status"] == "ok"
-    assert {o["exec_symbol"] for o in step["orders"]} == {"NVDA", "SOXS"}
+    assert {o["exec_symbol"] for o in step["orders"]} == {"NVDA", "TSLS"}

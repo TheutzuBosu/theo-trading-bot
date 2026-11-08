@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+import time
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -26,7 +27,22 @@ logger = logging.getLogger(__name__)
 
 ALPACA_MOVERS_URL = "https://data.alpaca.markets/v1beta1/screener/stocks/movers"
 ALPACA_SNAPSHOTS_URL = "https://data.alpaca.markets/v2/stocks/snapshots"
+ALPACA_PAPER_ASSETS_URL = "https://paper-api.alpaca.markets/v2/assets"
+ALPACA_LIVE_ASSETS_URL = "https://api.alpaca.markets/v2/assets"
 TICKER_RE = re.compile(r"^[A-Z]{1,5}$")
+
+# Safety filters for scanner trades (B6f)
+MIN_MOVER_PRICE = 5.0  # no penny/low-priced runners (wide spreads, thin IEX quotes)
+MAX_AI_EVALS_PER_SCAN = 6  # at most this many Gemini calls per scan (free-tier rate limit)
+AI_CALL_SPACING_S = 4.5  # >= 4.5 s between Gemini calls -> <= ~13 requests per minute
+# Leveraged / inverse products are never traded as "movers" (AGENTS.md: leverage 1x/2x only, and
+# a 2x short ETF bought as a "gainer" would be a hidden leveraged short).
+LEVERAGED_NAME_RE = re.compile(
+    r"(\b[1-9](\.\d)?x\b|-[1-9]x|\bultra|\bleveraged\b|\binverse\b|\bbear\b|\bbull\b|"
+    r"\bshort\b|daily target|\bdirexion\b|\bproshares\b|\bdefiance daily\b)",
+    re.IGNORECASE,
+)
+_ASSET_CACHE: dict[str, dict[str, Any] | None] = {}
 
 # Broad active watchlist across Mega-Cap, Semiconductors, AI/Cloud, Fintech, Biotech, EV, Energy
 ACTIVE_SCAN_UNIVERSE: tuple[str, ...] = (
@@ -95,9 +111,10 @@ ACTIVE_SCAN_UNIVERSE: tuple[str, ...] = (
 )
 
 # Inverse ETF mapping for shorting individual stocks on a < 2000$ cash/paper account (D31/D33)
+# Only dedicated single-stock inverse ETFs (B6f): a short on any other stock is skipped. The old
+# fallbacks (QID for "everything else", SOXS -3x for semiconductors) bought instruments that do
+# not follow the shorted stock, and SOXS breaks the 1x/2x leverage rule.
 SINGLE_STOCK_INVERSE_MAP: dict[str, str] = {
-    "SPY": "SDS",
-    "QQQ": "QID",
     "NVDA": "NVD",
     "TSLA": "TSLS",
     "AAPL": "AAPD",
@@ -107,27 +124,77 @@ SINGLE_STOCK_INVERSE_MAP: dict[str, str] = {
     "GOOGL": "GGLS",
     "GOOG": "GGLS",
     "COIN": "CONI",
-    "AMD": "SOXS",
-    "INTC": "SOXS",
-    "MU": "SOXS",
-    "SMCI": "SOXS",
-    "AVGO": "SOXS",
-    "ARM": "SOXS",
-    "MRVL": "SOXS",
-    "QCOM": "SOXS",
-    "TSM": "SOXS",
 }
+# Daily leverage of each proxy (-1x unless listed); used to translate the stop distance.
+PROXY_LEVERAGE: dict[str, int] = {"NVD": 2, "CONI": 2}
 
 
 def is_valid_stock_symbol(symbol: str) -> bool:
-    """Return True if `symbol` is a standard US equity/ETF ticker (excludes 5-letter warrants)."""
+    """Return True if `symbol` is a standard US equity/ETF ticker (excludes 5-letter specials)."""
     sym = str(symbol or "").strip().upper()
     if not TICKER_RE.match(sym):
         return False
-    # Exclude 5-letter NASDAQ Warrants (W), Rights (R), Units (U), and Stubs (Z) like RGTIW
-    if len(sym) == 5 and sym[-1] in ("W", "R", "U", "Z"):
+    # Exclude 5-letter NASDAQ Warrants (W), Rights (R), Units (U), Stubs (Z) like RGTIW, and
+    # Q = company in bankruptcy proceedings
+    if len(sym) == 5 and sym[-1] in ("W", "R", "U", "Z", "Q"):
         return False
     return True
+
+
+def fetch_asset_profile(
+    symbol: str,
+    api_key: str | None = None,
+    secret_key: str | None = None,
+    session: Any = None,
+) -> dict[str, Any] | None:
+    """Alpaca asset record (`status`, `tradable`, `fractionable`, `exchange`, `name`), cached."""
+    sym = str(symbol or "").upper().strip()
+    if sym in _ASSET_CACHE:
+        return _ASSET_CACHE[sym]
+    key = (api_key if api_key is not None else settings.ALPACA_API_KEY).strip()
+    sec = (secret_key if secret_key is not None else settings.ALPACA_SECRET_KEY).strip()
+    if not key or not sec or not sym:
+        return None
+    base = ALPACA_LIVE_ASSETS_URL if settings.TRADING_MODE == "LIVE" else ALPACA_PAPER_ASSETS_URL
+    http = session or requests
+    try:
+        resp = http.get(
+            f"{base}/{sym}",
+            headers={"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": sec},
+            timeout=5.0,
+        )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Activul %s nu a putut fi verificat: %s", sym, type(exc).__name__)
+        return None  # not cached: retried at the next scan
+    status = getattr(resp, "status_code", 500)
+    if status == 404:
+        _ASSET_CACHE[sym] = None
+        return None
+    if status != 200:
+        return None
+    try:
+        payload = resp.json()
+    except Exception:  # noqa: BLE001
+        return None
+    profile = payload if isinstance(payload, dict) else None
+    _ASSET_CACHE[sym] = profile
+    return profile
+
+
+def check_tradable_asset(asset: dict[str, Any] | None) -> tuple[bool, str]:
+    """Fail-closed eligibility of a mover: active, tradable, fractionable, exchange-listed and not
+    a leveraged/inverse product."""
+    if not asset:
+        return False, "activul nu a putut fi verificat la Alpaca"
+    if str(asset.get("status", "")).lower() != "active" or not asset.get("tradable"):
+        return False, "activul nu este tranzacționabil pe Alpaca"
+    if not asset.get("fractionable"):
+        return False, "activul nu acceptă fracțiuni (mizele de 5–35 $ nu încap)"
+    if str(asset.get("exchange", "")).upper() in ("OTC", "CRYPTO"):
+        return False, "activul nu este listat pe o bursă SUA"
+    if LEVERAGED_NAME_RE.search(str(asset.get("name", ""))):
+        return False, "ETF cu levier / invers (interzis ca oportunitate)"
+    return True, ""
 
 
 def _load_learning_context(state_dir: Path | None) -> tuple[list[str], str]:
@@ -159,13 +226,9 @@ def _load_learning_context(state_dir: Path | None) -> tuple[list[str], str]:
         return [], ""
 
 
-def resolve_short_proxy_symbol(symbol: str) -> str:
-    """Return the liquid inverse ETF used to express a SHORT on `symbol` when < 2000$."""
-    sym = symbol.upper().strip()
-    if sym in SINGLE_STOCK_INVERSE_MAP:
-        return SINGLE_STOCK_INVERSE_MAP[sym]
-    # Tech/growth tickers default to QID (-2x Nasdaq), others to SDS (-2x S&P 500)
-    return "QID"
+def resolve_short_proxy_symbol(symbol: str) -> str | None:
+    """Dedicated inverse ETF expressing a SHORT on `symbol` (< 2000 $ account), or None."""
+    return SINGLE_STOCK_INVERSE_MAP.get(symbol.upper().strip())
 
 
 def fetch_alpaca_top_movers(
@@ -204,8 +267,8 @@ def fetch_alpaca_top_movers(
                 continue
             price = float(item.get("price") or 0.0)
             chg_pct = float(item.get("percent_change") or 0.0)
-            # Filter out sub-2$ penny stocks with extreme illiquidity
-            if price < 2.0:
+            # Filter out low-priced runners (wide spreads, thin IEX quotes)
+            if price < MIN_MOVER_PRICE:
                 continue
             prev_close = price / (1.0 + chg_pct / 100.0) if (100.0 + chg_pct) > 1e-3 else price
             out.append(
@@ -322,8 +385,14 @@ def evaluate_mover_opportunity(
     default_stake_dollars: float = 15.0,
     lessons_context: list[str] | None = None,
     tactical_context: str | None = None,
+    api_key: str | None = None,
+    secret_key: str | None = None,
+    check_asset: bool = True,
 ) -> dict[str, Any]:
     """Analyze a single stock mover (pre-market or intraday) and build a Risk:Reward trade plan.
+
+    Fail-closed (B6f): without a valid Gemini confirmation (no client, HTTP 429, bad JSON,
+    `enter` not explicitly true) the mover stays on the watch list and is never traded.
 
     Returns a dictionary with:
     - `action`: `"enter"` or `"watch"`
@@ -344,6 +413,25 @@ def evaluate_mover_opportunity(
             "gap_pct": gap_pct,
             "reason_ro": f"Mișcare {gap_pct:+.2f}% sub pragul minim de {min_abs_gap_pct:.1f}%.",
         }
+
+    def _watch(reason: str, **extra: Any) -> dict[str, Any]:
+        return {
+            "action": "watch",
+            "symbol": sym,
+            "price": price,
+            "gap_pct": gap_pct,
+            "reason_ro": reason,
+            **extra,
+        }
+
+    if price < MIN_MOVER_PRICE:
+        return _watch(f"Preț {price:.2f} $ sub minimul de {MIN_MOVER_PRICE:.0f} $ (spread mare).")
+    if check_asset:
+        ok, why = check_tradable_asset(
+            fetch_asset_profile(sym, api_key=api_key, secret_key=secret_key, session=session)
+        )
+        if not ok:
+            return _watch(f"Exclus: {why}.")
 
     if headlines is None:
         news_items = fetch_recent_news(
@@ -386,71 +474,75 @@ def evaluate_mover_opportunity(
         f"pe fondul: {top_news[:140]}."
     )
 
-    if gemini_client is not None:
-        lessons_block = ""
-        if lessons_context:
-            lessons_block = (
-                "\nLecții învățate din tranzacțiile anterioare (NU repeta aceste greșeli!):\n- "
-                + "\n- ".join(lessons_context[:5])
-                + "\n"
-            )
-        tactical_block = (
-            f"\nPlan tactic săptămânal activ: {tactical_context}\n" if tactical_context else ""
+    if gemini_client is None:
+        return _watch("Fără analiza AI (Gemini indisponibil): doar urmărire, nicio intrare.")
+
+    lessons_block = ""
+    if lessons_context:
+        lessons_block = (
+            "\nLecții învățate din tranzacțiile anterioare (NU repeta aceste greșeli!):\n- "
+            + "\n- ".join(lessons_context[:5])
+            + "\n"
         )
-        prompt = (
-            f"Ești analistul de oportunități intraday al botului Theo Trading Bot (cont 500 $).\n"
-            f"Acțiunea {sym} are prețul {price:.2f} $ "
-            f"(mișcare {gap_pct:+.2f}% față de închiderea {prev_close:.2f} $).\n"
-            "Știri recente despre companie:\n- "
-            + (
-                "\n- ".join(clean_headlines[:5])
-                if clean_headlines
-                else "Fără știri directe; mișcare tehnică de volum în pre-market."
-            )
-            + lessons_block
-            + tactical_block
-            + "\n\nRăspunde DOAR în JSON valid:\n"
-            '`{"enter": true/false, "direction": "long"|"short", "rr_ratio": 3.0..10.0, '
-            '"stake_dollars": 5.0..35.0, "stop_pct": 0.008..0.03, '
-            '"catalyst_ro": "1-2 fraze în română"}`\n'
-            "Reguli: intră (`enter: true`) dacă mișcarea are impuls clar sau catalizator "
-            "(știre, raport financiar, investiție, downgrade/upgrade) și NU încalcă lecțiile "
-            "învățate din zilele trecute. "
-            "Alege raportul Risc:Reward (`rr_ratio` între 3 și 10) și miza (`stake_dollars` "
-            "între 5$ și 35$) proporțional cu claritatea catalizatorului."
+    tactical_block = (
+        f"\nPlan tactic săptămânal activ: {tactical_context}\n" if tactical_context else ""
+    )
+    prompt = (
+        f"Ești analistul de oportunități intraday al botului Theo Trading Bot (cont 500 $).\n"
+        f"Acțiunea {sym} are prețul {price:.2f} $ "
+        f"(mișcare {gap_pct:+.2f}% față de închiderea {prev_close:.2f} $).\n"
+        "Știri recente despre companie:\n- "
+        + (
+            "\n- ".join(clean_headlines[:5])
+            if clean_headlines
+            else "Fără știri directe; mișcare tehnică de volum în pre-market."
         )
-        try:
-            model_name = settings.GEMINI_MODEL
-            if model_name == "gemini-2.5-flash-lite":
-                model_name = "gemini-flash-lite-latest"
-            resp = gemini_client.models.generate_content(model=model_name, contents=prompt)
-            raw = (getattr(resp, "text", None) or "").strip()
-            if raw.startswith("```"):
-                raw = raw.strip("`").removeprefix("json").strip()
-            parsed = json.loads(raw)
-            if not bool(parsed.get("enter", True)):
-                return {
-                    "action": "watch",
-                    "symbol": sym,
-                    "price": price,
-                    "gap_pct": gap_pct,
-                    "reason_ro": str(parsed.get("catalyst_ro") or "Filtrat de analiza AI."),
-                }
-            cand_dir = str(parsed.get("direction") or direction).lower().strip()
-            if cand_dir in ("long", "short"):
-                direction = cand_dir
-            rr_ratio = float(min(10.0, max(3.0, float(parsed.get("rr_ratio") or rr_ratio))))
-            stake_dollars = float(
-                min(40.0, max(5.0, float(parsed.get("stake_dollars") or stake_dollars)))
-            )
-            stop_pct = float(min(0.03, max(0.008, float(parsed.get("stop_pct") or stop_pct))))
-            ai_cat = str(parsed.get("catalyst_ro") or "").strip()
-            if ai_cat:
-                catalyst_ro = ai_cat
-        except Exception as exc:  # noqa: BLE001
-            logger.warning(
-                "Fallback mecanic la evaluarea oportunității %s: %s", sym, type(exc).__name__
-            )
+        + lessons_block
+        + tactical_block
+        + "\n\nRăspunde DOAR în JSON valid:\n"
+        '`{"enter": true/false, "direction": "long"|"short", "rr_ratio": 3.0..10.0, '
+        '"stake_dollars": 5.0..35.0, "stop_pct": 0.008..0.03, '
+        '"catalyst_ro": "1-2 fraze în română"}`\n'
+        "Reguli: intră (`enter: true`) doar dacă mișcarea are un catalizator clar "
+        "(știre, raport financiar, investiție, downgrade/upgrade) și NU încalcă lecțiile "
+        "învățate din zilele trecute; altfel `enter: false`. "
+        "Alege raportul Risc:Reward (`rr_ratio` între 3 și 10) și miza (`stake_dollars` "
+        "între 5$ și 35$) proporțional cu claritatea catalizatorului."
+    )
+    try:
+        model_name = settings.GEMINI_MODEL
+        if model_name == "gemini-2.5-flash-lite":
+            model_name = "gemini-flash-lite-latest"
+        resp = gemini_client.models.generate_content(model=model_name, contents=prompt)
+        raw = (getattr(resp, "text", None) or "").strip()
+        if raw.startswith("```"):
+            raw = raw.strip("`").removeprefix("json").strip()
+        parsed = json.loads(raw)
+        if not isinstance(parsed, dict):
+            raise ValueError("răspuns AI fără obiect JSON")
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Gemini indisponibil pentru %s (%s): fără intrare", sym, type(exc).__name__)
+        return _watch(
+            f"Analiza AI a eșuat ({type(exc).__name__}): nicio intrare fără confirmare.",
+            _ai_called=True,
+        )
+
+    if parsed.get("enter") is not True:
+        return _watch(str(parsed.get("catalyst_ro") or "Filtrat de analiza AI."), _ai_called=True)
+    try:
+        cand_dir = str(parsed.get("direction") or direction).lower().strip()
+        if cand_dir in ("long", "short"):
+            direction = cand_dir
+        rr_ratio = float(min(10.0, max(3.0, float(parsed.get("rr_ratio") or rr_ratio))))
+        stake_dollars = float(
+            min(35.0, max(5.0, float(parsed.get("stake_dollars") or stake_dollars)))
+        )
+        stop_pct = float(min(0.03, max(0.008, float(parsed.get("stop_pct") or stop_pct))))
+    except (TypeError, ValueError):
+        return _watch("Răspuns AI invalid (valori nenumerice): nicio intrare.", _ai_called=True)
+    ai_cat = str(parsed.get("catalyst_ro") or "").strip()
+    if ai_cat:
+        catalyst_ro = ai_cat
 
     target_pct = stop_pct * rr_ratio
     if direction == "long":
@@ -487,6 +579,7 @@ def evaluate_mover_opportunity(
         "headlines": clean_headlines[:3],
         "reason_ro": reason_ro,
         "evaluated_at": datetime.now(UTC).isoformat(),
+        "_ai_called": True,
     }
 
 
@@ -501,8 +594,14 @@ def scan_market_opportunities(
     min_abs_gap_pct: float = 1.2,
     max_opportunities: int = 6,
     state_dir: Path | None = None,
+    max_ai_evals: int = MAX_AI_EVALS_PER_SCAN,
+    ai_spacing_s: float = AI_CALL_SPACING_S,
+    sleep_fn: Any = time.sleep,
 ) -> dict[str, Any]:
-    """Scan the US market for top movers and return ranked trade opportunities + watchlist."""
+    """Scan the US market for top movers and return ranked trade opportunities + watchlist.
+
+    At most `max_ai_evals` Gemini calls per scan, spaced by `ai_spacing_s` (free-tier limit).
+    """
     movers = discover_market_movers(
         extra_symbols=extra_symbols,
         api_key=api_key,
@@ -513,11 +612,13 @@ def scan_market_opportunities(
     lessons_ctx, tactical_ctx = _load_learning_context(state_dir)
     opportunities: list[dict[str, Any]] = []
     watched: list[dict[str, Any]] = []
+    ai_calls = 0
+    last_ai_called = False
 
     for m in movers:
         if m["symbol"] in ("SPY", "QQQ"):
             continue
-        if len(opportunities) >= max_opportunities:
+        if len(opportunities) >= max_opportunities or ai_calls >= max_ai_evals:
             watched.append(
                 {
                     "action": "watch",
@@ -528,6 +629,8 @@ def scan_market_opportunities(
                 }
             )
             continue
+        if last_ai_called:
+            sleep_fn(ai_spacing_s)
         ev = evaluate_mover_opportunity(
             m,
             finnhub_key=finnhub_key,
@@ -536,7 +639,12 @@ def scan_market_opportunities(
             min_abs_gap_pct=min_abs_gap_pct,
             lessons_context=lessons_ctx,
             tactical_context=tactical_ctx,
+            api_key=api_key,
+            secret_key=secret_key,
         )
+        last_ai_called = bool(ev.pop("_ai_called", False))
+        if last_ai_called:
+            ai_calls += 1
         if ev.get("action") == "enter":
             opportunities.append(ev)
         else:

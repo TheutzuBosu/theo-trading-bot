@@ -19,6 +19,7 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 | B6c | Sesiune live paper + resetare dashboard la 500 $ | Gata | faza-b6c-live-demo | Antigravity | `src/live/runner.py`, `src/live/state_writer.py`, `scripts/run_intraday_session.py`, GitHub Actions + branch `state` sincronizat (218 teste verzi) |
 | B6d | Audit + reparații execuție live (D32) | Gata | faza-b6d-audit-live | Claude Code | Ordine Alpaca reale (market + stop), preț ETF corect, rulări la orele D1b, stare restaurată din branch-ul `state`, ieșiri D1b live, învățare din tranzacțiile închise (234 teste verzi) |
 | B6e | Scanner toată piața SUA (Pre-Market & Intraday, D33) | Gata | main | Antigravity | `src/ai/market_scanner.py` + `src/ai/premarket.py` + `evaluate_mover_candidate` în `runner.py`: scanează și tranzacționează orice acțiune SUA în mișcare (mize 5 $ – 35 $, Risc:Reward 1:3 – 1:10, Long + Short + Levier) + afișare în Dashboard și Telegram |
+| B6f | Reparații critice după auditul independent (D34) | Gata | faza-b6f-reparatii-critice | Claude Code | Un singur motor (lacăt `engine_lock.json`), fereastra NYSE + releu sigur, poziții fără stop închise, stop ancorat pe fill, short doar pe ETF invers dedicat, scanner fail-closed, KILL care oprește botul direct, `/api/cron` protejat (268 teste verzi) |
 
 | # | Etapă | Status | Branch | Agent | Note |
 |---|---|---|---|---|---|
@@ -36,12 +37,19 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 
 ## Pasul următor exact
 
-**B7: monitorizarea pe Alpaca Paper (12 săptămâni) + Poarta 2.** Construcția e gata (B0 → B6d, D32).
-- Workflow-ul `intraday_paper.yml` rulează singur în zilele de bursă: ~7 minute înaintea fiecărui eveniment D1b
-  (10:12, 10:58, 11:44, 12:30, 13:16, 14:02, 14:48 și ieșirea 15:30 ET), plus rezervele 15:38 și 15:50 ET.
-- Ce verifică agentul următor în prima săptămână (fără cod nou): `gh run list --workflow intraday_paper.yml`
-  (rulări verzi), branch-ul `state` (`git show origin/state:state/live_journal.json`, `trades.csv`), alertele
-  Telegram și dashboard-ul. Orice eroare se repară cu test în `tests/test_live_audit.py`.
+**B7: monitorizarea pe Alpaca Paper (12 săptămâni) + Poarta 2.** Construcția e gata (B0 → B6f, D34).
+- Cum rulează acum: în zilele NYSE, un lanț de rulări de 15 minute (`intraday_paper.yml`, mod `session`) de la 09:00 ET
+  până la închidere + 5 min; fiecare rulare face cicluri de 60 s (`scripts/run_intraday_session.py --duration-minutes 15`)
+  și pornește singură următoarea (`--should-relay`). Între 08:00 și 09:00 ET doar briefing Pre-Market (~2 min, fără lanț).
+  Pornire: cron GitHub (12–14 UTC la 20 min, 15–20 UTC la 15 min), Vercel Cron (13:00 și 14:00 UTC), auto-wake din dashboard.
+- Verificări zilnice în prima săptămână (fără cod nou):
+  1. `gh run list --workflow intraday_paper.yml --limit 40` → rulări „success” legate între ele, fără găuri > 20 min.
+  2. `git fetch origin state && git show origin/state:state/engine_lock.json` → `holder` = `gha-<run_id>-1` în timpul
+     sesiunii, gol după închidere.
+  3. `git show origin/state:state/live_journal.json` (`open_trades`, `last_eod_date`) și `trades.csv`; orice poziție la
+     Alpaca trebuie să aibă un ordin STOP (`protect_orphan_positions` închide altfel și trimite alertă Telegram).
+- Orice eroare nouă se repară cu test în `tests/test_b6f_fixes.py` (lacăt, fereastră, scanner) sau
+  `tests/test_live_audit.py` (execuție), comanda: `uv run pytest tests/test_b6f_fixes.py -q`, apoi `bash scripts/check.sh`.
 - **Înainte de 1 ianuarie 2027:** adaugă datele FOMC 2027 în `src/backtest/fomc.py` (`SCHEDULED[2027]`, de pe
   federalreserve.gov/monetarypolicy/fomccalendars.htm) + test; fără ele, veto-ul FOMC nu mai blochează nimic în 2027.
 - Raportul Poarta 2 B (`reports/gate2_daytrading.md`) se scrie după 12 săptămâni, din `state/trades.csv`.
@@ -53,15 +61,24 @@ Proprietarul a pornit apoi **Faza B: day trading SPY/QQQ, doar pe Alpaca Paper**
 - Decis (4.11.2026, D31): contul paper rămâne la 500 $ (suma reală de după cele 3 luni de probă), dar **activăm ambele direcții (`Long + Short`) și levierul**: pe contul de 500 $ (`< 2.000 $`), semnalele `Short (-1)` pe `SPY`/`QQQ` cumpără automat ETF-urile inverse (`SH`/`SDS` pentru SPY, `PSQ`/`QID` pentru QQQ), iar semnalele `Long (+1)` cumpără `SPY`/`QQQ` (sau `SSO`/`QLD` `2×`). Fără limită la numărul de trade-uri pe zi cât timp trece analiza (`D1b` + `meta_label` + `daily_learner` + `news_veto` + `intraday_guard`).
 - Rezultat Poarta 1 B (4.11.2026, D30): **PASS** prin strategia **D1b (`VWAP & Ladder #1`)**, care a trecut toate cele 8/8 criterii (Sharpe OOS 1,75 pe Long-Only și 1,70 cu CAGR 7,06% și 2.982 trade-uri pe Long+Short 2×).
 - Dashboard-ul live (`https://theo-trading-bot.vercel.app`) este acum conectat la branch-ul `state` al contului real Alpaca Paper (`500,00 $`, `is_sample: false`), fără bannerul `DATE DE EXEMPLU`.
+- **De făcut o singură dată (B6f):** pune parola cron-ului în Vercel (nu o vezi, nu o scrii nicăieri). În Terminal:
+  `cd ~/theo-trading-bot/dashboard && openssl rand -hex 32 | tr -d '\n' | vercel env add CRON_SECRET production`,
+  apoi `vercel --prod --yes`. Până atunci, pornirea automată din Vercel merge, dar `/api/cron` e mai puțin protejat.
 - După un KILL, botul rămâne oprit până îl repornești tu: GitHub → Actions → „Intraday Paper Session” → Run
   workflow → mode `reset-kill`.
 
 ## Bug-uri cunoscute
 
-Niciunul cunoscut după auditul B6d (234 teste offline). Limite asumate: stop-ul se mută doar la rulări (nu la
-fiecare minut ca în backtest); minutele GitHub Actions estimate ~1.700–1.900/lună (repo privat: 2.000 incluse în
-planul Free).
+După B6f (268 teste offline), trei lucruri așteaptă decizia proprietarului (D34):
+1. `src/risk/guard.py` a fost modificat de Antigravity fără aprobare (simboluri noi + `is_allowed_symbol` acceptă orice
+   ticker de 1–5 litere). Limitele de risc (1%/trade, −2%/zi, −15%) sunt neschimbate. Trebuie aprobat sau revenit.
+2. La scanner (D33), Gemini alege direcția și miza (5–35 $) — contrazice interdicția 7. Acum e fail-closed, dar regula
+   cere ca AI-ul doar să blocheze, nu să genereze semnale.
+3. Minutele GitHub Actions: repo privat, plan Free = 2.000 min/lună; lanțul de 15 minute consumă ≈ 450 min/zi
+   (≈ 9.000–10.000/lună). Variante: repo public (gratuit, dar codul și `state/` devin publice), plată (~0,008 $/min) sau
+   revenire la rulări doar la orele D1b (B6d, ~1.800 min/lună).
+Limită asumată: stop-ul se mută doar la cicluri (60 s), nu la fiecare tick.
 
 ## Ultima actualizare
 
-4 noiembrie 2026 · Claude Code · Audit B6d (D32): execuția live reparată (ordine Alpaca reale, preț ETF corect, rulări la orele D1b, stare din branch-ul `state`, ieșiri D1b, învățare din tranzacții). 234 teste verzi.
+8 noiembrie 2026 · Claude Code · B6f (D34): reparații critice după auditul independent (lacăt un singur motor, fereastra NYSE, releu sigur, poziții fără stop, stop pe fill, scanner fail-closed, KILL direct, `/api/cron` protejat). 268 teste verzi.

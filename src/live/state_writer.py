@@ -9,9 +9,11 @@ account (`500,00 $` start, live equity, open positions, and trade lessons) in re
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import logging
 import os
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -40,6 +42,27 @@ KILL_SWITCH_FILE = "kill_switch.json"
 # Regular trading steps never upload kill_switch.json, so a KILL pressed meanwhile in the dashboard
 # (kill.yml) cannot be overwritten by a step that started before it (D32).
 ROUTINE_SYNC_FILES = tuple(f for f in SYNCED_STATE_FILES if f != KILL_SWITCH_FILE)
+
+# Single-engine lease (B6f): only the holder of state/engine_lock.json may trade. Never pulled
+# or pushed by the routine sync; written only by compare-and-swap (GitHub sha).
+ENGINE_LOCK_FILE = "engine_lock.json"
+LEASE_TTL_S = 240.0
+LEASE_RENEW_MARGIN_S = 150.0
+
+# Per-process upload cache, enabled by the long-running session loop: unchanged files are not
+# re-uploaded every minute (fewer API calls and commits on the `state` branch).
+_PUSH_DEDUPE: dict[str, bool] = {"enabled": False}
+_LAST_SYNCED: dict[tuple[str, str, str], str] = {}
+
+
+def enable_push_dedupe(enabled: bool = True) -> None:
+    """Skip uploading files whose content did not change since the last pull/push."""
+    _PUSH_DEDUPE["enabled"] = bool(enabled)
+    _LAST_SYNCED.clear()
+
+
+def _digest(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def _github_headers(token: str) -> dict[str, str]:
@@ -219,6 +242,8 @@ def pull_state_dir_from_github(
         tmp = target.with_suffix(target.suffix + ".tmp")
         tmp.write_text(text, encoding="utf-8")
         os.replace(tmp, target)
+        if _PUSH_DEDUPE["enabled"]:
+            _LAST_SYNCED[(repo, branch, fname)] = _digest(text)
         results[fname] = True
     return results
 
@@ -263,6 +288,10 @@ def sync_state_dir_to_github(
         if not local_file.exists():
             continue
         content = local_file.read_text(encoding="utf-8")
+        cache_key = (repo, branch, fname)
+        if _PUSH_DEDUPE["enabled"] and _LAST_SYNCED.get(cache_key) == _digest(content):
+            results[fname] = True
+            continue
         remote_path = f"state/{fname}"
         ok = push_file_to_github_branch(
             file_path=remote_path,
@@ -273,8 +302,154 @@ def sync_state_dir_to_github(
             branch=branch,
             session=session,
         )
+        if ok and _PUSH_DEDUPE["enabled"]:
+            _LAST_SYNCED[cache_key] = _digest(content)
         results[fname] = ok
     return results
+
+
+def _parse_iso(value: Any) -> datetime | None:
+    try:
+        dt = datetime.fromisoformat(str(value))
+    except (TypeError, ValueError):
+        return None
+    return dt if dt.tzinfo is not None else dt.replace(tzinfo=UTC)
+
+
+def _lock_url(repo: str) -> str:
+    return f"{GITHUB_API_BASE}/repos/{repo}/contents/state/{ENGINE_LOCK_FILE}"
+
+
+def _read_lock(
+    token: str, repo: str, branch: str, session: Any | None, timeout: int = 10
+) -> tuple[int, dict[str, Any], str | None]:
+    """(HTTP status, lock data, blob sha) of state/engine_lock.json."""
+    http = session or requests
+    resp = http.get(
+        _lock_url(repo), headers=_github_headers(token), params={"ref": branch}, timeout=timeout
+    )
+    status = int(getattr(resp, "status_code", 500))
+    if status != 200:
+        return status, {}, None
+    payload = resp.json()
+    if not isinstance(payload, dict):
+        return status, {}, None
+    data: Any = {}
+    if payload.get("content"):
+        try:
+            data = json.loads(base64.b64decode(payload["content"]).decode("utf-8"))
+        except Exception:  # noqa: BLE001
+            data = {}
+    return status, (data if isinstance(data, dict) else {}), payload.get("sha")
+
+
+def _write_lock(
+    token: str,
+    repo: str,
+    branch: str,
+    session: Any | None,
+    data: dict[str, Any],
+    sha: str | None,
+    message: str,
+    timeout: int = 10,
+) -> int:
+    http = session or requests
+    body: dict[str, Any] = {
+        "message": message,
+        "content": base64.b64encode(json.dumps(data, indent=2).encode("utf-8")).decode("ascii"),
+        "branch": branch,
+    }
+    if sha:
+        body["sha"] = sha  # compare-and-swap: GitHub answers 409 if someone wrote in between
+    resp = http.put(_lock_url(repo), headers=_github_headers(token), json=body, timeout=timeout)
+    return int(getattr(resp, "status_code", 500))
+
+
+def acquire_engine_lease(
+    engine_id: str,
+    *,
+    token: str | None = None,
+    repo: str = DEFAULT_GITHUB_REPO,
+    branch: str = DEFAULT_STATE_BRANCH,
+    session: Any | None = None,
+    ttl_s: float = LEASE_TTL_S,
+    renew_margin_s: float = LEASE_RENEW_MARGIN_S,
+    now: datetime | None = None,
+) -> dict[str, Any]:
+    """Take or renew the single-engine lease. `held` False means: do not trade now.
+
+    `fresh` is True when the lease was just taken over (the caller must reload the full state),
+    `error` is True when GitHub could not be reached (the caller may keep a still-valid lease).
+    """
+    gh_token = _resolve_token(token)
+    if not gh_token:
+        return {"held": True, "fresh": False, "reason": "Fără token GitHub: lacăt dezactivat."}
+    ts = (now or datetime.now(UTC)).astimezone(UTC)
+    try:
+        status, data, sha = _read_lock(gh_token, repo, branch, session)
+    except Exception as exc:  # noqa: BLE001
+        return {"held": False, "error": True, "reason": f"Lacăt necitit: {type(exc).__name__}"}
+    if status not in (200, 404):
+        return {"held": False, "error": True, "reason": f"Lacăt necitit (HTTP {status})."}
+
+    holder = str(data.get("holder") or "")
+    expires = _parse_iso(data.get("expires_at"))
+    if holder and holder != engine_id and expires is not None and expires > ts:
+        return {
+            "held": False,
+            "holder": holder,
+            "expires_at": expires.isoformat(),
+            "reason": f"Alt motor ține lacătul ({holder}).",
+        }
+    if holder == engine_id and expires is not None:
+        if (expires - ts).total_seconds() > renew_margin_s:
+            return {"held": True, "fresh": False, "expires_at": expires.isoformat()}
+
+    new_exp = ts + timedelta(seconds=ttl_s)
+    lock = {
+        "holder": engine_id,
+        "acquired_at": data.get("acquired_at") if holder == engine_id else ts.isoformat(),
+        "renewed_at": ts.isoformat(),
+        "expires_at": new_exp.isoformat(),
+    }
+    try:
+        code = _write_lock(
+            gh_token, repo, branch, session, lock, sha, f"chore(state): lacăt motor {engine_id}"
+        )
+    except Exception as exc:  # noqa: BLE001
+        return {"held": False, "error": True, "reason": f"Lacăt nescris: {type(exc).__name__}"}
+    if code in (200, 201):
+        return {"held": True, "fresh": holder != engine_id, "expires_at": new_exp.isoformat()}
+    if code in (409, 422):
+        return {"held": False, "reason": "Alt motor a luat lacătul în aceeași clipă."}
+    return {"held": False, "error": True, "reason": f"Lacăt nescris (HTTP {code})."}
+
+
+def release_engine_lease(
+    engine_id: str,
+    *,
+    token: str | None = None,
+    repo: str = DEFAULT_GITHUB_REPO,
+    branch: str = DEFAULT_STATE_BRANCH,
+    session: Any | None = None,
+    now: datetime | None = None,
+) -> bool:
+    """Free the lease at the end of a run so the next relay run starts immediately."""
+    gh_token = _resolve_token(token)
+    if not gh_token:
+        return False
+    ts = (now or datetime.now(UTC)).astimezone(UTC)
+    try:
+        status, data, sha = _read_lock(gh_token, repo, branch, session)
+        if status != 200 or str(data.get("holder") or "") != engine_id:
+            return False
+        released = {"holder": "", "released_by": engine_id, "expires_at": ts.isoformat()}
+        code = _write_lock(
+            gh_token, repo, branch, session, released, sha, f"chore(state): eliberare {engine_id}"
+        )
+        return code in (200, 201)
+    except Exception:  # noqa: BLE001
+        return False
 
 
 def write_state_files(
