@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T10:00:34.067240-05:00",
+  "updated_at": "2026-11-09T10:01:42.011170-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-09T14:29:30.362071+00:00",
@@ -81,76 +81,76 @@
     "top_movers": [
       {
         "symbol": "MF",
-        "price": 16.89,
+        "price": 19.83,
         "prev_close": 10.64,
-        "gap_pct": 58.69,
+        "gap_pct": 86.37,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CKX",
-        "price": 16.13,
+        "price": 17.23,
         "prev_close": 10.37,
-        "gap_pct": 55.54,
+        "gap_pct": 66.15,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EDSA",
-        "price": 3.27,
+        "price": 3.32,
         "prev_close": 2.14,
-        "gap_pct": 52.8,
+        "gap_pct": 55.03,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FTH",
-        "price": 12.07,
+        "price": 12.13,
         "prev_close": 22.05,
-        "gap_pct": -45.26,
+        "gap_pct": -44.99,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GFR",
-        "price": 7.74,
+        "price": 7.75,
         "prev_close": 5.6,
-        "gap_pct": 38.21,
+        "gap_pct": 38.3,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "NWGL",
-        "price": 3.28,
-        "prev_close": 2.53,
-        "gap_pct": 29.63,
+        "symbol": "ONCO",
+        "price": 4.47,
+        "prev_close": 6.95,
+        "gap_pct": -35.68,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APXC",
-        "price": 4.6,
+        "price": 4.72,
         "prev_close": 3.6,
-        "gap_pct": 27.78,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "IONS",
-        "price": 28.54,
-        "prev_close": 39.42,
-        "gap_pct": -27.6,
+        "gap_pct": 31.11,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ABEO",
-        "price": 3.02,
+        "price": 2.98,
         "prev_close": 4.17,
-        "gap_pct": -27.58,
+        "gap_pct": -28.54,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "JANX",
-        "price": 12.86,
-        "prev_close": 17.63,
-        "gap_pct": -27.06,
+        "symbol": "FISN",
+        "price": 2.37,
+        "prev_close": 1.85,
+        "gap_pct": 28.11,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "NWGL",
+        "price": 3.24,
+        "prev_close": 2.53,
+        "gap_pct": 28.06,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T14:50:52.422790+00:00",
+    "last_scan_at": "2026-11-09T15:01:42.011176+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
