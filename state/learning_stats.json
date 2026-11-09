@@ -1,8 +1,8 @@
 {
-  "meta_samples": 22,
+  "meta_samples": 4,
   "meta_active": false,
-  "updated_at": "2026-11-08T07:05:17.144413-05:00",
-  "total_trades_analyzed": 19,
+  "updated_at": "2026-11-09T15:30:28.348111-05:00",
+  "total_trades_analyzed": 26,
   "hourly_multipliers": {
     "09:00": 1.0,
     "10:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Tranzacție long pe IRTC câștigătoare (+0.50 $, +1.43R): spargerea benzii de zgomot s-a menținut până la ieșirea programată (time).",
-    "Tranzacție long pe MNTN închisă pe plus (+0.22 $, +0.15R): ținta de profit a fost atinsă și stop-ul urcat la VWAP a protejat câștigul.",
-    "Tranzacție long pe QID închisă pe plus (+0.03 $, +0.08R): ținta de profit a fost atinsă și stop-ul urcat la VWAP a protejat câștigul.",
-    "Tranzacție long pe QNTU câștigătoare (+1.72 $, +1.56R): spargerea benzii de zgomot s-a menținut până la ieșirea programată (time).",
-    "Tranzacție long pe SKIN închisă pe plus (+0.70 $, +0.31R): ținta de profit a fost atinsă și stop-ul urcat la VWAP a protejat câștigul."
+    "Tranzacția pe ASTS a fost închisă prematur din cauza timpului, aducând un profit mic de 0,48 $ (1,278R), învățarea principală fiind că trebuie să permitem știrilor fundamentale puternice timp să se dezvolte, evitând ieșirile timpurii.",
+    "Robotul a ieșit din cauza timpului fără nicio mișcare în favoarea sau defavoarea sa, obținând un mic profit de 0,21 $; reținem că, uneori, lipsa de impuls impune închiderea prematură a poziției.",
+    "Am închis tranzacția pe LUNR la limită de timp cu un profit mic de 0,3 $, reținând că știrile fundamentale puternice pot susține creșteri chiar și în sesiuni avansate, dar ieșirile programate cronologic taie potențialul mișcării.",
+    "Am ieșit după timp cu un profit mic de 2.86R, ratând maximul de 3.84R din cauză că n-am atins ținta fixă.",
+    "Tranzacția a fost închisă automat după expirarea timpului fără nicio mișcare de preț, aducând un profit minor de 0,38$, iar lecția este că trebuie să evităm intrările bazate doar pe entuziasm mediatic când lipsesc impulsurile tehnice imediate."
   ]
 }
