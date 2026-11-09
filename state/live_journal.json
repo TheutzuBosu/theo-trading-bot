@@ -21,7 +21,7 @@
       "qty": 3.2483,
       "qty0": 3.2483,
       "signal_entry_price": 674.02,
-      "signal_stop": 674.5593810419671,
+      "signal_stop": 674.5749866961222,
       "signal_initial_stop": 672.0223450124423,
       "signal_target": 683.0840023722607,
       "signal_stop_after_target": 672.573308788985,
@@ -73,7 +73,7 @@
       "initial_risk_dollars": 0.2999,
       "equity_at_entry": 507.59,
       "partial_done": false,
-      "last_price": 505.86,
+      "last_price": 506.29,
       "entry_reason": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.01$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 74.0,
@@ -113,7 +113,7 @@
       "initial_risk_dollars": 0.3744,
       "equity_at_entry": 509.69,
       "partial_done": false,
-      "last_price": 36.38,
+      "last_price": 36.43,
       "entry_reason": "AST SpaceMobile a format un JV cu Rakuten și a primit finanțare de aproximativ 1 miliard de dolari de la Ministerul Comunicațiilor din Japonia. Aceasta este o știre fundamentală extrem de puternică care susține tendința ascendentă a prețului. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~25.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 288.0,
@@ -193,7 +193,7 @@
       "initial_risk_dollars": 0.301,
       "equity_at_entry": 509.69,
       "partial_done": false,
-      "last_price": 35.66,
+      "last_price": 35.71,
       "entry_reason": "IonQ a ridicat ghidajul financiar, provocând un raliu puternic de aproape 10% în sectorul de computere cuantice (antrenând și rivali precum D-Wave și Rigetti). Deși prețul țintă mediu a fost redus recent, impulsul actual și interesul ridicat din piață oferă o oportunitate de continuare favorabilă pentru un trade long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 288.0,
