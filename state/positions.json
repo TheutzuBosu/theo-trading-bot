@@ -5,11 +5,11 @@
     "entry_time": "2026-11-09T10:44:04.033666-05:00",
     "qty": 0.0407,
     "entry_price": 491.708,
-    "current_price": 509.185,
+    "current_price": 508.82,
     "stop": 484.34,
     "initial_stop": 484.34,
-    "unrealized_pnl": 0.71,
-    "unrealized_r": 2.37,
+    "unrealized_pnl": 0.7,
+    "unrealized_r": 2.32,
     "entry_reason": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.01$, R:R 1:3.5)"
   },
   {
@@ -18,11 +18,11 @@
     "entry_time": "2026-11-09T14:18:41.633680-05:00",
     "qty": 0.6857,
     "entry_price": 36.476,
-    "current_price": 36.99,
+    "current_price": 36.94,
     "stop": 35.93,
     "initial_stop": 35.93,
-    "unrealized_pnl": 0.35,
-    "unrealized_r": 0.94,
+    "unrealized_pnl": 0.32,
+    "unrealized_r": 0.85,
     "entry_reason": "AST SpaceMobile a format un JV cu Rakuten și a primit finanțare de aproximativ 1 miliard de dolari de la Ministerul Comunicațiilor din Japonia. Aceasta este o știre fundamentală extrem de puternică care susține tendința ascendentă a prețului. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~25.00$, R:R 1:3.5)"
   },
   {
@@ -31,11 +31,11 @@
     "entry_time": "2026-11-09T14:18:41.633680-05:00",
     "qty": 0.5594,
     "entry_price": 35.728,
-    "current_price": 36.145,
+    "current_price": 36.12,
     "stop": 35.19,
     "initial_stop": 35.19,
-    "unrealized_pnl": 0.23,
-    "unrealized_r": 0.77,
+    "unrealized_pnl": 0.22,
+    "unrealized_r": 0.73,
     "entry_reason": "IonQ a ridicat ghidajul financiar, provocând un raliu puternic de aproape 10% în sectorul de computere cuantice (antrenând și rivali precum D-Wave și Rigetti). Deși prețul țintă mediu a fost redus recent, impulsul actual și interesul ridicat din piață oferă o oportunitate de continuare favorabilă pentru un trade long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)"
   },
   {
@@ -57,11 +57,11 @@
     "entry_time": "2026-11-09T14:29:39.671912-05:00",
     "qty": 0.0717,
     "entry_price": 278.464,
-    "current_price": 276.87,
+    "current_price": 276.655,
     "stop": 274.29,
     "initial_stop": 274.29,
-    "unrealized_pnl": -0.11,
-    "unrealized_r": -0.38,
+    "unrealized_pnl": -0.13,
+    "unrealized_r": -0.43,
     "entry_reason": "Moderna crește puternic susținută de un upgrade de la Piper Sandler la 305$ și perspective financiare ridicate, menținând un impuls intraday solid după trecerea primei ore de tranzacționare. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MRNA LONG -> BUY MRNA (miză ~20.00$, R:R 1:3.5)"
   },
   {
@@ -70,11 +70,11 @@
     "entry_time": "2026-11-09T10:13:26.812790-05:00",
     "qty": 3.2483,
     "entry_price": 78.1138,
-    "current_price": 79.3,
+    "current_price": 79.23,
     "stop": 78.53,
     "initial_stop": 77.56,
-    "unrealized_pnl": 3.85,
-    "unrealized_r": 2.14,
+    "unrealized_pnl": 3.63,
+    "unrealized_r": 2.02,
     "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00"
   },
   {
@@ -83,11 +83,11 @@
     "entry_time": "2026-11-09T14:18:41.633680-05:00",
     "qty": 0.3436,
     "entry_price": 58.244,
-    "current_price": 58.9069,
+    "current_price": 58.9,
     "stop": 57.37,
     "initial_stop": 57.37,
     "unrealized_pnl": 0.23,
-    "unrealized_r": 0.76,
+    "unrealized_r": 0.75,
     "entry_reason": "Rocket Lab (RKLB) crește puternic pe fondul atribuirii unor contracte majore de la NASA în valoare de 10 miliarde de dolari pentru baza lunară și anticiparea raportului de câștiguri. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~20.00$, R:R 1:3.5)"
   }
 ]
