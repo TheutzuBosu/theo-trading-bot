@@ -28,7 +28,7 @@
       "initial_risk_dollars": 1.799,
       "equity_at_entry": 506.86,
       "partial_done": false,
-      "last_price": 78.32,
+      "last_price": 78.14,
       "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 41.0,
