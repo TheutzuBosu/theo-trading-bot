@@ -181,14 +181,16 @@ def fetch_asset_profile(
     return profile
 
 
-def check_tradable_asset(asset: dict[str, Any] | None) -> tuple[bool, str]:
-    """Fail-closed eligibility of a mover: active, tradable, fractionable, exchange-listed and not
-    a leveraged/inverse product."""
+def check_tradable_asset(
+    asset: dict[str, Any] | None, price: float | None = None
+) -> tuple[bool, str]:
+    """Fail-closed eligibility of a mover: active, tradable, fractionable (or whole-share <= 35$),
+    exchange-listed and not a leveraged/inverse product."""
     if not asset:
         return False, "activul nu a putut fi verificat la Alpaca"
     if str(asset.get("status", "")).lower() != "active" or not asset.get("tradable"):
         return False, "activul nu este tranzacționabil pe Alpaca"
-    if not asset.get("fractionable"):
+    if not asset.get("fractionable") and (price is None or price > 35.0):
         return False, "activul nu acceptă fracțiuni (mizele de 5–35 $ nu încap)"
     if str(asset.get("exchange", "")).upper() in ("OTC", "CRYPTO"):
         return False, "activul nu este listat pe o bursă SUA"
@@ -426,10 +428,12 @@ def evaluate_mover_opportunity(
 
     if price < MIN_MOVER_PRICE:
         return _watch(f"Preț {price:.2f} $ sub minimul de {MIN_MOVER_PRICE:.0f} $ (spread mare).")
+    asset_profile: dict[str, Any] | None = None
     if check_asset:
-        ok, why = check_tradable_asset(
-            fetch_asset_profile(sym, api_key=api_key, secret_key=secret_key, session=session)
+        asset_profile = fetch_asset_profile(
+            sym, api_key=api_key, secret_key=secret_key, session=session
         )
+        ok, why = check_tradable_asset(asset_profile, price=price)
         if not ok:
             return _watch(f"Exclus: {why}.")
 
@@ -477,25 +481,34 @@ def evaluate_mover_opportunity(
     if gemini_client is None:
         return _watch("Fără analiza AI (Gemini indisponibil): doar urmărire, nicio intrare.")
 
+    from zoneinfo import ZoneInfo
+
+    now_et = datetime.now(UTC).astimezone(ZoneInfo("America/New_York"))
+    is_regular_open = (9, 45) <= (now_et.hour, now_et.minute) < (16, 0)
+    session_note = (
+        f"Ora curentă NY: {now_et.strftime('%H:%M')} ET — sesiunea principală NYSE este DESCHISĂ "
+        "(am trecut de primele 15 minute de la deschidere; NU mai suntem în pre-market).\n"
+        if is_regular_open
+        else f"Ora curentă NY: {now_et.strftime('%H:%M')} ET.\n"
+    )
     lessons_block = ""
     if lessons_context:
         lessons_block = (
-            "\nLecții învățate din tranzacțiile anterioare (NU repeta aceste greșeli!):\n- "
+            "\nLecții din tranzacțiile anterioare (aplică-le doar când sunt relevante):\n- "
             + "\n- ".join(lessons_context[:5])
             + "\n"
         )
-    tactical_block = (
-        f"\nPlan tactic săptămânal activ: {tactical_context}\n" if tactical_context else ""
-    )
+    tactical_block = f"\nContext săptămânal: {tactical_context}\n" if tactical_context else ""
     prompt = (
-        f"Ești analistul de oportunități intraday al botului Theo Trading Bot (cont 500 $).\n"
-        f"Acțiunea {sym} are prețul {price:.2f} $ "
+        "Ești analistul de oportunități intraday al botului Theo Trading Bot (cont 500 $).\n"
+        + session_note
+        + f"Acțiunea {sym} are prețul {price:.2f} $ "
         f"(mișcare {gap_pct:+.2f}% față de închiderea {prev_close:.2f} $).\n"
         "Știri recente despre companie:\n- "
         + (
             "\n- ".join(clean_headlines[:5])
             if clean_headlines
-            else "Fără știri directe; mișcare tehnică de volum în pre-market."
+            else "Fără știri directe; mișcare tehnică puternică de volum în sesiunea activă."
         )
         + lessons_block
         + tactical_block
@@ -503,9 +516,12 @@ def evaluate_mover_opportunity(
         '`{"enter": true/false, "direction": "long"|"short", "rr_ratio": 3.0..10.0, '
         '"stake_dollars": 5.0..35.0, "stop_pct": 0.008..0.03, '
         '"catalyst_ro": "1-2 fraze în română"}`\n'
-        "Reguli: intră (`enter: true`) doar dacă mișcarea are un catalizator clar "
-        "(știre, raport financiar, investiție, downgrade/upgrade) și NU încalcă lecțiile "
-        "învățate din zilele trecute; altfel `enter: false`. "
+        "Reguli: aprobă intrarea (`enter: true`) dacă acțiunea are un catalizator clar "
+        "(știre pozitivă/negativă, contract, achiziție, raport financiar, upgrade/downgrade) "
+        "sau un trend intraday puternic. IMPORTANT: dacă sesiunea NYSE este deja deschisă "
+        "(după 09:45 ET), NU respinge acțiunea invocând 'pre-market' sau 'primele 15 minute' — "
+        "respinge (`enter: false`) DOAR dacă știrea este o capcană clară (ex: diluție/offering de "
+        "acțiuni, faliment) sau direcția e incertă. "
         "Alege raportul Risc:Reward (`rr_ratio` între 3 și 10) și miza (`stake_dollars` "
         "între 5$ și 35$) proporțional cu claritatea catalizatorului."
     )
@@ -578,6 +594,7 @@ def evaluate_mover_opportunity(
         "max_loss_dollars": max_loss,
         "headlines": clean_headlines[:3],
         "reason_ro": reason_ro,
+        "fractionable": bool(asset_profile.get("fractionable", True)) if asset_profile else True,
         "evaluated_at": datetime.now(UTC).isoformat(),
         "_ai_called": True,
     }

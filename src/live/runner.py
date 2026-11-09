@@ -761,6 +761,11 @@ def evaluate_mover_candidate(
     if max_notional is not None:
         qty_by_notional = min(qty_by_notional, max(0.0, max_notional) / exec_price)
     qty = round(min(float(exec_spec["qty"]), qty_by_stake, qty_by_risk, qty_by_notional), 4)
+    if opp.get("fractionable") is False and exec_sym == sym:
+        whole = int(math.floor(qty))
+        if whole < 1 and exec_price <= 35.0 and stop_dist <= risk_budget:
+            whole = 1
+        qty = float(whole)
     if qty <= 0.0 or qty * exec_price < 1.0:
         return {"action": "skip", "reason": "Cantitate sub minimul de 1$ Alpaca.", "key": key}
 
@@ -1083,6 +1088,8 @@ def manage_open_positions(
             )
             qty_now = float(pos.get("qty", 0.0))
             sell_qty = round(min(qty_now, float(tr["qty0"]) * PARTIAL_FRACTION), 6)
+            if qty_now == int(qty_now) and sell_qty != int(sell_qty) and qty_now >= 2.0:
+                sell_qty = float(int(math.floor(sell_qty)))
             if new_exec >= q_exec or sell_qty <= 0 or qty_now - sell_qty <= 1e-6:
                 adapter.close_position(exec_sym)
                 tr["exit_reason_pending"] = "target"
