@@ -7,9 +7,9 @@
   "total_pnl_pct": 1.93,
   "today_pnl": 2.8,
   "today_pnl_pct": 0.55,
-  "current_drawdown_pct": -0.0,
+  "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T12:59:29.762717-05:00",
+  "updated_at": "2026-11-09T13:00:39.479937-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-09T10:44:04.033666-05:00",
       "qty": 0.0407,
       "entry_price": 491.708,
-      "current_price": 503.26,
+      "current_price": 503.28,
       "stop": 484.34,
       "initial_stop": 484.34,
       "unrealized_pnl": 0.47,
@@ -133,65 +133,51 @@
     "top_movers": [
       {
         "symbol": "CKX",
-        "price": 21.4,
+        "price": 22.86,
         "prev_close": 10.37,
-        "gap_pct": 106.33,
+        "gap_pct": 120.49,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MF",
-        "price": 19.21,
+        "price": 17.84,
         "prev_close": 10.64,
-        "gap_pct": 80.55,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "NWGL",
-        "price": 3.81,
-        "prev_close": 2.53,
-        "gap_pct": 50.54,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "FTH",
-        "price": 11.88,
-        "prev_close": 22.05,
-        "gap_pct": -46.13,
+        "gap_pct": 67.67,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ONCO",
-        "price": 3.8,
+        "price": 3.72,
         "prev_close": 6.95,
-        "gap_pct": -45.32,
+        "gap_pct": -46.47,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "FTH",
+        "price": 12.25,
+        "prev_close": 22.05,
+        "gap_pct": -44.44,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FISN",
-        "price": 2.6,
+        "price": 2.62,
         "prev_close": 1.85,
-        "gap_pct": 40.35,
+        "gap_pct": 41.62,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "WCT",
-        "price": 3.25,
-        "prev_close": 2.33,
-        "gap_pct": 39.72,
+        "symbol": "NWGL",
+        "price": 3.55,
+        "prev_close": 2.53,
+        "gap_pct": 40.32,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GFR",
         "price": 7.75,
         "prev_close": 5.6,
-        "gap_pct": 38.39,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "COHQ",
-        "price": 29.21,
-        "prev_close": 45.67,
-        "gap_pct": -36.04,
+        "gap_pct": 38.3,
         "source": "alpaca_movers"
       },
       {
@@ -200,9 +186,23 @@
         "prev_close": 4.17,
         "gap_pct": -35.85,
         "source": "alpaca_movers"
+      },
+      {
+        "symbol": "COHQ",
+        "price": 29.54,
+        "prev_close": 45.67,
+        "gap_pct": -35.32,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "AMD",
+        "price": 503.35,
+        "prev_close": 447.46,
+        "gap_pct": 12.49,
+        "source": "watchlist_snapshot"
       }
     ],
-    "last_scan_at": "2026-11-09T17:50:31.911048+00:00",
+    "last_scan_at": "2026-11-09T18:00:39.479940+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
