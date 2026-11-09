@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T09:49:47.649189-05:00",
+  "updated_at": "2026-11-09T09:50:52.422786-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-09T14:29:30.362071+00:00",
@@ -81,30 +81,30 @@
     "top_movers": [
       {
         "symbol": "MF",
-        "price": 16.73,
+        "price": 16.89,
         "prev_close": 10.64,
-        "gap_pct": 57.24,
+        "gap_pct": 58.69,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CKX",
-        "price": 15.96,
+        "price": 16.13,
         "prev_close": 10.37,
-        "gap_pct": 53.91,
+        "gap_pct": 55.54,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EDSA",
-        "price": 3.26,
+        "price": 3.27,
         "prev_close": 2.14,
-        "gap_pct": 52.34,
+        "gap_pct": 52.8,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FTH",
-        "price": 12.1,
+        "price": 12.07,
         "prev_close": 22.05,
-        "gap_pct": -45.15,
+        "gap_pct": -45.26,
         "source": "alpaca_movers"
       },
       {
@@ -115,42 +115,42 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "TMCI",
-        "price": 5.11,
-        "prev_close": 4.03,
-        "gap_pct": 26.8,
+        "symbol": "NWGL",
+        "price": 3.28,
+        "prev_close": 2.53,
+        "gap_pct": 29.63,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "DCTH",
-        "price": 18.91,
-        "prev_close": 14.93,
-        "gap_pct": 26.66,
+        "symbol": "APXC",
+        "price": 4.6,
+        "prev_close": 3.6,
+        "gap_pct": 27.78,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "MPAA",
-        "price": 7.81,
-        "prev_close": 10.52,
-        "gap_pct": -25.76,
+        "symbol": "IONS",
+        "price": 28.54,
+        "prev_close": 39.42,
+        "gap_pct": -27.6,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ABEO",
-        "price": 3.1,
+        "price": 3.02,
         "prev_close": 4.17,
-        "gap_pct": -25.66,
+        "gap_pct": -27.58,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "VISN",
-        "price": 4.11,
-        "prev_close": 5.49,
-        "gap_pct": -25.2,
+        "symbol": "JANX",
+        "price": 12.86,
+        "prev_close": 17.63,
+        "gap_pct": -27.06,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T14:39:54.151320+00:00",
+    "last_scan_at": "2026-11-09T14:50:52.422790+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
