@@ -22,7 +22,7 @@
       "qty": 3.2483,
       "qty0": 3.2483,
       "signal_entry_price": 674.02,
-      "signal_stop": 675.152925786968,
+      "signal_stop": 675.1620277796081,
       "signal_initial_stop": 672.0223450124423,
       "signal_target": 683.0840023722607,
       "signal_stop_after_target": 672.573308788985,
@@ -74,7 +74,7 @@
       "initial_risk_dollars": 0.2999,
       "equity_at_entry": 507.59,
       "partial_done": false,
-      "last_price": 510.21,
+      "last_price": 509.86,
       "entry_reason": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.01$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 74.0,
@@ -114,7 +114,7 @@
       "initial_risk_dollars": 0.3744,
       "equity_at_entry": 509.69,
       "partial_done": false,
-      "last_price": 36.95,
+      "last_price": 36.995,
       "entry_reason": "AST SpaceMobile a format un JV cu Rakuten și a primit finanțare de aproximativ 1 miliard de dolari de la Ministerul Comunicațiilor din Japonia. Aceasta este o știre fundamentală extrem de puternică care susține tendința ascendentă a prețului. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~25.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 288.0,
@@ -154,7 +154,7 @@
       "initial_risk_dollars": 0.3219,
       "equity_at_entry": 509.69,
       "partial_done": false,
-      "last_price": 12.03,
+      "last_price": 12.025,
       "entry_reason": "Intuitive Machines a fost selectată pentru un contract major NASA de livrare lunară (CLPS 2), oferind un impuls fundamental puternic. Sesiunea NYSE fiind deja avansată, prețul de 11.80 $ (+12.80%) confirmă sustenabilitatea tendinței după filtrarea zgomotului inițial. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 288.0,
@@ -194,7 +194,7 @@
       "initial_risk_dollars": 0.301,
       "equity_at_entry": 509.69,
       "partial_done": false,
-      "last_price": 36.025,
+      "last_price": 36.08,
       "entry_reason": "IonQ a ridicat ghidajul financiar, provocând un raliu puternic de aproape 10% în sectorul de computere cuantice (antrenând și rivali precum D-Wave și Rigetti). Deși prețul țintă mediu a fost redus recent, impulsul actual și interesul ridicat din piață oferă o oportunitate de continuare favorabilă pentru un trade long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 288.0,
@@ -274,7 +274,7 @@
       "initial_risk_dollars": 0.2993,
       "equity_at_entry": 509.4,
       "partial_done": false,
-      "last_price": 276.02,
+      "last_price": 275.88,
       "entry_reason": "Moderna crește puternic susținută de un upgrade de la Piper Sandler la 305$ și perspective financiare ridicate, menținând un impuls intraday solid după trecerea primei ore de tranzacționare. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MRNA LONG -> BUY MRNA (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 299.0,
