@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 507.14,
-  "total_pnl": 7.14,
-  "total_pnl_pct": 1.43,
-  "today_pnl": 0.28,
-  "today_pnl_pct": 0.06,
+  "equity": 506.81,
+  "total_pnl": 6.81,
+  "total_pnl_pct": 1.36,
+  "today_pnl": -0.05,
+  "today_pnl_pct": -0.01,
   "current_drawdown_pct": -0.07,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T10:21:43.709421-05:00",
+  "updated_at": "2026-11-09T10:22:50.810953-05:00",
   "positions": [
     {
       "symbol": "QLD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-09T10:13:26.812790-05:00",
       "qty": 3.2483,
       "entry_price": 78.1138,
-      "current_price": 78.2,
+      "current_price": 78.1,
       "stop": 77.56,
       "initial_stop": 77.56,
-      "unrealized_pnl": 0.28,
-      "unrealized_r": 0.16,
+      "unrealized_pnl": -0.04,
+      "unrealized_r": -0.02,
       "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -95,76 +95,76 @@
     "top_movers": [
       {
         "symbol": "MF",
-        "price": 20.14,
+        "price": 19.0,
         "prev_close": 10.64,
-        "gap_pct": 89.29,
+        "gap_pct": 78.57,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CKX",
-        "price": 18.72,
+        "price": 16.39,
         "prev_close": 10.37,
-        "gap_pct": 80.51,
+        "gap_pct": 58.05,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "NWGL",
+        "price": 3.98,
+        "prev_close": 2.53,
+        "gap_pct": 57.31,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FTH",
-        "price": 11.12,
+        "price": 11.06,
         "prev_close": 22.05,
-        "gap_pct": -49.59,
+        "gap_pct": -49.84,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ONCO",
-        "price": 3.99,
+        "price": 3.83,
         "prev_close": 6.95,
-        "gap_pct": -42.59,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "EDSA",
-        "price": 2.99,
-        "prev_close": 2.14,
-        "gap_pct": 39.72,
+        "gap_pct": -44.96,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GFR",
-        "price": 7.75,
+        "price": 7.73,
         "prev_close": 5.6,
-        "gap_pct": 38.3,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "MFI",
-        "price": 6.95,
-        "prev_close": 5.1,
-        "gap_pct": 36.27,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ABEO",
-        "price": 2.85,
-        "prev_close": 4.17,
-        "gap_pct": -31.53,
+        "gap_pct": 38.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FISN",
-        "price": 2.42,
+        "price": 2.48,
         "prev_close": 1.85,
-        "gap_pct": 30.54,
+        "gap_pct": 34.05,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "EDSA",
+        "price": 2.85,
+        "prev_close": 2.14,
+        "gap_pct": 33.18,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "ABEO",
+        "price": 2.83,
+        "prev_close": 4.17,
+        "gap_pct": -32.25,
         "source": "alpaca_movers"
       },
       {
         "symbol": "IONS",
-        "price": 28.1,
+        "price": 28.48,
         "prev_close": 39.42,
-        "gap_pct": -28.72,
+        "gap_pct": -27.75,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T15:11:52.081472+00:00",
+    "last_scan_at": "2026-11-09T15:22:50.810957+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
