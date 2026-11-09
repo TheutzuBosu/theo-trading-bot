@@ -108,6 +108,9 @@ ACTIVE_SCAN_UNIVERSE: tuple[str, ...] = (
     "TGT",
     "IONQ",
     "RKLB",
+    "LUNR",
+    "ASTS",
+    "RDW",
 )
 
 # Inverse ETF mapping for shorting individual stocks on a < 2000$ cash/paper account (D31/D33)
@@ -372,8 +375,29 @@ def discover_market_movers(
         if sym not in by_sym or abs(m["gap_pct"]) > abs(by_sym[sym]["gap_pct"]):
             by_sym[sym] = m
 
-    ranked = sorted(by_sym.values(), key=lambda x: abs(float(x.get("gap_pct", 0.0))), reverse=True)
-    return ranked[:max_candidates]
+    watchlist_set = set(combined_watchlist)
+    watchlist_movers = sorted(
+        [
+            v
+            for k, v in by_sym.items()
+            if k in watchlist_set
+            and k not in ("SPY", "QQQ")
+            and abs(float(v.get("gap_pct", 0.0))) >= 3.0
+        ],
+        key=lambda x: abs(float(x.get("gap_pct", 0.0))),
+        reverse=True,
+    )
+    all_ranked = sorted(
+        by_sym.values(), key=lambda x: abs(float(x.get("gap_pct", 0.0))), reverse=True
+    )
+    prioritized: list[dict[str, Any]] = []
+    seen_syms: set[str] = set()
+    for item in [*watchlist_movers[:6], *all_ranked]:
+        s = item["symbol"]
+        if s not in seen_syms:
+            seen_syms.add(s)
+            prioritized.append(item)
+    return prioritized[:max_candidates]
 
 
 def evaluate_mover_opportunity(
@@ -446,6 +470,13 @@ def evaluate_mover_opportunity(
         ]
 
     clean_headlines = [h for h in (headlines or []) if h]
+    if (
+        check_asset
+        and asset_profile is not None
+        and not asset_profile.get("fractionable", True)
+        and not clean_headlines
+    ):
+        return _watch("Fără știri/catalizator confirmat pe o acțiune micro-cap non-fracționabilă.")
     joined_lower = " | ".join(clean_headlines).lower()
     for kw in CRISIS_KEYWORDS:
         if kw in joined_lower:
