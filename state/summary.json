@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T09:38:48.477162-05:00",
+  "updated_at": "2026-11-09T09:39:54.151316-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-09T14:29:30.362071+00:00",
@@ -80,77 +80,77 @@
     "opportunities": [],
     "top_movers": [
       {
-        "symbol": "STAK",
+        "symbol": "MF",
+        "price": 16.73,
+        "prev_close": 10.64,
+        "gap_pct": 57.24,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "CKX",
+        "price": 15.96,
+        "prev_close": 10.37,
+        "gap_pct": 53.91,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "EDSA",
         "price": 3.26,
-        "prev_close": 1.79,
-        "gap_pct": 82.12,
+        "prev_close": 2.14,
+        "gap_pct": 52.34,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "FLYT",
-        "price": 3.71,
-        "prev_close": 2.15,
-        "gap_pct": 72.96,
+        "symbol": "FTH",
+        "price": 12.1,
+        "prev_close": 22.05,
+        "gap_pct": -45.15,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "GOGO",
-        "price": 3.88,
-        "prev_close": 2.27,
-        "gap_pct": 71.52,
+        "symbol": "GFR",
+        "price": 7.74,
+        "prev_close": 5.6,
+        "gap_pct": 38.21,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "LASC",
-        "price": 5.37,
-        "prev_close": 3.41,
-        "gap_pct": 57.6,
+        "symbol": "TMCI",
+        "price": 5.11,
+        "prev_close": 4.03,
+        "gap_pct": 26.8,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "BDSX",
-        "price": 8.53,
-        "prev_close": 19.84,
-        "gap_pct": -57.01,
+        "symbol": "DCTH",
+        "price": 18.91,
+        "prev_close": 14.93,
+        "gap_pct": 26.66,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CIIT",
-        "price": 2.4,
-        "prev_close": 1.55,
-        "gap_pct": 54.84,
+        "symbol": "MPAA",
+        "price": 7.81,
+        "prev_close": 10.52,
+        "gap_pct": -25.76,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "VSA",
-        "price": 2.35,
-        "prev_close": 1.54,
-        "gap_pct": 52.6,
+        "symbol": "ABEO",
+        "price": 3.1,
+        "prev_close": 4.17,
+        "gap_pct": -25.66,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "SKIN",
-        "price": 15.71,
-        "prev_close": 10.35,
-        "gap_pct": 51.79,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "QNTU",
-        "price": 3.58,
-        "prev_close": 2.37,
-        "gap_pct": 51.05,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "IONZ",
-        "price": 23.83,
-        "prev_close": 44.53,
-        "gap_pct": -46.49,
+        "symbol": "VISN",
+        "price": 4.11,
+        "prev_close": 5.49,
+        "gap_pct": -25.2,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T14:29:03.938374+00:00",
+    "last_scan_at": "2026-11-09T14:39:54.151320+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
