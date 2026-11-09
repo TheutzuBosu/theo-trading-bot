@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.87,
-  "total_pnl": 9.87,
-  "total_pnl_pct": 1.97,
-  "today_pnl": 3.01,
-  "today_pnl_pct": 0.59,
-  "current_drawdown_pct": -0.02,
+  "equity": 510.18,
+  "total_pnl": 10.18,
+  "total_pnl_pct": 2.04,
+  "today_pnl": 3.32,
+  "today_pnl_pct": 0.66,
+  "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T12:49:39.987749-05:00",
+  "updated_at": "2026-11-09T12:50:31.911044-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-09T10:44:04.033666-05:00",
       "qty": 0.0407,
       "entry_price": 491.708,
-      "current_price": 502.7133,
+      "current_price": 503.4599,
       "stop": 484.34,
       "initial_stop": 484.34,
-      "unrealized_pnl": 0.45,
-      "unrealized_r": 1.49,
+      "unrealized_pnl": 0.48,
+      "unrealized_r": 1.59,
       "entry_reason": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.01$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-09T10:13:26.812790-05:00",
       "qty": 3.2483,
       "entry_price": 78.1138,
-      "current_price": 78.9037,
+      "current_price": 78.99,
       "stop": 78.14,
       "initial_stop": 77.56,
-      "unrealized_pnl": 2.57,
-      "unrealized_r": 1.43,
+      "unrealized_pnl": 2.85,
+      "unrealized_r": 1.58,
       "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -133,76 +133,76 @@
     "top_movers": [
       {
         "symbol": "CKX",
-        "price": 19.02,
+        "price": 21.4,
         "prev_close": 10.37,
-        "gap_pct": 83.46,
+        "gap_pct": 106.33,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MF",
-        "price": 19.17,
+        "price": 19.21,
         "prev_close": 10.64,
-        "gap_pct": 80.17,
+        "gap_pct": 80.55,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NWGL",
-        "price": 3.99,
+        "price": 3.81,
         "prev_close": 2.53,
-        "gap_pct": 57.71,
+        "gap_pct": 50.54,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FTH",
-        "price": 11.08,
+        "price": 11.88,
         "prev_close": 22.05,
-        "gap_pct": -49.75,
+        "gap_pct": -46.13,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ONCO",
-        "price": 3.81,
+        "price": 3.8,
         "prev_close": 6.95,
-        "gap_pct": -45.18,
+        "gap_pct": -45.32,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FISN",
-        "price": 2.59,
+        "price": 2.6,
         "prev_close": 1.85,
-        "gap_pct": 40.0,
+        "gap_pct": 40.35,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "WCT",
+        "price": 3.25,
+        "prev_close": 2.33,
+        "gap_pct": 39.72,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GFR",
         "price": 7.75,
         "prev_close": 5.6,
-        "gap_pct": 38.3,
+        "gap_pct": 38.39,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "COHC",
-        "price": 7.5,
-        "prev_close": 5.47,
-        "gap_pct": 37.19,
+        "symbol": "COHQ",
+        "price": 29.21,
+        "prev_close": 45.67,
+        "gap_pct": -36.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ABEO",
         "price": 2.67,
         "prev_close": 4.17,
-        "gap_pct": -35.97,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "COHQ",
-        "price": 29.27,
-        "prev_close": 45.67,
-        "gap_pct": -35.91,
+        "gap_pct": -35.85,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T17:40:06.110842+00:00",
+    "last_scan_at": "2026-11-09T17:50:31.911048+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
