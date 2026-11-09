@@ -12,7 +12,7 @@
   "updated_at": "2026-11-06T19:07:56.595408-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-09T13:43:55.214086+00:00",
+    "updated_at": "2026-11-09T14:29:30.362071+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
@@ -21,19 +21,19 @@
         "gap_pct": 0.86
       },
       "QQQ": {
-        "price": 660.76,
+        "price": 661.5,
         "prev_close": 656.31,
-        "gap_pct": 0.68
+        "gap_pct": 0.79
       }
     },
-    "explanation_ro": "Piața deschide pe verde, cu SPY la 741.75$ (+0.86%) și QQQ la 660.76$ (+0.68%), susținută de detensionarea temporară a situației din Orientul Mijlociu după semnalele de reținere transmise de Donald Trump privind Iranul și negocierile pentru exportul de petrol. Raportările financiare de azi (AMG dimineața și AAON, AMCX, AMRC după închidere) au un impact minor în pre-market, atenția fiind captată de geopolitică și energia globală. Direcția favorizată la deschidere este Long, pe fondul optimismului și al scăderii prețului petrolului.",
+    "explanation_ro": "Piața deschide în creștere moderată, cu SPY și QQQ marcând gap-uri pozitive de peste 0,7%, susținute de un impuls optimist de pe Wall Street. Investitorii monitorizează raportările corporative ale zilei, deși atenția macroeconomică rămâne fixată pe Orientul Mijlociu, unde tensiunile geopolitice dintre SUA, Iran și mediatorii din Qatar mențin incertitudinea privind livrările de energie. În acest context mixt, direcția favorizată la deschidere este mai degrabă orientată spre prudență (Long tactic pe impulsul pre-market, dar cu deschidere spre oportunități Short dacă tensiunile geopolitice escaladează).",
     "headlines": [
-      "Oil falls as Trump signals restraint on Iran despite fresh shipping attacks - Reuters",
-      "Iraq's Khor Mor gas field suspends output after drone attack, operator says - Reuters",
-      "Iraq has reached understandings with US to allow oil exports through Hormuz, minister says - Reuters",
-      "US asks Iraq to shut most Iran border crossings, Iraqi foreign minister says - Reuters",
-      "Trump says he is unlikely to order Iran attack if talks progress, CNN reports - Reuters",
-      "Netanyahu rival Eisenkot seeks 'wide' government but path to power uncertain - Reuters"
+      "Home listings pile up in October, but sellers won't slash prices",
+      "Trump to meet Iran war mediator Qatar, no imminent deal seen to end the war - Reuters",
+      "Iran defends two-day proposal for peace talks after US rejects conditions - Reuters",
+      "Saudi Arabia says danger passed in Riyadh after alert, day after Houthi attack - Reuters",
+      "UAE's Gargash warns of prolonged regional uncertainty, says US-Iran settlement appears difficult - Reuters",
+      "Iran says no unauthorised vessels transited Strait of Hormuz overnight after navigation aids destroyed - Reuters"
     ],
     "earnings_today": [
       {
@@ -150,7 +150,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T13:43:27.914184+00:00",
+    "last_scan_at": "2026-11-09T14:29:03.938374+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
