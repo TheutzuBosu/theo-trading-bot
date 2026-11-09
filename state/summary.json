@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.47,
-  "total_pnl": 9.47,
-  "total_pnl_pct": 1.89,
-  "today_pnl": 2.61,
-  "today_pnl_pct": 0.51,
+  "equity": 509.7,
+  "total_pnl": 9.7,
+  "total_pnl_pct": 1.94,
+  "today_pnl": 2.84,
+  "today_pnl_pct": 0.56,
   "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T13:10:37.831693-05:00",
+  "updated_at": "2026-11-09T13:11:43.607095-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-09T10:44:04.033666-05:00",
       "qty": 0.0407,
       "entry_price": 491.708,
-      "current_price": 505.1487,
+      "current_price": 505.14,
       "stop": 484.34,
       "initial_stop": 484.34,
       "unrealized_pnl": 0.55,
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-09T10:13:26.812790-05:00",
       "qty": 3.2483,
       "entry_price": 78.1138,
-      "current_price": 78.75,
+      "current_price": 78.82,
       "stop": 78.23,
       "initial_stop": 77.56,
-      "unrealized_pnl": 2.07,
-      "unrealized_r": 1.15,
+      "unrealized_pnl": 2.29,
+      "unrealized_r": 1.28,
       "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -133,76 +133,76 @@
     "top_movers": [
       {
         "symbol": "CKX",
-        "price": 22.86,
+        "price": 23.3,
         "prev_close": 10.37,
-        "gap_pct": 120.49,
+        "gap_pct": 124.69,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MF",
-        "price": 17.84,
+        "price": 16.8,
         "prev_close": 10.64,
-        "gap_pct": 67.67,
+        "gap_pct": 57.9,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ONCO",
-        "price": 3.72,
+        "price": 3.7,
         "prev_close": 6.95,
-        "gap_pct": -46.47,
+        "gap_pct": -46.76,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FTH",
-        "price": 12.25,
+        "price": 11.93,
         "prev_close": 22.05,
-        "gap_pct": -44.44,
+        "gap_pct": -45.9,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FISN",
-        "price": 2.62,
+        "price": 2.59,
         "prev_close": 1.85,
-        "gap_pct": 41.62,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "NWGL",
-        "price": 3.55,
-        "prev_close": 2.53,
-        "gap_pct": 40.32,
+        "gap_pct": 40.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GFR",
-        "price": 7.75,
+        "price": 7.74,
         "prev_close": 5.6,
-        "gap_pct": 38.3,
+        "gap_pct": 38.13,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ABEO",
         "price": 2.67,
         "prev_close": 4.17,
-        "gap_pct": -35.85,
+        "gap_pct": -35.97,
         "source": "alpaca_movers"
       },
       {
         "symbol": "COHQ",
-        "price": 29.54,
+        "price": 29.66,
         "prev_close": 45.67,
-        "gap_pct": -35.32,
+        "gap_pct": -35.06,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AMD",
-        "price": 503.35,
+        "price": 505.5,
         "prev_close": 447.46,
-        "gap_pct": 12.49,
+        "gap_pct": 12.97,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 35.79,
+        "prev_close": 32.51,
+        "gap_pct": 10.11,
         "source": "watchlist_snapshot"
       }
     ],
-    "last_scan_at": "2026-11-09T18:00:39.479940+00:00",
+    "last_scan_at": "2026-11-09T18:11:43.607101+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
