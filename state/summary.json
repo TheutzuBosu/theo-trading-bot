@@ -12,165 +12,72 @@
   "updated_at": "2026-11-06T19:07:56.595408-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-04T13:41:46.547827+00:00",
-    "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
+    "updated_at": "2026-11-09T13:43:55.214086+00:00",
+    "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
-        "price": 762.46,
-        "prev_close": 754.38,
-        "gap_pct": 1.07
+        "price": 741.75,
+        "prev_close": 735.4,
+        "gap_pct": 0.86
       },
       "QQQ": {
-        "price": 688.63,
-        "prev_close": 685.32,
-        "gap_pct": 0.48
+        "price": 660.76,
+        "prev_close": 656.31,
+        "gap_pct": 0.68
       }
     },
-    "explanation_ro": "Piața deschide în creștere puternică (SPY +1.07%, QQQ +0.48%) impulsionată de un neașteptat „blue sweep” democrat care a redus din incertitudinea politică internă, eclipsând temporar tensiunile legate de Iran. Deși există raportări minore azi (ADNT, ADV, AFL, AGL, ACHC), atenția investitorilor rămâne concentrată pe efectele macroeconomice ale rezultatului electoral. Datorită impulsului puternic de pre-market, direcția favorizată la deschidere este exclusiv Long.",
+    "explanation_ro": "Piața deschide pe verde, cu SPY la 741.75$ (+0.86%) și QQQ la 660.76$ (+0.68%), susținută de detensionarea temporară a situației din Orientul Mijlociu după semnalele de reținere transmise de Donald Trump privind Iranul și negocierile pentru exportul de petrol. Raportările financiare de azi (AMG dimineața și AAON, AMCX, AMRC după închidere) au un impact minor în pre-market, atenția fiind captată de geopolitică și energia globală. Direcția favorizată la deschidere este Long, pe fondul optimismului și al scăderii prețului petrolului.",
     "headlines": [
-      "Democratic sweep adds new twist to markets' Iran, AI, and debt worries - Reuters",
-      "Stocks rally, dollar dips after Democrats' 'blue sweep' victory - Reuters",
-      "Iranian officials gloat as US voters deal blow to Trump - Reuters",
-      "Netanyahu rivals seize on Democrats' sweep of US Congress, seeking his ouster - Reuters",
-      "Iran's Khamenei says US hostility will persist regardless of party in power - Reuters",
-      "PODCAST: Pricing the Democratic sweep - Reuters"
+      "Oil falls as Trump signals restraint on Iran despite fresh shipping attacks - Reuters",
+      "Iraq's Khor Mor gas field suspends output after drone attack, operator says - Reuters",
+      "Iraq has reached understandings with US to allow oil exports through Hormuz, minister says - Reuters",
+      "US asks Iraq to shut most Iran border crossings, Iraqi foreign minister says - Reuters",
+      "Trump says he is unlikely to order Iran attack if talks progress, CNN reports - Reuters",
+      "Netanyahu rival Eisenkot seeks 'wide' government but path to power uncertain - Reuters"
     ],
     "earnings_today": [
       {
-        "symbol": "ACHC",
+        "symbol": "AAON",
         "hour": "amc",
-        "eps_estimate": 0.4725,
+        "eps_estimate": 0.5848,
         "eps_actual": null,
-        "revenue_estimate": 895349961,
+        "revenue_estimate": 611664858,
         "revenue_actual": null
       },
       {
-        "symbol": "ADNT",
-        "hour": "bmo",
-        "eps_estimate": 0.5894,
-        "eps_actual": 0.52,
-        "revenue_estimate": 3676250850,
-        "revenue_actual": 3730000000
-      },
-      {
-        "symbol": "ADV",
-        "hour": "bmo",
-        "eps_estimate": 1.9392,
-        "eps_actual": -0.08,
-        "revenue_estimate": 908495000,
-        "revenue_actual": 913740000
-      },
-      {
-        "symbol": "AFL",
-        "hour": "amc",
-        "eps_estimate": 1.8098,
+        "symbol": "AGRO",
+        "hour": "",
+        "eps_estimate": 0.2346,
         "eps_actual": null,
-        "revenue_estimate": 4162761793,
+        "revenue_estimate": 692951280,
         "revenue_actual": null
       },
       {
-        "symbol": "AGL",
+        "symbol": "AMCX",
         "hour": "amc",
-        "eps_estimate": -1.2053,
+        "eps_estimate": 0.6528,
         "eps_actual": null,
-        "revenue_estimate": 1475383325,
+        "revenue_estimate": 605489003,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "AMG",
+        "hour": "bmo",
+        "eps_estimate": 8.8737,
+        "eps_actual": 9.5,
+        "revenue_estimate": 661631557,
+        "revenue_actual": 595200000
+      },
+      {
+        "symbol": "AMRC",
+        "hour": "amc",
+        "eps_estimate": 0.5426,
+        "eps_actual": null,
+        "revenue_estimate": 584352441,
         "revenue_actual": null
       }
     ],
-    "opportunities": [
-      {
-        "action": "enter",
-        "symbol": "LASC",
-        "direction": "long",
-        "price": 5.37,
-        "prev_close": 3.41,
-        "gap_pct": 57.6,
-        "change_pct": 57.6,
-        "stake_dollars": 20.0,
-        "rr_ratio": 6.0,
-        "stop_pct": 0.025,
-        "target_pct": 0.15,
-        "stop_price": 5.24,
-        "target_price": 6.18,
-        "expected_profit_dollars": 3.0,
-        "max_loss_dollars": 0.5,
-        "headlines": [],
-        "reason_ro": "LASC a crescut cu +57.60% (preț 5.37 $ vs 3.41 $) pe fondul: volum și impuls puternic în Pre-Market. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-07T00:08:00.443385+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "BDSX",
-        "direction": "short",
-        "price": 8.53,
-        "prev_close": 19.84,
-        "gap_pct": -57.01,
-        "change_pct": -57.01,
-        "stake_dollars": 20.0,
-        "rr_ratio": 6.0,
-        "stop_pct": 0.025,
-        "target_pct": 0.15,
-        "stop_price": 8.74,
-        "target_price": 7.25,
-        "expected_profit_dollars": 3.0,
-        "max_loss_dollars": 0.5,
-        "headlines": [
-          "DraftKings Posts Downbeat Q3 Results, Joins Atlassian, Natera And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
-          "12 Health Care Stocks Moving In Friday's Pre-Market Session",
-          "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
-        ],
-        "reason_ro": "BDSX a scăzut cu -57.01% (preț 8.53 $ vs 19.84 $) pe fondul: DraftKings Posts Downbeat Q3 Results, Joins Atlassian, Natera And Other Big Stocks Moving Lower In Friday’s Pre-Market Session. Intrare SHORT cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-07T00:08:00.652868+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "CIIT",
-        "direction": "long",
-        "price": 2.4,
-        "prev_close": 1.55,
-        "gap_pct": 54.84,
-        "change_pct": 54.84,
-        "stake_dollars": 20.0,
-        "rr_ratio": 6.0,
-        "stop_pct": 0.025,
-        "target_pct": 0.15,
-        "stop_price": 2.34,
-        "target_price": 2.76,
-        "expected_profit_dollars": 3.0,
-        "max_loss_dollars": 0.5,
-        "headlines": [
-          "Premarket Movers Nov. 6: DBGI and CIIT Rebound, FEAM and EFXT Slide",
-          "12 Industrials Stocks Moving In Friday's Pre-Market Session",
-          "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
-        ],
-        "reason_ro": "CIIT a crescut cu +54.84% (preț 2.40 $ vs 1.55 $) pe fondul: Premarket Movers Nov. 6: DBGI and CIIT Rebound, FEAM and EFXT Slide. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-07T00:08:00.900171+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "VSA",
-        "direction": "long",
-        "price": 2.35,
-        "prev_close": 1.54,
-        "gap_pct": 52.6,
-        "change_pct": 52.6,
-        "stake_dollars": 20.0,
-        "rr_ratio": 6.0,
-        "stop_pct": 0.025,
-        "target_pct": 0.15,
-        "stop_price": 2.29,
-        "target_price": 2.7,
-        "expected_profit_dollars": 3.0,
-        "max_loss_dollars": 0.5,
-        "headlines": [
-          "Premarket Movers Nov. 6: DBGI and CIIT Rebound, FEAM and EFXT Slide",
-          "12 Consumer Discretionary Stocks Moving In Friday's Pre-Market Session",
-          "Why Cloudflare Shares Are Trading Higher By Around 15%; Here Are 20 Stocks Moving Premarket"
-        ],
-        "reason_ro": "VSA a crescut cu +52.60% (preț 2.35 $ vs 1.54 $) pe fondul: Premarket Movers Nov. 6: DBGI and CIIT Rebound, FEAM and EFXT Slide. Intrare LONG cu miză 20 $, Risc:Reward 1:6.0 (risc -0.50 $ / țintă profit +3.00 $).",
-        "evaluated_at": "2026-11-07T00:08:01.188594+00:00"
-      }
-    ],
+    "opportunities": [],
     "top_movers": [
       {
         "symbol": "STAK",
@@ -234,8 +141,17 @@
         "prev_close": 2.37,
         "gap_pct": 51.05,
         "source": "alpaca_movers"
+      },
+      {
+        "symbol": "IONZ",
+        "price": 23.83,
+        "prev_close": 44.53,
+        "gap_pct": -46.49,
+        "source": "alpaca_movers"
       }
-    ]
+    ],
+    "last_scan_at": "2026-11-09T13:43:27.914184+00:00",
+    "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
