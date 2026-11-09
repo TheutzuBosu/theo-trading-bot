@@ -17,7 +17,7 @@
       "qty": 3.2483,
       "qty0": 3.2483,
       "signal_entry_price": 674.02,
-      "signal_stop": 674.1985943884747,
+      "signal_stop": 674.1993822624571,
       "signal_initial_stop": 672.0223450124423,
       "signal_target": 683.0840023722607,
       "signal_stop_after_target": 672.573308788985,
@@ -29,7 +29,7 @@
       "initial_risk_dollars": 1.799,
       "equity_at_entry": 506.86,
       "partial_done": false,
-      "last_price": 78.78,
+      "last_price": 78.81,
       "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 41.0,
@@ -69,7 +69,7 @@
       "initial_risk_dollars": 0.2999,
       "equity_at_entry": 507.59,
       "partial_done": false,
-      "last_price": 504.62,
+      "last_price": 503.83,
       "entry_reason": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.01$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 74.0,
