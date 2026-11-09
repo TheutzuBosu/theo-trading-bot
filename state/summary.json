@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.98,
-  "total_pnl": 9.98,
-  "total_pnl_pct": 2.0,
-  "today_pnl": 3.12,
-  "today_pnl_pct": 0.62,
-  "current_drawdown_pct": 0.0,
+  "equity": 509.65,
+  "total_pnl": 9.65,
+  "total_pnl_pct": 1.93,
+  "today_pnl": 2.79,
+  "today_pnl_pct": 0.55,
+  "current_drawdown_pct": -0.06,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-09T14:17:34.898988-05:00",
+  "updated_at": "2026-11-09T14:18:41.633680-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,12 +17,51 @@
       "entry_time": "2026-11-09T10:44:04.033666-05:00",
       "qty": 0.0407,
       "entry_price": 491.708,
-      "current_price": 506.265,
+      "current_price": 506.1119,
       "stop": 484.34,
       "initial_stop": 484.34,
       "unrealized_pnl": 0.59,
-      "unrealized_r": 1.98,
+      "unrealized_r": 1.95,
       "entry_reason": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.01$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "ASTS",
+      "direction": "long",
+      "entry_time": "2026-11-09T14:18:41.633680-05:00",
+      "qty": 0.6857,
+      "entry_price": 36.476,
+      "current_price": 36.46,
+      "stop": 35.93,
+      "initial_stop": 35.93,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.03,
+      "entry_reason": "AST SpaceMobile a format un JV cu Rakuten și a primit finanțare de aproximativ 1 miliard de dolari de la Ministerul Comunicațiilor din Japonia. Aceasta este o știre fundamentală extrem de puternică care susține tendința ascendentă a prețului. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~25.00$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "IONQ",
+      "direction": "long",
+      "entry_time": "2026-11-09T14:18:41.633680-05:00",
+      "qty": 0.5594,
+      "entry_price": 35.728,
+      "current_price": 35.725,
+      "stop": 35.19,
+      "initial_stop": 35.19,
+      "unrealized_pnl": -0.0,
+      "unrealized_r": -0.01,
+      "entry_reason": "IonQ a ridicat ghidajul financiar, provocând un raliu puternic de aproape 10% în sectorul de computere cuantice (antrenând și rivali precum D-Wave și Rigetti). Deși prețul țintă mediu a fost redus recent, impulsul actual și interesul ridicat din piață oferă o oportunitate de continuare favorabilă pentru un trade long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "LUNR",
+      "direction": "long",
+      "entry_time": "2026-11-09T14:18:41.633680-05:00",
+      "qty": 1.6942,
+      "entry_price": 11.87,
+      "current_price": 11.865,
+      "stop": 11.68,
+      "initial_stop": 11.68,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.03,
+      "entry_reason": "Intuitive Machines a fost selectată pentru un contract major NASA de livrare lunară (CLPS 2), oferind un impuls fundamental puternic. Sesiunea NYSE fiind deja avansată, prețul de 11.80 $ (+12.80%) confirmă sustenabilitatea tendinței după filtrarea zgomotului inițial. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~20.00$, R:R 1:3.5)"
     },
     {
       "symbol": "QLD",
@@ -30,12 +69,25 @@
       "entry_time": "2026-11-09T10:13:26.812790-05:00",
       "qty": 3.2483,
       "entry_price": 78.1138,
-      "current_price": 78.8916,
+      "current_price": 78.8,
       "stop": 78.24,
       "initial_stop": 77.56,
-      "unrealized_pnl": 2.53,
-      "unrealized_r": 1.4,
+      "unrealized_pnl": 2.23,
+      "unrealized_r": 1.24,
       "entry_reason": "D1b long: Close=673.76, band=673.40, VWAP=670.38, tp0=683.08 · D31: QQQ LONG -> BUY QLD (2x) · AI p=0.60 · mult_oră=1.00"
+    },
+    {
+      "symbol": "RKLB",
+      "direction": "long",
+      "entry_time": "2026-11-09T14:18:41.633680-05:00",
+      "qty": 0.3436,
+      "entry_price": 58.244,
+      "current_price": 58.2346,
+      "stop": 57.37,
+      "initial_stop": 57.37,
+      "unrealized_pnl": -0.0,
+      "unrealized_r": -0.01,
+      "entry_reason": "Rocket Lab (RKLB) crește puternic pe fondul atribuirii unor contracte majore de la NASA în valoare de 10 miliarde de dolari pentru baza lunară și anticiparea raportului de câștiguri. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~20.00$, R:R 1:3.5)"
     }
   ],
   "premarket": {
@@ -109,100 +161,200 @@
         "action": "enter",
         "symbol": "AMD",
         "direction": "long",
-        "price": 492.0,
+        "price": 505.99,
         "prev_close": 447.46,
-        "gap_pct": 9.95,
-        "change_pct": 9.95,
+        "gap_pct": 13.08,
+        "change_pct": 13.08,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 498.4,
+        "target_price": 540.14,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "AMD Stocks Jump 9.50% After Oppenheimer Upgrade Sets $600 Target",
+          "AMD Stock Jumps as Google Taps Its Chips for a New AI System",
+          "Nvidia vs. AMD: Why Lisa Su's company is a great alternative for investors"
+        ],
+        "reason_ro": "AMD beneficiază de un upgrade major din partea Oppenheimer cu țintă de 600$ și de un contract important cu Google pentru cipuri AI, generând un impuls bullish puternic în timpul sesiunii principale. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-09T19:18:44.638447+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "ASTS",
+        "direction": "long",
+        "price": 36.49,
+        "prev_close": 32.3,
+        "gap_pct": 12.97,
+        "change_pct": 12.97,
+        "stake_dollars": 25.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 35.94,
+        "target_price": 38.41,
+        "expected_profit_dollars": 1.31,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "Company News for Nov 9, 2026",
+          "Strength Seen in Firefly Aerospace (FLY): Can Its 36.8% Jump Turn into More Strength?",
+          "AST SpaceMobile And Rakuten Form Rakuten AST JV To Build Direct-To-Device Communications Network In Japan; Receives ~$1B In Funding From Japan's MIC"
+        ],
+        "reason_ro": "AST SpaceMobile a format un JV cu Rakuten și a primit finanțare de aproximativ 1 miliard de dolari de la Ministerul Comunicațiilor din Japonia. Aceasta este o știre fundamentală extrem de puternică care susține tendința ascendentă a prețului. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-09T19:18:50.476216+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "LUNR",
+        "direction": "long",
+        "price": 11.8,
+        "prev_close": 10.46,
+        "gap_pct": 12.8,
+        "change_pct": 12.8,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 484.62,
-        "target_price": 517.83,
+        "stop_price": 11.62,
+        "target_price": 12.42,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Google's chip business is on a faster track than Nvidia's own AI boom",
-          "NVIDIA Falls 5% as Board Probes Jensen Huang’s Ties to Alleged Chinese Spy; AMD Rises 4%, Intel Holds Steady",
-          "Core Scientific: 3 Key Takeaways for Long-Term Investors"
+          "Intuitive Machines Selected for NASA's Next-Generation Lunar Delivery Contract to Support Moon Base",
+          "Intuitive Machines Selected By NASA For Next-Gen Commercial Lunar Payload Services 2 Contract"
         ],
-        "reason_ro": "AMD beneficiază de un upgrade major din partea Oppenheimer și de sentimentul pozitiv generat de problemele concurenței, având vânzări duble estimate în data center. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "evaluated_at": "2026-11-09T15:44:22.503160+00:00"
+        "reason_ro": "Intuitive Machines a fost selectată pentru un contract major NASA de livrare lunară (CLPS 2), oferind un impuls fundamental puternic. Sesiunea NYSE fiind deja avansată, prețul de 11.80 $ (+12.80%) confirmă sustenabilitatea tendinței după filtrarea zgomotului inițial. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-09T19:18:56.220033+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "IONQ",
+        "direction": "long",
+        "price": 35.75,
+        "prev_close": 32.51,
+        "gap_pct": 9.98,
+        "change_pct": 9.98,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 35.21,
+        "target_price": 37.63,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "IonQ Consensus Price Target Lowered by 16.18% to $55.70",
+          "D-Wave Rallied 18% on IonQ’s Guidance. Its Own November 10 Report Has to Earn It",
+          "Rigetti Stock Jumped 17% on IonQ’s Guidance Raise. Here’s What Its November 10 Report Has to Show"
+        ],
+        "reason_ro": "IonQ a ridicat ghidajul financiar, provocând un raliu puternic de aproape 10% în sectorul de computere cuantice (antrenând și rivali precum D-Wave și Rigetti). Deși prețul țintă mediu a fost redus recent, impulsul actual și interesul ridicat din piață oferă o oportunitate de continuare favorabilă pentru un trade long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-09T19:19:07.978092+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "RKLB",
+        "direction": "long",
+        "price": 58.17,
+        "prev_close": 53.05,
+        "gap_pct": 9.64,
+        "change_pct": 9.64,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 57.3,
+        "target_price": 61.22,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "SpaceX, Rocket Lab blast higher as NASA hands out $10 billion in moon base awards",
+          "AST SpaceMobile Soars 16% on Rakuten Japan Satellite Joint Venture: “A Key Pillar”",
+          "Two space stocks face a major Wall Street test tonight"
+        ],
+        "reason_ro": "Rocket Lab (RKLB) crește puternic pe fondul atribuirii unor contracte majore de la NASA în valoare de 10 miliarde de dolari pentru baza lunară și anticiparea raportului de câștiguri. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-09T19:19:13.742753+00:00"
       }
     ],
     "top_movers": [
       {
+        "symbol": "AMD",
+        "price": 505.99,
+        "prev_close": 447.46,
+        "gap_pct": 13.08,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ASTS",
+        "price": 36.49,
+        "prev_close": 32.3,
+        "gap_pct": 12.97,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "LUNR",
+        "price": 11.8,
+        "prev_close": 10.46,
+        "gap_pct": 12.8,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RDW",
+        "price": 7.99,
+        "prev_close": 7.2,
+        "gap_pct": 10.97,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 35.75,
+        "prev_close": 32.51,
+        "gap_pct": 9.98,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RKLB",
+        "price": 58.17,
+        "prev_close": 53.05,
+        "gap_pct": 9.64,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "WCT",
-        "price": 5.89,
+        "price": 4.62,
         "prev_close": 2.33,
-        "gap_pct": 153.22,
+        "gap_pct": 98.62,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CKX",
-        "price": 18.93,
+        "price": 19.5,
         "prev_close": 10.37,
-        "gap_pct": 82.5,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ONCO",
-        "price": 3.65,
-        "prev_close": 6.95,
-        "gap_pct": -47.41,
+        "gap_pct": 88.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FISN",
-        "price": 2.7,
+        "price": 2.83,
         "prev_close": 1.85,
-        "gap_pct": 46.02,
+        "gap_pct": 52.97,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "FTH",
-        "price": 12.32,
-        "prev_close": 22.05,
-        "gap_pct": -44.1,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "MF",
-        "price": 15.07,
-        "prev_close": 10.64,
-        "gap_pct": 41.64,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "GFR",
-        "price": 7.74,
-        "prev_close": 5.6,
-        "gap_pct": 38.21,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "TANH",
-        "price": 16.12,
-        "prev_close": 11.67,
-        "gap_pct": 38.13,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ABEO",
-        "price": 2.75,
-        "prev_close": 4.17,
-        "gap_pct": -34.05,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "COHQ",
-        "price": 30.2,
-        "prev_close": 45.67,
-        "gap_pct": -33.87,
+        "symbol": "ONCO",
+        "price": 3.62,
+        "prev_close": 6.95,
+        "gap_pct": -47.88,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-09T19:08:31.077717+00:00",
+    "last_scan_at": "2026-11-09T19:18:41.633683+00:00",
     "telegram_sent_date": "2026-11-09"
   },
   "spy_start_price": 767.64,
