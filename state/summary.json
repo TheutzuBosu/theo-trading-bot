@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 513.46,
-  "total_pnl": 13.46,
-  "total_pnl_pct": 2.69,
-  "today_pnl": -0.5,
-  "today_pnl_pct": -0.1,
-  "current_drawdown_pct": -0.1,
+  "equity": 513.57,
+  "total_pnl": 13.57,
+  "total_pnl_pct": 2.71,
+  "today_pnl": -0.39,
+  "today_pnl_pct": -0.08,
+  "current_drawdown_pct": -0.08,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-10T10:25:04.828954-05:00",
+  "updated_at": "2026-11-10T10:26:21.082377-05:00",
   "positions": [
     {
       "symbol": "MARA",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-10T10:04:59.534290-05:00",
       "qty": 2.6954,
       "entry_price": 7.43,
-      "current_price": 7.4939,
+      "current_price": 7.5274,
       "stop": 7.32,
       "initial_stop": 7.32,
-      "unrealized_pnl": 0.17,
-      "unrealized_r": 0.58,
+      "unrealized_pnl": 0.26,
+      "unrealized_r": 0.89,
       "entry_reason": "MARA înregistrează o creștere solidă de 12.05% susținută de ambițiile strategice în infrastructura AI și un portofoliu energetic de 4 GW, depășind zgomotul din pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MARA LONG -> BUY MARA (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-10T09:33:02.051875-05:00",
       "qty": 0.0872,
       "entry_price": 171.748,
-      "current_price": 171.58,
+      "current_price": 171.805,
       "stop": 169.17,
       "initial_stop": 169.17,
-      "unrealized_pnl": -0.01,
-      "unrealized_r": -0.07,
+      "unrealized_pnl": 0.0,
+      "unrealized_r": 0.02,
       "entry_reason": "Cathie Wood a cumpărat dip-ul pentru NVDA, acțiunea scăzând cu 4.19% în pre-market, oferind un punct de intrare atractiv pentru un rebound tehnic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: NVDA LONG -> BUY NVDA (miză ~14.99$, R:R 1:3.5)"
     }
   ],
@@ -107,43 +107,43 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MARA",
+        "symbol": "ASTS",
         "direction": "long",
-        "price": 7.44,
-        "prev_close": 6.64,
-        "gap_pct": 12.05,
-        "change_pct": 12.05,
-        "stake_dollars": 20.0,
+        "price": 35.01,
+        "prev_close": 36.91,
+        "gap_pct": -5.15,
+        "change_pct": -5.15,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 7.33,
-        "target_price": 7.83,
+        "stop_pct": 0.02,
+        "target_pct": 0.07,
+        "stop_price": 34.31,
+        "target_price": 37.46,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Guggenheim Reiterates Neutral on MARA Holdingsto Neutral",
-          "Rosenblatt Maintains Buy on MARA Holdings, Lowers Price Target to $11",
-          "MARA Sold 13,597 Bitcoin After Q3, and It Isn't Done Selling"
+          "IonQ Shares Fall With Space Stocks: What's Going On?",
+          "Rocket Lab: The Market Is Wrong",
+          "What's Going On With AST SpaceMobile Shares Tuesday?"
         ],
-        "reason_ro": "MARA înregistrează o creștere solidă de 12.05% susținută de ambițiile strategice în infrastructura AI și un portofoliu energetic de 4 GW, depășind zgomotul din pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ASTS a securizat până la 1 miliard de dolari pentru o subsidiară în Japonia, oferind un catalizator fundamental puternic după corecția matinală. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T15:05:13.078222+00:00"
+        "evaluated_at": "2026-11-10T15:27:08.013515+00:00"
       },
       {
         "action": "enter",
         "symbol": "RIOT",
         "direction": "long",
-        "price": 18.37,
+        "price": 18.42,
         "prev_close": 17.65,
-        "gap_pct": 4.08,
-        "change_pct": 4.08,
+        "gap_pct": 4.36,
+        "change_pct": 4.36,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 18.09,
-        "target_price": 19.33,
+        "stop_price": 18.14,
+        "target_price": 19.39,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -151,59 +151,59 @@
           "Nvidia To $300? Here Are 10 Top Analyst Forecasts For Tuesday",
           "Jefferies Upgrades Riot Platforms to Buy, Raises Price Target to $28"
         ],
-        "reason_ro": "Riot Platforms beneficiază de un upgrade major din partea Jefferies cu un preț țintă de 28$ și de o recomandare pozitivă de la Morgan Stanley pe sectorul de 'powered shell', oferind un catalizator fundamental solid după trecerea primei 15 minute de la deschiderea NYSE. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "RIOT beneficiază de un upgrade major din partea Jefferies (preț țintă 28$) și de o recomandare pozitivă de la Morgan Stanley pe sectorul de 'powered shell', oferind un impuls fundamental solid după trecerea primelor 15 minute ale ședinței. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T15:05:59.110946+00:00"
+        "evaluated_at": "2026-11-10T15:27:20.037954+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "MARA",
-        "price": 7.48,
-        "prev_close": 6.64,
-        "gap_pct": 12.65,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "LCID",
-        "price": 4.07,
+        "price": 4.15,
         "prev_close": 3.61,
-        "gap_pct": 12.6,
+        "gap_pct": 14.96,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "AMD",
-        "price": 538.48,
-        "prev_close": 508.68,
-        "gap_pct": 5.86,
+        "symbol": "MARA",
+        "price": 7.51,
+        "prev_close": 6.64,
+        "gap_pct": 13.18,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UPST",
-        "price": 20.98,
+        "price": 20.57,
         "prev_close": 22.23,
-        "gap_pct": -5.64,
+        "gap_pct": -7.49,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "AVGO",
-        "price": 333.44,
-        "prev_close": 319.54,
-        "gap_pct": 4.35,
+        "symbol": "AMD",
+        "price": 535.92,
+        "prev_close": 508.68,
+        "gap_pct": 5.36,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MRNA",
-        "price": 257.69,
-        "prev_close": 269.0,
-        "gap_pct": -4.2,
+        "symbol": "ASTS",
+        "price": 35.01,
+        "prev_close": 36.91,
+        "gap_pct": -5.15,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RIOT",
+        "price": 18.42,
+        "prev_close": 17.65,
+        "gap_pct": 4.36,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "PEPG",
-        "price": 6.05,
+        "price": 6.18,
         "prev_close": 2.39,
-        "gap_pct": 153.35,
+        "gap_pct": 158.79,
         "source": "alpaca_movers"
       },
       {
@@ -214,21 +214,21 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "AMIX",
-        "price": 2.6,
-        "prev_close": 1.7,
-        "gap_pct": 52.94,
+        "symbol": "SMX",
+        "price": 15.7,
+        "prev_close": 9.35,
+        "gap_pct": 67.92,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "NCI",
-        "price": 7.02,
-        "prev_close": 4.64,
-        "gap_pct": 51.32,
+        "symbol": "AMIX",
+        "price": 2.62,
+        "prev_close": 1.7,
+        "gap_pct": 54.12,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-10T15:15:06.974528+00:00",
+    "last_scan_at": "2026-11-10T15:26:21.082381+00:00",
     "telegram_sent_date": "2026-11-10"
   },
   "spy_start_price": 767.64,
