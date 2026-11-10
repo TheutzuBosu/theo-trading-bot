@@ -3,6 +3,7 @@
     "MOVER|ASTS|2026-11-10|long",
     "MOVER|LUNR|2026-11-10|long",
     "MOVER|NVDA|2026-11-10|long",
+    "MOVER|RIOT|2026-11-10|long",
     "QQQ|2026-11-09T10:11:00-05:00|long"
   ],
   "open_trades": {
@@ -31,7 +32,7 @@
       "initial_risk_dollars": 0.2248,
       "equity_at_entry": 513.96,
       "partial_done": false,
-      "last_price": 171.34,
+      "last_price": 171.38,
       "entry_reason": "Cathie Wood a cumpărat dip-ul pentru NVDA, acțiunea scăzând cu 4.19% în pre-market, oferind un punct de intrare atractiv pentru un rebound tehnic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: NVDA LONG -> BUY NVDA (miză ~14.99$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 3.0,
@@ -71,7 +72,7 @@
       "initial_risk_dollars": 0.3061,
       "equity_at_entry": 513.96,
       "partial_done": false,
-      "last_price": 35.715,
+      "last_price": 36.3,
       "entry_reason": "ASTS beneficiază de catalizatori fundamentali puternici, incluzând un acord de finanțare de până la 1 miliard de dolari pentru compania mixtă din Japonia și planuri de lansare confirmate cu SpaceX și Blue Origin. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 3.0,
@@ -84,6 +85,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 1.0,
         "cost_to_risk": 0.0566
+      }
+    },
+    "RIOT": {
+      "trade_id": "theo-RIOT-L-202611100943",
+      "signal_symbol": "RIOT",
+      "signal_direction": "long",
+      "exec_symbol": "RIOT",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-10T09:43:05.780539-05:00",
+      "entry_time": "2026-11-10T09:43:05.780539-05:00",
+      "entry_price": 18.56,
+      "qty": 1.0808,
+      "qty0": 1.0808,
+      "signal_entry_price": 18.56,
+      "signal_stop": 18.27,
+      "signal_initial_stop": 18.27,
+      "signal_target": 19.55,
+      "signal_stop_after_target": 18.71,
+      "exec_stop": 18.27,
+      "exec_initial_stop": 18.27,
+      "exec_target": 19.49,
+      "stop_order_id": "a05be734-ea7c-4f4a-9e7e-877fcdf4f88b",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.3134,
+      "equity_at_entry": 514.46,
+      "partial_done": false,
+      "last_price": 18.56,
+      "entry_reason": "Morgan Stanley a numit acțiunile de tip 'powered shell' o oportunitate de cumpărare, stimulând o creștere de 6% pentru Riot susținută de fluxul instituțional pozitiv. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RIOT LONG -> BUY RIOT (miză ~20.00$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 13.0,
+        "dist_from_band_bps": 216.5,
+        "dist_from_vwap_bps": 129.9,
+        "rv_30m": 0.0076,
+        "sigma_14d": 0.0152,
+        "overnight_gap_bps": 433.0,
+        "ret_since_open_bps": 433.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 1.0,
+        "cost_to_risk": 0.1053
       }
     }
   },
