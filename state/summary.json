@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 512.77,
-  "total_pnl": 12.77,
-  "total_pnl_pct": 2.55,
-  "today_pnl": -1.19,
+  "equity": 512.78,
+  "total_pnl": 12.78,
+  "total_pnl_pct": 2.56,
+  "today_pnl": -1.18,
   "today_pnl_pct": -0.23,
-  "current_drawdown_pct": -0.24,
+  "current_drawdown_pct": -0.23,
   "max_drawdown_pct": -0.31,
-  "updated_at": "2026-11-10T10:57:19.487353-05:00",
+  "updated_at": "2026-11-10T10:58:28.741731-05:00",
   "positions": [
     {
       "symbol": "MRNA",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-10T10:48:03.823941-05:00",
       "qty": 0.0585,
       "entry_price": 257.532,
-      "current_price": 257.97,
+      "current_price": 258.2,
       "stop": 253.67,
       "initial_stop": 253.67,
-      "unrealized_pnl": 0.03,
-      "unrealized_r": 0.11,
+      "unrealized_pnl": 0.04,
+      "unrealized_r": 0.17,
       "entry_reason": "Moderna (MRNA) înregistrează o creștere semnificativă a prețului și atinge maxime recente, susținută de includerea în portofoliul RSP și interes instituțional puternic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MRNA LONG -> BUY MRNA (miză ~15.00$, R:R 1:3.5)"
     }
   ],
@@ -94,12 +94,33 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "UPST",
+        "direction": "short",
+        "price": 20.18,
+        "prev_close": 22.23,
+        "gap_pct": -9.24,
+        "change_pct": -9.24,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 20.48,
+        "target_price": 19.12,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [],
+        "reason_ro": "UPST înregistrează o scădere puternică de -9.24% în sesiunea activă, indicând un trend intraday descendent clar și presiune masivă la vânzare. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-10T15:59:10.411088+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "ASTS",
         "direction": "short",
         "price": 33.84,
         "prev_close": 36.91,
-        "gap_pct": -8.33,
-        "change_pct": -8.33,
+        "gap_pct": -8.32,
+        "change_pct": -8.32,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
@@ -113,24 +134,24 @@
           "Rocket Lab: The Market Is Wrong",
           "What's Going On With AST SpaceMobile Shares Tuesday?"
         ],
-        "reason_ro": "ASTS înregistrează o scădere puternică de -8.33% pe fondul unor riscuri ridicate de execuție menționate în rapoarte recente și a sentimentului negativ din sectorul spațial, depășind perioada de zgomot de la deschidere. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "ASTS înregistrează o scădere de peste 8% pe fondul îngrijorărilor legate de riscurile de execuție din trimestrul 3 și a sentimentului negativ din sectorul spațial, oferind o oportunitate de sell pe continuarea trendului intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T15:48:43.725123+00:00"
+        "evaluated_at": "2026-11-10T15:59:23.958710+00:00"
       },
       {
         "action": "enter",
         "symbol": "NVDA",
         "direction": "long",
-        "price": 169.0,
+        "price": 168.64,
         "prev_close": 178.64,
-        "gap_pct": -5.4,
-        "change_pct": -5.4,
+        "gap_pct": -5.6,
+        "change_pct": -5.6,
         "stake_dollars": 25.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 166.47,
-        "target_price": 177.87,
+        "stop_price": 166.11,
+        "target_price": 177.49,
         "expected_profit_dollars": 1.31,
         "max_loss_dollars": 0.38,
         "headlines": [
@@ -138,77 +159,77 @@
           "Investor Cathie Wood Buys The Dip In Nvidia Stock",
           "Andy Jassy Just Delivered Great News for Amazon Stock Investors"
         ],
-        "reason_ro": "NVDA înregistrează o scădere de -5.40% pe fondul unor știri de piață generale, însă investitoarea Cathie Wood a cumpărat recent din nou dip-ul, oferind un semnal puternic de încredere instituțională pentru o potențială revenire intraday. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "reason_ro": "NVDA este în scădere puternică cu -5.60%, oferind o oportunitate clasică de cumpărare a dip-ului confirmată de achizițiile realizate de Cathie Wood și de sentimentul general pozitiv din sectorul GPU. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T15:48:50.199396+00:00"
+        "evaluated_at": "2026-11-10T15:59:29.774676+00:00"
       },
       {
         "action": "enter",
-        "symbol": "MRNA",
-        "direction": "long",
-        "price": 256.43,
-        "prev_close": 269.0,
-        "gap_pct": -4.67,
-        "change_pct": -4.67,
-        "stake_dollars": 15.0,
+        "symbol": "COIN",
+        "direction": "short",
+        "price": 130.6,
+        "prev_close": 136.06,
+        "gap_pct": -4.01,
+        "change_pct": -4.01,
+        "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 252.58,
-        "target_price": 269.89,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
+        "stop_price": 132.56,
+        "target_price": 123.74,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
         "headlines": [
-          "Moderna to Present at Upcoming Conference in November 2026",
-          "What Invesco S&P 500 Equal Weight ETF (RSP) Bought: Moderna Leads on Nov. 6",
-          "iShares Russell Mid-Cap (IWR) Adds Fox and Marathon Petroleum on Nov. 6"
+          "Morning Minute: Vitalik Recasts ETH as a Store of Value",
+          "Bitcoin Miner MARA Clears Its BTC-Backed Debt and Approves $500 Million Buyback After Q3 Profit",
+          "Coinbase, Kraken, Kalshi Support CFTC in Legal Fight Over Stock Perpetual Futures"
         ],
-        "reason_ro": "Moderna (MRNA) înregistrează o creștere semnificativă a prețului și atinge maxime recente, susținută de includerea în portofoliul RSP și interes instituțional puternic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "COIN înregistrează o scădere intraday de -4.01% pe fondul știrilor juridice privind futures-urile perpetue și al presiunii generale din sectorul crypto, oferind o oportunitate de sell pe continuarea trendului descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T15:48:56.809799+00:00"
+        "evaluated_at": "2026-11-10T15:59:35.513252+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "MARA",
-        "price": 7.42,
-        "prev_close": 6.64,
-        "gap_pct": 11.75,
+        "symbol": "LCID",
+        "price": 4.0,
+        "prev_close": 3.61,
+        "gap_pct": 10.66,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "LCID",
-        "price": 4.03,
-        "prev_close": 3.61,
-        "gap_pct": 11.63,
+        "symbol": "MARA",
+        "price": 7.34,
+        "prev_close": 6.64,
+        "gap_pct": 10.62,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UPST",
-        "price": 20.19,
+        "price": 20.18,
         "prev_close": 22.23,
-        "gap_pct": -9.2,
+        "gap_pct": -9.24,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
         "price": 33.84,
         "prev_close": 36.91,
-        "gap_pct": -8.33,
+        "gap_pct": -8.32,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NVDA",
-        "price": 169.0,
+        "price": 168.64,
         "prev_close": 178.64,
-        "gap_pct": -5.4,
+        "gap_pct": -5.6,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MRNA",
-        "price": 256.43,
-        "prev_close": 269.0,
-        "gap_pct": -4.67,
+        "symbol": "COIN",
+        "price": 130.6,
+        "prev_close": 136.06,
+        "gap_pct": -4.01,
         "source": "watchlist_snapshot"
       },
       {
@@ -220,27 +241,27 @@
       },
       {
         "symbol": "PEPG",
-        "price": 5.88,
+        "price": 5.76,
         "prev_close": 2.39,
-        "gap_pct": 146.23,
+        "gap_pct": 140.97,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 16.25,
+        "price": 17.36,
         "prev_close": 9.35,
-        "gap_pct": 73.8,
+        "gap_pct": 85.67,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "NCI",
-        "price": 7.68,
-        "prev_close": 4.64,
-        "gap_pct": 65.55,
+        "symbol": "TTEC",
+        "price": 2.16,
+        "prev_close": 1.39,
+        "gap_pct": 54.84,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-10T15:48:03.823946+00:00",
+    "last_scan_at": "2026-11-10T15:58:28.741735+00:00",
     "telegram_sent_date": "2026-11-10"
   },
   "spy_start_price": 767.64,
