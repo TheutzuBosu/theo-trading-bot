@@ -32,7 +32,7 @@
       "initial_risk_dollars": 0.2248,
       "equity_at_entry": 513.96,
       "partial_done": false,
-      "last_price": 173.19,
+      "last_price": 173.17,
       "entry_reason": "Cathie Wood a cumpărat dip-ul pentru NVDA, acțiunea scăzând cu 4.19% în pre-market, oferind un punct de intrare atractiv pentru un rebound tehnic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: NVDA LONG -> BUY NVDA (miză ~14.99$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 3.0,
@@ -72,7 +72,7 @@
       "initial_risk_dollars": 0.3061,
       "equity_at_entry": 513.96,
       "partial_done": false,
-      "last_price": 36.635,
+      "last_price": 36.045,
       "entry_reason": "ASTS beneficiază de catalizatori fundamentali puternici, incluzând un acord de finanțare de până la 1 miliard de dolari pentru compania mixtă din Japonia și planuri de lansare confirmate cu SpaceX și Blue Origin. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 3.0,
