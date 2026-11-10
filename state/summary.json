@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 512.29,
-  "total_pnl": 12.29,
+  "equity": 512.3,
+  "total_pnl": 12.3,
   "total_pnl_pct": 2.46,
-  "today_pnl": -1.67,
+  "today_pnl": -1.66,
   "today_pnl_pct": -0.32,
   "current_drawdown_pct": -0.33,
   "max_drawdown_pct": -0.33,
-  "updated_at": "2026-11-10T12:53:20.529876-05:00",
+  "updated_at": "2026-11-10T12:54:27.467892-05:00",
   "positions": [
     {
       "symbol": "NVD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-10T11:30:13.680349-05:00",
       "qty": 1.5815,
       "entry_price": 6.23,
-      "current_price": 6.3205,
+      "current_price": 6.33,
       "stop": 6.04,
       "initial_stop": 6.04,
-      "unrealized_pnl": 0.14,
-      "unrealized_r": 0.48,
+      "unrealized_pnl": 0.16,
+      "unrealized_r": 0.53,
       "entry_reason": "NVDA scade puternic cu 5.36% pe fondul declarațiilor oficialului Fed Goolsbee privind supraîncălzirea centrelor de date AI, creând un impuls descendent intraday clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: NVDA SHORT -> BUY NVD (miză ~9.84$, R:R 1:3.5)"
     },
     {
@@ -30,7 +30,7 @@
       "entry_time": "2026-11-10T11:08:53.570285-05:00",
       "qty": 1.2484,
       "entry_price": 16.02,
-      "current_price": 15.965,
+      "current_price": 15.9655,
       "stop": 15.78,
       "initial_stop": 15.78,
       "unrealized_pnl": -0.07,
@@ -107,64 +107,43 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "UPST",
+        "symbol": "ASTS",
         "direction": "short",
-        "price": 19.81,
-        "prev_close": 22.23,
-        "gap_pct": -10.91,
-        "change_pct": -10.91,
+        "price": 32.78,
+        "prev_close": 36.91,
+        "gap_pct": -11.19,
+        "change_pct": -11.19,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 20.11,
-        "target_price": 18.77,
+        "stop_price": 33.27,
+        "target_price": 31.06,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "UPST înregistrează o scădere puternică de -10.91% pe volum ridicat în sesiunea activă, oferind o oportunitate tehnică clară de sell-short pe continuarea trendului intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T17:44:07.965698+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ASTS",
-        "direction": "long",
-        "price": 32.94,
-        "prev_close": 36.91,
-        "gap_pct": -10.76,
-        "change_pct": -10.76,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 32.45,
-        "target_price": 34.67,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
         "headlines": [
           "IonQ Shares Fall With Space Stocks: What's Going On?",
           "Rocket Lab: The Market Is Wrong",
           "What's Going On With AST SpaceMobile Shares Tuesday?"
         ],
-        "reason_ro": "ASTS a securizat până la 1 miliard de dolari pentru o asociere în participațiune în Japonia, iar scăderea actuală de peste 10% reprezintă o corecție supraevaluată pe fondul sentimentului negativ general din sectorul spațial, oferind un punct atractiv de intrare long după epuizarea volatilității de la deschidere. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ASTS înregistrează o scădere puternică de -11.19% pe fondul corecției din sectorul spațial și al riscurilor de execuție menționate în raportul Q3, oferind o oportunitate de sell pe continuarea trendului intraday negativ. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T17:44:13.590168+00:00"
+        "evaluated_at": "2026-11-10T17:54:28.948396+00:00"
       },
       {
         "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 167.0,
+        "price": 167.43,
         "prev_close": 178.64,
-        "gap_pct": -6.52,
-        "change_pct": -6.52,
+        "gap_pct": -6.28,
+        "change_pct": -6.28,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 169.5,
-        "target_price": 158.23,
+        "stop_price": 169.94,
+        "target_price": 158.64,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -172,102 +151,52 @@
           "Intel’s Harsh Base Case for the Remainder of 2026",
           "Why Lucid Stock Keeps Going Up"
         ],
-        "reason_ro": "NVDA scade puternic cu 6.52% pe fondul declarațiilor oficialului Fed Goolsbee care avertizează că centrele de date AI par 'supraîncălzite', creând presiune de vânzare intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "NVDA scade puternic cu -6.28%, fiind puternic afectată de declarațiile oficialului Fed Goolsbee privind supraîncălzirea centrelor de date AI. Trendul intraday este clar descendent, oferind o oportunitate solidă de scurtă durată. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T17:44:25.849365+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "SHOP",
-        "direction": "long",
-        "price": 142.5,
-        "prev_close": 152.05,
-        "gap_pct": -6.28,
-        "change_pct": -6.28,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 140.36,
-        "target_price": 149.98,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Shopify Inc. (SHOP) Is a Trending Stock: Facts to Know Before Betting on It",
-          "Capital Group Growth (CGGR) Adds Rocket and Deere on Nov. 6",
-          "Shopify (SHOP) Sees $61.2 Million in Net ETF Buying on Friday"
-        ],
-        "reason_ro": "SHOP este în scădere cu peste 6% fără un motiv fundamental negativ sever, dar beneficiază de intrări solide de capital din ETF-uri ($61.2M) și interes pe termen lung din partea investitorilor instituționali, oferind o oportunitate atractivă de cumpărare în contrartrend (mean reversion) după depășirea zgomotului de la deschidere. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T17:44:31.556208+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ARM",
-        "direction": "short",
-        "price": 176.47,
-        "prev_close": 186.33,
-        "gap_pct": -5.29,
-        "change_pct": -5.29,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 179.12,
-        "target_price": 167.21,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "ARM Just Dropped 13% After Earnings. Is It Time to Sell, or Load Up?",
-          "Arm Holdings (ARM) CEO Warns US AI Data Center Pushback Could Send Jobs Abroad",
-          "At 13x earnings, is Qualcomm the most overlooked AI chip stock?"
-        ],
-        "reason_ro": "Acțiunea ARM înregistrează o scădere puternică de peste 5%, susținută de știri negative recente privind rezultatele financiare, avertismentele CEO-ului și pierderile masive înregistrate de acționarul majoritar SoftBank din cauza costurilor cu centrele de date. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T17:44:38.041835+00:00"
+        "evaluated_at": "2026-11-10T17:55:11.539812+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "UPST",
-        "price": 19.81,
-        "prev_close": 22.23,
-        "gap_pct": -10.91,
+        "symbol": "ASTS",
+        "price": 32.78,
+        "prev_close": 36.91,
+        "gap_pct": -11.19,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ASTS",
-        "price": 32.94,
-        "prev_close": 36.91,
-        "gap_pct": -10.76,
+        "symbol": "UPST",
+        "price": 19.82,
+        "prev_close": 22.23,
+        "gap_pct": -10.86,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.94,
+        "price": 3.96,
         "prev_close": 3.61,
-        "gap_pct": 9.14,
+        "gap_pct": 9.7,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NVDA",
-        "price": 167.0,
+        "price": 167.43,
         "prev_close": 178.64,
-        "gap_pct": -6.52,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SHOP",
-        "price": 142.5,
-        "prev_close": 152.05,
         "gap_pct": -6.28,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ARM",
-        "price": 176.47,
-        "prev_close": 186.33,
-        "gap_pct": -5.29,
+        "symbol": "SHOP",
+        "price": 143.28,
+        "prev_close": 152.05,
+        "gap_pct": -5.76,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MARA",
+        "price": 7.02,
+        "prev_close": 6.64,
+        "gap_pct": 5.72,
         "source": "watchlist_snapshot"
       },
       {
@@ -281,25 +210,25 @@
         "symbol": "PEPG",
         "price": 5.14,
         "prev_close": 2.39,
-        "gap_pct": 115.06,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "TTEC",
-        "price": 2.31,
-        "prev_close": 1.4,
-        "gap_pct": 65.59,
+        "gap_pct": 115.27,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 15.39,
+        "price": 16.35,
         "prev_close": 9.35,
-        "gap_pct": 64.6,
+        "gap_pct": 74.87,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "TTEC",
+        "price": 2.39,
+        "prev_close": 1.39,
+        "gap_pct": 71.4,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-10T17:44:05.571967+00:00",
+    "last_scan_at": "2026-11-10T17:54:27.467896+00:00",
     "telegram_sent_date": "2026-11-10"
   },
   "spy_start_price": 767.64,
