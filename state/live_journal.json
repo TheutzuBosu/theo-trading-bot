@@ -5,6 +5,7 @@
     "MOVER|MARA|2026-11-10|long",
     "MOVER|MRNA|2026-11-10|long",
     "MOVER|NVDA|2026-11-10|long",
+    "MOVER|NVDA|2026-11-10|short",
     "MOVER|RIOT|2026-11-10|long",
     "MOVER|SOFI|2026-11-10|long",
     "QQQ|2026-11-09T10:11:00-05:00|long"
@@ -35,7 +36,7 @@
       "initial_risk_dollars": 0.2259,
       "equity_at_entry": 513.04,
       "partial_done": false,
-      "last_price": 256.005,
+      "last_price": 256.19,
       "entry_reason": "Moderna (MRNA) înregistrează o creștere semnificativă a prețului și atinge maxime recente, susținută de includerea în portofoliul RSP și interes instituțional puternic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MRNA LONG -> BUY MRNA (miză ~15.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 78.0,
@@ -88,6 +89,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 1.0,
         "cost_to_risk": 0.125
+      }
+    },
+    "NVD": {
+      "trade_id": "theo-NVD-S-202611101130",
+      "signal_symbol": "NVDA",
+      "signal_direction": "short",
+      "exec_symbol": "NVD",
+      "exec_direction": "long",
+      "leverage": 2,
+      "signal_time": "2026-11-10T11:30:13.680349-05:00",
+      "entry_time": "2026-11-10T11:30:13.680349-05:00",
+      "entry_price": 6.23,
+      "qty": 1.5815,
+      "qty0": 1.5815,
+      "signal_entry_price": 169.06,
+      "signal_stop": 171.6,
+      "signal_initial_stop": 171.6,
+      "signal_target": 160.17,
+      "signal_stop_after_target": 167.79,
+      "exec_stop": 6.04,
+      "exec_initial_stop": 6.04,
+      "exec_target": 6.87,
+      "stop_order_id": "a0f502c7-f84d-4335-a6db-d089648d7b53",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.3005,
+      "equity_at_entry": 512.73,
+      "partial_done": false,
+      "last_price": 6.23,
+      "entry_reason": "NVDA scade puternic cu 5.36% pe fondul declarațiilor oficialului Fed Goolsbee privind supraîncălzirea centrelor de date AI, creând un impuls descendent intraday clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: NVDA SHORT -> BUY NVD (miză ~9.84$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 120.0,
+        "dist_from_band_bps": 268.0,
+        "dist_from_vwap_bps": -160.8,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.015,
+        "overnight_gap_bps": -536.0,
+        "ret_since_open_bps": -536.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 1.0,
+        "cost_to_risk": 0.1579
       }
     }
   },
