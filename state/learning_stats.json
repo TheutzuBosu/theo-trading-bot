@@ -1,8 +1,8 @@
 {
   "meta_samples": 4,
   "meta_active": false,
-  "updated_at": "2026-11-09T15:30:28.348111-05:00",
-  "total_trades_analyzed": 26,
+  "updated_at": "2026-11-10T15:30:55.720064-05:00",
+  "total_trades_analyzed": 34,
   "hourly_multipliers": {
     "09:00": 1.0,
     "10:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Tranzacția pe ASTS a fost închisă prematur din cauza timpului, aducând un profit mic de 0,48 $ (1,278R), învățarea principală fiind că trebuie să permitem știrilor fundamentale puternice timp să se dezvolte, evitând ieșirile timpurii.",
-    "Robotul a ieșit din cauza timpului fără nicio mișcare în favoarea sau defavoarea sa, obținând un mic profit de 0,21 $; reținem că, uneori, lipsa de impuls impune închiderea prematură a poziției.",
-    "Am închis tranzacția pe LUNR la limită de timp cu un profit mic de 0,3 $, reținând că știrile fundamentale puternice pot susține creșteri chiar și în sesiuni avansate, dar ieșirile programate cronologic taie potențialul mișcării.",
-    "Am ieșit după timp cu un profit mic de 2.86R, ratând maximul de 3.84R din cauză că n-am atins ținta fixă.",
-    "Tranzacția a fost închisă automat după expirarea timpului fără nicio mișcare de preț, aducând un profit minor de 0,38$, iar lecția este că trebuie să evităm intrările bazate doar pe entuziasm mediatic când lipsesc impulsurile tehnice imediate."
+    "Am cumpărat pe creștere de știri AI, dar prețul a scăzut direct în stop-loss, așa că reținem că hype-ul nu garantează profitul intraday și trebuie să respectăm riscul asumat.",
+    "Botul a cumpărat MRNA pe creştere, dar preţul a lovit direct stop-ul fără nicio mişcare în profit, aşa că reţinem să fim mai prudenţi la intrările pe maxime recente.",
+    "Deși fundamentele păreau bune, prețul a scăzut direct în stop-loss fără nicio tentativă de revenire, așa că reținem să fim atenți la impulsul de scădere intraday și să nu intrăm doar pe baza fluxului de capital din ETF-uri.",
+    "Deși planul era de a vinde în lipsă pe NVDA, botul a cumpărat din greșeală acțiuni NVD, ieșind după timp cu un profit infim de 0,06 $ din cauza unei erori de execuție a scannerului; **reținem că trebuie corectată imediat maparea simbolurilor și a direcției pentru a evita tranzacțiile accidentale împotriva strategiei.**",
+    "Tranzacția s-a închis prematur din lipsă de timp pe un profit infim de 0,19 $, reținând că trebuie să evităm ieșirile cronometrate rigid când catalizatorii instituționali au nevoie de timp să acționeze."
   ]
 }
