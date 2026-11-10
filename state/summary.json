@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 512.61,
-  "total_pnl": 12.61,
+  "equity": 512.59,
+  "total_pnl": 12.59,
   "total_pnl_pct": 2.52,
-  "today_pnl": -1.35,
-  "today_pnl_pct": -0.26,
+  "today_pnl": -1.37,
+  "today_pnl_pct": -0.27,
   "current_drawdown_pct": -0.27,
   "max_drawdown_pct": -0.35,
-  "updated_at": "2026-11-10T14:58:15.839705-05:00",
+  "updated_at": "2026-11-10T14:59:21.532818-05:00",
   "positions": [
     {
       "symbol": "NVD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-10T11:30:13.680349-05:00",
       "qty": 1.5815,
       "entry_price": 6.23,
-      "current_price": 6.3699,
+      "current_price": 6.3601,
       "stop": 6.04,
       "initial_stop": 6.04,
-      "unrealized_pnl": 0.22,
-      "unrealized_r": 0.74,
+      "unrealized_pnl": 0.21,
+      "unrealized_r": 0.68,
       "entry_reason": "NVDA scade puternic cu 5.36% pe fondul declarațiilor oficialului Fed Goolsbee privind supraîncălzirea centrelor de date AI, creând un impuls descendent intraday clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: NVDA SHORT -> BUY NVD (miză ~9.84$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-10T11:08:53.570285-05:00",
       "qty": 1.2484,
       "entry_price": 16.02,
-      "current_price": 16.16,
+      "current_price": 16.155,
       "stop": 15.78,
       "initial_stop": 15.78,
       "unrealized_pnl": 0.17,
-      "unrealized_r": 0.58,
+      "unrealized_r": 0.56,
       "entry_reason": "Cathie Wood de la ARK Investment a achiziționat acțiuni SOFI în valoare de 6,8 milioane de dolari, oferind un catalizator instituțional puternic care poate contracara sentimentul negativ de retail. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SOFI LONG -> BUY SOFI (miză ~20.00$, R:R 1:3.5)"
     }
   ],
