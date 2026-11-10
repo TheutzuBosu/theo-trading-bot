@@ -3,6 +3,7 @@
     "MOVER|ASTS|2026-11-10|long",
     "MOVER|LUNR|2026-11-10|long",
     "MOVER|MARA|2026-11-10|long",
+    "MOVER|MRNA|2026-11-10|long",
     "MOVER|NVDA|2026-11-10|long",
     "MOVER|RIOT|2026-11-10|long",
     "QQQ|2026-11-09T10:11:00-05:00|long"
@@ -33,7 +34,7 @@
       "initial_risk_dollars": 0.2965,
       "equity_at_entry": 514.14,
       "partial_done": false,
-      "last_price": 7.455,
+      "last_price": 7.41,
       "entry_reason": "MARA înregistrează o creștere solidă de 12.05% susținută de ambițiile strategice în infrastructura AI și un portofoliu energetic de 4 GW, depășind zgomotul din pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MARA LONG -> BUY MARA (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 34.0,
@@ -46,6 +47,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 1.0,
         "cost_to_risk": 0.2727
+      }
+    },
+    "MRNA": {
+      "trade_id": "theo-MRNA-L-202611101048",
+      "signal_symbol": "MRNA",
+      "signal_direction": "long",
+      "exec_symbol": "MRNA",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-10T10:48:03.823941-05:00",
+      "entry_time": "2026-11-10T10:48:03.823941-05:00",
+      "entry_price": 257.532,
+      "qty": 0.0585,
+      "qty0": 0.0585,
+      "signal_entry_price": 257.53,
+      "signal_stop": 253.67,
+      "signal_initial_stop": 253.67,
+      "signal_target": 271.06,
+      "signal_stop_after_target": 259.47,
+      "exec_stop": 253.67,
+      "exec_initial_stop": 253.67,
+      "exec_target": 269.9,
+      "stop_order_id": "67bbfbe4-7e24-48be-8f31-faa57fe4a370",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.2259,
+      "equity_at_entry": 513.04,
+      "partial_done": false,
+      "last_price": 257.532,
+      "entry_reason": "Moderna (MRNA) înregistrează o creștere semnificativă a prețului și atinge maxime recente, susținută de includerea în portofoliul RSP și interes instituțional puternic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MRNA LONG -> BUY MRNA (miză ~15.00$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 78.0,
+        "dist_from_band_bps": 233.5,
+        "dist_from_vwap_bps": -140.1,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.015,
+        "overnight_gap_bps": -467.0,
+        "ret_since_open_bps": -467.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 1.0,
+        "cost_to_risk": 0.0078
       }
     }
   },
