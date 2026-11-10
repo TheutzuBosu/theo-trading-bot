@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.33,
   "current_drawdown_pct": -0.33,
   "max_drawdown_pct": -0.34,
-  "updated_at": "2026-11-10T13:31:28.478743-05:00",
+  "updated_at": "2026-11-10T13:31:52.099584-05:00",
   "positions": [
     {
       "symbol": "NVD",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-10T11:30:13.680349-05:00",
       "qty": 1.5815,
       "entry_price": 6.23,
-      "current_price": 6.2899,
+      "current_price": 6.29,
       "stop": 6.04,
       "initial_stop": 6.04,
       "unrealized_pnl": 0.09,
@@ -30,7 +30,7 @@
       "entry_time": "2026-11-10T11:08:53.570285-05:00",
       "qty": 1.2484,
       "entry_price": 16.02,
-      "current_price": 15.995,
+      "current_price": 15.9966,
       "stop": 15.78,
       "initial_stop": 15.78,
       "unrealized_pnl": -0.03,
