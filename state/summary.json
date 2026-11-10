@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 512.48,
-  "total_pnl": 12.48,
-  "total_pnl_pct": 2.5,
-  "today_pnl": -1.48,
+  "equity": 512.47,
+  "total_pnl": 12.47,
+  "total_pnl_pct": 2.49,
+  "today_pnl": -1.49,
   "today_pnl_pct": -0.29,
   "current_drawdown_pct": -0.29,
   "max_drawdown_pct": -0.35,
-  "updated_at": "2026-11-10T15:11:39.192276-05:00",
+  "updated_at": "2026-11-10T15:12:45.654266-05:00",
   "positions": [
     {
       "symbol": "NVD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-10T11:30:13.680349-05:00",
       "qty": 1.5815,
       "entry_price": 6.23,
-      "current_price": 6.2959,
+      "current_price": 6.2819,
       "stop": 6.04,
       "initial_stop": 6.04,
-      "unrealized_pnl": 0.1,
-      "unrealized_r": 0.35,
+      "unrealized_pnl": 0.08,
+      "unrealized_r": 0.27,
       "entry_reason": "NVDA scade puternic cu 5.36% pe fondul declarațiilor oficialului Fed Goolsbee privind supraîncălzirea centrelor de date AI, creând un impuls descendent intraday clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: NVDA SHORT -> BUY NVD (miză ~9.84$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-10T11:08:53.570285-05:00",
       "qty": 1.2484,
       "entry_price": 16.02,
-      "current_price": 16.1483,
+      "current_price": 16.159,
       "stop": 15.78,
       "initial_stop": 15.78,
-      "unrealized_pnl": 0.16,
-      "unrealized_r": 0.53,
+      "unrealized_pnl": 0.17,
+      "unrealized_r": 0.58,
       "entry_reason": "Cathie Wood de la ARK Investment a achiziționat acțiuni SOFI în valoare de 6,8 milioane de dolari, oferind un catalizator instituțional puternic care poate contracara sentimentul negativ de retail. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SOFI LONG -> BUY SOFI (miză ~20.00$, R:R 1:3.5)"
     }
   ],
@@ -107,18 +107,64 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "NVDA",
+        "symbol": "UPST",
         "direction": "short",
-        "price": 166.42,
-        "prev_close": 178.64,
-        "gap_pct": -6.84,
-        "change_pct": -6.84,
+        "price": 20.07,
+        "prev_close": 22.23,
+        "gap_pct": -9.76,
+        "change_pct": -9.76,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 20.37,
+        "target_price": 19.02,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [],
+        "reason_ro": "UPST înregistrează o scădere intraday puternică de -9.76% pe volum ridicat, oferind o oportunitate tehnică de sell short în continuarea trendului descendent, după ce am trecut de primele 15 minute ale deschiderii. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-10T20:12:46.948452+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "MARA",
+        "direction": "long",
+        "price": 7.16,
+        "prev_close": 6.64,
+        "gap_pct": 7.76,
+        "change_pct": 7.76,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 168.92,
-        "target_price": 157.68,
+        "stop_price": 7.05,
+        "target_price": 7.54,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "MARA Holdings Q3: Massive Deleveraging Sets The Stage For The AI Colocation Premium",
+          "AAON, Ziprecruiter, Rackspace Technology, Babcock & Wilcox And Other Big Stocks Moving Higher On Tuesday",
+          "Guggenheim Reiterates Neutral on MARA Holdingsto Neutral"
+        ],
+        "reason_ro": "MARA înregistrează o creștere puternică de +7.76% susținută de știri pozitive privind reducerea datoriilor (deleveraging) și poziționarea strategică pentru piața de colocare AI, depășind faza de zgomot din pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-10T20:12:58.322994+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "NVDA",
+        "direction": "short",
+        "price": 167.95,
+        "prev_close": 178.64,
+        "gap_pct": -5.98,
+        "change_pct": -5.98,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 170.47,
+        "target_price": 159.13,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -126,52 +172,52 @@
           "Jim Cramer questions his famous Nvidia investing rule",
           "Ambiq Micro, Inc. Q3 2026 Earnings Call Summary"
         ],
-        "reason_ro": "NVDA înregistrează o scădere puternică de -6.84% pe fondul corecției generale a pieței cauzată de datele despre inflație și a știrilor de securitate sensibile privind conducerea companiei. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "NVDA înregistrează o scădere semnificativă de aproape 6% pe fondul corecției generale a pieței cauzate de datele fierbinți privind inflația și a știrilor de securitate sensibile privind CEO-ul, creând un impuls tehnic descendent clar în timpul sesiunii principale. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T20:03:10.332879+00:00"
+        "evaluated_at": "2026-11-10T20:13:13.480247+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "ASTS",
-        "price": 32.95,
-        "prev_close": 36.91,
-        "gap_pct": -10.73,
+        "symbol": "UPST",
+        "price": 20.07,
+        "prev_close": 22.23,
+        "gap_pct": -9.76,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "UPST",
-        "price": 20.09,
-        "prev_close": 22.23,
-        "gap_pct": -9.65,
+        "symbol": "ASTS",
+        "price": 33.73,
+        "prev_close": 36.91,
+        "gap_pct": -8.62,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MARA",
-        "price": 7.12,
+        "price": 7.16,
         "prev_close": 6.64,
-        "gap_pct": 7.23,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 166.42,
-        "prev_close": 178.64,
-        "gap_pct": -6.84,
+        "gap_pct": 7.76,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRNA",
-        "price": 251.56,
+        "price": 252.48,
         "prev_close": 269.0,
-        "gap_pct": -6.48,
+        "gap_pct": -6.14,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "LUNR",
-        "price": 11.42,
-        "prev_close": 12.03,
-        "gap_pct": -5.07,
+        "symbol": "NVDA",
+        "price": 167.95,
+        "prev_close": 178.64,
+        "gap_pct": -5.98,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "SHOP",
+        "price": 145.03,
+        "prev_close": 152.05,
+        "gap_pct": -4.62,
         "source": "watchlist_snapshot"
       },
       {
@@ -183,27 +229,27 @@
       },
       {
         "symbol": "PEPG",
-        "price": 4.55,
+        "price": 4.58,
         "prev_close": 2.39,
-        "gap_pct": 90.59,
+        "gap_pct": 91.42,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 16.87,
+        "price": 17.08,
         "prev_close": 9.35,
-        "gap_pct": 80.43,
+        "gap_pct": 82.7,
         "source": "alpaca_movers"
       },
       {
         "symbol": "TTEC",
-        "price": 2.37,
-        "prev_close": 1.39,
-        "gap_pct": 69.8,
+        "price": 2.4,
+        "prev_close": 1.4,
+        "gap_pct": 71.68,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-10T20:02:42.841395+00:00",
+    "last_scan_at": "2026-11-10T20:12:45.654269+00:00",
     "telegram_sent_date": "2026-11-10"
   },
   "spy_start_price": 767.64,
