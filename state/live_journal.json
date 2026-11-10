@@ -2,6 +2,7 @@
   "processed_signals": [
     "MOVER|ASTS|2026-11-10|long",
     "MOVER|LUNR|2026-11-10|long",
+    "MOVER|MARA|2026-11-10|long",
     "MOVER|NVDA|2026-11-10|long",
     "MOVER|RIOT|2026-11-10|long",
     "QQQ|2026-11-09T10:11:00-05:00|long"
@@ -32,7 +33,7 @@
       "initial_risk_dollars": 0.2248,
       "equity_at_entry": 513.96,
       "partial_done": false,
-      "last_price": 173.26,
+      "last_price": 173.08,
       "entry_reason": "Cathie Wood a cumpărat dip-ul pentru NVDA, acțiunea scăzând cu 4.19% în pre-market, oferind un punct de intrare atractiv pentru un rebound tehnic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: NVDA LONG -> BUY NVDA (miză ~14.99$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 3.0,
@@ -72,7 +73,7 @@
       "initial_risk_dollars": 0.3061,
       "equity_at_entry": 513.96,
       "partial_done": false,
-      "last_price": 36.07,
+      "last_price": 36.065,
       "entry_reason": "ASTS beneficiază de catalizatori fundamentali puternici, incluzând un acord de finanțare de până la 1 miliard de dolari pentru compania mixtă din Japonia și planuri de lansare confirmate cu SpaceX și Blue Origin. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 3.0,
@@ -85,6 +86,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 1.0,
         "cost_to_risk": 0.0566
+      }
+    },
+    "MARA": {
+      "trade_id": "theo-MARA-L-202611101004",
+      "signal_symbol": "MARA",
+      "signal_direction": "long",
+      "exec_symbol": "MARA",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-10T10:04:59.534290-05:00",
+      "entry_time": "2026-11-10T10:04:59.534290-05:00",
+      "entry_price": 7.43,
+      "qty": 2.6954,
+      "qty0": 2.6954,
+      "signal_entry_price": 7.43,
+      "signal_stop": 7.32,
+      "signal_initial_stop": 7.32,
+      "signal_target": 7.81,
+      "signal_stop_after_target": 7.48,
+      "exec_stop": 7.32,
+      "exec_initial_stop": 7.32,
+      "exec_target": 7.8,
+      "stop_order_id": "a693911a-0d0e-43ba-a31c-cfe3f261d869",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.2965,
+      "equity_at_entry": 514.14,
+      "partial_done": false,
+      "last_price": 7.43,
+      "entry_reason": "MARA înregistrează o creștere solidă de 12.05% susținută de ambițiile strategice în infrastructura AI și un portofoliu energetic de 4 GW, depășind zgomotul din pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MARA LONG -> BUY MARA (miză ~20.00$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 34.0,
+        "dist_from_band_bps": 602.5,
+        "dist_from_vwap_bps": 361.5,
+        "rv_30m": 0.0074,
+        "sigma_14d": 0.0148,
+        "overnight_gap_bps": 1205.0,
+        "ret_since_open_bps": 1205.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 1.0,
+        "cost_to_risk": 0.2727
       }
     }
   },
