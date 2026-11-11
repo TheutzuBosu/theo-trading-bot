@@ -209,15 +209,20 @@ def _load_learning_context(state_dir: Path | None) -> tuple[list[str], str]:
     try:
         store = StateStore(state_dir)
         lessons: list[str] = []
-        for a in store.read_autopsies()[-6:]:
-            les = str(a.get("lesson") or a.get("lesson_ro") or "").strip()
+        # Prioritize the most recent trade autopsies (yesterday's direct trade feedback)
+        for a in reversed(store.read_autopsies()):
+            les = str(a.get("lesson_ro") or a.get("lesson") or "").strip()
             if les and les not in lessons:
                 lessons.append(les)
+            if len(lessons) >= 4:
+                break
         stats_lessons = store.read_learning_stats().get("last_lessons") or []
         for les in stats_lessons:
             s = str(les).strip()
             if s and s not in lessons:
                 lessons.append(s)
+            if len(lessons) >= 6:
+                break
 
         summary = store.read_summary()
         wb = summary.get("weekend_briefing") or {}
@@ -225,8 +230,10 @@ def _load_learning_context(state_dir: Path | None) -> tuple[list[str], str]:
             s = str(les).strip()
             if s and s not in lessons:
                 lessons.append(s)
+            if len(lessons) >= 6:
+                break
         tactical = str(wb.get("tactical_plan_ro") or "").strip()
-        return lessons[-5:], tactical
+        return lessons[:6], tactical
     except Exception:  # noqa: BLE001
         return [], ""
 
