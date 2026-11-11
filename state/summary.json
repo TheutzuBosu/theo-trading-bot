@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 514.39,
-  "total_pnl": 14.39,
-  "total_pnl_pct": 2.88,
-  "today_pnl": 1.94,
-  "today_pnl_pct": 0.38,
-  "current_drawdown_pct": -0.01,
+  "equity": 514.21,
+  "total_pnl": 14.21,
+  "total_pnl_pct": 2.84,
+  "today_pnl": 1.76,
+  "today_pnl_pct": 0.34,
+  "current_drawdown_pct": -0.03,
   "max_drawdown_pct": -0.52,
-  "updated_at": "2026-11-11T13:00:07.227353-05:00",
+  "updated_at": "2026-11-11T13:01:14.062478-05:00",
   "positions": [
     {
       "symbol": "ARM",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-11T10:21:58.566145-05:00",
       "qty": 0.0515,
       "entry_price": 194.032,
-      "current_price": 206.95,
+      "current_price": 206.24,
       "stop": 195.49,
       "initial_stop": 191.11,
-      "unrealized_pnl": 0.67,
-      "unrealized_r": 2.21,
+      "unrealized_pnl": 0.63,
+      "unrealized_r": 2.09,
       "entry_reason": "ARM beneficiază de o rată de adoptare puternică a cipurilor pentru servere susținută de UBS, iar creșterea de +6.77% confirmă interesul cumpărătorilor după corecția recentă, menținând un impuls tehnic favorabil pentru continuarea sesiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ARM LONG -> BUY ARM (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-11T09:39:17.694683-05:00",
       "qty": 0.0709,
       "entry_price": 352.43,
-      "current_price": 354.975,
+      "current_price": 354.34,
       "stop": 347.14,
       "initial_stop": 347.14,
-      "unrealized_pnl": 0.18,
-      "unrealized_r": 0.48,
+      "unrealized_pnl": 0.14,
+      "unrealized_r": 0.36,
       "entry_reason": "AVGO înregistrează o creștere de 6.33% susținută de rezultatele puternice CoreWeave și de expunerea masivă la contracte de leasing AI (estimat la 161 miliarde $ conform Goldman Sachs). Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: AVGO LONG -> BUY AVGO (miză ~24.99$, R:R 1:4.5)"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-11T09:50:24.669414-05:00",
       "qty": 0.3243,
       "entry_price": 61.696,
-      "current_price": 63.33,
+      "current_price": 63.24,
       "stop": 60.77,
       "initial_stop": 60.77,
-      "unrealized_pnl": 0.53,
-      "unrealized_r": 1.76,
+      "unrealized_pnl": 0.5,
+      "unrealized_r": 1.67,
       "entry_reason": "INTC beneficiază de o cerere solidă pe segmentul de servere și de un interes instituțional ridicat, reflectat prin achiziții masive de ETF-uri în valoare de 360,9 milioane de dolari, susținute de revenirea generală din sectorul de semiconductori. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-11T09:39:17.694683-05:00",
       "qty": 0.0097,
       "entry_price": 773.322,
-      "current_price": 822.52,
+      "current_price": 820.865,
       "stop": 779.12,
       "initial_stop": 761.72,
-      "unrealized_pnl": 0.48,
-      "unrealized_r": 2.12,
+      "unrealized_pnl": 0.46,
+      "unrealized_r": 2.05,
       "entry_reason": "Acțiunile Micron (MU) urcă puternic cu +6.16% susținute de rezultatele CoreWeave care reaprind raliul pe sectorul AI și recuperarea robustă a acțiunilor din sectorul de memorie. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-11T10:01:02.388268-05:00",
       "qty": 0.3006,
       "entry_price": 66.7,
-      "current_price": 67.1887,
+      "current_price": 67.035,
       "stop": 65.7,
       "initial_stop": 65.7,
-      "unrealized_pnl": 0.15,
-      "unrealized_r": 0.49,
+      "unrealized_pnl": 0.1,
+      "unrealized_r": 0.34,
       "entry_reason": "Cathie Wood a cumpărat acțiuni de 3.4 milioane $ și Needham menține recomandarea de cumpărare, susținând tendința ascendentă a acțiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~20.00$, R:R 1:3.5)"
     }
   ],
@@ -146,43 +146,93 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "SMCI",
+        "symbol": "ARM",
         "direction": "long",
-        "price": 31.15,
-        "prev_close": 27.79,
-        "gap_pct": 12.09,
-        "change_pct": 12.09,
+        "price": 206.67,
+        "prev_close": 181.42,
+        "gap_pct": 13.92,
+        "change_pct": 13.92,
+        "stake_dollars": 25.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 203.57,
+        "target_price": 217.52,
+        "expected_profit_dollars": 1.31,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "AMD Rises 4% as CoreWeave’s Raised Outlook Revives the AI Chip Trade",
+          "Server CPU strength persists as AMD and Arm gain share: UBS",
+          "Arm Sinks 10% in a Week on Phone Royalties and SoftBank: “Circular Financing Concerns”"
+        ],
+        "reason_ro": "ARM beneficiază de un impuls puternic pe sectorul de cipuri AI susținut de UBS și CoreWeave, având o creștere de 13.92% și un volum ridicat în timpul sesiunii principale. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-11T18:01:15.609814+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "MU",
+        "direction": "long",
+        "price": 822.8,
+        "prev_close": 724.86,
+        "gap_pct": 13.51,
+        "change_pct": 13.51,
+        "stake_dollars": 25.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 810.46,
+        "target_price": 866.0,
+        "expected_profit_dollars": 1.31,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "Wall Street is cooling on Jensen Huang's Nvidia — but history says don't give up on the stock just yet",
+          "Micron Soars 10%, SK hynix Up 9% as CoreWeave Raises Outlook on “A Breakout Quarter”",
+          "Apple Slides 4% as Ternus Calls Memory Pricing “Unprecedented” Despite a Record $114.5 Billion Quarter"
+        ],
+        "reason_ro": "Micron crește puternic cu peste 13% susținută de rezultatele și perspectivele optimiste CoreWeave pentru sectorul AI, menținând un impuls sectorial solid în timpul sesiunii principale. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-11T18:01:21.440439+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "MRVL",
+        "direction": "long",
+        "price": 173.04,
+        "prev_close": 154.37,
+        "gap_pct": 12.1,
+        "change_pct": 12.1,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 30.68,
-        "target_price": 32.79,
+        "stop_price": 170.44,
+        "target_price": 182.12,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Dell Jumps 11% as AI Server Stocks Rebound From a Rough Month; Super Micro Surges 8%, Hewlett Packard Enterprise Advances 6%",
-          "Supermicro Begins Shipping New AMD-Powered AI Servers — Claims Up To 1.8x Higher AI Throughput",
-          "Supermicro Now Shipping Next-Generation Servers Powered by 6th Gen AMD EPYC™ 9006 Series CPUs for Cloud, HPC, and Agentic AI Workloads"
+          "Micron Soars 10%, SK hynix Up 9% as CoreWeave Raises Outlook on “A Breakout Quarter”",
+          "Marvell and Intel Rally 7% as CoreWeave’s Results Reignite the AI Chip Trade; Taiwan Semiconductor Climbs 4%",
+          "Coherent Rises 5% as CoreWeave’s Beat-and-Raise Revives the AI Trade: “A Breakout Quarter”"
         ],
-        "reason_ro": "Supermicro a început livrările noilor servere bazate pe AMD EPYC generația a 6-a, generând un impuls puternic pe tot sectorul de servere AI, susținut de creșteri similare la Dell. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Marvell raliu de 12.10% susținut de rezultatele puternice CoreWeave și revigorarea sectorului de cipuri AI. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-11T17:50:37.591403+00:00"
+        "evaluated_at": "2026-11-11T18:01:32.417726+00:00"
       },
       {
         "action": "enter",
         "symbol": "INTC",
         "direction": "long",
-        "price": 63.51,
+        "price": 63.29,
         "prev_close": 58.11,
-        "gap_pct": 9.28,
-        "change_pct": 9.28,
+        "gap_pct": 8.91,
+        "change_pct": 8.91,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 62.56,
-        "target_price": 66.84,
+        "stop_price": 62.34,
+        "target_price": 66.61,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -190,84 +240,84 @@
           "AMD Price Prediction: AI Boom and Record Revenue Set the Stage for Another Monster Rally",
           "AMD Rises 4% as CoreWeave’s Raised Outlook Revives the AI Chip Trade"
         ],
-        "reason_ro": "Intel randează un salt de 7-9% susținut de rezultatele pozitive și perspectivele ridicate de la CoreWeave, care reaprind interesul instituțional pentru sectorul de cipuri AI. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Intel raliază cu 7% impulsionată de rezultatele pozitive și perspectivele ridicate ale CoreWeave, care au reaprins interesul pentru sectorul de cipuri AI. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-11T17:50:49.097185+00:00"
+        "evaluated_at": "2026-11-11T18:02:04.125811+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "ARM",
-        "price": 206.44,
+        "price": 206.67,
         "prev_close": 181.42,
-        "gap_pct": 13.79,
+        "gap_pct": 13.92,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 823.99,
+        "price": 822.8,
         "prev_close": 724.86,
-        "gap_pct": 13.68,
+        "gap_pct": 13.51,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 173.35,
+        "price": 173.04,
         "prev_close": 154.37,
-        "gap_pct": 12.3,
+        "gap_pct": 12.1,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 31.15,
+        "price": 31.08,
         "prev_close": 27.79,
-        "gap_pct": 12.09,
+        "gap_pct": 11.84,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ORCL",
-        "price": 130.51,
+        "price": 130.19,
         "prev_close": 117.96,
-        "gap_pct": 10.64,
+        "gap_pct": 10.37,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INTC",
-        "price": 63.51,
+        "price": 63.29,
         "prev_close": 58.11,
-        "gap_pct": 9.28,
+        "gap_pct": 8.91,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NXXT",
-        "price": 2.2,
+        "price": 2.75,
         "prev_close": 0.19,
-        "gap_pct": 1079.62,
+        "gap_pct": 1374.53,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "DJTU",
+        "price": 3.12,
+        "prev_close": 2.03,
+        "gap_pct": 53.69,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CRWX",
-        "price": 8.03,
+        "price": 7.96,
         "prev_close": 5.19,
-        "gap_pct": 54.72,
+        "gap_pct": 53.37,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CORD",
-        "price": 3.02,
-        "prev_close": 6.43,
-        "gap_pct": -52.92,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "CWVX",
-        "price": 6.14,
-        "prev_close": 4.02,
-        "gap_pct": 52.74,
+        "price": 3.08,
+        "prev_close": 6.42,
+        "gap_pct": -52.14,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-11T17:50:18.401578+00:00",
+    "last_scan_at": "2026-11-11T18:01:14.062484+00:00",
     "telegram_sent_date": "2026-11-11"
   },
   "spy_start_price": 767.64,
