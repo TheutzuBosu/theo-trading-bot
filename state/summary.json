@@ -12,264 +12,172 @@
   "updated_at": "2026-11-10T15:30:55.720064-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-10T14:21:55.748996+00:00",
+    "updated_at": "2026-11-11T13:44:40.082692+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
-        "price": 747.95,
-        "prev_close": 752.72,
-        "gap_pct": -0.63
+        "price": 757.23,
+        "prev_close": 749.93,
+        "gap_pct": 0.97
       },
       "QQQ": {
-        "price": 671.02,
-        "prev_close": 678.77,
-        "gap_pct": -1.14
+        "price": 675.12,
+        "prev_close": 674.82,
+        "gap_pct": 0.04
       }
     },
-    "explanation_ro": "Piața deschide pe verde-roșu mixt, cu SPY în scădere cu -0.63% și QQQ cu -1.14%, influențată de tensiunile geopolitice din Orientul Mijlociu și evacuarea bazelor americane. Deși există știri macroeconomice tensionate și raportări precum cele ale AT&T, acțiunile din sectorul de chipuri încearcă o stabilizare după scandalul Nvidia. În acest context de pre-market negativ, direcția favorizată la deschidere este în principal Short pentru sesiunea intraday.",
+    "explanation_ro": "Piața înregistrează un sentiment mixt spre pozitiv în pre-market, condus de avansul puternic al SPY (+0.97%), în timp ce QQQ rămâne plat (+0.04%), în ciuda tensiunilor geopolitice legate de Iran și a semnelor de slăbiciune ale consumatorilor. Raportările companiilor de azi și datele economice mențin prudența investitorilor, favorizând o direcție de tip Long selectiv pentru SPY datorită momentumului de gap-up, dar cu atenție sporită la volatilitate.",
     "headlines": [
-      "Jim Cramer's top 10 things to watch in the stock market Tuesday",
-      "'Markets bottom on bad news' maxim rings true as chip stocks rally amid Nvidia scandal",
-      "France summons Iran envoy over supermarket fridge hack, warns of response - Reuters",
-      "Qatari PM makes unscheduled stop at G7 to brief Europeans post Trump talks - Reuters",
-      "US aircraft evacuated from second British base due to Iran threat, WSJ reports - Reuters",
-      "Hormuz LNG traffic hits highest in October since Iran war began - Reuters"
+      "Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why",
+      "Consumers are showing signs of strain even as they keep spending, CNBC/NRF Retail Monitor shows",
+      "Iran will not allow enriched nuclear material to leave the country, security chief says - Reuters",
+      "Measles is surging in the U.S. — and outbreaks can cost millions",
+      "Iran warns of domestic gas shortages from war this winter - Reuters",
+      "How Democrats could snarl Trump administration stakes in private-sector companies"
     ],
     "earnings_today": [
       {
-        "symbol": "ATAT",
+        "symbol": "AEBI",
         "hour": "bmo",
-        "eps_estimate": 4.2262,
-        "eps_actual": 3.2016479999999996,
-        "revenue_estimate": 3315771252,
-        "revenue_actual": 3411756150
+        "eps_estimate": 0.2285,
+        "eps_actual": 0.14,
+        "revenue_estimate": 530370930,
+        "revenue_actual": 493110000
       },
       {
-        "symbol": "BN",
+        "symbol": "AGBK",
+        "hour": "amc",
+        "eps_estimate": 1.4969,
+        "eps_actual": null,
+        "revenue_estimate": 2278783020,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "CTVA",
+        "hour": "amc",
+        "eps_estimate": 0.0969,
+        "eps_actual": null,
+        "revenue_estimate": 1799571720,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ENS",
+        "hour": "amc",
+        "eps_estimate": 3.2118,
+        "eps_actual": null,
+        "revenue_estimate": 976266000,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "NIO",
         "hour": "",
-        "eps_estimate": 0.7455,
+        "eps_estimate": -0.0939,
         "eps_actual": null,
-        "revenue_estimate": 1853619930,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "BRSL",
-        "hour": "bmo",
-        "eps_estimate": 0.0788,
-        "eps_actual": 0.1,
-        "revenue_estimate": 623017530,
-        "revenue_actual": 607000000
-      },
-      {
-        "symbol": "BV",
-        "hour": "amc",
-        "eps_estimate": 0.263,
-        "eps_actual": null,
-        "revenue_estimate": 745775723,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "CRWV",
-        "hour": "amc",
-        "eps_estimate": -1.1816,
-        "eps_actual": null,
-        "revenue_estimate": 3617100805,
+        "revenue_estimate": 33668882128,
         "revenue_actual": null
       }
     ],
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "UPST",
-        "direction": "short",
-        "price": 20.16,
-        "prev_close": 22.23,
-        "gap_pct": -9.33,
-        "change_pct": -9.33,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 20.46,
-        "target_price": 19.1,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [],
-        "reason_ro": "UPST înregistrează o scădere puternică de -9.33% pe volum ridicat în timpul sesiunii active, oferind o oportunitate tehnică clară de continuation short după depășirea primelor 15 minute. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T20:23:46.549012+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MARA",
-        "direction": "long",
-        "price": 7.22,
-        "prev_close": 6.64,
-        "gap_pct": 8.73,
-        "change_pct": 8.73,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 7.11,
-        "target_price": 7.6,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "MARA Holdings Q3: Massive Deleveraging Sets The Stage For The AI Colocation Premium",
-          "AAON, Ziprecruiter, Rackspace Technology, Babcock & Wilcox And Other Big Stocks Moving Higher On Tuesday",
-          "Guggenheim Reiterates Neutral on MARA Holdingsto Neutral"
-        ],
-        "reason_ro": "MARA înregistrează o creștere solidă de 8.73% susținută de optimizarea bilanțului (deleveraging) și poziționarea strategică pe segmentul AI, depășind perioada de volatilitate inițială a deschiderii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T20:23:52.384668+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "ASTS",
-        "direction": "short",
-        "price": 33.7,
+        "direction": "long",
+        "price": 33.51,
         "prev_close": 36.91,
-        "gap_pct": -8.68,
-        "change_pct": -8.68,
+        "gap_pct": -9.21,
+        "change_pct": -9.21,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 34.21,
-        "target_price": 31.93,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
+        "stop_pct": 0.02,
+        "target_pct": 0.07,
+        "stop_price": 32.84,
+        "target_price": 35.86,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
         "headlines": [
-          "IonQ Shares Fall With Space Stocks: What's Going On?",
-          "Rocket Lab: The Market Is Wrong",
-          "What's Going On With AST SpaceMobile Shares Tuesday?"
+          "ASTS Stock Jumps Overnight: Analyst Estimates $50M Each For 3 Early BlueBirds — Retail Bulls Defend Spending",
+          "AST SpaceMobile: 3 Key Takeaways for Long-Term Investors",
+          "What Firefly Aerospace (FLY) Said on Its Q3 Earnings Call"
         ],
-        "reason_ro": "ASTS înregistrează o scădere de peste 8% pe fondul sentimentului negativ din sectorul spațial și al riscurilor de execuție menționate în piață, oferind o oportunitate de sell pe continuarea trendului intraday descendent. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "ASTS înregistrează o scădere puternică pre-market de peste 9% pe fondul îngrijorărilor legate de cash burn și rezultatele Q3, dar știrile recente privind estimările analiștilor de 50M$ pentru primii BlueBirds atrag cumpărătorii retail, oferind o oportunitate de tip oversold bounce. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-10T20:24:01.429445+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NVDA",
-        "direction": "short",
-        "price": 168.49,
-        "prev_close": 178.64,
-        "gap_pct": -5.68,
-        "change_pct": -5.68,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 171.02,
-        "target_price": 159.64,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "3 Ways to Protect Your Portfolio After the S&P 500's Worst Day Since April 2025",
-          "5 Best Tech Stocks That Pay Dividends",
-          "AMD Gains 25% Against NVDA in 2 Days: Chip Analyst Says Lisa Su Is ‘at Her Best’"
-        ],
-        "reason_ro": "NVDA scade la un minim de 7 luni (-5.68%) pe fondul incertitudinii legate de conducere (CEO turmoil) și al presiunii competitive din partea AMD, oferind un momentum tehnic puternic pentru o continuare a scăderii în timpul sesiunii principale. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T20:24:12.653553+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NIO",
-        "direction": "short",
-        "price": 3.25,
-        "prev_close": 3.4,
-        "gap_pct": -4.41,
-        "change_pct": -4.41,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 3.3,
-        "target_price": 3.08,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "Mișcare tehnică descendentă puternică în timpul sesiunii active, cu o scădere de -4.41% pe volum ridicat, oferind o oportunitate clară de trend intraday pe partea de scurtă durată. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-10T20:24:23.200537+00:00"
+        "evaluated_at": "2026-11-11T13:43:45.544549+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "UPST",
-        "price": 20.16,
-        "prev_close": 22.23,
-        "gap_pct": -9.33,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "MARA",
-        "price": 7.22,
+        "price": 7.68,
         "prev_close": 6.64,
-        "gap_pct": 8.73,
+        "gap_pct": 15.66,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 33.7,
+        "price": 33.51,
         "prev_close": 36.91,
-        "gap_pct": -8.68,
+        "gap_pct": -9.21,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MRNA",
-        "price": 251.34,
-        "prev_close": 269.0,
-        "gap_pct": -6.56,
+        "symbol": "MRVL",
+        "price": 168.27,
+        "prev_close": 154.58,
+        "gap_pct": 8.86,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NVDA",
-        "price": 168.49,
-        "prev_close": 178.64,
-        "gap_pct": -5.68,
+        "symbol": "AVGO",
+        "price": 346.61,
+        "prev_close": 319.54,
+        "gap_pct": 8.47,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NIO",
-        "price": 3.25,
-        "prev_close": 3.4,
-        "gap_pct": -4.41,
+        "symbol": "UPST",
+        "price": 20.4,
+        "prev_close": 22.23,
+        "gap_pct": -8.25,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AMD",
+        "price": 543.26,
+        "prev_close": 508.68,
+        "gap_pct": 6.8,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "PGRW",
-        "price": 25.7,
+        "price": 25.49,
         "prev_close": 10.31,
-        "gap_pct": 149.27,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "PEPG",
-        "price": 4.54,
-        "prev_close": 2.39,
-        "gap_pct": 89.96,
+        "gap_pct": 147.2,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 17.02,
+        "price": 19.25,
         "prev_close": 9.35,
-        "gap_pct": 82.05,
+        "gap_pct": 105.88,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "PEPG",
+        "price": 4.61,
+        "prev_close": 2.39,
+        "gap_pct": 92.89,
         "source": "alpaca_movers"
       },
       {
         "symbol": "TTEC",
         "price": 2.4,
         "prev_close": 1.4,
-        "gap_pct": 72.4,
+        "gap_pct": 72.04,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-10T20:23:44.024027+00:00",
-    "telegram_sent_date": "2026-11-10"
+    "last_scan_at": "2026-11-11T13:43:24.732215+00:00",
+    "telegram_sent_date": "2026-11-11"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
