@@ -5,11 +5,11 @@
     "entry_time": "2026-11-11T09:39:17.694683-05:00",
     "qty": 0.0709,
     "entry_price": 352.43,
-    "current_price": 350.6,
+    "current_price": 349.5,
     "stop": 347.14,
     "initial_stop": 347.14,
-    "unrealized_pnl": -0.13,
-    "unrealized_r": -0.35,
+    "unrealized_pnl": -0.21,
+    "unrealized_r": -0.55,
     "entry_reason": "AVGO înregistrează o creștere de 6.33% susținută de rezultatele puternice CoreWeave și de expunerea masivă la contracte de leasing AI (estimat la 161 miliarde $ conform Goldman Sachs). Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: AVGO LONG -> BUY AVGO (miză ~24.99$, R:R 1:4.5)"
   },
   {
@@ -18,11 +18,11 @@
     "entry_time": "2026-11-11T09:39:17.694683-05:00",
     "qty": 0.0194,
     "entry_price": 773.322,
-    "current_price": 776.225,
+    "current_price": 773.06,
     "stop": 761.72,
     "initial_stop": 761.72,
-    "unrealized_pnl": 0.06,
-    "unrealized_r": 0.25,
+    "unrealized_pnl": -0.01,
+    "unrealized_r": -0.02,
     "entry_reason": "Acțiunile Micron (MU) urcă puternic cu +6.16% susținute de rezultatele CoreWeave care reaprind raliul pe sectorul AI și recuperarea robustă a acțiunilor din sectorul de memorie. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)"
   },
   {
@@ -31,11 +31,11 @@
     "entry_time": "2026-11-11T09:39:17.694683-05:00",
     "qty": 0.1579,
     "entry_price": 126.552,
-    "current_price": 126.3799,
+    "current_price": 125.72,
     "stop": 124.65,
     "initial_stop": 124.65,
-    "unrealized_pnl": -0.03,
-    "unrealized_r": -0.09,
+    "unrealized_pnl": -0.13,
+    "unrealized_r": -0.44,
     "entry_reason": "Oracle înregistrează o creștere solidă de peste 7% susținută de cererea record pentru eficiență energetică bazată pe AI și de includerea sa recentă în portofoliul Capital Group Dividend Value. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ORCL LONG -> BUY ORCL (miză ~20.00$, R:R 1:3.5)"
   },
   {
@@ -44,11 +44,11 @@
     "entry_time": "2026-11-11T09:39:17.694683-05:00",
     "qty": 0.6733,
     "entry_price": 29.706,
-    "current_price": 29.48,
+    "current_price": 29.31,
     "stop": 29.26,
     "initial_stop": 29.26,
-    "unrealized_pnl": -0.15,
-    "unrealized_r": -0.51,
+    "unrealized_pnl": -0.27,
+    "unrealized_r": -0.89,
     "entry_reason": "SMCI a început livrările pentru noua generație de servere H15 cu procesoare AMD EPYC și a primit un upgrade de rating, beneficiind de un impuls pozitiv susținut și o creștere de peste 6%. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SMCI LONG -> BUY SMCI (miză ~20.00$, R:R 1:3.5)"
   }
 ]
