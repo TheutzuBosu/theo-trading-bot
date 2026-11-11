@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 514.36,
-  "total_pnl": 14.36,
-  "total_pnl_pct": 2.87,
-  "today_pnl": 1.91,
-  "today_pnl_pct": 0.37,
-  "current_drawdown_pct": -0.01,
+  "equity": 514.41,
+  "total_pnl": 14.41,
+  "total_pnl_pct": 2.88,
+  "today_pnl": 1.96,
+  "today_pnl_pct": 0.38,
+  "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -0.52,
-  "updated_at": "2026-11-11T12:18:13.308788-05:00",
+  "updated_at": "2026-11-11T12:18:53.044982-05:00",
   "positions": [
     {
       "symbol": "ARM",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-11T10:21:58.566145-05:00",
       "qty": 0.0515,
       "entry_price": 194.032,
-      "current_price": 205.665,
+      "current_price": 206.07,
       "stop": 195.49,
       "initial_stop": 191.11,
-      "unrealized_pnl": 0.6,
-      "unrealized_r": 1.99,
+      "unrealized_pnl": 0.62,
+      "unrealized_r": 2.06,
       "entry_reason": "ARM beneficiază de o rată de adoptare puternică a cipurilor pentru servere susținută de UBS, iar creșterea de +6.77% confirmă interesul cumpărătorilor după corecția recentă, menținând un impuls tehnic favorabil pentru continuarea sesiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ARM LONG -> BUY ARM (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-11T09:39:17.694683-05:00",
       "qty": 0.0709,
       "entry_price": 352.43,
-      "current_price": 355.085,
+      "current_price": 355.27,
       "stop": 347.14,
       "initial_stop": 347.14,
-      "unrealized_pnl": 0.19,
-      "unrealized_r": 0.5,
+      "unrealized_pnl": 0.2,
+      "unrealized_r": 0.54,
       "entry_reason": "AVGO înregistrează o creștere de 6.33% susținută de rezultatele puternice CoreWeave și de expunerea masivă la contracte de leasing AI (estimat la 161 miliarde $ conform Goldman Sachs). Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: AVGO LONG -> BUY AVGO (miză ~24.99$, R:R 1:4.5)"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-11T09:50:24.669414-05:00",
       "qty": 0.3243,
       "entry_price": 61.696,
-      "current_price": 63.51,
+      "current_price": 63.5,
       "stop": 60.77,
       "initial_stop": 60.77,
       "unrealized_pnl": 0.59,
-      "unrealized_r": 1.96,
+      "unrealized_r": 1.95,
       "entry_reason": "INTC beneficiază de o cerere solidă pe segmentul de servere și de un interes instituțional ridicat, reflectat prin achiziții masive de ETF-uri în valoare de 360,9 milioane de dolari, susținute de revenirea generală din sectorul de semiconductori. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-11T09:39:17.694683-05:00",
       "qty": 0.0097,
       "entry_price": 773.322,
-      "current_price": 821.67,
+      "current_price": 822.76,
       "stop": 779.12,
       "initial_stop": 761.72,
-      "unrealized_pnl": 0.47,
-      "unrealized_r": 2.08,
+      "unrealized_pnl": 0.48,
+      "unrealized_r": 2.13,
       "entry_reason": "Acțiunile Micron (MU) urcă puternic cu +6.16% susținute de rezultatele CoreWeave care reaprind raliul pe sectorul AI și recuperarea robustă a acțiunilor din sectorul de memorie. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-11T10:01:02.388268-05:00",
       "qty": 0.3006,
       "entry_price": 66.7,
-      "current_price": 67.11,
+      "current_price": 67.14,
       "stop": 65.7,
       "initial_stop": 65.7,
-      "unrealized_pnl": 0.12,
-      "unrealized_r": 0.41,
+      "unrealized_pnl": 0.13,
+      "unrealized_r": 0.44,
       "entry_reason": "Cathie Wood a cumpărat acțiuni de 3.4 milioane $ și Needham menține recomandarea de cumpărare, susținând tendința ascendentă a acțiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~20.00$, R:R 1:3.5)"
     }
   ],
@@ -197,77 +197,77 @@
     ],
     "top_movers": [
       {
-        "symbol": "MU",
-        "price": 820.38,
-        "prev_close": 724.86,
-        "gap_pct": 13.18,
+        "symbol": "ARM",
+        "price": 205.87,
+        "prev_close": 181.42,
+        "gap_pct": 13.48,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ARM",
-        "price": 204.78,
-        "prev_close": 181.42,
-        "gap_pct": 12.88,
+        "symbol": "MU",
+        "price": 821.78,
+        "prev_close": 724.86,
+        "gap_pct": 13.37,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 172.8,
+        "price": 172.86,
         "prev_close": 154.37,
-        "gap_pct": 11.94,
+        "gap_pct": 11.98,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 30.82,
+        "price": 30.95,
         "prev_close": 27.79,
-        "gap_pct": 10.9,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "INTC",
-        "price": 63.5,
-        "prev_close": 58.11,
-        "gap_pct": 9.28,
+        "gap_pct": 11.39,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ORCL",
-        "price": 128.51,
+        "price": 129.29,
         "prev_close": 117.96,
-        "gap_pct": 8.94,
+        "gap_pct": 9.6,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "INTC",
+        "price": 63.53,
+        "prev_close": 58.11,
+        "gap_pct": 9.33,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NXXT",
-        "price": 2.45,
+        "price": 2.8,
         "prev_close": 0.19,
-        "gap_pct": 1213.67,
+        "gap_pct": 1401.34,
         "source": "alpaca_movers"
       },
       {
         "symbol": "DJTU",
-        "price": 3.11,
+        "price": 3.07,
         "prev_close": 2.03,
-        "gap_pct": 53.33,
+        "gap_pct": 51.36,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CRWX",
-        "price": 7.82,
+        "price": 7.8,
         "prev_close": 5.19,
-        "gap_pct": 50.58,
+        "gap_pct": 50.29,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CRWU",
-        "price": 13.97,
-        "prev_close": 9.36,
-        "gap_pct": 49.31,
+        "symbol": "CORD",
+        "price": 3.31,
+        "prev_close": 6.42,
+        "gap_pct": -48.48,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-11T17:08:27.076020+00:00",
+    "last_scan_at": "2026-11-11T17:18:53.044986+00:00",
     "telegram_sent_date": "2026-11-11"
   },
   "spy_start_price": 767.64,
