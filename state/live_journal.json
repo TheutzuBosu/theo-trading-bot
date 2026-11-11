@@ -1,5 +1,48 @@
 {
-  "processed_signals": [],
-  "open_trades": {},
+  "processed_signals": [
+    "MOVER|MRVL|2026-11-11|long"
+  ],
+  "open_trades": {
+    "MRVL": {
+      "trade_id": "theo-MRVL-L-202611110930",
+      "signal_symbol": "MRVL",
+      "signal_direction": "long",
+      "exec_symbol": "MRVL",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-11T09:30:37.225047-05:00",
+      "entry_time": "2026-11-11T09:30:37.225047-05:00",
+      "entry_price": 167.732,
+      "qty": 0.1498,
+      "qty0": 0.1498,
+      "signal_entry_price": 167.73,
+      "signal_stop": 165.21,
+      "signal_initial_stop": 165.21,
+      "signal_target": 176.55,
+      "signal_stop_after_target": 168.99,
+      "exec_stop": 165.21,
+      "exec_initial_stop": 165.21,
+      "exec_target": 175.63,
+      "stop_order_id": "d6eb61d5-8e48-4bfc-a250-4ffa7c356c0c",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.3778,
+      "equity_at_entry": 512.45,
+      "partial_done": false,
+      "last_price": 167.732,
+      "entry_reason": "Marvell (MRVL) înregistrează un impuls puternic pe fondul includerii în rândul acțiunilor beneficiare ale trendului AI legate de CoreWeave și a fluxurilor instituționale masive în ETF-uri de 222.6 milioane de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~25.00$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 0.0,
+        "dist_from_band_bps": 405.0,
+        "dist_from_vwap_bps": 243.0,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.015,
+        "overnight_gap_bps": 810.0,
+        "ret_since_open_bps": 810.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 2.0,
+        "cost_to_risk": 0.012
+      }
+    }
+  },
   "last_eod_date": "2026-11-10"
 }
