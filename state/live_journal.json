@@ -1,5 +1,6 @@
 {
   "processed_signals": [
+    "MOVER|AMD|2026-11-11|long",
     "MOVER|ARM|2026-11-11|long",
     "MOVER|AVGO|2026-11-11|long",
     "MOVER|INTC|2026-11-11|long",
@@ -35,7 +36,7 @@
       "initial_risk_dollars": 0.3751,
       "equity_at_entry": 512.07,
       "partial_done": false,
-      "last_price": 353.485,
+      "last_price": 353.705,
       "entry_reason": "AVGO înregistrează o creștere de 6.33% susținută de rezultatele puternice CoreWeave și de expunerea masivă la contracte de leasing AI (estimat la 161 miliarde $ conform Goldman Sachs). Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: AVGO LONG -> BUY AVGO (miză ~24.99$, R:R 1:4.5)",
       "features": {
         "minute_of_day": 9.0,
@@ -75,7 +76,7 @@
       "initial_risk_dollars": 0.2251,
       "equity_at_entry": 512.07,
       "partial_done": true,
-      "last_price": 822.84,
+      "last_price": 824.49,
       "entry_reason": "Acțiunile Micron (MU) urcă puternic cu +6.16% susținute de rezultatele CoreWeave care reaprind raliul pe sectorul AI și recuperarea robustă a acțiunilor din sectorul de memorie. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
@@ -115,7 +116,7 @@
       "initial_risk_dollars": 0.3003,
       "equity_at_entry": 511.69,
       "partial_done": false,
-      "last_price": 63.08,
+      "last_price": 63.21,
       "entry_reason": "INTC beneficiază de o cerere solidă pe segmentul de servere și de un interes instituțional ridicat, reflectat prin achiziții masive de ETF-uri în valoare de 360,9 milioane de dolari, susținute de revenirea generală din sectorul de semiconductori. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 20.0,
@@ -155,7 +156,7 @@
       "initial_risk_dollars": 0.3006,
       "equity_at_entry": 511.93,
       "partial_done": false,
-      "last_price": 66.83,
+      "last_price": 66.945,
       "entry_reason": "Cathie Wood a cumpărat acțiuni de 3.4 milioane $ și Needham menține recomandarea de cumpărare, susținând tendința ascendentă a acțiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 31.0,
@@ -195,7 +196,7 @@
       "initial_risk_dollars": 0.301,
       "equity_at_entry": 511.77,
       "partial_done": true,
-      "last_price": 206.21,
+      "last_price": 206.625,
       "entry_reason": "ARM beneficiază de o rată de adoptare puternică a cipurilor pentru servere susținută de UBS, iar creșterea de +6.77% confirmă interesul cumpărătorilor după corecția recentă, menținând un impuls tehnic favorabil pentru continuarea sesiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ARM LONG -> BUY ARM (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 51.0,
@@ -208,6 +209,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 2.0,
         "cost_to_risk": 0.0103
+      }
+    },
+    "AMD": {
+      "trade_id": "theo-AMD-L-202611111311",
+      "signal_symbol": "AMD",
+      "signal_direction": "long",
+      "exec_symbol": "AMD",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-11T13:11:21.234971-05:00",
+      "entry_time": "2026-11-11T13:11:21.234971-05:00",
+      "entry_price": 562.716,
+      "qty": 0.0356,
+      "qty0": 0.0356,
+      "signal_entry_price": 562.72,
+      "signal_stop": 554.28,
+      "signal_initial_stop": 554.28,
+      "signal_target": 592.25,
+      "signal_stop_after_target": 566.94,
+      "exec_stop": 554.28,
+      "exec_initial_stop": 554.28,
+      "exec_target": 592.0,
+      "stop_order_id": "77a99dee-7293-49ca-8565-b78e10e083f8",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.3003,
+      "equity_at_entry": 514.19,
+      "partial_done": false,
+      "last_price": 562.716,
+      "entry_reason": "AMD crește cu 9.16% susținută de o participație de 2.5 miliarde dolari în Anthropic și recomandarea Goldman Sachs drept top-pick, confirmând un catalizator instituțional puternic. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~20.02$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 221.0,
+        "dist_from_band_bps": 458.0,
+        "dist_from_vwap_bps": 274.8,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.015,
+        "overnight_gap_bps": 916.0,
+        "ret_since_open_bps": 916.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 2.0,
+        "cost_to_risk": 0.0036
       }
     }
   },
