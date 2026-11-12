@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.62,
   "current_drawdown_pct": -0.89,
   "max_drawdown_pct": -0.89,
-  "updated_at": "2026-11-12T09:59:29.521272-05:00",
+  "updated_at": "2026-11-12T10:00:52.624041-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -132,76 +132,76 @@
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 14.12,
+        "price": 13.85,
         "prev_close": 12.19,
-        "gap_pct": 15.83,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SMCI",
-        "price": 27.83,
-        "prev_close": 30.42,
-        "gap_pct": -8.51,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 159.99,
-        "prev_close": 173.85,
-        "gap_pct": -7.98,
+        "gap_pct": 13.62,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.44,
+        "price": 3.37,
         "prev_close": 3.65,
-        "gap_pct": -5.88,
+        "gap_pct": -7.93,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "PANW",
-        "price": 320.84,
-        "prev_close": 334.39,
-        "gap_pct": -4.05,
+        "symbol": "SMCI",
+        "price": 28.03,
+        "prev_close": 30.42,
+        "gap_pct": -7.86,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "COIN",
-        "price": 130.81,
-        "prev_close": 136.25,
-        "gap_pct": -4.0,
+        "symbol": "NVDA",
+        "price": 162.21,
+        "prev_close": 173.85,
+        "gap_pct": -6.7,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MARA",
+        "price": 7.19,
+        "prev_close": 7.64,
+        "gap_pct": -5.89,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AVGO",
+        "price": 361.25,
+        "prev_close": 345.52,
+        "gap_pct": 4.55,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 4.59,
+        "price": 3.83,
         "prev_close": 0.9,
-        "gap_pct": 409.6,
+        "gap_pct": 325.22,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 4.84,
+        "price": 5.55,
         "prev_close": 2.89,
-        "gap_pct": 67.47,
+        "gap_pct": 92.03,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 6.37,
+        "price": 5.98,
         "prev_close": 14.99,
-        "gap_pct": -57.54,
+        "gap_pct": -60.09,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "RETO",
-        "price": 9.56,
-        "prev_close": 6.19,
-        "gap_pct": 54.44,
+        "symbol": "SMX",
+        "price": 5.87,
+        "prev_close": 11.19,
+        "gap_pct": -47.54,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T14:50:11.851859+00:00",
+    "last_scan_at": "2026-11-12T15:00:52.624045+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
