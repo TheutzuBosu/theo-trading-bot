@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.62,
   "current_drawdown_pct": -0.89,
   "max_drawdown_pct": -0.89,
-  "updated_at": "2026-11-12T10:20:16.157163-05:00",
+  "updated_at": "2026-11-12T10:21:20.528800-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -82,16 +82,16 @@
         "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 160.34,
+        "price": 163.33,
         "prev_close": 173.85,
-        "gap_pct": -7.77,
-        "change_pct": -7.77,
+        "gap_pct": -6.05,
+        "change_pct": -6.05,
         "stake_dollars": 20.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 162.75,
-        "target_price": 149.52,
+        "stop_price": 165.78,
+        "target_price": 152.31,
         "expected_profit_dollars": 1.35,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -99,84 +99,84 @@
           "Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO",
           "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady"
         ],
-        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un catalizator negativ masiv pentru NVDA, generând o presiune de vânzare puternică ce justifică o poziție de scurtă durată. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un catalizator fundamental negativ major, confirmat deja de o scădere de peste 6% și un trend intraday puternic descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T15:11:37.559913+00:00"
+        "evaluated_at": "2026-11-12T15:22:07.711716+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.8,
+        "price": 13.83,
         "prev_close": 12.19,
-        "gap_pct": 13.21,
+        "gap_pct": 13.45,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.31,
+        "price": 3.26,
         "prev_close": 3.65,
-        "gap_pct": -9.58,
+        "gap_pct": -10.81,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 27.69,
+        "price": 28.09,
         "prev_close": 30.42,
-        "gap_pct": -8.97,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 160.34,
-        "prev_close": 173.85,
-        "gap_pct": -7.77,
+        "gap_pct": -7.66,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MARA",
-        "price": 7.14,
+        "price": 7.09,
         "prev_close": 7.64,
-        "gap_pct": -6.54,
+        "gap_pct": -7.2,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MU",
-        "price": 765.34,
-        "prev_close": 811.82,
-        "gap_pct": -5.73,
+        "symbol": "NVDA",
+        "price": 163.33,
+        "prev_close": 173.85,
+        "gap_pct": -6.05,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 32.17,
+        "prev_close": 34.04,
+        "gap_pct": -5.49,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 4.43,
+        "price": 3.78,
         "prev_close": 0.9,
-        "gap_pct": 391.84,
+        "gap_pct": 319.67,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 5.25,
+        "price": 5.17,
         "prev_close": 2.89,
-        "gap_pct": 81.76,
+        "gap_pct": 78.72,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 6.19,
+        "price": 5.85,
         "prev_close": 14.99,
-        "gap_pct": -58.71,
+        "gap_pct": -60.97,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "RETO",
-        "price": 9.37,
-        "prev_close": 6.19,
-        "gap_pct": 51.37,
+        "symbol": "SMX",
+        "price": 5.8,
+        "prev_close": 11.19,
+        "gap_pct": -48.17,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T15:10:54.233047+00:00",
+    "last_scan_at": "2026-11-12T15:21:20.528804+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
