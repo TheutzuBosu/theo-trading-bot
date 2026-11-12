@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.67,
   "current_drawdown_pct": -0.93,
   "max_drawdown_pct": -0.93,
-  "updated_at": "2026-11-12T14:11:41.256384-05:00",
+  "updated_at": "2026-11-12T14:12:46.805544-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -84,8 +84,8 @@
         "direction": "short",
         "price": 27.18,
         "prev_close": 30.42,
-        "gap_pct": -10.63,
-        "change_pct": -10.63,
+        "gap_pct": -10.65,
+        "change_pct": -10.65,
         "stake_dollars": 20.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
@@ -99,130 +99,84 @@
           "Supermicro, Nvidia Reportedly Face DOJ Scrutiny In Separate Inquiries — SMCI Stock Plunges",
           "Super Micro sinks as DOJ probes possible China smuggling links to Nvidia fallout"
         ],
-        "reason_ro": "SMCI înregistrează o scădere puternică de peste 10% pe fondul investigațiilor DOJ privind posibile legături de contrabandă cu China și al presiunilor din sectorul AI, oferind un momentum negativ clar pe termen scurt. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "SMCI este sub presiune masivă și scade cu 10.65% în urma investigațiilor DOJ privind posibile legături de contrabandă cu China, oferind o oportunitate clară de sell/short pe continuarea trendului intraday negativ. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T19:03:00.455098+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NIO",
-        "direction": "short",
-        "price": 3.04,
-        "prev_close": 3.23,
-        "gap_pct": -5.87,
-        "change_pct": -5.87,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 3.09,
-        "target_price": 2.88,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "NIO înregistrează o scădere intraday agresivă de -5.87% pe volum ridicat, continuând presiunea de vânzare fără a fi vorba de un zgomot de pre-market, ceea ce oferă o oportunitate tehnică clară pentru un trade scurt. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T19:03:51.637231+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NVDA",
-        "direction": "short",
-        "price": 164.44,
-        "prev_close": 173.85,
-        "gap_pct": -5.41,
-        "change_pct": -5.41,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 166.91,
-        "target_price": 155.81,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Nvidia's CEO search has a 3- to 4-month clock: 'It's pretty urgent'",
-          "Prediction: This Will Be Intel’s Stock Price After 1 Year (Hint: It Implies a Nice Jump)",
-          "Super Micro sinks as DOJ probes possible China smuggling links to Nvidia fallout"
-        ],
-        "reason_ro": "NVDA scade puternic cu -5.41% pe fondul unor știri negative majore legate de presiunea asupra conducerii, investigații care vizează ecosistemul și riscuri de reglementare, creând un impuls intraday descendent clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T19:03:57.843728+00:00"
+        "evaluated_at": "2026-11-12T19:13:08.671284+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.55,
+        "price": 13.51,
         "prev_close": 12.19,
-        "gap_pct": 11.16,
+        "gap_pct": 10.79,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
         "price": 27.18,
         "prev_close": 30.42,
-        "gap_pct": -10.63,
+        "gap_pct": -10.65,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.31,
+        "price": 3.3,
         "prev_close": 3.65,
-        "gap_pct": -9.44,
+        "gap_pct": -9.71,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 30.89,
+        "price": 30.77,
         "prev_close": 34.04,
-        "gap_pct": -9.27,
+        "gap_pct": -9.61,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NIO",
         "price": 3.04,
         "prev_close": 3.23,
-        "gap_pct": -5.87,
+        "gap_pct": -6.03,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NVDA",
-        "price": 164.44,
-        "prev_close": 173.85,
-        "gap_pct": -5.41,
+        "symbol": "UPST",
+        "price": 19.34,
+        "prev_close": 20.55,
+        "gap_pct": -5.89,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.34,
+        "price": 2.44,
         "prev_close": 0.9,
-        "gap_pct": 160.19,
+        "gap_pct": 171.46,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "XLAB",
+        "price": 2.11,
+        "prev_close": 1.04,
+        "gap_pct": 102.88,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 4.76,
+        "price": 4.72,
         "prev_close": 2.89,
-        "gap_pct": 64.71,
+        "gap_pct": 63.49,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.6,
+        "price": 5.58,
         "prev_close": 14.99,
-        "gap_pct": -62.64,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SMX",
-        "price": 5.16,
-        "prev_close": 11.19,
-        "gap_pct": -53.89,
+        "gap_pct": -62.77,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T19:02:41.736684+00:00",
+    "last_scan_at": "2026-11-12T19:12:46.805548+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
