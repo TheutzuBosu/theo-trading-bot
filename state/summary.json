@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.67,
   "current_drawdown_pct": -0.93,
   "max_drawdown_pct": -0.93,
-  "updated_at": "2026-11-12T12:36:28.368175-05:00",
+  "updated_at": "2026-11-12T12:37:32.768768-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -131,76 +131,76 @@
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.89,
+        "price": 13.82,
         "prev_close": 12.19,
-        "gap_pct": 13.95,
+        "gap_pct": 13.37,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 26.5,
+        "price": 26.8,
         "prev_close": 30.42,
-        "gap_pct": -12.87,
+        "gap_pct": -11.9,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 31.42,
+        "price": 31.46,
         "prev_close": 34.04,
-        "gap_pct": -7.7,
+        "gap_pct": -7.58,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.4,
+        "price": 3.38,
         "prev_close": 3.65,
-        "gap_pct": -6.98,
+        "gap_pct": -7.52,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NVDA",
-        "price": 164.0,
-        "prev_close": 173.85,
-        "gap_pct": -5.66,
+        "symbol": "AVGO",
+        "price": 364.92,
+        "prev_close": 345.52,
+        "gap_pct": 5.61,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NIO",
         "price": 3.06,
         "prev_close": 3.23,
-        "gap_pct": -5.41,
+        "gap_pct": -5.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.43,
+        "price": 2.53,
         "prev_close": 0.9,
-        "gap_pct": 169.79,
+        "gap_pct": 180.62,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 5.18,
+        "price": 5.09,
         "prev_close": 2.89,
-        "gap_pct": 79.41,
+        "gap_pct": 76.12,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.73,
+        "price": 5.75,
         "prev_close": 14.99,
-        "gap_pct": -61.76,
+        "gap_pct": -61.61,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 5.38,
+        "price": 5.78,
         "prev_close": 11.19,
-        "gap_pct": -51.92,
+        "gap_pct": -48.32,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T17:26:32.686206+00:00",
+    "last_scan_at": "2026-11-12T17:37:32.768772+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
