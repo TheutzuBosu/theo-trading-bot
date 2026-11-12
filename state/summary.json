@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.67,
   "current_drawdown_pct": -0.93,
   "max_drawdown_pct": -0.93,
-  "updated_at": "2026-11-12T12:47:27.461985-05:00",
+  "updated_at": "2026-11-12T12:48:32.516215-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -82,86 +82,62 @@
         "action": "enter",
         "symbol": "LUNR",
         "direction": "long",
-        "price": 13.89,
+        "price": 13.77,
         "prev_close": 12.19,
-        "gap_pct": 13.95,
-        "change_pct": 13.95,
+        "gap_pct": 12.92,
+        "change_pct": 12.92,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 13.68,
-        "target_price": 14.62,
+        "stop_price": 13.56,
+        "target_price": 14.49,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
+          "Gap-Up and Gap-Down Stocks in Today's Session",
           "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
-          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD",
-          "Intuitive Machines Q3 EPS $(0.02) Beats $(0.12) Estimate, Sales $269.348M Beat $245.879M Estimate"
+          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD"
         ],
-        "reason_ro": "LUNR raportează venituri Q3 peste estimări și un backlog solid de 1.9 miliarde $, confirmând impulsul fundamental puternic în timpul sesiunii curente. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "LUNR înregistrează un gap-up puternic de +12.92% susținut de rezultate financiare solide peste estimări (Q3 EPS beat și sales beat) și un backlog impresionant de 1.9 miliarde dolari. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T17:26:43.705920+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "IONQ",
-        "direction": "short",
-        "price": 31.42,
-        "prev_close": 34.04,
-        "gap_pct": -7.7,
-        "change_pct": -7.7,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 31.89,
-        "target_price": 29.77,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Quantum Stocks Slide as Rigetti, D-Wave Results Disappoint, Nvidia Turmoil Overshadows IonQ",
-          "Why Is IonQ Stock Falling on Thursday?"
-        ],
-        "reason_ro": "IONQ înregistrează o scădere puternică de -7.70% pe fondul rezultatelor slabe ale competitorilor din sectorul cuantic și al turbulențelor generale, creând o oportunitate tehnică de sell. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T17:27:19.424875+00:00"
+        "evaluated_at": "2026-11-12T17:48:48.846477+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.82,
+        "price": 13.77,
         "prev_close": 12.19,
-        "gap_pct": 13.37,
+        "gap_pct": 12.92,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 26.8,
+        "price": 26.91,
         "prev_close": 30.42,
-        "gap_pct": -11.9,
+        "gap_pct": -11.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 31.46,
+        "price": 31.52,
         "prev_close": 34.04,
-        "gap_pct": -7.58,
+        "gap_pct": -7.39,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
         "price": 3.38,
         "prev_close": 3.65,
-        "gap_pct": -7.52,
+        "gap_pct": -7.39,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AVGO",
-        "price": 364.92,
+        "price": 365.12,
         "prev_close": 345.52,
-        "gap_pct": 5.61,
+        "gap_pct": 5.67,
         "source": "watchlist_snapshot"
       },
       {
@@ -173,34 +149,34 @@
       },
       {
         "symbol": "POAS",
-        "price": 2.53,
+        "price": 2.46,
         "prev_close": 0.9,
-        "gap_pct": 180.62,
+        "gap_pct": 173.68,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 5.09,
+        "price": 4.84,
         "prev_close": 2.89,
-        "gap_pct": 76.12,
+        "gap_pct": 67.65,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.75,
+        "price": 5.67,
         "prev_close": 14.99,
-        "gap_pct": -61.61,
+        "gap_pct": -62.17,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 5.78,
+        "price": 5.16,
         "prev_close": 11.19,
-        "gap_pct": -48.32,
+        "gap_pct": -53.89,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T17:37:32.768772+00:00",
+    "last_scan_at": "2026-11-12T17:48:32.516219+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
