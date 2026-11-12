@@ -2,15 +2,29 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.43,
-  "total_pnl": 9.43,
+  "equity": 509.44,
+  "total_pnl": 9.44,
   "total_pnl_pct": 1.89,
-  "today_pnl": -3.19,
+  "today_pnl": -3.18,
   "today_pnl_pct": -0.62,
-  "current_drawdown_pct": -0.89,
+  "current_drawdown_pct": -0.88,
   "max_drawdown_pct": -0.89,
-  "updated_at": "2026-11-12T11:12:19.546720-05:00",
-  "positions": [],
+  "updated_at": "2026-11-12T11:13:26.228766-05:00",
+  "positions": [
+    {
+      "symbol": "AMD",
+      "direction": "long",
+      "entry_time": "2026-11-12T11:13:26.228766-05:00",
+      "qty": 0.0255,
+      "entry_price": 587.612,
+      "current_price": 587.628,
+      "stop": 578.79,
+      "initial_stop": 578.79,
+      "unrealized_pnl": 0.0,
+      "unrealized_r": 0.0,
+      "entry_reason": "AMD înregistrează o creștere solidă de aproape 6% pe fondul știrilor pozitive legate de colaborarea cu Anthropic și de contextul competitiv favorabil față de Nvidia, depășind zgomotul inițial de la deschiderea NYSE. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~14.98$, R:R 1:3.5)"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
@@ -80,117 +94,92 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "LUNR",
+        "symbol": "AMD",
         "direction": "long",
-        "price": 13.97,
-        "prev_close": 12.19,
-        "gap_pct": 14.64,
-        "change_pct": 14.64,
+        "price": 585.67,
+        "prev_close": 552.82,
+        "gap_pct": 5.94,
+        "change_pct": 5.94,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 13.76,
-        "target_price": 14.7,
+        "stop_price": 576.88,
+        "target_price": 616.42,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
-          "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
-          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD",
-          "Intuitive Machines Q3 EPS $(0.02) Beats $(0.12) Estimate, Sales $269.348M Beat $245.879M Estimate"
+          "Charles Hoskinson Says Buy This Stock As Neoclouds Suffer Nvidia's Crisis",
+          "Anthropic Says Its AI Model Cut AMD Chip Switch to Three Days. Why it Could be a Challenge to Nvidia",
+          "Nvidia Might Not Be The Biggest Threat to AMD’s Current Market Position"
         ],
-        "reason_ro": "LUNR raportează venituri Q3 peste estimări, un backlog solid de 1.9 miliarde dolari și o expansiune strategică dincolo de Lună, oferind un catalizator fundamental puternic pentru continuarea trendului pozitiv. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AMD înregistrează o creștere solidă de aproape 6% pe fondul știrilor pozitive legate de colaborarea cu Anthropic și de contextul competitiv favorabil față de Nvidia, depășind zgomotul inițial de la deschiderea NYSE. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T16:03:27.049197+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NVDA",
-        "direction": "short",
-        "price": 165.22,
-        "prev_close": 173.85,
-        "gap_pct": -4.96,
-        "change_pct": -4.96,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 167.7,
-        "target_price": 154.07,
-        "expected_profit_dollars": 1.35,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Jensen Huang resigns as Nvidia CEO",
-          "Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO",
-          "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady"
-        ],
-        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un șoc major pentru guvernanța corporativă a Nvidia, declanșând un trend intraday descendent puternic și confirmat. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T16:04:07.725178+00:00"
+        "evaluated_at": "2026-11-12T16:14:16.730540+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.97,
+        "price": 14.28,
         "prev_close": 12.19,
-        "gap_pct": 14.64,
+        "gap_pct": 17.15,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.33,
+        "price": 3.38,
         "prev_close": 3.65,
-        "gap_pct": -9.03,
+        "gap_pct": -7.39,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AMD",
+        "price": 585.67,
+        "prev_close": 552.82,
+        "gap_pct": 5.94,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AVGO",
+        "price": 365.55,
+        "prev_close": 345.52,
+        "gap_pct": 5.8,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 28.48,
+        "price": 28.89,
         "prev_close": 30.42,
-        "gap_pct": -6.38,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 32.24,
-        "prev_close": 34.04,
-        "gap_pct": -5.29,
+        "gap_pct": -5.05,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NIO",
-        "price": 3.06,
+        "price": 3.08,
         "prev_close": 3.23,
-        "gap_pct": -5.26,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 165.22,
-        "prev_close": 173.85,
-        "gap_pct": -4.96,
+        "gap_pct": -4.79,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.75,
+        "price": 3.1,
         "prev_close": 0.9,
-        "gap_pct": 205.34,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ADXN",
-        "price": 4.7,
-        "prev_close": 2.89,
-        "gap_pct": 62.63,
+        "gap_pct": 244.18,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 6.01,
+        "price": 6.0,
         "prev_close": 14.99,
-        "gap_pct": -59.91,
+        "gap_pct": -59.97,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "ADXN",
+        "price": 4.62,
+        "prev_close": 2.89,
+        "gap_pct": 59.69,
         "source": "alpaca_movers"
       },
       {
@@ -201,7 +190,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T16:03:16.031230+00:00",
+    "last_scan_at": "2026-11-12T16:13:26.228771+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
