@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.67,
   "current_drawdown_pct": -0.93,
   "max_drawdown_pct": -0.93,
-  "updated_at": "2026-11-12T14:32:00.220447-05:00",
+  "updated_at": "2026-11-12T14:33:08.344010-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -80,149 +80,128 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "LUNR",
-        "direction": "long",
-        "price": 13.51,
-        "prev_close": 12.19,
-        "gap_pct": 10.79,
-        "change_pct": 10.79,
-        "stake_dollars": 20.0,
+        "symbol": "SMCI",
+        "direction": "short",
+        "price": 27.55,
+        "prev_close": 30.42,
+        "gap_pct": -9.42,
+        "change_pct": -9.42,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 13.31,
-        "target_price": 14.22,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Gap-Up and Gap-Down Stocks in Today's Session",
-          "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
-          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD"
-        ],
-        "reason_ro": "Intuitive Machines (LUNR) înregistrează un gap-up de 10.79% susținut de un backlog puternic de 1.9 miliarde dolari și depășirea estimărilor financiare pentru Q3, confirmând interesul pe termen lung dincolo de misiunile lunare. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T19:23:00.997317+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "SMCI",
-        "direction": "short",
-        "price": 27.39,
-        "prev_close": 30.42,
-        "gap_pct": -9.94,
-        "change_pct": -9.94,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 27.8,
-        "target_price": 25.54,
-        "expected_profit_dollars": 1.35,
-        "max_loss_dollars": 0.3,
+        "stop_price": 27.96,
+        "target_price": 26.1,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "CoreWeave stock sinks as resignation of Jensen Huang ripples through AI trade",
           "Supermicro, Nvidia Reportedly Face DOJ Scrutiny In Separate Inquiries — SMCI Stock Plunges",
           "Super Micro sinks as DOJ probes possible China smuggling links to Nvidia fallout"
         ],
-        "reason_ro": "SMCI se prăbușește cu aproape 10% pe fondul investigațiilor DOJ privind posibile legături de contrabandă cu China și al presiunilor din sectorul AI, oferind un impuls bearish puternic pentru o poziție de sell intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "SMCI suferă o prăbușire puternică de -9.42% din cauza investigațiilor DOJ privind posibile legături de contrabandă cu China și a presiunilor sectoriale pe AI, oferind un impuls descendent clar pentru un scurt intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T19:23:14.334632+00:00"
+        "evaluated_at": "2026-11-12T19:33:22.784736+00:00"
       },
       {
         "action": "enter",
-        "symbol": "UPST",
+        "symbol": "MRNA",
         "direction": "short",
-        "price": 19.35,
-        "prev_close": 20.55,
-        "gap_pct": -5.84,
-        "change_pct": -5.84,
+        "price": 232.36,
+        "prev_close": 248.69,
+        "gap_pct": -6.56,
+        "change_pct": -6.56,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 19.64,
-        "target_price": 18.33,
+        "stop_price": 235.85,
+        "target_price": 220.16,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "UPST înregistrează o scădere intraday puternică de -5.84% pe volum ridicat, fără știri fundamentale directe, indicând un momentum descendent clar care permite o intrare short bazată pe analiza tehnică. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "headlines": [
+          "Why Moderna Stock Dropped on Thursday",
+          "MRNA Stock Up 3% Since Q3 Earnings Release: How to Play the Stock?",
+          "Merck’s Keytruda Combo Cut Melanoma Recurrence or Death Risk 42%. What the February 2 Report Has to Prove"
+        ],
+        "reason_ro": "MRNA înregistrează o scădere puternică de -6.56% pe fondul îngrijorărilor legate de investițiile mari în medicamentele pentru cancer și presiunii concurențiale, oferind o oportunitate de sell intraday în continuarea tendinței descendente. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T19:23:50.253615+00:00"
+        "evaluated_at": "2026-11-12T19:33:34.052492+00:00"
       }
     ],
     "top_movers": [
       {
+        "symbol": "LCID",
+        "price": 3.27,
+        "prev_close": 3.65,
+        "gap_pct": -10.53,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "LUNR",
-        "price": 13.51,
+        "price": 13.39,
         "prev_close": 12.19,
-        "gap_pct": 10.79,
+        "gap_pct": 9.89,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 27.39,
+        "price": 27.55,
         "prev_close": 30.42,
-        "gap_pct": -9.94,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "LCID",
-        "price": 3.3,
-        "prev_close": 3.65,
-        "gap_pct": -9.71,
+        "gap_pct": -9.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 30.85,
+        "price": 30.89,
         "prev_close": 34.04,
-        "gap_pct": -9.37,
+        "gap_pct": -9.27,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MRNA",
+        "price": 232.36,
+        "prev_close": 248.69,
+        "gap_pct": -6.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NIO",
         "price": 3.04,
         "prev_close": 3.23,
-        "gap_pct": -5.87,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "UPST",
-        "price": 19.35,
-        "prev_close": 20.55,
-        "gap_pct": -5.84,
+        "gap_pct": -6.18,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.4,
+        "price": 2.39,
         "prev_close": 0.9,
-        "gap_pct": 166.46,
+        "gap_pct": 165.35,
         "source": "alpaca_movers"
       },
       {
         "symbol": "XLAB",
-        "price": 2.25,
+        "price": 2.3,
         "prev_close": 1.04,
-        "gap_pct": 116.35,
+        "gap_pct": 121.15,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 4.75,
+        "price": 4.76,
         "prev_close": 2.89,
-        "gap_pct": 64.36,
+        "gap_pct": 64.88,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.58,
+        "price": 5.5,
         "prev_close": 14.99,
-        "gap_pct": -62.78,
+        "gap_pct": -63.34,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T19:22:58.705176+00:00",
+    "last_scan_at": "2026-11-12T19:33:08.344014+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
