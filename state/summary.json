@@ -78,247 +78,172 @@
     }
   ],
   "premarket": {
-    "updated_at": "2026-11-11T14:30:25.772258+00:00",
+    "updated_at": "2026-11-12T13:44:46.700225+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 757.23,
-        "prev_close": 749.93,
-        "gap_pct": 0.97
+        "price": 754.14,
+        "prev_close": 759.8,
+        "gap_pct": -0.74
       },
       "QQQ": {
-        "price": 687.47,
-        "prev_close": 674.82,
-        "gap_pct": 1.87
+        "price": 681.51,
+        "prev_close": 690.4,
+        "gap_pct": -1.29
       }
     },
-    "explanation_ro": "Piața deschide în puternic verde, cu SPY în creștere cu +0.97% și QQQ cu +1.87%, impulsionată de optimismul investitorilor înaintea rapoartelor majore și a listei de urmărire a lui Jim Cramer. Deși știrile macroeconomice menționează creșterea ratelor ipotecare, tensiunile din Orientul Mijlociu și semnele de presiune asupra consumatorilor, impulsul pozitiv din pre-market favorizează deschiderea de poziții Long pe ambele ETF-uri.",
+    "explanation_ro": "Piața deschide în scădere pe fondul tensiunilor majore din Orientul Mijlociu, unde exploziile de la Strâmtoarea Hormuz afectează exporturile petroliere și sporesc riscurile geopolitice globale. În lipsa unor raportări majore de dimineață care să susțină indicii, presiunea de vânzare din pre-market favorizează o direcție scurtă (Short) pentru SPY și QQQ la deschidere.",
     "headlines": [
-      "Jim Cramer's top 10 things to watch in the stock market Wednesday",
-      "Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why",
-      "Consumers are showing signs of strain even as they keep spending, CNBC/NRF Retail Monitor shows",
-      "Iran will not allow enriched nuclear material to leave the country, security chief says - Reuters",
-      "Measles is surging in the U.S. — and outbreaks can cost millions",
-      "Iran warns of domestic gas shortages from war this winter - Reuters"
+      "Unions helped Democrats win big in 2026. Now they want action",
+      "COMMENTARY: Just like the US, Iran has squandered its good options to end the war - Reuters",
+      "Scout Motors has 212,000 vehicle reservations as $2 billion South Carolina plant nears completion",
+      "South Africa's citrus exports fall on Iran war disruption, bad weather - Reuters",
+      "Two oil tankers 'disabled' by explosions in Strait of Hormuz, IRGC says - Reuters",
+      "Oil prices edge lower as rising crude output offset geopolitical risks - Reuters"
     ],
     "earnings_today": [
       {
-        "symbol": "AEBI",
+        "symbol": "ADIG",
         "hour": "bmo",
-        "eps_estimate": 0.2285,
-        "eps_actual": 0.14,
-        "revenue_estimate": 530370930,
-        "revenue_actual": 493110000
+        "eps_estimate": 0.442,
+        "eps_actual": 0.02,
+        "revenue_estimate": 1281171000,
+        "revenue_actual": 1306000000
       },
       {
-        "symbol": "AGBK",
-        "hour": "amc",
-        "eps_estimate": 1.4969,
-        "eps_actual": null,
-        "revenue_estimate": 2278783020,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "CTVA",
-        "hour": "amc",
-        "eps_estimate": 0.0969,
-        "eps_actual": null,
-        "revenue_estimate": 1799571720,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "ENS",
-        "hour": "amc",
-        "eps_estimate": 3.2118,
-        "eps_actual": null,
-        "revenue_estimate": 976266000,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "NIO",
+        "symbol": "AFYA",
         "hour": "",
-        "eps_estimate": -0.0939,
+        "eps_estimate": 2.1038,
         "eps_actual": null,
-        "revenue_estimate": 33668882128,
+        "revenue_estimate": 1016994570,
         "revenue_actual": null
+      },
+      {
+        "symbol": "AMAT",
+        "hour": "amc",
+        "eps_estimate": 4.1345,
+        "eps_actual": null,
+        "revenue_estimate": 10504570449,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "AMZE",
+        "hour": "",
+        "eps_estimate": -0.1632,
+        "eps_actual": null,
+        "revenue_estimate": 2675304960,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ARCO",
+        "hour": "bmo",
+        "eps_estimate": 0.1564,
+        "eps_actual": 0.15,
+        "revenue_estimate": 1349741010,
+        "revenue_actual": 1328020000
       }
     ],
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "long",
-        "price": 815.24,
-        "prev_close": 724.86,
-        "gap_pct": 12.47,
-        "change_pct": 12.47,
+        "symbol": "NVDA",
+        "direction": "short",
+        "price": 159.0,
+        "prev_close": 168.78,
+        "gap_pct": -5.8,
+        "change_pct": -5.8,
         "stake_dollars": 25.0,
-        "rr_ratio": 3.5,
+        "rr_ratio": 4.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 803.01,
-        "target_price": 858.04,
-        "expected_profit_dollars": 1.31,
+        "target_pct": 0.0675,
+        "stop_price": 161.38,
+        "target_price": 148.27,
+        "expected_profit_dollars": 1.69,
         "max_loss_dollars": 0.38,
         "headlines": [
-          "Update: US Equity Indexes Advance as CoreWeave's Quarterly Results Fire Up AI Trade",
-          "CoreWeave results lift AI infrastructure stocks as demand for computing power surges",
-          "TSMC Stocks Climb 3.37% After Record NT$586.9 Billion October Revenue"
+          "Nvidia's $164 billion AI strategy faces an unexpected threat",
+          "Dow Jones Futures: Techs Fall As Nvidia Board Mulls Ousting CEO Jensen Huang",
+          "Nvidia shares plunge as spy scandal threatens chief executive"
         ],
-        "reason_ro": "Micron înregistrează o creștere de peste 11% susținută de rezultatele solide CoreWeave, cererea ridicată pentru infrastructură AI și plasamentul de 1 miliard de dolari de la Anthropic. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "reason_ro": "NVDA scade puternic cu 5.80% pe fondul unor știri majore și neașteptate privind o posibilă demitere a CEO-ului Jensen Huang în urma unui scandal de spionaj. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-11T20:07:39.180130+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ARM",
-        "direction": "long",
-        "price": 204.0,
-        "prev_close": 181.42,
-        "gap_pct": 12.44,
-        "change_pct": 12.44,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 200.94,
-        "target_price": 214.71,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Analysts Just Slashed Their Price Targets on These 5 Stocks",
-          "AMD Rises 4% as CoreWeave’s Raised Outlook Revives the AI Chip Trade",
-          "Server CPU strength persists as AMD and Arm gain share: UBS"
-        ],
-        "reason_ro": "ARM înregistrează o creștere puternică de +12.44% susținută de nota optimistă a analiștilor UBS privind câștigul de cotă de piață pe segmentul de servere și revenirea sectorului AI. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-11T20:07:44.868720+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "SMCI",
-        "direction": "long",
-        "price": 30.5,
-        "prev_close": 27.79,
-        "gap_pct": 9.75,
-        "change_pct": 9.75,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 30.04,
-        "target_price": 32.1,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Supermicro (SMCI) Stock May Be Undervalued Following Fresh AI Server Launches",
-          "CoreWeave’s Rise Takes Super Micro Along for the Ride, Sending Stock Higher",
-          "Vertiv's Data Center Growth Fuels Revenue: Can It Beat APH and SMCI?"
-        ],
-        "reason_ro": "Supermicro beneficiază de un impuls puternic susținut de lansarea noilor servere AI bazate pe AMD și de creșterea sectorului de centre de date, confirmat prin raliul general al acțiunilor pe segmentul AI. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-11T20:07:53.258630+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AMD",
-        "direction": "long",
-        "price": 555.73,
-        "prev_close": 515.09,
-        "gap_pct": 7.89,
-        "change_pct": 7.89,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 547.39,
-        "target_price": 584.91,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Nvidia Vs. AMD: No, Neither is Getting Choked Out By Congress Come January",
-          "Why Is Dell Technologies (DELL) Talking Up 157 PB Storage And AI Racks?",
-          "CoreWeave results lift AI infrastructure stocks as demand for computing power surges"
-        ],
-        "reason_ro": "AMD urcă susținut pe fondul investiției de 2.5 miliarde dolari de la Anthropic și al menținerii ca top-pick de către Goldman Sachs, catalizatori fundamentali puternici care susțin tendința de creștere intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-11T20:08:13.118843+00:00"
+        "evaluated_at": "2026-11-12T13:44:46.700168+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "MU",
-        "price": 816.27,
-        "prev_close": 724.86,
-        "gap_pct": 12.61,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "ARM",
-        "price": 203.75,
+        "price": 203.37,
         "prev_close": 181.42,
-        "gap_pct": 12.31,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 169.69,
-        "prev_close": 154.37,
-        "gap_pct": 9.93,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SMCI",
-        "price": 30.43,
-        "prev_close": 27.79,
-        "gap_pct": 9.5,
+        "gap_pct": 12.1,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ORCL",
-        "price": 128.85,
+        "price": 128.94,
         "prev_close": 117.96,
-        "gap_pct": 9.23,
+        "gap_pct": 9.31,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ASTS",
+        "price": 36.62,
+        "prev_close": 33.66,
+        "gap_pct": 8.76,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 556.24,
+        "price": 556.61,
         "prev_close": 515.09,
-        "gap_pct": 7.99,
+        "gap_pct": 8.06,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NXXT",
-        "price": 2.48,
-        "prev_close": 0.19,
-        "gap_pct": 1229.76,
-        "source": "alpaca_movers"
+        "symbol": "MU",
+        "price": 776.62,
+        "prev_close": 724.86,
+        "gap_pct": 7.14,
+        "source": "watchlist_snapshot"
       },
       {
-        "symbol": "STAK",
-        "price": 2.05,
-        "prev_close": 4.91,
-        "gap_pct": -58.29,
-        "source": "alpaca_movers"
+        "symbol": "NVDA",
+        "price": 159.0,
+        "prev_close": 168.78,
+        "gap_pct": -5.8,
+        "source": "watchlist_snapshot"
       },
       {
         "symbol": "RETO",
-        "price": 5.67,
+        "price": 6.19,
         "prev_close": 3.73,
-        "gap_pct": 52.01,
+        "gap_pct": 65.95,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CRWX",
-        "price": 7.64,
+        "price": 7.78,
         "prev_close": 5.19,
-        "gap_pct": 47.24,
+        "gap_pct": 49.9,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "CORD",
+        "price": 3.24,
+        "prev_close": 6.42,
+        "gap_pct": -49.57,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "CWVX",
+        "price": 6.01,
+        "prev_close": 4.02,
+        "gap_pct": 49.5,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-11T20:28:58.017016+00:00",
-    "telegram_sent_date": "2026-11-11"
+    "last_scan_at": "2026-11-12T13:43:27.167829+00:00",
+    "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
