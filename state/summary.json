@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.62,
   "current_drawdown_pct": -0.89,
   "max_drawdown_pct": -0.89,
-  "updated_at": "2026-11-12T10:30:48.002050-05:00",
+  "updated_at": "2026-11-12T10:31:52.687296-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -80,103 +80,128 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "LUNR",
+        "direction": "long",
+        "price": 13.71,
+        "prev_close": 12.19,
+        "gap_pct": 12.47,
+        "change_pct": 12.47,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 13.5,
+        "target_price": 14.43,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
+          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD",
+          "Intuitive Machines Q3 EPS $(0.02) Beats $(0.12) Estimate, Sales $269.348M Beat $245.879M Estimate"
+        ],
+        "reason_ro": "LUNR raportează venituri solide pe Q3 peste estimări, un backlog masiv de 1.9 miliarde dolari și o expansiune a viziunii strategice dincolo de Lună, oferind un catalizator fundamental puternic pentru continuarea trendului pozitiv. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-12T15:31:59.006204+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 163.33,
+        "price": 164.34,
         "prev_close": 173.85,
-        "gap_pct": -6.05,
-        "change_pct": -6.05,
-        "stake_dollars": 20.0,
+        "gap_pct": -5.47,
+        "change_pct": -5.47,
+        "stake_dollars": 25.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 165.78,
-        "target_price": 152.31,
-        "expected_profit_dollars": 1.35,
-        "max_loss_dollars": 0.3,
+        "stop_price": 166.81,
+        "target_price": 153.25,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
         "headlines": [
           "Jensen Huang resigns as Nvidia CEO",
           "Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO",
           "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady"
         ],
-        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un catalizator fundamental negativ major, confirmat deja de o scădere de peste 6% și un trend intraday puternic descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și numirea unui CEO interimar generează o panică masivă și un trend negativ puternic, oferind o oportunitate clară de sell pe NVDA. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T15:22:07.711716+00:00"
+        "evaluated_at": "2026-11-12T15:32:50.668695+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.83,
+        "price": 13.71,
         "prev_close": 12.19,
-        "gap_pct": 13.45,
+        "gap_pct": 12.47,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.26,
+        "price": 3.29,
         "prev_close": 3.65,
-        "gap_pct": -10.81,
+        "gap_pct": -10.12,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 28.09,
+        "price": 27.94,
         "prev_close": 30.42,
-        "gap_pct": -7.66,
+        "gap_pct": -8.15,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MARA",
-        "price": 7.09,
+        "price": 7.1,
         "prev_close": 7.64,
-        "gap_pct": -7.2,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 163.33,
-        "prev_close": 173.85,
-        "gap_pct": -6.05,
+        "gap_pct": -7.07,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 32.17,
+        "price": 32.05,
         "prev_close": 34.04,
-        "gap_pct": -5.49,
+        "gap_pct": -5.85,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "NVDA",
+        "price": 164.34,
+        "prev_close": 173.85,
+        "gap_pct": -5.47,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 3.78,
+        "price": 3.06,
         "prev_close": 0.9,
-        "gap_pct": 319.67,
+        "gap_pct": 239.74,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 5.17,
+        "price": 4.89,
         "prev_close": 2.89,
-        "gap_pct": 78.72,
+        "gap_pct": 69.38,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.85,
+        "price": 6.06,
         "prev_close": 14.99,
-        "gap_pct": -60.97,
+        "gap_pct": -59.57,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 5.8,
+        "price": 4.86,
         "prev_close": 11.19,
-        "gap_pct": -48.17,
+        "gap_pct": -56.57,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T15:21:20.528804+00:00",
+    "last_scan_at": "2026-11-12T15:31:52.687300+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
