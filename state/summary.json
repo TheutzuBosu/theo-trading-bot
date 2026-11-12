@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.43,
-  "total_pnl": 9.43,
-  "total_pnl_pct": 1.89,
-  "today_pnl": -3.19,
-  "today_pnl_pct": -0.62,
+  "equity": 509.4,
+  "total_pnl": 9.4,
+  "total_pnl_pct": 1.88,
+  "today_pnl": -3.22,
+  "today_pnl_pct": -0.63,
   "current_drawdown_pct": -0.89,
   "max_drawdown_pct": -0.92,
-  "updated_at": "2026-11-12T11:54:14.630950-05:00",
+  "updated_at": "2026-11-12T11:55:22.447325-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-12T11:13:26.228766-05:00",
       "qty": 0.0255,
       "entry_price": 587.612,
-      "current_price": 587.31,
+      "current_price": 586.355,
       "stop": 578.79,
       "initial_stop": 578.79,
-      "unrealized_pnl": -0.01,
-      "unrealized_r": -0.03,
+      "unrealized_pnl": -0.03,
+      "unrealized_r": -0.14,
       "entry_reason": "AMD înregistrează o creștere solidă de aproape 6% pe fondul știrilor pozitive legate de colaborarea cu Anthropic și de contextul competitiv favorabil față de Nvidia, depășind zgomotul inițial de la deschiderea NYSE. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~14.98$, R:R 1:3.5)"
     }
   ],
@@ -96,16 +96,16 @@
         "action": "enter",
         "symbol": "SMCI",
         "direction": "short",
-        "price": 26.82,
+        "price": 26.58,
         "prev_close": 30.42,
-        "gap_pct": -11.82,
-        "change_pct": -11.82,
+        "gap_pct": -12.62,
+        "change_pct": -12.62,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 27.22,
-        "target_price": 25.41,
+        "stop_price": 26.98,
+        "target_price": 25.18,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -113,84 +113,84 @@
           "CoreWeave and These Other Stocks Are in the Nvidia Danger Zone",
           "Prediction: One AI Trend Could Send Dell Stock Higher"
         ],
-        "reason_ro": "SMCI înregistrează o scădere severă de peste 11%, trăgând în jos întregul sector de hardware AI pe fondul panicii provocate de știrile negative legate de Nvidia. Având în vedere trendul intraday puternic descendent și sentimentul general de capitulare din piață, oportunitatea de short este susținută de momentum. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "SMCI înregistrează o scădere severă de -12.62%, corelată cu panica din sectorul AI și știrile negative majore din piață. Având în vedere că am trecut de deschidere și presiunea de vânzare este masivă, deschidem o poziție de scurtă durată urmărind impulsul descendent. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T16:45:01.573630+00:00"
+        "evaluated_at": "2026-11-12T16:55:35.299939+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 14.22,
+        "price": 14.12,
         "prev_close": 12.19,
-        "gap_pct": 16.65,
+        "gap_pct": 15.87,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 26.82,
+        "price": 26.58,
         "prev_close": 30.42,
-        "gap_pct": -11.82,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 31.71,
-        "prev_close": 34.04,
-        "gap_pct": -6.84,
+        "gap_pct": -12.62,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.42,
+        "price": 3.39,
         "prev_close": 3.65,
-        "gap_pct": -6.57,
+        "gap_pct": -7.25,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 31.89,
+        "prev_close": 34.04,
+        "gap_pct": -6.32,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 583.79,
+        "price": 586.42,
         "prev_close": 552.82,
-        "gap_pct": 5.6,
+        "gap_pct": 6.08,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AVGO",
-        "price": 364.73,
+        "price": 364.65,
         "prev_close": 345.52,
-        "gap_pct": 5.56,
+        "gap_pct": 5.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.71,
+        "price": 2.03,
         "prev_close": 0.9,
-        "gap_pct": 200.88,
+        "gap_pct": 125.38,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 5.1,
+        "price": 4.97,
         "prev_close": 2.89,
-        "gap_pct": 76.47,
+        "gap_pct": 71.97,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.74,
+        "price": 5.91,
         "prev_close": 14.99,
-        "gap_pct": -61.74,
+        "gap_pct": -60.61,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 4.87,
+        "price": 4.85,
         "prev_close": 11.19,
-        "gap_pct": -56.48,
+        "gap_pct": -56.66,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T16:44:22.109185+00:00",
+    "last_scan_at": "2026-11-12T16:55:22.447329+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
