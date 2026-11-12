@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.4,
-  "total_pnl": 9.4,
+  "equity": 509.41,
+  "total_pnl": 9.41,
   "total_pnl_pct": 1.88,
-  "today_pnl": -3.22,
+  "today_pnl": -3.21,
   "today_pnl_pct": -0.63,
   "current_drawdown_pct": -0.89,
   "max_drawdown_pct": -0.92,
-  "updated_at": "2026-11-12T11:55:22.447325-05:00",
+  "updated_at": "2026-11-12T11:57:37.354871-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-12T11:13:26.228766-05:00",
       "qty": 0.0255,
       "entry_price": 587.612,
-      "current_price": 586.355,
+      "current_price": 586.65,
       "stop": 578.79,
       "initial_stop": 578.79,
-      "unrealized_pnl": -0.03,
-      "unrealized_r": -0.14,
+      "unrealized_pnl": -0.02,
+      "unrealized_r": -0.11,
       "entry_reason": "AMD înregistrează o creștere solidă de aproape 6% pe fondul știrilor pozitive legate de colaborarea cu Anthropic și de contextul competitiv favorabil față de Nvidia, depășind zgomotul inițial de la deschiderea NYSE. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~14.98$, R:R 1:3.5)"
     }
   ],
