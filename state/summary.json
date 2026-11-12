@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.62,
   "current_drawdown_pct": -0.89,
   "max_drawdown_pct": -0.89,
-  "updated_at": "2026-11-12T11:02:08.977878-05:00",
+  "updated_at": "2026-11-12T11:03:16.031226-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
@@ -82,41 +82,41 @@
         "action": "enter",
         "symbol": "LUNR",
         "direction": "long",
-        "price": 13.96,
+        "price": 13.97,
         "prev_close": 12.19,
-        "gap_pct": 14.56,
-        "change_pct": 14.56,
-        "stake_dollars": 20.0,
+        "gap_pct": 14.64,
+        "change_pct": 14.64,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 13.75,
-        "target_price": 14.69,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 13.76,
+        "target_price": 14.7,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
           "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD",
           "Intuitive Machines Q3 EPS $(0.02) Beats $(0.12) Estimate, Sales $269.348M Beat $245.879M Estimate"
         ],
-        "reason_ro": "Intuitive Machines (LUNR) înregistrează rezultate financiare solide pe Q3 peste estimări și un backlog imens de 1.9 miliarde $, confirmând un momentum fundamental puternic după primele minute ale deschiderii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "LUNR raportează venituri Q3 peste estimări, un backlog solid de 1.9 miliarde dolari și o expansiune strategică dincolo de Lună, oferind un catalizator fundamental puternic pentru continuarea trendului pozitiv. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T15:52:26.846005+00:00"
+        "evaluated_at": "2026-11-12T16:03:27.049197+00:00"
       },
       {
         "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 164.33,
+        "price": 165.22,
         "prev_close": 173.85,
-        "gap_pct": -5.48,
-        "change_pct": -5.48,
+        "gap_pct": -4.96,
+        "change_pct": -4.96,
         "stake_dollars": 20.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 166.79,
-        "target_price": 153.24,
+        "stop_price": 167.7,
+        "target_price": 154.07,
         "expected_profit_dollars": 1.35,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -124,84 +124,84 @@
           "Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO",
           "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady"
         ],
-        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalurile conexe reprezintă un catalizator fundamental puternic și negativ, care generează o presiune masivă de vânzare pe termen scurt, confirmată de scăderea deja existentă de peste 5%. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un șoc major pentru guvernanța corporativă a Nvidia, declanșând un trend intraday descendent puternic și confirmat. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T15:53:12.974148+00:00"
+        "evaluated_at": "2026-11-12T16:04:07.725178+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 13.96,
+        "price": 13.97,
         "prev_close": 12.19,
-        "gap_pct": 14.56,
+        "gap_pct": 14.64,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.31,
+        "price": 3.33,
         "prev_close": 3.65,
-        "gap_pct": -9.3,
+        "gap_pct": -9.03,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 28.25,
+        "price": 28.48,
         "prev_close": 30.42,
-        "gap_pct": -7.13,
+        "gap_pct": -6.38,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 32.14,
+        "price": 32.24,
         "prev_close": 34.04,
-        "gap_pct": -5.58,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 164.33,
-        "prev_close": 173.85,
-        "gap_pct": -5.48,
+        "gap_pct": -5.29,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NIO",
-        "price": 3.07,
+        "price": 3.06,
         "prev_close": 3.23,
-        "gap_pct": -5.1,
+        "gap_pct": -5.26,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "NVDA",
+        "price": 165.22,
+        "prev_close": 173.85,
+        "gap_pct": -4.96,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.73,
+        "price": 2.75,
         "prev_close": 0.9,
-        "gap_pct": 203.1,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "CDNL",
-        "price": 6.04,
-        "prev_close": 14.99,
-        "gap_pct": -59.71,
+        "gap_pct": 205.34,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 4.56,
+        "price": 4.7,
         "prev_close": 2.89,
-        "gap_pct": 57.79,
+        "gap_pct": 62.63,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "CDNL",
+        "price": 6.01,
+        "prev_close": 14.99,
+        "gap_pct": -59.91,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 5.02,
+        "price": 4.9,
         "prev_close": 11.19,
-        "gap_pct": -55.14,
+        "gap_pct": -56.21,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T15:52:24.460355+00:00",
+    "last_scan_at": "2026-11-12T16:03:16.031230+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
