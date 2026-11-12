@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.62,
   "current_drawdown_pct": -0.88,
   "max_drawdown_pct": -0.89,
-  "updated_at": "2026-11-12T11:28:38.738689-05:00",
+  "updated_at": "2026-11-12T11:29:46.258356-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-12T11:13:26.228766-05:00",
       "qty": 0.0255,
       "entry_price": 587.612,
-      "current_price": 588.7,
+      "current_price": 588.71,
       "stop": 578.79,
       "initial_stop": 578.79,
       "unrealized_pnl": 0.03,
