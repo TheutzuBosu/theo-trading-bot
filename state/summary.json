@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.36,
-  "total_pnl": 9.36,
-  "total_pnl_pct": 1.87,
-  "today_pnl": -3.26,
-  "today_pnl_pct": -0.64,
-  "current_drawdown_pct": -0.9,
+  "equity": 509.29,
+  "total_pnl": 9.29,
+  "total_pnl_pct": 1.86,
+  "today_pnl": -3.33,
+  "today_pnl_pct": -0.65,
+  "current_drawdown_pct": -0.91,
   "max_drawdown_pct": -0.92,
-  "updated_at": "2026-11-12T12:04:20.636083-05:00",
+  "updated_at": "2026-11-12T12:05:28.190370-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-12T11:13:26.228766-05:00",
       "qty": 0.0255,
       "entry_price": 587.612,
-      "current_price": 584.765,
+      "current_price": 582.105,
       "stop": 578.79,
       "initial_stop": 578.79,
-      "unrealized_pnl": -0.07,
-      "unrealized_r": -0.32,
+      "unrealized_pnl": -0.14,
+      "unrealized_r": -0.62,
       "entry_reason": "AMD înregistrează o creștere solidă de aproape 6% pe fondul știrilor pozitive legate de colaborarea cu Anthropic și de contextul competitiv favorabil față de Nvidia, depășind zgomotul inițial de la deschiderea NYSE. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~14.98$, R:R 1:3.5)"
     }
   ],
@@ -121,76 +121,76 @@
     "top_movers": [
       {
         "symbol": "LUNR",
-        "price": 14.12,
+        "price": 14.2,
         "prev_close": 12.19,
-        "gap_pct": 15.87,
+        "gap_pct": 16.49,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 26.58,
+        "price": 26.86,
         "prev_close": 30.42,
-        "gap_pct": -12.62,
+        "gap_pct": -11.72,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
-        "price": 3.39,
+        "price": 3.36,
         "prev_close": 3.65,
-        "gap_pct": -7.25,
+        "gap_pct": -8.07,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 31.89,
+        "price": 31.82,
         "prev_close": 34.04,
-        "gap_pct": -6.32,
+        "gap_pct": -6.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 586.42,
+        "price": 585.65,
         "prev_close": 552.82,
-        "gap_pct": 6.08,
+        "gap_pct": 5.94,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AVGO",
-        "price": 364.65,
+        "price": 364.68,
         "prev_close": 345.52,
-        "gap_pct": 5.54,
+        "gap_pct": 5.55,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 2.03,
+        "price": 2.12,
         "prev_close": 0.9,
-        "gap_pct": 125.38,
+        "gap_pct": 135.37,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 4.97,
+        "price": 5.01,
         "prev_close": 2.89,
-        "gap_pct": 71.97,
+        "gap_pct": 73.36,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.91,
+        "price": 5.84,
         "prev_close": 14.99,
-        "gap_pct": -60.61,
+        "gap_pct": -61.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SMX",
-        "price": 4.85,
+        "price": 5.03,
         "prev_close": 11.19,
-        "gap_pct": -56.66,
+        "gap_pct": -55.05,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T16:55:22.447329+00:00",
+    "last_scan_at": "2026-11-12T17:05:28.190374+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
