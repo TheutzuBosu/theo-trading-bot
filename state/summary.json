@@ -78,28 +78,28 @@
     }
   ],
   "premarket": {
-    "updated_at": "2026-11-12T13:44:46.700225+00:00",
+    "updated_at": "2026-11-12T14:29:36.775228+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 754.14,
+        "price": 755.12,
         "prev_close": 759.8,
-        "gap_pct": -0.74
+        "gap_pct": -0.62
       },
       "QQQ": {
-        "price": 681.51,
+        "price": 681.16,
         "prev_close": 690.4,
-        "gap_pct": -1.29
+        "gap_pct": -1.34
       }
     },
-    "explanation_ro": "Piața deschide în scădere pe fondul tensiunilor majore din Orientul Mijlociu, unde exploziile de la Strâmtoarea Hormuz afectează exporturile petroliere și sporesc riscurile geopolitice globale. În lipsa unor raportări majore de dimineață care să susțină indicii, presiunea de vânzare din pre-market favorizează o direcție scurtă (Short) pentru SPY și QQQ la deschidere.",
+    "explanation_ro": "Piața deschide în scădere pe fondul unui sentiment negativ, cu un gap de -0.62% pentru SPY și -1.34% pentru QQQ, influențată de incertitudinile economice și geopolitice reflectate în știrile recente. Deși atenția investitorilor se îndreaptă către raportările financiare majore de azi, cum ar fi AMAT de după închidere, presiunea de vânzare din pre-market favorizează o direcție de tip Short în prima parte a sesiunii de tranzacționare.",
     "headlines": [
+      "Jensen and Lori Huang's Nvidia fortune is jointly controlled. How that makes things complicated now that he's resigned",
+      "Jim Cramer's top 10 things to watch in the stock market Thursday",
+      "Disney's 'Star Wars' is coming to Cosm domes ahead of 50th anniversary as part of multiyear film deal",
       "Unions helped Democrats win big in 2026. Now they want action",
-      "COMMENTARY: Just like the US, Iran has squandered its good options to end the war - Reuters",
       "Scout Motors has 212,000 vehicle reservations as $2 billion South Carolina plant nears completion",
-      "South Africa's citrus exports fall on Iran war disruption, bad weather - Reuters",
-      "Two oil tankers 'disabled' by explosions in Strait of Hormuz, IRGC says - Reuters",
-      "Oil prices edge lower as rising crude output offset geopolitical risks - Reuters"
+      "South Africa's citrus exports fall on Iran war disruption, bad weather - Reuters"
     ],
     "earnings_today": [
       {
@@ -148,26 +148,26 @@
         "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 159.0,
+        "price": 151.08,
         "prev_close": 168.78,
-        "gap_pct": -5.8,
-        "change_pct": -5.8,
+        "gap_pct": -10.49,
+        "change_pct": -10.49,
         "stake_dollars": 25.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 161.38,
-        "target_price": 148.27,
+        "stop_price": 153.35,
+        "target_price": 140.88,
         "expected_profit_dollars": 1.69,
         "max_loss_dollars": 0.38,
         "headlines": [
-          "Nvidia's $164 billion AI strategy faces an unexpected threat",
-          "Dow Jones Futures: Techs Fall As Nvidia Board Mulls Ousting CEO Jensen Huang",
-          "Nvidia shares plunge as spy scandal threatens chief executive"
+          "Jensen Huang resigns as Nvidia CEO",
+          "Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO",
+          "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady"
         ],
-        "reason_ro": "NVDA scade puternic cu 5.80% pe fondul unor știri majore și neașteptate privind o posibilă demitere a CEO-ului Jensen Huang în urma unui scandal de spionaj. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un catalizator negativ masiv pentru NVDA, justificând o poziție scurtă pe fondul panicii din piață. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T13:44:46.700168+00:00"
+        "evaluated_at": "2026-11-12T14:29:11.972299+00:00"
       }
     ],
     "top_movers": [
@@ -179,10 +179,10 @@
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ORCL",
-        "price": 128.94,
-        "prev_close": 117.96,
-        "gap_pct": 9.31,
+        "symbol": "NVDA",
+        "price": 151.08,
+        "prev_close": 168.78,
+        "gap_pct": -10.49,
         "source": "watchlist_snapshot"
       },
       {
@@ -194,23 +194,23 @@
       },
       {
         "symbol": "AMD",
-        "price": 556.61,
+        "price": 557.46,
         "prev_close": 515.09,
-        "gap_pct": 8.06,
+        "gap_pct": 8.23,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MU",
-        "price": 776.62,
-        "prev_close": 724.86,
-        "gap_pct": 7.14,
+        "symbol": "AVGO",
+        "price": 357.84,
+        "prev_close": 332.07,
+        "gap_pct": 7.76,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NVDA",
-        "price": 159.0,
-        "prev_close": 168.78,
-        "gap_pct": -5.8,
+        "symbol": "IONQ",
+        "price": 32.41,
+        "prev_close": 34.98,
+        "gap_pct": -7.35,
         "source": "watchlist_snapshot"
       },
       {
@@ -242,7 +242,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T13:43:27.167829+00:00",
+    "last_scan_at": "2026-11-12T14:29:02.879316+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
