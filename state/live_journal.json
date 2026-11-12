@@ -1,20 +1,5 @@
 {
-  "processed_signals": [
-    "MOVER|AMD|2026-11-11|long",
-    "MOVER|AMD|2026-11-12|long",
-    "MOVER|ARM|2026-11-11|long",
-    "MOVER|AVGO|2026-11-11|long",
-    "MOVER|AVGO|2026-11-12|long",
-    "MOVER|COIN|2026-11-12|short",
-    "MOVER|INTC|2026-11-11|long",
-    "MOVER|LUNR|2026-11-12|long",
-    "MOVER|MRVL|2026-11-11|long",
-    "MOVER|MU|2026-11-11|long",
-    "MOVER|NVDA|2026-11-12|short",
-    "MOVER|ORCL|2026-11-11|long",
-    "MOVER|RKLB|2026-11-11|long",
-    "MOVER|SMCI|2026-11-11|long"
-  ],
+  "processed_signals": [],
   "open_trades": {},
-  "last_eod_date": "2026-11-10"
+  "last_eod_date": "2026-11-12"
 }
