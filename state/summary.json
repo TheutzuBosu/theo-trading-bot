@@ -9,8 +9,35 @@
   "today_pnl_pct": -0.51,
   "current_drawdown_pct": -0.77,
   "max_drawdown_pct": -0.77,
-  "updated_at": "2026-11-12T09:38:26.022086-05:00",
-  "positions": [],
+  "updated_at": "2026-11-12T09:39:30.229021-05:00",
+  "positions": [
+    {
+      "symbol": "AVGO",
+      "direction": "long",
+      "entry_time": "2026-11-12T09:39:30.229021-05:00",
+      "qty": 0.0548,
+      "entry_price": 364.86,
+      "current_price": 364.97,
+      "stop": 359.38,
+      "initial_stop": 359.38,
+      "unrealized_pnl": 0.01,
+      "unrealized_r": 0.02,
+      "entry_reason": "AVGO înregistrează o creștere puternică de +5.26%, beneficiind probabil de reorientarea investitorilor și turbulențele majore de la competitorul principal NVIDIA. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AVGO LONG -> BUY AVGO (miză ~19.99$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "LUNR",
+      "direction": "long",
+      "entry_time": "2026-11-12T09:39:30.229021-05:00",
+      "qty": 1.0741,
+      "entry_price": 13.95,
+      "current_price": 13.94,
+      "stop": 13.67,
+      "initial_stop": 13.67,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.04,
+      "entry_reason": "Intuitive Machines înregistrează o creștere solidă de 13.33% susținută de rezultate financiare excelente pe Q3 (beat la EPS și vânzări), un backlog uriaș de 1.9 miliarde de dolari și viziunea optimistă a CEO-ului privind extinderea oportunităților spațiale. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~15.00$, R:R 1:3.5)"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-12T14:29:36.775228+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
@@ -80,18 +107,43 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "LUNR",
+        "direction": "long",
+        "price": 13.81,
+        "prev_close": 12.19,
+        "gap_pct": 13.33,
+        "change_pct": 13.33,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.07,
+        "stop_price": 13.53,
+        "target_price": 14.78,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
+          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD",
+          "Intuitive Machines Q3 EPS $(0.02) Beats $(0.12) Estimate, Sales $269.348M Beat $245.879M Estimate"
+        ],
+        "reason_ro": "Intuitive Machines înregistrează o creștere solidă de 13.33% susținută de rezultate financiare excelente pe Q3 (beat la EPS și vânzări), un backlog uriaș de 1.9 miliarde de dolari și viziunea optimistă a CEO-ului privind extinderea oportunităților spațiale. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-12T14:39:33.355834+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 151.08,
-        "prev_close": 168.78,
-        "gap_pct": -10.49,
-        "change_pct": -10.49,
+        "price": 159.55,
+        "prev_close": 173.85,
+        "gap_pct": -8.23,
+        "change_pct": -8.23,
         "stake_dollars": 25.0,
         "rr_ratio": 4.5,
         "stop_pct": 0.015,
         "target_pct": 0.0675,
-        "stop_price": 153.35,
-        "target_price": 140.88,
+        "stop_price": 161.94,
+        "target_price": 148.78,
         "expected_profit_dollars": 1.69,
         "max_loss_dollars": 0.38,
         "headlines": [
@@ -99,84 +151,109 @@
           "Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO",
           "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady"
         ],
-        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un catalizator negativ masiv pentru NVDA, justificând o poziție scurtă pe fondul panicii din piață. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "reason_ro": "Demisia neașteptată a CEO-ului Jensen Huang și scandalul aferent reprezintă un șoc major pentru guvernanța corporativă NVDA, generând o presiune masivă de vânzare pe termen scurt. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-12T14:29:11.972299+00:00"
+        "evaluated_at": "2026-11-12T14:40:08.888058+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "AVGO",
+        "direction": "long",
+        "price": 363.7,
+        "prev_close": 345.52,
+        "gap_pct": 5.26,
+        "change_pct": 5.26,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 358.24,
+        "target_price": 382.79,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "NVIDIA Sinks 9% on Reports Board Is Preparing to Oust Jensen Huang; Intel Falls 4%, AMD Holds Steady",
+          "AMD Stock Gets Upgrade. What It Says About the Future of the AI Trade.",
+          "Bernstein Just Gave Up on Nvidia, Cutting Its Target in Half to $200"
+        ],
+        "reason_ro": "AVGO înregistrează o creștere puternică de +5.26%, beneficiind probabil de reorientarea investitorilor și turbulențele majore de la competitorul principal NVIDIA. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-12T14:40:25.570249+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "ARM",
-        "price": 203.37,
-        "prev_close": 181.42,
-        "gap_pct": 12.1,
+        "symbol": "LUNR",
+        "price": 13.81,
+        "prev_close": 12.19,
+        "gap_pct": 13.33,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "SMCI",
+        "price": 27.8,
+        "prev_close": 30.42,
+        "gap_pct": -8.61,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NVDA",
-        "price": 151.08,
-        "prev_close": 168.78,
-        "gap_pct": -10.49,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ASTS",
-        "price": 36.62,
-        "prev_close": 33.66,
-        "gap_pct": 8.76,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AMD",
-        "price": 557.46,
-        "prev_close": 515.09,
-        "gap_pct": 8.23,
+        "price": 159.55,
+        "prev_close": 173.85,
+        "gap_pct": -8.23,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AVGO",
-        "price": 357.84,
-        "prev_close": 332.07,
-        "gap_pct": 7.76,
+        "price": 363.7,
+        "prev_close": 345.52,
+        "gap_pct": 5.26,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 32.41,
-        "prev_close": 34.98,
-        "gap_pct": -7.35,
+        "symbol": "LCID",
+        "price": 3.48,
+        "prev_close": 3.65,
+        "gap_pct": -4.92,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "RETO",
-        "price": 6.19,
-        "prev_close": 3.73,
-        "gap_pct": 65.95,
+        "symbol": "ASTS",
+        "price": 34.93,
+        "prev_close": 36.62,
+        "gap_pct": -4.6,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "POAS",
+        "price": 4.21,
+        "prev_close": 0.9,
+        "gap_pct": 367.41,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CRWX",
-        "price": 7.78,
-        "prev_close": 5.19,
-        "gap_pct": 49.9,
+        "symbol": "ADXN",
+        "price": 5.7,
+        "prev_close": 2.89,
+        "gap_pct": 97.23,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CORD",
-        "price": 3.24,
-        "prev_close": 6.42,
-        "gap_pct": -49.57,
+        "symbol": "CDNL",
+        "price": 5.74,
+        "prev_close": 14.99,
+        "gap_pct": -61.71,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CWVX",
-        "price": 6.01,
-        "prev_close": 4.02,
-        "gap_pct": 49.5,
+        "symbol": "SMX",
+        "price": 7.0,
+        "prev_close": 11.19,
+        "gap_pct": -37.44,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T14:29:02.879316+00:00",
+    "last_scan_at": "2026-11-12T14:39:30.229026+00:00",
     "telegram_sent_date": "2026-11-12"
   },
   "spy_start_price": 767.64,
