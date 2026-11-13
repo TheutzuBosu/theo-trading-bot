@@ -12,243 +12,105 @@
   "updated_at": "2026-11-12T15:30:53.405109-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-12T14:29:36.775228+00:00",
-    "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
+    "updated_at": "2026-11-13T13:44:01.874329+00:00",
+    "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
-        "price": 755.12,
-        "prev_close": 759.8,
-        "gap_pct": -0.62
+        "price": 761.91,
+        "prev_close": 757.16,
+        "gap_pct": 0.63
       },
       "QQQ": {
-        "price": 681.16,
-        "prev_close": 690.4,
-        "gap_pct": -1.34
+        "price": 692.97,
+        "prev_close": 688.2,
+        "gap_pct": 0.69
       }
     },
-    "explanation_ro": "Piața deschide în scădere pe fondul unui sentiment negativ, cu un gap de -0.62% pentru SPY și -1.34% pentru QQQ, influențată de incertitudinile economice și geopolitice reflectate în știrile recente. Deși atenția investitorilor se îndreaptă către raportările financiare majore de azi, cum ar fi AMAT de după închidere, presiunea de vânzare din pre-market favorizează o direcție de tip Short în prima parte a sesiunii de tranzacționare.",
+    "explanation_ro": "Piața pre-market deschide pe verde, cu SPY în creștere cu 0.63% și QQQ cu 0.69%, susținută de lipsa unor raportări financiare majore negative și de o dinamică generală favorabilă riscului. Știrile recente privind reglementările crypto și excedentul de pe piața petrolului nu au un impact direct major asupra tehnologiei sau indicilor, deși ancheta privind Nvidia introduce o ușoară prudență. În aceste condiții, direcția favorizată la deschidere este Long, continuând impulsul pozitiv din pre-market.",
     "headlines": [
-      "Jensen and Lori Huang's Nvidia fortune is jointly controlled. How that makes things complicated now that he's resigned",
-      "Jim Cramer's top 10 things to watch in the stock market Thursday",
-      "Disney's 'Star Wars' is coming to Cosm domes ahead of 50th anniversary as part of multiyear film deal",
-      "Unions helped Democrats win big in 2026. Now they want action",
-      "Scout Motors has 212,000 vehicle reservations as $2 billion South Carolina plant nears completion",
-      "South Africa's citrus exports fall on Iran war disruption, bad weather - Reuters"
+      "CFTC Chair Selig tells CNBC crypto industry is embracing agency rules as legislation hopes fade",
+      "IAEA increasingly concerned about Iranian enrichment plant, its report says - Reuters",
+      "World oil market is returning to surplus as Gulf exports recover, IEA says - Reuters",
+      "NHL’s next media deal will test the league’s strength",
+      "CNBC's Official NHL Team Valuations 2026: How the 32 franchises stack up",
+      "Nvidia scandal draws in Commerce Secretary Lutnick, who reportedly agrees to testify about China chip sales"
     ],
-    "earnings_today": [
-      {
-        "symbol": "ADIG",
-        "hour": "bmo",
-        "eps_estimate": 0.442,
-        "eps_actual": 0.02,
-        "revenue_estimate": 1281171000,
-        "revenue_actual": 1306000000
-      },
-      {
-        "symbol": "AFYA",
-        "hour": "",
-        "eps_estimate": 2.1038,
-        "eps_actual": null,
-        "revenue_estimate": 1016994570,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "AMAT",
-        "hour": "amc",
-        "eps_estimate": 4.1345,
-        "eps_actual": null,
-        "revenue_estimate": 10504570449,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "AMZE",
-        "hour": "",
-        "eps_estimate": -0.1632,
-        "eps_actual": null,
-        "revenue_estimate": 2675304960,
-        "revenue_actual": null
-      },
-      {
-        "symbol": "ARCO",
-        "hour": "bmo",
-        "eps_estimate": 0.1564,
-        "eps_actual": 0.15,
-        "revenue_estimate": 1349741010,
-        "revenue_actual": 1328020000
-      }
-    ],
-    "opportunities": [
-      {
-        "action": "enter",
-        "symbol": "LUNR",
-        "direction": "long",
-        "price": 13.46,
-        "prev_close": 12.19,
-        "gap_pct": 10.46,
-        "change_pct": 10.46,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 13.26,
-        "target_price": 14.17,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Gap-Up and Gap-Down Stocks in Today's Session",
-          "Intuitive Machines Is No Longer Just About the Moon, CEO Sees Bigger Space Opportunity",
-          "Intuitive Machines Reports Backlog At End Of Q3 Of $1.9B, Up $1.7B YtD"
-        ],
-        "reason_ro": "Intuitive Machines (LUNR) înregistrează un gap-up de 10.46% susținut de rezultate financiare solide pe Q3 (venituri și EPS peste estimări), un back-log record de 1.9 miliarde dolari și perspective optimiste de creștere dincolo de contractele lunare. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T20:24:57.039247+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "SMCI",
-        "direction": "short",
-        "price": 27.27,
-        "prev_close": 30.42,
-        "gap_pct": -10.37,
-        "change_pct": -10.37,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 27.68,
-        "target_price": 25.84,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-          "Super Micro stock sinks 5% despite $19.9 billion quarter",
-          "CoreWeave stock sinks as resignation of Jensen Huang ripples through AI trade"
-        ],
-        "reason_ro": "SMCI este supusă unei anchete DOJ privind posibile legături de contrabandă cu China și Nvidia, ceea ce generează o presiune puternică la vânzare și un trend intraday descendent clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T20:25:05.471067+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MRNA",
-        "direction": "short",
-        "price": 231.05,
-        "prev_close": 248.69,
-        "gap_pct": -7.09,
-        "change_pct": -7.09,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 234.52,
-        "target_price": 218.92,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Moderna Sinks 7% as Analyst Day Cancer Push Brings “$4 Billion in Cash Costs in 2027”",
-          "Why Is Moderna (MRNA) Joining A Global Benchmark And Publishing New Vaccine Data?",
-          "Why Moderna Stock Dropped on Thursday"
-        ],
-        "reason_ro": "Moderna scade cu 7.09% după ce Ziua Analiștilor a indicat costuri uriașe de numerar de 4 مليار (4 miliarde) în 2027 pentru divizia de cancer, creând un catalizator fundamental negativ puternic pentru o poziție de sell/short intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T20:25:20.706604+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "UPST",
-        "direction": "short",
-        "price": 19.24,
-        "prev_close": 20.55,
-        "gap_pct": -6.37,
-        "change_pct": -6.37,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 19.53,
-        "target_price": 18.23,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "UPST înregistrează o scădere puternică de -6.37% pe volum ridicat în timpul sesiunii active, oferind o oportunitate tehnică de sell-short pe continuarea impulsului descendent. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-12T20:25:27.386482+00:00"
-      }
-    ],
+    "earnings_today": [],
+    "opportunities": [],
     "top_movers": [
       {
-        "symbol": "LCID",
-        "price": 3.27,
-        "prev_close": 3.65,
-        "gap_pct": -10.67,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "LUNR",
-        "price": 13.46,
-        "prev_close": 12.19,
-        "gap_pct": 10.46,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "SMCI",
-        "price": 27.27,
+        "price": 26.98,
         "prev_close": 30.42,
-        "gap_pct": -10.37,
+        "gap_pct": -11.31,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "LCID",
+        "price": 3.25,
+        "prev_close": 3.65,
+        "gap_pct": -11.08,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 30.97,
+        "price": 30.84,
         "prev_close": 34.04,
-        "gap_pct": -9.02,
+        "gap_pct": -9.4,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRNA",
-        "price": 231.05,
+        "price": 231.35,
         "prev_close": 248.69,
-        "gap_pct": -7.09,
+        "gap_pct": -6.97,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "UPST",
-        "price": 19.24,
-        "prev_close": 20.55,
-        "gap_pct": -6.37,
+        "symbol": "NIO",
+        "price": 3.01,
+        "prev_close": 3.23,
+        "gap_pct": -6.96,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "LUNR",
+        "price": 13.03,
+        "prev_close": 12.19,
+        "gap_pct": 6.89,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POAS",
-        "price": 3.11,
+        "price": 3.01,
         "prev_close": 0.9,
-        "gap_pct": 245.29,
+        "gap_pct": 234.18,
         "source": "alpaca_movers"
       },
       {
         "symbol": "XLAB",
-        "price": 2.32,
+        "price": 2.27,
         "prev_close": 1.04,
-        "gap_pct": 123.04,
+        "gap_pct": 118.27,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADXN",
-        "price": 5.07,
+        "price": 5.29,
         "prev_close": 2.89,
-        "gap_pct": 75.28,
+        "gap_pct": 83.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CDNL",
-        "price": 5.37,
+        "price": 5.64,
         "prev_close": 14.99,
-        "gap_pct": -64.18,
+        "gap_pct": -62.37,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-12T20:24:39.944474+00:00",
-    "telegram_sent_date": "2026-11-12"
+    "last_scan_at": "2026-11-13T13:43:27.383200+00:00",
+    "telegram_sent_date": "2026-11-13"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
