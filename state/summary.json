@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 510.09,
-  "total_pnl": 10.09,
+  "equity": 510.1,
+  "total_pnl": 10.1,
   "total_pnl_pct": 2.02,
-  "today_pnl": 0.9,
+  "today_pnl": 0.91,
   "today_pnl_pct": 0.18,
-  "current_drawdown_pct": -0.76,
+  "current_drawdown_pct": -0.75,
   "max_drawdown_pct": -1.1,
-  "updated_at": "2026-11-13T11:54:56.793888-05:00",
+  "updated_at": "2026-11-13T11:56:03.054565-05:00",
   "positions": [
     {
       "symbol": "MRVL",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-13T10:41:45.335872-05:00",
       "qty": 0.0947,
       "entry_price": 151.266,
-      "current_price": 153.7817,
+      "current_price": 154.08,
       "stop": 149.0,
       "initial_stop": 149.0,
-      "unrealized_pnl": 0.24,
-      "unrealized_r": 1.11,
+      "unrealized_pnl": 0.27,
+      "unrealized_r": 1.24,
       "entry_reason": "MRVL înregistrează o corecție de -8.27% în contextul unor știri mixte privind preluarea Lumentum și ieșirea NVIDIA, însă Jim Cramer și analiștii mențin o perspectivă pozitivă pe termen mediu bazată pe expunerea la sectorul AI. Oportunitate de cumpărare în dip pe o acțiune fundamental puternică, aplicând lecția de prudență pe volatilitatea inițială. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~14.30$, R:R 1:3.5)"
     },
     {
@@ -30,7 +30,7 @@
       "entry_time": "2026-11-13T10:12:24.088248-05:00",
       "qty": 14.974,
       "entry_price": 15.52,
-      "current_price": 15.5301,
+      "current_price": 15.5302,
       "stop": 15.48,
       "initial_stop": 15.44,
       "unrealized_pnl": 0.15,
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-13T09:59:49.215877-05:00",
       "qty": 0.4488,
       "entry_price": 16.736,
-      "current_price": 17.25,
+      "current_price": 17.275,
       "stop": 16.49,
       "initial_stop": 16.49,
-      "unrealized_pnl": 0.23,
-      "unrealized_r": 2.09,
+      "unrealized_pnl": 0.24,
+      "unrealized_r": 2.19,
       "entry_reason": "Riot Platforms a primit o recomandare bullish din partea Wall Street în cadrul raportului recent, oferind un catalizator pozitiv pentru o revenire intraday după scăderea matinală. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RIOT LONG -> BUY RIOT (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-13T10:12:24.088248-05:00",
       "qty": 4.5136,
       "entry_price": 56.36,
-      "current_price": 56.455,
+      "current_price": 56.4476,
       "stop": 56.2,
       "initial_stop": 56.2,
-      "unrealized_pnl": 0.43,
-      "unrealized_r": 0.59,
+      "unrealized_pnl": 0.4,
+      "unrealized_r": 0.55,
       "entry_reason": "D1b short: Close=750.40, band=752.61, VWAP=755.16, tp0=742.15 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -92,12 +92,37 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "ARM",
+        "direction": "short",
+        "price": 184.07,
+        "prev_close": 199.81,
+        "gap_pct": -7.87,
+        "change_pct": -7.87,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 186.83,
+        "target_price": 174.41,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "SpaceX Drops More Than 13% Over 30 Days: This Wall Street Pro Projects 260% Gains Within 12 Months",
+          "Who Should Be Nvidia's Next CEO?",
+          "Nvidia Stock Rises. It Faces One Big Threat in Life After Jensen."
+        ],
+        "reason_ro": "ARM a înregistrat un trimestru record, dar acțiunile au scăzut puternic cu 7.87% după ce BofA a semnalat îngrijorări legate de finanțarea circulară, creând un momentum negativ clar pe partea de vânzare. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-13T16:56:11.631528+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "LCID",
         "direction": "short",
         "price": 3.0,
         "prev_close": 3.25,
-        "gap_pct": -7.69,
-        "change_pct": -7.69,
+        "gap_pct": -7.54,
+        "change_pct": -7.54,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
@@ -110,109 +135,84 @@
           "Why Is Velo3D Stock Surging on Friday?",
           "Lucid Group (LCID) Loses This Much; 2 Analysts Turn Bearish"
         ],
-        "reason_ro": "Lucid Group (LCID) înregistrează o scădere de -7.69% pe fondul unor downgrade-uri recente din partea analiștilor, confirmând un momentum negativ puternic în timpul sesiunii principale. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "Lucid Group înregistrează o scădere puternică de -7.54%, susținută de downgrades din partea a doi analiști financiari, oferind o oportunitate clară de sell pe continuarea trendului descendent intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-13T16:45:20.645620+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ARM",
-        "direction": "short",
-        "price": 185.53,
-        "prev_close": 199.81,
-        "gap_pct": -7.15,
-        "change_pct": -7.15,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 188.31,
-        "target_price": 175.79,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "SpaceX Drops More Than 13% Over 30 Days: This Wall Street Pro Projects 260% Gains Within 12 Months",
-          "Who Should Be Nvidia's Next CEO?",
-          "Nvidia Stock Rises. It Faces One Big Threat in Life After Jensen."
-        ],
-        "reason_ro": "ARM a raportat rezultate record, dar acțiunile au coborât brusc cu peste 7% din cauza îngrijorărilor legate de o posibilă finanțare circulară semnalate de BofA, creând un impuls descendent puternic pentru o intrare short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-13T16:45:31.436403+00:00"
+        "evaluated_at": "2026-11-13T16:56:17.233914+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 522.46,
+        "price": 523.16,
         "prev_close": 585.69,
-        "gap_pct": -10.8,
+        "gap_pct": -10.68,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ARM",
+        "price": 184.07,
+        "prev_close": 199.81,
+        "gap_pct": -7.87,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
         "price": 3.0,
         "prev_close": 3.25,
-        "gap_pct": -7.69,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ASTS",
-        "price": 31.95,
-        "prev_close": 34.48,
-        "gap_pct": -7.34,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 185.53,
-        "prev_close": 199.81,
-        "gap_pct": -7.15,
+        "gap_pct": -7.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 28.69,
+        "price": 28.79,
         "prev_close": 30.84,
-        "gap_pct": -6.97,
+        "gap_pct": -6.65,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ASTS",
+        "price": 32.2,
+        "prev_close": 34.48,
+        "gap_pct": -6.63,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 153.02,
+        "price": 153.65,
         "prev_close": 164.44,
-        "gap_pct": -6.94,
+        "gap_pct": -6.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "FCUV",
-        "price": 6.13,
+        "price": 6.09,
         "prev_close": 3.0,
-        "gap_pct": 104.5,
+        "gap_pct": 103.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NPCE",
-        "price": 5.95,
+        "price": 5.92,
         "prev_close": 12.02,
-        "gap_pct": -50.54,
+        "gap_pct": -50.75,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ZYN",
-        "price": 8.89,
+        "price": 8.84,
         "prev_close": 16.77,
-        "gap_pct": -46.98,
+        "gap_pct": -47.28,
         "source": "alpaca_movers"
       },
       {
         "symbol": "VTSI",
-        "price": 3.71,
+        "price": 3.76,
         "prev_close": 2.62,
-        "gap_pct": 41.6,
+        "gap_pct": 43.34,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-13T16:45:13.670166+00:00",
+    "last_scan_at": "2026-11-13T16:56:03.054569+00:00",
     "telegram_sent_date": "2026-11-13"
   },
   "spy_start_price": 767.64,
