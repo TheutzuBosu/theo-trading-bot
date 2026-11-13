@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.42,
-  "total_pnl": 9.42,
-  "total_pnl_pct": 1.88,
-  "today_pnl": 0.23,
-  "today_pnl_pct": 0.05,
-  "current_drawdown_pct": -0.89,
-  "max_drawdown_pct": -0.98,
-  "updated_at": "2026-11-13T10:50:41.534635-05:00",
+  "equity": 508.31,
+  "total_pnl": 8.31,
+  "total_pnl_pct": 1.66,
+  "today_pnl": -0.88,
+  "today_pnl_pct": -0.17,
+  "current_drawdown_pct": -1.1,
+  "max_drawdown_pct": -1.1,
+  "updated_at": "2026-11-13T10:51:47.013498-05:00",
   "positions": [
     {
       "symbol": "MRVL",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-13T10:41:45.335872-05:00",
       "qty": 0.0947,
       "entry_price": 151.266,
-      "current_price": 151.75,
+      "current_price": 152.705,
       "stop": 149.0,
       "initial_stop": 149.0,
-      "unrealized_pnl": 0.05,
-      "unrealized_r": 0.21,
+      "unrealized_pnl": 0.14,
+      "unrealized_r": 0.64,
       "entry_reason": "MRVL înregistrează o corecție de -8.27% în contextul unor știri mixte privind preluarea Lumentum și ieșirea NVIDIA, însă Jim Cramer și analiștii mențin o perspectivă pozitivă pe termen mediu bazată pe expunerea la sectorul AI. Oportunitate de cumpărare în dip pe o acțiune fundamental puternică, aplicând lecția de prudență pe volatilitatea inițială. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~14.30$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-13T10:12:24.088248-05:00",
       "qty": 14.974,
       "entry_price": 15.52,
-      "current_price": 15.5401,
+      "current_price": 15.49,
       "stop": 15.44,
       "initial_stop": 15.44,
-      "unrealized_pnl": 0.3,
-      "unrealized_r": 0.25,
+      "unrealized_pnl": -0.45,
+      "unrealized_r": -0.38,
       "entry_reason": "D1b short: Close=675.85, band=680.02, VWAP=682.68, tp0=668.41 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-13T09:59:49.215877-05:00",
       "qty": 0.4488,
       "entry_price": 16.736,
-      "current_price": 17.0699,
+      "current_price": 17.12,
       "stop": 16.49,
       "initial_stop": 16.49,
-      "unrealized_pnl": 0.15,
-      "unrealized_r": 1.36,
+      "unrealized_pnl": 0.17,
+      "unrealized_r": 1.56,
       "entry_reason": "Riot Platforms a primit o recomandare bullish din partea Wall Street în cadrul raportului recent, oferind un catalizator pozitiv pentru o revenire intraday după scăderea matinală. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RIOT LONG -> BUY RIOT (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-13T10:12:24.088248-05:00",
       "qty": 4.5136,
       "entry_price": 56.36,
-      "current_price": 56.335,
+      "current_price": 56.23,
       "stop": 56.2,
       "initial_stop": 56.2,
-      "unrealized_pnl": -0.11,
-      "unrealized_r": -0.16,
+      "unrealized_pnl": -0.59,
+      "unrealized_r": -0.81,
       "entry_reason": "D1b short: Close=750.40, band=752.61, VWAP=755.16, tp0=742.15 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -94,16 +94,16 @@
         "action": "enter",
         "symbol": "AMD",
         "direction": "long",
-        "price": 529.17,
+        "price": 532.29,
         "prev_close": 585.69,
-        "gap_pct": -9.65,
-        "change_pct": -9.65,
+        "gap_pct": -9.12,
+        "change_pct": -9.12,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 521.23,
-        "target_price": 556.95,
+        "stop_price": 524.31,
+        "target_price": 560.24,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -111,133 +111,108 @@
           "Jensen Huang is Out as CEO, Nvidia Down 25% in a Month: Wall Street’s Highest Target Price Reaffirmed as Major Desks Slash Prices, Predicting 210% Gains",
           "S&P 500 Premarket Movers: Travelers, Palo Alto Networks Gain; Cisco, AMD Fall"
         ],
-        "reason_ro": "AMD beneficiază de un impuls de rotație a liderilor în sectorul AI și de perspective favorabile de diversificare pentru enterprise și hyperscalers, în timp ce Nvidia înregistrează scăderi. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AMD înregistrează o corecție de -9.12% pe fondul știrilor mixte din sector, însă analiștii mențin perspectivele optimiste privind diversificarea către enterprise și hyperscalers, oferind o oportunitate atractivă de cumpărare în valul de rotație a liderilor din AI. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-13T15:41:51.083842+00:00"
+        "evaluated_at": "2026-11-13T15:51:48.476533+00:00"
       },
       {
         "action": "enter",
-        "symbol": "MRVL",
-        "direction": "long",
-        "price": 150.84,
-        "prev_close": 164.44,
-        "gap_pct": -8.27,
-        "change_pct": -8.27,
+        "symbol": "LCID",
+        "direction": "short",
+        "price": 3.02,
+        "prev_close": 3.25,
+        "gap_pct": -6.92,
+        "change_pct": -6.92,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 148.58,
-        "target_price": 158.76,
+        "stop_price": 3.07,
+        "target_price": 2.86,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
-          "Marvell Soars 23%, Lumentum Up 23% in a Week. Jim Cramer Says It’s Not “a Broken Stock”",
-          "Lumentum Stocks Edge Higher as Marvell Deal Spread Widens to 19.7%",
-          "Marvell Stocks Edge Higher as NVIDIA Exit Weighs on Lumentum Deal Currency"
+          "Why Is Velo3D Stock Surging on Friday?",
+          "Lucid Group (LCID) Loses This Much; 2 Analysts Turn Bearish"
         ],
-        "reason_ro": "MRVL înregistrează o corecție de -8.27% în contextul unor știri mixte privind preluarea Lumentum și ieșirea NVIDIA, însă Jim Cramer și analiștii mențin o perspectivă pozitivă pe termen mediu bazată pe expunerea la sectorul AI. Oportunitate de cumpărare în dip pe o acțiune fundamental puternică, aplicând lecția de prudență pe volatilitatea inițială. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "LCID înregistrează o scădere puternică de aproape 7% pe fondul unor downgrade-uri recente din partea analiștilor și al sentimentului negativ din piață. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-13T15:42:02.720147+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "IONQ",
-        "direction": "short",
-        "price": 28.44,
-        "prev_close": 30.84,
-        "gap_pct": -7.78,
-        "change_pct": -7.78,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.07,
-        "stop_price": 29.01,
-        "target_price": 26.45,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "IonQ (IONQ) Reaches DARPA Stage C With Its Walking Cat Quantum Design",
-          "Why Pessimism For This Tech Giant Spilled Over to IonQ Inc. (IONQ) Shares"
-        ],
-        "reason_ro": "IONQ înregistrează o scădere puternică de -7.78% pe fondul contagiunii negative venite de la un alt gigant tech și al presiunii de vânzare intraday, în ciuda progresului DARPA. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-13T15:42:13.789185+00:00"
+        "evaluated_at": "2026-11-13T15:52:17.190354+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 529.17,
+        "price": 532.29,
         "prev_close": 585.69,
-        "gap_pct": -9.65,
+        "gap_pct": -9.12,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 31.5,
+        "price": 31.7,
         "prev_close": 34.48,
-        "gap_pct": -8.66,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 150.84,
-        "prev_close": 164.44,
-        "gap_pct": -8.27,
+        "gap_pct": -8.06,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 184.19,
+        "price": 184.69,
         "prev_close": 199.81,
-        "gap_pct": -7.82,
+        "gap_pct": -7.57,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MRVL",
+        "price": 152.0,
+        "prev_close": 164.44,
+        "gap_pct": -7.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 28.44,
+        "price": 28.64,
         "prev_close": 30.84,
-        "gap_pct": -7.78,
+        "gap_pct": -7.13,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MARA",
-        "price": 6.72,
-        "prev_close": 7.19,
-        "gap_pct": -6.54,
+        "symbol": "LCID",
+        "price": 3.02,
+        "prev_close": 3.25,
+        "gap_pct": -6.92,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "FCUV",
-        "price": 5.51,
+        "price": 5.68,
         "prev_close": 3.0,
-        "gap_pct": 83.67,
+        "gap_pct": 89.33,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NPCE",
-        "price": 6.07,
+        "price": 6.21,
         "prev_close": 12.02,
-        "gap_pct": -49.5,
+        "gap_pct": -48.34,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ZYN",
-        "price": 8.79,
+        "price": 8.85,
         "prev_close": 16.77,
-        "gap_pct": -47.61,
+        "gap_pct": -47.22,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "LFMD",
-        "price": 2.34,
-        "prev_close": 1.65,
-        "gap_pct": 41.39,
+        "symbol": "VTSI",
+        "price": 3.65,
+        "prev_close": 2.62,
+        "gap_pct": 39.31,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-13T15:41:45.335877+00:00",
+    "last_scan_at": "2026-11-13T15:51:47.013502+00:00",
     "telegram_sent_date": "2026-11-13"
   },
   "spy_start_price": 767.64,
