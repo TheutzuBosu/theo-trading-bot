@@ -1,10 +1,10 @@
 {
-  "meta_samples": 4,
+  "meta_samples": 6,
   "meta_active": false,
-  "updated_at": "2026-11-12T15:30:53.405109-05:00",
-  "total_trades_analyzed": 46,
+  "updated_at": "2026-11-13T15:30:58.676070-05:00",
+  "total_trades_analyzed": 53,
   "hourly_multipliers": {
-    "09:00": 0.5,
+    "09:00": 0.581,
     "10:00": 1.0,
     "11:00": 1.0,
     "12:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Botul a ieșit pe minus din cauza atingerii st</i>op-loss-ului înainte ca prețul să urce, deci reținem că trebuie să ajustăm nivelul de stop pentru a evita închiderile premature pe volatilitatea inițială.",
-    "Am cumpărat RKLB pe baza veștilor bune, dar prețul a scăzut direct în stop-loss, cauzând o pierdere mică de 0,82 $, așa că reținem să nu ne bazăm doar pe știri fără confirmarea graficului.",
-    "Am cumpărat LUNR pe baza rezultatelor financiare bune, dar prețul a scăzut direct la stop-loss, pierzând 0,30 $; reținem că entuziasmul fundamental nu garantează imunitatea la scăderi pe termen scurt.",
-    "Botul a cumpărat AVGO pe creșterea NVIDIA, dar prețul a scăzut imediat și a lovit stop-loss-ul, pierzând 0,30 $; reținem că trebuie să fim atenți la capcanele de moment (fomo) generate de știrile despre competitori.",
-    "Spargere falsă pe AMD (long): prețul a revenit rapid în banda de zgomot și stop-ul a limitat pierderea la -0.23 $ (-1.00R)."
+    "Am cumpărat SDS pe o presupusă scădere a pieței, dar prețul a crescut și ne-a lovit stop-loss-ul, pierzând 0,74$; reținem că trebuie să fim mai atenți când inversăm direcția în funcție de indici.",
+    "Botul a cumpărat AVGO pe scădere sperând într-o revenire rapidă, dar prețul a stagnat până a expirat timpul, rezultând o mică pierdere din comisioane; reținem că strategiile bazate pe timp pot eșua când impulsul pieței lipsește complet.",
+    "Tranzacția a fost închisă automat pe criteriul de timp fără nicio mișcare de preț, generând un profit infim de 0,02 $, motiv pentru care reținem să evităm intrarea contra-trend pe stocuri cu scăderi intraday majore, chiar și pe fondul unor știri fundamentale pozitive.",
+    "Botul a cumpărat MRVL pe o scădere generată de știri, a închis tranzacția la timp cu un profit mic de 0,47 $ (2,2R) și reținem că strategia de cumpărare în „dip” pe acțiuni solide cu expunere AI a funcționat.",
+    "Botul a închis tranzacția pe RIOT în profit mic din cauza expirării timpului, reținând că un catalizator pozitiv poate genera totuși un castig dacă riscul este controlat."
   ]
 }
