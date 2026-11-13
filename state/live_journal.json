@@ -1,13 +1,8 @@
 {
   "processed_signals": [
-    "MOVER|AMD|2026-11-13|long",
-    "MOVER|AVGO|2026-11-13|long",
-    "MOVER|IONQ|2026-11-13|long",
-    "MOVER|MRVL|2026-11-13|long",
-    "MOVER|RIOT|2026-11-13|long",
     "QQQ|2026-11-13T10:11:00-05:00|short",
     "SPY|2026-11-13T10:11:00-05:00|short"
   ],
   "open_trades": {},
-  "last_eod_date": "2026-11-12"
+  "last_eod_date": "2026-11-13"
 }
