@@ -31,7 +31,7 @@
       "initial_risk_dollars": 0.1104,
       "equity_at_entry": 509.04,
       "partial_done": false,
-      "last_price": 16.89,
+      "last_price": 16.865,
       "entry_reason": "Riot Platforms a primit o recomandare bullish din partea Wall Street în cadrul raportului recent, oferind un catalizator pozitiv pentru o revenire intraday după scăderea matinală. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RIOT LONG -> BUY RIOT (miză ~7.50$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 29.0,
@@ -111,7 +111,7 @@
       "initial_risk_dollars": 1.1979,
       "equity_at_entry": 509.13,
       "partial_done": false,
-      "last_price": 15.52,
+      "last_price": 15.53,
       "entry_reason": "D1b short: Close=675.85, band=680.02, VWAP=682.68, tp0=668.41 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 41.0,
