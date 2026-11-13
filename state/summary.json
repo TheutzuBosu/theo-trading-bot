@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 510.36,
-  "total_pnl": 10.36,
-  "total_pnl_pct": 2.07,
-  "today_pnl": 1.17,
-  "today_pnl_pct": 0.23,
-  "current_drawdown_pct": -0.7,
+  "equity": 510.12,
+  "total_pnl": 10.12,
+  "total_pnl_pct": 2.02,
+  "today_pnl": 0.93,
+  "today_pnl_pct": 0.18,
+  "current_drawdown_pct": -0.75,
   "max_drawdown_pct": -1.1,
-  "updated_at": "2026-11-13T11:12:28.383097-05:00",
+  "updated_at": "2026-11-13T11:13:34.702994-05:00",
   "positions": [
     {
       "symbol": "MRVL",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-13T10:41:45.335872-05:00",
       "qty": 0.0947,
       "entry_price": 151.266,
-      "current_price": 151.18,
+      "current_price": 151.385,
       "stop": 149.0,
       "initial_stop": 149.0,
-      "unrealized_pnl": -0.01,
-      "unrealized_r": -0.04,
+      "unrealized_pnl": 0.01,
+      "unrealized_r": 0.05,
       "entry_reason": "MRVL înregistrează o corecție de -8.27% în contextul unor știri mixte privind preluarea Lumentum și ieșirea NVIDIA, însă Jim Cramer și analiștii mențin o perspectivă pozitivă pe termen mediu bazată pe expunerea la sectorul AI. Oportunitate de cumpărare în dip pe o acțiune fundamental puternică, aplicând lecția de prudență pe volatilitatea inițială. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~14.30$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-13T10:12:24.088248-05:00",
       "qty": 14.974,
       "entry_price": 15.52,
-      "current_price": 15.585,
+      "current_price": 15.565,
       "stop": 15.44,
       "initial_stop": 15.44,
-      "unrealized_pnl": 0.97,
-      "unrealized_r": 0.81,
+      "unrealized_pnl": 0.67,
+      "unrealized_r": 0.56,
       "entry_reason": "D1b short: Close=675.85, band=680.02, VWAP=682.68, tp0=668.41 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-13T09:59:49.215877-05:00",
       "qty": 0.4488,
       "entry_price": 16.736,
-      "current_price": 17.12,
+      "current_price": 17.1151,
       "stop": 16.49,
       "initial_stop": 16.49,
       "unrealized_pnl": 0.17,
-      "unrealized_r": 1.56,
+      "unrealized_r": 1.54,
       "entry_reason": "Riot Platforms a primit o recomandare bullish din partea Wall Street în cadrul raportului recent, oferind un catalizator pozitiv pentru o revenire intraday după scăderea matinală. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RIOT LONG -> BUY RIOT (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-13T10:12:24.088248-05:00",
       "qty": 4.5136,
       "entry_price": 56.36,
-      "current_price": 56.4,
+      "current_price": 56.41,
       "stop": 56.2,
       "initial_stop": 56.2,
-      "unrealized_pnl": 0.18,
-      "unrealized_r": 0.25,
+      "unrealized_pnl": 0.23,
+      "unrealized_r": 0.31,
       "entry_reason": "D1b short: Close=750.40, band=752.61, VWAP=755.16, tp0=742.15 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -168,76 +168,76 @@
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 529.32,
+        "price": 527.12,
         "prev_close": 585.69,
-        "gap_pct": -9.63,
+        "gap_pct": -10.0,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 31.55,
+        "price": 31.77,
         "prev_close": 34.48,
-        "gap_pct": -8.5,
+        "gap_pct": -7.86,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 151.04,
+        "price": 151.65,
         "prev_close": 164.44,
-        "gap_pct": -8.15,
+        "gap_pct": -7.78,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 184.34,
+        "price": 184.88,
         "prev_close": 199.81,
-        "gap_pct": -7.74,
+        "gap_pct": -7.47,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
         "price": 3.02,
         "prev_close": 3.25,
-        "gap_pct": -7.23,
+        "gap_pct": -7.08,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 28.61,
-        "prev_close": 30.84,
-        "gap_pct": -7.23,
+        "symbol": "AVGO",
+        "price": 339.34,
+        "prev_close": 364.24,
+        "gap_pct": -6.84,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "FCUV",
-        "price": 5.88,
+        "price": 5.8,
         "prev_close": 3.0,
-        "gap_pct": 96.0,
+        "gap_pct": 93.33,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NPCE",
-        "price": 6.01,
+        "price": 6.11,
         "prev_close": 12.02,
-        "gap_pct": -50.0,
+        "gap_pct": -49.17,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ZYN",
-        "price": 8.81,
+        "price": 8.73,
         "prev_close": 16.77,
-        "gap_pct": -47.46,
+        "gap_pct": -47.94,
         "source": "alpaca_movers"
       },
       {
         "symbol": "VTSI",
-        "price": 3.66,
+        "price": 3.82,
         "prev_close": 2.62,
-        "gap_pct": 39.69,
+        "gap_pct": 45.95,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-13T16:02:48.432732+00:00",
+    "last_scan_at": "2026-11-13T16:13:34.703000+00:00",
     "telegram_sent_date": "2026-11-13"
   },
   "spy_start_price": 767.64,
