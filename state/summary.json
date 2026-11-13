@@ -2,15 +2,29 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.19,
-  "total_pnl": 9.19,
+  "equity": 509.2,
+  "total_pnl": 9.2,
   "total_pnl_pct": 1.84,
-  "today_pnl": 0.0,
+  "today_pnl": 0.01,
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -0.93,
   "max_drawdown_pct": -0.93,
-  "updated_at": "2026-11-13T09:48:42.837183-05:00",
-  "positions": [],
+  "updated_at": "2026-11-13T09:49:46.648574-05:00",
+  "positions": [
+    {
+      "symbol": "AMD",
+      "direction": "long",
+      "entry_time": "2026-11-13T09:49:46.648574-05:00",
+      "qty": 0.0182,
+      "entry_price": 547.296,
+      "current_price": 547.6375,
+      "stop": 539.08,
+      "initial_stop": 539.08,
+      "unrealized_pnl": 0.01,
+      "unrealized_r": 0.04,
+      "entry_reason": "AMD beneficiază de rotația liderilor în sectorul AI și de perspective solide de diversificare spre enterprise și hyperscalers, în timp ce Nvidia înregistrează corecții, oferind un punct de intrare favorabil pentru o revenire intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~9.98$, R:R 1:4.5)"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-13T14:29:32.523979+00:00",
     "risk_regime": "NORMAL",
@@ -39,90 +53,92 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "LCID",
-        "direction": "short",
-        "price": 3.15,
-        "prev_close": 3.25,
-        "gap_pct": -3.23,
-        "change_pct": -3.23,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
+        "symbol": "AMD",
+        "direction": "long",
+        "price": 548.38,
+        "prev_close": 585.69,
+        "gap_pct": -6.37,
+        "change_pct": -6.37,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 3.2,
-        "target_price": 2.98,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
+        "target_pct": 0.0675,
+        "stop_price": 540.15,
+        "target_price": 585.4,
+        "expected_profit_dollars": 1.35,
+        "max_loss_dollars": 0.3,
         "headlines": [
-          "Lucid Group (LCID) Loses This Much; 2 Analysts Turn Bearish"
+          "AMD’s Path to $700 Just Got Much Easier as Enterprise and Hyperscaler Diversification Tailwinds Rise",
+          "Jensen Huang is Out as CEO, Nvidia Down 25% in a Month: Wall Street’s Highest Target Price Reaffirmed as Major Desks Slash Prices, Predicting 210% Gains",
+          "S&P 500 Premarket Movers: Travelers, Palo Alto Networks Gain; Cisco, AMD Fall"
         ],
-        "reason_ro": "LCID înregistrează o scădere de -3.23% și două retrogradări recente din partea analiștilor, confirmând un sentiment negativ puternic care favorizează poziția de scurtă durată. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AMD beneficiază de rotația liderilor în sectorul AI și de perspective solide de diversificare spre enterprise și hyperscalers, în timp ce Nvidia înregistrează corecții, oferind un punct de intrare favorabil pentru o revenire intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-13T14:40:06.418562+00:00"
+        "evaluated_at": "2026-11-13T14:50:35.815556+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "IONQ",
-        "price": 29.19,
+        "price": 28.66,
         "prev_close": 30.84,
-        "gap_pct": -5.35,
+        "gap_pct": -7.05,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 32.76,
+        "price": 32.12,
         "prev_close": 34.48,
-        "gap_pct": -4.99,
+        "gap_pct": -6.84,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 560.58,
+        "price": 548.38,
         "prev_close": 585.69,
-        "gap_pct": -4.29,
+        "gap_pct": -6.37,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "RKLB",
-        "price": 61.73,
-        "prev_close": 64.08,
-        "gap_pct": -3.66,
+        "symbol": "LUNR",
+        "price": 12.28,
+        "prev_close": 13.03,
+        "gap_pct": -5.76,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RDW",
-        "price": 7.73,
+        "price": 7.62,
         "prev_close": 8.02,
-        "gap_pct": -3.62,
+        "gap_pct": -5.05,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "LCID",
-        "price": 3.15,
-        "prev_close": 3.25,
-        "gap_pct": -3.23,
+        "symbol": "ARM",
+        "price": 189.84,
+        "prev_close": 199.81,
+        "gap_pct": -4.99,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "FCUV",
-        "price": 6.16,
+        "price": 7.05,
         "prev_close": 3.0,
-        "gap_pct": 105.35,
+        "gap_pct": 135.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ZYN",
-        "price": 8.69,
+        "price": 8.75,
         "prev_close": 16.77,
-        "gap_pct": -48.18,
+        "gap_pct": -47.82,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NPCE",
-        "price": 6.32,
+        "price": 6.33,
         "prev_close": 12.02,
-        "gap_pct": -47.42,
+        "gap_pct": -47.34,
         "source": "alpaca_movers"
       },
       {
@@ -133,7 +149,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-13T14:39:36.961343+00:00",
+    "last_scan_at": "2026-11-13T14:49:46.648577+00:00",
     "telegram_sent_date": "2026-11-13"
   },
   "spy_start_price": 767.64,
