@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "symbol": "AMD",
+    "direction": "long",
+    "entry_time": "2026-11-13T09:49:46.648574-05:00",
+    "qty": 0.0182,
+    "entry_price": 547.296,
+    "current_price": 547.6375,
+    "stop": 539.08,
+    "initial_stop": 539.08,
+    "unrealized_pnl": 0.01,
+    "unrealized_r": 0.04,
+    "entry_reason": "AMD beneficiază de rotația liderilor în sectorul AI și de perspective solide de diversificare spre enterprise și hyperscalers, în timp ce Nvidia înregistrează corecții, oferind un punct de intrare favorabil pentru o revenire intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~9.98$, R:R 1:4.5)"
+  }
+]
