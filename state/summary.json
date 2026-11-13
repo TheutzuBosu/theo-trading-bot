@@ -12,21 +12,21 @@
   "updated_at": "2026-11-12T15:30:53.405109-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-13T13:44:01.874329+00:00",
+    "updated_at": "2026-11-13T14:29:32.523979+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
-        "price": 761.91,
+        "price": 760.34,
         "prev_close": 757.16,
-        "gap_pct": 0.63
+        "gap_pct": 0.42
       },
       "QQQ": {
-        "price": 692.97,
+        "price": 689.4,
         "prev_close": 688.2,
-        "gap_pct": 0.69
+        "gap_pct": 0.18
       }
     },
-    "explanation_ro": "Piața pre-market deschide pe verde, cu SPY în creștere cu 0.63% și QQQ cu 0.69%, susținută de lipsa unor raportări financiare majore negative și de o dinamică generală favorabilă riscului. Știrile recente privind reglementările crypto și excedentul de pe piața petrolului nu au un impact direct major asupra tehnologiei sau indicilor, deși ancheta privind Nvidia introduce o ușoară prudență. În aceste condiții, direcția favorizată la deschidere este Long, continuând impulsul pozitiv din pre-market.",
+    "explanation_ro": "Piața deschide în ușor teritoriu pozitiv (SPY +0.42%, QQQ +0.18%), susținută de lipsa unor raportări financiare majore negative și de un climat general calm, în pofida tensiunilor geopolitice legate de Iran și a controversei privind Nvidia. Având în vedere aceste gap-uri moderat-pozitive și absența unor știri macroeconomice majore care să schimbe direcția, la deschidere este favorizată o strategie de tip Long, cu atenție la posibile retrageri tehnice.",
     "headlines": [
       "CFTC Chair Selig tells CNBC crypto industry is embracing agency rules as legislation hopes fade",
       "IAEA increasingly concerned about Iranian enrichment plant, its report says - Reuters",
@@ -60,17 +60,17 @@
         "source": "watchlist_snapshot"
       },
       {
+        "symbol": "NIO",
+        "price": 3.0,
+        "prev_close": 3.23,
+        "gap_pct": -7.26,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "MRNA",
         "price": 231.35,
         "prev_close": 248.69,
         "gap_pct": -6.97,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NIO",
-        "price": 3.01,
-        "prev_close": 3.23,
-        "gap_pct": -6.96,
         "source": "watchlist_snapshot"
       },
       {
@@ -109,7 +109,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-13T13:43:27.383200+00:00",
+    "last_scan_at": "2026-11-13T14:29:00.033649+00:00",
     "telegram_sent_date": "2026-11-13"
   },
   "spy_start_price": 767.64,
