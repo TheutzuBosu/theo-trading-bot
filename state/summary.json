@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.03,
   "current_drawdown_pct": -1.12,
   "max_drawdown_pct": -1.13,
-  "updated_at": "2026-11-16T10:20:53.722817-05:00",
+  "updated_at": "2026-11-16T10:21:59.103866-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-16T14:29:34.392440+00:00",
@@ -82,126 +82,126 @@
         "action": "enter",
         "symbol": "MRVL",
         "direction": "long",
-        "price": 145.55,
+        "price": 145.13,
         "prev_close": 156.75,
-        "gap_pct": -7.15,
-        "change_pct": -7.15,
+        "gap_pct": -7.41,
+        "change_pct": -7.41,
         "stake_dollars": 15.0,
-        "rr_ratio": 4.5,
+        "rr_ratio": 3.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 143.37,
-        "target_price": 155.37,
-        "expected_profit_dollars": 1.01,
+        "target_pct": 0.0525,
+        "stop_price": 142.95,
+        "target_price": 152.75,
+        "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
           "S&P 500 Premarket Losers on Nov. 16, 2026: COIN, LITE, COHR",
           "Why Did Credo Technology Stock Fall?",
           "Marvell’s Trillion-Dollar Target"
         ],
-        "reason_ro": "MRVL scade cu 7.15% pe fondul unor corecții sectoriale matinale, dar se menține viziunea pe termen lung legată de ținta de un trilion de dolari și expunerea pe AI, oferind o oportunitate validă de cumpărare în dip după trecerea primelor 15 minute. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.22 $ / țintă profit +1.01 $).",
+        "reason_ro": "MRVL scade cu 7.41% într-o mișcare intraday severă, dar fundamentele pe termen lung rămân solide având în vedere ținta de trilioane de dolari și expunerea la AI. Aplicăm lecția anterioară de succes pe cumpărarea în 'dip' pentru o acțiune solidă. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-16T15:11:45.745070+00:00"
+        "evaluated_at": "2026-11-16T15:22:14.224187+00:00"
       },
       {
         "action": "enter",
-        "symbol": "MU",
+        "symbol": "COIN",
         "direction": "short",
-        "price": 722.94,
-        "prev_close": 778.11,
-        "gap_pct": -7.09,
-        "change_pct": -7.09,
+        "price": 118.38,
+        "prev_close": 127.59,
+        "gap_pct": -7.22,
+        "change_pct": -7.22,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 733.78,
-        "target_price": 684.99,
+        "stop_price": 120.16,
+        "target_price": 112.17,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
           "S&P 500 Premarket Losers on Nov. 16, 2026: COIN, LITE, COHR",
-          "BTAL Buys the Market’s Calmest Stocks and Shorts Its Wildest. It Is Built to Rise When Stocks Fall",
-          "Renaissance Technologies Sold 99.7% Of Its $1.42 Billion Nvidia Stake Before Jensen Huang’s Exit, While Building A $1.62 Billion Stake In Another Chip Stock"
+          "Bitcoin Prices Tumble and Bring Coinbase and Strategy Stocks Down With Them",
+          "Should Equity Perpetual Futures Require Action From Coinbase (COIN) Investors?"
         ],
-        "reason_ro": "MU înregistrează o scădere puternică de -7.09% pe fondul scepticismului legat de sustenabilitatea prețurilor la memorii, confirmând presiunea la vânzare din sectorul semiconductorilor. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "COIN scade puternic cu 7.22% pe fondul prăbușirii prețului Bitcoin și a sentimentului puternic negativ din sectorul cripto. Trendul intraday este clar descendent, oferind o oportunitate de short cu risc controlat. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-16T15:11:51.722145+00:00"
+        "evaluated_at": "2026-11-16T15:22:25.502237+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LCID",
-        "price": 2.71,
+        "price": 2.67,
         "prev_close": 2.96,
-        "gap_pct": -8.46,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 145.55,
-        "prev_close": 156.75,
-        "gap_pct": -7.15,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MU",
-        "price": 722.94,
-        "prev_close": 778.11,
-        "gap_pct": -7.09,
+        "gap_pct": -9.48,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 177.8,
+        "price": 176.21,
         "prev_close": 190.56,
-        "gap_pct": -6.7,
+        "gap_pct": -7.53,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "RDW",
-        "price": 7.22,
-        "prev_close": 7.74,
-        "gap_pct": -6.66,
+        "symbol": "MRVL",
+        "price": 145.13,
+        "prev_close": 156.75,
+        "gap_pct": -7.41,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 26.94,
+        "price": 26.73,
         "prev_close": 28.85,
-        "gap_pct": -6.62,
+        "gap_pct": -7.35,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "COIN",
+        "price": 118.38,
+        "prev_close": 127.59,
+        "gap_pct": -7.22,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RBLX",
+        "price": 46.34,
+        "prev_close": 49.92,
+        "gap_pct": -7.18,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HZN",
-        "price": 86.68,
+        "price": 87.69,
         "prev_close": 1.76,
-        "gap_pct": 4825.0,
+        "gap_pct": 4882.39,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GMM",
-        "price": 2.48,
+        "price": 2.6,
         "prev_close": 1.02,
-        "gap_pct": 143.14,
+        "gap_pct": 154.66,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "AVAZ",
-        "price": 6.9,
-        "prev_close": 9.87,
-        "gap_pct": -30.06,
+        "symbol": "AKAN",
+        "price": 2.06,
+        "prev_close": 1.36,
+        "gap_pct": 51.46,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "FCUV",
-        "price": 4.98,
-        "prev_close": 7.08,
-        "gap_pct": -29.69,
+        "symbol": "MTEX",
+        "price": 4.22,
+        "prev_close": 6.3,
+        "gap_pct": -33.02,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-16T15:11:37.280189+00:00",
+    "last_scan_at": "2026-11-16T15:21:59.103871+00:00",
     "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
