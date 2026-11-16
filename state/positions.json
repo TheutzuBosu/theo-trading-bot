@@ -5,11 +5,11 @@
     "entry_time": "2026-11-16T13:17:42.266822-05:00",
     "qty": 4.4042,
     "entry_price": 57.6968,
-    "current_price": 57.695,
+    "current_price": 57.6705,
     "stop": 57.42,
     "initial_stop": 57.42,
-    "unrealized_pnl": -0.01,
-    "unrealized_r": -0.01,
+    "unrealized_pnl": -0.12,
+    "unrealized_r": -0.1,
     "entry_reason": "D1b short: Close=742.16, band=742.61, VWAP=745.79, tp0=734.00 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
   }
 ]
