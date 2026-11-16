@@ -1,10 +1,10 @@
 {
-  "meta_samples": 6,
+  "meta_samples": 7,
   "meta_active": false,
-  "updated_at": "2026-11-13T15:30:58.676070-05:00",
-  "total_trades_analyzed": 53,
+  "updated_at": "2026-11-16T15:30:47.310729-05:00",
+  "total_trades_analyzed": 55,
   "hourly_multipliers": {
-    "09:00": 0.581,
+    "09:00": 0.542,
     "10:00": 1.0,
     "11:00": 1.0,
     "12:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Am cumpărat SDS pe o presupusă scădere a pieței, dar prețul a crescut și ne-a lovit stop-loss-ul, pierzând 0,74$; reținem că trebuie să fim mai atenți când inversăm direcția în funcție de indici.",
-    "Botul a cumpărat AVGO pe scădere sperând într-o revenire rapidă, dar prețul a stagnat până a expirat timpul, rezultând o mică pierdere din comisioane; reținem că strategiile bazate pe timp pot eșua când impulsul pieței lipsește complet.",
     "Tranzacția a fost închisă automat pe criteriul de timp fără nicio mișcare de preț, generând un profit infim de 0,02 $, motiv pentru care reținem să evităm intrarea contra-trend pe stocuri cu scăderi intraday majore, chiar și pe fondul unor știri fundamentale pozitive.",
     "Botul a cumpărat MRVL pe o scădere generată de știri, a închis tranzacția la timp cu un profit mic de 0,47 $ (2,2R) și reținem că strategia de cumpărare în „dip” pe acțiuni solide cu expunere AI a funcționat.",
-    "Botul a închis tranzacția pe RIOT în profit mic din cauza expirării timpului, reținând că un catalizator pozitiv poate genera totuși un castig dacă riscul este controlat."
+    "Botul a închis tranzacția pe RIOT în profit mic din cauza expirării timpului, reținând că un catalizator pozitiv poate genera totuși un castig dacă riscul este controlat.",
+    "Prețul a lovit direct stop-loss-ul din cauza pieței slabe, așa că reținem că trebuie să fim mai atenți la știrile negative generale înainte de a cumpăra în scădere.",
+    "Am cumpărat ETF-ul invers SDS pe o scădere a pieței și am ieșit la limită de timp cu un profit mic de 1,57 $, reținând că trebuie să urmărim mai atent momentul optim de ieșire înainte de expirarea timpului."
   ]
 }
