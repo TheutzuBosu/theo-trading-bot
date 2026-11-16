@@ -1,11 +1,7 @@
 {
   "processed_signals": [
-    "MOVER|COIN|2026-11-16|short",
-    "MOVER|MRVL|2026-11-16|long",
-    "QQQ|2026-11-13T10:11:00-05:00|short",
-    "SPY|2026-11-13T10:11:00-05:00|short",
     "SPY|2026-11-16T13:15:00-05:00|short"
   ],
   "open_trades": {},
-  "last_eod_date": "2026-11-13"
+  "last_eod_date": "2026-11-16"
 }
