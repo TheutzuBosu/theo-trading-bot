@@ -2,15 +2,29 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 508.24,
-  "total_pnl": 8.24,
+  "equity": 508.25,
+  "total_pnl": 8.25,
   "total_pnl_pct": 1.65,
-  "today_pnl": -0.17,
+  "today_pnl": -0.16,
   "today_pnl_pct": -0.03,
-  "current_drawdown_pct": -1.12,
+  "current_drawdown_pct": -1.11,
   "max_drawdown_pct": -1.13,
-  "updated_at": "2026-11-16T13:16:36.472049-05:00",
-  "positions": [],
+  "updated_at": "2026-11-16T13:17:42.266822-05:00",
+  "positions": [
+    {
+      "symbol": "SDS",
+      "direction": "long",
+      "entry_time": "2026-11-16T13:17:42.266822-05:00",
+      "qty": 4.4042,
+      "entry_price": 57.6968,
+      "current_price": 57.7,
+      "stop": 57.42,
+      "initial_stop": 57.42,
+      "unrealized_pnl": 0.01,
+      "unrealized_r": 0.01,
+      "entry_reason": "D1b short: Close=742.16, band=742.61, VWAP=745.79, tp0=734.00 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-16T14:29:34.392440+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
@@ -80,103 +94,103 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "INTC",
+        "symbol": "HOOD",
         "direction": "short",
-        "price": 55.73,
-        "prev_close": 59.66,
-        "gap_pct": -6.6,
-        "change_pct": -6.6,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.0,
+        "price": 72.04,
+        "prev_close": 77.87,
+        "gap_pct": -7.49,
+        "change_pct": -7.49,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
         "stop_pct": 0.015,
-        "target_pct": 0.06,
-        "stop_price": 56.57,
-        "target_price": 52.39,
-        "expected_profit_dollars": 1.2,
-        "max_loss_dollars": 0.3,
+        "target_pct": 0.0525,
+        "stop_price": 73.12,
+        "target_price": 68.26,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "Intel stock falls after investors file class action lawsuit against the company",
-          "Micron Vs. Intel: Margins Tell Investors Exactly Why One of These is a Definite No Go to End 2027",
-          "Chip stocks fall on US semiconductor restrictions: AlphaCheck"
+          "Crypto Stocks Slide as Bitcoin Sinks and Strategy Leads the Retreat",
+          "SCHW Client Assets Hit $13.27T in October: Will the Momentum Continue?",
+          "Bitcoin's November rout echoes past crypto downturns"
         ],
-        "reason_ro": "INTC scade puternic cu 6.60% pe fondul unor știri extrem de negative: proces colectiv din partea acționarilor legat de încetinirea segmentului PC, restricții dure pe semiconductoare în SUA și dumping din partea unui fond major. Aplicăm lecția de a evita cumpărarea în scădere ('dip buying') pe stocuri cu presiune fundamentală negativă majoră și deschidem o poziție short intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $).",
+        "reason_ro": "HOOD înregistrează o scădere puternică de -7.49% pe fondul corecției majore din piața crypto și al prăbușirii Bitcoin, având un impuls intraday negativ clar confirmat. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-16T16:55:56.858844+00:00"
+        "evaluated_at": "2026-11-16T18:18:12.830801+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 29.15,
+        "price": 28.87,
         "prev_close": 32.59,
-        "gap_pct": -10.57,
+        "gap_pct": -11.43,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 11.75,
+        "price": 11.74,
         "prev_close": 13.0,
-        "gap_pct": -9.62,
+        "gap_pct": -9.69,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RDW",
-        "price": 7.09,
+        "price": 7.08,
         "prev_close": 7.74,
-        "gap_pct": -8.27,
+        "gap_pct": -8.4,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 26.5,
+        "price": 26.43,
         "prev_close": 28.85,
-        "gap_pct": -8.15,
+        "gap_pct": -8.39,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 176.16,
+        "price": 176.0,
         "prev_close": 190.56,
-        "gap_pct": -7.56,
+        "gap_pct": -7.64,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HOOD",
-        "price": 72.09,
+        "price": 72.04,
         "prev_close": 77.87,
-        "gap_pct": -7.42,
+        "gap_pct": -7.49,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HZN",
-        "price": 87.16,
+        "price": 87.22,
         "prev_close": 1.76,
-        "gap_pct": 4851.99,
+        "gap_pct": 4855.4,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GDHG",
-        "price": 4.09,
+        "price": 4.76,
         "prev_close": 0.83,
-        "gap_pct": 395.58,
+        "gap_pct": 476.75,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GMM",
-        "price": 2.2,
+        "price": 2.1,
         "prev_close": 1.02,
-        "gap_pct": 115.69,
+        "gap_pct": 105.39,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NCT",
-        "price": 11.22,
+        "price": 10.8,
         "prev_close": 6.22,
-        "gap_pct": 80.25,
+        "gap_pct": 73.5,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-16T18:07:22.181594+00:00",
+    "last_scan_at": "2026-11-16T18:17:42.266829+00:00",
     "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
