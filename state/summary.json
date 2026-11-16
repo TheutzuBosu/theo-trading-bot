@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.03,
   "current_drawdown_pct": -1.12,
   "max_drawdown_pct": -1.13,
-  "updated_at": "2026-11-16T13:06:17.452509-05:00",
+  "updated_at": "2026-11-16T13:07:22.181588-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-16T14:29:34.392440+00:00",
@@ -107,76 +107,76 @@
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 29.38,
+        "price": 29.15,
         "prev_close": 32.59,
-        "gap_pct": -9.86,
+        "gap_pct": -10.57,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 11.81,
+        "price": 11.75,
         "prev_close": 13.0,
-        "gap_pct": -9.15,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 26.57,
-        "prev_close": 28.85,
-        "gap_pct": -7.92,
+        "gap_pct": -9.62,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RDW",
-        "price": 7.14,
+        "price": 7.09,
         "prev_close": 7.74,
-        "gap_pct": -7.69,
+        "gap_pct": -8.27,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 26.5,
+        "prev_close": 28.85,
+        "gap_pct": -8.15,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 176.19,
+        "price": 176.16,
         "prev_close": 190.56,
-        "gap_pct": -7.54,
+        "gap_pct": -7.56,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "RBLX",
-        "price": 46.32,
-        "prev_close": 49.92,
-        "gap_pct": -7.21,
+        "symbol": "HOOD",
+        "price": 72.09,
+        "prev_close": 77.87,
+        "gap_pct": -7.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HZN",
-        "price": 87.25,
+        "price": 87.16,
         "prev_close": 1.76,
-        "gap_pct": 4857.39,
+        "gap_pct": 4851.99,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GDHG",
-        "price": 3.85,
+        "price": 4.09,
         "prev_close": 0.83,
-        "gap_pct": 366.72,
+        "gap_pct": 395.58,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GMM",
-        "price": 2.29,
+        "price": 2.2,
         "prev_close": 1.02,
-        "gap_pct": 124.02,
+        "gap_pct": 115.69,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NCT",
-        "price": 9.76,
+        "price": 11.22,
         "prev_close": 6.22,
-        "gap_pct": 56.79,
+        "gap_pct": 80.25,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-16T17:57:19.139619+00:00",
+    "last_scan_at": "2026-11-16T18:07:22.181594+00:00",
     "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
