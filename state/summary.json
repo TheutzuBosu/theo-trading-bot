@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.03,
   "current_drawdown_pct": -1.12,
   "max_drawdown_pct": -1.13,
-  "updated_at": "2026-11-16T10:42:05.816349-05:00",
+  "updated_at": "2026-11-16T10:43:09.814564-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-16T14:29:34.392440+00:00",
@@ -80,128 +80,103 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MRVL",
-        "direction": "long",
-        "price": 145.53,
-        "prev_close": 156.75,
-        "gap_pct": -7.16,
-        "change_pct": -7.16,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 143.35,
-        "target_price": 153.17,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "S&P 500 Premarket Losers on Nov. 16, 2026: COIN, LITE, COHR",
-          "Why Did Credo Technology Stock Fall?",
-          "Marvell’s Trillion-Dollar Target"
-        ],
-        "reason_ro": "MRVL scade cu peste 7% pe fondul unor corecții sectoriale, dar istoricul arată că strategia de cumpărare în dip pe acțiuni solide cu expunere AI funcționează, iar obiectivul de un trilion de dolari oferă un suport fundamental puternic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-16T15:33:29.707182+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MARA",
+        "symbol": "ASTS",
         "direction": "short",
-        "price": 6.5,
-        "prev_close": 6.99,
-        "gap_pct": -7.01,
-        "change_pct": -7.01,
+        "price": 30.19,
+        "prev_close": 32.59,
+        "gap_pct": -7.38,
+        "change_pct": -7.38,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 6.6,
-        "target_price": 6.16,
+        "stop_price": 30.64,
+        "target_price": 28.61,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
           "Stock Market Today: Jensen Huang Eyes a Comeback as Nvidia Closes Its Worst Week Since April 2025",
-          "Bitcoin Drops to $64,000 After Brutal Weekend Selloff: What Is Going On?",
-          "Piper Sandler Maintains Overweight on MARA Holdings, Lowers Price Target to $10"
+          "ASTS, RKLB, LUNR And FLY Fall After ULA Rocket Failure Strands 40 Amazon Satellites — Why One Analyst Wants Musk To Free Up Falcon 9 Flights",
+          "Can AT&T (T) Turn Satellite Handoffs Into A Real Wireless Edge?"
         ],
-        "reason_ro": "MARA înregistrează o scădere de -7.01% pe fondul corecției Bitcoin la 64.000$ și al reducerii țintei de preț la 10$ de către Piper Sandler, menținând un momentum descendent puternic în timpul sesiunii principale. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "ASTS scade puternic cu 7.38% pe fondul eșecului rachetei ULA care a lăsat blocați sateliții Amazon, un eveniment negativ sectorial care justifică o intrare pe urs. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-16T15:33:35.906997+00:00"
+        "evaluated_at": "2026-11-16T15:43:24.800972+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "LCID",
-        "price": 2.71,
+        "price": 2.69,
         "prev_close": 2.96,
-        "gap_pct": -8.46,
+        "gap_pct": -8.97,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 26.58,
+        "price": 26.65,
         "prev_close": 28.85,
-        "gap_pct": -7.87,
+        "gap_pct": -7.63,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ASTS",
+        "price": 30.19,
+        "prev_close": 32.59,
+        "gap_pct": -7.38,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RDW",
+        "price": 7.17,
+        "prev_close": 7.74,
+        "gap_pct": -7.3,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "LUNR",
+        "price": 12.07,
+        "prev_close": 13.0,
+        "gap_pct": -7.12,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 176.14,
+        "price": 177.33,
         "prev_close": 190.56,
-        "gap_pct": -7.57,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "COIN",
-        "price": 118.1,
-        "prev_close": 127.59,
-        "gap_pct": -7.44,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 145.53,
-        "prev_close": 156.75,
-        "gap_pct": -7.16,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MARA",
-        "price": 6.5,
-        "prev_close": 6.99,
-        "gap_pct": -7.01,
+        "gap_pct": -6.95,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HZN",
-        "price": 87.36,
+        "price": 86.89,
         "prev_close": 1.76,
-        "gap_pct": 4863.64,
+        "gap_pct": 4836.65,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GDHG",
-        "price": 2.28,
+        "price": 3.12,
         "prev_close": 0.83,
-        "gap_pct": 176.17,
+        "gap_pct": 278.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GMM",
-        "price": 2.49,
+        "price": 2.56,
         "prev_close": 1.02,
-        "gap_pct": 143.95,
+        "gap_pct": 150.98,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "AKAN",
-        "price": 2.03,
-        "prev_close": 1.36,
-        "gap_pct": 49.46,
+        "symbol": "MTEX",
+        "price": 4.14,
+        "prev_close": 6.3,
+        "gap_pct": -34.26,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-16T15:33:01.745201+00:00",
+    "last_scan_at": "2026-11-16T15:43:09.814568+00:00",
     "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
