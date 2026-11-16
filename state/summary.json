@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.03,
   "current_drawdown_pct": -1.12,
   "max_drawdown_pct": -1.13,
-  "updated_at": "2026-11-16T10:10:33.849472-05:00",
+  "updated_at": "2026-11-16T10:11:37.280185-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-16T14:29:34.392440+00:00",
@@ -82,101 +82,126 @@
         "action": "enter",
         "symbol": "MRVL",
         "direction": "long",
-        "price": 147.87,
+        "price": 145.55,
         "prev_close": 156.75,
-        "gap_pct": -5.67,
-        "change_pct": -5.67,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
+        "gap_pct": -7.15,
+        "change_pct": -7.15,
+        "stake_dollars": 15.0,
+        "rr_ratio": 4.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 145.65,
-        "target_price": 155.63,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "target_pct": 0.0675,
+        "stop_price": 143.37,
+        "target_price": 155.37,
+        "expected_profit_dollars": 1.01,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "S&P 500 Premarket Losers on Nov. 16, 2026: COIN, LITE, COHR",
           "Why Did Credo Technology Stock Fall?",
           "Marvell’s Trillion-Dollar Target"
         ],
-        "reason_ro": "MRVL scade cu 5.67% în ședința principală, dar are expunere solidă pe AI și o țintă ambițioasă pe termen lung, replicând strategia de success de cumpărare în dip pe acțiuni fundamentale puternice. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "MRVL scade cu 7.15% pe fondul unor corecții sectoriale matinale, dar se menține viziunea pe termen lung legată de ținta de un trilion de dolari și expunerea pe AI, oferind o oportunitate validă de cumpărare în dip după trecerea primelor 15 minute. Intrare LONG cu miză 15 $, Risc:Reward 1:4.5 (risc -0.22 $ / țintă profit +1.01 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-16T14:50:21.436241+00:00"
+        "evaluated_at": "2026-11-16T15:11:45.745070+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "MU",
+        "direction": "short",
+        "price": 722.94,
+        "prev_close": 778.11,
+        "gap_pct": -7.09,
+        "change_pct": -7.09,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 733.78,
+        "target_price": 684.99,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "S&P 500 Premarket Losers on Nov. 16, 2026: COIN, LITE, COHR",
+          "BTAL Buys the Market’s Calmest Stocks and Shorts Its Wildest. It Is Built to Rise When Stocks Fall",
+          "Renaissance Technologies Sold 99.7% Of Its $1.42 Billion Nvidia Stake Before Jensen Huang’s Exit, While Building A $1.62 Billion Stake In Another Chip Stock"
+        ],
+        "reason_ro": "MU înregistrează o scădere puternică de -7.09% pe fondul scepticismului legat de sustenabilitatea prețurilor la memorii, confirmând presiunea la vânzare din sectorul semiconductorilor. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-16T15:11:51.722145+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "MRVL",
-        "price": 145.37,
-        "prev_close": 156.75,
-        "gap_pct": -7.26,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "LCID",
-        "price": 2.75,
+        "price": 2.71,
         "prev_close": 2.96,
-        "gap_pct": -6.77,
+        "gap_pct": -8.46,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 27.0,
-        "prev_close": 28.85,
-        "gap_pct": -6.41,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RBLX",
-        "price": 46.73,
-        "prev_close": 49.92,
-        "gap_pct": -6.39,
+        "symbol": "MRVL",
+        "price": 145.55,
+        "prev_close": 156.75,
+        "gap_pct": -7.15,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 729.57,
+        "price": 722.94,
         "prev_close": 778.11,
-        "gap_pct": -6.24,
+        "gap_pct": -7.09,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 179.03,
+        "price": 177.8,
         "prev_close": 190.56,
-        "gap_pct": -6.05,
+        "gap_pct": -6.7,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RDW",
+        "price": 7.22,
+        "prev_close": 7.74,
+        "gap_pct": -6.66,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 26.94,
+        "prev_close": 28.85,
+        "gap_pct": -6.62,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HZN",
-        "price": 86.69,
+        "price": 86.68,
         "prev_close": 1.76,
-        "gap_pct": 4825.57,
+        "gap_pct": 4825.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GMM",
-        "price": 2.88,
+        "price": 2.48,
         "prev_close": 1.02,
-        "gap_pct": 182.45,
+        "gap_pct": 143.14,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "AKAN",
-        "price": 2.1,
-        "prev_close": 1.36,
-        "gap_pct": 54.4,
+        "symbol": "AVAZ",
+        "price": 6.9,
+        "prev_close": 9.87,
+        "gap_pct": -30.06,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "CLRO",
-        "price": 4.54,
-        "prev_close": 3.37,
-        "gap_pct": 34.72,
+        "symbol": "FCUV",
+        "price": 4.98,
+        "prev_close": 7.08,
+        "gap_pct": -29.69,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-16T15:01:04.384376+00:00",
+    "last_scan_at": "2026-11-16T15:11:37.280189+00:00",
     "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
