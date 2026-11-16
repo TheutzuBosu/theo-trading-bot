@@ -12,223 +12,171 @@
   "updated_at": "2026-11-13T15:30:58.676070-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-13T14:29:32.523979+00:00",
-    "risk_regime": "NORMAL",
+    "updated_at": "2026-11-16T13:44:01.484096+00:00",
+    "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 760.34,
-        "prev_close": 757.16,
-        "gap_pct": 0.42
+        "price": 749.06,
+        "prev_close": 754.27,
+        "gap_pct": -0.69
       },
       "QQQ": {
-        "price": 689.4,
-        "prev_close": 688.2,
-        "gap_pct": 0.18
+        "price": 669.9,
+        "prev_close": 680.01,
+        "gap_pct": -1.49
       }
     },
-    "explanation_ro": "Piața deschide în ușor teritoriu pozitiv (SPY +0.42%, QQQ +0.18%), susținută de lipsa unor raportări financiare majore negative și de un climat general calm, în pofida tensiunilor geopolitice legate de Iran și a controversei privind Nvidia. Având în vedere aceste gap-uri moderat-pozitive și absența unor știri macroeconomice majore care să schimbe direcția, la deschidere este favorizată o strategie de tip Long, cu atenție la posibile retrageri tehnice.",
+    "explanation_ro": "Piața deschide în scădere pe fondul unor presiuni macroeconomice și geopolitice, reflectate de creșterea costurilor de transport și tensiunile internaționale, investitorii urmărind cu prudență raportările companiilor mari precum BIDU și ARMK. Din cauza gap-ului negativ accentuat, în special pe QQQ (-1.49%), direcția favorizată la deschidere pentru sesiunea intraday este Short.",
     "headlines": [
-      "CFTC Chair Selig tells CNBC crypto industry is embracing agency rules as legislation hopes fade",
-      "IAEA increasingly concerned about Iranian enrichment plant, its report says - Reuters",
-      "World oil market is returning to surplus as Gulf exports recover, IEA says - Reuters",
-      "NHL’s next media deal will test the league’s strength",
-      "CNBC's Official NHL Team Valuations 2026: How the 32 franchises stack up",
-      "Nvidia scandal draws in Commerce Secretary Lutnick, who reportedly agrees to testify about China chip sales"
+      "Nvidia's Colette Kress confronts key questions in first earnings report since Jensen Huang’s exit",
+      "Big-ticket holiday items may be harder to find as shipping costs rise",
+      "Republican 2028 field takes shape after midterm drubbing - Reuters",
+      "Scores of Bahraini Shi'ite clerics get life in prison for plotting with Iran - Reuters",
+      "France temporarily bans firework mortars amid school protests - Reuters",
+      "China says Xi-Putin-Trump meeting has 'groundbreaking significance' - Reuters"
     ],
-    "earnings_today": [],
+    "earnings_today": [
+      {
+        "symbol": "ACM",
+        "hour": "amc",
+        "eps_estimate": 1.5938,
+        "eps_actual": null,
+        "revenue_estimate": 1944146576,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "ARMK",
+        "hour": "bmo",
+        "eps_estimate": 0.7693,
+        "eps_actual": 0.78,
+        "revenue_estimate": 5407671035,
+        "revenue_actual": 5293210000
+      },
+      {
+        "symbol": "BIDU",
+        "hour": "bmo",
+        "eps_estimate": 6.8564,
+        "eps_actual": 6.733771,
+        "revenue_estimate": 31475280972,
+        "revenue_actual": 30635324499
+      },
+      {
+        "symbol": "BZ",
+        "hour": "bmo",
+        "eps_estimate": 2.3352,
+        "eps_actual": null,
+        "revenue_estimate": 2543431427,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "IQ",
+        "hour": "bmo",
+        "eps_estimate": -0.0532,
+        "eps_actual": 0,
+        "revenue_estimate": 6304694508,
+        "revenue_actual": 5940852797
+      }
+    ],
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "AMD",
+        "symbol": "MRVL",
         "direction": "long",
-        "price": 532.01,
-        "prev_close": 585.69,
-        "gap_pct": -9.17,
-        "change_pct": -9.17,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 524.03,
-        "target_price": 559.94,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Nvidia Scandal is Poking Real Holes in the AI Trade. But That Doesn’t Mean it’s Over.",
-          "Investing.com’s stocks of the week",
-          "Tom Lee Says Jensen Huang's Return Would Be ‘Shocking’: Trump Reportedly Urged Him To Fight For His Job"
-        ],
-        "reason_ro": "AMD înregistrează o corecție severă de -9.17% pe fondul agitației din sectorul AI generată de scandalul Nvidia, oferind un punct atractiv de intrare pentru un impuls de revenire tehnică intraday (oversold bounce). Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-13T20:29:23.247056+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ASTS",
-        "direction": "short",
-        "price": 32.51,
-        "prev_close": 34.48,
-        "gap_pct": -5.73,
-        "change_pct": -5.73,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 33.0,
-        "target_price": 30.8,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "ASTS înregistrează o scădere intraday puternică de -5.73% pe volum ridicat, fără știri fundamentale negative majore, indicând un impuls tehnic clar de continuare a corecției pe partea de short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-13T20:29:35.144175+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "IONQ",
-        "direction": "short",
-        "price": 29.1,
-        "prev_close": 30.84,
-        "gap_pct": -5.64,
-        "change_pct": -5.64,
+        "price": 147.0,
+        "prev_close": 164.44,
+        "gap_pct": -10.61,
+        "change_pct": -10.61,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 29.54,
-        "target_price": 27.57,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [],
-        "reason_ro": "IONQ înregistrează o scădere intraday de -5.64% pe volum ridicat, oferind un impuls tehnic puternic de continuare a trendului descendent după trecerea primei faze a sesiunii. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-13T20:29:40.775143+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AVGO",
-        "direction": "short",
-        "price": 345.29,
-        "prev_close": 364.24,
-        "gap_pct": -5.2,
-        "change_pct": -5.2,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 350.47,
-        "target_price": 327.16,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Nvidia Scandal is Poking Real Holes in the AI Trade. But That Doesn’t Mean it’s Over.",
-          "Investing.com’s stocks of the week",
-          "How Investors May Respond To Broadcom (AVGO) As Nvidia Rivals Gain Attention"
-        ],
-        "reason_ro": "AVGO scade puternic cu 5.20% pe fondul îngrijorărilor legate de sectorul AI și competiția crescută generată de știrile recente despre Nvidia și rivalii săi, oferind un momentum intraday clar pentru o poziție de sell. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-13T20:29:46.309198+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ARM",
-        "direction": "short",
-        "price": 189.91,
-        "prev_close": 199.81,
-        "gap_pct": -4.96,
-        "change_pct": -4.96,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 192.76,
-        "target_price": 179.94,
+        "stop_price": 144.79,
+        "target_price": 154.72,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Tom Lee Says Jensen Huang's Return Would Be ‘Shocking’: Trump Reportedly Urged Him To Fight For His Job",
-          "Nvidia Stock Falls. It Faces One Big Threat in Life After Jensen.",
-          "ARM Stock Gains 4% Since Q2 Earnings: Is it a Buy or Hold Now?"
+          "Why Did Credo Technology Stock Fall?",
+          "Marvell’s Trillion-Dollar Target"
         ],
-        "reason_ro": "Acțiunile ARM scad puternic cu aproape 5% pe fondul incertitudinilor privind posibila succesiune la conducerea Nvidia, care aduce în spotlight-ul negativ și presiunea asupra CEO-ului Rene Haas. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Marvell înregistrează o scădere majoră de -10.61% pe fondul unor știri sectoriale, oferind o oportunitate atractivă de cumpărare în 'dip' pe un lider cu expunere puternică pe inteligență artificială, valorificând un potențial de revenire tehnică. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-13T20:29:51.901269+00:00"
+        "evaluated_at": "2026-11-16T13:43:34.351709+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 532.01,
+        "price": 506.48,
         "prev_close": 585.69,
-        "gap_pct": -9.17,
+        "gap_pct": -13.52,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MRVL",
+        "price": 147.0,
+        "prev_close": 164.44,
+        "gap_pct": -10.61,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MARA",
+        "price": 6.5,
+        "prev_close": 7.19,
+        "gap_pct": -9.6,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ARM",
+        "price": 180.9,
+        "prev_close": 199.81,
+        "gap_pct": -9.46,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "COIN",
+        "price": 118.5,
+        "prev_close": 130.64,
+        "gap_pct": -9.29,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LCID",
         "price": 2.96,
         "prev_close": 3.25,
-        "gap_pct": -8.77,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ASTS",
-        "price": 32.51,
-        "prev_close": 34.48,
-        "gap_pct": -5.73,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 29.1,
-        "prev_close": 30.84,
-        "gap_pct": -5.64,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AVGO",
-        "price": 345.29,
-        "prev_close": 364.24,
-        "gap_pct": -5.2,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 189.91,
-        "prev_close": 199.81,
-        "gap_pct": -4.96,
+        "gap_pct": -9.08,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "FCUV",
-        "price": 6.81,
+        "price": 7.08,
         "prev_close": 3.0,
-        "gap_pct": 127.0,
+        "gap_pct": 136.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "VTSI",
-        "price": 4.14,
+        "price": 4.24,
         "prev_close": 2.62,
-        "gap_pct": 58.08,
+        "gap_pct": 61.83,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ZYN",
-        "price": 9.17,
+        "price": 9.13,
         "prev_close": 16.77,
-        "gap_pct": -45.3,
+        "gap_pct": -45.55,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "NPCE",
-        "price": 6.76,
-        "prev_close": 12.02,
-        "gap_pct": -43.72,
+        "symbol": "BGIN",
+        "price": 3.88,
+        "prev_close": 2.76,
+        "gap_pct": 40.58,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-13T20:29:21.377440+00:00",
-    "telegram_sent_date": "2026-11-13"
+    "last_scan_at": "2026-11-16T13:43:26.278685+00:00",
+    "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
