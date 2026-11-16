@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 509.4,
-  "total_pnl": 9.4,
-  "total_pnl_pct": 1.88,
-  "today_pnl": 0.99,
-  "today_pnl_pct": 0.19,
-  "current_drawdown_pct": -0.89,
+  "equity": 509.24,
+  "total_pnl": 9.24,
+  "total_pnl_pct": 1.85,
+  "today_pnl": 0.83,
+  "today_pnl_pct": 0.16,
+  "current_drawdown_pct": -0.92,
   "max_drawdown_pct": -1.14,
-  "updated_at": "2026-11-16T15:01:52.669618-05:00",
+  "updated_at": "2026-11-16T15:02:59.232109-05:00",
   "positions": [
     {
       "symbol": "SDS",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-16T13:17:42.266822-05:00",
       "qty": 4.4042,
       "entry_price": 57.6968,
-      "current_price": 57.96,
+      "current_price": 57.925,
       "stop": 57.42,
       "initial_stop": 57.42,
-      "unrealized_pnl": 1.16,
-      "unrealized_r": 0.95,
+      "unrealized_pnl": 1.0,
+      "unrealized_r": 0.82,
       "entry_reason": "D1b short: Close=742.16, band=742.61, VWAP=745.79, tp0=734.00 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -120,76 +120,76 @@
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 28.99,
+        "price": 28.86,
         "prev_close": 32.59,
-        "gap_pct": -11.06,
+        "gap_pct": -11.46,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 11.72,
+        "price": 11.73,
         "prev_close": 13.0,
-        "gap_pct": -9.85,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RBLX",
-        "price": 45.87,
-        "prev_close": 49.92,
-        "gap_pct": -8.11,
+        "gap_pct": -9.73,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RDW",
-        "price": 7.12,
+        "price": 7.09,
         "prev_close": 7.74,
-        "gap_pct": -7.95,
+        "gap_pct": -8.34,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "HOOD",
+        "price": 71.97,
+        "prev_close": 77.87,
+        "gap_pct": -7.57,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RBLX",
+        "price": 46.15,
+        "prev_close": 49.92,
+        "gap_pct": -7.55,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 26.66,
+        "price": 26.73,
         "prev_close": 28.85,
-        "gap_pct": -7.61,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 176.65,
-        "prev_close": 190.56,
-        "gap_pct": -7.3,
+        "gap_pct": -7.33,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HZN",
-        "price": 86.89,
+        "price": 86.8,
         "prev_close": 1.76,
-        "gap_pct": 4836.93,
+        "gap_pct": 4831.82,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "GDHG",
+        "price": 2.0,
+        "prev_close": 0.83,
+        "gap_pct": 142.34,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AKAN",
-        "price": 2.12,
+        "price": 2.1,
         "prev_close": 1.36,
-        "gap_pct": 55.51,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "CLRO",
-        "price": 4.76,
-        "prev_close": 3.37,
-        "gap_pct": 41.34,
+        "gap_pct": 54.78,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NCT",
-        "price": 8.7,
+        "price": 9.31,
         "prev_close": 6.22,
-        "gap_pct": 39.76,
+        "gap_pct": 49.56,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-16T19:52:49.358231+00:00",
+    "last_scan_at": "2026-11-16T20:02:59.232114+00:00",
     "telegram_sent_date": "2026-11-16"
   },
   "spy_start_price": 767.64,
