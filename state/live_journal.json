@@ -32,7 +32,7 @@
       "initial_risk_dollars": 1.2191,
       "equity_at_entry": 508.24,
       "partial_done": false,
-      "last_price": 58.16,
+      "last_price": 58.17,
       "entry_reason": "D1b short: Close=742.16, band=742.61, VWAP=745.79, tp0=734.00 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 225.0,
