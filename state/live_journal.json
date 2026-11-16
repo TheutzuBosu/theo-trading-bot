@@ -3,8 +3,50 @@
     "MOVER|COIN|2026-11-16|short",
     "MOVER|MRVL|2026-11-16|long",
     "QQQ|2026-11-13T10:11:00-05:00|short",
-    "SPY|2026-11-13T10:11:00-05:00|short"
+    "SPY|2026-11-13T10:11:00-05:00|short",
+    "SPY|2026-11-16T13:15:00-05:00|short"
   ],
-  "open_trades": {},
+  "open_trades": {
+    "SDS": {
+      "trade_id": "theo-SDS-S-202611161315",
+      "signal_symbol": "SPY",
+      "signal_direction": "short",
+      "exec_symbol": "SDS",
+      "exec_direction": "long",
+      "leverage": 2,
+      "signal_time": "2026-11-16T13:15:00-05:00",
+      "entry_time": "2026-11-16T13:17:42.266822-05:00",
+      "entry_price": 57.696812,
+      "qty": 4.4042,
+      "qty0": 4.4042,
+      "signal_entry_price": 741.885,
+      "signal_stop": 743.6864382499999,
+      "signal_initial_stop": 743.6864382499999,
+      "signal_target": 734.001185,
+      "signal_stop_after_target": 743.204031,
+      "exec_stop": 57.42,
+      "exec_initial_stop": 57.42,
+      "exec_target": 58.93,
+      "stop_order_id": "ddc3b7c6-fbcb-44e5-adbd-783b9593da49",
+      "stop_seq": 0,
+      "initial_risk_dollars": 1.2191,
+      "equity_at_entry": 508.24,
+      "partial_done": false,
+      "last_price": 57.696812,
+      "entry_reason": "D1b short: Close=742.16, band=742.61, VWAP=745.79, tp0=734.00 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00",
+      "features": {
+        "minute_of_day": 225.0,
+        "dist_from_band_bps": 23.92796778330597,
+        "dist_from_vwap_bps": 48.584735967316384,
+        "rv_30m": 0.0003423670522787515,
+        "sigma_14d": 0.016005586188737903,
+        "overnight_gap_bps": -60.853540509366866,
+        "ret_since_open_bps": -100.2427702486397,
+        "vol_ratio_14d": 0.8659225258223026,
+        "day_of_week": 0.0,
+        "cost_to_risk": 0.016852896214720685
+      }
+    }
+  },
   "last_eod_date": "2026-11-13"
 }
