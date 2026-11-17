@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.18,
   "current_drawdown_pct": -1.0,
   "max_drawdown_pct": -1.14,
-  "updated_at": "2026-11-17T10:13:08.739307-05:00",
+  "updated_at": "2026-11-17T10:14:13.528071-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-17T14:23:41.856045+00:00",
@@ -80,41 +80,43 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "SLS",
-        "direction": "long",
-        "price": 23.49,
-        "prev_close": 7.47,
-        "gap_pct": 214.46,
-        "change_pct": 214.46,
+        "symbol": "UNH",
+        "direction": "short",
+        "price": 391.67,
+        "prev_close": 412.07,
+        "gap_pct": -4.95,
+        "change_pct": -4.95,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.07,
-        "stop_price": 23.02,
-        "target_price": 25.13,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 397.55,
+        "target_price": 371.11,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "SLS Stock Jumps After-Hours: Retail Eyes Lilly’s Cancer Deal for Valuation Clues — 2 Big Investors Grab Shares"
+          "S&P 500 Premarket Movers on Nov. 17: Gainers and Losers",
+          "Want Rising Dividend Income? Invest in These 5 Dividend Growers Still Raising Payouts",
+          "Elizabeth Warren Targets CVS, UnitedHealth and Cigna, Says Healthcare Giants ‘Take a Cut at Every Step’ as She Calls for Breaking Up Conglomerates"
         ],
-        "reason_ro": "SLS înregistrează o creștere masivă de peste 214% susținută de interesul ridicat din partea investitorilor de retail și a marilor investitori, având la bază speculații privind evaluarea în contextul unui acord de cancer legat de Lilly. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": false,
-        "evaluated_at": "2026-11-17T14:33:29.397639+00:00"
+        "reason_ro": "UNH înregistrează o scădere puternică de aproape 5% pe fondul presiunilor politice exercitate de Elizabeth Warren asupra giganților din sănătate, creând o oportunitate validă de sell pe continuarea trendului intraday negativ. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-17T15:14:38.062339+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "CRM",
-        "price": 200.22,
+        "price": 199.1,
         "prev_close": 214.87,
-        "gap_pct": -6.82,
+        "gap_pct": -7.34,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UNH",
-        "price": 389.79,
+        "price": 391.67,
         "prev_close": 412.07,
-        "gap_pct": -5.41,
+        "gap_pct": -4.95,
         "source": "watchlist_snapshot"
       },
       {
@@ -125,56 +127,56 @@
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ARM",
-        "price": 182.17,
-        "prev_close": 175.03,
-        "gap_pct": 4.08,
+        "symbol": "IONQ",
+        "price": 25.22,
+        "prev_close": 26.45,
+        "gap_pct": -4.65,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRNA",
-        "price": 206.66,
+        "price": 206.86,
         "prev_close": 215.35,
-        "gap_pct": -4.04,
+        "gap_pct": -3.94,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SNOW",
-        "price": 270.72,
-        "prev_close": 280.56,
-        "gap_pct": -3.51,
+        "symbol": "ARM",
+        "price": 181.62,
+        "prev_close": 175.03,
+        "gap_pct": 3.77,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SLS",
-        "price": 18.51,
+        "price": 19.45,
         "prev_close": 7.47,
-        "gap_pct": 147.79,
+        "gap_pct": 160.37,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GP",
-        "price": 2.56,
+        "price": 2.51,
         "prev_close": 1.41,
-        "gap_pct": 81.56,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SMX",
-        "price": 5.66,
-        "prev_close": 3.66,
-        "gap_pct": 54.64,
+        "gap_pct": 78.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AYTU",
         "price": 2.66,
         "prev_close": 1.82,
-        "gap_pct": 46.37,
+        "gap_pct": 46.15,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "SMX",
+        "price": 5.18,
+        "prev_close": 3.66,
+        "gap_pct": 41.53,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T15:03:33.557195+00:00",
+    "last_scan_at": "2026-11-17T15:14:13.528077+00:00",
     "telegram_sent_date": "2026-11-17"
   },
   "spy_start_price": 767.64,
