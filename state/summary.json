@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 506.72,
-  "total_pnl": 6.72,
+  "equity": 506.69,
+  "total_pnl": 6.69,
   "total_pnl_pct": 1.34,
-  "today_pnl": -3.07,
-  "today_pnl_pct": -0.6,
-  "current_drawdown_pct": -1.41,
+  "today_pnl": -3.1,
+  "today_pnl_pct": -0.61,
+  "current_drawdown_pct": -1.42,
   "max_drawdown_pct": -1.43,
-  "updated_at": "2026-11-17T15:26:39.515318-05:00",
+  "updated_at": "2026-11-17T15:27:45.861866-05:00",
   "positions": [
     {
       "symbol": "CRM",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-17T13:53:25.768555-05:00",
       "qty": 0.0761,
       "entry_price": 197.206,
-      "current_price": 194.95,
+      "current_price": 194.71,
       "stop": 194.25,
       "initial_stop": 194.25,
-      "unrealized_pnl": -0.17,
-      "unrealized_r": -0.76,
+      "unrealized_pnl": -0.19,
+      "unrealized_r": -0.84,
       "entry_reason": "CRM scade cu peste 8% din cauza temerilor legate de AI și a IPO-ului Anthropic, dar analizele recente sugerează că acțiunea este subevaluată cu 16%, iar fonduri mari precum cel al lui George Soros au cumpărat recent, oferind o oportunitate atractivă de tip mean-reversion. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: CRM LONG -> BUY CRM (miză ~15.00$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-17T13:53:25.768555-05:00",
       "qty": 0.22,
       "entry_price": 68.164,
-      "current_price": 68.74,
+      "current_price": 68.69,
       "stop": 67.14,
       "initial_stop": 67.14,
-      "unrealized_pnl": 0.13,
-      "unrealized_r": 0.56,
+      "unrealized_pnl": 0.12,
+      "unrealized_r": 0.51,
       "entry_reason": "HOOD este în scădere de 5.34% din cauza sentimentului negativ general din crypto/brokeraj, dar analiștii de la Evercore ISI văd scăderea ca o exagerare și mențin un preț țintă de 100 $, creând o oportunitate atractivă de tip contrarian pentru un rebound. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: HOOD LONG -> BUY HOOD (miză ~15.00$, R:R 1:3.5)"
     }
   ],
@@ -107,99 +107,124 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "CRM",
+        "direction": "short",
+        "price": 194.92,
+        "prev_close": 214.87,
+        "gap_pct": -9.28,
+        "change_pct": -9.28,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 197.84,
+        "target_price": 184.69,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Stock Market Today: Dow Drops As Salesforce Dives; Nvidia Falls As Jensen Huang Says This (Live Coverage)",
+          "Software Stocks Retreat Amid Inflation Worries, New OpenAI Model",
+          "Salesforce Sells Off Before Anthropic’s IPO"
+        ],
+        "reason_ro": "Salesforce înregistrează o scădere severă de peste 9% pe fondul îngrijorărilor legate de inflație și al presiunii competitive generate de viitoarea IPO Anthropic și noul model OpenAI, conducând un sell-off generalizat în sectorul software. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-17T20:27:47.844939+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "AFRM",
         "direction": "short",
-        "price": 59.6,
+        "price": 59.23,
         "prev_close": 62.71,
-        "gap_pct": -4.95,
-        "change_pct": -4.95,
+        "gap_pct": -5.54,
+        "change_pct": -5.54,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 60.49,
-        "target_price": 56.47,
+        "stop_price": 60.12,
+        "target_price": 56.12,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [],
-        "reason_ro": "AFRM înregistrează o scădere intraday puternică de -4.95% pe volum ridicat, fără știri fundamentale directe, ceea ce oferă o oportunitate tehnică clară de continuare a trendului de coborâre. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AFRM înregistrează o scădere intraday puternică de -5.54% pe volum ridicat, oferind o oportunitate tehnică de continuare a trendului descendent. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-17T19:36:28.994093+00:00"
+        "evaluated_at": "2026-11-17T20:28:13.013167+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "CRM",
-        "price": 195.66,
+        "price": 194.92,
         "prev_close": 214.87,
-        "gap_pct": -8.94,
+        "gap_pct": -9.28,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 35.52,
+        "price": 35.44,
         "prev_close": 38.29,
-        "gap_pct": -7.23,
+        "gap_pct": -7.46,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 24.64,
+        "price": 24.66,
         "prev_close": 26.45,
-        "gap_pct": -6.82,
+        "gap_pct": -6.75,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UNH",
-        "price": 388.11,
+        "price": 387.86,
         "prev_close": 412.07,
-        "gap_pct": -5.81,
+        "gap_pct": -5.88,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AFRM",
-        "price": 59.21,
+        "price": 59.23,
         "prev_close": 62.71,
-        "gap_pct": -5.58,
+        "gap_pct": -5.54,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SMCI",
-        "price": 23.84,
-        "prev_close": 25.03,
-        "gap_pct": -4.77,
+        "symbol": "LUNR",
+        "price": 11.12,
+        "prev_close": 11.75,
+        "gap_pct": -5.4,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SLS",
-        "price": 19.36,
+        "price": 19.33,
         "prev_close": 7.47,
-        "gap_pct": 159.1,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "GP",
-        "price": 2.55,
-        "prev_close": 1.41,
-        "gap_pct": 80.89,
+        "gap_pct": 158.77,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CUE",
-        "price": 3.03,
+        "price": 3.15,
         "prev_close": 14.1,
-        "gap_pct": -78.51,
+        "gap_pct": -77.66,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "GP",
+        "price": 2.49,
+        "prev_close": 1.41,
+        "gap_pct": 76.6,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AYTU",
-        "price": 2.66,
+        "price": 2.65,
         "prev_close": 1.82,
-        "gap_pct": 46.15,
+        "gap_pct": 45.88,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T20:17:45.087488+00:00",
+    "last_scan_at": "2026-11-17T20:27:45.861872+00:00",
     "telegram_sent_date": "2026-11-17"
   },
   "spy_start_price": 767.64,
