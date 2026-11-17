@@ -6,47 +6,6 @@
     "SPY|2026-11-17T10:57:00-05:00|short",
     "SPY|2026-11-17T11:43:00-05:00|short"
   ],
-  "open_trades": {
-    "SDS": {
-      "trade_id": "theo-SDS-S-202611171143",
-      "signal_symbol": "SPY",
-      "signal_direction": "short",
-      "exec_symbol": "SDS",
-      "exec_direction": "long",
-      "leverage": 2,
-      "signal_time": "2026-11-17T11:43:00-05:00",
-      "entry_time": "2026-11-17T11:44:40.888571-05:00",
-      "entry_price": 59.554087,
-      "qty": 4.2591,
-      "qty0": 4.2591,
-      "signal_entry_price": 730.12,
-      "signal_stop": 731.27103875,
-      "signal_initial_stop": 731.27103875,
-      "signal_target": 721.747475,
-      "signal_stop_after_target": 730.796685,
-      "exec_stop": 59.39,
-      "exec_initial_stop": 59.39,
-      "exec_target": 60.95,
-      "stop_order_id": "35370215-a311-4260-addb-9d18603c386e",
-      "stop_seq": 0,
-      "initial_risk_dollars": 0.6989,
-      "equity_at_entry": 507.51,
-      "partial_done": false,
-      "last_price": 59.41,
-      "entry_reason": "D1b short: Close=729.77, band=730.79, VWAP=733.14, tp0=721.75 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00",
-      "features": {
-        "minute_of_day": 133.0,
-        "dist_from_band_bps": 49.921647938538925,
-        "dist_from_vwap_bps": 45.874349906900314,
-        "rv_30m": 0.0005106056332517238,
-        "sigma_14d": 0.016556421223213935,
-        "overnight_gap_bps": -20.67455813199226,
-        "ret_since_open_bps": -118.27869629388977,
-        "vol_ratio_14d": 1.7411188197234444,
-        "day_of_week": 1.0,
-        "cost_to_risk": 0.008193507593723018
-      }
-    }
-  },
+  "open_trades": {},
   "last_eod_date": "2026-11-16"
 }
