@@ -1,10 +1,10 @@
 {
-  "meta_samples": 7,
+  "meta_samples": 9,
   "meta_active": false,
-  "updated_at": "2026-11-16T15:30:47.310729-05:00",
-  "total_trades_analyzed": 55,
+  "updated_at": "2026-11-17T15:30:31.895423-05:00",
+  "total_trades_analyzed": 61,
   "hourly_multipliers": {
-    "09:00": 0.542,
+    "09:00": 0.5,
     "10:00": 1.0,
     "11:00": 1.0,
     "12:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Tranzacția a fost închisă automat pe criteriul de timp fără nicio mișcare de preț, generând un profit infim de 0,02 $, motiv pentru care reținem să evităm intrarea contra-trend pe stocuri cu scăderi intraday majore, chiar și pe fondul unor știri fundamentale pozitive.",
-    "Botul a cumpărat MRVL pe o scădere generată de știri, a închis tranzacția la timp cu un profit mic de 0,47 $ (2,2R) și reținem că strategia de cumpărare în „dip” pe acțiuni solide cu expunere AI a funcționat.",
-    "Botul a închis tranzacția pe RIOT în profit mic din cauza expirării timpului, reținând că un catalizator pozitiv poate genera totuși un castig dacă riscul este controlat.",
-    "Prețul a lovit direct stop-loss-ul din cauza pieței slabe, așa că reținem că trebuie să fim mai atenți la știrile negative generale înainte de a cumpăra în scădere.",
-    "Am cumpărat ETF-ul invers SDS pe o scădere a pieței și am ieșit la limită de timp cu un profit mic de 1,57 $, reținând că trebuie să urmărim mai atent momentul optim de ieșire înainte de expirarea timpului."
+    "Prețul a lovit direct stop-ul fără nicio mișcare favorabilă, așa că reținem să fim mai prudenți cu intrările bazate pe FOMO în acțiuni deja crescute puternic la deschidere.",
+    "Am cumpărat SDS peșin contra pieței bazat pe un semnal slab de la AI, dar prețul a scăzut direct în stop-loss, așa că data viitoare ignorăm oportunitățile cu probabilitate redusă.",
+    "Am pierdut 0,74 $ (1,06R) pentru că botul a cumpărat acțiuni inverse SDS (pariu pe scăderea pieței) pe baza semnalului SPY, dar prețul a crescut și a lovit stop-loss-ul, deși inițial avusese un avans favorabil de 1,64R.",
+    "Botul a cumpărat acțiuni CRM pe fondul unei scăderi puternice, dar a închis poziția pe timpul limită cu o pierdere mică de 0,18 $, reținând că strategia de revenire la media istorică (mean-reversion) nu a prins impulsul necesar în intervalul alocat.",
+    "Am închis tranzacția pe HOOD în mic profit din cauza expirării timpului, învățând că sentimentul negativ a blocat revenirea așteptată."
   ]
 }
