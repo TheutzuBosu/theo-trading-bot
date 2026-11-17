@@ -12,7 +12,7 @@
   "updated_at": "2026-11-16T15:30:47.310729-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-17T13:45:07.962569+00:00",
+    "updated_at": "2026-11-17T14:08:15.907204+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
@@ -26,13 +26,13 @@
         "gap_pct": -0.03
       }
     },
-    "explanation_ro": "În Pre-Market, piața SUA este în scădere ușoară: SPY la 738.80 $ (-0.17%) și QQQ la 661.63 $ (-0.03%). Raportări financiare urmărite azi: HD (înainte de deschidere), NVDA (după închidere), AS (înainte de deschidere), ATKR (înainte de deschidere), AUNA (după închidere). La 16:30 (09:30 ET) botul măsoară banda de zgomot și VWAP-ul, iar de la 17:12 (10:12 ET) execută automat pe direcția spargerii (Long sau Short cu levier 2x).",
+    "explanation_ro": "Piața deschide ușor ezitant, cu scăderi minore (SPY -0.17%, QQQ -0.03%), investitorii preferând precauția înainte de raportul financiar al gigantului Nvidia de după închidere și știrile despre IPO-ul Anthropic. De asemenea, tensiunile geopolitice legate de avertismentele administrației Trump privind un posibil complot iranian adaugă prudență în pre-market. În aceste condiții, lipsa unei direcții clare favorizează o abordare tactică neutră, cu așteptarea evoluției prețurilor după clopotul de deschidere.",
     "headlines": [
       "Anthropic IPO: For hundreds of billions of dollars flowing into AI startups, a big debut is a must",
       "'Big Short' investor Steve Eisman to discuss Nvidia, Anthropic and AI bull on CNBC",
       "Investors look to Nvidia's earnings and Anthropic's IPO to refresh the tech rally",
       "Trump says US taking seriously report of possible Iranian dirty bomb plot in Washington - Reuters",
-      "US stock futures slip ahead of Nvidia results; Fed speakers in focus - Reuters",
+      "Nasdaq futures rise as tech stocks firm up ahead of Nvidia results, Anthropic IPO - Reuters",
       "Nike hosts first investor day in 9 years as it tries to rightsize its business"
     ],
     "earnings_today": [
@@ -81,9 +81,9 @@
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 28.57,
+        "price": 28.5,
         "prev_close": 32.59,
-        "gap_pct": -12.33,
+        "gap_pct": -12.56,
         "source": "watchlist_snapshot"
       },
       {
@@ -108,17 +108,17 @@
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 26.45,
-        "prev_close": 28.85,
-        "gap_pct": -8.32,
+        "symbol": "INTC",
+        "price": 55.12,
+        "prev_close": 59.66,
+        "gap_pct": -7.61,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "INTC",
-        "price": 54.85,
-        "prev_close": 59.66,
-        "gap_pct": -8.06,
+        "symbol": "HOOD",
+        "price": 72.01,
+        "prev_close": 77.87,
+        "gap_pct": -7.53,
         "source": "watchlist_snapshot"
       },
       {
@@ -150,7 +150,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T13:43:30.792618+00:00",
+    "last_scan_at": "2026-11-17T14:07:13.431547+00:00",
     "telegram_sent_date": "2026-11-17"
   },
   "spy_start_price": 767.64,
