@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.59,
   "current_drawdown_pct": -1.4,
   "max_drawdown_pct": -1.4,
-  "updated_at": "2026-11-17T12:28:49.244424-05:00",
+  "updated_at": "2026-11-17T12:29:53.900377-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-17T14:23:41.856045+00:00",
@@ -80,103 +80,99 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "HOOD",
+        "symbol": "RBLX",
         "direction": "short",
-        "price": 68.18,
-        "prev_close": 72.08,
-        "gap_pct": -5.4,
-        "change_pct": -5.4,
+        "price": 44.2,
+        "prev_close": 46.12,
+        "gap_pct": -4.15,
+        "change_pct": -4.15,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 69.2,
-        "target_price": 64.6,
+        "stop_price": 44.86,
+        "target_price": 41.88,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
-        "headlines": [
-          "Why Did Robinhood Stock Fall Another 7%?",
-          "What Sent Coinbase Stock Down 6%?",
-          "Klarna Keeps Winning Shoppers but Hasn’t Been Winning Over Investors"
-        ],
-        "reason_ro": "HOOD scade puternic (-5.40%) pe fondul incertitudinilor legislative legate de piețele de predicție și presiunii sectorice pe acțiunile crypto/fintech, menținând un impuls intraday descendent clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "headlines": [],
+        "reason_ro": "RBLX înregistrează o scădere intraday puternică de -4.15% pe volum ridicat, continuând mișcarea descendentă în sesiunea activă fără știri fundamentale contrare, oferind o oportunitate clară de continuare short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-17T17:08:53.555751+00:00"
+        "evaluated_at": "2026-11-17T17:31:00.341100+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "CRM",
-        "price": 194.72,
+        "price": 194.22,
         "prev_close": 214.87,
-        "gap_pct": -9.38,
+        "gap_pct": -9.61,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 24.91,
+        "price": 24.81,
         "prev_close": 26.45,
-        "gap_pct": -5.82,
+        "gap_pct": -6.2,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HOOD",
-        "price": 68.33,
+        "price": 68.2,
         "prev_close": 72.08,
-        "gap_pct": -5.2,
+        "gap_pct": -5.38,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SNOW",
-        "price": 266.95,
-        "prev_close": 280.56,
-        "gap_pct": -4.85,
+        "symbol": "MRNA",
+        "price": 205.83,
+        "prev_close": 215.35,
+        "gap_pct": -4.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AFRM",
-        "price": 59.93,
+        "price": 60.02,
         "prev_close": 62.71,
-        "gap_pct": -4.43,
+        "gap_pct": -4.3,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RBLX",
-        "price": 44.25,
+        "price": 44.2,
         "prev_close": 46.12,
-        "gap_pct": -4.04,
+        "gap_pct": -4.15,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SLS",
-        "price": 20.6,
+        "price": 20.29,
         "prev_close": 7.47,
-        "gap_pct": 175.77,
+        "gap_pct": 171.55,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GP",
-        "price": 2.44,
+        "price": 2.41,
         "prev_close": 1.41,
-        "gap_pct": 73.4,
+        "gap_pct": 70.91,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CUE",
-        "price": 7.03,
+        "price": 6.82,
         "prev_close": 14.1,
-        "gap_pct": -50.14,
+        "gap_pct": -51.67,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AYTU",
-        "price": 2.66,
+        "price": 2.65,
         "prev_close": 1.82,
-        "gap_pct": 46.15,
+        "gap_pct": 45.88,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T17:18:57.245440+00:00",
+    "last_scan_at": "2026-11-17T17:29:53.900381+00:00",
     "telegram_sent_date": "2026-11-17"
   },
   "spy_start_price": 767.64,
