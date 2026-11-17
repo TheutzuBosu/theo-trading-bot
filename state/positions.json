@@ -5,11 +5,11 @@
     "entry_time": "2026-11-17T13:53:25.768555-05:00",
     "qty": 0.0761,
     "entry_price": 197.206,
-    "current_price": 195.75,
+    "current_price": 195.48,
     "stop": 194.25,
     "initial_stop": 194.25,
-    "unrealized_pnl": -0.11,
-    "unrealized_r": -0.49,
+    "unrealized_pnl": -0.13,
+    "unrealized_r": -0.58,
     "entry_reason": "CRM scade cu peste 8% din cauza temerilor legate de AI și a IPO-ului Anthropic, dar analizele recente sugerează că acțiunea este subevaluată cu 16%, iar fonduri mari precum cel al lui George Soros au cumpărat recent, oferind o oportunitate atractivă de tip mean-reversion. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: CRM LONG -> BUY CRM (miză ~15.00$, R:R 1:3.5)"
   },
   {
@@ -18,11 +18,11 @@
     "entry_time": "2026-11-17T13:53:25.768555-05:00",
     "qty": 0.22,
     "entry_price": 68.164,
-    "current_price": 68.425,
+    "current_price": 68.3371,
     "stop": 67.14,
     "initial_stop": 67.14,
-    "unrealized_pnl": 0.06,
-    "unrealized_r": 0.25,
+    "unrealized_pnl": 0.04,
+    "unrealized_r": 0.17,
     "entry_reason": "HOOD este în scădere de 5.34% din cauza sentimentului negativ general din crypto/brokeraj, dar analiștii de la Evercore ISI văd scăderea ca o exagerare și mențin un preț țintă de 100 $, creând o oportunitate atractivă de tip contrarian pentru un rebound. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: HOOD LONG -> BUY HOOD (miză ~15.00$, R:R 1:3.5)"
   }
 ]
