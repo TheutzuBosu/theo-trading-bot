@@ -1,15 +1,1 @@
-[
-  {
-    "symbol": "ARM",
-    "direction": "long",
-    "entry_time": "2026-11-17T10:24:20.069888-05:00",
-    "qty": 0.1098,
-    "entry_price": 181.784,
-    "current_price": 179.3,
-    "stop": 179.05,
-    "initial_stop": 179.05,
-    "unrealized_pnl": -0.27,
-    "unrealized_r": -0.91,
-    "entry_reason": "ARM înregistrează o creștere solidă de +4.29% susținută de vânzările record globale de cipuri și interesul ridicat din sectorul AI, depășind cu succes perioada volatilă de la deschidere. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ARM LONG -> BUY ARM (miză ~19.99$, R:R 1:3.5)"
-  }
-]
+[]
