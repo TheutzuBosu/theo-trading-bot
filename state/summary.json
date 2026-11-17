@@ -12,7 +12,7 @@
   "updated_at": "2026-11-16T15:30:47.310729-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-17T14:08:15.907204+00:00",
+    "updated_at": "2026-11-17T14:23:41.856045+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
@@ -21,12 +21,12 @@
         "gap_pct": -0.17
       },
       "QQQ": {
-        "price": 661.63,
+        "price": 663.59,
         "prev_close": 661.8,
-        "gap_pct": -0.03
+        "gap_pct": 0.27
       }
     },
-    "explanation_ro": "Piața deschide ușor ezitant, cu scăderi minore (SPY -0.17%, QQQ -0.03%), investitorii preferând precauția înainte de raportul financiar al gigantului Nvidia de după închidere și știrile despre IPO-ul Anthropic. De asemenea, tensiunile geopolitice legate de avertismentele administrației Trump privind un posibil complot iranian adaugă prudență în pre-market. În aceste condiții, lipsa unei direcții clare favorizează o abordare tactică neutră, cu așteptarea evoluției prețurilor după clopotul de deschidere.",
+    "explanation_ro": "Piața are o deschidere mixtă, cu QQQ în ușoară creștere susținută de optimismul din sectorul tech înaintea raportului financiar NVDA și a zvonurilor despre IPO-ul Anthropic, în timp ce SPY înregistrează un mic gap negativ pe fondul tensiunilor geopolitice. Raportul financiar al celor de la HD de dimineață și așteptările ridicate pentru Nvidia favorizează o direcție prudentă, dar cu o ușoară favorizare a pozițiilor Long pe tehnologie (QQQ) la deschidere.",
     "headlines": [
       "Anthropic IPO: For hundreds of billions of dollars flowing into AI startups, a big debut is a must",
       "'Big Short' investor Steve Eisman to discuss Nvidia, Anthropic and AI bull on CNBC",
@@ -150,7 +150,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T14:07:13.431547+00:00",
+    "last_scan_at": "2026-11-17T14:22:35.804035+00:00",
     "telegram_sent_date": "2026-11-17"
   },
   "spy_start_price": 767.64,
