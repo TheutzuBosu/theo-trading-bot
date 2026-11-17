@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.45,
   "current_drawdown_pct": -1.26,
   "max_drawdown_pct": -1.26,
-  "updated_at": "2026-11-17T11:04:49.632658-05:00",
+  "updated_at": "2026-11-17T11:05:54.759593-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-17T14:23:41.856045+00:00",
@@ -131,76 +131,76 @@
     "top_movers": [
       {
         "symbol": "CRM",
-        "price": 194.25,
+        "price": 196.86,
         "prev_close": 214.87,
-        "gap_pct": -9.59,
+        "gap_pct": -8.38,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 24.21,
+        "price": 24.81,
         "prev_close": 26.45,
-        "gap_pct": -8.47,
+        "gap_pct": -6.2,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "LUNR",
-        "price": 10.96,
-        "prev_close": 11.75,
-        "gap_pct": -6.72,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MU",
-        "price": 671.85,
-        "prev_close": 719.27,
-        "gap_pct": -6.59,
+        "symbol": "AFRM",
+        "price": 59.67,
+        "prev_close": 62.71,
+        "gap_pct": -4.84,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "HOOD",
-        "price": 67.47,
+        "price": 68.81,
         "prev_close": 72.08,
-        "gap_pct": -6.39,
+        "gap_pct": -4.52,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SMCI",
-        "price": 23.43,
-        "prev_close": 25.03,
-        "gap_pct": -6.39,
+        "symbol": "NIO",
+        "price": 2.85,
+        "prev_close": 2.73,
+        "gap_pct": 4.4,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "LUNR",
+        "price": 11.25,
+        "prev_close": 11.75,
+        "gap_pct": -4.26,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SLS",
         "price": 20.25,
         "prev_close": 7.47,
-        "gap_pct": 171.08,
+        "gap_pct": 171.15,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GP",
-        "price": 2.27,
+        "price": 2.29,
         "prev_close": 1.41,
-        "gap_pct": 61.08,
+        "gap_pct": 62.41,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MDRN",
-        "price": 2.04,
-        "prev_close": 3.83,
-        "gap_pct": -46.67,
+        "price": 2.0,
+        "prev_close": 3.82,
+        "gap_pct": -47.71,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AYTU",
-        "price": 2.65,
+        "price": 2.66,
         "prev_close": 1.82,
-        "gap_pct": 45.68,
+        "gap_pct": 46.15,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T15:55:14.569808+00:00",
+    "last_scan_at": "2026-11-17T16:05:54.759597+00:00",
     "telegram_sent_date": "2026-11-17"
   },
   "spy_start_price": 767.64,
