@@ -1,13 +1,8 @@
 {
   "processed_signals": [
-    "MOVER|ARM|2026-11-17|long",
-    "MOVER|CRM|2026-11-17|long",
-    "MOVER|HOOD|2026-11-17|long",
-    "MOVER|SLS|2026-11-17|long",
-    "SPY|2026-11-16T13:15:00-05:00|short",
     "SPY|2026-11-17T10:57:00-05:00|short",
     "SPY|2026-11-17T11:43:00-05:00|short"
   ],
   "open_trades": {},
-  "last_eod_date": "2026-11-16"
+  "last_eod_date": "2026-11-17"
 }
