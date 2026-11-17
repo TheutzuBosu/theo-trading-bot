@@ -1,15 +1,1 @@
-[
-  {
-    "symbol": "SDS",
-    "direction": "long",
-    "entry_time": "2026-11-17T10:58:47.161373-05:00",
-    "qty": 4.2833,
-    "entry_price": 59.414,
-    "current_price": 59.295,
-    "stop": 59.19,
-    "initial_stop": 59.19,
-    "unrealized_pnl": -0.51,
-    "unrealized_r": -0.53,
-    "entry_reason": "D1b short: Close=730.94, band=732.06, VWAP=733.75, tp0=722.90 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
-  }
-]
+[]
