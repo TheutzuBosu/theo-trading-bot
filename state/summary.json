@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -1.42,
   "max_drawdown_pct": -1.43,
-  "updated_at": "2026-11-18T09:59:25.614972-05:00",
+  "updated_at": "2026-11-18T09:59:52.151954-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-18T14:30:47.568550+00:00",
@@ -106,77 +106,77 @@
     ],
     "top_movers": [
       {
-        "symbol": "UNH",
-        "price": 373.58,
-        "prev_close": 389.69,
-        "gap_pct": -4.14,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "RBLX",
-        "price": 45.74,
+        "price": 46.67,
         "prev_close": 44.02,
-        "gap_pct": 3.9,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "CVX",
-        "price": 207.89,
-        "prev_close": 216.16,
-        "gap_pct": -3.82,
+        "gap_pct": 6.02,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "TGT",
-        "price": 165.37,
+        "price": 168.17,
         "prev_close": 159.45,
-        "gap_pct": 3.71,
+        "gap_pct": 5.47,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "CRM",
-        "price": 188.22,
-        "prev_close": 194.6,
-        "gap_pct": -3.28,
+        "symbol": "RIOT",
+        "price": 17.95,
+        "prev_close": 17.05,
+        "gap_pct": 5.25,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MRVL",
-        "price": 144.21,
-        "prev_close": 148.81,
-        "gap_pct": -3.09,
+        "symbol": "RDW",
+        "price": 7.12,
+        "prev_close": 6.77,
+        "gap_pct": 5.17,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "PRE",
-        "price": 10.61,
-        "prev_close": 16.33,
-        "gap_pct": -35.03,
+        "symbol": "PANW",
+        "price": 322.21,
+        "prev_close": 309.17,
+        "gap_pct": 4.22,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ARM",
+        "price": 190.27,
+        "prev_close": 183.33,
+        "gap_pct": 3.79,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "CLRO",
+        "price": 7.2,
+        "prev_close": 4.72,
+        "gap_pct": 52.56,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "HY",
-        "price": 17.97,
-        "prev_close": 26.2,
-        "gap_pct": -31.41,
+        "symbol": "PRE",
+        "price": 10.4,
+        "prev_close": 16.33,
+        "gap_pct": -36.31,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CUE",
-        "price": 3.69,
+        "price": 3.79,
         "prev_close": 2.83,
-        "gap_pct": 30.57,
+        "gap_pct": 33.9,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "AAOZ",
-        "price": 44.32,
-        "prev_close": 34.61,
-        "gap_pct": 28.06,
+        "symbol": "HY",
+        "price": 18.22,
+        "prev_close": 26.2,
+        "gap_pct": -30.46,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-18T14:49:45.952227+00:00",
+    "last_scan_at": "2026-11-18T14:59:52.151959+00:00",
     "telegram_sent_date": "2026-11-18"
   },
   "spy_start_price": 767.64,
