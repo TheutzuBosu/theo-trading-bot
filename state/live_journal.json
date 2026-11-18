@@ -1,13 +1,5 @@
 {
-  "processed_signals": [
-    "MOVER|CRWD|2026-11-18|long",
-    "MOVER|IONQ|2026-11-18|long",
-    "MOVER|PANW|2026-11-18|long",
-    "MOVER|TGT|2026-11-18|long",
-    "MOVER|UNH|2026-11-18|long",
-    "SPY|2026-11-17T10:57:00-05:00|short",
-    "SPY|2026-11-17T11:43:00-05:00|short"
-  ],
+  "processed_signals": [],
   "open_trades": {},
-  "last_eod_date": "2026-11-17"
+  "last_eod_date": "2026-11-18"
 }
