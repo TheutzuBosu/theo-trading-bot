@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 507.89,
-  "total_pnl": 7.89,
-  "total_pnl_pct": 1.58,
-  "today_pnl": 1.22,
-  "today_pnl_pct": 0.24,
-  "current_drawdown_pct": -1.18,
+  "equity": 508.03,
+  "total_pnl": 8.03,
+  "total_pnl_pct": 1.61,
+  "today_pnl": 1.36,
+  "today_pnl_pct": 0.27,
+  "current_drawdown_pct": -1.16,
   "max_drawdown_pct": -1.52,
-  "updated_at": "2026-11-18T13:27:11.365526-05:00",
+  "updated_at": "2026-11-18T13:28:17.040282-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-18T10:10:19.982065-05:00",
       "qty": 0.0871,
       "entry_price": 229.898,
-      "current_price": 237.39,
+      "current_price": 237.83,
       "stop": 226.45,
       "initial_stop": 226.45,
-      "unrealized_pnl": 0.65,
-      "unrealized_r": 2.17,
+      "unrealized_pnl": 0.69,
+      "unrealized_r": 2.3,
       "entry_reason": "CrowdStrike (CRWD) a primit un upgrade important de preț la 275$ din partea Cantor Fitzgerald și o recunoaștere Frost Radar, susținând o dinamică pozitivă de +4.34% în piață. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~20.01$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-18T11:44:32.677190-05:00",
       "qty": 0.8538,
       "entry_price": 23.418,
-      "current_price": 23.87,
+      "current_price": 23.89,
       "stop": 23.07,
       "initial_stop": 23.07,
-      "unrealized_pnl": 0.39,
-      "unrealized_r": 1.3,
+      "unrealized_pnl": 0.4,
+      "unrealized_r": 1.36,
       "entry_reason": "IonQ a fost utilizat cu succes în validarea de securitate cibernetică cu o rată de recuperare de 99.93% de către Quantum X Labs, oferind un catalizator tehnologic pozitiv puternic care poate contracara scăderea intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-18T11:44:32.677190-05:00",
       "qty": 0.0614,
       "entry_price": 326.118,
-      "current_price": 329.87,
+      "current_price": 330.76,
       "stop": 321.23,
       "initial_stop": 321.23,
-      "unrealized_pnl": 0.23,
-      "unrealized_r": 0.77,
+      "unrealized_pnl": 0.29,
+      "unrealized_r": 0.95,
       "entry_reason": "PANW înregistrează o creștere puternică de +5.63% susținută de interesul instituțional ridicat (Ken Fisher și alte fonduri mari) și de avertismentul Google privind atacurile cibernetice autonome care cresc cererea pentru securitate cibernetică. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: PANW LONG -> BUY PANW (miză ~20.01$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-18T11:44:32.677190-05:00",
       "qty": 0.1485,
       "entry_price": 168.456,
-      "current_price": 170.655,
+      "current_price": 170.815,
       "stop": 165.92,
       "initial_stop": 165.92,
-      "unrealized_pnl": 0.33,
-      "unrealized_r": 0.87,
+      "unrealized_pnl": 0.35,
+      "unrealized_r": 0.93,
       "entry_reason": "Target a raportat rezultate financiare excelente pentru T3, depășind estimările și ridicând prognoza anuală, susținută de o creștere a vânzărilor cu 7.1% și o rambursare masivă de taxe vamale. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: TGT LONG -> BUY TGT (miză ~25.00$, R:R 1:3.5)"
     }
   ],
@@ -135,94 +135,69 @@
         "action": "enter",
         "symbol": "UNH",
         "direction": "short",
-        "price": 355.11,
+        "price": 355.21,
         "prev_close": 389.69,
-        "gap_pct": -8.88,
-        "change_pct": -8.88,
+        "gap_pct": -8.85,
+        "change_pct": -8.85,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 360.44,
-        "target_price": 336.47,
+        "stop_price": 360.54,
+        "target_price": 336.56,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "George Soros and 26 Other Big Funds Sold UnitedHealth Last Quarter, While 12 Bought. Who’s Right?",
-          "CVS Health Raised Its 2026 Outlook 3 Times, but Not Its Dividend",
-          "How Bad Would Higher Medical Costs Be For CVS Health Stock?"
+          "UnitedHealth and other insurance stocks drag down the Dow after CMS proposes new anti-fraud rule",
+          "Nvidia Earnings Beat Fails to Rescue Wall Street as Dow Tumbles",
+          "George Soros and 26 Other Big Funds Sold UnitedHealth Last Quarter, While 12 Bought. Who’s Right?"
         ],
-        "reason_ro": "UNH scade puternic cu aproape 9% pe fondul unor ieșiri masive de capital din partea marilor fonduri (inclusiv George Soros), menținând un impuls tehnic negativ accentuat pe sectorul medical. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "UNH înregistrează o scădere accentuată de aproape 9% în urma propunerii CMS privind o nouă regulă anti-fraudă și a ieșirilor masive ale marilor fonduri, sentimentul general fiind puternic negativ. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-18T18:17:55.449127+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "PANW",
-        "direction": "long",
-        "price": 330.39,
-        "prev_close": 309.17,
-        "gap_pct": 6.86,
-        "change_pct": 6.86,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 325.43,
-        "target_price": 347.74,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Buy Alert: 5 Stocks Analysts Upgraded on Friday",
-          "Google Says Fully Autonomous AI Cyberattacks Are Likely Within 6 Months",
-          "Ken Fisher and 14 Other Big Funds Bought Palo Alto Networks, While 22 Sold. Who’s Right?"
-        ],
-        "reason_ro": "PANW înregistrează o creștere puternică de +6.86% susținută de fluxuri instituționale recente (Ken Fisher și alte fonduri mari) și de un context favorabil pentru securitatea cibernetică, amplificat de avertismentele Google privind atacurile cibernetice autonome. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-18T18:18:39.506968+00:00"
+        "evaluated_at": "2026-11-18T18:28:25.094696+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "UNH",
-        "price": 355.11,
+        "price": 355.21,
         "prev_close": 389.69,
-        "gap_pct": -8.88,
+        "gap_pct": -8.85,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "CRWD",
-        "price": 236.93,
+        "price": 237.47,
         "prev_close": 219.49,
-        "gap_pct": 7.95,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RBLX",
-        "price": 47.22,
-        "prev_close": 44.02,
-        "gap_pct": 7.26,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "TGT",
-        "price": 170.66,
-        "prev_close": 159.45,
-        "gap_pct": 7.03,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "PANW",
-        "price": 330.39,
-        "prev_close": 309.17,
-        "gap_pct": 6.86,
+        "gap_pct": 8.19,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RIOT",
-        "price": 18.18,
+        "price": 18.38,
         "prev_close": 17.05,
-        "gap_pct": 6.6,
+        "gap_pct": 7.74,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RBLX",
+        "price": 47.26,
+        "prev_close": 44.02,
+        "gap_pct": 7.35,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "TGT",
+        "price": 170.72,
+        "prev_close": 159.45,
+        "gap_pct": 7.07,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "PANW",
+        "price": 330.51,
+        "prev_close": 309.17,
+        "gap_pct": 6.9,
         "source": "watchlist_snapshot"
       },
       {
@@ -234,27 +209,27 @@
       },
       {
         "symbol": "CLRO",
-        "price": 7.1,
+        "price": 7.28,
         "prev_close": 4.72,
-        "gap_pct": 50.43,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SKYA",
-        "price": 3.16,
-        "prev_close": 2.17,
-        "gap_pct": 45.62,
+        "gap_pct": 54.24,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CUE",
-        "price": 4.12,
+        "price": 4.28,
         "prev_close": 2.83,
-        "gap_pct": 45.59,
+        "gap_pct": 51.24,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "SKYA",
+        "price": 3.27,
+        "prev_close": 2.17,
+        "gap_pct": 50.92,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-18T18:17:53.613211+00:00",
+    "last_scan_at": "2026-11-18T18:28:17.040288+00:00",
     "telegram_sent_date": "2026-11-18"
   },
   "spy_start_price": 767.64,
