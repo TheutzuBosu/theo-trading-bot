@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -1.42,
   "max_drawdown_pct": -1.43,
-  "updated_at": "2026-11-18T09:48:42.896687-05:00",
+  "updated_at": "2026-11-18T09:49:45.952223-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-18T14:30:47.568550+00:00",
@@ -77,80 +77,106 @@
         "revenue_actual": null
       }
     ],
-    "opportunities": [],
+    "opportunities": [
+      {
+        "action": "enter",
+        "symbol": "MRVL",
+        "direction": "short",
+        "price": 144.21,
+        "prev_close": 148.81,
+        "gap_pct": -3.09,
+        "change_pct": -3.09,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 146.37,
+        "target_price": 136.64,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "Is Broadcom Stock Increasing Your Market Risk?",
+          "Nvidia’s Board Has Considered the CEOs of Arm and Marvell to Replace Huang",
+          "Broadcom Plummeted 20% Over 6 Months: This Respected Tech and Hardware Research Firm is Confident 110% Returns Materialize"
+        ],
+        "reason_ro": "Marvell scade cu 3.09% în contextul unor știri majore de guvernanță corporativă privind succesiunea CEO-ului la Nvidia, atrăgând presiune la vânzare pe sectorul de semiconductori. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-18T14:50:30.897435+00:00"
+      }
+    ],
     "top_movers": [
       {
-        "symbol": "TGT",
-        "price": 165.68,
-        "prev_close": 159.45,
-        "gap_pct": 3.9,
+        "symbol": "UNH",
+        "price": 373.58,
+        "prev_close": 389.69,
+        "gap_pct": -4.14,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RBLX",
-        "price": 45.73,
+        "price": 45.74,
         "prev_close": 44.02,
-        "gap_pct": 3.87,
+        "gap_pct": 3.9,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ASTS",
-        "price": 26.68,
-        "prev_close": 27.57,
-        "gap_pct": -3.26,
+        "symbol": "CVX",
+        "price": 207.89,
+        "prev_close": 216.16,
+        "gap_pct": -3.82,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "AAOZ",
-        "price": 45.78,
-        "prev_close": 34.61,
-        "gap_pct": 32.27,
-        "source": "alpaca_movers"
+        "symbol": "TGT",
+        "price": 165.37,
+        "prev_close": 159.45,
+        "gap_pct": 3.71,
+        "source": "watchlist_snapshot"
       },
       {
-        "symbol": "CUE",
-        "price": 3.65,
-        "prev_close": 2.83,
-        "gap_pct": 28.98,
-        "source": "alpaca_movers"
+        "symbol": "CRM",
+        "price": 188.22,
+        "prev_close": 194.6,
+        "gap_pct": -3.28,
+        "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MPU",
-        "price": 2.72,
-        "prev_close": 2.12,
-        "gap_pct": 28.3,
+        "symbol": "MRVL",
+        "price": 144.21,
+        "prev_close": 148.81,
+        "gap_pct": -3.09,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "PRE",
+        "price": 10.61,
+        "prev_close": 16.33,
+        "gap_pct": -35.03,
         "source": "alpaca_movers"
       },
       {
         "symbol": "HY",
-        "price": 19.19,
+        "price": 17.97,
         "prev_close": 26.2,
-        "gap_pct": -26.76,
+        "gap_pct": -31.41,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "JMIA",
-        "price": 3.56,
-        "prev_close": 4.63,
-        "gap_pct": -23.0,
+        "symbol": "CUE",
+        "price": 3.69,
+        "prev_close": 2.83,
+        "gap_pct": 30.57,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "PRE",
-        "price": 12.68,
-        "prev_close": 16.33,
-        "gap_pct": -22.35,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "BRBR",
-        "price": 13.37,
-        "prev_close": 11.01,
-        "gap_pct": 21.44,
+        "symbol": "AAOZ",
+        "price": 44.32,
+        "prev_close": 34.61,
+        "gap_pct": 28.06,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-18T14:39:33.857989+00:00",
+    "last_scan_at": "2026-11-18T14:49:45.952227+00:00",
     "telegram_sent_date": "2026-11-18"
   },
   "spy_start_price": 767.64,
