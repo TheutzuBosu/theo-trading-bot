@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 506.62,
-  "total_pnl": 6.62,
-  "total_pnl_pct": 1.32,
-  "today_pnl": -0.05,
+  "equity": 506.63,
+  "total_pnl": 6.63,
+  "total_pnl_pct": 1.33,
+  "today_pnl": -0.04,
   "today_pnl_pct": -0.01,
   "current_drawdown_pct": -1.43,
   "max_drawdown_pct": -1.49,
-  "updated_at": "2026-11-18T11:02:05.326675-05:00",
+  "updated_at": "2026-11-18T11:03:12.292961-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,25 +17,12 @@
       "entry_time": "2026-11-18T10:10:19.982065-05:00",
       "qty": 0.0871,
       "entry_price": 229.898,
-      "current_price": 233.59,
+      "current_price": 233.58,
       "stop": 226.45,
       "initial_stop": 226.45,
       "unrealized_pnl": 0.32,
       "unrealized_r": 1.07,
       "entry_reason": "CrowdStrike (CRWD) a primit un upgrade important de preț la 275$ din partea Cantor Fitzgerald și o recunoaștere Frost Radar, susținând o dinamică pozitivă de +4.34% în piață. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~20.01$, R:R 1:3.5)"
-    },
-    {
-      "symbol": "UNH",
-      "direction": "long",
-      "entry_time": "2026-11-18T10:30:50.343616-05:00",
-      "qty": 0.0676,
-      "entry_price": 369.94,
-      "current_price": 364.4328,
-      "stop": 364.4,
-      "initial_stop": 364.4,
-      "unrealized_pnl": -0.37,
-      "unrealized_r": -0.99,
-      "entry_reason": "UNH înregistrează o scădere de -4.80% bazată pe sentimentul general din sectorul medical, dar fundamentele pe termen lung (creștere de 13-16%) și ghidajul ridicat sugerează o oportunitate de tip mean-reversion după epuizarea vânzărilor de la deschidere. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $). · D33 Scanner: UNH LONG -> BUY UNH (miză ~25.01$, R:R 1:3.5)"
     }
   ],
   "premarket": {
@@ -159,76 +146,76 @@
     "top_movers": [
       {
         "symbol": "RBLX",
-        "price": 46.86,
+        "price": 46.92,
         "prev_close": 44.02,
-        "gap_pct": 6.44,
+        "gap_pct": 6.58,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UNH",
-        "price": 366.23,
+        "price": 364.97,
         "prev_close": 389.69,
-        "gap_pct": -6.02,
+        "gap_pct": -6.34,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "CRWD",
+        "price": 233.3,
+        "prev_close": 219.49,
+        "gap_pct": 6.29,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "PANW",
-        "price": 327.69,
+        "price": 328.23,
         "prev_close": 309.17,
-        "gap_pct": 5.99,
+        "gap_pct": 6.16,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "TGT",
-        "price": 168.89,
+        "price": 168.31,
         "prev_close": 159.45,
-        "gap_pct": 5.92,
+        "gap_pct": 5.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RIOT",
         "price": 18.0,
         "prev_close": 17.05,
-        "gap_pct": 5.57,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "CRWD",
-        "price": 230.78,
-        "prev_close": 219.49,
-        "gap_pct": 5.14,
+        "gap_pct": 5.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "CLRO",
-        "price": 7.91,
+        "price": 8.18,
         "prev_close": 4.72,
-        "gap_pct": 67.58,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "PRE",
-        "price": 9.38,
-        "prev_close": 16.33,
-        "gap_pct": -42.54,
+        "gap_pct": 73.2,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CUE",
-        "price": 4.03,
+        "price": 4.16,
         "prev_close": 2.83,
-        "gap_pct": 42.4,
+        "gap_pct": 47.0,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "PRE",
+        "price": 9.46,
+        "prev_close": 16.33,
+        "gap_pct": -42.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "JMIA",
-        "price": 3.34,
+        "price": 3.28,
         "prev_close": 4.63,
-        "gap_pct": -27.86,
+        "gap_pct": -29.16,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-18T15:52:07.146946+00:00",
+    "last_scan_at": "2026-11-18T16:03:12.292966+00:00",
     "telegram_sent_date": "2026-11-18"
   },
   "spy_start_price": 767.64,
