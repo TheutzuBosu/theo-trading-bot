@@ -1,8 +1,8 @@
 {
   "meta_samples": 9,
   "meta_active": false,
-  "updated_at": "2026-11-17T15:30:31.895423-05:00",
-  "total_trades_analyzed": 61,
+  "updated_at": "2026-11-18T15:30:40.663194-05:00",
+  "total_trades_analyzed": 66,
   "hourly_multipliers": {
     "09:00": 0.5,
     "10:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Prețul a lovit direct stop-ul fără nicio mișcare favorabilă, așa că reținem să fim mai prudenți cu intrările bazate pe FOMO în acțiuni deja crescute puternic la deschidere.",
-    "Am cumpărat SDS peșin contra pieței bazat pe un semnal slab de la AI, dar prețul a scăzut direct în stop-loss, așa că data viitoare ignorăm oportunitățile cu probabilitate redusă.",
-    "Am pierdut 0,74 $ (1,06R) pentru că botul a cumpărat acțiuni inverse SDS (pariu pe scăderea pieței) pe baza semnalului SPY, dar prețul a crescut și a lovit stop-loss-ul, deși inițial avusese un avans favorabil de 1,64R.",
-    "Botul a cumpărat acțiuni CRM pe fondul unei scăderi puternice, dar a închis poziția pe timpul limită cu o pierdere mică de 0,18 $, reținând că strategia de revenire la media istorică (mean-reversion) nu a prins impulsul necesar în intervalul alocat.",
-    "Am închis tranzacția pe HOOD în mic profit din cauza expirării timpului, învățând că sentimentul negativ a blocat revenirea așteptată."
+    "Botul a cumpărat acțiuni UNH pe baza unei reveniri așteptate, dar prețul a scăzut direct în stop-loss, așa că reținem să fim mai prudenți cu ordinele *mean-reversion* pe piețe cu sentiment negativ puternic.",
+    "Botul a închis tranzacția pe CRWD după expirarea timpului (miză mică, profit de 0,61 $), iar lecția este că trebuie să evităm ieșirile bazate strict pe timp când acțiunea are potențial de creștere.",
+    "Botul a cumpărat pe baza unei știri bune, dar a ieșit la limită de timp fără nicio mișcare de preț, pierzând doar un cent; reținem că entuziasmul mediatic nu garantează mereu volatilitatea intraday.",
+    "Tranzacția a fost închisă prematur de limită de timp înainte ca prețul să se miște, generând un profit mic de 0,52 $ (1,73R), iar pe viitor trebuie să extindem fereastra de timp pentru a lăsa acțiunea să atingă ținta completă.",
+    "Am cumpărat TGT bazat pe știri bune, dar prețul a stagnat și am închis pe minus din cauza expirării timpului; pe viitor, evităm acțiunile fără impuls tehnic clar, indiferent de vești."
   ]
 }
