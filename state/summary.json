@@ -12,7 +12,7 @@
   "updated_at": "2026-11-17T15:30:31.895423-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-18T13:44:48.861270+00:00",
+    "updated_at": "2026-11-18T14:30:47.568550+00:00",
     "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
@@ -21,19 +21,19 @@
         "gap_pct": 0.25
       },
       "QQQ": {
-        "price": 661.69,
+        "price": 660.22,
         "prev_close": 657.06,
-        "gap_pct": 0.7
+        "gap_pct": 0.48
       }
     },
-    "explanation_ro": "Piața deschide în teritoriu pozitiv, cu QQQ (+0,70%) susținut de optimismul din sectorul tehnologic și știri legate de adoptarea inteligenței artificiale. Totuși, investitorii rămân prudenți din cauza temerilor legate de o posibilă bulă AI și a datelor macroeconomice recente privind dobânzile. În acest context, direcția favorizată la deschidere este moderat Long, dar cu o atenție sporită la volatilitate.",
+    "explanation_ro": "Piața deschide în ușoară creștere (SPY +0.25%, QQQ +0.48%), susținută de sentimentul pozitiv legat de tehnologie și discuțiile despre inteligența artificială, în lipsa unor date macroeconomice majore. Deși există discuții prudente despre bula AI și raportările companiilor mici de azi nu au un impact sistemic, lipsa unor știri negative majore favorizează o direcție Long moderată la deschidere pentru ambele instrumente.",
     "headlines": [
+      "Small investor enthusiasm for Anthropic IPO to rival SpaceX debut",
+      "Jim Cramer's top 10 things to watch in the stock market Wednesday",
+      "Hims & Hers launches new peptide treatments — while admitting there's more to learn about efficacy",
       "Worried about the AI bubble popping? How investing pros say to adjust your strategy",
-      "Paris Hilton, Alexandria Ocasio-Cortez press House to pass Defiance Act to fight AI deepfake pornography",
-      "Booking Holdings creates new enterprise division as AI reshapes travel planning",
-      "Fed officials set to raise rates again in December, but the future still looks murky",
-      "Mortgage demand turns lower, as interest rates shoot back up to the highest level in three weeks.",
-      "Lowe's posts strong online sales, raises outlook despite slow housing market"
+      "Luxury goods sales seen returning to growth in 2026, but outlook fragile - Reuters",
+      "Paris Hilton, Alexandria Ocasio-Cortez press House to pass Defiance Act to fight AI deepfake pornography"
     ],
     "earnings_today": [
       {
@@ -81,23 +81,23 @@
     "top_movers": [
       {
         "symbol": "CRM",
-        "price": 194.6,
+        "price": 191.9,
         "prev_close": 214.87,
-        "gap_pct": -9.43,
+        "gap_pct": -10.69,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 189.64,
+        "price": 188.09,
         "prev_close": 175.03,
-        "gap_pct": 8.35,
+        "gap_pct": 7.46,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 35.86,
+        "price": 35.49,
         "prev_close": 38.29,
-        "gap_pct": -6.35,
+        "gap_pct": -7.31,
         "source": "watchlist_snapshot"
       },
       {
@@ -150,7 +150,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-18T13:43:25.689323+00:00",
+    "last_scan_at": "2026-11-18T14:29:03.554457+00:00",
     "telegram_sent_date": "2026-11-18"
   },
   "spy_start_price": 767.64,
