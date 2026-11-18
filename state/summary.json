@@ -12,193 +12,146 @@
   "updated_at": "2026-11-17T15:30:31.895423-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-17T14:23:41.856045+00:00",
-    "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
+    "updated_at": "2026-11-18T13:44:48.861270+00:00",
+    "risk_regime": "NORMAL",
     "quotes": {
       "SPY": {
-        "price": 738.8,
-        "prev_close": 740.04,
-        "gap_pct": -0.17
+        "price": 734.27,
+        "prev_close": 732.41,
+        "gap_pct": 0.25
       },
       "QQQ": {
-        "price": 663.59,
-        "prev_close": 661.8,
-        "gap_pct": 0.27
+        "price": 661.69,
+        "prev_close": 657.06,
+        "gap_pct": 0.7
       }
     },
-    "explanation_ro": "Piața are o deschidere mixtă, cu QQQ în ușoară creștere susținută de optimismul din sectorul tech înaintea raportului financiar NVDA și a zvonurilor despre IPO-ul Anthropic, în timp ce SPY înregistrează un mic gap negativ pe fondul tensiunilor geopolitice. Raportul financiar al celor de la HD de dimineață și așteptările ridicate pentru Nvidia favorizează o direcție prudentă, dar cu o ușoară favorizare a pozițiilor Long pe tehnologie (QQQ) la deschidere.",
+    "explanation_ro": "Piața deschide în teritoriu pozitiv, cu QQQ (+0,70%) susținut de optimismul din sectorul tehnologic și știri legate de adoptarea inteligenței artificiale. Totuși, investitorii rămân prudenți din cauza temerilor legate de o posibilă bulă AI și a datelor macroeconomice recente privind dobânzile. În acest context, direcția favorizată la deschidere este moderat Long, dar cu o atenție sporită la volatilitate.",
     "headlines": [
-      "Anthropic IPO: For hundreds of billions of dollars flowing into AI startups, a big debut is a must",
-      "'Big Short' investor Steve Eisman to discuss Nvidia, Anthropic and AI bull on CNBC",
-      "Investors look to Nvidia's earnings and Anthropic's IPO to refresh the tech rally",
-      "Trump says US taking seriously report of possible Iranian dirty bomb plot in Washington - Reuters",
-      "Nasdaq futures rise as tech stocks firm up ahead of Nvidia results, Anthropic IPO - Reuters",
-      "Nike hosts first investor day in 9 years as it tries to rightsize its business"
+      "Worried about the AI bubble popping? How investing pros say to adjust your strategy",
+      "Paris Hilton, Alexandria Ocasio-Cortez press House to pass Defiance Act to fight AI deepfake pornography",
+      "Booking Holdings creates new enterprise division as AI reshapes travel planning",
+      "Fed officials set to raise rates again in December, but the future still looks murky",
+      "Mortgage demand turns lower, as interest rates shoot back up to the highest level in three weeks.",
+      "Lowe's posts strong online sales, raises outlook despite slow housing market"
     ],
     "earnings_today": [
       {
-        "symbol": "HD",
-        "hour": "bmo",
-        "eps_estimate": 3.9542,
-        "eps_actual": 3.86,
-        "revenue_estimate": 44075069385,
-        "revenue_actual": 43398000000
-      },
-      {
-        "symbol": "NVDA",
-        "hour": "amc",
-        "eps_estimate": 2.525,
+        "symbol": "BBWI",
+        "hour": "",
+        "eps_estimate": 0.1213,
         "eps_actual": null,
-        "revenue_estimate": 111282164311,
+        "revenue_estimate": 1581967398,
         "revenue_actual": null
       },
       {
-        "symbol": "AS",
+        "symbol": "BRBR",
         "hour": "bmo",
-        "eps_estimate": 0.3583,
-        "eps_actual": 0.42,
-        "revenue_estimate": 2202800878,
-        "revenue_actual": 2169200000
+        "eps_estimate": 0.2327,
+        "eps_actual": 0.22,
+        "revenue_estimate": 670341450,
+        "revenue_actual": 692000000
       },
       {
-        "symbol": "ATKR",
-        "hour": "bmo",
-        "eps_estimate": 1.8421,
+        "symbol": "CPA",
+        "hour": "amc",
+        "eps_estimate": 3.8679,
         "eps_actual": null,
-        "revenue_estimate": 802461030,
+        "revenue_estimate": 1187799016,
         "revenue_actual": null
       },
       {
-        "symbol": "AUNA",
-        "hour": "amc",
-        "eps_estimate": 0.8527,
+        "symbol": "DOYU",
+        "hour": "",
+        "eps_estimate": 0.0806,
         "eps_actual": null,
-        "revenue_estimate": 1244625930,
+        "revenue_estimate": 862094820,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "GAP",
+        "hour": "",
+        "eps_estimate": 0.7855,
+        "eps_actual": null,
+        "revenue_estimate": 4056477675,
         "revenue_actual": null
       }
     ],
-    "opportunities": [
-      {
-        "action": "enter",
-        "symbol": "CRM",
-        "direction": "short",
-        "price": 194.92,
-        "prev_close": 214.87,
-        "gap_pct": -9.28,
-        "change_pct": -9.28,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 197.84,
-        "target_price": 184.69,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Stock Market Today: Dow Drops As Salesforce Dives; Nvidia Falls As Jensen Huang Says This (Live Coverage)",
-          "Software Stocks Retreat Amid Inflation Worries, New OpenAI Model",
-          "Salesforce Sells Off Before Anthropic’s IPO"
-        ],
-        "reason_ro": "Salesforce înregistrează o scădere severă de peste 9% pe fondul îngrijorărilor legate de inflație și al presiunii competitive generate de viitoarea IPO Anthropic și noul model OpenAI, conducând un sell-off generalizat în sectorul software. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-17T20:27:47.844939+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AFRM",
-        "direction": "short",
-        "price": 59.23,
-        "prev_close": 62.71,
-        "gap_pct": -5.54,
-        "change_pct": -5.54,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 60.12,
-        "target_price": 56.12,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [],
-        "reason_ro": "AFRM înregistrează o scădere intraday puternică de -5.54% pe volum ridicat, oferind o oportunitate tehnică de continuare a trendului descendent. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-17T20:28:13.013167+00:00"
-      }
-    ],
+    "opportunities": [],
     "top_movers": [
       {
         "symbol": "CRM",
-        "price": 194.92,
+        "price": 194.6,
         "prev_close": 214.87,
-        "gap_pct": -9.28,
+        "gap_pct": -9.43,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ARM",
+        "price": 189.64,
+        "prev_close": 175.03,
+        "gap_pct": 8.35,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 35.44,
+        "price": 35.86,
         "prev_close": 38.29,
-        "gap_pct": -7.46,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 24.66,
-        "prev_close": 26.45,
-        "gap_pct": -6.75,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "UNH",
-        "price": 387.86,
-        "prev_close": 412.07,
-        "gap_pct": -5.88,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AFRM",
-        "price": 59.23,
-        "prev_close": 62.71,
-        "gap_pct": -5.54,
+        "gap_pct": -6.35,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 11.12,
+        "price": 11.05,
         "prev_close": 11.75,
-        "gap_pct": -5.4,
+        "gap_pct": -5.96,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "UNH",
+        "price": 389.69,
+        "prev_close": 412.07,
+        "gap_pct": -5.43,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AFRM",
+        "price": 59.45,
+        "prev_close": 62.71,
+        "gap_pct": -5.2,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SLS",
-        "price": 19.33,
+        "price": 19.15,
         "prev_close": 7.47,
-        "gap_pct": 158.77,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "CUE",
-        "price": 3.15,
-        "prev_close": 14.1,
-        "gap_pct": -77.66,
+        "gap_pct": 156.36,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GP",
-        "price": 2.49,
+        "price": 2.62,
         "prev_close": 1.41,
-        "gap_pct": 76.6,
+        "gap_pct": 85.82,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "AYTU",
-        "price": 2.65,
-        "prev_close": 1.82,
-        "gap_pct": 45.88,
+        "symbol": "CUE",
+        "price": 2.83,
+        "prev_close": 14.1,
+        "gap_pct": -79.93,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "MPU",
+        "price": 2.12,
+        "prev_close": 1.28,
+        "gap_pct": 65.63,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-17T20:27:45.861872+00:00",
-    "telegram_sent_date": "2026-11-17"
+    "last_scan_at": "2026-11-18T13:43:25.689323+00:00",
+    "telegram_sent_date": "2026-11-18"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
