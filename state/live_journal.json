@@ -35,7 +35,7 @@
       "initial_risk_dollars": 0.1507,
       "equity_at_entry": 507.22,
       "partial_done": false,
-      "last_price": 252.42,
+      "last_price": 252.07,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)",
       "features": {
         "minute_of_day": 0.0,
@@ -75,7 +75,7 @@
       "initial_risk_dollars": 0.1113,
       "equity_at_entry": 507.39,
       "partial_done": false,
-      "last_price": 57.955,
+      "last_price": 57.89,
       "entry_reason": "INTC urcă cu peste 6.6% susținut de raliul general din sectorul de semiconductori alimentat de optimismul privind debutul bursier Anthropic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~7.50$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
