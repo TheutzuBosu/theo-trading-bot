@@ -1,23 +1,23 @@
 {
-  "meta_samples": 9,
+  "meta_samples": 13,
   "meta_active": false,
-  "updated_at": "2026-11-18T15:30:40.663194-05:00",
-  "total_trades_analyzed": 66,
+  "updated_at": "2026-11-19T15:30:14.052409-05:00",
+  "total_trades_analyzed": 82,
   "hourly_multipliers": {
     "09:00": 0.5,
     "10:00": 1.0,
     "11:00": 1.0,
     "12:00": 1.0,
-    "13:00": 1.0,
+    "13:00": 0.5,
     "14:00": 1.0,
     "15:00": 1.0
   },
   "retrained_today": false,
   "last_lessons": [
-    "Botul a cumpărat acțiuni UNH pe baza unei reveniri așteptate, dar prețul a scăzut direct în stop-loss, așa că reținem să fim mai prudenți cu ordinele *mean-reversion* pe piețe cu sentiment negativ puternic.",
-    "Botul a închis tranzacția pe CRWD după expirarea timpului (miză mică, profit de 0,61 $), iar lecția este că trebuie să evităm ieșirile bazate strict pe timp când acțiunea are potențial de creștere.",
-    "Botul a cumpărat pe baza unei știri bune, dar a ieșit la limită de timp fără nicio mișcare de preț, pierzând doar un cent; reținem că entuziasmul mediatic nu garantează mereu volatilitatea intraday.",
-    "Tranzacția a fost închisă prematur de limită de timp înainte ca prețul să se miște, generând un profit mic de 0,52 $ (1,73R), iar pe viitor trebuie să extindem fereastra de timp pentru a lăsa acțiunea să atingă ținta completă.",
-    "Am cumpărat TGT bazat pe știri bune, dar prețul a stagnat și am închis pe minus din cauza expirării timpului; pe viitor, evităm acțiunile fără impuls tehnic clar, indiferent de vești."
+    "Robotul a pierdut 1,09 dolari cumpărând un ETF invers pe o piață în scădere, învățând că nu trebuie să intre long împotriva trendului principal.",
+    "Botul a cumpărat inversul pieței (SDS) bazat pe un semnal de scădere, dar prețul a crescut și a activat stop-loss-ul, rezultând o mică pierdere de 1,31$ (-0,94R); reținem că trebuie să evităm contra-trendul când momentumul este nefavorabil.",
+    "Am cumpărat SDS peșterind o scădere a pieței, am obținut un profit mic de 2,22 $ înainte ca timpul să închidă poziția, învățând că trebuie să lăsăm profiturile să alerge în loc să ieșim doar pe ceas.",
+    "Botul a cumpărat acțiuni SHOP pe baza unor vești bune, dar a închis poziția pe 0 în pierdere mică din cauza expirării timpului; **reținem** că fundamentul puternic nu garantează o mișcare rapidă intraday, iar limitarea timpului de deținere poate tăia prematur o potențială revenire.",
+    "Botul a cumpărat acțiuni UBER pe baza unor știri bune, dar a închis poziția pe ștearsă (timp expirat) cu o pierdere mică de 0,22 $, reținând că vestea pozitivă nu a generat impulsul așteptat în intervalul alocat."
   ]
 }
