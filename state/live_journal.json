@@ -9,8 +9,50 @@
     "MOVER|PANW|2026-11-19|long",
     "MOVER|QCOM|2026-11-19|long",
     "MOVER|RBLX|2026-11-19|long",
-    "MOVER|RIOT|2026-11-19|long"
+    "MOVER|RIOT|2026-11-19|long",
+    "QQQ|2026-11-19T13:15:00-05:00|short"
   ],
-  "open_trades": {},
+  "open_trades": {
+    "QID": {
+      "trade_id": "theo-QID-S-202611191315",
+      "signal_symbol": "QQQ",
+      "signal_direction": "short",
+      "exec_symbol": "QID",
+      "exec_direction": "long",
+      "leverage": 2,
+      "signal_time": "2026-11-19T13:15:00-05:00",
+      "entry_time": "2026-11-19T13:16:44.862857-05:00",
+      "entry_price": 67.19,
+      "qty": 3.765,
+      "qty0": 3.765,
+      "signal_entry_price": 648.795,
+      "signal_stop": 650.7012085,
+      "signal_initial_stop": 650.7012085,
+      "signal_target": 642.22693,
+      "signal_stop_after_target": 650.279118,
+      "exec_stop": 66.73,
+      "exec_initial_stop": 66.73,
+      "exec_target": 68.48,
+      "stop_order_id": "1b5c7302-46c9-418b-b0dd-a0b07aa6545d",
+      "stop_seq": 0,
+      "initial_risk_dollars": 1.7319,
+      "equity_at_entry": 505.41,
+      "partial_done": false,
+      "last_price": 67.19,
+      "entry_reason": "D1b short: Close=649.37, band=649.63, VWAP=659.76, tp0=642.23 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00",
+      "features": {
+        "minute_of_day": 225.0,
+        "dist_from_band_bps": 29.62531448970962,
+        "dist_from_vwap_bps": 157.4558303582152,
+        "rv_30m": 0.0011662607434386994,
+        "sigma_14d": 0.024657919355371056,
+        "overnight_gap_bps": 176.7818427157075,
+        "ret_since_open_bps": -325.6707834870309,
+        "vol_ratio_14d": 1.429760173354547,
+        "day_of_week": 3.0,
+        "cost_to_risk": 0.015548107826047259
+      }
+    }
+  },
   "last_eod_date": "2026-11-18"
 }
