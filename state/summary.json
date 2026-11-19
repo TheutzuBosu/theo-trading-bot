@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 505.47,
-  "total_pnl": 5.47,
-  "total_pnl_pct": 1.09,
-  "today_pnl": -1.75,
-  "today_pnl_pct": -0.35,
-  "current_drawdown_pct": -1.66,
+  "equity": 505.56,
+  "total_pnl": 5.56,
+  "total_pnl_pct": 1.11,
+  "today_pnl": -1.66,
+  "today_pnl_pct": -0.33,
+  "current_drawdown_pct": -1.64,
   "max_drawdown_pct": -1.66,
-  "updated_at": "2026-11-19T12:19:26.082792-05:00",
+  "updated_at": "2026-11-19T12:20:27.244753-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 244.72,
+      "current_price": 247.0,
       "stop": 243.47,
       "initial_stop": 243.47,
-      "unrealized_pnl": -0.1,
-      "unrealized_r": -0.66,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.05,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     }
   ],
@@ -94,12 +94,37 @@
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "PANW",
+        "direction": "long",
+        "price": 357.19,
+        "prev_close": 339.68,
+        "gap_pct": 5.15,
+        "change_pct": 5.15,
+        "stake_dollars": 25.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 351.83,
+        "target_price": 375.94,
+        "expected_profit_dollars": 1.31,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "Stock Market Today: Nasdaq Clings To Gain, Dow Struggles; Palo Alto Jumps (Live Coverage)",
+          "Cybersecurity sector outlook: Setup analysis as Palo Alto results lift peers",
+          "Palo Alto Networks soars on Q1 earnings and Applied Compute deal"
+        ],
+        "reason_ro": "PANW înregistrează o creștere solidă de peste 5% susținută de rezultatele financiare puternice pe Q1, un acord strategic cu Applied Compute și un sentiment pozitiv în sectorul de securitate cibernetică. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T17:21:20.990521+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "LUNR",
         "direction": "short",
         "price": 9.65,
         "prev_close": 10.1,
-        "gap_pct": -4.41,
-        "change_pct": -4.41,
+        "gap_pct": -4.46,
+        "change_pct": -4.46,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
@@ -111,84 +136,84 @@
         "headlines": [
           "Intuitive Machines (LUNR) Stock Sees Fair Value Cut As Analysts Turn More Cautious"
         ],
-        "reason_ro": "Intuitive Machines (LUNR) înregistrează o scădere de -4.41% susținută de o reducere a prețului țintă (Fair Value Cut) din partea analiștilor, confirmând un sentiment fundamental negativ și o tendință descendentă activă în timpul sesiunii curente. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "LUNR înregistrează o scădere de -4.46% pe fondul unei revizuiri în jos a valorii juste de către analiști, creând o oportunitate de sell pe trendul intraday negativ. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T17:11:32.206086+00:00"
+        "evaluated_at": "2026-11-19T17:21:39.069234+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 484.84,
+        "price": 482.67,
         "prev_close": 530.45,
-        "gap_pct": -8.6,
+        "gap_pct": -9.01,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UNH",
-        "price": 325.7,
+        "price": 328.83,
         "prev_close": 349.9,
-        "gap_pct": -6.92,
+        "gap_pct": -6.02,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 34.27,
+        "price": 34.39,
         "prev_close": 36.31,
-        "gap_pct": -5.62,
+        "gap_pct": -5.29,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "PANW",
-        "price": 357.82,
+        "price": 357.19,
         "prev_close": 339.68,
-        "gap_pct": 5.34,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "UPST",
-        "price": 17.07,
-        "prev_close": 18.02,
-        "gap_pct": -5.27,
+        "gap_pct": 5.15,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
         "price": 9.65,
         "prev_close": 10.1,
-        "gap_pct": -4.41,
+        "gap_pct": -4.46,
         "source": "watchlist_snapshot"
       },
       {
+        "symbol": "UPST",
+        "price": 17.21,
+        "prev_close": 18.02,
+        "gap_pct": -4.44,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "INHD",
+        "price": 3.11,
+        "prev_close": 2.3,
+        "gap_pct": 35.22,
+        "source": "alpaca_movers"
+      },
+      {
         "symbol": "NCPL",
-        "price": 3.97,
+        "price": 3.91,
         "prev_close": 2.89,
-        "gap_pct": 37.37,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "MPU",
-        "price": 3.75,
-        "prev_close": 2.84,
-        "gap_pct": 31.87,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SOWG",
-        "price": 2.7,
-        "prev_close": 2.06,
-        "gap_pct": 31.07,
+        "gap_pct": 35.19,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MDRN",
-        "price": 2.13,
+        "price": 2.18,
         "prev_close": 1.63,
-        "gap_pct": 30.82,
+        "gap_pct": 33.68,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "MPU",
+        "price": 3.79,
+        "prev_close": 2.84,
+        "gap_pct": 33.45,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T17:10:02.509539+00:00",
+    "last_scan_at": "2026-11-19T17:20:27.244757+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
