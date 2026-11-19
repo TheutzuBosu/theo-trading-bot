@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 505.91,
-  "total_pnl": 5.91,
-  "total_pnl_pct": 1.18,
-  "today_pnl": -1.31,
-  "today_pnl_pct": -0.26,
-  "current_drawdown_pct": -1.57,
+  "equity": 505.98,
+  "total_pnl": 5.98,
+  "total_pnl_pct": 1.2,
+  "today_pnl": -1.24,
+  "today_pnl_pct": -0.24,
+  "current_drawdown_pct": -1.56,
   "max_drawdown_pct": -1.57,
-  "updated_at": "2026-11-19T10:32:45.932958-05:00",
+  "updated_at": "2026-11-19T10:33:53.523098-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 249.77,
+      "current_price": 251.5,
       "stop": 243.47,
       "initial_stop": 243.47,
-      "unrealized_pnl": 0.11,
-      "unrealized_r": 0.7,
+      "unrealized_pnl": 0.18,
+      "unrealized_r": 1.16,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     }
   ],
@@ -96,16 +96,16 @@
         "action": "enter",
         "symbol": "CRWD",
         "direction": "long",
-        "price": 250.31,
+        "price": 249.94,
         "prev_close": 236.96,
-        "gap_pct": 5.63,
-        "change_pct": 5.63,
+        "gap_pct": 5.48,
+        "change_pct": 5.48,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 246.56,
-        "target_price": 263.45,
+        "stop_price": 246.19,
+        "target_price": 263.06,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -113,134 +113,134 @@
           "What Triggered The Move In Zscaler Stock?",
           "Cybersecurity Stocks Rally On Palo Alto Earnings Beat, Raised Guidance"
         ],
-        "reason_ro": "CRWD crește puternic pe fondul unui raliu general în sectorul de securitate cibernetică, susținut de rezultatele excelente și ghidajul ridicat raportat de Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "CRWD crește cu peste 5% susținută de un raliu generalizat pe sectorul de securitate cibernetică, impulsionat de rezultatele financiare puternice și ghidajul ridicat ale concurentului Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T15:22:57.245407+00:00"
+        "evaluated_at": "2026-11-19T15:34:01.861554+00:00"
       },
       {
         "action": "enter",
-        "symbol": "PANW",
+        "symbol": "ASTS",
         "direction": "long",
-        "price": 354.68,
-        "prev_close": 339.68,
-        "gap_pct": 4.42,
-        "change_pct": 4.42,
-        "stake_dollars": 20.0,
+        "price": 26.55,
+        "prev_close": 25.49,
+        "gap_pct": 4.16,
+        "change_pct": 4.16,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 349.36,
-        "target_price": 373.3,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 26.15,
+        "target_price": 27.94,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "Palo Alto Networks Stock Soars as Revenue Smashes Estimates and Annual Forecast Climbs",
-          "Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
-          "Palo Alto Is Paying $4.5 Billion for a Startup Ex-OpenAI Researchers Founded Last Year"
+          "AST SpaceMobile Stock Climbs After B. Riley Upgrade, Analyst Says Rocket Risk Is Priced In",
+          "AST SpaceMobile: The Market May Have Gone Too Far",
+          "11 Communication Services Stocks Moving In Thursday's Pre-Market Session"
         ],
-        "reason_ro": "Palo Alto Networks înregistrează o creștere puternică datorită rezultatelor financiare peste așteptări, majorării prognozei anuale și achiziției strategice de 4,5 miliarde de dolari. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ASTS beneficiază de un upgrade pozitiv din partea B. Riley și de indicii favorabile privind lansarea ULA, depășind temerile recente legate de diluție. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T15:23:49.079916+00:00"
+        "evaluated_at": "2026-11-19T15:34:12.491792+00:00"
       },
       {
         "action": "enter",
-        "symbol": "QCOM",
-        "direction": "long",
-        "price": 165.96,
-        "prev_close": 159.75,
-        "gap_pct": 3.88,
-        "change_pct": 3.88,
-        "stake_dollars": 20.0,
+        "symbol": "UNH",
+        "direction": "short",
+        "price": 336.2,
+        "prev_close": 349.9,
+        "gap_pct": -3.91,
+        "change_pct": -3.91,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
-        "stop_pct": 0.012,
-        "target_pct": 0.042,
-        "stop_price": 163.97,
-        "target_price": 172.93,
-        "expected_profit_dollars": 0.84,
-        "max_loss_dollars": 0.24,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 341.24,
+        "target_price": 318.55,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "3 Tech Dividend Stocks to Buy in December as AI Spending Accelerates",
-          "Buy, Sell, Or Hold Anthropic Stock At $100?",
-          "The Dates That Matter Most For Micron Stock"
+          "US Stock Market Today: S&P 500 Futures Advance On Falling Yields And Hawkish Fed Signals",
+          "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls",
+          "Why Is Humana Stock Falling?"
         ],
-        "reason_ro": "QCOM beneficiază de un impuls puternic pe segmentul de dividende și accelerarea cheltuielilor în AI, înregistrand o creștere de +3.88% în timpul sesiunii principale deschise. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.24 $ / țintă profit +0.84 $).",
+        "reason_ro": "UnitedHealth scade puternic (-3.91%) pe fondul unei investigații federale pentru fraudă, un catalizator negativ fundamental solid care generează un trend descendent clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T15:24:08.647815+00:00"
+        "evaluated_at": "2026-11-19T15:35:16.481593+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "CRWD",
-        "price": 250.31,
+        "price": 249.94,
         "prev_close": 236.96,
-        "gap_pct": 5.63,
+        "gap_pct": 5.48,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 26.81,
+        "price": 26.55,
         "prev_close": 25.49,
-        "gap_pct": 5.18,
+        "gap_pct": 4.16,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INTC",
-        "price": 57.45,
+        "price": 56.89,
         "prev_close": 54.68,
-        "gap_pct": 5.07,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "PANW",
-        "price": 354.68,
-        "prev_close": 339.68,
-        "gap_pct": 4.42,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MU",
-        "price": 733.31,
-        "prev_close": 704.86,
         "gap_pct": 4.04,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "QCOM",
-        "price": 165.96,
-        "prev_close": 159.75,
-        "gap_pct": 3.88,
+        "symbol": "PANW",
+        "price": 353.06,
+        "prev_close": 339.68,
+        "gap_pct": 3.94,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "UNH",
+        "price": 336.2,
+        "prev_close": 349.9,
+        "gap_pct": -3.91,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "NKE",
+        "price": 34.91,
+        "prev_close": 36.31,
+        "gap_pct": -3.86,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INHD",
-        "price": 3.22,
+        "price": 3.25,
         "prev_close": 2.3,
-        "gap_pct": 39.95,
+        "gap_pct": 41.3,
         "source": "alpaca_movers"
       },
       {
         "symbol": "POAS",
-        "price": 3.09,
+        "price": 3.1,
         "prev_close": 2.32,
-        "gap_pct": 33.19,
+        "gap_pct": 33.41,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NCPL",
-        "price": 3.7,
+        "price": 3.82,
         "prev_close": 2.89,
-        "gap_pct": 28.03,
+        "gap_pct": 32.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SA",
-        "price": 18.91,
+        "price": 18.53,
         "prev_close": 25.55,
-        "gap_pct": -25.99,
+        "gap_pct": -27.48,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T15:22:47.464801+00:00",
+    "last_scan_at": "2026-11-19T15:33:53.523102+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
