@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 505.58,
-  "total_pnl": 5.58,
+  "equity": 505.6,
+  "total_pnl": 5.6,
   "total_pnl_pct": 1.12,
-  "today_pnl": -1.64,
+  "today_pnl": -1.62,
   "today_pnl_pct": -0.32,
   "current_drawdown_pct": -1.63,
   "max_drawdown_pct": -1.66,
-  "updated_at": "2026-11-19T12:51:51.034732-05:00",
+  "updated_at": "2026-11-19T12:52:48.074109-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 247.53,
+      "current_price": 248.06,
       "stop": 243.47,
       "initial_stop": 243.47,
-      "unrealized_pnl": 0.01,
-      "unrealized_r": 0.09,
+      "unrealized_pnl": 0.04,
+      "unrealized_r": 0.24,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     }
   ],
@@ -96,16 +96,16 @@
         "action": "enter",
         "symbol": "PANW",
         "direction": "long",
-        "price": 360.47,
+        "price": 359.87,
         "prev_close": 339.68,
-        "gap_pct": 6.12,
-        "change_pct": 6.12,
+        "gap_pct": 5.94,
+        "change_pct": 5.94,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 355.06,
-        "target_price": 379.39,
+        "stop_price": 354.47,
+        "target_price": 378.76,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -113,49 +113,49 @@
           "Cybersecurity sector outlook: Setup analysis as Palo Alto results lift peers",
           "Palo Alto Networks soars on Q1 earnings and Applied Compute deal"
         ],
-        "reason_ro": "Palo Alto Networks crește puternic pe fondul rezultatelor financiare solide pentru Q1 și al unui nou acord important, ridicând întregul sector de securitate cibernetică. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Palo Alto Networks inregistreaza o crestere puternica de aproape 6% pe fondul unor rezultate financiare solide pentru Q1 si al unui acord important cu Applied Compute, ridicand intregul sector de securitate cibernetica. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T17:42:44.644648+00:00"
+        "evaluated_at": "2026-11-19T17:52:55.363824+00:00"
       },
       {
         "action": "enter",
         "symbol": "CRWD",
         "direction": "long",
-        "price": 248.42,
+        "price": 248.21,
         "prev_close": 236.96,
-        "gap_pct": 4.84,
-        "change_pct": 4.84,
-        "stake_dollars": 20.0,
+        "gap_pct": 4.75,
+        "change_pct": 4.75,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
-        "stop_pct": 0.012,
-        "target_pct": 0.042,
-        "stop_price": 245.44,
-        "target_price": 258.85,
-        "expected_profit_dollars": 0.84,
-        "max_loss_dollars": 0.24,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 244.49,
+        "target_price": 261.24,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "Stock Market Today: Nasdaq Clings To Gain, Dow Struggles; Palo Alto Jumps (Live Coverage)",
           "Cybersecurity sector outlook: Setup analysis as Palo Alto results lift peers",
           "Palo Alto Networks soars on Q1 earnings and Applied Compute deal"
         ],
-        "reason_ro": "CRWD crește cu 4.84% susținută de rezultatele financiare puternice și ghidajul ridicat al competitorului Palo Alto Networks, care a impulsionat întregul sector de securitate cibernetică. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.24 $ / țintă profit +0.84 $).",
+        "reason_ro": "CRWD crește cu 4.75% impulsionată de rezultatele financiare excelente și ghidajul puternic ale concurentului Palo Alto Networks, pe fondul unui mediu cibernetic favorabil sectorului. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T17:43:31.898642+00:00"
+        "evaluated_at": "2026-11-19T17:53:06.981060+00:00"
       },
       {
         "action": "enter",
         "symbol": "NKE",
         "direction": "short",
-        "price": 34.62,
+        "price": 34.59,
         "prev_close": 36.31,
-        "gap_pct": -4.64,
-        "change_pct": -4.64,
+        "gap_pct": -4.72,
+        "change_pct": -4.72,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 35.14,
-        "target_price": 32.8,
+        "stop_price": 35.11,
+        "target_price": 32.77,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -163,84 +163,105 @@
           "NIKE, Inc. (NKE) Is a Trending Stock: Facts to Know Before Betting on It",
           "Nike is Riding the GTA 6 Hype. Will Its Stock Price See Any Relief?"
         ],
-        "reason_ro": "NKE înregistrează o scădere de -4.64% pe fondul unor perspective financiare dezamăgitoare pe termen lung (fără creșteri ale vânzărilor până în 2029) și sentimentului bearish general, oferind o oportunitate clară de continuare a trendului negativ intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "NKE înregistrează o scădere de -4.72% susținută de sentimentul fundamental puternic bearish și perspectivele slabe de creștere a vânzărilor până în 2029, confirmate de ultimele știri. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T17:43:46.633566+00:00"
+        "evaluated_at": "2026-11-19T17:53:12.572305+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "RBLX",
+        "direction": "long",
+        "price": 49.19,
+        "prev_close": 47.32,
+        "gap_pct": 3.94,
+        "change_pct": 3.94,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.2,
+        "stop_pct": 0.015,
+        "target_pct": 0.048,
+        "stop_price": 48.45,
+        "target_price": 51.55,
+        "expected_profit_dollars": 0.72,
+        "max_loss_dollars": 0.22,
+        "headlines": [],
+        "reason_ro": "RBLX înregistrează o mișcare tehnică puternică cu un avans de +3.94% pe volum ridicat în timpul sesiunii active NYSE, confirmând un impuls intraday favorabil continuării. Intrare LONG cu miză 15 $, Risc:Reward 1:3.2 (risc -0.22 $ / țintă profit +0.72 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T17:53:18.743088+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 488.54,
+        "price": 490.75,
         "prev_close": 530.45,
-        "gap_pct": -7.9,
+        "gap_pct": -7.48,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "PANW",
-        "price": 360.47,
+        "price": 359.87,
         "prev_close": 339.68,
-        "gap_pct": 6.12,
+        "gap_pct": 5.94,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UNH",
-        "price": 330.44,
+        "price": 330.94,
         "prev_close": 349.9,
-        "gap_pct": -5.56,
+        "gap_pct": -5.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "CRWD",
-        "price": 248.42,
+        "price": 248.21,
         "prev_close": 236.96,
-        "gap_pct": 4.84,
+        "gap_pct": 4.75,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 34.62,
+        "price": 34.59,
         "prev_close": 36.31,
-        "gap_pct": -4.64,
+        "gap_pct": -4.72,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RBLX",
-        "price": 49.34,
+        "price": 49.19,
         "prev_close": 47.32,
-        "gap_pct": 4.28,
+        "gap_pct": 3.94,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NCPL",
-        "price": 3.99,
-        "prev_close": 2.89,
-        "gap_pct": 38.17,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SOWG",
-        "price": 2.83,
-        "prev_close": 2.06,
-        "gap_pct": 37.38,
-        "source": "alpaca_movers"
-      },
-      {
         "symbol": "MPU",
-        "price": 3.88,
+        "price": 4.08,
         "prev_close": 2.84,
-        "gap_pct": 36.62,
+        "gap_pct": 43.64,
         "source": "alpaca_movers"
       },
       {
         "symbol": "INHD",
-        "price": 3.07,
+        "price": 3.08,
         "prev_close": 2.3,
-        "gap_pct": 33.52,
+        "gap_pct": 33.93,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "MDRN",
+        "price": 2.17,
+        "prev_close": 1.63,
+        "gap_pct": 33.13,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "NCPL",
+        "price": 3.85,
+        "prev_close": 2.89,
+        "gap_pct": 33.04,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T17:42:18.545723+00:00",
+    "last_scan_at": "2026-11-19T17:52:48.074112+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
