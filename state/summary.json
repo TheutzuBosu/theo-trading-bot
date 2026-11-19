@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 505.94,
-  "total_pnl": 5.94,
+  "equity": 505.93,
+  "total_pnl": 5.93,
   "total_pnl_pct": 1.19,
-  "today_pnl": -1.28,
+  "today_pnl": -1.29,
   "today_pnl_pct": -0.25,
-  "current_drawdown_pct": -1.56,
+  "current_drawdown_pct": -1.57,
   "max_drawdown_pct": -1.57,
-  "updated_at": "2026-11-19T10:49:14.876469-05:00",
+  "updated_at": "2026-11-19T10:50:22.783820-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 250.415,
+      "current_price": 250.35,
       "stop": 243.47,
       "initial_stop": 243.47,
       "unrealized_pnl": 0.13,
-      "unrealized_r": 0.87,
+      "unrealized_r": 0.85,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     }
   ],
