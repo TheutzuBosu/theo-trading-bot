@@ -1,15 +1,28 @@
 [
   {
+    "symbol": "SDS",
+    "direction": "long",
+    "entry_time": "2026-11-19T14:47:59.717998-05:00",
+    "qty": 4.1032,
+    "entry_price": 61.26,
+    "current_price": 61.26,
+    "stop": 60.94,
+    "initial_stop": 60.94,
+    "unrealized_pnl": 0.0,
+    "unrealized_r": 0.0,
+    "entry_reason": "D1b short: Close=720.24, band=720.43, VWAP=726.62, tp0=712.32 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
+  },
+  {
     "symbol": "SHOP",
     "direction": "long",
     "entry_time": "2026-11-19T13:45:18.411298-05:00",
     "qty": 0.1514,
     "entry_price": 132.142,
-    "current_price": 133.5,
+    "current_price": 133.17,
     "stop": 130.16,
     "initial_stop": 130.16,
-    "unrealized_pnl": 0.21,
-    "unrealized_r": 0.69,
+    "unrealized_pnl": 0.16,
+    "unrealized_r": 0.52,
     "entry_reason": "Shopify beneficiază de catalizatori fundamentali puternici, fiind inclus în agentul AI Meta Muse și poziționat excelent pe comerțul agentic, în ciuda scăderii de preț intraday care oferă un punct atractiv de intrare long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SHOP LONG -> BUY SHOP (miză ~20.00$, R:R 1:3.5)"
   },
   {
@@ -18,11 +31,11 @@
     "entry_time": "2026-11-19T13:45:18.411298-05:00",
     "qty": 0.3024,
     "entry_price": 66.136,
-    "current_price": 65.807,
+    "current_price": 65.715,
     "stop": 65.15,
     "initial_stop": 65.15,
-    "unrealized_pnl": -0.1,
-    "unrealized_r": -0.33,
+    "unrealized_pnl": -0.13,
+    "unrealized_r": -0.43,
     "entry_reason": "Uber lansează livrări comerciale de mâncare cu drone în Texas și introduce o nouă categorie auto-părți pentru Uber Eats, oferind potențial de revenire intraday după o scădere corectivă. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: UBER LONG -> BUY UBER (miză ~20.00$, R:R 1:3.5)"
   }
 ]
