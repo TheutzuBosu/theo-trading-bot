@@ -34,7 +34,7 @@
       "initial_risk_dollars": 0.1873,
       "equity_at_entry": 507.22,
       "partial_done": false,
-      "last_price": 364.5,
+      "last_price": 363.47,
       "entry_reason": "PANW înregistrează o creștere de 17.09% susținută de rezultate financiare excelente peste estimări și o achiziție strategică majoră de 4.5 miliarde de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: PANW LONG -> BUY PANW (miză ~12.49$, R:R 1:4.5)",
       "features": {
         "minute_of_day": 0.0,
@@ -74,7 +74,7 @@
       "initial_risk_dollars": 0.1507,
       "equity_at_entry": 507.22,
       "partial_done": false,
-      "last_price": 254.08,
+      "last_price": 253.94,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)",
       "features": {
         "minute_of_day": 0.0,
@@ -114,7 +114,7 @@
       "initial_risk_dollars": 0.1501,
       "equity_at_entry": 507.22,
       "partial_done": false,
-      "last_price": 552.95,
+      "last_price": 553.73,
       "entry_reason": "AMD înregistrează o creștere puternică de +8.32% pre-market, condusă de raliul sectorului de cipuri și optimismul generat de IPO-ul Anthropic. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~10.01$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 0.0,
@@ -154,7 +154,7 @@
       "initial_risk_dollars": 0.15,
       "equity_at_entry": 507.39,
       "partial_done": false,
-      "last_price": 73.79,
+      "last_price": 73.62,
       "entry_reason": "HOOD înregistrează o creștere solidă de peste 6%, susținută de lansarea unor noi instrumente pentru IPO-uri live (Anthropic) și corelația favorabilă cu piața crypto. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: HOOD LONG -> BUY HOOD (miză ~10.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
