@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 503.76,
-  "total_pnl": 3.76,
+  "equity": 503.75,
+  "total_pnl": 3.75,
   "total_pnl_pct": 0.75,
-  "today_pnl": -3.46,
+  "today_pnl": -3.47,
   "today_pnl_pct": -0.68,
   "current_drawdown_pct": -1.99,
   "max_drawdown_pct": -1.99,
-  "updated_at": "2026-11-19T14:04:57.445062-05:00",
+  "updated_at": "2026-11-19T14:06:04.625355-05:00",
   "positions": [
     {
       "symbol": "SHOP",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T13:45:18.411298-05:00",
       "qty": 0.1514,
       "entry_price": 132.142,
-      "current_price": 131.63,
+      "current_price": 131.53,
       "stop": 130.16,
       "initial_stop": 130.16,
-      "unrealized_pnl": -0.08,
-      "unrealized_r": -0.26,
+      "unrealized_pnl": -0.09,
+      "unrealized_r": -0.31,
       "entry_reason": "Shopify beneficiază de catalizatori fundamentali puternici, fiind inclus în agentul AI Meta Muse și poziționat excelent pe comerțul agentic, în ciuda scăderii de preț intraday care oferă un punct atractiv de intrare long. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SHOP LONG -> BUY SHOP (miză ~20.00$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-19T13:45:18.411298-05:00",
       "qty": 0.3024,
       "entry_price": 66.136,
-      "current_price": 65.525,
+      "current_price": 65.515,
       "stop": 65.15,
       "initial_stop": 65.15,
-      "unrealized_pnl": -0.18,
-      "unrealized_r": -0.62,
+      "unrealized_pnl": -0.19,
+      "unrealized_r": -0.63,
       "entry_reason": "Uber lansează livrări comerciale de mâncare cu drone în Texas și introduce o nouă categorie auto-părți pentru Uber Eats, oferind potențial de revenire intraday după o scădere corectivă. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: UBER LONG -> BUY UBER (miză ~20.00$, R:R 1:3.5)"
     }
   ],
@@ -107,68 +107,68 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "PANW",
+        "symbol": "SHOP",
         "direction": "long",
-        "price": 359.76,
-        "prev_close": 339.68,
-        "gap_pct": 5.91,
-        "change_pct": 5.91,
-        "stake_dollars": 20.0,
+        "price": 131.51,
+        "prev_close": 139.39,
+        "gap_pct": -5.65,
+        "change_pct": -5.65,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 354.36,
-        "target_price": 378.65,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 129.54,
+        "target_price": 138.41,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "Shop Pay Inclusion in Meta’s Muse AI Agent Reinforces AI Growth Thesis for Shopify (SHOP)",
+          "An $18 Billion Hedge Fund Just Bought These 3 Stocks",
+          "Black Friday Is Nov. 27. Here's What Shopify Stock Did the Week After in Each of the Last 11 Years."
+        ],
+        "reason_ro": "SHOP beneficiază de o serie de catalizatori fundamentali pozitivi, incluzând integrarea Shop Pay în agentul AI Muse de la Meta și perspective optimiste legate de comerțul agentic. Scăderea de -5.65% reprezintă o oportunitate atractivă de cumpărare (dip-buying) după trecerea primei 15 minute, fără a fi vorba de o știre de tip capcană. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T19:06:13.411481+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "PANW",
+        "direction": "long",
+        "price": 358.19,
+        "prev_close": 339.68,
+        "gap_pct": 5.45,
+        "change_pct": 5.45,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 352.82,
+        "target_price": 382.37,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
         "headlines": [
           "Palo Alto (PANW) Q1 2027 Earnings Call Transcript",
           "Palo Alto Networks Stocks Jump 6.90% on Guidance Raise and $4.5 Billion AI Deal",
           "Stock Market Today: Indexes Fall As Anthropic Starts Trading; These Players Hit Sell-Rule Alarms (Live Coverage)"
         ],
-        "reason_ro": "PANW înregistrează o creștere puternică susținută de ridicarea ghidajului financiar și un acord AI masiv de 4,5 miliarde de dolari, oferind un catalizator fundamental solid pentru continuarea trendului. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Palo Alto Networks a înregistrat o creștere solidă susținută de revizuirea pozitivă a ghidajului financiar și un acord AI masiv de 4,5 miliarde de dolari, oferind un impuls fundamental puternic pentru continuarea trendului intraday. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T18:56:10.298422+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NKE",
-        "direction": "short",
-        "price": 34.45,
-        "prev_close": 36.31,
-        "gap_pct": -5.14,
-        "change_pct": -5.14,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 34.97,
-        "target_price": 32.64,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "A 67-Year-Old With $500,000 in Nike, HP and Truist Collects $1,872 a Month in Dividends. How Safe Is Each Check?",
-          "Bank of America Chicago Marathon and Nike Extend Partnership Through 2036",
-          "Williams Trading cuts Dick’s Sporting Goods to sell, flags FL’s Jordan headwind"
-        ],
-        "reason_ro": "NKE înregistrează o scădere puternică de -5.14% pe fondul avertismentelor legate de stagnarea vânzărilor până în 2029 și a vântului din contra din sector, justificând o intrare scurtă în direcția trendului intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T18:56:26.158963+00:00"
+        "evaluated_at": "2026-11-19T19:06:19.848438+00:00"
       },
       {
         "action": "enter",
         "symbol": "UBER",
         "direction": "short",
-        "price": 65.86,
+        "price": 65.51,
         "prev_close": 68.77,
-        "gap_pct": -4.22,
-        "change_pct": -4.22,
+        "gap_pct": -4.74,
+        "change_pct": -4.74,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 66.85,
-        "target_price": 62.4,
+        "stop_price": 66.49,
+        "target_price": 62.07,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -176,66 +176,66 @@
           "Tractor Supply boosts same-day delivery options",
           "Uber Technologies (UBER) Starts Commercial Drone Food Deliveries In Texas With 1 Million Daily Goal"
         ],
-        "reason_ro": "UBER înregistrează o scădere intraday puternică de -4.22% pe fondul unor știri mixte și al unui sentiment general de slăbiciune, oferind o oportunitate de sell pe continuarea tendinței descendente. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "UBER înregistrează o scădere puternică de -4.74% într-o piață orientată descendent, iar știrile recente despre livrări cu drone și piese auto nu reușesc să contracareze presiunea la vânzare, justificând o poziție short intraday în continuarea trendului. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T18:56:47.707032+00:00"
+        "evaluated_at": "2026-11-19T19:06:32.456034+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 479.68,
+        "price": 479.87,
         "prev_close": 530.45,
-        "gap_pct": -9.57,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "PANW",
-        "price": 359.76,
-        "prev_close": 339.68,
-        "gap_pct": 5.91,
+        "gap_pct": -9.53,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SHOP",
-        "price": 132.03,
+        "price": 131.51,
         "prev_close": 139.39,
-        "gap_pct": -5.28,
+        "gap_pct": -5.65,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "PANW",
+        "price": 358.19,
+        "prev_close": 339.68,
+        "gap_pct": 5.45,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 34.45,
+        "price": 34.4,
         "prev_close": 36.31,
-        "gap_pct": -5.14,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "UPST",
-        "price": 17.25,
-        "prev_close": 18.02,
-        "gap_pct": -4.27,
+        "gap_pct": -5.27,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UBER",
-        "price": 65.86,
+        "price": 65.51,
         "prev_close": 68.77,
-        "gap_pct": -4.22,
+        "gap_pct": -4.74,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "UPST",
+        "price": 17.2,
+        "prev_close": 18.02,
+        "gap_pct": -4.52,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MPU",
-        "price": 4.43,
+        "price": 4.24,
         "prev_close": 2.84,
-        "gap_pct": 55.99,
+        "gap_pct": 49.3,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MDRN",
-        "price": 2.31,
+        "price": 2.23,
         "prev_close": 1.63,
-        "gap_pct": 41.71,
+        "gap_pct": 36.81,
         "source": "alpaca_movers"
       },
       {
@@ -246,14 +246,14 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "NCPL",
-        "price": 3.86,
-        "prev_close": 2.89,
-        "gap_pct": 33.5,
+        "symbol": "POAS",
+        "price": 3.12,
+        "prev_close": 2.32,
+        "gap_pct": 34.53,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T18:55:51.067747+00:00",
+    "last_scan_at": "2026-11-19T19:06:04.625359+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
