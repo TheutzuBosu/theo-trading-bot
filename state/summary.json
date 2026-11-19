@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 506.31,
-  "total_pnl": 6.31,
-  "total_pnl_pct": 1.26,
-  "today_pnl": -0.91,
-  "today_pnl_pct": -0.18,
-  "current_drawdown_pct": -1.49,
+  "equity": 506.18,
+  "total_pnl": 6.18,
+  "total_pnl_pct": 1.24,
+  "today_pnl": -1.04,
+  "today_pnl_pct": -0.21,
+  "current_drawdown_pct": -1.52,
   "max_drawdown_pct": -1.52,
-  "updated_at": "2026-11-19T10:21:40.972540-05:00",
+  "updated_at": "2026-11-19T10:22:47.464797-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,25 +17,25 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 252.355,
+      "current_price": 251.36,
       "stop": 243.47,
       "initial_stop": 243.47,
-      "unrealized_pnl": 0.21,
-      "unrealized_r": 1.39,
+      "unrealized_pnl": 0.17,
+      "unrealized_r": 1.13,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     },
     {
-      "symbol": "INTC",
+      "symbol": "QCOM",
       "direction": "long",
-      "entry_time": "2026-11-19T09:39:48.577528-05:00",
-      "qty": 0.1285,
-      "entry_price": 58.306,
-      "current_price": 57.83,
-      "stop": 57.44,
-      "initial_stop": 57.44,
-      "unrealized_pnl": -0.06,
-      "unrealized_r": -0.55,
-      "entry_reason": "INTC urcă cu peste 6.6% susținut de raliul general din sectorul de semiconductori alimentat de optimismul privind debutul bursier Anthropic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~7.50$, R:R 1:3.5)"
+      "entry_time": "2026-11-19T10:22:47.464797-05:00",
+      "qty": 0.1201,
+      "entry_price": 166.756,
+      "current_price": 166.515,
+      "stop": 164.75,
+      "initial_stop": 164.75,
+      "unrealized_pnl": -0.03,
+      "unrealized_r": -0.12,
+      "entry_reason": "QCOM beneficiază de un impuls puternic pe segmentul de dividende și accelerarea cheltuielilor în AI, înregistrand o creștere de +3.88% în timpul sesiunii principale deschise. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.24 $ / țintă profit +0.84 $). · D33 Scanner: QCOM LONG -> BUY QCOM (miză ~20.00$, R:R 1:3.5)"
     }
   ],
   "premarket": {
@@ -107,103 +107,153 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "PANW",
+        "symbol": "CRWD",
         "direction": "long",
-        "price": 363.27,
-        "prev_close": 339.68,
-        "gap_pct": 6.94,
-        "change_pct": 6.94,
-        "stake_dollars": 25.0,
+        "price": 250.31,
+        "prev_close": 236.96,
+        "gap_pct": 5.63,
+        "change_pct": 5.63,
+        "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 357.82,
-        "target_price": 382.34,
-        "expected_profit_dollars": 1.31,
-        "max_loss_dollars": 0.38,
+        "stop_price": 246.56,
+        "target_price": 263.45,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "S&P 500 Premarket Gainers for Nov. 19 Session",
+          "What Triggered The Move In Zscaler Stock?",
+          "Cybersecurity Stocks Rally On Palo Alto Earnings Beat, Raised Guidance"
+        ],
+        "reason_ro": "CRWD crește puternic pe fondul unui raliu general în sectorul de securitate cibernetică, susținut de rezultatele excelente și ghidajul ridicat raportat de Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T15:22:57.245407+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "PANW",
+        "direction": "long",
+        "price": 354.68,
+        "prev_close": 339.68,
+        "gap_pct": 4.42,
+        "change_pct": 4.42,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 349.36,
+        "target_price": 373.3,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
         "headlines": [
           "Palo Alto Networks Stock Soars as Revenue Smashes Estimates and Annual Forecast Climbs",
           "Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
           "Palo Alto Is Paying $4.5 Billion for a Startup Ex-OpenAI Researchers Founded Last Year"
         ],
-        "reason_ro": "Palo Alto Networks a raportat rezultate financiare peste estimări, ghidaj anual ridicat și o achiziție strategică de 4.5 miliarde $, susținând un impuls tehnic intraday foarte puternic (+6.94%). Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "reason_ro": "Palo Alto Networks înregistrează o creștere puternică datorită rezultatelor financiare peste așteptări, majorării prognozei anuale și achiziției strategice de 4,5 miliarde de dolari. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T15:12:24.938901+00:00"
+        "evaluated_at": "2026-11-19T15:23:49.079916+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "QCOM",
+        "direction": "long",
+        "price": 165.96,
+        "prev_close": 159.75,
+        "gap_pct": 3.88,
+        "change_pct": 3.88,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.012,
+        "target_pct": 0.042,
+        "stop_price": 163.97,
+        "target_price": 172.93,
+        "expected_profit_dollars": 0.84,
+        "max_loss_dollars": 0.24,
+        "headlines": [
+          "3 Tech Dividend Stocks to Buy in December as AI Spending Accelerates",
+          "Buy, Sell, Or Hold Anthropic Stock At $100?",
+          "The Dates That Matter Most For Micron Stock"
+        ],
+        "reason_ro": "QCOM beneficiază de un impuls puternic pe segmentul de dividende și accelerarea cheltuielilor în AI, înregistrand o creștere de +3.88% în timpul sesiunii principale deschise. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.24 $ / țintă profit +0.84 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T15:24:08.647815+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "CRWD",
-        "price": 254.43,
+        "price": 250.31,
         "prev_close": 236.96,
-        "gap_pct": 7.37,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "INTC",
-        "price": 58.68,
-        "prev_close": 54.68,
-        "gap_pct": 7.32,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "PANW",
-        "price": 363.27,
-        "prev_close": 339.68,
-        "gap_pct": 6.94,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MU",
-        "price": 752.15,
-        "prev_close": 704.86,
-        "gap_pct": 6.71,
+        "gap_pct": 5.63,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 27.2,
+        "price": 26.81,
         "prev_close": 25.49,
-        "gap_pct": 6.69,
+        "gap_pct": 5.18,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 25.04,
-        "prev_close": 23.48,
-        "gap_pct": 6.67,
+        "symbol": "INTC",
+        "price": 57.45,
+        "prev_close": 54.68,
+        "gap_pct": 5.07,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SEAT",
-        "price": 2.04,
-        "prev_close": 1.28,
-        "gap_pct": 59.48,
+        "symbol": "PANW",
+        "price": 354.68,
+        "prev_close": 339.68,
+        "gap_pct": 4.42,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MU",
+        "price": 733.31,
+        "prev_close": 704.86,
+        "gap_pct": 4.04,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "QCOM",
+        "price": 165.96,
+        "prev_close": 159.75,
+        "gap_pct": 3.88,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "INHD",
+        "price": 3.22,
+        "prev_close": 2.3,
+        "gap_pct": 39.95,
         "source": "alpaca_movers"
       },
       {
         "symbol": "POAS",
-        "price": 3.25,
+        "price": 3.09,
         "prev_close": 2.32,
-        "gap_pct": 40.02,
+        "gap_pct": 33.19,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "INHD",
-        "price": 3.19,
-        "prev_close": 2.3,
-        "gap_pct": 38.7,
+        "symbol": "NCPL",
+        "price": 3.7,
+        "prev_close": 2.89,
+        "gap_pct": 28.03,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "ZOAR",
-        "price": 4.5,
-        "prev_close": 6.39,
-        "gap_pct": -29.58,
+        "symbol": "SA",
+        "price": 18.91,
+        "prev_close": 25.55,
+        "gap_pct": -25.99,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T15:11:51.864272+00:00",
+    "last_scan_at": "2026-11-19T15:22:47.464801+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
