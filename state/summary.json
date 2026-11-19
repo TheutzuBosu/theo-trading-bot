@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 507.64,
-  "total_pnl": 7.64,
-  "total_pnl_pct": 1.53,
-  "today_pnl": 0.42,
-  "today_pnl_pct": 0.08,
-  "current_drawdown_pct": -1.23,
+  "equity": 507.52,
+  "total_pnl": 7.52,
+  "total_pnl_pct": 1.5,
+  "today_pnl": 0.3,
+  "today_pnl_pct": 0.06,
+  "current_drawdown_pct": -1.26,
   "max_drawdown_pct": -1.52,
-  "updated_at": "2026-11-19T09:49:28.420131-05:00",
+  "updated_at": "2026-11-19T09:50:35.031891-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0185,
       "entry_price": 541.166,
-      "current_price": 552.945,
+      "current_price": 553.558,
       "stop": 533.05,
       "initial_stop": 533.05,
-      "unrealized_pnl": 0.22,
-      "unrealized_r": 1.45,
+      "unrealized_pnl": 0.23,
+      "unrealized_r": 1.53,
       "entry_reason": "AMD înregistrează o creștere puternică de +8.32% pre-market, condusă de raliul sectorului de cipuri și optimismul generat de IPO-ul Anthropic. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~10.01$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 254.08,
+      "current_price": 253.5548,
       "stop": 243.47,
       "initial_stop": 243.47,
-      "unrealized_pnl": 0.28,
-      "unrealized_r": 1.86,
+      "unrealized_pnl": 0.26,
+      "unrealized_r": 1.72,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-19T09:39:48.577528-05:00",
       "qty": 0.1359,
       "entry_price": 73.544,
-      "current_price": 73.765,
+      "current_price": 73.53,
       "stop": 72.44,
       "initial_stop": 72.44,
-      "unrealized_pnl": 0.03,
-      "unrealized_r": 0.2,
+      "unrealized_pnl": -0.0,
+      "unrealized_r": -0.01,
       "entry_reason": "HOOD înregistrează o creștere solidă de peste 6%, susținută de lansarea unor noi instrumente pentru IPO-uri live (Anthropic) și corelația favorabilă cu piața crypto. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: HOOD LONG -> BUY HOOD (miză ~10.00$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-19T09:39:48.577528-05:00",
       "qty": 0.1285,
       "entry_price": 58.306,
-      "current_price": 59.07,
+      "current_price": 59.01,
       "stop": 57.44,
       "initial_stop": 57.44,
-      "unrealized_pnl": 0.1,
-      "unrealized_r": 0.88,
+      "unrealized_pnl": 0.09,
+      "unrealized_r": 0.81,
       "entry_reason": "INTC urcă cu peste 6.6% susținut de raliul general din sectorul de semiconductori alimentat de optimismul privind debutul bursier Anthropic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0344,
       "entry_price": 362.826,
-      "current_price": 364.64,
+      "current_price": 362.57,
       "stop": 357.38,
       "initial_stop": 357.38,
-      "unrealized_pnl": 0.06,
-      "unrealized_r": 0.33,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.05,
       "entry_reason": "PANW înregistrează o creștere de 17.09% susținută de rezultate financiare excelente peste estimări și o achiziție strategică majoră de 4.5 miliarde de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: PANW LONG -> BUY PANW (miză ~12.49$, R:R 1:4.5)"
     }
   ],
@@ -146,178 +146,153 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "ASTS",
+        "symbol": "RIOT",
         "direction": "long",
-        "price": 27.69,
-        "prev_close": 25.49,
-        "gap_pct": 8.63,
-        "change_pct": 8.63,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 27.27,
-        "target_price": 29.14,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "AST SpaceMobile Stock Climbs After B. Riley Upgrade, Analyst Says Rocket Risk Is Priced In",
-          "AST SpaceMobile: The Market May Have Gone Too Far",
-          "11 Communication Services Stocks Moving In Thursday's Pre-Market Session"
-        ],
-        "reason_ro": "ASTS înregistrează un impuls puternic (+8.63%) susținut de un upgrade din partea B. Riley și optimismul legat de lansările ULA, depășind temerile legate de diluție. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T14:39:58.217067+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "HOOD",
-        "direction": "long",
-        "price": 73.83,
-        "prev_close": 69.17,
-        "gap_pct": 6.74,
-        "change_pct": 6.74,
+        "price": 19.64,
+        "prev_close": 18.24,
+        "gap_pct": 7.65,
+        "change_pct": 7.65,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 72.72,
-        "target_price": 77.71,
+        "stop_price": 19.35,
+        "target_price": 20.67,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
-        "headlines": [
-          "HOOD Adds Live IPO Pricing Tools: Will Anthropic Drive Engagement?",
-          "Bitcoin Price: Heading For The $50,000s?",
-          "Why Did Chime Financial Stock Jump?"
-        ],
-        "reason_ro": "HOOD înregistrează o creștere solidă de peste 6%, susținută de lansarea unor noi instrumente pentru IPO-uri live (Anthropic) și corelația favorabilă cu piața crypto. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T14:40:29.797024+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "INTC",
-        "direction": "long",
-        "price": 58.32,
-        "prev_close": 54.68,
-        "gap_pct": 6.66,
-        "change_pct": 6.66,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 57.45,
-        "target_price": 61.38,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Even at $55 Intel’s Cash Flow Ratio Screams ‘Do Not Buy!’",
-          "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
-          "Premarket movers: Palo Alto soars, chip stocks rally ahead of Anthropic debut"
-        ],
-        "reason_ro": "INTC urcă cu peste 6.6% susținut de raliul general din sectorul de semiconductori alimentat de optimismul privind debutul bursier Anthropic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T14:40:43.410155+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "RIOT",
-        "direction": "long",
-        "price": 19.34,
-        "prev_close": 18.24,
-        "gap_pct": 6.06,
-        "change_pct": 6.06,
-        "stake_dollars": 25.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 19.05,
-        "target_price": 20.65,
-        "expected_profit_dollars": 1.69,
-        "max_loss_dollars": 0.38,
         "headlines": [
           "AI Lease Deals Could Recast The Case For Riot Platforms Stock",
           "RIOT, FLS Stocks Gain As Activist Investor Starboard Sees Undervalued Power And Infrastructure Plays",
           "Riot Platforms Soars 7% as Activist Starboard Pitches Its Upside at Investor Conference"
         ],
-        "reason_ro": "Riot Platforms urcă susținut pe fondul interesului investitorului activist Starboard și al oportunităților legate de infrastructura AI, având un impuls tehnic puternic de +6.06% la deschidere. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "reason_ro": "RIOT urcă cu peste 7% susținută de interesul investitorului activist Starboard pentru infrastructura sa de energie și oportunitățile legate de AI, având un impuls intraday puternic după deschiderea sesiunii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T14:41:02.198693+00:00"
+        "evaluated_at": "2026-11-19T14:50:56.668088+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "CRWD",
+        "direction": "long",
+        "price": 253.71,
+        "prev_close": 236.96,
+        "gap_pct": 7.07,
+        "change_pct": 7.07,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.0,
+        "stop_pct": 0.015,
+        "target_pct": 0.06,
+        "stop_price": 249.9,
+        "target_price": 268.93,
+        "expected_profit_dollars": 1.2,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "S&P 500 Premarket Gainers for Nov. 19 Session",
+          "What Triggered The Move In Zscaler Stock?",
+          "Cybersecurity Stocks Rally On Palo Alto Earnings Beat, Raised Guidance"
+        ],
+        "reason_ro": "CRWD înregistrează o creștere puternică de peste 7% susținută de raliul sectorului de securitate cibernetică, impulsionat de rezultatele excelente și estimările revizuite ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T14:51:49.247271+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "HOOD",
+        "direction": "long",
+        "price": 73.92,
+        "prev_close": 69.17,
+        "gap_pct": 6.87,
+        "change_pct": 6.87,
+        "stake_dollars": 25.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 72.81,
+        "target_price": 77.8,
+        "expected_profit_dollars": 1.31,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "HOOD Adds Live IPO Pricing Tools: Will Anthropic Drive Engagement?",
+          "Bitcoin Price: Heading For The $50,000s?",
+          "Why Did Chime Financial Stock Jump?"
+        ],
+        "reason_ro": "HOOD înregistrează o creștere solidă de aproape 7% susținută de lansarea unor instrumente live pentru IPO-uri și de raliul general din zona crypto. Având în vedere impulsul tehnic puternic și trecerea de primele 15 minute de la deschidere, oportunitatea long este favorabilă. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T14:52:01.358518+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "ASTS",
-        "price": 27.69,
-        "prev_close": 25.49,
-        "gap_pct": 8.63,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 25.34,
-        "prev_close": 23.48,
-        "gap_pct": 7.94,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "HOOD",
-        "price": 73.83,
-        "prev_close": 69.17,
-        "gap_pct": 6.74,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "INTC",
-        "price": 58.32,
+        "price": 59.06,
         "prev_close": 54.68,
-        "gap_pct": 6.66,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "PANW",
-        "price": 362.09,
-        "prev_close": 339.68,
-        "gap_pct": 6.6,
+        "gap_pct": 8.01,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RIOT",
-        "price": 19.34,
+        "price": 19.64,
         "prev_close": 18.24,
-        "gap_pct": 6.06,
+        "gap_pct": 7.65,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "POAS",
-        "price": 4.46,
-        "prev_close": 2.32,
-        "gap_pct": 92.24,
-        "source": "alpaca_movers"
+        "symbol": "ASTS",
+        "price": 27.42,
+        "prev_close": 25.49,
+        "gap_pct": 7.57,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 25.25,
+        "prev_close": 23.48,
+        "gap_pct": 7.56,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "CRWD",
+        "price": 253.71,
+        "prev_close": 236.96,
+        "gap_pct": 7.07,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "HOOD",
+        "price": 73.92,
+        "prev_close": 69.17,
+        "gap_pct": 6.87,
+        "source": "watchlist_snapshot"
       },
       {
         "symbol": "SEAT",
-        "price": 2.25,
+        "price": 2.12,
         "prev_close": 1.28,
-        "gap_pct": 75.78,
+        "gap_pct": 65.23,
         "source": "alpaca_movers"
       },
       {
         "symbol": "INHD",
-        "price": 3.23,
+        "price": 3.04,
         "prev_close": 2.3,
-        "gap_pct": 40.43,
+        "gap_pct": 32.17,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "RRGB",
-        "price": 5.97,
-        "prev_close": 7.95,
-        "gap_pct": -24.84,
+        "symbol": "POAS",
+        "price": 3.06,
+        "prev_close": 2.32,
+        "gap_pct": 31.9,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "PUR",
+        "price": 14.17,
+        "prev_close": 11.14,
+        "gap_pct": 27.18,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T14:39:48.577535+00:00",
+    "last_scan_at": "2026-11-19T14:50:35.031894+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
