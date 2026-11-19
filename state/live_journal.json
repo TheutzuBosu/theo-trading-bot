@@ -11,47 +11,6 @@
     "MOVER|RBLX|2026-11-19|long",
     "MOVER|RIOT|2026-11-19|long"
   ],
-  "open_trades": {
-    "CRWD": {
-      "trade_id": "theo-CRWD-L-202611190930",
-      "signal_symbol": "CRWD",
-      "signal_direction": "long",
-      "exec_symbol": "CRWD",
-      "exec_direction": "long",
-      "leverage": 1,
-      "signal_time": "2026-11-19T09:30:27.850016-05:00",
-      "entry_time": "2026-11-19T09:30:27.850016-05:00",
-      "entry_price": 247.182,
-      "qty": 0.0406,
-      "qty0": 0.0406,
-      "signal_entry_price": 247.18,
-      "signal_stop": 243.47,
-      "signal_initial_stop": 243.47,
-      "signal_target": 263.89,
-      "signal_stop_after_target": 249.04,
-      "exec_stop": 243.47,
-      "exec_initial_stop": 243.47,
-      "exec_target": 263.11,
-      "stop_order_id": "fab46065-d7f3-4d0e-99bf-9812fac119a4",
-      "stop_seq": 0,
-      "initial_risk_dollars": 0.1507,
-      "equity_at_entry": 507.22,
-      "partial_done": false,
-      "last_price": 243.72,
-      "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)",
-      "features": {
-        "minute_of_day": 0.0,
-        "dist_from_band_bps": 672.5,
-        "dist_from_vwap_bps": 403.5,
-        "rv_30m": 0.0075,
-        "sigma_14d": 0.015,
-        "overnight_gap_bps": 1345.0,
-        "ret_since_open_bps": 1345.0,
-        "vol_ratio_14d": 1.5,
-        "day_of_week": 3.0,
-        "cost_to_risk": 0.0081
-      }
-    }
-  },
+  "open_trades": {},
   "last_eod_date": "2026-11-18"
 }
