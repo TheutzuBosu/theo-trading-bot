@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "symbol": "AMD",
+    "direction": "long",
+    "entry_time": "2026-11-19T09:30:27.850016-05:00",
+    "qty": 0.0185,
+    "entry_price": 541.166,
+    "current_price": 540.64,
+    "stop": 533.05,
+    "initial_stop": 533.05,
+    "unrealized_pnl": -0.01,
+    "unrealized_r": -0.06,
+    "entry_reason": "AMD înregistrează o creștere puternică de +8.32% pre-market, condusă de raliul sectorului de cipuri și optimismul generat de IPO-ul Anthropic. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~10.01$, R:R 1:3.5)"
+  },
+  {
+    "symbol": "CRWD",
+    "direction": "long",
+    "entry_time": "2026-11-19T09:30:27.850016-05:00",
+    "qty": 0.0406,
+    "entry_price": 247.182,
+    "current_price": 246.8,
+    "stop": 243.47,
+    "initial_stop": 243.47,
+    "unrealized_pnl": -0.02,
+    "unrealized_r": -0.1,
+    "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
+  },
+  {
+    "symbol": "PANW",
+    "direction": "long",
+    "entry_time": "2026-11-19T09:30:27.850016-05:00",
+    "qty": 0.0344,
+    "entry_price": 362.826,
+    "current_price": 361.035,
+    "stop": 357.38,
+    "initial_stop": 357.38,
+    "unrealized_pnl": -0.06,
+    "unrealized_r": -0.33,
+    "entry_reason": "PANW înregistrează o creștere de 17.09% susținută de rezultate financiare excelente peste estimări și o achiziție strategică majoră de 4.5 miliarde de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: PANW LONG -> BUY PANW (miză ~12.49$, R:R 1:4.5)"
+  },
+  {
+    "symbol": "RIOT",
+    "direction": "long",
+    "entry_time": "2026-11-19T09:30:27.850016-05:00",
+    "qty": 0.5097,
+    "entry_price": 19.574,
+    "current_price": 19.55,
+    "stop": 19.28,
+    "initial_stop": 19.28,
+    "unrealized_pnl": -0.01,
+    "unrealized_r": -0.08,
+    "entry_reason": "RIOT urcă puternic susținută de știri privind potențiale contracte AI pentru infrastructură și interesul fondului activist Starboard Value. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: RIOT LONG -> BUY RIOT (miză ~10.00$, R:R 1:3.5)"
+  }
+]
