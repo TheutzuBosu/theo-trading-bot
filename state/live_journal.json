@@ -1,17 +1,5 @@
 {
   "processed_signals": [
-    "MOVER|AMD|2026-11-19|long",
-    "MOVER|ASTS|2026-11-19|long",
-    "MOVER|CRWD|2026-11-19|long",
-    "MOVER|HOOD|2026-11-19|long",
-    "MOVER|INTC|2026-11-19|long",
-    "MOVER|MU|2026-11-19|long",
-    "MOVER|PANW|2026-11-19|long",
-    "MOVER|QCOM|2026-11-19|long",
-    "MOVER|RBLX|2026-11-19|long",
-    "MOVER|RIOT|2026-11-19|long",
-    "MOVER|SHOP|2026-11-19|long",
-    "MOVER|UBER|2026-11-19|long",
     "QQQ|2026-11-19T13:15:00-05:00|short",
     "QQQ|2026-11-19T14:01:00-05:00|short",
     "SPY|2026-11-19T13:15:00-05:00|short",
@@ -19,5 +7,5 @@
     "SPY|2026-11-19T14:47:00-05:00|short"
   ],
   "open_trades": {},
-  "last_eod_date": "2026-11-18"
+  "last_eod_date": "2026-11-19"
 }
