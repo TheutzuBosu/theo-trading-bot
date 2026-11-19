@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 507.08,
-  "total_pnl": 7.08,
-  "total_pnl_pct": 1.42,
-  "today_pnl": -0.14,
-  "today_pnl_pct": -0.03,
-  "current_drawdown_pct": -1.34,
+  "equity": 506.83,
+  "total_pnl": 6.83,
+  "total_pnl_pct": 1.37,
+  "today_pnl": -0.39,
+  "today_pnl_pct": -0.08,
+  "current_drawdown_pct": -1.39,
   "max_drawdown_pct": -1.52,
-  "updated_at": "2026-11-19T10:10:34.153386-05:00",
+  "updated_at": "2026-11-19T10:11:51.864268-05:00",
   "positions": [
     {
       "symbol": "AMD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0185,
       "entry_price": 541.166,
-      "current_price": 540.045,
+      "current_price": 537.115,
       "stop": 533.05,
       "initial_stop": 533.05,
-      "unrealized_pnl": -0.02,
-      "unrealized_r": -0.14,
+      "unrealized_pnl": -0.07,
+      "unrealized_r": -0.5,
       "entry_reason": "AMD înregistrează o creștere puternică de +8.32% pre-market, condusă de raliul sectorului de cipuri și optimismul generat de IPO-ul Anthropic. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: AMD LONG -> BUY AMD (miză ~10.01$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0406,
       "entry_price": 247.182,
-      "current_price": 254.3831,
+      "current_price": 254.045,
       "stop": 243.47,
       "initial_stop": 243.47,
-      "unrealized_pnl": 0.29,
-      "unrealized_r": 1.94,
+      "unrealized_pnl": 0.28,
+      "unrealized_r": 1.85,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-19T09:39:48.577528-05:00",
       "qty": 0.1285,
       "entry_price": 58.306,
-      "current_price": 58.66,
+      "current_price": 58.5701,
       "stop": 57.44,
       "initial_stop": 57.44,
-      "unrealized_pnl": 0.05,
-      "unrealized_r": 0.41,
+      "unrealized_pnl": 0.03,
+      "unrealized_r": 0.3,
       "entry_reason": "INTC urcă cu peste 6.6% susținut de raliul general din sectorul de semiconductori alimentat de optimismul privind debutul bursier Anthropic. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: INTC LONG -> BUY INTC (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-19T10:01:12.036752-05:00",
       "qty": 0.0265,
       "entry_price": 754.29,
-      "current_price": 752.7,
+      "current_price": 748.17,
       "stop": 742.97,
       "initial_stop": 742.97,
-      "unrealized_pnl": -0.04,
-      "unrealized_r": -0.14,
+      "unrealized_pnl": -0.16,
+      "unrealized_r": -0.54,
       "entry_reason": "MU înregistrează o creștere puternică de +6.36% susținută de optimismul generat de IPO-ul Anthropic și un raliu general al sectorului de semiconductori și AI. Având în vedere că am trecut de primele 15 minute ale ședinței, există un impuls tehnic clar, nu o simplă capcană de pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MU LONG -> BUY MU (miză ~19.98$, R:R 1:3.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-19T09:30:27.850016-05:00",
       "qty": 0.0344,
       "entry_price": 362.826,
-      "current_price": 362.77,
+      "current_price": 361.345,
       "stop": 357.38,
       "initial_stop": 357.38,
-      "unrealized_pnl": -0.0,
-      "unrealized_r": -0.01,
+      "unrealized_pnl": -0.05,
+      "unrealized_r": -0.27,
       "entry_reason": "PANW înregistrează o creștere de 17.09% susținută de rezultate financiare excelente peste estimări și o achiziție strategică majoră de 4.5 miliarde de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $). · D33 Scanner: PANW LONG -> BUY PANW (miză ~12.49$, R:R 1:4.5)"
     }
   ],
@@ -148,126 +148,101 @@
         "action": "enter",
         "symbol": "PANW",
         "direction": "long",
-        "price": 368.05,
+        "price": 363.27,
         "prev_close": 339.68,
-        "gap_pct": 8.35,
-        "change_pct": 8.35,
+        "gap_pct": 6.94,
+        "change_pct": 6.94,
         "stake_dollars": 25.0,
-        "rr_ratio": 4.5,
+        "rr_ratio": 3.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 362.53,
-        "target_price": 392.89,
-        "expected_profit_dollars": 1.69,
+        "target_pct": 0.0525,
+        "stop_price": 357.82,
+        "target_price": 382.34,
+        "expected_profit_dollars": 1.31,
         "max_loss_dollars": 0.38,
         "headlines": [
           "Palo Alto Networks Stock Soars as Revenue Smashes Estimates and Annual Forecast Climbs",
           "Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
           "Palo Alto Is Paying $4.5 Billion for a Startup Ex-OpenAI Researchers Founded Last Year"
         ],
-        "reason_ro": "Palo Alto Networks înregistrează o creștere de peste 8% susținută de rezultate financiare excelente peste estimări, ghidaj anual îmbunătățit și anunțul unei achiziții strategice de 4,5 miliarde de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "reason_ro": "Palo Alto Networks a raportat rezultate financiare peste estimări, ghidaj anual ridicat și o achiziție strategică de 4.5 miliarde $, susținând un impuls tehnic intraday foarte puternic (+6.94%). Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T15:01:22.643709+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MU",
-        "direction": "long",
-        "price": 749.7,
-        "prev_close": 704.86,
-        "gap_pct": 6.36,
-        "change_pct": 6.36,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 738.45,
-        "target_price": 789.06,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
-          "S&P 500 Premarket Gainers for Nov. 19 Session",
-          "Memory Stocks’ Cheap-Growth Pullback Tests Whether the Market Is Pricing a Downturn Early"
-        ],
-        "reason_ro": "MU înregistrează o creștere puternică de +6.36% susținută de optimismul generat de IPO-ul Anthropic și un raliu general al sectorului de semiconductori și AI. Având în vedere că am trecut de primele 15 minute ale ședinței, există un impuls tehnic clar, nu o simplă capcană de pre-market. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T15:02:48.116072+00:00"
+        "evaluated_at": "2026-11-19T15:12:24.938901+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "PANW",
-        "price": 368.05,
-        "prev_close": 339.68,
-        "gap_pct": 8.35,
+        "symbol": "CRWD",
+        "price": 254.43,
+        "prev_close": 236.96,
+        "gap_pct": 7.37,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INTC",
-        "price": 58.99,
+        "price": 58.68,
         "prev_close": 54.68,
-        "gap_pct": 7.88,
+        "gap_pct": 7.32,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 25.26,
-        "prev_close": 23.48,
-        "gap_pct": 7.6,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ASTS",
-        "price": 27.31,
-        "prev_close": 25.49,
-        "gap_pct": 7.14,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "CRWD",
-        "price": 253.71,
-        "prev_close": 236.96,
-        "gap_pct": 7.07,
+        "symbol": "PANW",
+        "price": 363.27,
+        "prev_close": 339.68,
+        "gap_pct": 6.94,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 749.7,
+        "price": 752.15,
         "prev_close": 704.86,
-        "gap_pct": 6.36,
+        "gap_pct": 6.71,
         "source": "watchlist_snapshot"
       },
       {
+        "symbol": "ASTS",
+        "price": 27.2,
+        "prev_close": 25.49,
+        "gap_pct": 6.69,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 25.04,
+        "prev_close": 23.48,
+        "gap_pct": 6.67,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "SEAT",
+        "price": 2.04,
+        "prev_close": 1.28,
+        "gap_pct": 59.48,
+        "source": "alpaca_movers"
+      },
+      {
         "symbol": "POAS",
-        "price": 3.57,
+        "price": 3.25,
         "prev_close": 2.32,
-        "gap_pct": 53.88,
+        "gap_pct": 40.02,
         "source": "alpaca_movers"
       },
       {
         "symbol": "INHD",
-        "price": 3.23,
+        "price": 3.19,
         "prev_close": 2.3,
-        "gap_pct": 40.43,
+        "gap_pct": 38.7,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "RRGB",
-        "price": 6.0,
-        "prev_close": 7.95,
-        "gap_pct": -24.47,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "PDDL",
-        "price": 12.61,
-        "prev_close": 10.22,
-        "gap_pct": 23.39,
+        "symbol": "ZOAR",
+        "price": 4.5,
+        "prev_close": 6.39,
+        "gap_pct": -29.58,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T15:01:12.036758+00:00",
+    "last_scan_at": "2026-11-19T15:11:51.864272+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
