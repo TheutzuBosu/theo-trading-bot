@@ -12,28 +12,28 @@
   "updated_at": "2026-11-18T15:30:40.663194-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-19T13:44:46.745756+00:00",
+    "updated_at": "2026-11-19T14:30:20.663150+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 738.89,
+        "price": 737.72,
         "prev_close": 730.33,
-        "gap_pct": 1.17
+        "gap_pct": 1.01
       },
       "QQQ": {
-        "price": 671.14,
+        "price": 671.7,
         "prev_close": 659.57,
-        "gap_pct": 1.75
+        "gap_pct": 1.84
       }
     },
-    "explanation_ro": "Piața deschide cu gap-uri puternice pe verde (SPY +1.17%, QQQ +1.75%), susținută de sentimentul optimist generat de fluxul masiv de capital din family offices către acțiuni și de relaxarea temporară a unor riscuri geopolitice. Raportările financiare majore de azi, precum cele ale retailerului WMT și ale gigantului BABA înainte de deschidere, pot aduce volatilitate suplimentară, dar deschiderea favorizează clar pozițiile Long pe ambele instrumente.",
+    "explanation_ro": "Piața deschide astăzi cu gap-uri puternice pe verde (SPY +1,01%, QQQ +1,84%), susținută de optimismul investitorilor și fluxurile masive de capital spre acțiuni raportate de CNBC. Deși există riscuri geopolitice legate de Iran și scăderea prețului aurului, atenția este dominată de raportările financiare majore de dimineață (WMT, BABA) și interesul pentru tehnologie. Astfel, la deschidere este favorizată direcția Long.",
     "headlines": [
+      "Jim Cramer's top 10 things to watch in the stock market Thursday",
+      "Gold's bad year is getting worse. Why its price keeps falling",
       "EU countries, Parliament agree to delay EU methane regulation by two years - Reuters",
       "Family offices move more money into stocks, hedge AI risk, according to CNBC Family Office Portfolio Tracker",
       "Anthropic IPO could create thousands of multimillionaire employees",
-      "Trump says US will 'see what happens' in conflict with Iran after January 1 - Reuters",
-      "Hackers access financial data of retired NYC government workers, Politico reports - Reuters",
-      "Israel says it concludes Gaza tank raid - Reuters"
+      "Trump says US will 'see what happens' in conflict with Iran after January 1 - Reuters"
     ],
     "earnings_today": [
       {
@@ -82,26 +82,51 @@
         "action": "enter",
         "symbol": "PANW",
         "direction": "long",
-        "price": 370.67,
+        "price": 362.01,
         "prev_close": 309.17,
-        "gap_pct": 19.89,
-        "change_pct": 19.89,
+        "gap_pct": 17.09,
+        "change_pct": 17.09,
         "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0675,
+        "stop_price": 356.58,
+        "target_price": 386.45,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
+        "headlines": [
+          "Palo Alto Networks Stock Soars as Revenue Smashes Estimates and Annual Forecast Climbs",
+          "Stock Market Today: Dow Rises As Walmart Falls On Earnings; Anthropic IPO To Debut (Live Coverage)",
+          "Palo Alto Is Paying $4.5 Billion for a Startup Ex-OpenAI Researchers Founded Last Year"
+        ],
+        "reason_ro": "PANW înregistrează o creștere de 17.09% susținută de rezultate financiare excelente peste estimări și o achiziție strategică majoră de 4.5 miliarde de dolari. Intrare LONG cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T14:29:17.795802+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "RIOT",
+        "direction": "long",
+        "price": 19.35,
+        "prev_close": 17.05,
+        "gap_pct": 13.46,
+        "change_pct": 13.46,
+        "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 365.11,
-        "target_price": 390.13,
-        "expected_profit_dollars": 1.31,
-        "max_loss_dollars": 0.38,
+        "stop_price": 19.06,
+        "target_price": 20.37,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
         "headlines": [
-          "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls",
-          "Cybersecurity Stocks Rally On Palo Alto Earnings Beat, Raised Guidance",
-          "What Is Driving Fortinet Stock?"
+          "AI Lease Deals Could Recast The Case For Riot Platforms Stock",
+          "RIOT, FLS Stocks Gain As Activist Investor Starboard Sees Undervalued Power And Infrastructure Plays",
+          "Riot Platforms Soars 7% as Activist Starboard Pitches Its Upside at Investor Conference"
         ],
-        "reason_ro": "Palo Alto Networks inregistreaza o crestere de aproape 20% sustinuta de rezultate financiare excelente si ghidaj majorat, antrenand un raliu puternic in sectorul de securitate cibernetica. Intrare LONG cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "reason_ro": "RIOT urcă puternic susținută de știri privind potențiale contracte AI pentru infrastructură și interesul fondului activist Starboard Value. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T13:43:29.937259+00:00"
+        "evaluated_at": "2026-11-19T14:29:33.129424+00:00"
       },
       {
         "action": "enter",
@@ -120,42 +145,78 @@
         "expected_profit_dollars": 1.35,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Cybersecurity Stocks Rally On Palo Alto Earnings Beat, Raised Guidance",
-          "What Is Driving Fortinet Stock?",
-          "Palo Alto Networks Shed 10% of Its Value Over 3 Months: This Big Bank Predicts 55% Gains From Here With Others Not Far Behind"
+          "S&P 500 Premarket Gainers for Nov. 19 Session",
+          "What Triggered The Move In Zscaler Stock?",
+          "Cybersecurity Stocks Rally On Palo Alto Earnings Beat, Raised Guidance"
         ],
-        "reason_ro": "CRWD înregistrează un impuls puternic de +13.45% susținut de rezultatele excelente și ghidajul ridicat de la Palo Alto Networks, care trag în sus întregul sector de securitate cibernetică. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T13:43:50.668043+00:00"
+        "evaluated_at": "2026-11-19T14:29:42.852982+00:00"
       },
       {
         "action": "enter",
-        "symbol": "RBLX",
+        "symbol": "UNH",
+        "direction": "short",
+        "price": 349.9,
+        "prev_close": 389.69,
+        "gap_pct": -10.21,
+        "change_pct": -10.21,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 355.15,
+        "target_price": 331.53,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "US Stock Market Today: S&P 500 Futures Advance On Falling Yields And Hawkish Fed Signals",
+          "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls",
+          "Why Is Humana Stock Falling?"
+        ],
+        "reason_ro": "UnitedHealth înregistrează o prăbușire majoră de peste 10% pe fondul unui nou control federal pentru fraudă care afectează întregul sector medical, creând un impuls descendent puternic pe termen scurt. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-19T14:29:56.827602+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "AMD",
         "direction": "long",
-        "price": 47.32,
-        "prev_close": 44.02,
-        "gap_pct": 7.48,
-        "change_pct": 7.48,
+        "price": 545.19,
+        "prev_close": 503.31,
+        "gap_pct": 8.32,
+        "change_pct": 8.32,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 46.61,
-        "target_price": 49.8,
+        "stop_price": 537.01,
+        "target_price": 573.81,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
-        "headlines": [],
-        "reason_ro": "RBLX înregistrează o mișcare tehnică puternică cu volum ridicat și o creștere de +7.48% față de închidere, susținută de un impuls clar în piață. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "headlines": [
+          "Nvidia, AMD, Micron stocks lead chip sector higher amid Anthropic IPO optimism",
+          "$1 Million In SMH Five Years Ago: What Is It Worth Now?",
+          "Why AMD's AI Progress Could Make Sense Through ETFs"
+        ],
+        "reason_ro": "AMD înregistrează o creștere puternică de +8.32% pre-market, condusă de raliul sectorului de cipuri și optimismul generat de IPO-ul Anthropic. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T13:44:46.745717+00:00"
+        "evaluated_at": "2026-11-19T14:30:20.663107+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "PANW",
-        "price": 370.67,
+        "price": 362.01,
         "prev_close": 309.17,
-        "gap_pct": 19.89,
+        "gap_pct": 17.09,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RIOT",
+        "price": 19.35,
+        "prev_close": 17.05,
+        "gap_pct": 13.46,
         "source": "watchlist_snapshot"
       },
       {
@@ -180,17 +241,10 @@
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ASTS",
-        "price": 25.49,
-        "prev_close": 27.57,
-        "gap_pct": -7.56,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RBLX",
-        "price": 47.32,
-        "prev_close": 44.02,
-        "gap_pct": 7.48,
+        "symbol": "AMD",
+        "price": 545.19,
+        "prev_close": 503.31,
+        "gap_pct": 8.32,
         "source": "watchlist_snapshot"
       },
       {
@@ -222,7 +276,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T13:43:27.888061+00:00",
+    "last_scan_at": "2026-11-19T14:29:07.431645+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
