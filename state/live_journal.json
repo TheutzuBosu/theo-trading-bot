@@ -10,7 +10,8 @@
     "MOVER|QCOM|2026-11-19|long",
     "MOVER|RBLX|2026-11-19|long",
     "MOVER|RIOT|2026-11-19|long",
-    "QQQ|2026-11-19T13:15:00-05:00|short"
+    "QQQ|2026-11-19T13:15:00-05:00|short",
+    "SPY|2026-11-19T13:15:00-05:00|short"
   ],
   "open_trades": {
     "QID": {
@@ -38,7 +39,7 @@
       "initial_risk_dollars": 1.7319,
       "equity_at_entry": 505.41,
       "partial_done": false,
-      "last_price": 67.12,
+      "last_price": 67.1,
       "entry_reason": "D1b short: Close=649.37, band=649.63, VWAP=659.76, tp0=642.23 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 225.0,
@@ -51,6 +52,46 @@
         "vol_ratio_14d": 1.429760173354547,
         "day_of_week": 3.0,
         "cost_to_risk": 0.015548107826047259
+      }
+    },
+    "SDS": {
+      "trade_id": "theo-SDS-S-202611191315",
+      "signal_symbol": "SPY",
+      "signal_direction": "short",
+      "exec_symbol": "SDS",
+      "exec_direction": "long",
+      "leverage": 2,
+      "signal_time": "2026-11-19T13:15:00-05:00",
+      "entry_time": "2026-11-19T13:21:29.619974-05:00",
+      "entry_price": 61.155003,
+      "qty": 3.9978,
+      "qty0": 3.9978,
+      "signal_entry_price": 720.31,
+      "signal_stop": 721.0250775,
+      "signal_initial_stop": 721.0250775,
+      "signal_target": 711.63495,
+      "signal_stop_after_target": 720.55737,
+      "exec_stop": 61.13,
+      "exec_initial_stop": 61.13,
+      "exec_target": 62.73,
+      "stop_order_id": "414b453c-38ef-4908-9353-70531d4a7eaa",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.1,
+      "equity_at_entry": 504.62,
+      "partial_done": false,
+      "last_price": 61.155003,
+      "entry_reason": "D1b short: Close=719.55, band=721.88, VWAP=728.15, tp0=711.63 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00",
+      "features": {
+        "minute_of_day": 225.0,
+        "dist_from_band_bps": 57.31867872896812,
+        "dist_from_vwap_bps": 118.0459997197425,
+        "rv_30m": 0.0008002326925083692,
+        "sigma_14d": 0.016577952565223986,
+        "overnight_gap_bps": 98.72249531033717,
+        "ret_since_open_bps": -243.91897388616246,
+        "vol_ratio_14d": 1.7367475003469655,
+        "day_of_week": 3.0,
+        "cost_to_risk": 0.007232153348612285
       }
     }
   },
