@@ -36,7 +36,7 @@
       "initial_risk_dollars": 0.1507,
       "equity_at_entry": 507.22,
       "partial_done": false,
-      "last_price": 251.17,
+      "last_price": 250.625,
       "entry_reason": "CRWD înregistrează o creștere puternică de +13.45% susținută de raliul general din sectorul de securitate cibernetică, impulsionat de rezultatele financiare pozitive și prognozele ridicate ale Palo Alto Networks. Intrare LONG cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~10.01$, R:R 1:4.5)",
       "features": {
         "minute_of_day": 0.0,
@@ -76,7 +76,7 @@
       "initial_risk_dollars": 0.2409,
       "equity_at_entry": 506.21,
       "partial_done": false,
-      "last_price": 165.44,
+      "last_price": 164.99,
       "entry_reason": "QCOM beneficiază de un impuls puternic pe segmentul de dividende și accelerarea cheltuielilor în AI, înregistrand o creștere de +3.88% în timpul sesiunii principale deschise. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.24 $ / țintă profit +0.84 $). · D33 Scanner: QCOM LONG -> BUY QCOM (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 52.0,
