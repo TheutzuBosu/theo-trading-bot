@@ -5,11 +5,11 @@
     "entry_time": "2026-11-19T13:16:44.862857-05:00",
     "qty": 3.765,
     "entry_price": 67.19,
-    "current_price": 67.3269,
+    "current_price": 67.28,
     "stop": 66.73,
     "initial_stop": 66.73,
-    "unrealized_pnl": 0.52,
-    "unrealized_r": 0.3,
+    "unrealized_pnl": 0.34,
+    "unrealized_r": 0.2,
     "entry_reason": "D1b short: Close=649.37, band=649.63, VWAP=659.76, tp0=642.23 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
   }
 ]
