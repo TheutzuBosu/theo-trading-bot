@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 505.21,
-  "total_pnl": 5.21,
-  "total_pnl_pct": 1.04,
-  "today_pnl": -2.01,
-  "today_pnl_pct": -0.4,
-  "current_drawdown_pct": -1.71,
-  "max_drawdown_pct": -1.88,
-  "updated_at": "2026-11-19T13:22:58.825329-05:00",
+  "equity": 504.26,
+  "total_pnl": 4.26,
+  "total_pnl_pct": 0.85,
+  "today_pnl": -2.96,
+  "today_pnl_pct": -0.58,
+  "current_drawdown_pct": -1.89,
+  "max_drawdown_pct": -1.89,
+  "updated_at": "2026-11-19T13:24:05.360275-05:00",
   "positions": [
     {
       "symbol": "QID",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-19T13:16:44.862857-05:00",
       "qty": 3.765,
       "entry_price": 67.19,
-      "current_price": 67.02,
+      "current_price": 66.89,
       "stop": 66.73,
       "initial_stop": 66.73,
-      "unrealized_pnl": -0.64,
-      "unrealized_r": -0.37,
+      "unrealized_pnl": -1.13,
+      "unrealized_r": -0.65,
       "entry_reason": "D1b short: Close=649.37, band=649.63, VWAP=659.76, tp0=642.23 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-19T13:21:29.619974-05:00",
       "qty": 3.9978,
       "entry_price": 61.155,
-      "current_price": 61.265,
+      "current_price": 61.15,
       "stop": 61.13,
       "initial_stop": 61.13,
-      "unrealized_pnl": 0.44,
-      "unrealized_r": 4.4,
+      "unrealized_pnl": -0.02,
+      "unrealized_r": -0.2,
       "entry_reason": "D1b short: Close=719.55, band=721.88, VWAP=728.15, tp0=711.63 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -109,16 +109,16 @@
         "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 479.63,
+        "price": 479.0,
         "prev_close": 530.45,
-        "gap_pct": -9.58,
-        "change_pct": -9.58,
+        "gap_pct": -9.7,
+        "change_pct": -9.7,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 486.82,
-        "target_price": 454.45,
+        "stop_price": 486.18,
+        "target_price": 453.85,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -126,134 +126,109 @@
           "Why AMD Stock Was Plunging on Thursday",
           "Anthropic's mega-IPO is still leaving investors working with 'imperfect information'"
         ],
-        "reason_ro": "AMD înregistrează o scădere puternică de -9.58% pe fondul incertitudinilor legate de IPO-ul Anthropic și a presiunii generale din sectorul de semiconductori, unde competitorii atrag capitalul. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AMD scade masiv cu -9.70% pe fondul incertitudinilor generate de IPO-ul Anthropic și a presiunii sectoriale pe stocurile de cipuri, oferind o oportunitate de continuare a trendului descendent intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T18:14:02.083507+00:00"
+        "evaluated_at": "2026-11-19T18:24:10.745303+00:00"
       },
       {
         "action": "enter",
         "symbol": "PANW",
         "direction": "long",
-        "price": 358.51,
+        "price": 359.38,
         "prev_close": 339.68,
-        "gap_pct": 5.54,
-        "change_pct": 5.54,
+        "gap_pct": 5.8,
+        "change_pct": 5.8,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 353.13,
-        "target_price": 377.33,
+        "stop_price": 353.99,
+        "target_price": 378.25,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Stock Market Today: Nasdaq Clings To Gain, Dow Struggles; Palo Alto Jumps (Live Coverage)",
-          "Cybersecurity sector outlook: Setup analysis as Palo Alto results lift peers",
-          "Palo Alto Networks soars on Q1 earnings and Applied Compute deal"
+          "Palo Alto (PANW) Q1 2027 Earnings Call Transcript",
+          "Palo Alto Networks Stocks Jump 6.90% on Guidance Raise and $4.5 Billion AI Deal",
+          "Stock Market Today: Indexes Fall As Anthropic Starts Trading; These Players Hit Sell-Rule Alarms (Live Coverage)"
         ],
-        "reason_ro": "Palo Alto Networks crește puternic (+5.54%) susținută de rezultatele financiare solide pentru Q1 și un acord important legat de Applied Compute, care ridică întregul sector de securitate cibernetică. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Palo Alto Networks (PANW) a înregistrat o creștere solidă susținută de revizuirea pozitivă a ghidajului și de un acord AI major în valoare de 4,5 miliarde de dolari, oferind un impuls fundamental puternic pentru continuarea trendului. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T18:14:10.130507+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NKE",
-        "direction": "short",
-        "price": 34.47,
-        "prev_close": 36.31,
-        "gap_pct": -5.07,
-        "change_pct": -5.07,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 34.99,
-        "target_price": 32.66,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Nike’s 2031 Targets Look Great on Paper, but Sales Won’t Grow Until 2029. Here’s the Price I’d Pay to Buy Nike Stock Right Now.",
-          "NIKE, Inc. (NKE) Is a Trending Stock: Facts to Know Before Betting on It",
-          "Nike is Riding the GTA 6 Hype. Will Its Stock Price See Any Relief?"
-        ],
-        "reason_ro": "NKE înregistrează o scădere puternică de -5.07% susținută de sentimentul fundamental profund bearish și perspectivele slabe de creștere a vânzărilor până în 2029. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T18:14:22.884358+00:00"
+        "evaluated_at": "2026-11-19T18:24:16.434470+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 479.63,
+        "price": 479.0,
         "prev_close": 530.45,
-        "gap_pct": -9.58,
+        "gap_pct": -9.7,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "PANW",
-        "price": 358.51,
+        "price": 359.38,
         "prev_close": 339.68,
-        "gap_pct": 5.54,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SHOP",
-        "price": 132.14,
-        "prev_close": 139.39,
-        "gap_pct": -5.2,
+        "gap_pct": 5.8,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NKE",
-        "price": 34.47,
+        "price": 34.46,
         "prev_close": 36.31,
-        "gap_pct": -5.07,
+        "gap_pct": -5.1,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "SHOP",
+        "price": 132.53,
+        "prev_close": 139.39,
+        "gap_pct": -4.92,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UNH",
-        "price": 332.73,
+        "price": 334.36,
         "prev_close": 349.9,
-        "gap_pct": -4.91,
+        "gap_pct": -4.44,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "UPST",
-        "price": 17.25,
+        "price": 17.27,
         "prev_close": 18.02,
-        "gap_pct": -4.25,
+        "gap_pct": -4.14,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MPU",
-        "price": 4.22,
+        "price": 4.21,
         "prev_close": 2.84,
-        "gap_pct": 48.59,
+        "gap_pct": 48.24,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "MDRN",
+        "price": 2.23,
+        "prev_close": 1.63,
+        "gap_pct": 36.81,
         "source": "alpaca_movers"
       },
       {
         "symbol": "INHD",
-        "price": 3.15,
+        "price": 3.09,
         "prev_close": 2.3,
-        "gap_pct": 37.17,
+        "gap_pct": 34.34,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NCPL",
-        "price": 3.92,
+        "price": 3.88,
         "prev_close": 2.89,
-        "gap_pct": 35.77,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SOWG",
-        "price": 2.79,
-        "prev_close": 2.06,
-        "gap_pct": 35.44,
+        "gap_pct": 34.11,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T18:13:57.315084+00:00",
+    "last_scan_at": "2026-11-19T18:24:05.360280+00:00",
     "telegram_sent_date": "2026-11-19"
   },
   "spy_start_price": 767.64,
