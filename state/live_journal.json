@@ -39,7 +39,7 @@
       "initial_risk_dollars": 1.9257,
       "equity_at_entry": 503.65,
       "partial_done": true,
-      "last_price": 65.68,
+      "last_price": 65.63,
       "entry_reason": "D1b short: Close=703.00, band=705.24, VWAP=710.39, tp0=695.27 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 133.0,
@@ -79,7 +79,7 @@
       "initial_risk_dollars": 0.7661,
       "equity_at_entry": 503.69,
       "partial_done": true,
-      "last_price": 74.62,
+      "last_price": 74.6,
       "entry_reason": "D1b short: Close=621.64, band=625.68, VWAP=628.69, tp0=614.80 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 271.0,
@@ -119,7 +119,7 @@
       "initial_risk_dollars": 0.2239,
       "equity_at_entry": 513.37,
       "partial_done": false,
-      "last_price": 10.328,
+      "last_price": 10.3,
       "entry_reason": "NVDA se prăbușește cu aproape 13% pe fondul unei investigații SEC privind contabilitatea și a unui declin masiv de piață. Trendul intraday puternic negativ și știrile fundamentale severe justifică o intrare pe short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: NVDA SHORT -> BUY NVD (miză ~7.50$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 347.0,
