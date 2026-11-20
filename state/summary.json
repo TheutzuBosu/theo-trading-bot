@@ -9,8 +9,22 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -1.82,
   "max_drawdown_pct": -2.2,
-  "updated_at": "2026-11-20T09:38:31.045952-05:00",
-  "positions": [],
+  "updated_at": "2026-11-20T09:39:34.778157-05:00",
+  "positions": [
+    {
+      "symbol": "CRWD",
+      "direction": "long",
+      "entry_time": "2026-11-20T09:39:34.778157-05:00",
+      "qty": 0.0431,
+      "entry_price": 231.734,
+      "current_price": 231.704,
+      "stop": 228.27,
+      "initial_stop": 228.27,
+      "unrealized_pnl": -0.0,
+      "unrealized_r": -0.01,
+      "entry_reason": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~9.99$, R:R 1:3.5)"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-20T14:30:32.162988+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
@@ -82,101 +96,126 @@
         "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 469.22,
-        "prev_close": 530.45,
-        "gap_pct": -11.54,
-        "change_pct": -11.54,
-        "stake_dollars": 15.0,
+        "price": 458.16,
+        "prev_close": 489.44,
+        "gap_pct": -6.39,
+        "change_pct": -6.39,
+        "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 476.26,
-        "target_price": 444.59,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
+        "stop_price": 465.03,
+        "target_price": 434.11,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
         "headlines": [
           "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
           "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
           "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
         ],
-        "reason_ro": "AMD conduce declinul sectorului de cipuri, extinzându-și pierderile majore (-11.54%) pe fondul unui sentiment negativ extins în piață și presiunii exercitate de sectorul semiconductorilor. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AMD conduce declinul sectorului de chipuri, fiind trasă în jos de sentimentul negativ generalizat din piață și de scăderea prelungită a rivalului NVIDIA, ceea ce generează un momentum intraday descendent puternic. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T14:29:13.343850+00:00"
+        "evaluated_at": "2026-11-20T14:39:43.243861+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "CRWD",
+        "direction": "long",
+        "price": 232.29,
+        "prev_close": 243.45,
+        "gap_pct": -4.58,
+        "change_pct": -4.58,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 228.81,
+        "target_price": 244.49,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
+          "Tech investors are fleeing to CrowdStrike—ignoring a 5,552x P/E",
+          "Baird Raises Its Palo Alto Networks Target to $465 From $420. Is It Still Too Low?"
+        ],
+        "reason_ro": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-20T14:40:04.659120+00:00"
       }
     ],
     "top_movers": [
       {
+        "symbol": "MU",
+        "price": 644.54,
+        "prev_close": 690.58,
+        "gap_pct": -6.67,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "AMD",
-        "price": 469.22,
-        "prev_close": 530.45,
-        "gap_pct": -11.54,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 130.92,
-        "prev_close": 145.54,
-        "gap_pct": -10.05,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "U",
-        "price": 45.03,
-        "prev_close": 48.95,
-        "gap_pct": -8.01,
+        "price": 458.16,
+        "prev_close": 489.44,
+        "gap_pct": -6.39,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 167.92,
-        "prev_close": 182.51,
-        "gap_pct": -7.99,
+        "price": 166.52,
+        "prev_close": 177.22,
+        "gap_pct": -6.04,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MARA",
-        "price": 6.07,
-        "prev_close": 6.55,
-        "gap_pct": -7.4,
+        "symbol": "MRVL",
+        "price": 130.46,
+        "prev_close": 138.45,
+        "gap_pct": -5.77,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "PANW",
-        "price": 364.5,
-        "prev_close": 339.68,
-        "gap_pct": 7.31,
+        "symbol": "CRWD",
+        "price": 232.29,
+        "prev_close": 243.45,
+        "gap_pct": -4.58,
         "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RIOT",
+        "price": 16.93,
+        "prev_close": 17.73,
+        "gap_pct": -4.54,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "SONN",
+        "price": 51.47,
+        "prev_close": 1.26,
+        "gap_pct": 3984.92,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "BKHA",
+        "price": 2.06,
+        "prev_close": 6.48,
+        "gap_pct": -68.29,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "GEOS",
+        "price": 2.22,
+        "prev_close": 3.31,
+        "gap_pct": -32.93,
+        "source": "alpaca_movers"
       },
       {
         "symbol": "MPU",
-        "price": 4.76,
-        "prev_close": 2.84,
-        "gap_pct": 67.61,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SEAT",
-        "price": 2.09,
-        "prev_close": 1.28,
-        "gap_pct": 63.28,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "MDRN",
-        "price": 2.35,
-        "prev_close": 1.63,
-        "gap_pct": 44.17,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "POAS",
-        "price": 3.17,
-        "prev_close": 2.32,
-        "gap_pct": 36.64,
+        "price": 3.76,
+        "prev_close": 4.76,
+        "gap_pct": -20.92,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-20T14:29:03.427089+00:00",
+    "last_scan_at": "2026-11-20T14:39:34.778161+00:00",
     "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
