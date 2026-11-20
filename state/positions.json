@@ -1,5 +1,18 @@
 [
   {
+    "symbol": "NVD",
+    "direction": "long",
+    "entry_time": "2026-11-20T15:17:10.817456-05:00",
+    "qty": 0.727,
+    "entry_price": 10.328,
+    "current_price": 10.32,
+    "stop": 10.02,
+    "initial_stop": 10.02,
+    "unrealized_pnl": -0.01,
+    "unrealized_r": -0.03,
+    "entry_reason": "NVDA se prăbușește cu aproape 13% pe fondul unei investigații SEC privind contabilitatea și a unui declin masiv de piață. Trendul intraday puternic negativ și știrile fundamentale severe justifică o intrare pe short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: NVDA SHORT -> BUY NVD (miză ~7.50$, R:R 1:3.5)"
+  },
+  {
     "symbol": "QID",
     "direction": "long",
     "entry_time": "2026-11-20T14:02:33.199988-05:00",
@@ -18,11 +31,11 @@
     "entry_time": "2026-11-20T11:44:32.906249-05:00",
     "qty": 1.9649,
     "entry_price": 64.25,
-    "current_price": 65.75,
+    "current_price": 65.71,
     "stop": 63.74,
     "initial_stop": 63.76,
-    "unrealized_pnl": 2.95,
-    "unrealized_r": 1.53,
+    "unrealized_pnl": 2.87,
+    "unrealized_r": 1.49,
     "entry_reason": "D1b short: Close=703.00, band=705.24, VWAP=710.39, tp0=695.27 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
   }
 ]
