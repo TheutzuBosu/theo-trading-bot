@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 504.67,
-  "total_pnl": 4.67,
-  "total_pnl_pct": 0.93,
-  "today_pnl": 0.04,
+  "equity": 504.7,
+  "total_pnl": 4.7,
+  "total_pnl_pct": 0.94,
+  "today_pnl": 0.07,
   "today_pnl_pct": 0.01,
   "current_drawdown_pct": -1.81,
   "max_drawdown_pct": -2.2,
-  "updated_at": "2026-11-20T09:48:50.453281-05:00",
+  "updated_at": "2026-11-20T09:49:55.422146-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,12 +17,25 @@
       "entry_time": "2026-11-20T09:39:34.778157-05:00",
       "qty": 0.0431,
       "entry_price": 231.734,
-      "current_price": 232.75,
+      "current_price": 233.57,
       "stop": 228.27,
       "initial_stop": 228.27,
-      "unrealized_pnl": 0.04,
-      "unrealized_r": 0.29,
+      "unrealized_pnl": 0.08,
+      "unrealized_r": 0.53,
       "entry_reason": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~9.99$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "MRNA",
+      "direction": "long",
+      "entry_time": "2026-11-20T09:49:55.422146-05:00",
+      "qty": 0.0479,
+      "entry_price": 208.884,
+      "current_price": 208.755,
+      "stop": 205.76,
+      "initial_stop": 205.76,
+      "unrealized_pnl": -0.01,
+      "unrealized_r": -0.04,
+      "entry_reason": "Moderna (MRNA) înregistrează o creștere solidă de +3.82% susținută de analize comparative favorabile față de competitori și interes ridicat pe sectorul pharma, depășind primele 15 minute volatile de la deschidere. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MRNA LONG -> BUY MRNA (miză ~10.00$, R:R 1:3.5)"
     }
   ],
   "premarket": {
@@ -94,18 +107,43 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "AMD",
+        "symbol": "MU",
         "direction": "short",
-        "price": 458.16,
-        "prev_close": 489.44,
-        "gap_pct": -6.39,
-        "change_pct": -6.39,
+        "price": 645.2,
+        "prev_close": 690.58,
+        "gap_pct": -6.57,
+        "change_pct": -6.57,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 465.03,
-        "target_price": 434.11,
+        "stop_price": 654.88,
+        "target_price": 611.33,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
+          "Micron’s President Says Memory Has Been Tight “Across Really Multiple Years.” TrendForce Sees DRAM Prices Rising Through 2027",
+          "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
+        ],
+        "reason_ro": "MU scade cu peste 6.5% pe fondul corecției generale din sectorul de semiconductori condusă de scăderea Nvidia, oferind un momentum descendent puternic confirmat de piață. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-20T14:50:12.693340+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "AMD",
+        "direction": "short",
+        "price": 467.17,
+        "prev_close": 489.44,
+        "gap_pct": -4.55,
+        "change_pct": -4.55,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 474.18,
+        "target_price": 442.64,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -113,109 +151,109 @@
           "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
           "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
         ],
-        "reason_ro": "AMD conduce declinul sectorului de chipuri, fiind trasă în jos de sentimentul negativ generalizat din piață și de scăderea prelungită a rivalului NVIDIA, ceea ce generează un momentum intraday descendent puternic. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "AMD conduce declinul sectorului de chipuri alături de Broadcom, extinzând pierderile pe un fond de piață negativ dominat de scăderea acțiunilor Nvidia și reconfigurarea capitalului spre debutul Anthropic. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T14:39:43.243861+00:00"
+        "evaluated_at": "2026-11-20T14:51:00.892626+00:00"
       },
       {
         "action": "enter",
-        "symbol": "CRWD",
+        "symbol": "MRNA",
         "direction": "long",
-        "price": 232.29,
-        "prev_close": 243.45,
-        "gap_pct": -4.58,
-        "change_pct": -4.58,
+        "price": 206.86,
+        "prev_close": 199.25,
+        "gap_pct": 3.82,
+        "change_pct": 3.82,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 228.81,
-        "target_price": 244.49,
+        "stop_price": 203.76,
+        "target_price": 217.72,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
-          "Tech investors are fleeing to CrowdStrike—ignoring a 5,552x P/E",
-          "Baird Raises Its Palo Alto Networks Target to $465 From $420. Is It Still Too Low?"
+          "This $8 pharma stock is up 52%—and still trades at 1.6x earnings",
+          "Moderna vs. BioNTech: Why Only 1 Is a Buy Heading Into 2027",
+          "BioCryst Pharmaceuticals Sees Revenue Near Top of Guidance as It Expands HAE Portfolio"
         ],
-        "reason_ro": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Moderna (MRNA) înregistrează o creștere solidă de +3.82% susținută de analize comparative favorabile față de competitori și interes ridicat pe sectorul pharma, depășind primele 15 minute volatile de la deschidere. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T14:40:04.659120+00:00"
+        "evaluated_at": "2026-11-20T14:51:37.624293+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 644.54,
+        "price": 645.2,
         "prev_close": 690.58,
-        "gap_pct": -6.67,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AMD",
-        "price": 458.16,
-        "prev_close": 489.44,
-        "gap_pct": -6.39,
+        "gap_pct": -6.57,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 166.52,
+        "price": 167.0,
         "prev_close": 177.22,
-        "gap_pct": -6.04,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 130.46,
-        "prev_close": 138.45,
         "gap_pct": -5.77,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "CRWD",
-        "price": 232.29,
-        "prev_close": 243.45,
-        "gap_pct": -4.58,
+        "symbol": "MRVL",
+        "price": 131.03,
+        "prev_close": 138.45,
+        "gap_pct": -5.36,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "RIOT",
-        "price": 16.93,
-        "prev_close": 17.73,
-        "gap_pct": -4.54,
+        "symbol": "AMD",
+        "price": 467.17,
+        "prev_close": 489.44,
+        "gap_pct": -4.55,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "CRWD",
+        "price": 233.29,
+        "prev_close": 243.45,
+        "gap_pct": -4.17,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MRNA",
+        "price": 206.86,
+        "prev_close": 199.25,
+        "gap_pct": 3.82,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SONN",
-        "price": 51.47,
+        "price": 51.83,
         "prev_close": 1.26,
-        "gap_pct": 3984.92,
+        "gap_pct": 4013.49,
         "source": "alpaca_movers"
       },
       {
         "symbol": "BKHA",
-        "price": 2.06,
+        "price": 2.0,
         "prev_close": 6.48,
-        "gap_pct": -68.29,
+        "gap_pct": -69.14,
         "source": "alpaca_movers"
       },
       {
         "symbol": "GEOS",
-        "price": 2.22,
+        "price": 2.21,
         "prev_close": 3.31,
-        "gap_pct": -32.93,
+        "gap_pct": -33.08,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MPU",
-        "price": 3.76,
+        "price": 3.62,
         "prev_close": 4.76,
-        "gap_pct": -20.92,
+        "gap_pct": -23.95,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-20T14:39:34.778161+00:00",
+    "last_scan_at": "2026-11-20T14:49:55.422150+00:00",
     "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
