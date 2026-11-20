@@ -12,272 +12,222 @@
   "updated_at": "2026-11-19T15:30:14.052409-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-19T14:30:20.663150+00:00",
+    "updated_at": "2026-11-20T13:44:04.149719+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 737.72,
-        "prev_close": 730.33,
-        "gap_pct": 1.01
+        "price": 708.06,
+        "prev_close": 715.84,
+        "gap_pct": -1.09
       },
       "QQQ": {
-        "price": 671.7,
-        "prev_close": 659.57,
-        "gap_pct": 1.84
+        "price": 631.36,
+        "prev_close": 645.1,
+        "gap_pct": -2.13
       }
     },
-    "explanation_ro": "Piața deschide astăzi cu gap-uri puternice pe verde (SPY +1,01%, QQQ +1,84%), susținută de optimismul investitorilor și fluxurile masive de capital spre acțiuni raportate de CNBC. Deși există riscuri geopolitice legate de Iran și scăderea prețului aurului, atenția este dominată de raportările financiare majore de dimineață (WMT, BABA) și interesul pentru tehnologie. Astfel, la deschidere este favorizată direcția Long.",
+    "explanation_ro": "Piața deschide în scădere puternică (SPY -1.09%, QQQ -2.13%) din cauza tensiunilor geopolitice persistente dintre SUA, China și Taiwan, alături de riscul unui blocaj guvernamental la Washington. Deși există raportări financiare de la companii precum BJ și FRO, sentimentul general este dominat de incertitudinea politică și riscul extern. În aceste condiții, direcția favorizată la deschidere pentru ambele instrumente este Short.",
     "headlines": [
-      "Jim Cramer's top 10 things to watch in the stock market Thursday",
-      "Gold's bad year is getting worse. Why its price keeps falling",
-      "EU countries, Parliament agree to delay EU methane regulation by two years - Reuters",
-      "Family offices move more money into stocks, hedge AI risk, according to CNBC Family Office Portfolio Tracker",
-      "Anthropic IPO could create thousands of multimillionaire employees",
-      "Trump says US will 'see what happens' in conflict with Iran after January 1 - Reuters"
+      "U.S.-China trade, Taiwan and tech tensions remain unresolved as Trump returns from Asia",
+      "Rejecting cheap fabrics, higher prices: Why shoppers are asking for better clothes",
+      "A24 is having a great year at the box office. That could give HBO Max a streaming edge",
+      "UK finds fix for fridge and freezer vulnerability after European hacks - Reuters",
+      "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
+      "PODCAST: Anthropic IPO, Europe bristles over Trump-Xi-Putin meeting and Meta's muse - Reuters"
     ],
     "earnings_today": [
       {
-        "symbol": "WMT",
+        "symbol": "BJ",
         "hour": "bmo",
-        "eps_estimate": 0.6421,
-        "eps_actual": 0.65,
-        "revenue_estimate": 189143823120,
-        "revenue_actual": 188835000000
+        "eps_estimate": 1.2924,
+        "eps_actual": 1.73,
+        "revenue_estimate": 6138873799,
+        "revenue_actual": 6283490000
       },
       {
-        "symbol": "BABA",
+        "symbol": "BSP",
         "hour": "bmo",
-        "eps_estimate": 11.3861,
-        "eps_actual": 8.06707,
-        "revenue_estimate": 275208511432,
-        "revenue_actual": 270000166000
-      },
-      {
-        "symbol": "DAO",
-        "hour": "bmo",
-        "eps_estimate": 0.2212,
-        "eps_actual": 0.40002,
-        "revenue_estimate": 1669264036,
-        "revenue_actual": 1420804370
-      },
-      {
-        "symbol": "FUTU",
-        "hour": "bmo",
-        "eps_estimate": 22.9942,
-        "eps_actual": 23.2212,
-        "revenue_estimate": 6773179950,
-        "revenue_actual": 6689117700
-      },
-      {
-        "symbol": "GLOB",
-        "hour": "amc",
-        "eps_estimate": 1.5087,
+        "eps_estimate": 0.3198,
         "eps_actual": null,
-        "revenue_estimate": 623286657,
+        "revenue_estimate": 753148112,
         "revenue_actual": null
+      },
+      {
+        "symbol": "FRO",
+        "hour": "bmo",
+        "eps_estimate": 2.3198,
+        "eps_actual": 2.38,
+        "revenue_estimate": 736637773,
+        "revenue_actual": 817190000
+      },
+      {
+        "symbol": "IESC",
+        "hour": "bmo",
+        "eps_estimate": 2.8662,
+        "eps_actual": 4.07,
+        "revenue_estimate": 1170960000,
+        "revenue_actual": 1390000000
+      },
+      {
+        "symbol": "MOG.A",
+        "hour": "bmo",
+        "eps_estimate": 2.7724,
+        "eps_actual": 3.37,
+        "revenue_estimate": 1154024360,
+        "revenue_actual": 1254100000
       }
     ],
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "AMD",
-        "direction": "short",
-        "price": 483.83,
-        "prev_close": 530.45,
-        "gap_pct": -8.79,
-        "change_pct": -8.79,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 491.09,
-        "target_price": 458.43,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Offshore yuan dip looks like a liquidity blip, not a trend shift",
-          "Billionaire Stanley Druckenmiller Cut TSMC 94% in One Quarter, Leaving Just $14.9 Million",
-          "What's Happening To Intel's Factory Cash?"
-        ],
-        "reason_ro": "AMD înregistrează o scădere puternică de -8.79%, alimentată de presiuni sectoriale și discuții despre posibile vârfuri ale ciclului de creștere, oferind o oportunitate clară de continuare a momentumului negativ pe parcursul sesiunii intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T20:20:30.382059+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "PANW",
+        "symbol": "MRVL",
         "direction": "long",
-        "price": 359.78,
-        "prev_close": 339.68,
-        "gap_pct": 5.92,
-        "change_pct": 5.92,
+        "price": 130.92,
+        "prev_close": 145.54,
+        "gap_pct": -10.05,
+        "change_pct": -10.05,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 354.38,
-        "target_price": 378.67,
+        "stop_price": 128.96,
+        "target_price": 137.79,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Palo Alto: 3 Key Takeaways for Long-Term Investors",
-          "Okta Stocks Jump 8.14% as Cybersecurity Rally Extends Into Second Day",
-          "Zscaler Stocks Jump 8.18% as Palo Alto Forecast Lifts Cybersecurity Names"
+          "Broadcom: A Better Bet Than A Month Ago",
+          "Lumentum: The Drawdown Might Have Gone Too Far (Rating Upgrade)",
+          "Could Tesla Become The Next Lumentum? Gary Black Warns A SpaceX Stock Deal Could Send TSLA Down 25%"
         ],
-        "reason_ro": "PANW înregistrează o creștere solidă de 5.92% susținută de un raliu puternic în sectorul de securitate cibernetică și menținerea țintei de 415$ de către Stifel. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Marvell Technology (MRVL) a soluționat un litigiu important privind brevetele de rețelă AI, eliminând un risc major, în timp ce acțiunea înregistrează o scădere de -10.05% pe fondul corecției din sectorul tech, oferind o oportunitate atractivă de revenire (long). Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T20:20:36.269764+00:00"
+        "evaluated_at": "2026-11-20T13:43:37.301624+00:00"
       },
       {
         "action": "enter",
-        "symbol": "NKE",
-        "direction": "short",
-        "price": 34.34,
-        "prev_close": 36.31,
-        "gap_pct": -5.44,
-        "change_pct": -5.44,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 34.86,
-        "target_price": 32.54,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Nike’s CEO admitted a miss, but Morgan Stanley sees a bigger one",
-          "A 67-Year-Old With $500,000 in Nike, HP and Truist Collects $1,872 a Month in Dividends. How Safe Is Each Check?",
-          "Bank of America Chicago Marathon and Nike Extend Partnership Through 2036"
-        ],
-        "reason_ro": "NKE înregistrează o scădere puternică de -5.44% după recunoașterea unor rezultate slabe de către CEO și perspective negative pe termen mediu din partea analiștilor (Morgan Stanley și ținte amânate până în 2029), creând un momentum intraday favorabil pentru short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T20:20:42.159012+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "SHOP",
+        "symbol": "TSM",
         "direction": "long",
-        "price": 132.89,
-        "prev_close": 139.39,
-        "gap_pct": -4.66,
-        "change_pct": -4.66,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 130.9,
-        "target_price": 139.87,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Shop Pay Inclusion in Meta’s Muse AI Agent Reinforces AI Growth Thesis for Shopify (SHOP)",
-          "An $18 Billion Hedge Fund Just Bought These 3 Stocks",
-          "Black Friday Is Nov. 27. Here's What Shopify Stock Did the Week After in Each of the Last 11 Years."
-        ],
-        "reason_ro": "Shopify beneficiază de catalizatori fundamentali puternici, fiind inclus în agentul AI Muse de la Meta și profitând de creșterea comerțului bazat pe agenți AI. Scăderea de -4.66% oferă un punct de intrare atractiv de tip dip-buy, evitând capcanele de contra-trend prin alinierea la teza de creștere pe termen lung. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-19T20:20:54.730649+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "UBER",
-        "direction": "short",
-        "price": 65.62,
-        "prev_close": 68.77,
-        "gap_pct": -4.58,
-        "change_pct": -4.58,
+        "price": 330.6,
+        "prev_close": 362.57,
+        "gap_pct": -8.82,
+        "change_pct": -8.82,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 66.6,
-        "target_price": 62.17,
+        "stop_price": 325.64,
+        "target_price": 347.96,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Tractor Supply (TSCO) Expands Delivery As Its Stock Looks Slightly Pricey",
-          "$100K In Anthropic Stock: Buy Now Or Wait?",
-          "Tractor Supply boosts same-day delivery options"
+          "16 ETFs Add to Taiwan Semiconductor (TSM) on Wednesday",
+          "Update: Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
+          "TSMC Tightens Restrictions on Chinese AI Chip Production Following New US Export Rules"
         ],
-        "reason_ro": "UBER înregistrează o scădere accentuată de -4.58% în timpul sesiunii principale, în pofida știrilor pozitive despre livrările cu drone, ceea ce indică un momentum intraday puternic de urs pe care îl putem specula pe partea de short. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "TSM scade masiv cu 8.82% în contextul unor vânzări panicoase pe piețele asiatice și restricții SUA, însă cererea rămâne extrem de robustă, iar un director a achiziționat acțiuni de 500.000$, creând o oportunitate atractivă de revenire (oversold). Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-19T20:21:00.566504+00:00"
+        "evaluated_at": "2026-11-20T13:43:50.332669+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "META",
+        "direction": "long",
+        "price": 569.16,
+        "prev_close": 616.25,
+        "gap_pct": -7.64,
+        "change_pct": -7.64,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 560.62,
+        "target_price": 599.04,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Direxion Daily S&P 500 Bull 3X (SPXL) Sells $16.2 Million of Apple on Nov. 18",
+          "What Capital Group Growth ETF (CGGR) Bought: Meta Leads on Wednesday",
+          "What JPMorgan U.S. Tech Leaders ETF (JTEK) Bought: Meta Leads on Wednesday"
+        ],
+        "reason_ro": "META înregistrează o scădere de -7.64% în pre-market, dar este susținută masiv prin achiziții recente de către ETF-uri mari (XLC, CGGR, JTEK), creând o oportunitate atractivă de tip oversold bounce pentru un 'buy the dip' după deschiderea oficială. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-20T13:44:04.149675+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 483.83,
+        "price": 455.06,
         "prev_close": 530.45,
-        "gap_pct": -8.79,
+        "gap_pct": -14.21,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "PANW",
-        "price": 359.78,
-        "prev_close": 339.68,
-        "gap_pct": 5.92,
+        "symbol": "MRVL",
+        "price": 130.92,
+        "prev_close": 145.54,
+        "gap_pct": -10.05,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NKE",
-        "price": 34.34,
-        "prev_close": 36.31,
-        "gap_pct": -5.44,
+        "symbol": "ARM",
+        "price": 165.78,
+        "prev_close": 182.51,
+        "gap_pct": -9.17,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "UNH",
-        "price": 332.97,
-        "prev_close": 349.9,
-        "gap_pct": -4.84,
+        "symbol": "TSM",
+        "price": 330.6,
+        "prev_close": 362.57,
+        "gap_pct": -8.82,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SHOP",
-        "price": 132.89,
-        "prev_close": 139.39,
-        "gap_pct": -4.66,
+        "symbol": "SOFI",
+        "price": 13.0,
+        "prev_close": 14.1,
+        "gap_pct": -7.77,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "UBER",
-        "price": 65.62,
-        "prev_close": 68.77,
-        "gap_pct": -4.58,
+        "symbol": "META",
+        "price": 569.16,
+        "prev_close": 616.25,
+        "gap_pct": -7.64,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MPU",
-        "price": 4.72,
+        "price": 4.76,
         "prev_close": 2.84,
-        "gap_pct": 66.2,
+        "gap_pct": 67.61,
         "source": "alpaca_movers"
       },
       {
         "symbol": "SEAT",
-        "price": 2.03,
+        "price": 2.09,
         "prev_close": 1.28,
-        "gap_pct": 58.59,
+        "gap_pct": 63.28,
         "source": "alpaca_movers"
       },
       {
         "symbol": "MDRN",
-        "price": 2.38,
+        "price": 2.35,
         "prev_close": 1.63,
-        "gap_pct": 45.99,
+        "gap_pct": 44.17,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "ZOAR",
-        "price": 3.77,
-        "prev_close": 6.39,
-        "gap_pct": -41.0,
+        "symbol": "POAS",
+        "price": 3.17,
+        "prev_close": 2.32,
+        "gap_pct": 36.64,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-19T20:20:28.410682+00:00",
-    "telegram_sent_date": "2026-11-19"
+    "last_scan_at": "2026-11-20T13:43:22.834669+00:00",
+    "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
