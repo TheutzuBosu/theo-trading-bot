@@ -5,11 +5,11 @@
     "entry_time": "2026-11-20T14:02:33.199988-05:00",
     "qty": 1.5961,
     "entry_price": 72.88,
-    "current_price": 74.76,
+    "current_price": 74.73,
     "stop": 72.32,
     "initial_stop": 72.64,
-    "unrealized_pnl": 3.0,
-    "unrealized_r": 3.92,
+    "unrealized_pnl": 2.95,
+    "unrealized_r": 3.85,
     "entry_reason": "D1b short: Close=621.64, band=625.68, VWAP=628.69, tp0=614.80 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
   },
   {
@@ -18,11 +18,11 @@
     "entry_time": "2026-11-20T11:44:32.906249-05:00",
     "qty": 1.9649,
     "entry_price": 64.25,
-    "current_price": 65.91,
+    "current_price": 65.855,
     "stop": 63.74,
     "initial_stop": 63.76,
-    "unrealized_pnl": 3.26,
-    "unrealized_r": 1.69,
+    "unrealized_pnl": 3.15,
+    "unrealized_r": 1.64,
     "entry_reason": "D1b short: Close=703.00, band=705.24, VWAP=710.39, tp0=695.27 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
   }
 ]
