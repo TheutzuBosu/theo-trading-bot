@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 513.32,
-  "total_pnl": 13.32,
-  "total_pnl_pct": 2.66,
-  "today_pnl": 8.69,
-  "today_pnl_pct": 1.72,
-  "current_drawdown_pct": -0.13,
+  "equity": 514.03,
+  "total_pnl": 14.03,
+  "total_pnl_pct": 2.81,
+  "today_pnl": 9.4,
+  "today_pnl_pct": 1.86,
+  "current_drawdown_pct": 0.0,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-20T15:05:47.755368-05:00",
+  "updated_at": "2026-11-20T15:06:54.153863-05:00",
   "positions": [
     {
       "symbol": "QID",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-20T14:02:33.199988-05:00",
       "qty": 1.5961,
       "entry_price": 72.88,
-      "current_price": 74.49,
+      "current_price": 74.76,
       "stop": 72.32,
       "initial_stop": 72.64,
-      "unrealized_pnl": 2.57,
-      "unrealized_r": 3.35,
+      "unrealized_pnl": 3.0,
+      "unrealized_r": 3.92,
       "entry_reason": "D1b short: Close=621.64, band=625.68, VWAP=628.69, tp0=614.80 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-20T11:44:32.906249-05:00",
       "qty": 1.9649,
       "entry_price": 64.25,
-      "current_price": 65.765,
+      "current_price": 65.91,
       "stop": 63.74,
       "initial_stop": 63.76,
-      "unrealized_pnl": 2.98,
-      "unrealized_r": 1.55,
+      "unrealized_pnl": 3.26,
+      "unrealized_r": 1.69,
       "entry_reason": "D1b short: Close=703.00, band=705.24, VWAP=710.39, tp0=695.27 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00"
     }
   ],
@@ -109,64 +109,63 @@
         "action": "enter",
         "symbol": "MARA",
         "direction": "short",
-        "price": 5.29,
+        "price": 5.24,
         "prev_close": 6.24,
-        "gap_pct": -15.3,
-        "change_pct": -15.3,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.02,
-        "target_pct": 0.07,
-        "stop_price": 5.4,
-        "target_price": 4.92,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish"
-        ],
-        "reason_ro": "Bitcoin a căzut la nivelul costului de minare, iar indicatorii au devenit ursari, punând o presiune masivă pe acțiunile MARA care înregistrează un declin puternic de -15.30%. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T19:56:14.607641+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AMD",
-        "direction": "short",
-        "price": 432.44,
-        "prev_close": 489.44,
-        "gap_pct": -11.65,
-        "change_pct": -11.65,
+        "gap_pct": -16.11,
+        "change_pct": -16.11,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 438.93,
-        "target_price": 409.74,
+        "stop_price": 5.32,
+        "target_price": 4.96,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
-          "SpaceX Vs. Anthropic: Who Hits a $3 Trillion Valuation First and Why",
-          "TSMC Stocks Fall 4.76% as Taiwan Logs Worst Week Since 1991",
-          "Stock Market Midday, Nov. 20: Nasdaq Plunges Nearly 3% as AMD and Micron Lead a Brutal Semiconductor Sell-Off"
+          "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish"
         ],
-        "reason_ro": "AMD înregistrează o prăbușire intraday severă de -11.65%, condusă de un sell-off masiv pe sectorul de semiconductori și scăderi generalizate pe Nasdaq, oferind un momentum short clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "Bitcoin a scăzut la nivelul costului de minare, punând o presiune fundamentală majoră pe MARA și generând un trend intraday puternic de urs (-16.11%). Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T19:56:37.995477+00:00"
+        "evaluated_at": "2026-11-20T20:06:55.996044+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "ARM",
+        "direction": "short",
+        "price": 153.85,
+        "prev_close": 177.22,
+        "gap_pct": -13.19,
+        "change_pct": -13.19,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 156.16,
+        "target_price": 145.77,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "AMD Sinks Another 4% as Chip Rout Deepens After Short Report Flags “Its Own China Problem”",
+          "Zacks Investment Ideas feature highlights: Nasdaq, Nvidia, Advanced Micro Devices, SanDisk, Nebius Arm Holdings and Anthropic"
+        ],
+        "reason_ro": "ARM este puternic afectată de un sell-off generalizat în sectorul de chip-uri și de un raport negativ care vizează piața din China, oferind o oportunitate clară de continuare a trendului descendent intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-20T20:07:26.488571+00:00"
       },
       {
         "action": "enter",
         "symbol": "AVGO",
         "direction": "short",
-        "price": 306.18,
+        "price": 303.49,
         "prev_close": 346.55,
-        "gap_pct": -11.65,
-        "change_pct": -11.65,
+        "gap_pct": -12.42,
+        "change_pct": -12.42,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 310.77,
-        "target_price": 290.11,
+        "stop_price": 308.04,
+        "target_price": 287.56,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -174,52 +173,52 @@
           "Broadcom Stocks Move Lower as Anthropic IPO Eases Its $42 Billion Lending Risk",
           "Google reportedly cuts Broadcom-designed TPU plans, eyes more MediaTek chips"
         ],
-        "reason_ro": "AVGO scade puternic (-11.65%) pe fondul informațiilor privind reducerea planurilor Google pentru cipurile TPU și a downgradului de la Goldman Sachs, oferind un impuls negativ clar pentru continuarea trendului intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AVGO scade puternic cu 12.42% pe fondul unor știri negative majore, inclusiv reducerea prețului țintă de către Goldman Sachs și rapoarte privind planurile Google de a reduce TPU-urile, creând un impuls descendent intraday clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T19:56:43.806803+00:00"
+        "evaluated_at": "2026-11-20T20:07:31.831279+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MARA",
-        "price": 5.29,
+        "price": 5.24,
         "prev_close": 6.24,
-        "gap_pct": -15.3,
+        "gap_pct": -16.11,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 601.17,
+        "price": 593.69,
         "prev_close": 690.58,
-        "gap_pct": -12.95,
+        "gap_pct": -14.03,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 154.91,
+        "price": 153.85,
         "prev_close": 177.22,
-        "gap_pct": -12.59,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RDW",
-        "price": 5.74,
-        "prev_close": 6.52,
-        "gap_pct": -11.96,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AMD",
-        "price": 432.44,
-        "prev_close": 489.44,
-        "gap_pct": -11.65,
+        "gap_pct": -13.19,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AVGO",
-        "price": 306.18,
+        "price": 303.49,
         "prev_close": 346.55,
-        "gap_pct": -11.65,
+        "gap_pct": -12.42,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RDW",
+        "price": 5.71,
+        "prev_close": 6.52,
+        "gap_pct": -12.42,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AMD",
+        "price": 428.82,
+        "prev_close": 489.44,
+        "gap_pct": -12.39,
         "source": "watchlist_snapshot"
       },
       {
@@ -231,27 +230,27 @@
       },
       {
         "symbol": "MACI",
-        "price": 11.39,
+        "price": 11.52,
         "prev_close": 8.2,
-        "gap_pct": 38.9,
+        "gap_pct": 40.49,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NVDA",
-        "price": 129.13,
+        "price": 128.26,
         "prev_close": 145.99,
-        "gap_pct": -11.55,
+        "gap_pct": -12.14,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 123.7,
+        "price": 122.39,
         "prev_close": 138.45,
-        "gap_pct": -10.65,
+        "gap_pct": -11.6,
         "source": "watchlist_snapshot"
       }
     ],
-    "last_scan_at": "2026-11-20T19:56:12.384701+00:00",
+    "last_scan_at": "2026-11-20T20:06:54.153867+00:00",
     "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
