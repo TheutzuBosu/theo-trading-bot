@@ -78,7 +78,7 @@
       "initial_risk_dollars": 0.7661,
       "equity_at_entry": 503.69,
       "partial_done": true,
-      "last_price": 74.37,
+      "last_price": 74.13,
       "entry_reason": "D1b short: Close=621.64, band=625.68, VWAP=628.69, tp0=614.80 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 271.0,
