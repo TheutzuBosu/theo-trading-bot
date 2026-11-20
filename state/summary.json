@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.02,
   "current_drawdown_pct": -1.84,
   "max_drawdown_pct": -2.2,
-  "updated_at": "2026-11-20T09:58:15.246914-05:00",
+  "updated_at": "2026-11-20T09:59:21.209698-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-20T09:39:34.778157-05:00",
       "qty": 0.0431,
       "entry_price": 231.734,
-      "current_price": 232.825,
+      "current_price": 232.82,
       "stop": 228.27,
       "initial_stop": 228.27,
       "unrealized_pnl": 0.05,
