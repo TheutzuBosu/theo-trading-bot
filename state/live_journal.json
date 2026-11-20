@@ -77,7 +77,7 @@
       "initial_risk_dollars": 1.9257,
       "equity_at_entry": 503.65,
       "partial_done": false,
-      "last_price": 64.315,
+      "last_price": 64.38,
       "entry_reason": "D1b short: Close=703.00, band=705.24, VWAP=710.39, tp0=695.27 · D31: SPY SHORT -> BUY SDS (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 133.0,
@@ -117,7 +117,7 @@
       "initial_risk_dollars": 2.2205,
       "equity_at_entry": 503.65,
       "partial_done": false,
-      "last_price": 72.81,
+      "last_price": 72.71,
       "entry_reason": "D1b short: Close=623.38, band=629.27, VWAP=633.25, tp0=616.52 · D31: QQQ SHORT -> BUY QID (2x) · AI p=0.60 · mult_oră=1.00",
       "features": {
         "minute_of_day": 133.0,
