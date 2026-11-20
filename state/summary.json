@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 503.66,
-  "total_pnl": 3.66,
-  "total_pnl_pct": 0.73,
-  "today_pnl": -0.97,
+  "equity": 503.68,
+  "total_pnl": 3.68,
+  "total_pnl_pct": 0.74,
+  "today_pnl": -0.95,
   "today_pnl_pct": -0.19,
-  "current_drawdown_pct": -2.01,
+  "current_drawdown_pct": -2.0,
   "max_drawdown_pct": -2.2,
-  "updated_at": "2026-11-20T11:03:04.388051-05:00",
+  "updated_at": "2026-11-20T11:04:12.599657-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-20T09:39:34.778157-05:00",
       "qty": 0.0431,
       "entry_price": 231.734,
-      "current_price": 231.71,
+      "current_price": 232.2,
       "stop": 228.27,
       "initial_stop": 228.27,
-      "unrealized_pnl": -0.0,
-      "unrealized_r": -0.01,
+      "unrealized_pnl": 0.02,
+      "unrealized_r": 0.13,
       "entry_reason": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~9.99$, R:R 1:3.5)"
     }
   ],
@@ -96,16 +96,16 @@
         "action": "enter",
         "symbol": "MU",
         "direction": "short",
-        "price": 620.52,
+        "price": 611.26,
         "prev_close": 690.58,
-        "gap_pct": -10.15,
-        "change_pct": -10.15,
+        "gap_pct": -11.49,
+        "change_pct": -11.49,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 629.83,
-        "target_price": 587.94,
+        "stop_price": 620.43,
+        "target_price": 579.17,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
@@ -113,158 +113,133 @@
           "Micron’s President Says Memory Has Been Tight “Across Really Multiple Years.” TrendForce Sees DRAM Prices Rising Through 2027",
           "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
         ],
-        "reason_ro": "MU înregistrează o scădere puternică de peste 10% în contextul tragerii în jos a întregului sector de semiconductori, condus de scăderea Nvidia și slăbiciunea generală a pieței. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "MU înregistrează o scădere bruscă de -11.49% pe fondul corecției extinse din sectorul de semiconductori condus de scăderea Nvidia și slăbiciunea generală a Wall Street, oferind un impuls intraday clar pentru o poziție de sell/short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T15:54:16.267161+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MARA",
-        "direction": "short",
-        "price": 5.64,
-        "prev_close": 6.24,
-        "gap_pct": -9.54,
-        "change_pct": -9.54,
-        "stake_dollars": 15.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 5.72,
-        "target_price": 5.26,
-        "expected_profit_dollars": 1.01,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish",
-          "Strategy’s mNAV Is “Now Below 1,” Says Peter Schiff. That Breaks Saylor’s Favorite Trade"
-        ],
-        "reason_ro": "MARA scade puternic cu -9.54% pe fondul corecției Bitcoin către costul de extracție și al presiunilor macroeconomice asupra sectorului crypto, oferind o oportunitate clară de trend bearish intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:4.5 (risc -0.22 $ / țintă profit +1.01 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T15:54:32.764443+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MRVL",
-        "direction": "short",
-        "price": 125.93,
-        "prev_close": 138.45,
-        "gap_pct": -9.04,
-        "change_pct": -9.04,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 127.82,
-        "target_price": 119.32,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "S&P 500 Premarket Movers Friday: Gainers and Losers",
-          "Marvell Technology And 2 Top AI Stocks To Watch",
-          "Anthropic, AMD, Intel, Marvell, Intuit, and More Stocks That Explain Today’s Market"
-        ],
-        "reason_ro": "MRVL scade puternic cu peste 9% pe fondul sentimentului negativ din sectorul de semiconductori și memorie (Micron), oferind o oportunitate de short intraday pe continuarea trendului descendent. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T15:55:21.859951+00:00"
+        "evaluated_at": "2026-11-20T16:04:31.312977+00:00"
       },
       {
         "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 445.62,
+        "price": 439.02,
         "prev_close": 489.44,
-        "gap_pct": -8.95,
-        "change_pct": -8.95,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
+        "gap_pct": -10.3,
+        "change_pct": -10.3,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 452.3,
-        "target_price": 415.54,
-        "expected_profit_dollars": 1.35,
-        "max_loss_dollars": 0.3,
+        "target_pct": 0.0525,
+        "stop_price": 445.61,
+        "target_price": 415.97,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
           "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
           "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
         ],
-        "reason_ro": "AMD înregistrează o scădere puternică de aproape 9%, trăgând în jos sectorul de cipuri pe fondul unui sentiment negativ extins în piață și al presiunii pe vânzări. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
+        "reason_ro": "AMD înregistrează o scădere puternică de -10.30% și conduce sectorul semiconductorilor în jos, fiind afectată direct de o sesiune negativă generalizată și de extinderea pierderilor pe întregul sector. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T15:55:35.953249+00:00"
+        "evaluated_at": "2026-11-20T16:05:09.813015+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "MARA",
+        "direction": "short",
+        "price": 5.62,
+        "prev_close": 6.24,
+        "gap_pct": -10.02,
+        "change_pct": -10.02,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 5.7,
+        "target_price": 5.32,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish",
+          "Strategy’s mNAV Is “Now Below 1,” Says Peter Schiff. That Breaks Saylor’s Favorite Trade"
+        ],
+        "reason_ro": "MARA înregistrează o scădere de peste 10% pe fondul corecției masive a prețului Bitcoin spre costurile de minare și al presiunilor sectoriale, oferind un impuls negativ puternic în continuarea trendului. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-20T16:05:38.567854+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 620.52,
+        "price": 611.26,
         "prev_close": 690.58,
-        "gap_pct": -10.15,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MARA",
-        "price": 5.64,
-        "prev_close": 6.24,
-        "gap_pct": -9.54,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RIOT",
-        "price": 16.05,
-        "prev_close": 17.73,
-        "gap_pct": -9.5,
+        "gap_pct": -11.49,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 160.59,
+        "price": 158.93,
         "prev_close": 177.22,
-        "gap_pct": -9.38,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MRVL",
-        "price": 125.93,
-        "prev_close": 138.45,
-        "gap_pct": -9.04,
+        "gap_pct": -10.32,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 445.62,
+        "price": 439.02,
         "prev_close": 489.44,
-        "gap_pct": -8.95,
+        "gap_pct": -10.3,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RDW",
+        "price": 5.86,
+        "prev_close": 6.52,
+        "gap_pct": -10.12,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MARA",
+        "price": 5.62,
+        "prev_close": 6.24,
+        "gap_pct": -10.02,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RIOT",
+        "price": 16.01,
+        "prev_close": 17.73,
+        "gap_pct": -9.73,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SONN",
-        "price": 51.25,
+        "price": 51.45,
         "prev_close": 1.26,
-        "gap_pct": 3967.46,
+        "gap_pct": 3983.33,
         "source": "alpaca_movers"
       },
       {
         "symbol": "BKHA",
-        "price": 2.13,
+        "price": 2.1,
         "prev_close": 6.48,
-        "gap_pct": -67.13,
+        "gap_pct": -67.59,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "GEOS",
-        "price": 2.22,
-        "prev_close": 3.31,
-        "gap_pct": -32.93,
+        "symbol": "SNDQ",
+        "price": 46.56,
+        "prev_close": 35.9,
+        "gap_pct": 29.69,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APLZ",
-        "price": 57.45,
+        "price": 57.94,
         "prev_close": 44.73,
-        "gap_pct": 28.44,
+        "gap_pct": 29.53,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-20T15:54:06.187290+00:00",
+    "last_scan_at": "2026-11-20T16:04:12.599661+00:00",
     "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
