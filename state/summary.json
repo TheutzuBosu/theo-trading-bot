@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 503.8,
-  "total_pnl": 3.8,
+  "equity": 503.78,
+  "total_pnl": 3.78,
   "total_pnl_pct": 0.76,
-  "today_pnl": -0.83,
-  "today_pnl_pct": -0.16,
+  "today_pnl": -0.85,
+  "today_pnl_pct": -0.17,
   "current_drawdown_pct": -1.98,
   "max_drawdown_pct": -2.2,
-  "updated_at": "2026-11-20T11:13:45.609749-05:00",
+  "updated_at": "2026-11-20T11:14:52.642176-05:00",
   "positions": [
     {
       "symbol": "CRWD",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-20T09:39:34.778157-05:00",
       "qty": 0.0431,
       "entry_price": 231.734,
-      "current_price": 235.13,
+      "current_price": 234.63,
       "stop": 228.27,
       "initial_stop": 228.27,
-      "unrealized_pnl": 0.15,
-      "unrealized_r": 0.98,
+      "unrealized_pnl": 0.12,
+      "unrealized_r": 0.84,
       "entry_reason": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~9.99$, R:R 1:3.5)"
     }
   ],
@@ -94,120 +94,95 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "short",
-        "price": 611.26,
-        "prev_close": 690.58,
-        "gap_pct": -11.49,
-        "change_pct": -11.49,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 620.43,
-        "target_price": 579.17,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
-          "Micron’s President Says Memory Has Been Tight “Across Really Multiple Years.” TrendForce Sees DRAM Prices Rising Through 2027",
-          "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
-        ],
-        "reason_ro": "MU înregistrează o scădere bruscă de -11.49% pe fondul corecției extinse din sectorul de semiconductori condus de scăderea Nvidia și slăbiciunea generală a Wall Street, oferind un impuls intraday clar pentru o poziție de sell/short. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T16:04:31.312977+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 439.02,
+        "price": 446.54,
         "prev_close": 489.44,
-        "gap_pct": -10.3,
-        "change_pct": -10.3,
+        "gap_pct": -8.77,
+        "change_pct": -8.77,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 445.61,
-        "target_price": 415.97,
+        "stop_price": 453.24,
+        "target_price": 423.1,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
-          "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
-          "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
-          "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
+          "Anthropic Shares Retreat After Blockbuster Debut Amid AI Anxiety",
+          "Why the markets are being hit with a 'perfect storm' for AI",
+          "Trump Bought Up to $265,000 of NVIDIA Stock. Here’s Where the Price Target Stands"
         ],
-        "reason_ro": "AMD înregistrează o scădere puternică de -10.30% și conduce sectorul semiconductorilor în jos, fiind afectată direct de o sesiune negativă generalizată și de extinderea pierderilor pe întregul sector. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "AMD scade puternic cu 8.77% pe fondul unui sentiment negativ generalizat și al îngrijorărilor majore legate de sectorul AI și ieșirea lui Jensen Huang din Nvidia, creând un impuls intraday descendent clar. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T16:05:09.813015+00:00"
+        "evaluated_at": "2026-11-20T16:15:24.988320+00:00"
       },
       {
         "action": "enter",
         "symbol": "MARA",
         "direction": "short",
-        "price": 5.62,
+        "price": 5.71,
         "prev_close": 6.24,
-        "gap_pct": -10.02,
-        "change_pct": -10.02,
+        "gap_pct": -8.57,
+        "change_pct": -8.57,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 5.7,
-        "target_price": 5.32,
+        "stop_price": 5.8,
+        "target_price": 5.41,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
           "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish",
           "Strategy’s mNAV Is “Now Below 1,” Says Peter Schiff. That Breaks Saylor’s Favorite Trade"
         ],
-        "reason_ro": "MARA înregistrează o scădere de peste 10% pe fondul corecției masive a prețului Bitcoin spre costurile de minare și al presiunilor sectoriale, oferind un impuls negativ puternic în continuarea trendului. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "MARA înregistrează o scădere puternică de -8.57% pe fondul prăbușirii Bitcoin la nivelul costului de minare și al presiunilor macroeconomice negative asupra sectorului crypto. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T16:05:38.567854+00:00"
+        "evaluated_at": "2026-11-20T16:15:37.310849+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 611.26,
+        "price": 622.79,
         "prev_close": 690.58,
-        "gap_pct": -11.49,
+        "gap_pct": -9.82,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 158.93,
+        "price": 161.4,
         "prev_close": 177.22,
-        "gap_pct": -10.32,
+        "gap_pct": -8.93,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 439.02,
+        "price": 446.54,
         "prev_close": 489.44,
-        "gap_pct": -10.3,
+        "gap_pct": -8.77,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RDW",
-        "price": 5.86,
+        "price": 5.96,
         "prev_close": 6.52,
-        "gap_pct": -10.12,
+        "gap_pct": -8.59,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MARA",
-        "price": 5.62,
+        "price": 5.71,
         "prev_close": 6.24,
-        "gap_pct": -10.02,
+        "gap_pct": -8.57,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "RIOT",
-        "price": 16.01,
-        "prev_close": 17.73,
-        "gap_pct": -9.73,
+        "symbol": "MRVL",
+        "price": 126.84,
+        "prev_close": 138.45,
+        "gap_pct": -8.39,
         "source": "watchlist_snapshot"
       },
       {
@@ -219,27 +194,27 @@
       },
       {
         "symbol": "BKHA",
-        "price": 2.1,
+        "price": 2.05,
         "prev_close": 6.48,
-        "gap_pct": -67.59,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "SNDQ",
-        "price": 46.56,
-        "prev_close": 35.9,
-        "gap_pct": 29.69,
+        "gap_pct": -68.36,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APLZ",
-        "price": 57.94,
+        "price": 57.17,
         "prev_close": 44.73,
-        "gap_pct": 29.53,
+        "gap_pct": 27.82,
         "source": "alpaca_movers"
+      },
+      {
+        "symbol": "AVGO",
+        "price": 318.38,
+        "prev_close": 346.55,
+        "gap_pct": -8.13,
+        "source": "watchlist_snapshot"
       }
     ],
-    "last_scan_at": "2026-11-20T16:04:12.599661+00:00",
+    "last_scan_at": "2026-11-20T16:14:52.642180+00:00",
     "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
