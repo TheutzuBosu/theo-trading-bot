@@ -1,8 +1,8 @@
 {
-  "meta_samples": 13,
+  "meta_samples": 17,
   "meta_active": false,
-  "updated_at": "2026-11-19T15:30:14.052409-05:00",
-  "total_trades_analyzed": 82,
+  "updated_at": "2026-11-20T15:30:45.438380-05:00",
+  "total_trades_analyzed": 89,
   "hourly_multipliers": {
     "09:00": 0.5,
     "10:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Robotul a pierdut 1,09 dolari cumpărând un ETF invers pe o piață în scădere, învățând că nu trebuie să intre long împotriva trendului principal.",
-    "Botul a cumpărat inversul pieței (SDS) bazat pe un semnal de scădere, dar prețul a crescut și a activat stop-loss-ul, rezultând o mică pierdere de 1,31$ (-0,94R); reținem că trebuie să evităm contra-trendul când momentumul este nefavorabil.",
-    "Am cumpărat SDS peșterind o scădere a pieței, am obținut un profit mic de 2,22 $ înainte ca timpul să închidă poziția, învățând că trebuie să lăsăm profiturile să alerge în loc să ieșim doar pe ceas.",
-    "Botul a cumpărat acțiuni SHOP pe baza unor vești bune, dar a închis poziția pe 0 în pierdere mică din cauza expirării timpului; **reținem** că fundamentul puternic nu garantează o mișcare rapidă intraday, iar limitarea timpului de deținere poate tăia prematur o potențială revenire.",
-    "Botul a cumpărat acțiuni UBER pe baza unor știri bune, dar a închis poziția pe ștearsă (timp expirat) cu o pierdere mică de 0,22 $, reținând că vestea pozitivă nu a generat impulsul așteptat în intervalul alocat."
+    "Botul a pierdut 1,13$ (0,5R) pe un ETF invers de acoperire (QID) cumpărat în speranța unei scăderi a pieței, dar, deși piața a coborât inițial favorabil (MFE 2,14R), prețul a inversat și a lovit stop-loss-ul; reținem că trebuie să mutăm profitul în siguranță când atingem ținte bune, în loc să lăsăm o tranzacție câștigătoare să devină pierzătoare.",
+    "Botul a cumpărat CRWD pe scădere mizând pe interesul instituțional, dar prețul a lovit direct stop-loss-ul (-0.15$), învățând că „dip-buying-ul” pe acțiuni scumpe în trend negativ cere o confirmare mai strictă înainte de intrare.",
+    "Botul a căutat un *short* pe baza unei știri negative, dar a cumpărat din greșeală (*long*) și a închis rapid pe timp, rezultând o pierdere infimă; reținem că trebuie corectată imediat direcția ordinului în codul de scanare.",
+    "Am cumpărat inversul pieței (QID) pe baza unui semnal de scădere, iar deși botul a ieșit la limită de timp cu un profit mic de 6,29$, reținem că a ratat un vârf excelent de peste 7R din cauza închiderii premature.",
+    "Am cumpărat acțiuni inverse SDS pe baza unui semnal de scădere, iar deși piața a urcat temporar peste țintă, am închis manual la timp pe \noră cu un profit mic de 6,6 $ (3,42R), reținând că orele de tranzacționare stricte pot limita câștigul maxim potențial."
   ]
 }
