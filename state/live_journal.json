@@ -1,18 +1,10 @@
 {
   "processed_signals": [
-    "MOVER|CRWD|2026-11-20|long",
-    "MOVER|MRNA|2026-11-20|long",
-    "MOVER|NVDA|2026-11-20|short",
-    "QQQ|2026-11-19T13:15:00-05:00|short",
-    "QQQ|2026-11-19T14:01:00-05:00|short",
     "QQQ|2026-11-20T10:57:00-05:00|short",
     "QQQ|2026-11-20T11:43:00-05:00|short",
     "QQQ|2026-11-20T14:01:00-05:00|short",
-    "SPY|2026-11-19T13:15:00-05:00|short",
-    "SPY|2026-11-19T14:01:00-05:00|short",
-    "SPY|2026-11-19T14:47:00-05:00|short",
     "SPY|2026-11-20T11:43:00-05:00|short"
   ],
   "open_trades": {},
-  "last_eod_date": "2026-11-19"
+  "last_eod_date": "2026-11-20"
 }
