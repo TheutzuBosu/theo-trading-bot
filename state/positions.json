@@ -5,11 +5,11 @@
     "entry_time": "2026-11-20T09:39:34.778157-05:00",
     "qty": 0.0431,
     "entry_price": 231.734,
-    "current_price": 233.975,
+    "current_price": 235.28,
     "stop": 228.27,
     "initial_stop": 228.27,
-    "unrealized_pnl": 0.1,
-    "unrealized_r": 0.65,
+    "unrealized_pnl": 0.15,
+    "unrealized_r": 1.02,
     "entry_reason": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~9.99$, R:R 1:3.5)"
   }
 ]
