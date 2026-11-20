@@ -1,11 +1,53 @@
 {
   "processed_signals": [
+    "MOVER|CRWD|2026-11-20|long",
     "QQQ|2026-11-19T13:15:00-05:00|short",
     "QQQ|2026-11-19T14:01:00-05:00|short",
     "SPY|2026-11-19T13:15:00-05:00|short",
     "SPY|2026-11-19T14:01:00-05:00|short",
     "SPY|2026-11-19T14:47:00-05:00|short"
   ],
-  "open_trades": {},
+  "open_trades": {
+    "CRWD": {
+      "trade_id": "theo-CRWD-L-202611200939",
+      "signal_symbol": "CRWD",
+      "signal_direction": "long",
+      "exec_symbol": "CRWD",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-20T09:39:34.778157-05:00",
+      "entry_time": "2026-11-20T09:39:34.778157-05:00",
+      "entry_price": 231.734,
+      "qty": 0.0431,
+      "qty0": 0.0431,
+      "signal_entry_price": 231.73,
+      "signal_stop": 228.27,
+      "signal_initial_stop": 228.27,
+      "signal_target": 243.89,
+      "signal_stop_after_target": 233.47,
+      "exec_stop": 228.27,
+      "exec_initial_stop": 228.27,
+      "exec_target": 244.0,
+      "stop_order_id": "e31207f6-41ad-4442-a548-e7cc6ed79e96",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.1493,
+      "equity_at_entry": 504.63,
+      "partial_done": false,
+      "last_price": 231.734,
+      "entry_reason": "Deși acțiunea scade cu 4.58%, investitorii din tehnologie se refugiază activ în CrowdStrike în ciuda evaluării ridicate, creând o oportunitate de tip 'dip-buying' pe fondul interesului instituțional. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: CRWD LONG -> BUY CRWD (miză ~9.99$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 9.0,
+        "dist_from_band_bps": 229.0,
+        "dist_from_vwap_bps": -137.4,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.015,
+        "overnight_gap_bps": -458.0,
+        "ret_since_open_bps": -458.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 4.0,
+        "cost_to_risk": 0.0086
+      }
+    }
+  },
   "last_eod_date": "2026-11-19"
 }
