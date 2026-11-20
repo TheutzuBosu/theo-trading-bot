@@ -12,28 +12,28 @@
   "updated_at": "2026-11-19T15:30:14.052409-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-20T13:44:04.149719+00:00",
+    "updated_at": "2026-11-20T14:30:32.162988+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 708.06,
+        "price": 712.4,
         "prev_close": 715.84,
-        "gap_pct": -1.09
+        "gap_pct": -0.48
       },
       "QQQ": {
-        "price": 631.36,
+        "price": 637.08,
         "prev_close": 645.1,
-        "gap_pct": -2.13
+        "gap_pct": -1.24
       }
     },
-    "explanation_ro": "Piața deschide în scădere puternică (SPY -1.09%, QQQ -2.13%) din cauza tensiunilor geopolitice persistente dintre SUA, China și Taiwan, alături de riscul unui blocaj guvernamental la Washington. Deși există raportări financiare de la companii precum BJ și FRO, sentimentul general este dominat de incertitudinea politică și riscul extern. În aceste condiții, direcția favorizată la deschidere pentru ambele instrumente este Short.",
+    "explanation_ro": "În Pre-Market, piața SUA este în scădere ușoară: SPY la 712.40 $ (-0.48%) și QQQ la 637.08 $ (-1.24%). Raportări financiare urmărite azi: BJ (înainte de deschidere), BSP (înainte de deschidere), FRO (înainte de deschidere), IESC (înainte de deschidere), MOG.A (înainte de deschidere). La 16:30 (09:30 ET) botul măsoară banda de zgomot și VWAP-ul, iar de la 17:12 (10:12 ET) execută automat pe direcția spargerii (Long sau Short cu levier 2x).",
     "headlines": [
+      "Our top 10 things to watch in the stock market Friday",
+      "Anthropic raises $93.5 billion total as underwriters scoop up ‘greenshoe’ overallotment",
       "U.S.-China trade, Taiwan and tech tensions remain unresolved as Trump returns from Asia",
       "Rejecting cheap fabrics, higher prices: Why shoppers are asking for better clothes",
       "A24 is having a great year at the box office. That could give HBO Max a streaming edge",
-      "UK finds fix for fridge and freezer vulnerability after European hacks - Reuters",
-      "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-      "PODCAST: Anthropic IPO, Europe bristles over Trump-Xi-Putin meeting and Meta's muse - Reuters"
+      "UK finds fix for fridge and freezer vulnerability after European hacks - Reuters"
     ],
     "earnings_today": [
       {
@@ -80,86 +80,36 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MRVL",
-        "direction": "long",
-        "price": 130.92,
-        "prev_close": 145.54,
-        "gap_pct": -10.05,
-        "change_pct": -10.05,
-        "stake_dollars": 20.0,
+        "symbol": "AMD",
+        "direction": "short",
+        "price": 469.22,
+        "prev_close": 530.45,
+        "gap_pct": -11.54,
+        "change_pct": -11.54,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 128.96,
-        "target_price": 137.79,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 476.26,
+        "target_price": 444.59,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "Broadcom: A Better Bet Than A Month Ago",
-          "Lumentum: The Drawdown Might Have Gone Too Far (Rating Upgrade)",
-          "Could Tesla Become The Next Lumentum? Gary Black Warns A SpaceX Stock Deal Could Send TSLA Down 25%"
+          "Stock Market Today: Anthropic Soars on Debut While the Rest of Wall Street Sinks",
+          "Here’s The Real Asymmetry That Keeps Me Buying NVIDIA in the $140s",
+          "Nvidia stock extends 6-day losing streak, as AMD, Broadcom lead chip sector lower"
         ],
-        "reason_ro": "Marvell Technology (MRVL) a soluționat un litigiu important privind brevetele de rețelă AI, eliminând un risc major, în timp ce acțiunea înregistrează o scădere de -10.05% pe fondul corecției din sectorul tech, oferind o oportunitate atractivă de revenire (long). Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "AMD conduce declinul sectorului de cipuri, extinzându-și pierderile majore (-11.54%) pe fondul unui sentiment negativ extins în piață și presiunii exercitate de sectorul semiconductorilor. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T13:43:37.301624+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "TSM",
-        "direction": "long",
-        "price": 330.6,
-        "prev_close": 362.57,
-        "gap_pct": -8.82,
-        "change_pct": -8.82,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 325.64,
-        "target_price": 347.96,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "16 ETFs Add to Taiwan Semiconductor (TSM) on Wednesday",
-          "Update: Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
-          "TSMC Tightens Restrictions on Chinese AI Chip Production Following New US Export Rules"
-        ],
-        "reason_ro": "TSM scade masiv cu 8.82% în contextul unor vânzări panicoase pe piețele asiatice și restricții SUA, însă cererea rămâne extrem de robustă, iar un director a achiziționat acțiuni de 500.000$, creând o oportunitate atractivă de revenire (oversold). Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T13:43:50.332669+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "META",
-        "direction": "long",
-        "price": 569.16,
-        "prev_close": 616.25,
-        "gap_pct": -7.64,
-        "change_pct": -7.64,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 560.62,
-        "target_price": 599.04,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Direxion Daily S&P 500 Bull 3X (SPXL) Sells $16.2 Million of Apple on Nov. 18",
-          "What Capital Group Growth ETF (CGGR) Bought: Meta Leads on Wednesday",
-          "What JPMorgan U.S. Tech Leaders ETF (JTEK) Bought: Meta Leads on Wednesday"
-        ],
-        "reason_ro": "META înregistrează o scădere de -7.64% în pre-market, dar este susținută masiv prin achiziții recente de către ETF-uri mari (XLC, CGGR, JTEK), creând o oportunitate atractivă de tip oversold bounce pentru un 'buy the dip' după deschiderea oficială. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T13:44:04.149675+00:00"
+        "evaluated_at": "2026-11-20T14:29:13.343850+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "AMD",
-        "price": 455.06,
+        "price": 469.22,
         "prev_close": 530.45,
-        "gap_pct": -14.21,
+        "gap_pct": -11.54,
         "source": "watchlist_snapshot"
       },
       {
@@ -170,31 +120,31 @@
         "source": "watchlist_snapshot"
       },
       {
+        "symbol": "U",
+        "price": 45.03,
+        "prev_close": 48.95,
+        "gap_pct": -8.01,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "ARM",
-        "price": 165.78,
+        "price": 167.92,
         "prev_close": 182.51,
-        "gap_pct": -9.17,
+        "gap_pct": -7.99,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "TSM",
-        "price": 330.6,
-        "prev_close": 362.57,
-        "gap_pct": -8.82,
+        "symbol": "MARA",
+        "price": 6.07,
+        "prev_close": 6.55,
+        "gap_pct": -7.4,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SOFI",
-        "price": 13.0,
-        "prev_close": 14.1,
-        "gap_pct": -7.77,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "META",
-        "price": 569.16,
-        "prev_close": 616.25,
-        "gap_pct": -7.64,
+        "symbol": "PANW",
+        "price": 364.5,
+        "prev_close": 339.68,
+        "gap_pct": 7.31,
         "source": "watchlist_snapshot"
       },
       {
@@ -226,7 +176,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-20T13:43:22.834669+00:00",
+    "last_scan_at": "2026-11-20T14:29:03.427089+00:00",
     "telegram_sent_date": "2026-11-20"
   },
   "spy_start_price": 767.64,
