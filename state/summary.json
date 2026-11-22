@@ -254,65 +254,55 @@
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
-    "updated_at": "2026-11-15T22:18:41.280795+00:00",
-    "period": "16 - 20 Noiembrie 2026",
-    "executive_summary_ro": "Portofoliul a încheiat o perioadă dificilă cu 53 de tranzacții și un win rate de 47.2%, reușind totuși să mențină un PnL net pozitiv de +9.48 $ prin gestionarea strictă a riscului. Tensiunile geopolitice din Orientul Mijlociu și volatilitatea generată de știrile din pre-market au creat numeroase capcane de preț care au declanșat stop-loss-urile. Pentru săptămâna viitoare, ne vom concentra pe rapoartele financiare majore și vom evita intrările impulsive bazate strict pe optimismul de dimineață.",
+    "updated_at": "2026-11-22T22:59:43.296289+00:00",
+    "period": "23 - 27 Noiembrie 2026",
+    "executive_summary_ro": "Performanța recentă a botului Theo arată un win rate fragil de 36.0%, compensat însă de un PnL total pozitiv de +16.42 $, susținut de o gestionare strictă a riscului. Tensiunile geopolitice din Orientul Mijlociu și riscurile macroeconomice impun o prudență extremă în sesiunea care urmează. Vom evita intrările impulsive pe baza știrilor de moment și ne vom concentra pe validarea tehnică riguroasă înainte de fiecare poziție.",
     "weekly_performance": {
-      "total_trades": 53,
-      "win_rate_pct": 47.2,
-      "total_pnl": 9.48,
-      "best_trade": "QLD (LONG) +5.15 $",
+      "total_trades": 89,
+      "win_rate_pct": 36.0,
+      "total_pnl": 16.42,
+      "best_trade": "SDS (LONG) +6.60 $",
       "worst_trade": "QID (LONG) -1.31 $"
     },
     "lessons_learned": [
-      "Evităm intrările bazate exclusiv pe entuziasmul sau optimismul din pre-market, deoarece acestea se dovedesc adesea a fi capcane de preț.",
-      "Respectarea strictă a ordinelor stop-loss a menținut pierderile sub control, chiar și atunci când pozițiile s-au întors împotriva noastră după o mișcare favorabilă inițială.",
-      "Mizele mici, corect gestionate și adaptate la volatilitatea știrilor, protejează capitalul și asigură profitabilitatea pe termen lung."
+      "Evităm cumpărările bazate exclusiv pe entuziasmul din pre-market sau pe știri de ultimă oră, acestea generând frecvent capcane de preț și stop-loss-uri imediate.",
+      "Menținem disciplina riscului: chiar și atunci când o poziție se întoarce după un avans inițial favorabil, stop-loss-ul bine plasat limitează pierderea la niveluri controlate.",
+      "Validează impulsul tehnic real înainte de intrare, filtrând zgomotul generat de optimismul post-câștiguri sau știrile externe."
     ],
-    "macro_outlook_ro": "Piața este puternic presată de escaladarea conflictului din Orientul Mijlociu, atacurile Houthi și tensiunile din zona Golf aducând incertitudine macroeconomică și scăderi pe bursele regionale. În același timp, indicii majori SPY și QQQ se confruntă cu volatilitate ridicată, fiind influențați direct de rezultatele financiare ale giganților din tehnologie și retail.",
+    "macro_outlook_ro": "Contextul macro este dominat de escaladarea conflictelor din Orientul Mijlociu (atacuri în regiunea Golfului și rafinării saudite) și de avertismentele oficiale privind vulnerabilitățile tehnologice. Piețele equity (SPY și QQQ) rămân sensibile la aceste știri geopolitice și la presiunile inflaționiste persistente, sugerând o volatilitate ridicată și o tendință de precauție din partea investitorilor.",
     "key_events": [
       {
         "day": "Luni",
-        "event": "Raportări financiare ACM, ADNH, ADTX, AFJK, AGPU",
-        "impact": "MEDIUM"
+        "event": "Raportări financiare companii listate (A, AAPI, ABIT, etc.) și evaluarea impactului geopolitic asupra pieței energetice",
+        "impact": "HIGH"
       },
       {
         "day": "Marți",
-        "event": "Raportări financiare HD (Home Depot) și NVDA (NVIDIA)",
-        "impact": "HIGH"
+        "event": "Monitorizarea fluxurilor de știri macroeconomice și a tensiunilor din Orientul Mijlociu",
+        "impact": "MEDIUM"
       },
       {
-        "day": "Joi",
-        "event": "Raport financiar WMT (Walmart)",
-        "impact": "HIGH"
+        "day": "Miercuri",
+        "event": "Analiza indicatorilor tehnici pe SPY și QQQ pentru identificarea nivelurilor de suport",
+        "impact": "MEDIUM"
       }
     ],
-    "tactical_plan_ro": "Reducem expunerea pe instrumente cu efect de levier ridicat în sesiunile cu știri geopolitice majore. Evităm tranzacționarea în primele 15 minute de la deschidere pentru a filtra falsul impuls din pre-market și menținem un risc maxim de 1% per tranzacție.",
+    "tactical_plan_ro": "Se recomandă reducerea dimensiunii pozițiilor pe fondul volatilității ridicate din Orientul Mijlociu. Evităm tranzacționarea în primele 15 minute ale deschiderii pieței pentru a ocoli falsul impuls din pre-market. Respectarea strictă a ordinelor stop-loss și vizarea unor profituri rapide (profit target conservator) sunt obligatorii.",
     "watchlist": [
       {
         "symbol": "SPY",
         "direction": "long",
-        "thesis_ro": "Urmărim reacția indicelui la nivelurile de suport macro și la știrile geopolitice din Orientul Mijlociu."
+        "thesis_ro": "Urmărim reacția indicelui la zonele de suport cheie în contextul volatilității regionale și al rotației sectoriale."
       },
       {
         "symbol": "QQQ",
         "direction": "long",
-        "thesis_ro": "Monitorizăm comportamentul sectorului tech înaintea și după raportul financiar NVIDIA."
+        "thesis_ro": "Monitorizăm acțiunea prețului pe sectorul tehnologic, atenți la potențiale semnale de epuizare a vânzărilor după recentele avertismente de infrastructură."
       },
       {
-        "symbol": "NVDA",
+        "symbol": "SDS",
         "direction": "long",
-        "thesis_ro": "Oportunitate majoră de volatilitate și volum ridicat susținută de raportul trimestrial."
-      },
-      {
-        "symbol": "HD",
-        "direction": "long",
-        "thesis_ro": "Indicator cheie pentru sănătatea sectorului de retail și consumatorului american."
-      },
-      {
-        "symbol": "WMT",
-        "direction": "long",
-        "thesis_ro": "Barometru pentru inflație și tendințele de consum pe termen scurt."
+        "thesis_ro": "Menținut ca instrument de hedging pe termen scurt în cazul intensificării conflictelor geopolitice din Orientul Mijlociu."
       }
     ]
   }
