@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.09,
   "current_drawdown_pct": -0.1,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T10:20:45.804523-05:00",
+  "updated_at": "2026-11-23T10:21:49.762494-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-23T14:29:47.349295+00:00",
@@ -107,76 +107,76 @@
     "top_movers": [
       {
         "symbol": "NVDA",
-        "price": 165.46,
+        "price": 169.8,
         "prev_close": 125.65,
-        "gap_pct": 31.68,
+        "gap_pct": 35.14,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 145.47,
+        "price": 148.65,
         "prev_close": 122.28,
-        "gap_pct": 18.96,
+        "gap_pct": 21.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 25.59,
+        "price": 26.22,
         "prev_close": 21.68,
-        "gap_pct": 18.01,
+        "gap_pct": 20.91,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 701.84,
+        "price": 714.63,
         "prev_close": 594.84,
-        "gap_pct": 17.99,
+        "gap_pct": 20.14,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 178.92,
+        "price": 179.63,
         "prev_close": 152.24,
-        "gap_pct": 17.53,
+        "gap_pct": 18.0,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "TSM",
-        "price": 368.87,
-        "prev_close": 319.17,
-        "gap_pct": 15.57,
+        "symbol": "IONQ",
+        "price": 24.42,
+        "prev_close": 20.73,
+        "gap_pct": 17.83,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ATHX",
-        "price": 20.34,
+        "price": 19.65,
         "prev_close": 0.1,
-        "gap_pct": 19880.35,
+        "gap_pct": 19202.55,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ANSS",
-        "price": 15.09,
-        "prev_close": 374.44,
-        "gap_pct": -95.97,
+        "price": 15.3,
+        "prev_close": 374.08,
+        "gap_pct": -95.91,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "TAWN",
+        "price": 12.28,
+        "prev_close": 6.81,
+        "gap_pct": 80.4,
         "source": "alpaca_movers"
       },
       {
         "symbol": "NVDX",
-        "price": 9.43,
+        "price": 9.79,
         "prev_close": 5.75,
-        "gap_pct": 64.0,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "NVD",
-        "price": 3.8,
-        "prev_close": 10.45,
-        "gap_pct": -63.64,
+        "gap_pct": 70.35,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-23T15:11:05.039774+00:00",
+    "last_scan_at": "2026-11-23T15:21:49.762498+00:00",
     "telegram_sent_date": "2026-11-23"
   },
   "spy_start_price": 767.64,
