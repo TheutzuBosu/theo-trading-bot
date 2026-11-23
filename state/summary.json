@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.08,
   "current_drawdown_pct": -0.09,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T15:24:07.891621-05:00",
+  "updated_at": "2026-11-23T15:25:14.839417-05:00",
   "positions": [
     {
       "symbol": "MU",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-23T12:58:00.562319-05:00",
       "qty": 0.0212,
       "entry_price": 706.52,
-      "current_price": 708.89,
+      "current_price": 709.01,
       "stop": 695.93,
       "initial_stop": 695.93,
       "unrealized_pnl": 0.05,
-      "unrealized_r": 0.22,
+      "unrealized_r": 0.24,
       "entry_reason": "Micron (MU) crește cu peste 18% susținută de știri pozitive privind cererea de DRAM și revenirea sectorului de cipuri AI, catalizator puternic confirmat de analiști în timpul sesiunii principale. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)"
     }
   ],
@@ -121,65 +121,65 @@
     "top_movers": [
       {
         "symbol": "NVDA",
-        "price": 165.56,
+        "price": 166.17,
         "prev_close": 125.65,
-        "gap_pct": 31.77,
+        "gap_pct": 32.25,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 705.68,
+        "price": 708.8,
         "prev_close": 594.84,
-        "gap_pct": 18.63,
+        "gap_pct": 19.16,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 144.41,
+        "price": 145.31,
         "prev_close": 122.28,
-        "gap_pct": 18.1,
+        "gap_pct": 18.83,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 176.96,
+        "price": 177.42,
         "prev_close": 152.24,
-        "gap_pct": 16.24,
+        "gap_pct": 16.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INTC",
-        "price": 58.72,
+        "price": 58.99,
         "prev_close": 51.37,
-        "gap_pct": 14.31,
+        "gap_pct": 14.84,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "TSM",
-        "price": 364.45,
+        "price": 365.25,
         "prev_close": 319.17,
-        "gap_pct": 14.19,
+        "gap_pct": 14.44,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ATHX",
-        "price": 19.12,
+        "price": 19.17,
         "prev_close": 0.1,
-        "gap_pct": 18681.93,
+        "gap_pct": 18731.04,
         "source": "alpaca_movers"
       },
       {
         "symbol": "BNAI",
-        "price": 7.1,
+        "price": 7.45,
         "prev_close": 3.36,
-        "gap_pct": 111.43,
+        "gap_pct": 121.68,
         "source": "alpaca_movers"
       },
       {
         "symbol": "OTLY",
-        "price": 13.99,
+        "price": 14.04,
         "prev_close": 6.93,
-        "gap_pct": 101.66,
+        "gap_pct": 102.47,
         "source": "alpaca_movers"
       },
       {
@@ -190,7 +190,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-23T20:14:43.013627+00:00",
+    "last_scan_at": "2026-11-23T20:25:14.839422+00:00",
     "telegram_sent_date": "2026-11-23"
   },
   "spy_start_price": 767.64,
