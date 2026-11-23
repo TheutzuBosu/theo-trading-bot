@@ -34,7 +34,7 @@
       "initial_risk_dollars": 0.1504,
       "equity_at_entry": 514.88,
       "partial_done": false,
-      "last_price": 142.506,
+      "last_price": 141.2,
       "entry_reason": "Marvell înregistrează o creștere de peste 18% susținută de revenirea puternică a acțiunilor din sectorul de chipuri și AI, amplificată de estimări optimiste ale analiștilor de pe Wall Street. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~9.99$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
