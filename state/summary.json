@@ -9,8 +9,22 @@
   "today_pnl_pct": -0.09,
   "current_drawdown_pct": -0.1,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T12:56:55.718943-05:00",
-  "positions": [],
+  "updated_at": "2026-11-23T12:58:00.562319-05:00",
+  "positions": [
+    {
+      "symbol": "MU",
+      "direction": "long",
+      "entry_time": "2026-11-23T12:58:00.562319-05:00",
+      "qty": 0.0212,
+      "entry_price": 706.52,
+      "current_price": 706.52,
+      "stop": 695.93,
+      "initial_stop": 695.93,
+      "unrealized_pnl": 0.0,
+      "unrealized_r": 0.0,
+      "entry_reason": "Micron (MU) crește cu peste 18% susținută de știri pozitive privind cererea de DRAM și revenirea sectorului de cipuri AI, catalizator puternic confirmat de analiști în timpul sesiunii principale. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)"
+    }
+  ],
   "premarket": {
     "updated_at": "2026-11-23T14:29:47.349295+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
@@ -80,103 +94,103 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MRVL",
+        "symbol": "MU",
         "direction": "long",
-        "price": 144.39,
-        "prev_close": 122.28,
-        "gap_pct": 18.08,
-        "change_pct": 18.08,
-        "stake_dollars": 20.0,
+        "price": 706.27,
+        "prev_close": 594.84,
+        "gap_pct": 18.73,
+        "change_pct": 18.73,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 142.22,
-        "target_price": 151.97,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 695.68,
+        "target_price": 743.35,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "Prediction: This Under-the-Radar AI Stock Could Have a Big 2030 Ahead",
-          "Premarket movers: Chip stocks lead AI rebound; CrowdStrike falls",
-          "When Did Nvidia Buyers Break Even After 30% Falls?"
+          "Why Micron Stock Is Up Today",
+          "Jensen Huang back at Nvidia, stock soars; Anthropic slides",
+          "Micron Soars 20% as Citi Says Ending Nvidia’s Financing Would Cut DRAM Demand Only 12%"
         ],
-        "reason_ro": "Marvell înregistrează o creștere de peste 18% susținută de revenirea puternică a acțiunilor din sectorul de chipuri și AI, amplificată de estimări optimiste ale analiștilor de pe Wall Street. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Micron (MU) crește cu peste 18% susținută de știri pozitive privind cererea de DRAM și revenirea sectorului de cipuri AI, catalizator puternic confirmat de analiști în timpul sesiunii principale. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-23T14:39:55.193240+00:00"
+        "evaluated_at": "2026-11-23T17:58:10.599991+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "NVDA",
-        "price": 163.7,
+        "price": 164.34,
         "prev_close": 125.65,
-        "gap_pct": 30.28,
+        "gap_pct": 30.79,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 706.38,
+        "price": 706.27,
         "prev_close": 594.84,
-        "gap_pct": 18.75,
+        "gap_pct": 18.73,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 143.76,
+        "price": 144.53,
         "prev_close": 122.28,
-        "gap_pct": 17.56,
+        "gap_pct": 18.19,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 176.68,
+        "price": 177.24,
         "prev_close": 152.24,
-        "gap_pct": 16.06,
+        "gap_pct": 16.43,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "TSM",
-        "price": 367.06,
+        "price": 367.62,
         "prev_close": 319.17,
-        "gap_pct": 15.01,
+        "gap_pct": 15.18,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "SMCI",
-        "price": 24.68,
-        "prev_close": 21.68,
-        "gap_pct": 13.83,
+        "symbol": "RDW",
+        "price": 6.46,
+        "prev_close": 5.65,
+        "gap_pct": 14.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ATHX",
-        "price": 20.8,
+        "price": 20.74,
         "prev_close": 0.1,
-        "gap_pct": 20332.22,
+        "gap_pct": 20273.28,
         "source": "alpaca_movers"
       },
       {
         "symbol": "OTLY",
-        "price": 14.11,
+        "price": 13.85,
         "prev_close": 6.94,
-        "gap_pct": 103.44,
+        "gap_pct": 99.71,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ANSS",
-        "price": 14.84,
-        "prev_close": 374.76,
-        "gap_pct": -96.04,
+        "price": 14.97,
+        "prev_close": 374.25,
+        "gap_pct": -96.0,
         "source": "alpaca_movers"
       },
       {
         "symbol": "BNAI",
-        "price": 5.96,
+        "price": 6.25,
         "prev_close": 3.36,
-        "gap_pct": 77.38,
+        "gap_pct": 86.01,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-23T17:47:53.792714+00:00",
+    "last_scan_at": "2026-11-23T17:58:00.562325+00:00",
     "telegram_sent_date": "2026-11-23"
   },
   "spy_start_price": 767.64,
