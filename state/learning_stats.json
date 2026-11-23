@@ -1,8 +1,8 @@
 {
   "meta_samples": 17,
   "meta_active": false,
-  "updated_at": "2026-11-20T15:30:45.438380-05:00",
-  "total_trades_analyzed": 89,
+  "updated_at": "2026-11-23T15:30:19.196035-05:00",
+  "total_trades_analyzed": 93,
   "hourly_multipliers": {
     "09:00": 0.5,
     "10:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Botul a pierdut 1,13$ (0,5R) pe un ETF invers de acoperire (QID) cumpărat în speranța unei scăderi a pieței, dar, deși piața a coborât inițial favorabil (MFE 2,14R), prețul a inversat și a lovit stop-loss-ul; reținem că trebuie să mutăm profitul în siguranță când atingem ținte bune, în loc să lăsăm o tranzacție câștigătoare să devină pierzătoare.",
-    "Botul a cumpărat CRWD pe scădere mizând pe interesul instituțional, dar prețul a lovit direct stop-loss-ul (-0.15$), învățând că „dip-buying-ul” pe acțiuni scumpe în trend negativ cere o confirmare mai strictă înainte de intrare.",
-    "Botul a căutat un *short* pe baza unei știri negative, dar a cumpărat din greșeală (*long*) și a închis rapid pe timp, rezultând o pierdere infimă; reținem că trebuie corectată imediat direcția ordinului în codul de scanare.",
-    "Am cumpărat inversul pieței (QID) pe baza unui semnal de scădere, iar deși botul a ieșit la limită de timp cu un profit mic de 6,29$, reținem că a ratat un vârf excelent de peste 7R din cauza închiderii premature.",
-    "Am cumpărat acțiuni inverse SDS pe baza unui semnal de scădere, iar deși piața a urcat temporar peste țintă, am închis manual la timp pe \noră cu un profit mic de 6,6 $ (3,42R), reținând că orele de tranzacționare stricte pot limita câștigul maxim potențial."
+    "Am cumpărat acțiuni inverse SDS pe baza unui semnal de scădere, iar deși piața a urcat temporar peste țintă, am închis manual la timp pe \noră cu un profit mic de 6,6 $ (3,42R), reținând că orele de tranzacționare stricte pot limita câștigul maxim potențial.",
+    "Botul a pierdut 0,15$ (aproximativ -1R) după ce a cumpărat acțiuni NVDA pe un impuls pozitiv, dar prețul a scăzut direct în stop-loss fără să urce deloc în profit; reținem că trebuie să fim mai prudenți cu intrările pe valul unor știri politice volatile.",
+    "Spargere falsă pe SMCI (long): prețul a revenit rapid în banda de zgomot și stop-ul a limitat pierderea la -0.15 $ (-0.97R).",
+    "Prețul a lovit direct stop-ul fără să avanseze deloc, așa că reținem să fim mai prudenți la intrările pe valul unor creșteri deja masive.",
+    "Am ieșit din tranzacție lalimită de timp fără nicio mișcare de preț, obținând un profit microscopic, așa că reținem să evităm intrarea când impulsul inițial se stinge."
   ]
 }
