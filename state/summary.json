@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.1,
   "current_drawdown_pct": -0.1,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T13:35:18.418900-05:00",
+  "updated_at": "2026-11-23T13:35:54.406980-05:00",
   "positions": [
     {
       "symbol": "MU",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-23T12:58:00.562319-05:00",
       "qty": 0.0212,
       "entry_price": 706.52,
-      "current_price": 704.8,
+      "current_price": 704.83,
       "stop": 695.93,
       "initial_stop": 695.93,
       "unrealized_pnl": -0.04,
