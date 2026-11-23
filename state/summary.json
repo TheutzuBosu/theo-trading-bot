@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.09,
   "current_drawdown_pct": -0.1,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T09:59:30.381484-05:00",
+  "updated_at": "2026-11-23T10:00:01.502954-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-23T14:29:47.349295+00:00",
@@ -107,76 +107,76 @@
     "top_movers": [
       {
         "symbol": "NVDA",
-        "price": 164.23,
+        "price": 168.58,
         "prev_close": 125.65,
-        "gap_pct": 30.7,
+        "gap_pct": 34.17,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 25.57,
+        "price": 25.74,
         "prev_close": 21.68,
-        "gap_pct": 17.92,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MARA",
-        "price": 5.96,
-        "prev_close": 5.08,
-        "gap_pct": 17.31,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 176.0,
-        "prev_close": 152.24,
-        "gap_pct": 15.61,
+        "gap_pct": 18.7,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 140.85,
+        "price": 144.6,
         "prev_close": 122.28,
-        "gap_pct": 15.18,
+        "gap_pct": 18.25,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MARA",
+        "price": 5.97,
+        "prev_close": 5.08,
+        "gap_pct": 17.4,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MU",
+        "price": 694.49,
+        "prev_close": 594.84,
+        "gap_pct": 16.75,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 23.8,
+        "price": 24.06,
         "prev_close": 20.73,
-        "gap_pct": 14.86,
+        "gap_pct": 16.09,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ATHX",
-        "price": 20.1,
+        "price": 20.55,
         "prev_close": 0.1,
-        "gap_pct": 19644.6,
+        "gap_pct": 20086.64,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CGTL",
-        "price": 2.15,
+        "price": 2.0,
         "prev_close": 88.11,
-        "gap_pct": -97.56,
+        "gap_pct": -97.73,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ANSS",
-        "price": 15.13,
-        "prev_close": 374.5,
-        "gap_pct": -95.96,
+        "price": 14.94,
+        "prev_close": 374.44,
+        "gap_pct": -96.01,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "OTLY",
-        "price": 11.74,
-        "prev_close": 6.93,
-        "gap_pct": 69.29,
+        "symbol": "NVDX",
+        "price": 9.7,
+        "prev_close": 5.75,
+        "gap_pct": 68.7,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-23T14:49:54.877677+00:00",
+    "last_scan_at": "2026-11-23T15:00:01.502958+00:00",
     "telegram_sent_date": "2026-11-23"
   },
   "spy_start_price": 767.64,
