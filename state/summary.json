@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.08,
   "current_drawdown_pct": -0.09,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T14:10:34.727731-05:00",
+  "updated_at": "2026-11-23T14:11:40.910764-05:00",
   "positions": [
     {
       "symbol": "MU",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-23T12:58:00.562319-05:00",
       "qty": 0.0212,
       "entry_price": 706.52,
-      "current_price": 708.82,
+      "current_price": 708.8,
       "stop": 695.93,
       "initial_stop": 695.93,
       "unrealized_pnl": 0.05,
@@ -121,76 +121,76 @@
     "top_movers": [
       {
         "symbol": "NVDA",
-        "price": 164.46,
+        "price": 164.04,
         "prev_close": 125.65,
-        "gap_pct": 30.89,
+        "gap_pct": 30.56,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 706.46,
+        "price": 707.65,
         "prev_close": 594.84,
-        "gap_pct": 18.76,
+        "gap_pct": 18.96,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 143.54,
+        "price": 143.25,
         "prev_close": 122.28,
-        "gap_pct": 17.38,
+        "gap_pct": 17.14,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 176.05,
+        "price": 176.09,
         "prev_close": 152.24,
-        "gap_pct": 15.64,
+        "gap_pct": 15.67,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "TSM",
-        "price": 366.04,
+        "price": 365.66,
         "prev_close": 319.17,
-        "gap_pct": 14.68,
+        "gap_pct": 14.57,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "IONQ",
-        "price": 23.59,
-        "prev_close": 20.73,
-        "gap_pct": 13.82,
+        "symbol": "RDW",
+        "price": 6.42,
+        "prev_close": 5.65,
+        "gap_pct": 13.54,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ATHX",
-        "price": 20.11,
+        "price": 20.15,
         "prev_close": 0.1,
-        "gap_pct": 19654.42,
+        "gap_pct": 19693.71,
         "source": "alpaca_movers"
       },
       {
         "symbol": "BNAI",
-        "price": 6.93,
+        "price": 6.97,
         "prev_close": 3.36,
-        "gap_pct": 106.29,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ANSS",
-        "price": 15.22,
-        "prev_close": 373.96,
-        "gap_pct": -95.93,
+        "gap_pct": 107.48,
         "source": "alpaca_movers"
       },
       {
         "symbol": "OTLY",
-        "price": 12.5,
-        "prev_close": 6.93,
-        "gap_pct": 80.25,
+        "price": 13.64,
+        "prev_close": 6.94,
+        "gap_pct": 96.68,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "ANSS",
+        "price": 15.23,
+        "prev_close": 374.32,
+        "gap_pct": -95.93,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-23T19:01:38.886651+00:00",
+    "last_scan_at": "2026-11-23T19:11:40.910770+00:00",
     "telegram_sent_date": "2026-11-23"
   },
   "spy_start_price": 767.64,
