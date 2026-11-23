@@ -1,14 +1,5 @@
 {
-  "processed_signals": [
-    "MOVER|MRVL|2026-11-23|long",
-    "MOVER|MU|2026-11-23|long",
-    "MOVER|NVDA|2026-11-23|long",
-    "MOVER|SMCI|2026-11-23|long",
-    "QQQ|2026-11-20T10:57:00-05:00|short",
-    "QQQ|2026-11-20T11:43:00-05:00|short",
-    "QQQ|2026-11-20T14:01:00-05:00|short",
-    "SPY|2026-11-20T11:43:00-05:00|short"
-  ],
+  "processed_signals": [],
   "open_trades": {},
-  "last_eod_date": "2026-11-20"
+  "last_eod_date": "2026-11-23"
 }
