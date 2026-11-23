@@ -12,245 +12,243 @@
   "updated_at": "2026-11-20T15:30:45.438380-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-20T14:30:32.162988+00:00",
+    "updated_at": "2026-11-23T13:44:03.882200+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 712.4,
-        "prev_close": 715.84,
-        "gap_pct": -0.48
+        "price": 707.52,
+        "prev_close": 690.68,
+        "gap_pct": 2.44
       },
       "QQQ": {
-        "price": 637.08,
-        "prev_close": 645.1,
-        "gap_pct": -1.24
+        "price": 629.38,
+        "prev_close": 609.75,
+        "gap_pct": 3.22
       }
     },
-    "explanation_ro": "În Pre-Market, piața SUA este în scădere ușoară: SPY la 712.40 $ (-0.48%) și QQQ la 637.08 $ (-1.24%). Raportări financiare urmărite azi: BJ (înainte de deschidere), BSP (înainte de deschidere), FRO (înainte de deschidere), IESC (înainte de deschidere), MOG.A (înainte de deschidere). La 16:30 (09:30 ET) botul măsoară banda de zgomot și VWAP-ul, iar de la 17:12 (10:12 ET) execută automat pe direcția spargerii (Long sau Short cu levier 2x).",
+    "explanation_ro": "Piața deschide cu gap-uri masive de creștere (SPY +2.44%, QQQ +3.22%), susținută de un sentiment optimist în pre-market, în ciuda riscurilor geopolitice legate de Iran, Ucraina și procesul intentat SpaceX. Rapoartele financiare importante vin doar după închidere (A, AMTM, CENT), lăsând macroeconomicul și momentumul tehnic să dicteze deschiderea. Direcția favorizată în primele ore de tranzacționare este clar Long pe ambele ETF-uri.",
     "headlines": [
-      "Our top 10 things to watch in the stock market Friday",
-      "Anthropic raises $93.5 billion total as underwriters scoop up ‘greenshoe’ overallotment",
-      "U.S.-China trade, Taiwan and tech tensions remain unresolved as Trump returns from Asia",
-      "Rejecting cheap fabrics, higher prices: Why shoppers are asking for better clothes",
-      "A24 is having a great year at the box office. That could give HBO Max a streaming edge",
-      "UK finds fix for fridge and freezer vulnerability after European hacks - Reuters"
+      "SpaceX sued by Oregon and Virginia over AI deepfake porn, Grok safety claims",
+      "Tokenized stocks face pushback as NYSE, Nasdaq pivot for a new market",
+      "COMMENTARY: China's steel sector bifurcates as iron ore remains robust - Reuters",
+      "COMMENTARY: Oil's Iran war recovery masks a stubborn diesel shortage - Reuters",
+      "Iran says it will use all its tools to confront US naval blockade - Reuters",
+      "Zelenskiy says Ukraine sank Russian corvette near Libya's coast, hit cargo ship - Reuters"
     ],
     "earnings_today": [
       {
-        "symbol": "BJ",
-        "hour": "bmo",
-        "eps_estimate": 1.2924,
-        "eps_actual": 1.73,
-        "revenue_estimate": 6138873799,
-        "revenue_actual": 6283490000
-      },
-      {
-        "symbol": "BSP",
-        "hour": "bmo",
-        "eps_estimate": 0.3198,
+        "symbol": "A",
+        "hour": "amc",
+        "eps_estimate": 1.7605,
         "eps_actual": null,
-        "revenue_estimate": 753148112,
+        "revenue_estimate": 2027654878,
         "revenue_actual": null
       },
       {
-        "symbol": "FRO",
-        "hour": "bmo",
-        "eps_estimate": 2.3198,
-        "eps_actual": 2.38,
-        "revenue_estimate": 736637773,
-        "revenue_actual": 817190000
+        "symbol": "AMTM",
+        "hour": "amc",
+        "eps_estimate": 0.6732,
+        "eps_actual": null,
+        "revenue_estimate": 3772742003,
+        "revenue_actual": null
       },
       {
-        "symbol": "IESC",
-        "hour": "bmo",
-        "eps_estimate": 2.8662,
-        "eps_actual": 4.07,
-        "revenue_estimate": 1170960000,
-        "revenue_actual": 1390000000
+        "symbol": "ANF",
+        "hour": "",
+        "eps_estimate": 3.1326,
+        "eps_actual": null,
+        "revenue_estimate": 1381786969,
+        "revenue_actual": null
       },
       {
-        "symbol": "MOG.A",
-        "hour": "bmo",
-        "eps_estimate": 2.7724,
-        "eps_actual": 3.37,
-        "revenue_estimate": 1154024360,
-        "revenue_actual": 1254100000
+        "symbol": "BURL",
+        "hour": "",
+        "eps_estimate": 1.7598,
+        "eps_actual": null,
+        "revenue_estimate": 3041297790,
+        "revenue_actual": null
+      },
+      {
+        "symbol": "CENT",
+        "hour": "amc",
+        "eps_estimate": -0.0592,
+        "eps_actual": null,
+        "revenue_estimate": 611510400,
+        "revenue_actual": null
       }
     ],
     "opportunities": [
       {
         "action": "enter",
+        "symbol": "CRWD",
+        "direction": "short",
+        "price": 209.38,
+        "prev_close": 243.45,
+        "gap_pct": -13.99,
+        "change_pct": -13.99,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 212.52,
+        "target_price": 198.39,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "CrowdStrike To Acquire Zscaler For $43.9B In All-Stock Deal: TD Cowen Sees Cybersecurity Consolidation Entering ‘More Material Phase’",
+          "CrowdStrike explores acquisition of Zscaler – report",
+          "Crowdstrike is spending $43.9 billion to buy ZScaler in a huge cybersecurity deal as tech outages spread"
+        ],
+        "reason_ro": "CrowdStrike achiziționează Zscaler pentru 43,9 miliarde de dolari într-o tranzacție exclusiv în acțiuni, generând o prăbușire de -13,99% din cauza temerilor legate de diluție și costuri masive. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-23T13:43:28.160668+00:00"
+      },
+      {
+        "action": "enter",
         "symbol": "MARA",
         "direction": "short",
-        "price": 5.21,
+        "price": 5.47,
         "prev_close": 6.24,
-        "gap_pct": -16.51,
-        "change_pct": -16.51,
+        "gap_pct": -12.34,
+        "change_pct": -12.34,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.09,
+        "stop_price": 5.58,
+        "target_price": 4.98,
+        "expected_profit_dollars": 1.8,
+        "max_loss_dollars": 0.4,
+        "headlines": [
+          "Forget Strategy: MARA Has More to Lose From Bitcoin’s Drop Below $60,000"
+        ],
+        "reason_ro": "MARA înregistrează o scădere puternică de -12.34% pe fondul prăbușirii Bitcoin sub pragul de 60.000$, un catalizator negativ puternic ce justifică o poziție de scurtă durată. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.40 $ / țintă profit +1.80 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-23T13:43:33.634775+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "LUNR",
+        "direction": "long",
+        "price": 8.78,
+        "prev_close": 9.77,
+        "gap_pct": -10.09,
+        "change_pct": -10.09,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.02,
         "target_pct": 0.07,
-        "stop_price": 5.31,
-        "target_price": 4.85,
+        "stop_price": 8.6,
+        "target_price": 9.39,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Bitcoin Falls to Mining Cost Level as Hashrate Nears Record and Indicators Flip Bearish"
+          "Intuitive Machines: The Market Is Underestimating What's Coming Next"
         ],
-        "reason_ro": "Bitcoin a coborât la nivelul costului de minare, iar hashrrate-ul se apropie de record, punând o presiune fundamentală puternică pe acțiunile minerilor precum MARA, care înregistrează deja un declin intraday sever de peste 16%. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "LUNR înregistrează o scădere de peste 10% în pre-market pe fondul unei volatilități generale, însă titlul analizei sugerează o subevaluare a potențialului de creștere pe termen scurt, oferind o oportunitate atractivă de cumpărare în dip (long) la deschidere. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T20:28:00.835825+00:00"
+        "evaluated_at": "2026-11-23T13:43:53.240054+00:00"
       },
       {
         "action": "enter",
         "symbol": "MU",
-        "direction": "short",
-        "price": 596.0,
+        "direction": "long",
+        "price": 627.1,
         "prev_close": 690.58,
-        "gap_pct": -13.7,
-        "change_pct": -13.7,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 604.94,
-        "target_price": 564.71,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Micron Is Down 32% in a Month. Can MU Stock Get Back to $1,000?",
-          "Dan Ives Just Delivered Great News for AI Stocks. Here’s the Part That Matters.",
-          "Supply Chain Stocks Sink Amid Wall Street Sell-Off, Though Air Freight Shows Resilience"
-        ],
-        "reason_ro": "MU scade masiv cu 13.70% pe fondul unui sell-off în sectorul de cipuri de memorie și al pierderii unui client important (Apple a mers la Samsung), confirmând un trend intraday bearish accentuat. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T20:28:06.227692+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AMD",
-        "direction": "short",
-        "price": 426.76,
-        "prev_close": 489.44,
-        "gap_pct": -12.81,
-        "change_pct": -12.81,
+        "gap_pct": -9.19,
+        "change_pct": -9.19,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 433.16,
-        "target_price": 404.36,
+        "stop_price": 617.69,
+        "target_price": 660.02,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Why Are Investors Ignoring Qualcomm Stock's High Cash Yield?",
-          "Stock Market Today: Nasdaq Slides As AI Trade, IPO Anthropic Suffer (Live Coverage)",
-          "Is Nvidia's $81 Billion Receivables Pile A Risk?"
+          "AI Chips Update - Global Semiconductor ETF Expands International Investment Horizons",
+          "Avantis U.S. Large Cap Value ETF (AVLV) Buys $42 Million More Micron on Nov. 19",
+          "What iShares A.I. Innovation ETF (BAI) Bought: Anthropic Leads on Nov. 19"
         ],
-        "reason_ro": "AMD este puternic lovită de scăderea sectorului AI generată de Anthropic și un raport de sell-side, înregistrând un declin intraday de -12.81% pe volum ridicat. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Micron (MU) înregistrează o scădere pre-market de peste 9% pe fondul corecției recente, dar știrile arată un interes instituțional puternic prin achiziții recente din partea ETF-urilor și un raliu general al acțiunilor de cipuri și neocloud. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-20T20:28:17.119813+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AVGO",
-        "direction": "short",
-        "price": 304.16,
-        "prev_close": 346.55,
-        "gap_pct": -12.23,
-        "change_pct": -12.23,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 308.72,
-        "target_price": 283.63,
-        "expected_profit_dollars": 1.35,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Why Are Investors Ignoring Qualcomm Stock's High Cash Yield?",
-          "Broadcom Stock Plunges 12% and Loses $191 Billion After a Report That Google Cut Its Plans for Broadcom AI Chips",
-          "The AI Boom Math In Five Lines"
-        ],
-        "reason_ro": "AVGO scade cu peste 12% după un raport major conform căruia Google își reduce planurile pentru cipurile AI Broadcom, știrea generând o vânzare masivă și un momentum intraday puternic descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-20T20:28:34.085442+00:00"
+        "evaluated_at": "2026-11-23T13:44:03.882159+00:00"
       }
     ],
     "top_movers": [
       {
+        "symbol": "CRWD",
+        "price": 209.38,
+        "prev_close": 243.45,
+        "gap_pct": -13.99,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "MARA",
-        "price": 5.21,
+        "price": 5.47,
         "prev_close": 6.24,
-        "gap_pct": -16.51,
+        "gap_pct": -12.34,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MU",
-        "price": 596.0,
-        "prev_close": 690.58,
-        "gap_pct": -13.7,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 153.94,
-        "prev_close": 177.22,
-        "gap_pct": -13.14,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AMD",
-        "price": 426.76,
-        "prev_close": 489.44,
-        "gap_pct": -12.81,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "RDW",
-        "price": 5.71,
-        "prev_close": 6.52,
-        "gap_pct": -12.5,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AVGO",
-        "price": 304.16,
-        "prev_close": 346.55,
-        "gap_pct": -12.23,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SONN",
-        "price": 51.26,
-        "prev_close": 1.26,
-        "gap_pct": 3968.25,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "MACI",
-        "price": 11.57,
-        "prev_close": 8.2,
-        "gap_pct": 41.16,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 128.33,
-        "prev_close": 145.99,
-        "gap_pct": -12.09,
+        "symbol": "MRVL",
+        "price": 123.92,
+        "prev_close": 138.45,
+        "gap_pct": -10.49,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 8.64,
+        "price": 8.78,
         "prev_close": 9.77,
-        "gap_pct": -11.52,
+        "gap_pct": -10.09,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "RDW",
+        "price": 5.87,
+        "prev_close": 6.52,
+        "gap_pct": -9.97,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MU",
+        "price": 627.1,
+        "prev_close": 690.58,
+        "gap_pct": -9.19,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "SONN",
+        "price": 51.02,
+        "prev_close": 1.26,
+        "gap_pct": 3949.21,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "MACI",
+        "price": 13.3,
+        "prev_close": 8.2,
+        "gap_pct": 62.2,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "SKYA",
+        "price": 2.18,
+        "prev_close": 4.0,
+        "gap_pct": -45.5,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "ASTS",
+        "price": 23.27,
+        "prev_close": 25.56,
+        "gap_pct": -8.98,
         "source": "watchlist_snapshot"
       }
     ],
-    "last_scan_at": "2026-11-20T20:27:59.673050+00:00",
-    "telegram_sent_date": "2026-11-20"
+    "last_scan_at": "2026-11-23T13:43:26.874273+00:00",
+    "telegram_sent_date": "2026-11-23"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
