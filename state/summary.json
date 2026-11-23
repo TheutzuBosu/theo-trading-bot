@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 514.75,
-  "total_pnl": 14.75,
+  "equity": 514.77,
+  "total_pnl": 14.77,
   "total_pnl_pct": 2.95,
-  "today_pnl": -0.43,
+  "today_pnl": -0.41,
   "today_pnl_pct": -0.08,
   "current_drawdown_pct": -0.09,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-23T14:23:48.238742-05:00",
+  "updated_at": "2026-11-23T14:24:54.421783-05:00",
   "positions": [
     {
       "symbol": "MU",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-23T12:58:00.562319-05:00",
       "qty": 0.0212,
       "entry_price": 706.52,
-      "current_price": 707.4799,
+      "current_price": 708.64,
       "stop": 695.93,
       "initial_stop": 695.93,
-      "unrealized_pnl": 0.02,
-      "unrealized_r": 0.09,
+      "unrealized_pnl": 0.04,
+      "unrealized_r": 0.2,
       "entry_reason": "Micron (MU) crește cu peste 18% susținută de știri pozitive privind cererea de DRAM și revenirea sectorului de cipuri AI, catalizator puternic confirmat de analiști în timpul sesiunii principale. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~14.98$, R:R 1:3.5)"
     }
   ],
