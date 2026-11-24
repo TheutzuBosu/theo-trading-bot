@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.09,
   "current_drawdown_pct": -0.18,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T14:03:02.177588-05:00",
+  "updated_at": "2026-11-24T14:04:07.648133-05:00",
   "positions": [
     {
       "symbol": "ASTS",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-24T12:39:06.175340-05:00",
       "qty": 0.8478,
       "entry_price": 23.578,
-      "current_price": 23.71,
+      "current_price": 23.7066,
       "stop": 23.23,
       "initial_stop": 23.23,
       "unrealized_pnl": 0.11,
-      "unrealized_r": 0.38,
+      "unrealized_r": 0.37,
       "entry_reason": "AST SpaceMobile a obținut aprobarea FCC pentru serviciul Direct-to-Device, oferind un catalizator fundamental puternic care poate contracara scăderea intraday de -8.14% printr-o revenire tehnică. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)"
     }
   ],
@@ -96,41 +96,41 @@
         "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 413.22,
+        "price": 414.41,
         "prev_close": 453.0,
-        "gap_pct": -8.78,
-        "change_pct": -8.78,
-        "stake_dollars": 20.0,
+        "gap_pct": -8.52,
+        "change_pct": -8.52,
+        "stake_dollars": 25.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 419.42,
-        "target_price": 391.53,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 420.63,
+        "target_price": 392.65,
+        "expected_profit_dollars": 1.31,
+        "max_loss_dollars": 0.38,
         "headlines": [
           "Dell Reports Today. Here’s How Much of Your Tech ETF Is Riding on Its AI Server Business",
           "Nvidia, Chip Stocks Fall As Data Center Spending Fears Return",
           "Nvidia, AMD and Micron Lead AI Selloff as Chip Stocks Slide"
         ],
-        "reason_ro": "AMD scade puternic cu 8.78% pe fondul unui raport de scurt-selling Hunterbrook și a unui selloff generalizat pe acțiunile de semiconductori și AI. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "AMD scade puternic cu -8.52% pe fondul unui raport Hunterbrook de tip short și a unei vânzări masive pe sectorul de cipuri AI declanșată de temerile legate de cheltuielile pentru centrele de date. Intrare SHORT cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T18:53:22.776158+00:00"
+        "evaluated_at": "2026-11-24T19:04:33.103014+00:00"
       },
       {
         "action": "enter",
         "symbol": "MRVL",
         "direction": "short",
-        "price": 132.77,
+        "price": 132.31,
         "prev_close": 144.6,
-        "gap_pct": -8.18,
-        "change_pct": -8.18,
+        "gap_pct": -8.5,
+        "change_pct": -8.5,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 134.76,
-        "target_price": 125.8,
+        "stop_price": 134.29,
+        "target_price": 125.36,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -138,24 +138,24 @@
           "Marvell Sinks 8%, Intel Down 6% as Chip Stocks Give Back Nvidia’s Record Huang Rally",
           "Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, and More Stocks That Explain Today’s Market"
         ],
-        "reason_ro": "MRVL scade puternic cu peste 8% pe fondul corecției generale din sectorul de semiconductori și al rezistenței întâmpinate de noile mișcări M&A de pe Wall Street. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "MRVL scade puternic cu -8.50% pe fondul corecției sectorului de semiconductori și al știrilor negative legate de rezistența Wall Street la noile mișcări M&A, creând un momentum intraday descendent clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T18:53:29.840232+00:00"
+        "evaluated_at": "2026-11-24T19:04:39.122511+00:00"
       },
       {
         "action": "enter",
         "symbol": "ARM",
         "direction": "short",
-        "price": 162.68,
+        "price": 162.57,
         "prev_close": 176.54,
-        "gap_pct": -7.85,
-        "change_pct": -7.85,
+        "gap_pct": -7.91,
+        "change_pct": -7.91,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 165.12,
-        "target_price": 154.14,
+        "stop_price": 165.01,
+        "target_price": 154.04,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -163,84 +163,84 @@
           "Stocks give back gains as Anthropic dips below IPO price",
           "Anthropic Sinks 7% Below IPO Price as AI Stocks Slide: Cramer Blames “Endless Hammering of Small Bids”"
         ],
-        "reason_ro": "ARM scade puternic cu 7.85% pe fondul corecției generale din sectorul de semiconductori și al răcirii raliului AI, susținut de presiunea de vânzare și sentimentul negativ amplificat de scăderea acțiunilor Anthropic. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ARM scade puternic cu 7.91% pe fondul corecției sectorului de cipuri și al presiunii pe acțiunile AI, oferind un impuls intraday descendent clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T18:53:35.212222+00:00"
+        "evaluated_at": "2026-11-24T19:05:00.261864+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 630.99,
+        "price": 629.63,
         "prev_close": 707.84,
-        "gap_pct": -10.86,
+        "gap_pct": -11.05,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 413.22,
+        "price": 414.41,
         "prev_close": 453.0,
-        "gap_pct": -8.78,
+        "gap_pct": -8.52,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 132.77,
+        "price": 132.31,
         "prev_close": 144.6,
-        "gap_pct": -8.18,
+        "gap_pct": -8.5,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 162.68,
+        "price": 162.57,
         "prev_close": 176.54,
-        "gap_pct": -7.85,
+        "gap_pct": -7.91,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SMCI",
-        "price": 22.65,
+        "price": 22.7,
         "prev_close": 24.55,
-        "gap_pct": -7.72,
+        "gap_pct": -7.54,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "INTC",
-        "price": 55.12,
-        "prev_close": 59.64,
-        "gap_pct": -7.58,
+        "symbol": "ASTS",
+        "price": 23.75,
+        "prev_close": 25.66,
+        "gap_pct": -7.46,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "JAGX",
-        "price": 11.27,
+        "price": 11.34,
         "prev_close": 6.12,
-        "gap_pct": 84.22,
+        "gap_pct": 85.43,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APUS",
-        "price": 2.17,
+        "price": 2.18,
         "prev_close": 1.5,
-        "gap_pct": 44.67,
+        "gap_pct": 45.11,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EMBC",
-        "price": 8.06,
-        "prev_close": 5.74,
-        "gap_pct": 40.3,
+        "price": 8.01,
+        "prev_close": 5.75,
+        "gap_pct": 39.42,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADIU",
-        "price": 6.6,
+        "price": 6.55,
         "prev_close": 10.07,
-        "gap_pct": -34.46,
+        "gap_pct": -34.96,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T18:53:15.484561+00:00",
+    "last_scan_at": "2026-11-24T19:04:07.648136+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
