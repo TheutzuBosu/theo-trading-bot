@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -0.09,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T10:11:42.318323-05:00",
+  "updated_at": "2026-11-24T10:12:46.389768-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-24T14:29:48.896508+00:00",
@@ -80,151 +80,103 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "LCID",
+        "symbol": "ARM",
         "direction": "short",
-        "price": 2.82,
-        "prev_close": 2.6,
-        "gap_pct": 8.67,
-        "change_pct": 8.67,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 2.86,
-        "target_price": 2.67,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
-        "headlines": [
-          "Seaport Global Initiates Coverage On Lucid Group with Sell Rating, Announces Price Target of $1"
-        ],
-        "reason_ro": "Seaport Global a inițiat acoperirea pe Lucid Group (LCID) cu un rating de Sell și un preț țintă extrem de agresiv de 1$, oferind un catalizator negativ puternic pe fondul creșterii excesive recente. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-24T14:50:53.607667+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "MU",
-        "direction": "short",
-        "price": 657.0,
-        "prev_close": 707.84,
-        "gap_pct": -7.18,
-        "change_pct": -7.18,
+        "price": 162.08,
+        "prev_close": 176.54,
+        "gap_pct": -8.19,
+        "change_pct": -8.19,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 666.85,
-        "target_price": 622.51,
+        "stop_price": 164.51,
+        "target_price": 153.57,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
-        "headlines": [
-          "Micron Stock Soared on Monday. I'd Still Buy It, a Little at a Time.",
-          "Premarket Movers: S&P 500 Gainers and Losers on Nov. 24, 2026",
-          "Small Models Are “Very Bearish for RAM,” Says Emad Mostaque. Micron’s 2029 Estimates Are What’s at Stake"
-        ],
-        "reason_ro": "Micron scade puternic cu 7.18% pe fondul îngrijorărilor privind modelele AI mici care reduc cererea de RAM și a presiunilor sectoriale negative. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-24T14:51:05.159440+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "ARM",
-        "direction": "short",
-        "price": 165.69,
-        "prev_close": 176.54,
-        "gap_pct": -6.15,
-        "change_pct": -6.15,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 168.18,
-        "target_price": 156.99,
-        "expected_profit_dollars": 0.79,
-        "max_loss_dollars": 0.22,
         "headlines": [
           "Should Anthropic Holders Worry About Its Rough Start?",
           "Why Is Arm Stock Falling 4.7% Today?",
           "Nvidia’s Board Had Other Options: Robert Maciejko"
         ],
-        "reason_ro": "Acțiunea ARM înregistrează o scădere accentuată de peste 6%, alimentată de presiunea generală din sector și știri negative recente, oferind un impuls intraday clar pentru o poziție de sell/short după stabilizarea pieței de la deschidere. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "ARM înregistrează o scădere puternică de peste 8% pe fondul corecției generale din sectorul tech și al incertitudinilor macroeconomice, oferind o oportunitate clară de sell on strength/continuare a trendului descendent intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T14:51:16.599255+00:00"
+        "evaluated_at": "2026-11-24T15:13:22.733898+00:00"
       }
     ],
     "top_movers": [
       {
-        "symbol": "LCID",
-        "price": 2.81,
-        "prev_close": 2.6,
-        "gap_pct": 8.29,
-        "source": "watchlist_snapshot"
-      },
-      {
         "symbol": "AMD",
-        "price": 416.48,
+        "price": 409.48,
         "prev_close": 453.0,
-        "gap_pct": -8.06,
+        "gap_pct": -9.61,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 651.99,
+        "price": 643.33,
         "prev_close": 707.84,
-        "gap_pct": -7.89,
+        "gap_pct": -9.11,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 23.74,
+        "price": 23.36,
         "prev_close": 25.66,
-        "gap_pct": -7.48,
+        "gap_pct": -8.94,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MRNA",
-        "price": 226.4,
-        "prev_close": 211.93,
-        "gap_pct": 6.83,
+        "symbol": "ARM",
+        "price": 162.08,
+        "prev_close": 176.54,
+        "gap_pct": -8.19,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RIOT",
-        "price": 16.05,
+        "price": 15.82,
         "prev_close": 17.14,
-        "gap_pct": -6.39,
+        "gap_pct": -7.7,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "CLYD",
-        "price": 4.66,
-        "prev_close": 7.21,
-        "gap_pct": -35.37,
+        "symbol": "MRVL",
+        "price": 133.69,
+        "prev_close": 144.6,
+        "gap_pct": -7.54,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "APUS",
+        "price": 2.02,
+        "prev_close": 1.5,
+        "gap_pct": 34.33,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ALTG",
-        "price": 6.15,
+        "price": 6.17,
         "prev_close": 4.61,
-        "gap_pct": 33.41,
+        "gap_pct": 33.84,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADIU",
-        "price": 7.01,
+        "price": 6.87,
         "prev_close": 10.07,
-        "gap_pct": -30.39,
+        "gap_pct": -31.78,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "EMBC",
-        "price": 7.42,
-        "prev_close": 5.74,
-        "gap_pct": 29.07,
+        "symbol": "HPEL",
+        "price": 7.71,
+        "prev_close": 11.18,
+        "gap_pct": -31.04,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T15:01:56.016317+00:00",
+    "last_scan_at": "2026-11-24T15:12:46.389773+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
