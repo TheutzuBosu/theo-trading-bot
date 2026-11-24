@@ -1,15 +1,15 @@
 [
   {
-    "symbol": "LUNR",
+    "symbol": "MRVL",
     "direction": "long",
-    "entry_time": "2026-11-24T10:33:58.013981-05:00",
-    "qty": 2.2297,
-    "entry_price": 8.98,
-    "current_price": 8.86,
-    "stop": 8.85,
-    "initial_stop": 8.85,
-    "unrealized_pnl": -0.27,
-    "unrealized_r": -0.92,
-    "entry_reason": "Mizuho a inițiat acoperirea pentru Intuitive Machines cu rating Outperform și preț țintă de 15$, susținut de noile contracte NASA și proiecte nucleare spațiale. Intrare LONG cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~20.00$, R:R 1:4.0)"
+    "entry_time": "2026-11-24T10:44:42.909537-05:00",
+    "qty": 0.1536,
+    "entry_price": 130.482,
+    "current_price": 130.29,
+    "stop": 128.53,
+    "initial_stop": 128.53,
+    "unrealized_pnl": -0.03,
+    "unrealized_r": -0.1,
+    "entry_reason": "Marvell a scăzut puternic cu peste 10% pe fondul unor știri sectoriale și M&A, însă analiștii indică o oportunitate de cumpărare pe dip ('Buying Shares Now'), creând premisele unui raliu de revenire intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~20.00$, R:R 1:3.5)"
   }
 ]
