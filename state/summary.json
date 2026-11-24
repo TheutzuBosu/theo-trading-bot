@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.11,
   "current_drawdown_pct": -0.21,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T11:04:26.446219-05:00",
+  "updated_at": "2026-11-24T11:05:30.555965-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-24T14:29:48.896508+00:00",
@@ -80,103 +80,128 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "LUNR",
-        "direction": "long",
-        "price": 8.85,
-        "prev_close": 9.75,
-        "gap_pct": -9.23,
-        "change_pct": -9.23,
-        "stake_dollars": 20.0,
+        "symbol": "AMD",
+        "direction": "short",
+        "price": 398.17,
+        "prev_close": 453.0,
+        "gap_pct": -12.1,
+        "change_pct": -12.1,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 8.72,
-        "target_price": 9.31,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 404.14,
+        "target_price": 377.27,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "Bulls Expect AMD Revenues to Grow 80% Next Year on Hyper-Accelerated Data Center Growth, $725 in Sight",
+          "AMD Stock Shows the Market Has Stopped Making Sense After Huang’s Dramatic Return",
+          "Stock Market Today: Tech Futures Sell Off After Big Market Surge; AMD, Anthropic, Nvidia Dive (Live Coverage)"
+        ],
+        "reason_ro": "AMD scade puternic cu 12.10% pe fondul unei lichidări masive în sectorul tech, presiunii concurențiale din partea lui Jensen Huang și ieșirilor de capital raportate de investitori bărbați precum Philippe Laffont. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-24T16:05:32.531337+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "LUNR",
+        "direction": "long",
+        "price": 8.81,
+        "prev_close": 9.75,
+        "gap_pct": -9.64,
+        "change_pct": -9.64,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.02,
+        "target_pct": 0.07,
+        "stop_price": 8.63,
+        "target_price": 9.43,
+        "expected_profit_dollars": 1.4,
+        "max_loss_dollars": 0.4,
         "headlines": [
           "Mizuho Initiates Coverage On Intuitive Machines with Outperform Rating, Announces Price Target of $15",
           "NASA Is Handing Out Moon Contracts Again. Intuitive Machines, Firefly, and Redwire All Got Paid. Only 1 Has the Balance Sheet to Keep Winning.",
           "Intuitive Machines Advances Space Nuclear Systems to Enable Lunar Night Survival"
         ],
-        "reason_ro": "Intuitive Machines (LUNR) a primit acoperire favorable de la Mizuho cu un preț țintă de 15$ și noi contracte NASA, oferind o oportunitate de revenire după scăderea matinală. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Intuitive Machines (LUNR) a primit o inițiere de acoperire de la Mizuho cu rating Outperform și preț țintă de 15 $, fiind susținută și de noi contracte NASA și progrese în sistemele nucleare spațiale. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.40 $ / țintă profit +1.40 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T15:56:25.004207+00:00"
+        "evaluated_at": "2026-11-24T16:06:05.373811+00:00"
       }
     ],
     "top_movers": [
       {
+        "symbol": "AMD",
+        "price": 398.17,
+        "prev_close": 453.0,
+        "gap_pct": -12.1,
+        "source": "watchlist_snapshot"
+      },
+      {
         "symbol": "MU",
-        "price": 628.96,
+        "price": 625.4,
         "prev_close": 707.84,
-        "gap_pct": -11.14,
+        "gap_pct": -11.65,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 22.81,
+        "price": 22.69,
         "prev_close": 25.66,
-        "gap_pct": -11.11,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AMD",
-        "price": 403.73,
-        "prev_close": 453.0,
-        "gap_pct": -10.88,
+        "gap_pct": -11.57,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 130.37,
+        "price": 128.98,
         "prev_close": 144.6,
-        "gap_pct": -9.84,
+        "gap_pct": -10.8,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 160.14,
+        "price": 158.61,
         "prev_close": 176.54,
-        "gap_pct": -9.29,
+        "gap_pct": -10.16,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 8.85,
+        "price": 8.81,
         "prev_close": 9.75,
-        "gap_pct": -9.23,
+        "gap_pct": -9.64,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "JAGX",
-        "price": 8.63,
+        "price": 10.87,
         "prev_close": 6.12,
-        "gap_pct": 41.07,
+        "gap_pct": 77.69,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "ADIU",
+        "price": 6.31,
+        "prev_close": 10.07,
+        "gap_pct": -37.34,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EMBC",
-        "price": 7.96,
+        "price": 7.85,
         "prev_close": 5.74,
-        "gap_pct": 38.56,
+        "gap_pct": 36.64,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APUS",
         "price": 2.04,
         "prev_close": 1.5,
-        "gap_pct": 36.32,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ADIU",
-        "price": 6.58,
-        "prev_close": 10.07,
-        "gap_pct": -34.66,
+        "gap_pct": 36.06,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T15:55:17.567797+00:00",
+    "last_scan_at": "2026-11-24T16:05:30.555971+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
