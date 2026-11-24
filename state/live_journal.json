@@ -3,47 +3,6 @@
     "MOVER|LUNR|2026-11-24|long",
     "MOVER|MRVL|2026-11-24|long"
   ],
-  "open_trades": {
-    "MRVL": {
-      "trade_id": "theo-MRVL-L-202611241044",
-      "signal_symbol": "MRVL",
-      "signal_direction": "long",
-      "exec_symbol": "MRVL",
-      "exec_direction": "long",
-      "leverage": 1,
-      "signal_time": "2026-11-24T10:44:42.909537-05:00",
-      "entry_time": "2026-11-24T10:44:42.909537-05:00",
-      "entry_price": 130.482,
-      "qty": 0.1536,
-      "qty0": 0.1536,
-      "signal_entry_price": 130.48,
-      "signal_stop": 128.53,
-      "signal_initial_stop": 128.53,
-      "signal_target": 137.34,
-      "signal_stop_after_target": 131.46,
-      "exec_stop": 128.53,
-      "exec_initial_stop": 128.53,
-      "exec_target": 137.04,
-      "stop_order_id": "2528b08d-4b20-44d3-b08a-bc8e8618a4ca",
-      "stop_seq": 0,
-      "initial_risk_dollars": 0.2998,
-      "equity_at_entry": 514.46,
-      "partial_done": false,
-      "last_price": 129.01,
-      "entry_reason": "Marvell a scăzut puternic cu peste 10% pe fondul unor știri sectoriale și M&A, însă analiștii indică o oportunitate de cumpărare pe dip ('Buying Shares Now'), creând premisele unui raliu de revenire intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MRVL LONG -> BUY MRVL (miză ~20.00$, R:R 1:3.5)",
-      "features": {
-        "minute_of_day": 74.0,
-        "dist_from_band_bps": 508.5,
-        "dist_from_vwap_bps": -305.1,
-        "rv_30m": 0.0075,
-        "sigma_14d": 0.015,
-        "overnight_gap_bps": -1017.0,
-        "ret_since_open_bps": -1017.0,
-        "vol_ratio_14d": 1.5,
-        "day_of_week": 1.0,
-        "cost_to_risk": 0.0154
-      }
-    }
-  },
+  "open_trades": {},
   "last_eod_date": "2026-11-23"
 }
