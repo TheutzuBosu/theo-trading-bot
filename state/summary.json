@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.1,
   "current_drawdown_pct": -0.19,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T13:59:42.856676-05:00",
+  "updated_at": "2026-11-24T14:00:48.825487-05:00",
   "positions": [
     {
       "symbol": "ASTS",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-24T12:39:06.175340-05:00",
       "qty": 0.8478,
       "entry_price": 23.578,
-      "current_price": 23.7,
+      "current_price": 23.7001,
       "stop": 23.23,
       "initial_stop": 23.23,
       "unrealized_pnl": 0.1,
