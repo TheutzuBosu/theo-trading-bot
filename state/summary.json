@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.11,
   "current_drawdown_pct": -0.21,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T12:17:17.560885-05:00",
+  "updated_at": "2026-11-24T12:18:22.700966-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-24T14:29:48.896508+00:00",
@@ -80,43 +80,18 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "short",
-        "price": 628.7,
-        "prev_close": 707.84,
-        "gap_pct": -11.18,
-        "change_pct": -11.18,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 638.13,
-        "target_price": 595.69,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Stocks give back gains as Anthropic dips below IPO price",
-          "Texas Instruments (TXN) Stock Is Down 8.1% Today: Chip Sector Sell-Off",
-          "Can Nvidia Stock Hold $165 After Huang's Return?"
-        ],
-        "reason_ro": "Micron (MU) înregistrează o scădere severă de 11.18% pe fondul unui sell-off generalizat în sectorul de cipuri și al unui downgrade din partea BNP Paribas legat de riscurile planurilor de capacitate pentru hiperscaleri din 2028. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-24T17:07:48.177320+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 407.66,
+        "price": 408.31,
         "prev_close": 453.0,
-        "gap_pct": -10.01,
-        "change_pct": -10.01,
+        "gap_pct": -9.87,
+        "change_pct": -9.87,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 413.77,
-        "target_price": 386.26,
+        "stop_price": 414.43,
+        "target_price": 386.87,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -124,84 +99,159 @@
           "Stock Market Today: Dow Up But Nasdaq Skids As Nvidia Dives; Bears Bite Chips (Live Coverage)",
           "Texas Instruments (TXN) Stock Is Down 8.1% Today: Chip Sector Sell-Off"
         ],
-        "reason_ro": "AMD scade cu 10.01% pe fondul unui sell-off masiv în sectorul de cipuri și al depunerii unei cereri de revânzare de acțiuni, alimentat de prăbușirea generală a acțiunilor Nvidia și TXN. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "AMD scade puternic cu -9.87% pe fondul unui sell-off masiv în sectorul de cipuri (Nvidia, TXN) și al unui filing de revânzare, oferind un impuls intraday clar pentru o poziție de sell/short. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T17:07:54.868332+00:00"
+        "evaluated_at": "2026-11-24T17:18:30.398481+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "ASTS",
+        "direction": "short",
+        "price": 23.35,
+        "prev_close": 25.66,
+        "gap_pct": -9.0,
+        "change_pct": -9.0,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 23.7,
+        "target_price": 22.12,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "AST SpaceMobile: Playing Dangerous Games",
+          "AST SpaceMobile Stock Gets FCC Approval for Direct to Device Service",
+          "Starlink’s 40x Upgrade Targets 150Mbps to Phones. AST SpaceMobile Has a Big Problem"
+        ],
+        "reason_ro": "ASTS înregistrează o scădere puternică de -9.00% pe fondul știrilor negative despre concurența acerbă cu Starlink (upgrade de 40x) și articolelor critice de piață, oferind un impuls intraday clar pentru o poziție de sell/short. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-24T17:18:41.697758+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "ARM",
+        "direction": "short",
+        "price": 161.66,
+        "prev_close": 176.54,
+        "gap_pct": -8.43,
+        "change_pct": -8.43,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 164.08,
+        "target_price": 153.17,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Stocks give back gains as Anthropic dips below IPO price",
+          "Anthropic Sinks 7% Below IPO Price as AI Stocks Slide: Cramer Blames “Endless Hammering of Small Bids”",
+          "Nvidia, AMD, Broadcom lead chip stocks lower as AI trade comes under pressure"
+        ],
+        "reason_ro": "ARM scade puternic cu peste 8% pe fondul corecției generale din sectorul de semiconductori și AI, fiind tras în jos de sentimentul negativ declanșat de scăderea acțiunilor Anthropic și presiunea pe giganții dinchip. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-24T17:18:47.702631+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "INTC",
+        "direction": "short",
+        "price": 54.67,
+        "prev_close": 59.64,
+        "gap_pct": -8.33,
+        "change_pct": -8.33,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 55.49,
+        "target_price": 51.8,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Follow the Smart Money: This Billionaire Tech Investor Has Been Loading Up On Shares of These 3 AI Chip Stocks",
+          "BC-Most Active Stocks",
+          "Do You Really Understand Intel Stock's Risk?"
+        ],
+        "reason_ro": "INTC scade puternic cu -8.33% pe fondul corecției generale din sectorul de chip-uri și al pierderii impulsului generat anterior de Nvidia, oferind o oportunitate clară de continuare a trendului descendent intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-24T17:18:54.524782+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 628.7,
+        "price": 630.53,
         "prev_close": 707.84,
-        "gap_pct": -11.18,
+        "gap_pct": -10.92,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 407.66,
+        "price": 408.31,
         "prev_close": 453.0,
-        "gap_pct": -10.01,
+        "gap_pct": -9.87,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 130.74,
+        "price": 130.78,
         "prev_close": 144.6,
-        "gap_pct": -9.59,
+        "gap_pct": -9.55,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 23.29,
+        "price": 23.35,
         "prev_close": 25.66,
-        "gap_pct": -9.24,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SMCI",
-        "price": 22.43,
-        "prev_close": 24.55,
-        "gap_pct": -8.62,
+        "gap_pct": -9.0,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 161.58,
+        "price": 161.66,
         "prev_close": 176.54,
-        "gap_pct": -8.47,
+        "gap_pct": -8.43,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "INTC",
+        "price": 54.67,
+        "prev_close": 59.64,
+        "gap_pct": -8.33,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "JAGX",
-        "price": 10.44,
+        "price": 9.94,
         "prev_close": 6.12,
-        "gap_pct": 70.66,
+        "gap_pct": 62.48,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APUS",
-        "price": 2.19,
+        "price": 2.18,
         "prev_close": 1.5,
-        "gap_pct": 46.0,
+        "gap_pct": 45.2,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EMBC",
-        "price": 8.14,
+        "price": 8.12,
         "prev_close": 5.74,
-        "gap_pct": 41.61,
+        "gap_pct": 41.35,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "ADIU",
-        "price": 6.4,
-        "prev_close": 10.07,
-        "gap_pct": -36.44,
+        "symbol": "CLYD",
+        "price": 4.58,
+        "prev_close": 7.21,
+        "gap_pct": -36.48,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T17:07:46.128524+00:00",
+    "last_scan_at": "2026-11-24T17:18:22.700969+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
