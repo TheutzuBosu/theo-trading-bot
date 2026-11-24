@@ -1,5 +1,48 @@
 {
-  "processed_signals": [],
-  "open_trades": {},
+  "processed_signals": [
+    "MOVER|LUNR|2026-11-24|long"
+  ],
+  "open_trades": {
+    "LUNR": {
+      "trade_id": "theo-LUNR-L-202611241033",
+      "signal_symbol": "LUNR",
+      "signal_direction": "long",
+      "exec_symbol": "LUNR",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-24T10:33:58.013981-05:00",
+      "entry_time": "2026-11-24T10:33:58.013981-05:00",
+      "entry_price": 8.98,
+      "qty": 2.2297,
+      "qty0": 2.2297,
+      "signal_entry_price": 8.98,
+      "signal_stop": 8.85,
+      "signal_initial_stop": 8.85,
+      "signal_target": 9.5,
+      "signal_stop_after_target": 9.05,
+      "exec_stop": 8.85,
+      "exec_initial_stop": 8.85,
+      "exec_target": 9.49,
+      "stop_order_id": "6efc8696-3fc7-4df8-9d16-035d5f580123",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.2899,
+      "equity_at_entry": 514.75,
+      "partial_done": false,
+      "last_price": 8.98,
+      "entry_reason": "Mizuho a inițiat acoperirea pentru Intuitive Machines cu rating Outperform și preț țintă de 15$, susținut de noile contracte NASA și proiecte nucleare spațiale. Intrare LONG cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~20.00$, R:R 1:4.0)",
+      "features": {
+        "minute_of_day": 63.0,
+        "dist_from_band_bps": 410.5,
+        "dist_from_vwap_bps": -246.3,
+        "rv_30m": 0.0073,
+        "sigma_14d": 0.0145,
+        "overnight_gap_bps": -821.0,
+        "ret_since_open_bps": -821.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 1.0,
+        "cost_to_risk": 0.2308
+      }
+    }
+  },
   "last_eod_date": "2026-11-23"
 }
