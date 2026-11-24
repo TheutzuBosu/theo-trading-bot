@@ -9,7 +9,7 @@
   "today_pnl_pct": 0.0,
   "current_drawdown_pct": -0.09,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T10:00:51.658733-05:00",
+  "updated_at": "2026-11-24T10:01:56.016312-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-24T14:29:48.896508+00:00",
@@ -155,44 +155,44 @@
     "top_movers": [
       {
         "symbol": "LCID",
-        "price": 2.82,
+        "price": 2.81,
         "prev_close": 2.6,
-        "gap_pct": 8.67,
+        "gap_pct": 8.29,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 417.29,
+        "price": 416.48,
         "prev_close": 453.0,
-        "gap_pct": -7.88,
+        "gap_pct": -8.06,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 657.0,
+        "price": 651.99,
         "prev_close": 707.84,
-        "gap_pct": -7.18,
+        "gap_pct": -7.89,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ASTS",
-        "price": 23.86,
+        "price": 23.74,
         "prev_close": 25.66,
-        "gap_pct": -7.01,
+        "gap_pct": -7.48,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ARM",
-        "price": 165.69,
-        "prev_close": 176.54,
-        "gap_pct": -6.15,
+        "symbol": "MRNA",
+        "price": 226.4,
+        "prev_close": 211.93,
+        "gap_pct": 6.83,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "MARA",
-        "price": 5.24,
-        "prev_close": 5.58,
-        "gap_pct": -6.01,
+        "symbol": "RIOT",
+        "price": 16.05,
+        "prev_close": 17.14,
+        "gap_pct": -6.39,
         "source": "watchlist_snapshot"
       },
       {
@@ -203,28 +203,28 @@
         "source": "alpaca_movers"
       },
       {
-        "symbol": "EMBC",
-        "price": 7.59,
-        "prev_close": 5.75,
-        "gap_pct": 32.2,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "HPEL",
-        "price": 7.89,
-        "prev_close": 11.18,
-        "gap_pct": -29.43,
+        "symbol": "ALTG",
+        "price": 6.15,
+        "prev_close": 4.61,
+        "gap_pct": 33.41,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ADIU",
-        "price": 7.18,
+        "price": 7.01,
         "prev_close": 10.07,
-        "gap_pct": -28.7,
+        "gap_pct": -30.39,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "EMBC",
+        "price": 7.42,
+        "prev_close": 5.74,
+        "gap_pct": 29.07,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T14:50:51.869060+00:00",
+    "last_scan_at": "2026-11-24T15:01:56.016317+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
