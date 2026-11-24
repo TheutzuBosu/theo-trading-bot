@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.08,
   "current_drawdown_pct": -0.17,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T13:52:38.540100-05:00",
+  "updated_at": "2026-11-24T13:53:15.484555-05:00",
   "positions": [
     {
       "symbol": "ASTS",
@@ -94,68 +94,43 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "short",
-        "price": 636.0,
-        "prev_close": 707.84,
-        "gap_pct": -10.15,
-        "change_pct": -10.15,
-        "stake_dollars": 25.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 645.54,
-        "target_price": 602.61,
-        "expected_profit_dollars": 1.31,
-        "max_loss_dollars": 0.38,
-        "headlines": [
-          "Nvidia, Chip Stocks Fall As Data Center Spending Fears Return",
-          "Nvidia, AMD and Micron Lead AI Selloff as Chip Stocks Slide",
-          "The Same $10,000 in AMD and Micron Could Produce Very Different Results by 2030"
-        ],
-        "reason_ro": "Micron (MU) scade masiv cu -10.15% pe fondul unui sell-off generalizat în sectorul de semiconductori și temeri legate de cheltuielile pentru centrele de date, alimentat de rapoarte negative și știri sectoriale. Intrare SHORT cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-24T18:42:54.463522+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 413.92,
+        "price": 413.22,
         "prev_close": 453.0,
-        "gap_pct": -8.63,
-        "change_pct": -8.63,
-        "stake_dollars": 25.0,
+        "gap_pct": -8.78,
+        "change_pct": -8.78,
+        "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 420.13,
-        "target_price": 392.19,
-        "expected_profit_dollars": 1.31,
-        "max_loss_dollars": 0.38,
+        "stop_price": 419.42,
+        "target_price": 391.53,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
         "headlines": [
           "Dell Reports Today. Here’s How Much of Your Tech ETF Is Riding on Its AI Server Business",
           "Nvidia, Chip Stocks Fall As Data Center Spending Fears Return",
           "Nvidia, AMD and Micron Lead AI Selloff as Chip Stocks Slide"
         ],
-        "reason_ro": "AMD scade puternic cu 8.63% pe fondul unui raport de scurt-vânzare Hunterbrook și al unui sell-off generalizat pe sectorul de semiconductori condus de temerile legate de cheltuirile pentru centrele de date. Intrare SHORT cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
+        "reason_ro": "AMD scade puternic cu 8.78% pe fondul unui raport de scurt-selling Hunterbrook și a unui selloff generalizat pe acțiunile de semiconductori și AI. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T18:43:00.512677+00:00"
+        "evaluated_at": "2026-11-24T18:53:22.776158+00:00"
       },
       {
         "action": "enter",
         "symbol": "MRVL",
         "direction": "short",
-        "price": 133.47,
+        "price": 132.77,
         "prev_close": 144.6,
-        "gap_pct": -7.7,
-        "change_pct": -7.7,
+        "gap_pct": -8.18,
+        "change_pct": -8.18,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 135.47,
-        "target_price": 126.46,
+        "stop_price": 134.76,
+        "target_price": 125.8,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -163,98 +138,98 @@
           "Marvell Sinks 8%, Intel Down 6% as Chip Stocks Give Back Nvidia’s Record Huang Rally",
           "Nvidia, Anthropic, Micron, HPE, Analog Devices, Insmed, and More Stocks That Explain Today’s Market"
         ],
-        "reason_ro": "Marvell înregistrează o scădere puternică de peste 7.7% pe fondul corecției generale din sectorul de chipuri și a presiunilor legate de știrile recente privind fuziunile și achizițiile, oferind un impuls intraday descendent clar. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "MRVL scade puternic cu peste 8% pe fondul corecției generale din sectorul de semiconductori și al rezistenței întâmpinate de noile mișcări M&A de pe Wall Street. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T18:43:06.054357+00:00"
+        "evaluated_at": "2026-11-24T18:53:29.840232+00:00"
       },
       {
         "action": "enter",
-        "symbol": "SMCI",
+        "symbol": "ARM",
         "direction": "short",
-        "price": 22.66,
-        "prev_close": 24.55,
-        "gap_pct": -7.7,
-        "change_pct": -7.7,
+        "price": 162.68,
+        "prev_close": 176.54,
+        "gap_pct": -7.85,
+        "change_pct": -7.85,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 23.0,
-        "target_price": 21.47,
+        "stop_price": 165.12,
+        "target_price": 154.14,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "The U.S. Just Blacklisted the Firm Suspected of Funneling Nvidia Chips to China",
-          "Own Dell Stock? Its Cash Gap Rarely Hurt It",
-          "Dell Just Dropped 26% in a Month. Steve Eisman Warns It Will “Slow Along With Nvidia.” Is He Right?"
+          "Arm Holdings Stocks Fall 4.89% as Chip Rally Cools After Haas Commits Through 2033",
+          "Stocks give back gains as Anthropic dips below IPO price",
+          "Anthropic Sinks 7% Below IPO Price as AI Stocks Slide: Cramer Blames “Endless Hammering of Small Bids”"
         ],
-        "reason_ro": "SMCI înregistrează o scădere puternică de -7.70% pe fondul știrilor negative legate de sancțiunile SUA împotriva unei firme suspectate că a livrat cipuri Nvidia în China. Contextul macro tensionat și evaluarea considerată ridicată susțin continuarea impulsului bearish intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ARM scade puternic cu 7.85% pe fondul corecției generale din sectorul de semiconductori și al răcirii raliului AI, susținut de presiunea de vânzare și sentimentul negativ amplificat de scăderea acțiunilor Anthropic. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-24T18:43:11.968353+00:00"
+        "evaluated_at": "2026-11-24T18:53:35.212222+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 636.0,
+        "price": 630.99,
         "prev_close": 707.84,
-        "gap_pct": -10.15,
+        "gap_pct": -10.86,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 413.92,
+        "price": 413.22,
         "prev_close": 453.0,
-        "gap_pct": -8.63,
+        "gap_pct": -8.78,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 133.47,
+        "price": 132.77,
         "prev_close": 144.6,
-        "gap_pct": -7.7,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "SMCI",
-        "price": 22.66,
-        "prev_close": 24.55,
-        "gap_pct": -7.7,
+        "gap_pct": -8.18,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 163.18,
+        "price": 162.68,
         "prev_close": 176.54,
-        "gap_pct": -7.57,
+        "gap_pct": -7.85,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ASTS",
-        "price": 23.8,
-        "prev_close": 25.66,
-        "gap_pct": -7.25,
+        "symbol": "SMCI",
+        "price": 22.65,
+        "prev_close": 24.55,
+        "gap_pct": -7.72,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "INTC",
+        "price": 55.12,
+        "prev_close": 59.64,
+        "gap_pct": -7.58,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "JAGX",
-        "price": 10.86,
+        "price": 11.27,
         "prev_close": 6.12,
-        "gap_pct": 77.5,
+        "gap_pct": 84.22,
         "source": "alpaca_movers"
       },
       {
         "symbol": "APUS",
-        "price": 2.2,
+        "price": 2.17,
         "prev_close": 1.5,
-        "gap_pct": 46.57,
+        "gap_pct": 44.67,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EMBC",
-        "price": 8.0,
-        "prev_close": 5.75,
-        "gap_pct": 39.17,
+        "price": 8.06,
+        "prev_close": 5.74,
+        "gap_pct": 40.3,
         "source": "alpaca_movers"
       },
       {
@@ -265,7 +240,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T18:42:42.466375+00:00",
+    "last_scan_at": "2026-11-24T18:53:15.484561+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
