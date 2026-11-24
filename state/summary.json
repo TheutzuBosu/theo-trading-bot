@@ -12,28 +12,28 @@
   "updated_at": "2026-11-23T15:30:19.196035-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-24T13:44:00.559288+00:00",
+    "updated_at": "2026-11-24T14:29:48.896508+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 713.21,
+        "price": 714.65,
         "prev_close": 722.56,
-        "gap_pct": -1.29
+        "gap_pct": -1.09
       },
       "QQQ": {
-        "price": 635.76,
+        "price": 638.74,
         "prev_close": 651.18,
-        "gap_pct": -2.37
+        "gap_pct": -1.91
       }
     },
-    "explanation_ro": "Piața deschide în scădere puternică (gap bearish pe SPY și QQQ), influențată de incertitudinile geopolitice din Orientul Mijlociu legate de petrol și Israel, precum și de scepticismul privind sustenabilitatea ultimului raliu condus de Nvidia. În plus, datele slabe din piața imobiliară comercială și cererea ridicată pentru bănci de alimente mențin sentimentul de prudență la nivel macro. Având în vedere aceste presiuni de vânzare și gap-ul negativ semnificativ, direcția favorizată la deschidere pentru botul intraday Theo este Short.",
+    "explanation_ro": "Piața deschide în scădere puternică (gap bearish pe SPY și QQQ), influențată de incertitudinile macroeconomice, tensiunile din Orientul Mijlociu și datele slabe din piața imobiliară comercială. Raportările companiilor importante de astăzi (ADI, BBY) și discuțiile despre posibilitatea ca raliul condus de Nvidia să nu fie un fund al pieței mențin presiunea la vânzare. Din acest motiv, direcția favorizată la deschidere pentru sesiunea intraday este Short.",
     "headlines": [
+      "Jensen Huang is back as Nvidia CEO, but investigations and risks remain",
+      "Jim Cramer's top 10 things to watch in the stock market Tuesday",
       "Iraqi PM orders ministry to manage oilfields in areas under Kurdish control, Kurds reject move - Reuters",
       "Property Play: Commercial real estate activity falls 14% in October, as interest rates rise",
-      "Does the Nvidia-led rip mark the market bottom? Maybe not",
-      "Some U.S. food banks see demand top pandemic levels",
-      "US envoy 'not certain' military aid to Israel will end this year as Trump promised - Reuters",
-      "China, India set for record Russian oil imports in 2026, but demand seen peaking - Reuters"
+      "COMMENTARY: Middle East crude oil exports trend lower amid fake Iran stalemate - Reuters",
+      "Does the Nvidia-led rip mark the market bottom? Maybe not"
     ],
     "earnings_today": [
       {
@@ -81,23 +81,9 @@
     "top_movers": [
       {
         "symbol": "NVDA",
-        "price": 156.57,
+        "price": 156.97,
         "prev_close": 125.65,
-        "gap_pct": 24.61,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "INTC",
-        "price": 59.64,
-        "prev_close": 51.37,
-        "gap_pct": 16.1,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 176.54,
-        "prev_close": 152.24,
-        "gap_pct": 15.97,
+        "gap_pct": 24.93,
         "source": "watchlist_snapshot"
       },
       {
@@ -109,16 +95,30 @@
       },
       {
         "symbol": "MU",
-        "price": 662.5,
+        "price": 665.51,
         "prev_close": 594.84,
-        "gap_pct": 11.37,
+        "gap_pct": 11.88,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 136.1,
+        "price": 136.61,
         "prev_close": 122.28,
-        "gap_pct": 11.3,
+        "gap_pct": 11.71,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "TSM",
+        "price": 356.09,
+        "prev_close": 319.17,
+        "gap_pct": 11.57,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ARM",
+        "price": 169.09,
+        "prev_close": 152.24,
+        "gap_pct": 11.07,
         "source": "watchlist_snapshot"
       },
       {
@@ -150,7 +150,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-24T13:43:25.427190+00:00",
+    "last_scan_at": "2026-11-24T14:29:07.075314+00:00",
     "telegram_sent_date": "2026-11-24"
   },
   "spy_start_price": 767.64,
