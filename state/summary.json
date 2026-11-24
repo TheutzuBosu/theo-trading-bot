@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.0,
   "current_drawdown_pct": -0.1,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-24T10:36:52.902353-05:00",
+  "updated_at": "2026-11-24T10:38:00.473327-05:00",
   "positions": [
     {
       "symbol": "LUNR",
@@ -17,7 +17,7 @@
       "entry_time": "2026-11-24T10:33:58.013981-05:00",
       "qty": 2.2297,
       "entry_price": 8.98,
-      "current_price": 8.97,
+      "current_price": 8.9692,
       "stop": 8.85,
       "initial_stop": 8.85,
       "unrealized_pnl": -0.02,
