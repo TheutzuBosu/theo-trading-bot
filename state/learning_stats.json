@@ -1,8 +1,8 @@
 {
   "meta_samples": 17,
   "meta_active": false,
-  "updated_at": "2026-11-24T15:30:20.213998-05:00",
-  "total_trades_analyzed": 97,
+  "updated_at": "2026-11-25T15:30:48.968679-05:00",
+  "total_trades_analyzed": 104,
   "hourly_multipliers": {
     "09:00": 0.5,
     "10:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Am ieșit din tranzacție lalimită de timp fără nicio mișcare de preț, obținând un profit microscopic, așa că reținem să evităm intrarea când impulsul inițial se stinge.",
-    "Prețul a scăzut direct la stop-loss, pierzând 0,29$, așa că reținem să fim mai prudenți la știrile de analiști pe termen scurt.",
-    "Spargere falsă pe MRVL (long): prețul a revenit rapid în banda de zgomot și stop-ul a limitat pierderea la -0.30 $ (-1.00R).",
-    "Poziția long pe ASTS s-a închis la time cu -0.01 $ (-0.02R) fără continuare suficientă a trendului.",
-    "Botul a încurcat direcția (a cumpărat în loc să dea short pe o scădere) și a închis prematur pe timp, obținând un profit microscopic de 5 cenți; reținem că trebuie corectată neapărat logica de execuție a ordinelor inverse."
+    "Botul a cumpărat acțiuni pe baza unui impuls bun susținut de știri pozitive, dar prețul a scăzut direct și a lovit stop-loss-ul, cauzând o mică pierdere de 0,15$ (reținem că entuziasmul știrilor nu garantează continuarea creșterii).",
+    "Botul a cumpărat pe un impuls tehnic bun, dar prețul a scăzut direct în stop-loss, pierzând 0,26 $; reținem că lipsa unei știri negative nu garantează evitarea scăderilor bruște.",
+    "Am închis tranzacția pe ASTS la limită de timp cu un profit mic de 0,81 $, reținând că semnalele bazate pe achizițiile directorilor pot genera impulsuri bune, dar ieșirile programate în timp pot limita potențialul maxim.",
+    "Tranzacția a eșuat pentru că prețul a stagnat până la expirarea timpului, așa că am ieșit în pierdere mică pentru a ne proteja capitalul.",
+    "Botul a cumpărat UPST pe baza volumului mare, dar prețul a stagnat până la expirarea timpului, așa că am pierdut 0,21$ și reținem că volumul fără continuare în preț nu garantează profitul."
   ]
 }
