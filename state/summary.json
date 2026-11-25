@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.06,
   "current_drawdown_pct": -0.27,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-25T10:30:25.502744-05:00",
+  "updated_at": "2026-11-25T10:30:55.750885-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-25T14:30:15.182732+00:00",
@@ -64,153 +64,153 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "short",
-        "price": 566.21,
-        "prev_close": 630.09,
-        "gap_pct": -10.14,
-        "change_pct": -10.14,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 574.7,
-        "target_price": 536.48,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Wall Street Is Chasing AI Chip Stocks. But This Overlooked Semiconductor Company Could Be a Hidden Winner.",
-          "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
-          "SK Hynix Sheds 20% in 30 Days: Two Wall Street Pros Agree That 260% Gains Are Coming"
-        ],
-        "reason_ro": "MU înregistrează o scădere puternică de -10.14% pe fondul fugii investitorilor din sectorul de cipuri AI, confirmată de știrile recente și sentimentul puternic negativ din piață. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-25T15:20:55.046252+00:00"
-      },
-      {
-        "action": "enter",
         "symbol": "AMD",
         "direction": "short",
-        "price": 375.32,
+        "price": 376.0,
         "prev_close": 413.11,
-        "gap_pct": -9.15,
-        "change_pct": -9.15,
-        "stake_dollars": 25.0,
-        "rr_ratio": 4.5,
+        "gap_pct": -8.98,
+        "change_pct": -8.98,
+        "stake_dollars": 20.0,
+        "rr_ratio": 4.0,
         "stop_pct": 0.015,
-        "target_pct": 0.0675,
-        "stop_price": 380.95,
-        "target_price": 349.99,
-        "expected_profit_dollars": 1.69,
-        "max_loss_dollars": 0.38,
+        "target_pct": 0.06,
+        "stop_price": 381.64,
+        "target_price": 353.44,
+        "expected_profit_dollars": 1.2,
+        "max_loss_dollars": 0.3,
         "headlines": [
           "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
           "Nvidia Author Stephen Witt Says Huang’s Return Is “Not Great for AMD.” Here’s What AMD Loses",
           "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook"
         ],
-        "reason_ro": "AMD scade brusc cu 9.15% pe fondul retragerii investitorilor din sectorul AI și al știrilor negative venite din competiția directă cu Nvidia, oferind un impuls puternic pentru o poziție de scurtă durată. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
+        "reason_ro": "AMD scade puternic cu aproape 9% pe fondul retragerii investitorilor din sectorul AI și al știrilor negative privind competiția acerbă cu Nvidia. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T15:21:07.541801+00:00"
+        "evaluated_at": "2026-11-25T15:31:14.267504+00:00"
       },
       {
         "action": "enter",
-        "symbol": "INTC",
+        "symbol": "ARM",
         "direction": "short",
-        "price": 50.1,
-        "prev_close": 54.9,
-        "gap_pct": -8.74,
-        "change_pct": -8.74,
+        "price": 147.39,
+        "prev_close": 161.47,
+        "gap_pct": -8.72,
+        "change_pct": -8.72,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 50.85,
-        "target_price": 47.47,
+        "stop_price": 149.6,
+        "target_price": 139.65,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "Nvidia Author Stephen Witt Says Huang’s Return Is “Not Great for AMD.” Here’s What AMD Loses",
-          "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook",
-          "What Explains The Drop In Intel Stock?"
+          "ARM Holdings near-term technical outlook: bearish setup with key levels to watch",
+          "Why Is Arm Stock Falling on Wednesday?",
+          "What Is Going on With AMD Stock on Wednesday?"
         ],
-        "reason_ro": "INTC scade cu 8.74% pe fondul știrilor negative, inclusiv un proces din partea acționarilor legat de încetinirea pieței PC și pretențiile legate de AI, justificând o poziție de short. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ARM înregistrează o scădere puternică de -8.72%, susținută de un setup tehnic bearish și știri negative din sector, oferind o oportunitate clară de continuare a trendului descendent intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T15:21:25.615344+00:00"
+        "evaluated_at": "2026-11-25T15:31:33.530566+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "ORCL",
+        "direction": "short",
+        "price": 100.26,
+        "prev_close": 109.54,
+        "gap_pct": -8.47,
+        "change_pct": -8.47,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 101.76,
+        "target_price": 95.0,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Oracle Can Reach $240 in 2027: Wall Street Needs 4 Things to Happen",
+          "Oracle Spends $28.5 Billion A Quarter Building. Who Covers The Wait?",
+          "Is WEC Energy Stock a Good Fit For Your Portfolio Risk?"
+        ],
+        "reason_ro": "ORCL scade abrupt cu peste 8% pe fondul îngrijorărilor legate de costurile masive de capital (28.5 miliarde dolari pe trimestru) și presiunilor sectoriale pe datoria din AI. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-25T15:31:46.299171+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 566.21,
+        "price": 563.88,
         "prev_close": 630.09,
-        "gap_pct": -10.14,
+        "gap_pct": -10.51,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 8.07,
+        "price": 8.06,
         "prev_close": 8.92,
-        "gap_pct": -9.47,
+        "gap_pct": -9.64,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 375.32,
+        "price": 376.0,
         "prev_close": 413.11,
-        "gap_pct": -9.15,
+        "gap_pct": -8.98,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ARM",
-        "price": 146.85,
+        "price": 147.39,
         "prev_close": 161.47,
-        "gap_pct": -9.05,
+        "gap_pct": -8.72,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ORCL",
-        "price": 99.78,
+        "price": 100.26,
         "prev_close": 109.54,
-        "gap_pct": -8.91,
+        "gap_pct": -8.47,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INTC",
-        "price": 50.1,
+        "price": 50.28,
         "prev_close": 54.9,
-        "gap_pct": -8.74,
+        "gap_pct": -8.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NRSN",
-        "price": 2.38,
+        "price": 2.25,
         "prev_close": 1.1,
-        "gap_pct": 116.82,
+        "gap_pct": 104.55,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ALGS",
-        "price": 2.78,
+        "price": 2.81,
         "prev_close": 1.49,
-        "gap_pct": 86.58,
+        "gap_pct": 88.26,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EUDA",
-        "price": 5.0,
+        "price": 4.7,
         "prev_close": 9.0,
-        "gap_pct": -44.44,
+        "gap_pct": -47.78,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "UVIX",
-        "price": 68.28,
-        "prev_close": 52.33,
-        "gap_pct": 30.48,
+        "symbol": "APUS",
+        "price": 3.09,
+        "prev_close": 2.31,
+        "gap_pct": 33.77,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-25T15:20:52.760586+00:00",
+    "last_scan_at": "2026-11-25T15:30:55.750890+00:00",
     "telegram_sent_date": "2026-11-25"
   },
   "spy_start_price": 767.64,
