@@ -2,29 +2,15 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 513.87,
-  "total_pnl": 13.87,
+  "equity": 513.84,
+  "total_pnl": 13.84,
   "total_pnl_pct": 2.77,
-  "today_pnl": -0.3,
+  "today_pnl": -0.33,
   "today_pnl_pct": -0.06,
-  "current_drawdown_pct": -0.26,
+  "current_drawdown_pct": -0.27,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-25T10:09:12.577150-05:00",
-  "positions": [
-    {
-      "symbol": "MU",
-      "direction": "long",
-      "entry_time": "2026-11-25T10:00:04.600770-05:00",
-      "qty": 0.0259,
-      "entry_price": 579.3,
-      "current_price": 571.71,
-      "stop": 570.61,
-      "initial_stop": 570.61,
-      "unrealized_pnl": -0.2,
-      "unrealized_r": -0.87,
-      "entry_reason": "Acțiunea Micron (MU) a scăzut brusc cu peste 8% pe fondul fugii investitorilor din sectorul AI, dar analiza tehnică indică oportunitatea de cumpărare în zona $585 recomandată înainte de raportul din 17 decembrie. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: MU LONG -> BUY MU (miză ~15.00$, R:R 1:3.5)"
-    }
-  ],
+  "updated_at": "2026-11-25T10:10:18.791688-05:00",
+  "positions": [],
   "premarket": {
     "updated_at": "2026-11-25T14:30:15.182732+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
@@ -78,43 +64,39 @@
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "long",
-        "price": 578.77,
-        "prev_close": 630.09,
-        "gap_pct": -8.14,
-        "change_pct": -8.14,
+        "symbol": "LUNR",
+        "direction": "short",
+        "price": 8.12,
+        "prev_close": 8.92,
+        "gap_pct": -8.97,
+        "change_pct": -8.97,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 570.09,
-        "target_price": 609.16,
+        "stop_price": 8.24,
+        "target_price": 7.69,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
-        "headlines": [
-          "Wall Street Is Chasing AI Chip Stocks. But This Overlooked Semiconductor Company Could Be a Hidden Winner.",
-          "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
-          "SK Hynix Sheds 20% in 30 Days: Two Wall Street Pros Agree That 260% Gains Are Coming"
-        ],
-        "reason_ro": "Acțiunea Micron (MU) a scăzut brusc cu peste 8% pe fondul fugii investitorilor din sectorul AI, dar analiza tehnică indică oportunitatea de cumpărare în zona $585 recomandată înainte de raportul din 17 decembrie. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "headlines": [],
+        "reason_ro": "LUNR înregistrează o scădere intraday agresivă de -8.97% pe volum ridicat, oferind o oportunitate clară de continuare a trendului bearish în sesiunea activă. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T15:00:06.733976+00:00"
+        "evaluated_at": "2026-11-25T15:10:26.276629+00:00"
       },
       {
         "action": "enter",
         "symbol": "ARM",
         "direction": "short",
-        "price": 150.24,
+        "price": 147.75,
         "prev_close": 161.47,
-        "gap_pct": -6.96,
-        "change_pct": -6.96,
+        "gap_pct": -8.49,
+        "change_pct": -8.49,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 152.49,
-        "target_price": 142.35,
+        "stop_price": 149.97,
+        "target_price": 139.99,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -122,84 +104,159 @@
           "Why Is Arm Stock Falling on Wednesday?",
           "What Is Going on With AMD Stock on Wednesday?"
         ],
-        "reason_ro": "ARM înregistrează o scădere puternică de -6.96% pe fondul unor perspective tehnice bearish și a sentimentului negativ din sector. Având în vedere că sesiunea este deschisă și impulsul descendent este validat, vom lua o poziție de short cu o gestionare strictă a riscului. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ARM înregistrează o scădere severă de -8.49% susținută de perspective tehnice bearish și știri negative din sector, oferind un momentum intraday clar pentru o poziție de short după trecerea primei faze volatile de la deschidere. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T15:00:13.479531+00:00"
+        "evaluated_at": "2026-11-25T15:10:32.353160+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "AMD",
+        "direction": "short",
+        "price": 379.11,
+        "prev_close": 413.11,
+        "gap_pct": -8.23,
+        "change_pct": -8.23,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 384.8,
+        "target_price": 359.21,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
+          "Nvidia Author Stephen Witt Says Huang’s Return Is “Not Great for AMD.” Here’s What AMD Loses",
+          "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook"
+        ],
+        "reason_ro": "AMD scade puternic cu 8.23% pe fondul retragerii masive a investitorilor din sectorul AI, corelată cu știri nefavorabile privind competiția cu Nvidia. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-25T15:10:38.189003+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "ORCL",
+        "direction": "short",
+        "price": 100.69,
+        "prev_close": 109.54,
+        "gap_pct": -8.08,
+        "change_pct": -8.08,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 102.2,
+        "target_price": 95.4,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Oracle Can Reach $240 in 2027: Wall Street Needs 4 Things to Happen",
+          "Oracle Spends $28.5 Billion A Quarter Building. Who Covers The Wait?",
+          "Is WEC Energy Stock a Good Fit For Your Portfolio Risk?"
+        ],
+        "reason_ro": "ORCL înregistrează o scădere puternică de -8.08% pe fondul îngrijorărilor legate de cheltuielile masive de capital și datoriile din sectorul AI. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-25T15:10:43.547878+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "INTC",
+        "direction": "short",
+        "price": 50.52,
+        "prev_close": 54.9,
+        "gap_pct": -7.97,
+        "change_pct": -7.97,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 51.28,
+        "target_price": 47.87,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
+        "headlines": [
+          "Nvidia Author Stephen Witt Says Huang’s Return Is “Not Great for AMD.” Here’s What AMD Loses",
+          "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook",
+          "What Explains The Drop In Intel Stock?"
+        ],
+        "reason_ro": "INTC scade cu aproape 8% pe fondul sentimentului negativ din sectorul de cipuri și al unui proces din partea acționarilor privind încetinirea pieței PC-urilor și pretențiile legate de AI. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-25T15:10:49.548692+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 578.77,
+        "price": 570.75,
         "prev_close": 630.09,
-        "gap_pct": -8.14,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ARM",
-        "price": 150.24,
-        "prev_close": 161.47,
-        "gap_pct": -6.96,
+        "gap_pct": -9.42,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "LUNR",
-        "price": 8.3,
+        "price": 8.12,
         "prev_close": 8.92,
-        "gap_pct": -6.95,
+        "gap_pct": -8.97,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NVDA",
-        "price": 145.31,
-        "prev_close": 155.48,
-        "gap_pct": -6.54,
+        "symbol": "ARM",
+        "price": 147.75,
+        "prev_close": 161.47,
+        "gap_pct": -8.49,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "AMD",
-        "price": 386.53,
+        "price": 379.11,
         "prev_close": 413.11,
-        "gap_pct": -6.43,
+        "gap_pct": -8.23,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ORCL",
-        "price": 102.59,
+        "price": 100.69,
         "prev_close": 109.54,
-        "gap_pct": -6.34,
+        "gap_pct": -8.08,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "INTC",
+        "price": 50.52,
+        "prev_close": 54.9,
+        "gap_pct": -7.97,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NRSN",
-        "price": 2.09,
+        "price": 2.35,
         "prev_close": 1.1,
-        "gap_pct": 90.0,
+        "gap_pct": 113.64,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EUDA",
-        "price": 5.57,
+        "price": 5.38,
         "prev_close": 9.0,
-        "gap_pct": -38.11,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "ALGS",
-        "price": 2.02,
-        "prev_close": 1.49,
-        "gap_pct": 35.49,
+        "gap_pct": -40.17,
         "source": "alpaca_movers"
       },
       {
         "symbol": "RBNE",
-        "price": 2.36,
+        "price": 2.25,
         "prev_close": 3.18,
-        "gap_pct": -25.84,
+        "gap_pct": -29.35,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "RML",
+        "price": 2.18,
+        "prev_close": 2.98,
+        "gap_pct": -26.85,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-25T15:00:04.600774+00:00",
+    "last_scan_at": "2026-11-25T15:10:18.791691+00:00",
     "telegram_sent_date": "2026-11-25"
   },
   "spy_start_price": 767.64,
