@@ -1,13 +1,5 @@
 {
-  "processed_signals": [
-    "MOVER|ASTS|2026-11-25|long",
-    "MOVER|IONQ|2026-11-25|long",
-    "MOVER|LUNR|2026-11-25|long",
-    "MOVER|MU|2026-11-25|long",
-    "MOVER|NVDA|2026-11-25|short",
-    "MOVER|UPST|2026-11-25|long",
-    "MOVER|U|2026-11-25|long"
-  ],
+  "processed_signals": [],
   "open_trades": {},
-  "last_eod_date": "2026-11-24"
+  "last_eod_date": "2026-11-25"
 }
