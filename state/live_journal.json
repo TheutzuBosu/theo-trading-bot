@@ -72,7 +72,7 @@
       "initial_risk_dollars": 0.1492,
       "equity_at_entry": 514.71,
       "partial_done": false,
-      "last_price": 49.64,
+      "last_price": 49.585,
       "entry_reason": "Unity Software a raportat primul profit GAAP din istorie susținut de platforma de publicitate AI și estimări ridicate, generând un impuls intraday puternic de +3.93% și depășirea mediei mobile. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: U LONG -> BUY U (miză ~10.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 258.0,
@@ -112,7 +112,7 @@
       "initial_risk_dollars": 0.2272,
       "equity_at_entry": 514.67,
       "partial_done": false,
-      "last_price": 17.535,
+      "last_price": 17.51,
       "entry_reason": "Mișcare tehnică puternică pe volum ridicat în timpul sesiunii active NYSE, cu o creștere de +3.94% și lipsa unor știri negative majore care să indice o capcană. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: UPST LONG -> BUY UPST (miză ~15.00$, R:R 1:3.0)",
       "features": {
         "minute_of_day": 290.0,
