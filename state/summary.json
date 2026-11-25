@@ -9,7 +9,7 @@
   "today_pnl_pct": -0.06,
   "current_drawdown_pct": -0.27,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-25T11:42:33.693813-05:00",
+  "updated_at": "2026-11-25T11:43:37.388266-05:00",
   "positions": [],
   "premarket": {
     "updated_at": "2026-11-25T14:30:15.182732+00:00",
@@ -66,176 +66,151 @@
         "action": "enter",
         "symbol": "MU",
         "direction": "short",
-        "price": 553.58,
+        "price": 550.4,
         "prev_close": 630.09,
-        "gap_pct": -12.14,
-        "change_pct": -12.14,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.0,
+        "gap_pct": -12.65,
+        "change_pct": -12.65,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
         "stop_pct": 0.015,
-        "target_pct": 0.06,
-        "stop_price": 561.88,
-        "target_price": 520.37,
-        "expected_profit_dollars": 1.2,
-        "max_loss_dollars": 0.3,
+        "target_pct": 0.0675,
+        "stop_price": 558.66,
+        "target_price": 513.25,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
         "headlines": [
           "$10,000 In Micron At June's Record Is Now $5,190",
           "Chip Stocks Just Pulled a Whipsaw Last Seen at the April 2025 Tariff Pause",
           "Dow Craters Over 1000 Points, Nasdaq Slips 4% As AI Trade Unravels – Investors Digest PCE Inflation, Fresh Tariff Proposal"
         ],
-        "reason_ro": "Micron (MU) scade masiv cu peste 12% pe fondul prăbușirii sectorului de cipuri, a corecției pe Nasdaq de 4% și a noilor propuneri de tarife. Trendul intraday descendent este puternic și clar, justificând o poziție de short. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $).",
+        "reason_ro": "MU scade cu peste 12% pe fondul prăbușirii generale a sectorului de semiconductori și a pieței (Nasdaq -4%), alimentată de îngrijorările legate de inflația PCE și noile propuneri de tarife. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T16:33:05.850065+00:00"
+        "evaluated_at": "2026-11-25T16:43:38.719579+00:00"
       },
       {
         "action": "enter",
         "symbol": "MRVL",
         "direction": "short",
-        "price": 119.05,
+        "price": 118.31,
         "prev_close": 131.61,
-        "gap_pct": -9.54,
-        "change_pct": -9.54,
+        "gap_pct": -10.11,
+        "change_pct": -10.11,
         "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
+        "rr_ratio": 4.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 120.84,
-        "target_price": 112.8,
-        "expected_profit_dollars": 1.05,
+        "target_pct": 0.0675,
+        "stop_price": 120.08,
+        "target_price": 110.32,
+        "expected_profit_dollars": 1.35,
         "max_loss_dollars": 0.3,
         "headlines": [
           "Credo CEO: Its Portfolio Now Spans “Millimeters to Kilometers.” December 1 Tests the Optics Push",
           "What Pulled Astera Labs Stock Down?",
           "What Pulled Marvell Stock Down On Tuesday?"
         ],
-        "reason_ro": "MRVL înregistrează o scădere puternică de -9.54% pe fondul unor corecteze sectoriale pe acțiunile de semiconductori și AI (afectată și de sentimentul negativ din știrile recente privind competitorii), oferind o oportunitate de continuare a trendului bearish intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "MRVL înregistrează o scădere accentuată de peste 10% în cadrul sesiunii principale, fiind afectată de sentimentul negativ generalizat din sectorul de semiconductori și infrastructură AI. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.5 (risc -0.30 $ / țintă profit +1.35 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T16:33:11.576166+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "AMD",
-        "direction": "short",
-        "price": 373.87,
-        "prev_close": 413.11,
-        "gap_pct": -9.5,
-        "change_pct": -9.5,
-        "stake_dollars": 25.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 379.48,
-        "target_price": 354.24,
-        "expected_profit_dollars": 1.31,
-        "max_loss_dollars": 0.38,
-        "headlines": [
-          "Nasdaq 100 on pace to enter bear market as AI trade melts down: AlphaCheck",
-          "Dow Craters Over 1000 Points, Nasdaq Slips 4% As AI Trade Unravels – Investors Digest PCE Inflation, Fresh Tariff Proposal",
-          "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff"
-        ],
-        "reason_ro": "AMD scade cu 9.50% pe fondul prăbușirii masive a sectorului de semiconductori și a acțiunilor de inteligență artificială, corelat cu vânzări masive în piața generală și scăderea NVIDIA. Intrare SHORT cu miză 25 $, Risc:Reward 1:3.5 (risc -0.38 $ / țintă profit +1.31 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-25T16:33:17.445727+00:00"
+        "evaluated_at": "2026-11-25T16:43:44.471075+00:00"
       },
       {
         "action": "enter",
         "symbol": "INTC",
         "direction": "short",
-        "price": 49.76,
+        "price": 49.42,
         "prev_close": 54.9,
-        "gap_pct": -9.36,
-        "change_pct": -9.36,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
+        "gap_pct": -9.97,
+        "change_pct": -9.97,
+        "stake_dollars": 25.0,
+        "rr_ratio": 4.5,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 50.51,
-        "target_price": 47.15,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "target_pct": 0.0675,
+        "stop_price": 50.16,
+        "target_price": 46.08,
+        "expected_profit_dollars": 1.69,
+        "max_loss_dollars": 0.38,
         "headlines": [
           "Why Nvidia (NVDA) Stock Is Falling Today: Tech and Chip Selloff",
           "NVIDIA Tumbles 9% as Jensen Huang Rally Fades and Michael Burry Eyes a Fresh Short Near $200; AMD Plunges 10%, Intel Falls 8%",
           "The $2 trillion chip rally is getting wiped out — here's what history says comes next"
         ],
-        "reason_ro": "INTC scade cu peste 9% pe fondul unui sell-off masiv în sectorul semiconductorilor, influențat de prăbușirea Nvidia și de sentimentul negativ general din piață. Având în vedere că sesiunea este deschisă și impulsul descendent este puternic, oportunitatea de short este clară. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "INTC scade cu aproape 10% pe fondul unui selloff generalizat în sectorul de semiconductori, antrenat de prăbușirea Nvidia și presiunile macroeconomice. Intrare SHORT cu miză 25 $, Risc:Reward 1:4.5 (risc -0.38 $ / țintă profit +1.69 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T16:33:23.251506+00:00"
+        "evaluated_at": "2026-11-25T16:43:50.044775+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "MU",
-        "price": 553.58,
+        "price": 550.4,
         "prev_close": 630.09,
-        "gap_pct": -12.14,
+        "gap_pct": -12.65,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MRVL",
-        "price": 119.05,
+        "price": 118.31,
         "prev_close": 131.61,
-        "gap_pct": -9.54,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "AMD",
-        "price": 373.87,
-        "prev_close": 413.11,
-        "gap_pct": -9.5,
+        "gap_pct": -10.11,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "INTC",
-        "price": 49.76,
+        "price": 49.42,
         "prev_close": 54.9,
-        "gap_pct": -9.36,
+        "gap_pct": -9.97,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "AMD",
+        "price": 373.03,
+        "prev_close": 413.11,
+        "gap_pct": -9.7,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NVDA",
-        "price": 141.92,
+        "price": 141.7,
         "prev_close": 155.48,
-        "gap_pct": -8.72,
+        "gap_pct": -8.86,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "ORCL",
-        "price": 100.07,
+        "price": 100.0,
         "prev_close": 109.54,
-        "gap_pct": -8.65,
+        "gap_pct": -8.71,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NRSN",
-        "price": 2.01,
+        "price": 2.06,
         "prev_close": 1.1,
-        "gap_pct": 82.73,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "EUDA",
-        "price": 4.39,
-        "prev_close": 9.0,
-        "gap_pct": -51.17,
+        "gap_pct": 87.27,
         "source": "alpaca_movers"
       },
       {
         "symbol": "ALGS",
-        "price": 2.2,
+        "price": 2.36,
         "prev_close": 1.49,
-        "gap_pct": 47.7,
+        "gap_pct": 58.47,
         "source": "alpaca_movers"
       },
       {
-        "symbol": "LUNR",
-        "price": 8.17,
-        "prev_close": 8.92,
-        "gap_pct": -8.41,
-        "source": "watchlist_snapshot"
+        "symbol": "EUDA",
+        "price": 4.24,
+        "prev_close": 9.0,
+        "gap_pct": -52.89,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "RBNE",
+        "price": 2.19,
+        "prev_close": 3.18,
+        "gap_pct": -31.16,
+        "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-25T16:33:03.488513+00:00",
+    "last_scan_at": "2026-11-25T16:43:37.388270+00:00",
     "telegram_sent_date": "2026-11-25"
   },
   "spy_start_price": 767.64,
