@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 514.68,
-  "total_pnl": 14.68,
+  "equity": 514.7,
+  "total_pnl": 14.7,
   "total_pnl_pct": 2.94,
-  "today_pnl": 0.51,
+  "today_pnl": 0.53,
   "today_pnl_pct": 0.1,
   "current_drawdown_pct": -0.1,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-25T13:47:07.864039-05:00",
+  "updated_at": "2026-11-25T13:48:14.653197-05:00",
   "positions": [
     {
       "symbol": "ASTS",
@@ -17,12 +17,25 @@
       "entry_time": "2026-11-25T12:46:19.835822-05:00",
       "qty": 0.7933,
       "entry_price": 25.198,
-      "current_price": 26.26,
+      "current_price": 26.29,
       "stop": 24.82,
       "initial_stop": 24.82,
-      "unrealized_pnl": 0.84,
-      "unrealized_r": 2.81,
+      "unrealized_pnl": 0.87,
+      "unrealized_r": 2.89,
       "entry_reason": "Un director executiv a achiziționat acțiuni ASTS în valoare de 1 milion de dolari, oferind un semnal puternic de încredere pe fondul revenirii de la minime și generând un impuls bullish intraday de +6.68%. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)"
+    },
+    {
+      "symbol": "U",
+      "direction": "long",
+      "entry_time": "2026-11-25T13:48:14.653197-05:00",
+      "qty": 0.1989,
+      "entry_price": 50.31,
+      "current_price": 50.31,
+      "stop": 49.56,
+      "initial_stop": 49.56,
+      "unrealized_pnl": 0.0,
+      "unrealized_r": 0.0,
+      "entry_reason": "Unity Software a raportat primul profit GAAP din istorie susținut de platforma de publicitate AI și estimări ridicate, generând un impuls intraday puternic de +3.93% și depășirea mediei mobile. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: U LONG -> BUY U (miză ~10.00$, R:R 1:3.5)"
     }
   ],
   "premarket": {
@@ -80,90 +93,90 @@
         "action": "enter",
         "symbol": "ASTS",
         "direction": "long",
-        "price": 25.84,
+        "price": 26.24,
         "prev_close": 23.59,
-        "gap_pct": 9.56,
-        "change_pct": 9.56,
+        "gap_pct": 11.26,
+        "change_pct": 11.26,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 25.45,
-        "target_price": 27.2,
+        "stop_price": 25.85,
+        "target_price": 27.62,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
           "AST SpaceMobile Is 82% Below Its May High. A Director Just Bought $1 Million More",
           "ASTS Stock Eyes Worst Month Since 2024: Bulls Cheer Director’s Dip Buy And Bet On A Launch-Fueled Comeback"
         ],
-        "reason_ro": "Directorul AST SpaceMobile a achiziționat acțiuni în valoare de 1 milion de dolari pe fondul scăderii recente, oferind un catalizator puternic de încredere pentru un impuls bullish intraday. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Directorul a achiziționat acțiuni în valoare de 1 milion de dolari, oferind un catalizator bullish puternic după scăderea recentă, susținut de un impuls intraday pozitiv de +11.26%. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T18:37:35.742107+00:00"
+        "evaluated_at": "2026-11-25T18:48:22.152214+00:00"
       },
       {
         "action": "enter",
         "symbol": "MU",
         "direction": "short",
-        "price": 583.64,
+        "price": 587.81,
         "prev_close": 630.09,
-        "gap_pct": -7.37,
-        "change_pct": -7.37,
-        "stake_dollars": 20.0,
-        "rr_ratio": 4.0,
+        "gap_pct": -6.71,
+        "change_pct": -6.71,
+        "stake_dollars": 15.0,
+        "rr_ratio": 3.5,
         "stop_pct": 0.015,
-        "target_pct": 0.06,
-        "stop_price": 592.39,
-        "target_price": 548.62,
-        "expected_profit_dollars": 1.2,
-        "max_loss_dollars": 0.3,
+        "target_pct": 0.0525,
+        "stop_price": 596.63,
+        "target_price": 556.95,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "106% Upside for Micron? Citi Thinks So, and Here’s How",
           "Western Digital Stocks Sink 7.42%, Trading 139% Above GF Value",
           "Why Micron Technology Stock is Plunging Today"
         ],
-        "reason_ro": "MU înregistrează o scădere drastică de -7.37%, fiind trasă în jos de un sentiment sectorial puternic negativ (scăderi majore la Western Digital și SK hynix) și presiune de vânzare, oferind o oportunitate clară de short. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $).",
+        "reason_ro": "MU înregistrează o scădere puternică de -6.71%, corelată cu prăbușirea sectorului de semiconductori (Western Digital, SK hynix), oferind o oportunitate clară de continuare a trendului descendent intraday. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T18:37:45.847164+00:00"
+        "evaluated_at": "2026-11-25T18:48:27.862353+00:00"
       },
       {
         "action": "enter",
         "symbol": "NVDA",
         "direction": "short",
-        "price": 147.74,
+        "price": 148.12,
         "prev_close": 155.48,
-        "gap_pct": -4.98,
-        "change_pct": -4.98,
+        "gap_pct": -4.73,
+        "change_pct": -4.73,
         "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
+        "rr_ratio": 4.0,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 149.96,
-        "target_price": 139.98,
-        "expected_profit_dollars": 1.05,
+        "target_pct": 0.06,
+        "stop_price": 150.34,
+        "target_price": 139.23,
+        "expected_profit_dollars": 1.2,
         "max_loss_dollars": 0.3,
         "headlines": [
           "Polestar Automotive Holding UK PLC Q3 2026 Earnings Call Summary",
           "Nasdaq 100 Flirts With Bear Market Territory, Drops 20% From October Highs",
           "SPYD and SCHD Hold No Nvidia. Here’s What You Give Up and What You Get"
         ],
-        "reason_ro": "NVDA înregistrează o scădere puternică de aproape 5%, alimentată de sentimentul negativ generalizat de pe piață (Nasdaq aproape de teritoriu de bear market) și presiuni de vânzare susținute pe acțiune. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "NVDA înregistrează o scădere puternică de -4.73% pe fondul sentimentului general de piață negativ (Nasdaq în teritoriu de piață de urs) și știrilor nefavorabile privind presiunea continuă de vânzare, oferind o oportunitate de short intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:4.0 (risc -0.30 $ / țintă profit +1.20 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T18:37:51.352890+00:00"
+        "evaluated_at": "2026-11-25T18:48:39.426934+00:00"
       },
       {
         "action": "enter",
         "symbol": "ORCL",
         "direction": "short",
-        "price": 104.38,
+        "price": 104.85,
         "prev_close": 109.54,
-        "gap_pct": -4.71,
-        "change_pct": -4.71,
+        "gap_pct": -4.28,
+        "change_pct": -4.28,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 105.95,
-        "target_price": 98.9,
+        "stop_price": 106.42,
+        "target_price": 99.35,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
@@ -171,84 +184,108 @@
           "Oracle Is Down 60% From Its June High. J.P. Morgan Still Sees $200",
           "Backblaze (BLZE) Stock Is Down 10.5% Today in AI-Driven Tech Selloff"
         ],
-        "reason_ro": "ORCL scade puternic cu peste 4.7% pe fondul unui selloff generalizat în cloud-ul AI și a avertismentelor severe din partea piețelor de credit, oferind un catalizator solid pentru o poziție de scurtă durată. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "ORCL scade puternic cu peste 4% pe fondul unui selloff generalizat în cloud-ul AI și a avertismentelor din partea piețelor de credit, oferind o oportunitate clară de short intraday. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T18:38:04.285254+00:00"
+        "evaluated_at": "2026-11-25T18:48:44.945706+00:00"
+      },
+      {
+        "action": "enter",
+        "symbol": "U",
+        "direction": "long",
+        "price": 50.27,
+        "prev_close": 48.37,
+        "gap_pct": 3.93,
+        "change_pct": 3.93,
+        "stake_dollars": 20.0,
+        "rr_ratio": 3.5,
+        "stop_pct": 0.015,
+        "target_pct": 0.0525,
+        "stop_price": 49.52,
+        "target_price": 52.91,
+        "expected_profit_dollars": 1.05,
+        "max_loss_dollars": 0.3,
+        "headlines": [
+          "Unity Stock Gets First GAAP Profit As AI Ad Platform Lifts Estimates",
+          "Is Unity Software (U) Expensive Following Its Move Above The 20 Day Average?"
+        ],
+        "reason_ro": "Unity Software a raportat primul profit GAAP din istorie susținut de platforma de publicitate AI și estimări ridicate, generând un impuls intraday puternic de +3.93% și depășirea mediei mobile. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "fractionable": true,
+        "evaluated_at": "2026-11-25T18:48:50.233122+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 25.84,
+        "price": 26.24,
         "prev_close": 23.59,
-        "gap_pct": 9.56,
+        "gap_pct": 11.26,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "MU",
-        "price": 583.64,
+        "price": 587.81,
         "prev_close": 630.09,
-        "gap_pct": -7.37,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "NVDA",
-        "price": 147.74,
-        "prev_close": 155.48,
-        "gap_pct": -4.98,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ORCL",
-        "price": 104.38,
-        "prev_close": 109.54,
-        "gap_pct": -4.71,
+        "gap_pct": -6.71,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 23.34,
+        "price": 23.56,
         "prev_close": 22.41,
-        "gap_pct": 4.2,
+        "gap_pct": 5.16,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "AMD",
-        "price": 397.37,
-        "prev_close": 413.11,
-        "gap_pct": -3.81,
+        "symbol": "NVDA",
+        "price": 148.12,
+        "prev_close": 155.48,
+        "gap_pct": -4.73,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "EUDA",
-        "price": 4.4,
-        "prev_close": 9.0,
-        "gap_pct": -51.11,
-        "source": "alpaca_movers"
+        "symbol": "ORCL",
+        "price": 104.85,
+        "prev_close": 109.54,
+        "gap_pct": -4.28,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "U",
+        "price": 50.27,
+        "prev_close": 48.37,
+        "gap_pct": 3.93,
+        "source": "watchlist_snapshot"
       },
       {
         "symbol": "ALGS",
-        "price": 2.22,
+        "price": 2.32,
         "prev_close": 1.49,
-        "gap_pct": 48.99,
+        "gap_pct": 55.7,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "EUDA",
+        "price": 4.3,
+        "prev_close": 9.0,
+        "gap_pct": -52.22,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "KYNB",
+        "price": 2.0,
+        "prev_close": 1.39,
+        "gap_pct": 43.88,
         "source": "alpaca_movers"
       },
       {
         "symbol": "CODX",
-        "price": 2.33,
+        "price": 2.61,
         "prev_close": 3.94,
-        "gap_pct": -40.99,
-        "source": "alpaca_movers"
-      },
-      {
-        "symbol": "RBNE",
-        "price": 2.21,
-        "prev_close": 3.18,
-        "gap_pct": -30.47,
+        "gap_pct": -33.76,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-25T18:37:34.305096+00:00",
+    "last_scan_at": "2026-11-25T18:48:14.653202+00:00",
     "telegram_sent_date": "2026-11-25"
   },
   "spy_start_price": 767.64,
