@@ -1,6 +1,7 @@
 {
   "processed_signals": [
     "MOVER|ASTS|2026-11-25|long",
+    "MOVER|IONQ|2026-11-25|long",
     "MOVER|LUNR|2026-11-25|long",
     "MOVER|MU|2026-11-25|long",
     "MOVER|NVDA|2026-11-25|short",
@@ -33,7 +34,7 @@
       "initial_risk_dollars": 0.2999,
       "equity_at_entry": 513.84,
       "partial_done": true,
-      "last_price": 26.09,
+      "last_price": 26.185,
       "entry_reason": "Un director executiv a achiziționat acțiuni ASTS în valoare de 1 milion de dolari, oferind un semnal puternic de încredere pe fondul revenirii de la minime și generând un impuls bullish intraday de +6.68%. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 196.0,
@@ -73,7 +74,7 @@
       "initial_risk_dollars": 0.2272,
       "equity_at_entry": 514.67,
       "partial_done": false,
-      "last_price": 17.41,
+      "last_price": 17.42,
       "entry_reason": "Mișcare tehnică puternică pe volum ridicat în timpul sesiunii active NYSE, cu o creștere de +3.94% și lipsa unor știri negative majore care să indice o capcană. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: UPST LONG -> BUY UPST (miză ~15.00$, R:R 1:3.0)",
       "features": {
         "minute_of_day": 290.0,
@@ -113,7 +114,7 @@
       "initial_risk_dollars": 0.2418,
       "equity_at_entry": 514.83,
       "partial_done": false,
-      "last_price": 9.21,
+      "last_price": 9.215,
       "entry_reason": "LUNR înregistrează o mișcare tehnică puternică cu volum ridicat în sesiunea activă, depășind rezistența fără a fi vorba de o știre negativă de tip diluție. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~15.00$, R:R 1:3.0)",
       "features": {
         "minute_of_day": 300.0,
@@ -126,6 +127,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 2.0,
         "cost_to_risk": 0.2069
+      }
+    },
+    "IONQ": {
+      "trade_id": "theo-IONQ-L-202611251450",
+      "signal_symbol": "IONQ",
+      "signal_direction": "long",
+      "exec_symbol": "IONQ",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-25T14:50:55.162738-05:00",
+      "entry_time": "2026-11-25T14:50:55.162738-05:00",
+      "entry_price": 23.488,
+      "qty": 0.639,
+      "qty0": 0.639,
+      "signal_entry_price": 23.49,
+      "signal_stop": 23.13,
+      "signal_initial_stop": 23.13,
+      "signal_target": 24.71,
+      "signal_stop_after_target": 23.66,
+      "exec_stop": 23.13,
+      "exec_initial_stop": 23.13,
+      "exec_target": 24.7,
+      "stop_order_id": "54cb31a2-55d1-419a-b682-db3a20536139",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.2288,
+      "equity_at_entry": 514.48,
+      "partial_done": false,
+      "last_price": 23.488,
+      "entry_reason": "IONQ înregistrează o mișcare tehnică puternică cu volum ridicat în sesiunea activă, fără știri negative majore, justificând o intrare long prudentă. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~15.00$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 320.0,
+        "dist_from_band_bps": 226.5,
+        "dist_from_vwap_bps": 135.9,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.0149,
+        "overnight_gap_bps": 453.0,
+        "ret_since_open_bps": 453.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 2.0,
+        "cost_to_risk": 0.0845
       }
     }
   },
