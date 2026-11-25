@@ -33,7 +33,7 @@
       "initial_risk_dollars": 0.2999,
       "equity_at_entry": 513.84,
       "partial_done": true,
-      "last_price": 26.34,
+      "last_price": 26.31,
       "entry_reason": "Un director executiv a achiziționat acțiuni ASTS în valoare de 1 milion de dolari, oferind un semnal puternic de încredere pe fondul revenirii de la minime și generând un impuls bullish intraday de +6.68%. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: ASTS LONG -> BUY ASTS (miză ~20.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 196.0,
@@ -73,7 +73,7 @@
       "initial_risk_dollars": 0.2272,
       "equity_at_entry": 514.67,
       "partial_done": false,
-      "last_price": 17.48,
+      "last_price": 17.495,
       "entry_reason": "Mișcare tehnică puternică pe volum ridicat în timpul sesiunii active NYSE, cu o creștere de +3.94% și lipsa unor știri negative majore care să indice o capcană. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: UPST LONG -> BUY UPST (miză ~15.00$, R:R 1:3.0)",
       "features": {
         "minute_of_day": 290.0,
@@ -113,7 +113,7 @@
       "initial_risk_dollars": 0.2418,
       "equity_at_entry": 514.83,
       "partial_done": false,
-      "last_price": 9.285,
+      "last_price": 9.27,
       "entry_reason": "LUNR înregistrează o mișcare tehnică puternică cu volum ridicat în sesiunea activă, depășind rezistența fără a fi vorba de o știre negativă de tip diluție. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~15.00$, R:R 1:3.0)",
       "features": {
         "minute_of_day": 300.0,
