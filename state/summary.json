@@ -12,205 +12,155 @@
   "updated_at": "2026-11-25T15:51:26.521769-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-25T14:30:15.182732+00:00",
+    "updated_at": "2026-11-27T13:43:51.282085+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 704.12,
-        "prev_close": 718.91,
-        "gap_pct": -2.06
+        "price": 728.04,
+        "prev_close": 716.74,
+        "gap_pct": 1.58
       },
       "QQQ": {
-        "price": 616.98,
-        "prev_close": 638.12,
-        "gap_pct": -3.31
+        "price": 633.92,
+        "prev_close": 633.92,
+        "gap_pct": 0.0
       }
     },
-    "explanation_ro": "În Pre-Market, piața SUA este în scădere ușoară: SPY la 704.12 $ (-2.06%) și QQQ la 616.98 $ (-3.31%). Raportări financiare urmărite azi: BZ (înainte de deschidere), DE (înainte de deschidere), DIDIY (azi). La 16:30 (09:30 ET) botul măsoară banda de zgomot și VWAP-ul, iar de la 17:12 (10:12 ET) execută automat pe direcția spargerii (Long sau Short cu levier 2x).",
+    "explanation_ro": "SPY deschide cu un gap pozitiv puternic de +1,58% la 728,04$, în timp ce QQQ rămâne stabil la 633,92$, în lipsa unor raportări financiare majore. Piețele sunt influențate de știrile economice legate de comportamentul consumatorilor orientat spre valoare și de tensiunile geopolitice internaționale din Orientul Mijlociu. Având în vedere impulsul puternic pe SPY, direcția favorizată la deschidere este Long pe SPY și Neutral pe QQQ.",
     "headlines": [
-      "Iraq's top court says Baghdad can deploy troops to secure borders in Kurdistan region - Reuters",
-      "Israeli strike kills Hamas official, his wife and children - Reuters",
-      "Nasdaq futures slide over 2% as AI losses deepen; inflation data in focus - Reuters",
-      "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
-      "Catalan separatist Puigdemont to return to Spain after election - Reuters",
-      "Secondhand shopping is going mainstream this holiday season as consumers seek value"
+      "It’s not just you: Durable goods are getting less reliable, from sputtering cars to glitching smart TVs",
+      "Inflation has shoppers hunting for value. That bodes well for Black Friday",
+      "EXCLUSIVE: US pushed Venezuela, Iraq to consider leaving OPEC, sources say - Reuters",
+      "Erdogan completes Turkey's ratification of Mecca defence pact - Reuters",
+      "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+      "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters"
     ],
-    "earnings_today": [
-      {
-        "symbol": "BZ",
-        "hour": "bmo",
-        "eps_estimate": 1.9289,
-        "eps_actual": 2.3364599999999998,
-        "revenue_estimate": 2529260099,
-        "revenue_actual": 2405752728
-      },
-      {
-        "symbol": "DE",
-        "hour": "bmo",
-        "eps_estimate": 4.1688,
-        "eps_actual": 3.89,
-        "revenue_estimate": 10677445374,
-        "revenue_actual": 10514000000
-      },
-      {
-        "symbol": "DIDIY",
-        "hour": "",
-        "eps_estimate": -0.3502,
-        "eps_actual": null,
-        "revenue_estimate": 66724743120,
-        "revenue_actual": null
-      }
-    ],
+    "earnings_today": [],
     "opportunities": [
       {
         "action": "enter",
-        "symbol": "ASTS",
+        "symbol": "MRVL",
         "direction": "long",
-        "price": 25.91,
-        "prev_close": 23.59,
-        "gap_pct": 9.86,
-        "change_pct": 9.86,
+        "price": 139.31,
+        "prev_close": 131.61,
+        "gap_pct": 5.85,
+        "change_pct": 5.85,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 25.52,
-        "target_price": 27.27,
+        "stop_price": 137.22,
+        "target_price": 146.62,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
-          "AST SpaceMobile Is 82% Below Its May High. A Director Just Bought $1 Million More",
-          "ASTS Stock Eyes Worst Month Since 2024: Bulls Cheer Director’s Dip Buy And Bet On A Launch-Fueled Comeback"
+          "Marvell Faces Critical Earnings Test Amid AI Chip Market Turmoil",
+          "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today’s Market",
+          "Top 3 Undervalued Tech Stocks To Watch In November 2026"
         ],
-        "reason_ro": "Directorul a cumpărat acțiuni în valoare de 1 milion de dolari, oferind un catalizator bullish puternic pe fondul interesului pieței și a revenirii intraday de aproape 10%. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "Marvell înregistrează o creștere solidă de aproape 6% susținută de interesul ridicat pentru cipurile AI și articole favorabile despre infrastructura sa. Chiar dacă ne aflăm în pre-market, momentumul este susținut de știri fundamentale puternice din sectorul tech. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T20:51:29.124492+00:00"
+        "evaluated_at": "2026-11-27T13:43:45.902042+00:00"
       },
       {
         "action": "enter",
-        "symbol": "MU",
-        "direction": "short",
-        "price": 600.52,
-        "prev_close": 630.09,
-        "gap_pct": -4.69,
-        "change_pct": -4.69,
+        "symbol": "IONQ",
+        "direction": "long",
+        "price": 23.53,
+        "prev_close": 22.41,
+        "gap_pct": 5.02,
+        "change_pct": 5.02,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 609.53,
-        "target_price": 568.99,
+        "stop_price": 23.18,
+        "target_price": 24.77,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
-          "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
-          "Tech stock sell-off deepens as AI fears outweigh Huang’s Nvidia return",
-          "Why a Single Data-Center Delay Keeps Dogging This Tech Stock"
+          "IonQ's QKD Systems Pass IDEMIA Validation for Critical Communications",
+          "39 Hedge Funds Back This Quantum Computing Stock: Should You Buy?"
         ],
-        "reason_ro": "MU înregistrează o scădere puternică de -4.69% pe fondul unui sell-off generalizat în sectorul tech și al temerilor legate de sectorul AI, menționată direct în știrile recente ale zilei. Intrare SHORT cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "IonQ a obținut validarea IDEMIA pentru sistemele QKD destinate comunicațiilor critice, susținut și de interesul major al fondurilor speculative, oferind un catalizator fundamental puternic pentru o deschidere pozitivă. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-25T20:51:40.368256+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "NVDA",
-        "direction": "short",
-        "price": 149.38,
-        "prev_close": 155.48,
-        "gap_pct": -3.92,
-        "change_pct": -3.92,
-        "stake_dollars": 20.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 151.62,
-        "target_price": 141.54,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Walmart+ Members Spend 4 Times As Much As Non-Members. The Retailer’s New $120 Bundle Could Unlock More Growth.",
-          "Why Lucid Stock Is Moving in Reverse Today",
-          "Abercrombie & Fitch Grew Sales for the 16th Straight Quarter as Earnings Jumped 62%. Here's What's Behind the Streak."
-        ],
-        "reason_ro": "NVDA înregistrează o scădere de -3.92% pe fondul știrilor negative recente (procesul de 290 milioane dolari pentru minare crypto și plasarea pe CreditWatch de către S&P din cauza guvernanței), oferind o oportunitate de sell pe trendul intraday descendent. Intrare SHORT cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-25T20:52:01.649889+00:00"
+        "evaluated_at": "2026-11-27T13:43:51.282054+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 25.91,
+        "price": 26.02,
         "prev_close": 23.59,
-        "gap_pct": 9.86,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "ORCL",
-        "price": 104.34,
-        "prev_close": 109.54,
-        "gap_pct": -4.75,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MU",
-        "price": 600.52,
-        "prev_close": 630.09,
-        "gap_pct": -4.69,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 23.45,
-        "prev_close": 22.41,
-        "gap_pct": 4.69,
+        "gap_pct": 10.35,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "NIO",
-        "price": 2.69,
+        "price": 2.85,
         "prev_close": 2.58,
-        "gap_pct": 4.26,
+        "gap_pct": 10.25,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "NVDA",
-        "price": 149.38,
-        "prev_close": 155.48,
-        "gap_pct": -3.92,
+        "symbol": "SMCI",
+        "price": 24.19,
+        "prev_close": 22.62,
+        "gap_pct": 6.94,
         "source": "watchlist_snapshot"
       },
       {
-        "symbol": "ALGS",
-        "price": 2.33,
-        "prev_close": 1.49,
-        "gap_pct": 56.38,
-        "source": "alpaca_movers"
+        "symbol": "META",
+        "price": 629.85,
+        "prev_close": 589.9,
+        "gap_pct": 6.77,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "MRVL",
+        "price": 139.31,
+        "prev_close": 131.61,
+        "gap_pct": 5.85,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "IONQ",
+        "price": 23.53,
+        "prev_close": 22.41,
+        "gap_pct": 5.02,
+        "source": "watchlist_snapshot"
       },
       {
         "symbol": "LONA",
-        "price": 2.66,
+        "price": 2.71,
         "prev_close": 1.71,
-        "gap_pct": 55.56,
+        "gap_pct": 58.48,
         "source": "alpaca_movers"
       },
       {
         "symbol": "EUDA",
-        "price": 4.45,
+        "price": 4.17,
         "prev_close": 9.0,
-        "gap_pct": -50.56,
+        "gap_pct": -53.67,
         "source": "alpaca_movers"
       },
       {
         "symbol": "FCUV",
-        "price": 5.44,
+        "price": 5.65,
         "prev_close": 3.69,
-        "gap_pct": 47.43,
+        "gap_pct": 53.12,
+        "source": "alpaca_movers"
+      },
+      {
+        "symbol": "ALGS",
+        "price": 2.26,
+        "prev_close": 1.49,
+        "gap_pct": 51.68,
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-25T20:51:26.521774+00:00",
-    "telegram_sent_date": "2026-11-25"
+    "last_scan_at": "2026-11-27T13:43:22.367790+00:00",
+    "telegram_sent_date": "2026-11-27"
   },
   "spy_start_price": 767.64,
   "weekend_briefing": {
