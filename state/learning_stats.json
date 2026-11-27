@@ -1,10 +1,10 @@
 {
   "meta_samples": 17,
   "meta_active": false,
-  "updated_at": "2026-11-25T15:30:48.968679-05:00",
-  "total_trades_analyzed": 104,
+  "updated_at": "2026-11-27T12:31:08.765820-05:00",
+  "total_trades_analyzed": 113,
   "hourly_multipliers": {
-    "09:00": 0.5,
+    "09:00": 0.501,
     "10:00": 1.0,
     "11:00": 1.0,
     "12:00": 1.0,
@@ -14,10 +14,10 @@
   },
   "retrained_today": false,
   "last_lessons": [
-    "Botul a cumpărat acțiuni pe baza unui impuls bun susținut de știri pozitive, dar prețul a scăzut direct și a lovit stop-loss-ul, cauzând o mică pierdere de 0,15$ (reținem că entuziasmul știrilor nu garantează continuarea creșterii).",
-    "Botul a cumpărat pe un impuls tehnic bun, dar prețul a scăzut direct în stop-loss, pierzând 0,26 $; reținem că lipsa unei știri negative nu garantează evitarea scăderilor bruște.",
-    "Am închis tranzacția pe ASTS la limită de timp cu un profit mic de 0,81 $, reținând că semnalele bazate pe achizițiile directorilor pot genera impulsuri bune, dar ieșirile programate în timp pot limita potențialul maxim.",
-    "Tranzacția a eșuat pentru că prețul a stagnat până la expirarea timpului, așa că am ieșit în pierdere mică pentru a ne proteja capitalul.",
-    "Botul a cumpărat UPST pe baza volumului mare, dar prețul a stagnat până la expirarea timpului, așa că am pierdut 0,21$ și reținem că volumul fără continuare în preț nu garantează profitul."
+    "Botul a cumpărat QCOM pe un impuls pozitiv, dar a închis poziția pe timp (fără mișcare în nicio direcție), pierzând 0,15$ din comisioane sau ezitare; **reținem** că nu trebuie să menținem tranzacții care stagnează.",
+    "Am ieșit din tranzacție din cauza expirării timpului înainte ca prețul să se miște, obținând un profit minor de 0,31 $ (1,44R), și reținem că trebuie să fim mai atenți la lipsa de impuls imediat după intrare.",
+    "Botul a ieșit din tranzacție din cauza expirării timpului cu un profit minim de 8 cenți, învățând că o veste bună nu garantează mișcări imediate de preț.",
+    "Botul a ieșit prematur din tranzacție pe bază de timp din cauza mizei înjumătățite de scanner, obținând un profit microscopic deși știrea era bună, iar lecția este că trebuie să corelăm miza automată cu miza planificată pentru a nu rata ținta.",
+    "Botul a închis prematur tranzacția pe acțiuni Unity din lipsă de timp, obținând un profit microscopic de 0,03 $, și reținem că trebuie ajustată limita de timp pentru a lăsa strategia să își atingă potențialul."
   ]
 }
