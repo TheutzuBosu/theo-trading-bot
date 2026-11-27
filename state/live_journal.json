@@ -1,8 +1,10 @@
 {
   "processed_signals": [
     "MOVER|IONQ|2026-11-27|long",
+    "MOVER|LUNR|2026-11-27|long",
     "MOVER|MRVL|2026-11-27|long",
-    "MOVER|SHOP|2026-11-27|long"
+    "MOVER|SHOP|2026-11-27|long",
+    "MOVER|U|2026-11-27|long"
   ],
   "open_trades": {
     "SHOP": {
@@ -30,7 +32,7 @@
       "initial_risk_dollars": 0.1498,
       "equity_at_entry": 513.79,
       "partial_done": false,
-      "last_price": 140.26,
+      "last_price": 140.41,
       "entry_reason": "Shopify (SHOP) crește cu 5.65% susținută de știri pozitive privind discuțiile avansate cu Amazon pentru integrarea tehnologiei de cumpărături, urmând exemplul Walmart. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SHOP LONG -> BUY SHOP (miză ~10.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
@@ -70,7 +72,7 @@
       "initial_risk_dollars": 0.1142,
       "equity_at_entry": 513.79,
       "partial_done": false,
-      "last_price": 24.22,
+      "last_price": 24.25,
       "entry_reason": "IonQ înregistrează o creștere de 3.87% susținută de validarea IDEMIA pentru sistemele QKD de comunicații critice și interesul puternic din partea fondurilor de hedging. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~7.50$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
@@ -83,6 +85,86 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 4.0,
         "cost_to_risk": 0.0811
+      }
+    },
+    "LUNR": {
+      "trade_id": "theo-LUNR-L-202611270949",
+      "signal_symbol": "LUNR",
+      "signal_direction": "long",
+      "exec_symbol": "LUNR",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-27T09:49:59.528686-05:00",
+      "entry_time": "2026-11-27T09:49:59.528686-05:00",
+      "entry_price": 9.558,
+      "qty": 0.7858,
+      "qty0": 0.7858,
+      "signal_entry_price": 9.56,
+      "signal_stop": 9.41,
+      "signal_initial_stop": 9.41,
+      "signal_target": 10.05,
+      "signal_stop_after_target": 9.63,
+      "exec_stop": 9.41,
+      "exec_initial_stop": 9.41,
+      "exec_target": 10.04,
+      "stop_order_id": "bb4e0afa-cd97-45e4-87df-a569325b1607",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.1163,
+      "equity_at_entry": 513.8,
+      "partial_done": false,
+      "last_price": 9.558,
+      "entry_reason": "LUNR înregistrează o mișcare tehnică puternică pe volum ridicat în sesiunea deschisă, depășind filtrul temporal de 15 minute și arătând continuitate de preț. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~7.50$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 19.0,
+        "dist_from_band_bps": 219.0,
+        "dist_from_vwap_bps": 131.4,
+        "rv_30m": 0.0073,
+        "sigma_14d": 0.0147,
+        "overnight_gap_bps": 438.0,
+        "ret_since_open_bps": 438.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 4.0,
+        "cost_to_risk": 0.2069
+      }
+    },
+    "U": {
+      "trade_id": "theo-U-L-202611270949",
+      "signal_symbol": "U",
+      "signal_direction": "long",
+      "exec_symbol": "U",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-27T09:49:59.528686-05:00",
+      "entry_time": "2026-11-27T09:49:59.528686-05:00",
+      "entry_price": 49.868,
+      "qty": 0.1505,
+      "qty0": 0.1505,
+      "signal_entry_price": 49.87,
+      "signal_stop": 49.12,
+      "signal_initial_stop": 49.12,
+      "signal_target": 52.13,
+      "signal_stop_after_target": 50.25,
+      "exec_stop": 49.12,
+      "exec_initial_stop": 49.12,
+      "exec_target": 52.11,
+      "stop_order_id": "bbd00884-bd89-4dec-a66c-f69620d66e22",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.1126,
+      "equity_at_entry": 513.8,
+      "partial_done": false,
+      "last_price": 49.868,
+      "entry_reason": "Acțiunea Unity (U) înregistrează o mișcare tehnică puternică cu un volum ridicat în sesiunea activă, depășind nivelul de deschidere și indicând un impuls intraday favorabil pentru poziții de tip long. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: U LONG -> BUY U (miză ~7.50$, R:R 1:3.0)",
+      "features": {
+        "minute_of_day": 19.0,
+        "dist_from_band_bps": 153.0,
+        "dist_from_vwap_bps": 91.8,
+        "rv_30m": 0.0075,
+        "sigma_14d": 0.0151,
+        "overnight_gap_bps": 306.0,
+        "ret_since_open_bps": 306.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 4.0,
+        "cost_to_risk": 0.04
       }
     }
   },
