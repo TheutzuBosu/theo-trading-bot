@@ -2,14 +2,14 @@
   "mode": "PAPER",
   "is_sample": false,
   "initial_capital": 500.0,
-  "equity": 514.99,
-  "total_pnl": 14.99,
-  "total_pnl_pct": 3.0,
-  "today_pnl": 1.09,
-  "today_pnl_pct": 0.21,
-  "current_drawdown_pct": -0.04,
+  "equity": 514.87,
+  "total_pnl": 14.87,
+  "total_pnl_pct": 2.97,
+  "today_pnl": 0.97,
+  "today_pnl_pct": 0.19,
+  "current_drawdown_pct": -0.07,
   "max_drawdown_pct": -2.33,
-  "updated_at": "2026-11-27T10:53:10.203338-05:00",
+  "updated_at": "2026-11-27T10:54:17.057974-05:00",
   "positions": [
     {
       "symbol": "IONQ",
@@ -17,11 +17,11 @@
       "entry_time": "2026-11-27T09:39:47.044038-05:00",
       "qty": 0.3103,
       "entry_price": 24.208,
-      "current_price": 25.165,
+      "current_price": 25.16,
       "stop": 23.84,
       "initial_stop": 23.84,
       "unrealized_pnl": 0.3,
-      "unrealized_r": 2.6,
+      "unrealized_r": 2.59,
       "entry_reason": "IonQ înregistrează o creștere de 3.87% susținută de validarea IDEMIA pentru sistemele QKD de comunicații critice și interesul puternic din partea fondurilor de hedging. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -30,11 +30,11 @@
       "entry_time": "2026-11-27T09:49:59.528686-05:00",
       "qty": 0.7858,
       "entry_price": 9.558,
-      "current_price": 10.0101,
+      "current_price": 9.995,
       "stop": 9.41,
       "initial_stop": 9.41,
-      "unrealized_pnl": 0.36,
-      "unrealized_r": 3.05,
+      "unrealized_pnl": 0.34,
+      "unrealized_r": 2.95,
       "entry_reason": "LUNR înregistrează o mișcare tehnică puternică pe volum ridicat în sesiunea deschisă, depășind filtrul temporal de 15 minute și arătând continuitate de preț. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~7.50$, R:R 1:3.5)"
     },
     {
@@ -43,11 +43,11 @@
       "entry_time": "2026-11-27T10:11:26.844546-05:00",
       "qty": 2.4116,
       "entry_price": 6.22,
-      "current_price": 6.38,
+      "current_price": 6.3599,
       "stop": 6.13,
       "initial_stop": 6.13,
-      "unrealized_pnl": 0.39,
-      "unrealized_r": 1.78,
+      "unrealized_pnl": 0.34,
+      "unrealized_r": 1.55,
       "entry_reason": "RDW înregistrează o mișcare tehnică puternică pe volum în sesiunea activă, cu o creștere de +5.43% după trecerea primelor 15 minute de la deschidere, indicând un impuls intraday favorabil pentru o poziție lungă conservatoare. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RDW LONG -> BUY RDW (miză ~15.00$, R:R 1:3.5)"
     },
     {
@@ -56,11 +56,11 @@
       "entry_time": "2026-11-27T10:22:03.033739-05:00",
       "qty": 0.3018,
       "entry_price": 49.814,
-      "current_price": 49.8,
+      "current_price": 49.7035,
       "stop": 49.07,
       "initial_stop": 49.07,
-      "unrealized_pnl": -0.0,
-      "unrealized_r": -0.02,
+      "unrealized_pnl": -0.03,
+      "unrealized_r": -0.15,
       "entry_reason": "Rocket Lab crește cu peste 5% susținută de un contract masiv de 515 milioane de dolari pentru racheta Neutron și interesul generat în sectorul spațial. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~15.00$, R:R 1:3.5)"
     },
     {
@@ -69,11 +69,11 @@
       "entry_time": "2026-11-27T09:39:47.044038-05:00",
       "qty": 0.071,
       "entry_price": 140.66,
-      "current_price": 142.39,
+      "current_price": 142.29,
       "stop": 138.55,
       "initial_stop": 138.55,
       "unrealized_pnl": 0.12,
-      "unrealized_r": 0.82,
+      "unrealized_r": 0.77,
       "entry_reason": "Shopify (SHOP) crește cu 5.65% susținută de știri pozitive privind discuțiile avansate cu Amazon pentru integrarea tehnologiei de cumpărături, urmând exemplul Walmart. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SHOP LONG -> BUY SHOP (miză ~10.00$, R:R 1:3.5)"
     },
     {
@@ -82,11 +82,11 @@
       "entry_time": "2026-11-27T09:49:59.528686-05:00",
       "qty": 0.1505,
       "entry_price": 49.868,
-      "current_price": 50.19,
+      "current_price": 50.11,
       "stop": 49.12,
       "initial_stop": 49.12,
-      "unrealized_pnl": 0.05,
-      "unrealized_r": 0.43,
+      "unrealized_pnl": 0.04,
+      "unrealized_r": 0.32,
       "entry_reason": "Acțiunea Unity (U) înregistrează o mișcare tehnică puternică cu un volum ridicat în sesiunea activă, depășind nivelul de deschidere și indicând un impuls intraday favorabil pentru poziții de tip long. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: U LONG -> BUY U (miză ~7.50$, R:R 1:3.0)"
     }
   ],
@@ -122,8 +122,8 @@
         "direction": "long",
         "price": 9.99,
         "prev_close": 9.13,
-        "gap_pct": 9.42,
-        "change_pct": 9.42,
+        "gap_pct": 9.47,
+        "change_pct": 9.47,
         "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
@@ -133,9 +133,9 @@
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [],
-        "reason_ro": "LUNR înregistrează o creștere tehnică solidă de +9.42% pe volum ridicat în timpul sesiunii principale NYSE, depășind zona de deschidere fără semne de epuizare. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "LUNR înregistrează o mișcare tehnică puternică cu un impuls pozitiv de +9.47% pe volum ridicat în sesiunea activă, depășind zona de deschidere fără semne de stagnare. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-27T15:43:32.238091+00:00"
+        "evaluated_at": "2026-11-27T15:54:18.887200+00:00"
       },
       {
         "action": "enter",
@@ -143,92 +143,90 @@
         "direction": "long",
         "price": 6.37,
         "prev_close": 5.89,
-        "gap_pct": 8.15,
-        "change_pct": 8.15,
+        "gap_pct": 8.06,
+        "change_pct": 8.06,
         "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
+        "rr_ratio": 3.0,
         "stop_pct": 0.015,
-        "target_pct": 0.0525,
+        "target_pct": 0.045,
         "stop_price": 6.27,
-        "target_price": 6.7,
-        "expected_profit_dollars": 0.79,
+        "target_price": 6.66,
+        "expected_profit_dollars": 0.67,
         "max_loss_dollars": 0.22,
         "headlines": [],
-        "reason_ro": "RDW înregistrează o mișcare tehnică puternică cu o creștere de +8.15% pe volum ridicat în timpul sesiunii active NYSE, depășind faza inițială de volatilitate. Contextul tehnic favorizează continuarea impulsului intraday. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "RDW înregistrează o mișcare tehnică puternică cu o creștere de 8.06% pe volum ridicat în sesiunea activă, depășind faza inițială de volatilitate. Aplicăm o gestionare prudentă a riscului și o miză moderată conform contextului săptămânal. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-27T15:43:37.622215+00:00"
+        "evaluated_at": "2026-11-27T15:54:24.569615+00:00"
       },
       {
         "action": "enter",
         "symbol": "IONQ",
         "direction": "long",
-        "price": 25.18,
+        "price": 25.14,
         "prev_close": 23.53,
-        "gap_pct": 6.99,
-        "change_pct": 6.99,
-        "stake_dollars": 20.0,
+        "gap_pct": 6.84,
+        "change_pct": 6.84,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 24.8,
-        "target_price": 26.5,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 24.76,
+        "target_price": 26.46,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
           "IonQ's QKD Systems Pass IDEMIA Validation for Critical Communications",
           "39 Hedge Funds Back This Quantum Computing Stock: Should You Buy?"
         ],
-        "reason_ro": "IonQ beneficiază de un catalizator fundamental puternic prin validarea sistemelor QKD de către IDEMIA și interesul ridicat al fondurilor de hedging, susținând un impuls pozitiv solid în timpul sesiunii curente NYSE. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "IonQ înregistrează o creștere solidă de 6.84% susținută de validarea IDEMIA pentru sistemele QKD destinate comunicațiilor critice și de interesul puternic din partea fondurilor de hedging. Sesiunea NYSE fiind deschisă și trecând de primele 15 minute volatile, există premise favorabile pentru un impuls continuat pe partea de cumpărare. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-27T15:43:42.831873+00:00"
+        "evaluated_at": "2026-11-27T15:54:30.366056+00:00"
       },
       {
         "action": "enter",
         "symbol": "SHOP",
         "direction": "long",
-        "price": 142.24,
+        "price": 142.17,
         "prev_close": 133.35,
-        "gap_pct": 6.66,
-        "change_pct": 6.66,
+        "gap_pct": 6.61,
+        "change_pct": 6.61,
         "stake_dollars": 20.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 140.11,
-        "target_price": 149.71,
+        "stop_price": 140.04,
+        "target_price": 149.63,
         "expected_profit_dollars": 1.05,
         "max_loss_dollars": 0.3,
         "headlines": [
           "Amazon Blocked Meta’s Muse Two Months Ago. Now It’s in Talks to Let It Shop, and Walmart Already Did"
         ],
-        "reason_ro": "SHOP înregistrează o creștere solidă de +6.66% susținută de știri favorabile privind extinderea parteneriatelor de tip e-commerce, depășind volatilitatea inițială a deschiderii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "SHOP înregistrează o creștere puternică de peste 6% susținută de știri pozitive privind discuțiile avansate cu Amazon, menite să permită funcționalități de cumpărare directă, similar cu Walmart. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-27T15:43:48.293408+00:00"
+        "evaluated_at": "2026-11-27T15:54:36.052465+00:00"
       },
       {
         "action": "enter",
-        "symbol": "RKLB",
+        "symbol": "NIO",
         "direction": "long",
-        "price": 49.97,
-        "prev_close": 47.02,
-        "gap_pct": 6.27,
-        "change_pct": 6.27,
-        "stake_dollars": 20.0,
+        "price": 2.85,
+        "prev_close": 2.69,
+        "gap_pct": 5.95,
+        "change_pct": 5.95,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
-        "stop_price": 49.22,
-        "target_price": 52.59,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
+        "stop_price": 2.81,
+        "target_price": 3.0,
+        "expected_profit_dollars": 0.79,
+        "max_loss_dollars": 0.22,
         "headlines": [
-          "SpaceX Cratered 13.5% This Month: Near 300% Returns to Materialize at Today’s Price According to this Pro Analyst",
-          "Rocket Lab Secures $515 Million in Neutron Launch Orders Ahead of 2027 Debut",
-          "Huge News For Rocket Lab Stock Investors"
+          "Beijing Calls in the 'National Team,' Silver Answers: 10 Metal Stocks To Watch Friday"
         ],
-        "reason_ro": "Rocket Lab are un impuls intraday puternic (+6.27%) susținut de un contract major de 515 milioane dolari pentru racheta Neutron. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
+        "reason_ro": "NIO beneficiază de sentimentul pozitiv din sectorul metalelor și al acțiunilor chinezești susținute de măsuri macroeconomice, înregistrand o creștere intraday de aproape 6% pe fondul lichidității ridicate de după deschiderea NYSE. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-27T15:43:53.823908+00:00"
+        "evaluated_at": "2026-11-27T15:54:41.954577+00:00"
       }
     ],
     "top_movers": [
@@ -236,63 +234,63 @@
         "symbol": "LUNR",
         "price": 9.99,
         "prev_close": 9.13,
-        "gap_pct": 9.42,
+        "gap_pct": 9.47,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RDW",
         "price": 6.37,
         "prev_close": 5.89,
-        "gap_pct": 8.15,
+        "gap_pct": 8.06,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "IONQ",
-        "price": 25.18,
+        "price": 25.14,
         "prev_close": 23.53,
-        "gap_pct": 6.99,
+        "gap_pct": 6.84,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "SHOP",
-        "price": 142.24,
+        "price": 142.17,
         "prev_close": 133.35,
-        "gap_pct": 6.66,
+        "gap_pct": 6.61,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "NIO",
+        "price": 2.85,
+        "prev_close": 2.69,
+        "gap_pct": 5.95,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "RKLB",
-        "price": 49.97,
+        "price": 49.8,
         "prev_close": 47.02,
-        "gap_pct": 6.27,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "MU",
-        "price": 635.39,
-        "prev_close": 600.4,
-        "gap_pct": 5.83,
+        "gap_pct": 5.91,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "POM",
-        "price": 3.02,
+        "price": 2.96,
         "prev_close": 1.61,
-        "gap_pct": 87.89,
+        "gap_pct": 83.85,
         "source": "alpaca_movers"
       },
       {
         "symbol": "UFG",
-        "price": 2.81,
+        "price": 2.69,
         "prev_close": 1.72,
-        "gap_pct": 63.37,
+        "gap_pct": 56.4,
         "source": "alpaca_movers"
       },
       {
         "symbol": "AIOK",
-        "price": 4.64,
+        "price": 4.66,
         "prev_close": 8.82,
-        "gap_pct": -47.34,
+        "gap_pct": -47.17,
         "source": "alpaca_movers"
       },
       {
@@ -303,7 +301,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-27T15:43:30.559789+00:00",
+    "last_scan_at": "2026-11-27T15:54:17.057980+00:00",
     "telegram_sent_date": "2026-11-27"
   },
   "spy_start_price": 767.64,
