@@ -12,21 +12,21 @@
   "updated_at": "2026-11-25T15:51:26.521769-05:00",
   "positions": [],
   "premarket": {
-    "updated_at": "2026-11-27T13:43:51.282085+00:00",
+    "updated_at": "2026-11-27T14:29:32.058277+00:00",
     "risk_regime": "ATENȚIE (Mișcare Pre-Market / Raportări financiare)",
     "quotes": {
       "SPY": {
-        "price": 728.04,
+        "price": 726.25,
         "prev_close": 716.74,
-        "gap_pct": 1.58
+        "gap_pct": 1.33
       },
       "QQQ": {
-        "price": 633.92,
+        "price": 646.65,
         "prev_close": 633.92,
-        "gap_pct": 0.0
+        "gap_pct": 2.01
       }
     },
-    "explanation_ro": "SPY deschide cu un gap pozitiv puternic de +1,58% la 728,04$, în timp ce QQQ rămâne stabil la 633,92$, în lipsa unor raportări financiare majore. Piețele sunt influențate de știrile economice legate de comportamentul consumatorilor orientat spre valoare și de tensiunile geopolitice internaționale din Orientul Mijlociu. Având în vedere impulsul puternic pe SPY, direcția favorizată la deschidere este Long pe SPY și Neutral pe QQQ.",
+    "explanation_ro": "Piața deschide astăzi cu gap-uri mari de creștere (SPY +1.33%, QQQ +2.01%), impulsionată de optimismul privind consumul pentru Black Friday și lipsa unor rapoarte financiare majore negative. Tensiunile geopolitice din Orientul Mijlociu și știrile despre OPEC sunt momentan ignorate de investitori, care se concentrează pe căutarea de valoare de către cumpărători. Având în vedere impulsul puternic din pre-market, direcția favorizată la deschidere este Long.",
     "headlines": [
       "It’s not just you: Durable goods are getting less reliable, from sputtering cars to glitching smart TVs",
       "Inflation has shoppers hunting for value. That bodes well for Black Friday",
@@ -45,54 +45,30 @@
         "prev_close": 131.61,
         "gap_pct": 5.85,
         "change_pct": 5.85,
-        "stake_dollars": 20.0,
+        "stake_dollars": 15.0,
         "rr_ratio": 3.5,
         "stop_pct": 0.015,
         "target_pct": 0.0525,
         "stop_price": 137.22,
         "target_price": 146.62,
-        "expected_profit_dollars": 1.05,
-        "max_loss_dollars": 0.3,
-        "headlines": [
-          "Marvell Faces Critical Earnings Test Amid AI Chip Market Turmoil",
-          "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today’s Market",
-          "Top 3 Undervalued Tech Stocks To Watch In November 2026"
-        ],
-        "reason_ro": "Marvell înregistrează o creștere solidă de aproape 6% susținută de interesul ridicat pentru cipurile AI și articole favorabile despre infrastructura sa. Chiar dacă ne aflăm în pre-market, momentumul este susținut de știri fundamentale puternice din sectorul tech. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $).",
-        "fractionable": true,
-        "evaluated_at": "2026-11-27T13:43:45.902042+00:00"
-      },
-      {
-        "action": "enter",
-        "symbol": "IONQ",
-        "direction": "long",
-        "price": 23.53,
-        "prev_close": 22.41,
-        "gap_pct": 5.02,
-        "change_pct": 5.02,
-        "stake_dollars": 15.0,
-        "rr_ratio": 3.5,
-        "stop_pct": 0.015,
-        "target_pct": 0.0525,
-        "stop_price": 23.18,
-        "target_price": 24.77,
         "expected_profit_dollars": 0.79,
         "max_loss_dollars": 0.22,
         "headlines": [
-          "IonQ's QKD Systems Pass IDEMIA Validation for Critical Communications",
-          "39 Hedge Funds Back This Quantum Computing Stock: Should You Buy?"
+          "AI Needs More Than Nvidia Chips. This Stock Could Benefit",
+          "S&P 500 Premarket Gainers on Nov. 27 Led by Technology and Semiconductor Stocks",
+          "MaxLinear's 3.2T Push: Can it Unlock a New Growth Opportunity?"
         ],
-        "reason_ro": "IonQ a obținut validarea IDEMIA pentru sistemele QKD destinate comunicațiilor critice, susținut și de interesul major al fondurilor speculative, oferind un catalizator fundamental puternic pentru o deschidere pozitivă. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
+        "reason_ro": "Marvell (MRVL) înregistrează o creștere de 5.85% susținută de știri optimiste privind cererea de cipuri AI alternative și includerea printre câștigătorii din sectorul de semiconductori premarket. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $).",
         "fractionable": true,
-        "evaluated_at": "2026-11-27T13:43:51.282054+00:00"
+        "evaluated_at": "2026-11-27T14:29:32.058233+00:00"
       }
     ],
     "top_movers": [
       {
         "symbol": "ASTS",
-        "price": 26.02,
+        "price": 26.3,
         "prev_close": 23.59,
-        "gap_pct": 10.35,
+        "gap_pct": 11.51,
         "source": "watchlist_snapshot"
       },
       {
@@ -104,16 +80,23 @@
       },
       {
         "symbol": "SMCI",
-        "price": 24.19,
+        "price": 24.17,
         "prev_close": 22.62,
-        "gap_pct": 6.94,
+        "gap_pct": 6.85,
         "source": "watchlist_snapshot"
       },
       {
         "symbol": "META",
-        "price": 629.85,
+        "price": 628.79,
         "prev_close": 589.9,
-        "gap_pct": 6.77,
+        "gap_pct": 6.59,
+        "source": "watchlist_snapshot"
+      },
+      {
+        "symbol": "ARM",
+        "price": 171.26,
+        "prev_close": 161.47,
+        "gap_pct": 6.06,
         "source": "watchlist_snapshot"
       },
       {
@@ -121,13 +104,6 @@
         "price": 139.31,
         "prev_close": 131.61,
         "gap_pct": 5.85,
-        "source": "watchlist_snapshot"
-      },
-      {
-        "symbol": "IONQ",
-        "price": 23.53,
-        "prev_close": 22.41,
-        "gap_pct": 5.02,
         "source": "watchlist_snapshot"
       },
       {
@@ -159,7 +135,7 @@
         "source": "alpaca_movers"
       }
     ],
-    "last_scan_at": "2026-11-27T13:43:22.367790+00:00",
+    "last_scan_at": "2026-11-27T14:29:04.029673+00:00",
     "telegram_sent_date": "2026-11-27"
   },
   "spy_start_price": 767.64,
