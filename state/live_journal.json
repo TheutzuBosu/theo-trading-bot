@@ -4,6 +4,7 @@
     "MOVER|LUNR|2026-11-27|long",
     "MOVER|MRVL|2026-11-27|long",
     "MOVER|MU|2026-11-27|long",
+    "MOVER|QCOM|2026-11-27|long",
     "MOVER|RDW|2026-11-27|long",
     "MOVER|RKLB|2026-11-27|long",
     "MOVER|SHOP|2026-11-27|long",
@@ -35,7 +36,7 @@
       "initial_risk_dollars": 0.1498,
       "equity_at_entry": 513.79,
       "partial_done": false,
-      "last_price": 141.35,
+      "last_price": 141.25,
       "entry_reason": "Shopify (SHOP) crește cu 5.65% susținută de știri pozitive privind discuțiile avansate cu Amazon pentru integrarea tehnologiei de cumpărături, urmând exemplul Walmart. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: SHOP LONG -> BUY SHOP (miză ~10.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
@@ -75,7 +76,7 @@
       "initial_risk_dollars": 0.1142,
       "equity_at_entry": 513.79,
       "partial_done": false,
-      "last_price": 25.085,
+      "last_price": 25.12,
       "entry_reason": "IonQ înregistrează o creștere de 3.87% susținută de validarea IDEMIA pentru sistemele QKD de comunicații critice și interesul puternic din partea fondurilor de hedging. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: IONQ LONG -> BUY IONQ (miză ~7.50$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 9.0,
@@ -115,7 +116,7 @@
       "initial_risk_dollars": 0.1163,
       "equity_at_entry": 513.8,
       "partial_done": true,
-      "last_price": 10.02,
+      "last_price": 10.01,
       "entry_reason": "LUNR înregistrează o mișcare tehnică puternică pe volum ridicat în sesiunea deschisă, depășind filtrul temporal de 15 minute și arătând continuitate de preț. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: LUNR LONG -> BUY LUNR (miză ~7.50$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 19.0,
@@ -155,7 +156,7 @@
       "initial_risk_dollars": 0.1126,
       "equity_at_entry": 513.8,
       "partial_done": false,
-      "last_price": 49.42,
+      "last_price": 49.465,
       "entry_reason": "Acțiunea Unity (U) înregistrează o mișcare tehnică puternică cu un volum ridicat în sesiunea activă, depășind nivelul de deschidere și indicând un impuls intraday favorabil pentru poziții de tip long. Intrare LONG cu miză 15 $, Risc:Reward 1:3.0 (risc -0.22 $ / țintă profit +0.67 $). · D33 Scanner: U LONG -> BUY U (miză ~7.50$, R:R 1:3.0)",
       "features": {
         "minute_of_day": 19.0,
@@ -195,7 +196,7 @@
       "initial_risk_dollars": 0.217,
       "equity_at_entry": 514.06,
       "partial_done": false,
-      "last_price": 6.375,
+      "last_price": 6.365,
       "entry_reason": "RDW înregistrează o mișcare tehnică puternică pe volum în sesiunea activă, cu o creștere de +5.43% după trecerea primelor 15 minute de la deschidere, indicând un impuls intraday favorabil pentru o poziție lungă conservatoare. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RDW LONG -> BUY RDW (miză ~15.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 41.0,
@@ -235,7 +236,7 @@
       "initial_risk_dollars": 0.2245,
       "equity_at_entry": 514.23,
       "partial_done": false,
-      "last_price": 49.88,
+      "last_price": 49.85,
       "entry_reason": "Rocket Lab crește cu peste 5% susținută de un contract masiv de 515 milioane de dolari pentru racheta Neutron și interesul generat în sectorul spațial. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.22 $ / țintă profit +0.79 $). · D33 Scanner: RKLB LONG -> BUY RKLB (miză ~15.00$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 52.0,
@@ -275,7 +276,7 @@
       "initial_risk_dollars": 0.2997,
       "equity_at_entry": 514.9,
       "partial_done": false,
-      "last_price": 638.59,
+      "last_price": 638.74,
       "entry_reason": "MU înregistrează o creștere puternică de +6.14% susținută de revenirea investitorilor mari în acțiunile din sectorul AI și memorie, depășind cu succes volatilitatea inițială a deschiderii. Intrare LONG cu miză 20 $, Risc:Reward 1:3.5 (risc -0.30 $ / țintă profit +1.05 $). · D33 Scanner: MU LONG -> BUY MU (miză ~19.97$, R:R 1:3.5)",
       "features": {
         "minute_of_day": 95.0,
@@ -288,6 +289,46 @@
         "vol_ratio_14d": 1.5,
         "day_of_week": 4.0,
         "cost_to_risk": 0.0031
+      }
+    },
+    "QCOM": {
+      "trade_id": "theo-QCOM-L-202611271209",
+      "signal_symbol": "QCOM",
+      "signal_direction": "long",
+      "exec_symbol": "QCOM",
+      "exec_direction": "long",
+      "leverage": 1,
+      "signal_time": "2026-11-27T12:09:06.359799-05:00",
+      "entry_time": "2026-11-27T12:09:06.359799-05:00",
+      "entry_price": 179.22,
+      "qty": 0.0837,
+      "qty0": 0.0837,
+      "signal_entry_price": 179.22,
+      "signal_stop": 177.07,
+      "signal_initial_stop": 177.07,
+      "signal_target": 186.74,
+      "signal_stop_after_target": 180.29,
+      "exec_stop": 177.07,
+      "exec_initial_stop": 177.07,
+      "exec_target": 186.65,
+      "stop_order_id": "e2222009-9b46-42bd-bf4d-3778dbdb30eb",
+      "stop_seq": 0,
+      "initial_risk_dollars": 0.18,
+      "equity_at_entry": 514.76,
+      "partial_done": false,
+      "last_price": 179.22,
+      "entry_reason": "QCOM înregistrează o creștere solidă de +6.22% susținută de știri macroeconomice favorabile privind scutirea cipurilor de noile tarife, confirmând un impuls puternic intraday după deschiderea pieței. Intrare LONG cu miză 15 $, Risc:Reward 1:3.5 (risc -0.18 $ / țintă profit +0.63 $). · D33 Scanner: QCOM LONG -> BUY QCOM (miză ~14.99$, R:R 1:3.5)",
+      "features": {
+        "minute_of_day": 159.0,
+        "dist_from_band_bps": 311.0,
+        "dist_from_vwap_bps": 186.6,
+        "rv_30m": 0.006,
+        "sigma_14d": 0.012,
+        "overnight_gap_bps": 622.0,
+        "ret_since_open_bps": 622.0,
+        "vol_ratio_14d": 1.5,
+        "day_of_week": 4.0,
+        "cost_to_risk": 0.014
       }
     }
   },
